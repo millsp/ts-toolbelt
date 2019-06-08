@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "license": "AGPL-3.0-only",
   "author": "Pierre-Antoine Mills",
   "description": "Higher type safety for TypeScript",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/ramda": "latest",
     "@typescript-eslint/parser": "^1.9.0",
-    "eledoc": "^0.0.1",
+    "eledoc": "^0.0.5",
     "eslint": "^5.16.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-react": "^7.13.0",

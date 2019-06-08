@@ -1,14 +1,5 @@
-<script async type="text/javascript"> // Handle when image displayed in website
-    document.addEventListener("DOMContentLoaded", function(event) {
-        document.querySelectorAll('img').forEach(function(img) {
-            img.onerror = function(){
-                this.style.display='none'
-            }
-        })
-    })
-</script>
 <center>
-    <img src=".github/logo.png" alt="logo" width="400" onerror="this.src='../.github/logo.png'"/>
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" alt="logo"/>
 </center>
 
-# [Documentation](index.html)
+# [Documentation](https://pirix-gh.github.io/ts-toolbelt/)
