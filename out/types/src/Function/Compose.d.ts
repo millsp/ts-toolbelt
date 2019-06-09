@@ -11,14 +11,14 @@ import { ReturnOf } from './ReturnOf';
 import { ParamsOf } from './ParamsOf';
 declare type ComposeItem<Fns extends Arrow[], K extends keyof Fns> = Length<Tail<Fns>> extends NumberOf<K> ? Fns[K] : (arg: ReturnOf<Fns[Pos<Next<IterationOf<K>>>]>) => ReturnOf<Fns[Pos<IterationOf<K>>]>;
 /** Compute what the input of **`Compose`** should be
- * @param Fnss to compose
+ * @param Fns to compose
  * @example
  */
 export declare type Composer<Fns extends Arrow[]> = {
     [K in keyof Fns]: ComposeItem<Fns, K>;
 };
 /** Compose **`Function`**s together like **`compose()`**
- * @param Fnss to compose
+ * @param Fns to compose
  * @returns **`Function`**
  * @example
  */

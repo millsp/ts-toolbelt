@@ -8,7 +8,7 @@ import { Replace } from '../Union/Replace';
  * (If `match = 'default'`, no type checks are done)
  * @param O to remove the keys from
  * @param O1 to remove the keys out
- * @param match (?=`'default'`) to change precision
+ * @param match to change precision (?=`'default'`)
  * @returns **`keyof`**
  * @example
  */

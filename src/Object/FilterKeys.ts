@@ -5,7 +5,7 @@ import {Keys} from './Keys'
 /** Filter out the keys of **`O`** which fields match **`M`**
  * @param O to remove from
  * @param M to select fields
- * @param match (?=`'default'`) to change precision
+ * @param match to change precision (?=`'default'`)
  * @returns **`keyof`**
  * @example
  */

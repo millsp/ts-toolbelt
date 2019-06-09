@@ -4,7 +4,7 @@ import { Pick } from './Pick';
 /** Filter out of **`O`** the fields that match **`M`**
  * @param O to remove from
  * @param M to select fields
- * @param match (?=`'default'`) to change precision
+ * @param match to change precision (?=`'default'`)
  * @returns **`object`**
  * @example
  */

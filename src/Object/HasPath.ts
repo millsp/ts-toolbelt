@@ -5,8 +5,8 @@ import {Is} from '../Any/Is'
 /** Check whether **`O`** has nested properties that match **`M`**
  * @param O to be inspected
  * @param Path to be followed
- * @param M (?=`any`) to check field type
- * @param match (?=`'default'`) to change precision
+ * @param M to check field type (?=`any`)
+ * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
  */

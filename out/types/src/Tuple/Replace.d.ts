@@ -8,7 +8,7 @@ import { List } from '../_Internal';
  * @param T to update
  * @param M to select entries
  * @param A to update with
- * @param modx to set modifiers (?=['!', 'W'])
+ * @param modx to set modifiers (?=`['!', 'W']`)
  * @returns **`List`**
  * @example
  */

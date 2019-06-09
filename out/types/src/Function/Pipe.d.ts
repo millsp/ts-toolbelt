@@ -9,14 +9,14 @@ import { ReturnOf } from './ReturnOf';
 import { ParamsOf } from './ParamsOf';
 declare type PipeItem<Fns extends Arrow[], K extends keyof Fns> = NumberOf<K> extends 0 ? Fns[K] : (arg: ReturnOf<Fns[Pos<Prev<IterationOf<K>>>]>) => ReturnOf<Fns[Pos<IterationOf<K>>]>;
 /** Compute what the input of **`Pipe`** should be
- * @param Fnss to pipe
+ * @param Fns to pipe
  * @example
  */
 export declare type Piper<Fns extends Arrow[]> = {
     [K in keyof Fns]: PipeItem<Fns, K>;
 };
 /** Pipe **`Function`**s together like **`pipe()`**
- * @param Fnss to pipe
+ * @param Fns to pipe
  * @returns **`Function`**
  * @example
  */

@@ -4,8 +4,8 @@ import { List } from '../_Internal';
 /** Check whether **`T`** has nested entries that match **`M`**
  * @param T to be inspected
  * @param Path to be followed
- * @param K to choose fields (?=`keyof O`)
- * @param depth to do it deeply (?=`'flat'`)
+ * @param M to check entry type (?=`any`)
+ * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
  */

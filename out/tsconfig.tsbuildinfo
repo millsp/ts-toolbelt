@@ -310,8 +310,8 @@
         "signature": "b4e30403ea12ced0079262df4d7d8804a5465a28198e252436c4ff4671beb3f1"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/Compose.ts": {
-        "version": "4b7cc12ec2de042a1418863636720b13d92cb44b21d48937726dcf91d198dd31",
-        "signature": "c71bd629dd0bbfc999a45ccfd3c417a2a7fd178bb459004f44d699ea399f52ee"
+        "version": "cab6271467c1815da1a42ec2e1eb27eb883de3797798c65c6e575dc0487bb27f",
+        "signature": "e77c369beb12cea269d6f37c4f1cac735fb98f246d76dac92ffd6ce3494dfc98"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Reverse.ts": {
         "version": "9de95d753653e4f439992102e88a7299c395b46d8c7cc5e7aca6dea6de06581f",
@@ -370,8 +370,8 @@
         "signature": "c0d8df2cd084b6496488eece08b316b69ab57d57bdaf368a8f6927b5ef628831"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/Pipe.ts": {
-        "version": "44bc116a5f442a3f3ef48210c2400aea4991b37ccc2efed4e2b932eb061fa4c5",
-        "signature": "21b5250b5b70184f957ca9fb7580807baae7af4738ac1ca9a6fb2f1addc47440"
+        "version": "00db6c41ff374f394376312460d3a585bb1ee7f2d390f946f58301fcd1dd1b1a",
+        "signature": "ca9b1ff60f97c216267328889a340fb98b4660cb8b7a16a2475b96f29181ed43"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/_api.ts": {
         "version": "231ca71f82825d076a110319f7a8c97f0c7a1c0a7cbbbc15243fe0694e9d1cc1",
@@ -438,36 +438,36 @@
         "signature": "08fd22eead722584e3d85da87ea954e4fe32eb6a40f8d796355a7c2e9da856c8"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/ExcludeKeys.ts": {
-        "version": "cea71615796edf8742f52a8cbf55bf105cf1a9fd83f74964aab147f494b3121c",
-        "signature": "be17b34bae8966f174ab37dc2f807c7222d9e22e81bf4ef76cc6c2463baeab3f"
+        "version": "3239132f1d0a7a5d4c537407a18ba2f1a6eb93aedde03a7575cab1c849dc8953",
+        "signature": "04960d349a180133e0bfb66b51221192403e105238f3fd936aeb3ec871bde110"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Exclude.ts": {
-        "version": "831c70daf081c06af990683d0de77be82a9f3d6584e78c6f34b1ee8c5d3463e2",
-        "signature": "5f2c0398dcbf52c87792acf86912d5f87d82cee99e9c2b3afda9b3febc21536f"
+        "version": "f4a54fb6e645700cf8e378bf1302c3357d02425956f99082ae80c3f15c93f354",
+        "signature": "bfa0c7a13916504b8b1908dbea9c471529757a980f649299567a988730c50843"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Diff.ts": {
         "version": "114d2116a682457b9f3d2dc77ca323863bc5fb972c8d29b7555af77ecb1182d5",
         "signature": "35201f979fbc23de958dada6fc6e9a32c65240c0d7c1611382dca19e3087f0cd"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/FilterKeys.ts": {
-        "version": "7c81ec0414ee8f9bdd28cb33b4b49a812c1a9bc8f3ca75d9b3ac43bbf66b6a1c",
-        "signature": "9d494f7a4f0b34bed5a54b8d622df7f844d37653e1873e509f91d98c864135a5"
+        "version": "7941c40a4a2cef163cae9041d533405772d74e471e18ff0c03cf9235271d5a8b",
+        "signature": "057d5be55e33a8ab710907982da4177faf96df6b863729ba8a7658bf357e1f2c"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Filter.ts": {
-        "version": "253ac60d911f7008c406a3d9b4900cbb4d0f5b9c4a5fdb78c98106583d988014",
-        "signature": "4a8b4e14d4e10871d0a33dda69cfe4d8b92c596db06dd8be1baf67f9de49eb20"
+        "version": "e17ea5a9b8084f116ffbff5c40067a302409b8a62890649b7296e1a29b943b48",
+        "signature": "13941aa312bba9c901e74fc7ecfe26bd902beb91f9a7892be44d769fe13c63d4"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Has.ts": {
-        "version": "ef85532c140ca8219cdfcde5f67b7b2d703b7b67172990e409de521a9e49f7e4",
-        "signature": "34a7d474b8dac2a5fb76a3f46c34ca4a9539271c462d2afae1ac352e141f29fd"
+        "version": "f1ce0b366576e7b2139be7ee023828faafddfa16482479499bdfa04efaa8000c",
+        "signature": "6628cffa4bbe31a528e3a662d2bfa2d5cee9ae2aa8055f4759d4ae77fb971d07"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Path.ts": {
         "version": "29a9d5d1a6e878cbcbf9c6bdc94de62434800e782a258c08d7d3867b8a34cd9a",
         "signature": "e662eb8ee62a0729f7ba9c35b21638aa4e74a05db63fc22744aa262de69db583"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/HasPath.ts": {
-        "version": "8f4a5de6f6b7ca0f9415cfbef7244b5138913cde1a8fb6f6c2c5fc436ebd49b4",
-        "signature": "50c5f5f78389bb6056f8b5540a17ad78601e3b9678ce6b0b4cc2f71e558ff3db"
+        "version": "aa1cc2d24ec120c77993230e37b8759e7bc3cf83cc565e8490a2ebbba73bda6e",
+        "signature": "2fee6f5acf6c7417e3888cad0aaa03bfcaedbd64426e6a6e5a1084715ddf6ad1"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Includes.ts": {
         "version": "e71b3a6cfac9080777bbffdaeffa9c38ab74652cd823c3709b5f644e361df56e",
@@ -638,8 +638,8 @@
         "signature": "c7abbcd0f0e81e0184d492b0d87bf7ccb44f1c10df4ad8d5fdce14443ac29768"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/HasPath.ts": {
-        "version": "27ad8133ee0d4653a3d1e92e09ddb15b2d69b49f777f28e41c7bcd3b748fab9a",
-        "signature": "c5d75ef857dd6a9c3398c5bd91ea31a40911915bb7c5d9d2fd33a04e4e8d90eb"
+        "version": "db663de7fa5432f27508e6588ed399ec49de8011af3bd52ff25baaa62a720fb0",
+        "signature": "aa20e5ceb75e3f920ac4fb2162ec64f8ec8fa04efeb92088da77b88c0df6db9c"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Includes.ts": {
         "version": "f68cc631f6fa507d666ebb720ee761e0df7584220a0fb6b2145390d92d704e25",
@@ -706,8 +706,8 @@
         "signature": "4dae7149cd9ab8c4c59b1fd583b1ab9ffc1baf6d308c23225146fdf43769d1dc"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Replace.ts": {
-        "version": "74a244b1f58d311fba318537d54228dd691c6473cd5ac75aa3aed02772d0b2de",
-        "signature": "85e502c59c036fca6197b7d7acf813a6c77a3ba7d1c647a1f423e25334424643"
+        "version": "e24aea7f429075712e50441984d223edaccf1083fc0696e4dcd0d0fe98086839",
+        "signature": "6bd0bf4d716d0e63f4c2898c47f3f7ae1631bddf57001b552437ce41bc8f657a"
       },
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Required.ts": {
         "version": "a74cbb3c067971256e25c179b13b03bb0482d081069efd1d6b192fc19cea9fa3",
@@ -4426,7 +4426,6 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Head.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/ReturnOf.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/ParamsOf.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/Compose.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Reverse.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Concat.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Append.ts",
@@ -4441,8 +4440,6 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/TupleOf.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/NonNullable.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/Curry.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/Pipe.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Iteration/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Number/Minus.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Number/Negate.ts",
@@ -4458,20 +4455,12 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Number/Range.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Number/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/At.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/ExcludeKeys.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Exclude.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Diff.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/FilterKeys.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Filter.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Has.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Path.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/HasPath.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Includes.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/Intersect.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/IntersectKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Intersect.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/MergeKeys.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/NonNullableKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Nullable.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/NullableKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Optional.ts",
@@ -4496,26 +4485,18 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Pop.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/At.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Longest.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Diff.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Exclude.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/ExcludeKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/UnionOf.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/KeySet.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Pick.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Extract.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Filter.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/FilterKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Take.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Group.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Has.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/HasPath.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Includes.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Intersect.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/IntersectKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Keys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Merge.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/MergeKeys.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/NonNullableKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Nullable.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/NullableKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/ObjectOf.ts",
@@ -4525,18 +4506,13 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Readonly.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/ReadonlyKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Remove.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Replace.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Required.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Select.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/SelectKeys.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/UnNest.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Zip.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/ZipObj.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/_api.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Readonly.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Update.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/_api.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/String/BooleanOf.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/String/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/Diff.ts",
@@ -4544,7 +4520,6 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/Nullable.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/Select.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/_api.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/index.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/NoInfer.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/UnCurry.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Overwrite.ts",
@@ -4552,16 +4527,6 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Update.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Writable.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/WritableKeys.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Any.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Boolean.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Class.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Function.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Iteration.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Number.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Object.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/String.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Tuple.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Union.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/_all.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/globals.d.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/assert.d.ts",
@@ -4607,7 +4572,42 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/base.d.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/util.d.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/globals.d.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/index.d.ts"
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/index.d.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/Compose.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/_api.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/Pipe.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/ExcludeKeys.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/ExcludeKeys.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Exclude.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Exclude.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Diff.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/FilterKeys.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/FilterKeys.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/NonNullableKeys.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Filter.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Filter.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Has.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Has.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/HasPath.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/HasPath.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/_api.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Replace.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Diff.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/NonNullableKeys.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Readonly.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/_api.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/_api.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/index.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Any.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Boolean.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Class.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Function.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Iteration.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Number.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Object.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/String.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Tuple.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Union.ts"
     ]
   },
   "version": "3.6.0-dev.20190608"
