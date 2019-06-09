@@ -50,7 +50,7 @@ The library is organized around TypeScript concepts:
 ```ts  
 type test3 = T.A.Is<'hello', string>    // true
 
-type test4 = T.A.Concat<[1, 2], [3, 4]> // [1, 2, 3, 4]
+type test4 = T.T.Concat<[1, 2], [3, 4]> // [1, 2, 3, 4]
 
 ```
 

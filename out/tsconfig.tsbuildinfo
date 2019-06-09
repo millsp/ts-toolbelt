@@ -3969,6 +3969,13 @@
         "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Length.ts",
         "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Extras/Compute.ts"
       ],
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/_api.ts": [
+        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Merge.ts",
+        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Omit.ts",
+        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Pick.ts",
+        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Readonly.ts",
+        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Update.ts"
+      ],
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/_api.ts": [
         "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/At.ts",
         "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/Diff.ts",
@@ -4339,13 +4346,6 @@
         "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/util.d.ts",
         "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/globals.d.ts",
         "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/util.d.ts"
-      ],
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/_api.ts": [
-        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Merge.ts",
-        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Omit.ts",
-        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Pick.ts",
-        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Readonly.ts",
-        "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Update.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -4535,6 +4535,8 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Readonly.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/Update.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/_api.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/String/BooleanOf.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/String/_api.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/Diff.ts",
@@ -4542,6 +4544,7 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/Nullable.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/Select.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Union/_api.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/index.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/NoInfer.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Function/UnCurry.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Overwrite.ts",
@@ -4549,6 +4552,16 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Update.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/Writable.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Tuple/WritableKeys.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Any.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Boolean.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Class.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Function.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Iteration.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Number.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Object.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/String.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Tuple.ts",
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Union.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/_all.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/globals.d.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/assert.d.ts",
@@ -4594,20 +4607,7 @@
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/base.d.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/util.d.ts",
       "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/globals.d.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/index.d.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/P/_api.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/Object/_api.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/src/index.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Any.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Boolean.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Class.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Function.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Iteration.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Number.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Object.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/String.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Tuple.ts",
-      "/home/ghost/Projects/streamhive.io/ts-toolbelt/tst/Union.ts"
+      "/home/ghost/Projects/streamhive.io/ts-toolbelt/node_modules/@types/node/ts3.2/index.d.ts"
     ]
   },
   "version": "3.6.0-dev.20190608"
