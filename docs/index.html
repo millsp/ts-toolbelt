@@ -68,6 +68,46 @@
 				<center>
 					<img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" alt="logo" width="400"/>
 				</center>
+				<h2 id="installation">Installation</h2>
+				<pre><code class="language-sh">npm install ts-toolbelt --save</code></pre>
+				<pre><code class="language-sh">yarn add ts-toolbelt</code></pre>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> T <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-comment">// Do basic number operations</span>
+<span class="hljs-keyword">type</span> test0 = T.N.Minus&lt;<span class="hljs-string">'5'</span>, <span class="hljs-string">'20'</span>&gt; <span class="hljs-comment">// -15</span>
+
+<span class="hljs-keyword">type</span> O = {
+    a: {
+        b: {
+            c: <span class="hljs-string">'hello'</span>
+            d: <span class="hljs-string">'goodbye'</span>
+        }
+    }
+}
+
+<span class="hljs-comment">// Deeply change a type</span>
+<span class="hljs-keyword">type</span> test1 = T.O.P.Update&lt;O, [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span> | <span class="hljs-string">'d'</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]&gt;
+
+<span class="hljs-comment">// Or just merge them</span>
+<span class="hljs-keyword">type</span> test2 = T.O.Merge&lt;O, {x: <span class="hljs-string">'hello'</span>}&gt;</code></pre>
+				<p>And so much more... But before you start reading the docs:</p>
+				<p>The library is organized around TypeScript concepts:</p>
+				<ul>
+					<li>T.<strong>A*<em>: *</em>A</strong>ny        types</li>
+					<li>T.<strong>B*<em>: *</em>B</strong>oolean    types</li>
+					<li>T.<strong>C*<em>: *</em>C</strong>lass      types</li>
+					<li>T.<strong>F*<em>: *</em>F</strong>untion    types</li>
+					<li>T.<strong>I*<em>: *</em>I</strong>teration  types</li>
+					<li>T.<strong>N*<em>: *</em>N</strong>umber     types</li>
+					<li>T.<strong>O*<em>: *</em>O</strong>bject     types</li>
+					<li>T.<strong>S*<em>: *</em>S</strong>tring     types</li>
+					<li>T.<strong>T*<em>: *</em>T</strong>uple      types</li>
+					<li>T.<strong>U*<em>: *</em>U</strong>nion      types</li>
+				</ul>
+				<pre><code class="language-ts"><span class="hljs-keyword">type</span> test3 = T.A.Is&lt;<span class="hljs-string">'hello'</span>, <span class="hljs-built_in">string</span>&gt;    <span class="hljs-comment">// true</span>
+
+<span class="hljs-keyword">type</span> test4 = T.A.Concat&lt;[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]&gt; <span class="hljs-comment">// [1, 2, 3, 4]</span>
+</code></pre>
 				<h1 id="documentation"><a href="https://pirix-gh.github.io/ts-toolbelt/">Documentation</a></h1>
 			</div>
 		</div>

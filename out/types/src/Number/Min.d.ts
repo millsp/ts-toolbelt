@@ -12,7 +12,7 @@ import { Exclude } from '../Union/Exclude';
 declare type MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MinPositive<N, Next<I>>;
     1: I;
-}[Key<I> extends N ? 1 : 0];
+}[N extends Key<I> ? 1 : 0];
 declare type MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MinNegative<Exclude<N, Key<I>>, Prev<I>>;
     1: Next<I>;

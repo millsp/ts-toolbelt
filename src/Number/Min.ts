@@ -14,7 +14,7 @@ type MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MinPositive<N, Next<I>> // Find smallest +
     1: I
 }[
-    Key<I> extends N
+    N extends Key<I>
     ? 1
     : 0
 ]

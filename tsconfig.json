@@ -87,7 +87,7 @@
       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. Always specify https://github.com/Microsoft/TypeScript/wiki/FAQ#why-does---outdir-moves-output-after-adding-a-new-file */
       //    "rootDirs": [], /* List of root folders whose combined content represents the structure of the project at runtime. */
       //    "skipLibCheck": false, /* Skip type checking of declaration files. */
-      "sourceMap": true,
+      "sourceMap": false,
       /* Generates corresponding '.map' file. */
       //    "sourceRoot": "./", /* Specify the location where debugger should locate TypeScript files instead of source locations. */
       "strict": true,

@@ -1,4 +1,4 @@
-export { Cast } from './Cast';
+export * from './Cast';
 export { Equals } from './Equals';
 export { Extends } from './Extends';
 export { Is } from './Is';
