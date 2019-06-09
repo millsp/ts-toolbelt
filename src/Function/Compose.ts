@@ -17,7 +17,7 @@ type ComposeItem<Fns extends Arrow[], K extends keyof Fns> =
         ReturnOf<Fns[Pos<IterationOf<K>>]>
 
 /** Compute what the input of **`Compose`** should be
- * @param Fnss to compose
+ * @param Fns to compose
  * @example
  */
 export type Composer<Fns extends Arrow[]> = {
@@ -25,7 +25,7 @@ export type Composer<Fns extends Arrow[]> = {
 }
 
 /** Compose **`Function`**s together like **`compose()`**
- * @param Fnss to compose
+ * @param Fns to compose
  * @returns **`Function`**
  * @example
  */

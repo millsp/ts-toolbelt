@@ -1,19 +1,19 @@
 {
   "name": "ts-toolbelt",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "license": "AGPL-3.0-only",
   "author": "Pierre-Antoine Mills",
-  "description": "Higher type safety for TypeScript",
+  "description": "👷 Higher type safety for TypeScript",
   "keywords": [
     "types",
     "tools",
     "safe",
     "typescript"
   ],
-  "homepage": "https://github.com/pirix-gh/ts-tools",
+  "homepage": "https://github.com/pirix-gh/ts-toolbelt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pirix-gh/ts-tools"
+    "url": "https://github.com/pirix-gh/ts-toolbelt"
   },
   "types": "out/types/src/index.d.ts",
   "main": "out/src/index.js",
@@ -22,7 +22,6 @@
     "setup:dev": "npm install --only=dev"
   },
   "devDependencies": {
-    "@types/ramda": "latest",
     "@typescript-eslint/parser": "^1.9.0",
     "eledoc": "^0.0.5",
     "eslint": "^5.16.0",
@@ -32,7 +31,9 @@
     "typedoc": "^0.14.2",
     "typescript": "^3.6.0-dev.20190607"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "typescript": "^3.5.0"
+  },
   "dependencies": {},
   "files": [
     "out/types",

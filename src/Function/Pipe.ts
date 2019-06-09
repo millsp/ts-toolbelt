@@ -15,7 +15,7 @@ type PipeItem<Fns extends Arrow[], K extends keyof Fns> =
         ReturnOf<Fns[Pos<IterationOf<K>>]>
 
 /** Compute what the input of **`Pipe`** should be
- * @param Fnss to pipe
+ * @param Fns to pipe
  * @example
  */
 export type Piper<Fns extends Arrow[]> = {
@@ -23,7 +23,7 @@ export type Piper<Fns extends Arrow[]> = {
 }
 
 /** Pipe **`Function`**s together like **`pipe()`**
- * @param Fnss to pipe
+ * @param Fns to pipe
  * @returns **`Function`**
  * @example
  */
