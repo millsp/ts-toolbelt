@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "license": "AGPL-3.0-only",
   "author": "Pierre-Antoine Mills",
   "description": "👷 Higher type safety for TypeScript",
