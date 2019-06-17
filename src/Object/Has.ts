@@ -1,6 +1,7 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
+import {Cast} from '../Any/Cast'
 
 /** Check whether **`O`** has a field of key **`K`** that matches **`M`**
  * @param O to be inspected
@@ -11,4 +12,7 @@ import {At} from './At'
  * @example
  */
 export type Has<O extends object, K extends string, M extends any = any, match extends Match = 'default'> =
-    Is<At<O, K>, M, match>
+    Is<At<O, K>, M, match> extends infer X
+    ? Cast<X, boolean>
+    : never
+

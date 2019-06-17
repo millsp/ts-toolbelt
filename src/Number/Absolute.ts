@@ -1,10 +1,11 @@
 import {_Negate} from './Negate'
 import {_IsNegative} from './IsNegative'
-import {Iteration, IterationOf} from '../Iteration/IterationOf'
-import {Pos} from '../Iteration/Pos'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {Nbr} from './_Internal'
 import {Format} from '../Iteration/_Internal'
+import {Fmt} from '../Iteration/Fmt'
 
 export type _Absolute<N extends Iteration> =
     _IsNegative<N> extends true
@@ -19,5 +20,5 @@ export type _Absolute<N extends Iteration> =
  */
 export type Absolute<N extends Nbr, fmt extends Format = 's'> =
     _Absolute<IterationOf<N>> extends infer I
-    ? Pos<Cast<I, Iteration>, fmt>
+    ? Fmt<Cast<I, Iteration>, fmt>
     : never

@@ -1,6 +1,4 @@
 import {Merge} from './Merge'
-import {NonNullable as UNonNullable} from '../Union/NonNullable'
-import {Extends} from '../Any/Extends'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Equals} from '../Any/Equals'
@@ -10,9 +8,7 @@ type ReadonlyFlat<O> = {
 }
 
 type ReadonlyDeep<O> = {
-    +readonly [K in keyof O]: Extends<UNonNullable<O[K]>, object> extends true // Remove null & undefined
-                              ? ReadonlyDeep<O[K]>                             // To check if its an object
-                              : O[K]                                           // Or return a +readonly
+    +readonly [K in keyof O]: ReadonlyDeep<O[K]>
 }
 
 type ReadonlyPart<O extends object, depth extends Depth> = {
@@ -32,5 +28,3 @@ export type Readonly<O extends object, K extends string = keyof O, depth extends
     ? ReadonlyPart<O, depth> // Merge is not necessary
     : Merge<ReadonlyPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K), make it nullable, and merge it back into O
-
-    type t = Readonly<[1, 2 | undefined, 3]>

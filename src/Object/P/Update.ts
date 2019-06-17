@@ -1,12 +1,12 @@
 import {Length} from '../../Tuple/Length'
-import {Compute} from '../../Extras/Compute'
-import {Iteration, IterationOf} from '../../Iteration/IterationOf'
+import {Compute} from '../../Any/Compute'
+import {IterationOf} from '../../Iteration/IterationOf'
+import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
-import {List} from '../../_Internal'
 import {Path as PPath} from './_Internal'
 
-type _Update<O extends object, Path extends List<string>, A, I extends Iteration = IterationOf<'0'>> = {
+type _Update<O extends object, Path extends string[], A, I extends Iteration = IterationOf<'0'>> = {
   [K in keyof O]: K extends Path[Pos<I>]                            // If K is part of Path
                   ? Pos<Next<I>> extends Length<Path>               // & if it's the target
                     ? A // update it                                // Update - target

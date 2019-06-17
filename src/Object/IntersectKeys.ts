@@ -16,5 +16,3 @@ export type IntersectKeys<O extends object, O1 extends object, match extends Mat
     'default': Intersect<keyof O, keyof O1>
     'matches': {[K in Keys<O>]: Is<O[K], At<O1, K>, match> extends true ? K : never}[Keys<O>]
 }[Replace<match, 'extends' | 'equals' | 'loose', 'matches'>]
-// We filter the output of `_IntersectKeys` with `NonNullable` because when we
-// deal with `?` fields, a selected key can be `undefined` (isn't possible)

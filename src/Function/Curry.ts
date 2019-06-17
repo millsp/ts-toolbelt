@@ -5,24 +5,21 @@ import {Drop} from '../Tuple/Drop'
 import {Length} from '../Tuple/Length'
 import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'
-import {Type} from '../Any/Type'
 import {Arrow} from './Arrow'
-import {Equals} from '../Any/Equals'
 import {ParamsOf} from './ParamsOf'
 import {ReturnOf} from './ReturnOf'
-import {IterationOf, Iteration} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Key} from '../Iteration/Key'
 import {NonNullable} from '../Tuple/NonNullable'
-import {List} from '../_Internal'
+import {x} from '../Any/x'
 
-export type Gap = Type<never, 'gap'>
-
-type GapOf<T1 extends List, T2 extends List, TN extends List, I extends Iteration = IterationOf<'0'>> =
-    Equals<T1[Pos<I>], Gap> extends true
+type GapOf<T1 extends any[], T2 extends any[], TN extends any[], I extends Iteration = IterationOf<'0'>> =
+    T1[Pos<I>] extends x
     ? Append<TN, T2[Pos<I>]>
     : TN
 
-type _GapsOf<T1 extends List, T2 extends List, TN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+type _GapsOf<T1 extends any[], T2 extends any[], TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
     0: _GapsOf<T1, T2, GapOf<T1, T2, TN, I>, Next<I>>
     1: Concat<TN, Drop<T2, Key<I>>>
 }[
@@ -31,14 +28,14 @@ type _GapsOf<T1 extends List, T2 extends List, TN extends List = [], I extends I
     : 0
 ]
 
-type GapsOf<T1 extends List, T2 extends List> =
+type GapsOf<T1 extends any[], T2 extends any[]> =
     _GapsOf<T1, T2> extends infer X
-    ? Cast<X, List>
+    ? Cast<X, any[]>
     : never
 
 
-type Gaps<T extends List> = NonNullable<{
-    [K in keyof T]?: T[K] | Gap
+type Gaps<T extends any[]> = NonNullable<{
+    [K in keyof T]?: T[K] | x
 }>
 
 /** Curry a **`Function`** like **`curry()`**
@@ -47,7 +44,7 @@ type Gaps<T extends List> = NonNullable<{
  * @example
  */
 export type Curry<F extends Arrow> =
-    <T extends List>(...args: Cast<T, Gaps<ParamsOf<F>>>) =>
-        GapsOf<T, ParamsOf<F>> extends [any, ...List]
+    <T extends any[]>(...args: Cast<T, Gaps<ParamsOf<F>>>) =>
+        GapsOf<T, ParamsOf<F>> extends [any, ...any[]]
         ? Curry<(...args: GapsOf<T, ParamsOf<F>>) => ReturnOf<F>>
         : ReturnOf<F>

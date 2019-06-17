@@ -88,22 +88,7 @@ export type IterationMap = {
     '__': ['__', '__', string, number, '-' | '0' | '+']
 }
 
-/** Describes a valid entry of **`IterationMap`**
- * - `[0]`: Previous
- * - `[1]`: Next
- * - `[2]`: Current **`string`**
- * - `[3]`: Current **`number`**
- * - `[4]`: Sign (- / 0 / +)
- */
-export type Iteration = [
-    keyof IterationMap,
-    keyof IterationMap,
-    string,
-    number,
-    '-' | '0' | '+'
-]
-
-/** Transform a**number**to an **`Iteration`**
+/** Transform a **number** to an **`Iteration`**
  * (to use **`Prev`**, **`Next`**, & **`Pos`**)
  * @param N to transform
  * @returns **`Iteration`**

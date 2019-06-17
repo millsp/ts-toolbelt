@@ -1,7 +1,7 @@
 {
   "name": "ts-toolbelt",
-  "version": "0.0.16",
-  "license": "AGPL-3.0-only",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
   "author": "Pierre-Antoine Mills",
   "description": "👷 Higher type safety for TypeScript",
   "keywords": [
@@ -18,8 +18,11 @@
   "types": "out/types/src/index.d.ts",
   "main": "out/src/index.js",
   "scripts": {
-    "build:types": "tsc --emitDeclarationOnly",
-    "setup:dev": "npm install --only=dev"
+    "build:types":  "tsc --emitDeclarationOnly",
+    "build:docs":   "typedoc --out docs ./src/ --theme ../eledoc/bin/default/",
+    "setup:dev":    "npm install --only=dev",
+    "git:push":     "git add docs/ && git commit -am 'release' && git push origin master",
+    "prepublish":   "rm -fr out && npm run build:types && npm run build:docs && npm run git:push"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^1.9.0",

@@ -1,8 +1,10 @@
-/** Exclude **`A`** out of **`U`**
+/** Remove **`M`** out of **`U`**
  * @param U to remove from
- * @param A to remove out
+ * @param M to remove out
  * @returns **union**
  * @example
  */
-export type Exclude<U extends any, A extends any> =
-    U extends A ? never : U
+export type Exclude<U extends any, M extends any> =
+    U extends M
+    ? never
+    : U

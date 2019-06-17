@@ -1,17 +1,16 @@
 import {Longest} from './Longest'
-import {List} from '../_Internal'
+import {Length} from './Length'
+import {Concat} from './Concat'
+import {Drop} from './Drop'
+import {Max} from '../Number/Max'
 
 /** Complete the entries of **`T`** with the ones of **`T1`**
  * @param T to complete
  * @param T1 to copy from
- * @returns **`List`**
+ * @returns **`any[]`**
  * @example
  */
-export type Merge<T extends List, T1 extends List> =
+export type Merge<T extends any[], T1 extends any[]> =
     T1 extends Longest<T, T1>
-    ? {
-        [K in keyof T1]: K extends keyof T
-                         ? T[K]
-                         : T1[K]
-    }
+    ? Concat<T, Drop<T1, Length<T, 's'>>>
     : T

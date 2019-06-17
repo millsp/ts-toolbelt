@@ -75,7 +75,8 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_tuple_drop_.html#drop" class="tsd-kind-icon">Drop</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_tuple_drop_.html#_drop" class="tsd-kind-icon">_<wbr>Drop</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_tuple_drop_.html#dropback" class="tsd-kind-icon">Drop<wbr>Back</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_tuple_drop_.html#dropforth" class="tsd-kind-icon">Drop<wbr>Forth</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,7 +96,7 @@
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">T</span><span class="tsd-signature-symbol">: </span><a href="__internal_.html#list" class="tsd-signature-type">List</a>                    <div class="tsd-comment">
+							<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
 								<div class="lead">
 									<p>to remove from</p>
 								</div>
@@ -118,33 +119,52 @@
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>List</code></strong></p>
+						<p><p><strong><code>any[]</code></strong></p>
 						</p>
 						<h4>example</h4>
 						<p></p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d573c5f/src/Tuple/Drop.ts#L27">Tuple/Drop.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/983c926/src/Tuple/Drop.ts#L36">Tuple/Drop.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="_drop" class="tsd-anchor"></a>
-					<h3>_<wbr>Drop</h3>
-					<div class="tsd-signature tsd-kind-icon">_Drop&lt;T, N, I&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: any[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;T&gt;&gt;; }[N extends IterationMap[IterationMap[I[1]][1]][2] ? 1 : 0]; 1: Tail&lt;T&gt;; }[N extends IterationMap[I[1]][2] ? 1 : 0]; 1: T; }[N extends I[2] ? 1 : 0]</span></div>
+					<a name="dropback" class="tsd-anchor"></a>
+					<h3>Drop<wbr>Back</h3>
+					<div class="tsd-signature tsd-kind-icon">DropBack&lt;T, N, I&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: any[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;Pop&lt;T&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2] ? 1 : 0]; 1: Pop&lt;Pop&lt;T&gt;&gt;; }[N extends IterationMap[IterationMap[I[1]][1]][2] ? 1 : 0]; 1: Pop&lt;T&gt;; }[N extends IterationMap[I[1]][2] ? 1 : 0]; 1: T; }[N extends I[2] ? 1 : 0]</span></div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-						<span class="name">T</span><span class="tsd-signature-symbol">: </span><a href="__internal_.html#list" class="tsd-signature-type">List</a>                    </li>
+						<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    </li>
 						<li>
 						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    </li>
 						<li>
-						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iterationof_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d573c5f/src/Tuple/Drop.ts#L11">Tuple/Drop.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/983c926/src/Tuple/Drop.ts#L20">Tuple/Drop.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="dropforth" class="tsd-anchor"></a>
+					<h3>Drop<wbr>Forth</h3>
+					<div class="tsd-signature tsd-kind-icon">DropForth&lt;T, N, I&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: any[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;Tail&lt;T&gt;&gt;&gt;; }[N extends IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2] ? 1 : 0]; 1: Tail&lt;Tail&lt;T&gt;&gt;; }[N extends IterationMap[IterationMap[I[1]][1]][2] ? 1 : 0]; 1: Tail&lt;T&gt;; }[N extends IterationMap[I[1]][2] ? 1 : 0]; 1: T; }[N extends I[2] ? 1 : 0]</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    </li>
+						<li>
+						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    </li>
+						<li>
+						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/983c926/src/Tuple/Drop.ts#L11">Tuple/Drop.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,7 +187,10 @@
 						<a href="_tuple_drop_.html#drop" class="tsd-kind-icon">Drop</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_tuple_drop_.html#_drop" class="tsd-kind-icon">_<wbr>Drop</a>
+						<a href="_tuple_drop_.html#dropback" class="tsd-kind-icon">Drop<wbr>Back</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_tuple_drop_.html#dropforth" class="tsd-kind-icon">Drop<wbr>Forth</a>
 					</li>
 				</ul>
 			</nav>

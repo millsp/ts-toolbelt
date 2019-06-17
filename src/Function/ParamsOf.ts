@@ -2,7 +2,7 @@ import {Arrow} from './Arrow'
 
 /** Extract parameters from a **`Function`**
  * @param F to extract from
- * @returns **`List`**
+ * @returns **`any[]`**
  * @example
  */
 export type ParamsOf<F extends Arrow> =

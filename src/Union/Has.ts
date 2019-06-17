@@ -1,14 +1,13 @@
-import {Equals} from '../Any/Equals'
 import {Intersect} from './Intersect'
 
 /** Check whether **`U`** contains **`A`** or not
- * (Note that **`U`** & **`A`** can be swapped)
+ * (Note: **`U`** & **`A`** can be interchanged)
  * @param U to be inspected
- * @param A to check existence
+ * @param A to check within
  * @returns **`true`** or **`false`**
  * @example
  */
 export type Has<U extends any, A extends any> =
-    Equals<Intersect<U, A>, never> extends true
+    [Intersect<U, A>] extends [never]
     ? false
     : true

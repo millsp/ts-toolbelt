@@ -6,4 +6,4 @@ import {Exclude} from '../Union/Exclude'
  * @example
  */
 export type Keys<O extends object> =
-    Exclude<keyof O, keyof any[]> // !important
+    Exclude<keyof O, keyof any[]> // ! important

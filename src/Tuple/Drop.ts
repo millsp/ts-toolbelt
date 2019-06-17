@@ -1,15 +1,24 @@
 import {Tail} from './Tail'
 import {Next} from '../Iteration/Next'
-import {Reverse} from './Reverse'
 import {Cast} from '../Any/Cast'
-import {IterationOf, Iteration} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from '../Number/_Internal'
 import {Key} from '../Iteration/Key'
 import {Way} from '../_Internal'
-import {List} from '../_Internal'
+import {Pop} from './Pop'
 
-type _Drop<T extends List, N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
-    0: _Drop<Tail<T>, N, Next<I>>
+type DropForth<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+    0: DropForth<Tail<T>, N, Next<I>>
+    1: T
+}[
+    N extends Key<I>
+    ? 1
+    : 0
+]
+
+type DropBack<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+    0: DropBack<Pop<T>, N, Next<I>>
     1: T
 }[
     N extends Key<I>
@@ -21,12 +30,12 @@ type _Drop<T extends List, N extends Nbr, I extends Iteration = IterationOf<'0'>
  * @param T to remove from
  * @param N to remove out
  * @param way to remove from end (?='->')
- * @returns **`List`**
+ * @returns **`any[]`**
  * @example
  */
-export type Drop<T extends List, N extends Nbr, way extends Way = '->'> = {
-    '->': _Drop<T, N>
-    '<-': Reverse<_Drop<Reverse<T>, N>>
+export type Drop<T extends any[], N extends Nbr, way extends Way = '->'> = {
+    '->': DropForth<T, N>
+    '<-': DropBack<T, N>
 }[way] extends infer X
-? Cast<X, List>
+? Cast<X, any[]>
 : never

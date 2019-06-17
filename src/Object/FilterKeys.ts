@@ -12,5 +12,4 @@ import {Keys} from './Keys'
 export type FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
     [K in Keys<O>]: Is<O[K], M, match> extends true ? never : K
 }[Keys<O>]
-// We filter the output of `_FilterKeys` with `NonNullable` because when we
-// deal with `?` fields, a selected key can be `undefined` (isn't possible)
+

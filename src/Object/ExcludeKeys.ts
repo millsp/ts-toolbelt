@@ -17,5 +17,4 @@ export type ExcludeKeys<O extends object, O1 extends object, match extends Match
     'default': Exclude<keyof O, keyof O1>
     'matches': {[K in Keys<O>]: Is<O[K], At<O1, K>, match> extends true ? never : K}[Keys<O>]
 }[Replace<match, 'extends' | 'equals' | 'loose', 'matches'>]
-// We filter the output of `_ExcludeKeys` with `NonNullable` because when we
-// deal with `?` fields, a selected key can be `undefined` (isn't possible)
+

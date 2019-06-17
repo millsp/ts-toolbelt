@@ -1,6 +1,7 @@
 import {FilterKeys} from './FilterKeys'
 import {Match} from '../Any/_Internal'
 import {Pick} from './Pick'
+import {Cast} from '../Any/Cast'
 
 /** Filter out of **`O`** the fields that match **`M`**
  * @param O to remove from
@@ -10,4 +11,7 @@ import {Pick} from './Pick'
  * @example
  */
 export type Filter<O extends object, M extends any, match extends Match = 'default'> =
-    Pick<O, FilterKeys<O, M, match>>
+    Pick<O, FilterKeys<O, M, match>> extends infer X
+    ? Cast<X, object>
+    : never
+

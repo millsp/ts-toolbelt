@@ -1,4 +1,5 @@
-import {Iteration, IterationOf} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
 import {Equals} from '../Any/Equals'
 import {Key} from '../Iteration/Key'

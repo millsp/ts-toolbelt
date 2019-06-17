@@ -1,17 +1,14 @@
-import {NonNullable as UNonNullable} from '../Union/NonNullable'
-import {Extends} from '../Any/Extends'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Merge} from './Merge'
+import {Equals} from '../Any/Equals'
 
 type WritableFlat<O> = {
     -readonly [K in keyof O]: O[K]
 }
 
 type WritableDeep<O> = {
-    -readonly [K in keyof O]: Extends<UNonNullable<O[K]>, object> extends true // Remove null & undefined
-                              ? WritableDeep<O[K]>                             // To check if its an object
-                              : O[K]                                           // Or return a -readonly
+    -readonly [K in keyof O]: WritableDeep<O[K]>
 }
 
 type WritablePart<O extends object, depth extends Depth> = {
@@ -27,4 +24,6 @@ type WritablePart<O extends object, depth extends Depth> = {
  * @example
  */
 export type Writable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> =
-    Merge<WritablePart<Pick<O, K>, depth>, O>
+    Equals<K, keyof O> extends true
+    ? WritablePart<O, depth> // Merge is not necessary
+    : Merge<WritablePart<Pick<O, K>, depth>, O>

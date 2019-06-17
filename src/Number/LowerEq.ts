@@ -1,5 +1,6 @@
 import {_GreaterEq} from './GreaterEq'
-import {Iteration, IterationOf} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
 import {Cast} from '../Any/Cast'
 

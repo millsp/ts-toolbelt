@@ -1,4 +1,5 @@
-import {IterationOf, Iteration} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Pos} from '../Iteration/Pos'
 import {Prev} from '../Iteration/Prev'
 import {Next} from '../Iteration/Next'
@@ -6,6 +7,7 @@ import {_IsNegative} from './IsNegative'
 import {Cast} from '../Any/Cast'
 import {Nbr} from './_Internal'
 import {Format} from '../Iteration/_Internal'
+import {Fmt} from '../Iteration/Fmt'
 
 type MinusPositive<N1 extends Iteration, N2 extends Iteration> = {
     0: MinusPositive<Prev<N1>, Prev<N2>> // N1 = -/+, N2 = +
@@ -45,7 +47,7 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> =
  */
 export type Minus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =
     _Minus<IterationOf<N1>, IterationOf<N2>> extends infer I
-    ? Pos<Cast<I, Iteration>, fmt>
+    ? Fmt<Cast<I, Iteration>, fmt>
     : never
 
 // type Test0<N extends Nbr> = [ // 60 Ops
@@ -120,5 +122,5 @@ export type Minus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =
 //     [K in keyof Test00]: Test1<Cast<Test00[K], string>>
 // }
 
-// type t = Test2<'-14'>
+// type t = Test2<'-11'>
 

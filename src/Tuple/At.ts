@@ -1,5 +1,4 @@
 import {At as OAt} from '../Object/At'
-import {List} from '../_Internal'
 
 /** Get in **`T`** the type of an entry of key **`K`**
  * @param T to extract from
@@ -8,5 +7,5 @@ import {List} from '../_Internal'
  * @example
  * @internal
  */
-export type At<T extends List, K extends string> =
+export type At<T extends any[], K extends string> =
     OAt<T, K>

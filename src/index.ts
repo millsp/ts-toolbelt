@@ -54,6 +54,9 @@
 // Need a type?
 // -> Open an issue (+fund it)
 
+
+// todo se why docgen fails -> hint fails on Tuple ? Re-add infer X?
+
 import * as Test from './Test'
 import * as A from './Any/_api'
 import * as B from './Boolean/_api'

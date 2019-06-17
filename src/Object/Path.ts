@@ -1,4 +1,5 @@
-import {IterationOf, Iteration} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
 import {Length} from '../Tuple/Length'
@@ -7,7 +8,7 @@ import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 
 type _Path<O, Path extends string[], I extends Iteration = IterationOf<'0'>> = {
-    0: _Path<UNonNullable<At<Cast<O, object>, Path[Pos<I>]>>, Path, Next<I>>
+    0: _Path<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
 }[
     Pos<I> extends Length<Path>

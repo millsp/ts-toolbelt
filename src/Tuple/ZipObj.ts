@@ -1,13 +1,13 @@
 import {Length} from './Length'
 import {Pos} from '../Iteration/Pos'
 import {Next} from '../Iteration/Next'
-import {Iteration, IterationOf} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
-import {List} from '../_Internal'
 import {Merge} from '../Object/Merge'
 import {Record} from '../Object/Record'
 
-type _ZipObj<TProp extends string[], TField extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
+type _ZipObj<TProp extends string[], TField extends any[], O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
     0: _ZipObj<TProp, TField, Merge<O, Record<TProp[Pos<I>], TField[Pos<I>]>>, Next<I>>
     1: O
 }[
@@ -22,7 +22,7 @@ type _ZipObj<TProp extends string[], TField extends List, O extends object = {},
  * @returns **`object`**
  * @example
  */
-export type ZipObj<TKeys extends string[], TFields extends List> =
+export type ZipObj<TKeys extends string[], TFields extends any[]> =
     _ZipObj<TKeys, TFields> extends infer X
     ? Cast<X, object>
     : never

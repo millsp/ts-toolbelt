@@ -1,6 +1,4 @@
 import {MergeKeys as OMergeKeys} from '../Object/MergeKeys'
-import {Cast} from '../Any/Cast'
-import {List} from '../_Internal'
 
 /** Get the keys of **`T` & `T1`**
  * @param T
@@ -8,7 +6,5 @@ import {List} from '../_Internal'
  * @returns **`keyof`**
  * @example
  */
-export type MergeKeys<T extends List, T1 extends List> =
-    OMergeKeys<T, T1> extends infer X
-    ? Cast<X, keyof (T & T1)>
-    : never
+export type MergeKeys<T extends any[], T1 extends any[]> =
+    OMergeKeys<T, T1>

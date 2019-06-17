@@ -1,6 +1,7 @@
 import {ExcludeKeys} from './ExcludeKeys'
 import {Match} from '../Any/_Internal'
 import {Pick} from './Pick'
+import {Cast} from '../Any/Cast'
 
 /** Exclude the fields of **`O1`** out of **`O`**
  * (If `match = 'default'`, no type checks are done)
@@ -11,4 +12,7 @@ import {Pick} from './Pick'
  * @example
  */
 export type Exclude<O extends object, O1 extends object, match extends Match = 'default'> =
-    Pick<O, ExcludeKeys<O, O1, match>>
+    Pick<O, ExcludeKeys<O, O1, match>> extends infer X
+    ? Cast<X, object>
+    : never
+

@@ -1,4 +1,3 @@
-import {List} from '../_Internal'
 
 /** Alias to create a **`Function`**
  * @param P parameters
@@ -6,5 +5,5 @@ import {List} from '../_Internal'
  * @returns **`Function`**
  * @example
  */
-export type Arrow<P extends List = any, R extends any = any> =
+export type Arrow<P extends any[] = any, R extends any = any> =
     (...args: P) => R

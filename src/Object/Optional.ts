@@ -1,6 +1,4 @@
 import {Merge} from './Merge'
-import {NonNullable as UNonNullable} from '../Union/NonNullable'
-import {Extends} from '../Any/Extends'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Equals} from '../Any/Equals'
@@ -10,9 +8,7 @@ type OptionalFlat<O> = {
 }
 
 type OptionalDeep<O> = {
-  [K in keyof O]?: Extends<UNonNullable<O[K]>, object> extends true // Remove null & undefined
-                   ? OptionalDeep<O[K]>                             // To check if its an object
-                   : O[K]                                           // Or return an optional
+  [K in keyof O]?: OptionalDeep<O[K]>
 }
 
 type OptionalPart<O extends object, depth extends Depth> = {

@@ -1,10 +1,12 @@
-import {Merge} from './Merge'
+import {At} from './At'
 
 /** Update the fields of **`O`** with the ones of **`O1`**
- * @param O to complete
- * @param O1 to copy from
+ * (only the existing fields will be updated)
+ * @param O to update
+ * @param O1 to update with
  * @returns **`object`**
  * @example
  */
-export type Overwrite<O extends object, O1 extends object> =
-    Merge<O1, O>
+export type Overwrite<O extends object, O1 extends object> = {
+    [K in keyof O]: At<O1, K>
+}

@@ -1,11 +1,10 @@
-import {Iteration} from './IterationOf'
+import {Iteration} from './Iteration'
 import {Format, FormatMap} from './_Internal'
 
 /** Get the position of **`I`** (**number**)
  * @param I to query
- * @param fmt output (?=`'n'`)
  * @returns **`number`**
  * @example
  */
-export type Pos<I extends Iteration, fmt extends Format = 'n'> =
-    I[FormatMap[fmt]] // iteration position
+export type Pos<I extends Iteration> =
+    I[FormatMap['n']] // iteration position

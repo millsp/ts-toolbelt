@@ -1,11 +1,10 @@
-import {Iteration} from './IterationOf'
+import {Iteration} from './Iteration'
 import {FormatMap, Format} from './_Internal'
 
 /** Get the position of **`I`** (**string**)
  * @param I to query
- * @param fmt output (?=`'s'`)
  * @returns **`string`**
  * @example
  */
-export type Key<I extends Iteration, fmt extends Format = 's'> =
-    I[FormatMap[fmt]] // iteration position
+export type Key<I extends Iteration> =
+    I[FormatMap['s']] // iteration position

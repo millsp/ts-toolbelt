@@ -6,4 +6,6 @@
  * @example
  */
 export type Replace<U extends any, M extends any, A extends any> =
-    U extends M ? A : U
+    U extends M
+    ? A
+    : U

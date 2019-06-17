@@ -1,11 +1,10 @@
-import {List} from '../_Internal'
 
 /** Remove the first item out of a **tuple**
  * @param T
- * @returns **`List`**
+ * @returns **`any[]`**
  * @example
  */
-export type Tail<T extends List> =
-    ((...t: T) => any) extends ((_: any, ...tail: infer TTail) => any)
+export type Tail<T extends any[]> =
+    ((...t: T) => any) extends ((head: any, ...tail: infer TTail) => any)
     ? TTail
     : never

@@ -85,7 +85,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="replace" class="tsd-anchor"></a>
 					<h3>Replace</h3>
-					<div class="tsd-signature tsd-kind-icon">Replace&lt;T, M, A, modx&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Replace&lt;T, M, A, modx&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">Replace&lt;T, M, A, match&gt;<span class="tsd-signature-symbol">:</span> <a href="_any_cast_.html#cast" class="tsd-signature-type">Cast</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">OReplace</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">M</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">match</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Update with <strong><code>A</code></strong> the entries of <strong><code>T</code></strong> that match <strong><code>M</code></strong></p>
@@ -94,16 +94,11 @@
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">T</span><span class="tsd-signature-symbol">: </span><a href="__internal_.html#list" class="tsd-signature-type">List</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to update</p>
-								</div>
-							</div>
-						</li>
+						<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    </li>
 						<li>
 							<span class="name">M</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    <div class="tsd-comment">
 								<div class="lead">
-									<p>to select entries</p>
+									<p>to select fields</p>
 								</div>
 							</div>
 						</li>
@@ -115,23 +110,26 @@
 							</div>
 						</li>
 						<li>
-							<span class="name">modx</span><span class="tsd-signature-symbol">: </span><a href="_object__internal_.html#modx" class="tsd-signature-type">Modx</a>                    <div class="tsd-comment">
+							<span class="name">match</span><span class="tsd-signature-symbol">: </span><a href="_any__internal_.html#match" class="tsd-signature-type">Match</a>                    <div class="tsd-comment">
 								<div class="lead">
-									<p>to set modifiers (?=<code>[&#39;!&#39;, &#39;W&#39;]</code>)</p>
+									<p>to change precision (?=<code>&#39;default&#39;</code>)</p>
 								</div>
 							</div>
 						</li>
 					</ul>
 					<div class="tsd-comment">
+						<h4>param</h4>
+						<p><p>to update</p>
+						</p>
 						<h4>returns</h4>
-						<p><p><strong><code>List</code></strong></p>
+						<p><p><strong><code>any[]</code></strong></p>
 						</p>
 						<h4>example</h4>
 						<p></p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d573c5f/src/Tuple/Replace.ts#L16">Tuple/Replace.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/983c926/src/Tuple/Replace.ts#L13">Tuple/Replace.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>

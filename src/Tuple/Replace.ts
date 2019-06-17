@@ -1,19 +1,14 @@
 import {Replace as OReplace} from '../Object/Replace'
-import {Modx} from '../Object/_Internal'
-import {TupleOf} from '../Object/TupleOf'
-import {Length} from './Length'
+import {Match} from '../Any/_Internal'
 import {Cast} from '../Any/Cast'
-import {List} from '../_Internal'
 
 /** Update with **`A`** the entries of **`T`** that match **`M`**
- * @param T to update
- * @param M to select entries
+ * @param O to update
+ * @param M to select fields
  * @param A to update with
- * @param modx to set modifiers (?=`['!', 'W']`)
- * @returns **`List`**
+ * @param match to change precision (?=`'default'`)
+ * @returns **`any[]`**
  * @example
  */
-export type Replace<T extends List, M extends any, A extends any, modx extends Modx = ['!', 'W']> =
-    TupleOf<OReplace<T, M, A, modx>, Length<T, 's', 'max'>> extends infer X
-    ? Cast<X, List>
-    : never
+export type Replace<T extends any[], M extends any, A extends any, match extends Match = 'default'> =
+    Cast<OReplace<T, M, A, match>, any[]>

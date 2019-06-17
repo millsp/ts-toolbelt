@@ -1,6 +1,7 @@
 import {Length} from '../../Tuple/Length'
-import {Compute} from '../../Extras/Compute'
-import {Iteration, IterationOf} from '../../Iteration/IterationOf'
+import {Compute} from '../../Any/Compute'
+import {IterationOf} from '../../Iteration/IterationOf'
+import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Readonly as OReadonly} from '../Readonly'
@@ -8,10 +9,9 @@ import {Last} from '../../Tuple/Last'
 import {Pop} from '../../Tuple/Pop'
 import {Depth} from '../_Internal'
 import {Path as PPath} from './_Internal'
-import {List} from '../../_Internal'
-import {Prepend} from '../../Tuple/_api'
+import {Prepend} from '../../Tuple/Prepend'
 
-type _Readonly<O extends object, Path extends List<string>, K extends string, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
+type _Readonly<O extends object, Path extends string[], K extends string, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
   [P in keyof O]: P extends Path[Pos<I>]                                     // If K is part of Path
                   ? Pos<Next<I>> extends Length<Path>                        // & if it's the target
                     ? OReadonly<O[P] & {}, K, depth> // immutable            // Update - target

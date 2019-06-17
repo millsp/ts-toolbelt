@@ -1,28 +1,31 @@
-import {Tail} from './Tail'
 import {Concat} from './Concat'
 import {Append} from './Append'
 import {Cast} from '../Any/Cast'
 import {Length} from './Length'
-import {List} from '../_Internal'
+import {Iteration} from '../Iteration/Iteration'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Next} from '../Iteration/Next'
+import {Pos} from '../Iteration/Pos'
 
-type _UnNest<T extends List, TN extends List = []> = {
-    0: _UnNest<Tail<T>, Concat<TN, T[0]>>
-    1: _UnNest<Tail<T>, Append<TN, T[0]>>
+type _UnNest<T extends any[], TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _UnNest<T, Concat<TN, T[Pos<I>]>, Next<I>>
+    1: _UnNest<T, Append<TN, T[Pos<I>]>, Next<I>>
     2: TN
 }[
-    0 extends Length<T>
+
+    Pos<I> extends Length<T>
     ? 2
-    : List extends T[0]
+    : T[Pos<I>] extends any[]
       ? 0
       : 1
 ]
 
 /** Remove a dimension of **`T`**
  * @param T to un-nest
- * @returns **`List`**
+ * @returns **`any[]`**
  * @example
  */
-export type UnNest<T extends List> =
+export type UnNest<T extends any[]> =
     _UnNest<T> extends infer X
-    ? Cast<X, List>
+    ? Cast<X, any[]>
     : never

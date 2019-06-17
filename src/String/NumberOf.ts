@@ -7,6 +7,4 @@ import {Pos} from '../Iteration/Pos'
  * @example
  */
 export type NumberOf<N extends string> =
-    N extends keyof IterationMap
-    ? Pos<IterationOf<N>>
-    : number
+    Pos<IterationOf<N>>

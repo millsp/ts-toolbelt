@@ -6,5 +6,5 @@ import {Exclude} from './Exclude'
  * @returns **union**
  * @example
  */
-export type Diff<U1, U2> =
+export type Diff<U1 extends any, U2 extends any> =
     Exclude<U1, U2> | Exclude<U2, U1>

@@ -1,10 +1,11 @@
 import {_Greater} from './Greater'
 import {_Lower} from './Lower'
-import {Iteration, IterationOf} from '../Iteration/IterationOf'
-import {Pos} from '../Iteration/Pos'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {Nbr} from './_Internal'
 import {Format} from '../Iteration/_Internal'
+import {Fmt} from '../Iteration/Fmt'
 
 type _Clamp<N extends Iteration, Min extends Iteration, Max extends Iteration> =
     _Greater<N, Max> extends true
@@ -24,5 +25,5 @@ type _Clamp<N extends Iteration, Min extends Iteration, Max extends Iteration> =
  */
 export type Clamp<N extends Nbr, Min extends Nbr, Max extends Nbr, fmt extends Format = 's'> =
     _Clamp<IterationOf<N>, IterationOf<Min>, IterationOf<Max>> extends infer I
-    ? Pos<Cast<I, Iteration>, fmt>
+    ? Fmt<Cast<I, Iteration>, fmt>
     : never

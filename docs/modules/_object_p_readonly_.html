@@ -86,7 +86,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="readonly" class="tsd-anchor"></a>
 					<h3>Readonly</h3>
-					<div class="tsd-signature tsd-kind-icon">Readonly&lt;O, Path, depth&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;_&quot; extends Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;[0] ? 1 extends Length&lt;Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;, &quot;n&quot;, &quot;reg&quot;&gt; ? Readonly&lt;O &amp; {}, Path[Length&lt;Tail&lt;Path&gt;, &quot;n&quot;, &quot;reg&quot;&gt;], depth&gt; : { [K in keyof _Readonly&lt;O &amp; {}, Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;, Path[Length&lt;Tail&lt;Path&gt;, &quot;n&quot;, &quot;reg&quot;&gt;], depth, [&quot;0&quot;, &quot;2&quot;, &quot;1&quot;, 1, &quot;+&quot;]&gt;]: _Readonly&lt;O &amp; {}, Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;, Path[Length&lt;Tail&lt;Path&gt;, &quot;n&quot;, &quot;reg&quot;&gt;], depth, [&quot;0&quot;, &quot;2&quot;, &quot;1&quot;, 1, &quot;+&quot;]&gt;[K]; } : O</span></div>
+					<div class="tsd-signature tsd-kind-icon">Readonly&lt;O, Path, depth&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;_&quot; extends Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;[0] ? 1 extends Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;[&quot;length&quot;] ? Readonly&lt;O &amp; {}, Path[Tail&lt;Path&gt;[&quot;length&quot;]], depth&gt; : { [K in keyof _Readonly&lt;O &amp; {}, Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;, Path[Tail&lt;Path&gt;[&quot;length&quot;]], depth, [&quot;0&quot;, &quot;2&quot;, &quot;1&quot;, 1, &quot;+&quot;]&gt;]: _Readonly&lt;O &amp; {}, Pop&lt;Prepend&lt;Path, &quot;_&quot;&gt;&gt;, Path[Tail&lt;Path&gt;[&quot;length&quot;]], depth, [&quot;0&quot;, &quot;2&quot;, &quot;1&quot;, 1, &quot;+&quot;]&gt;[K]; } : O</span></div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -98,7 +98,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d573c5f/src/Object/P/Readonly.ts#L22">Object/P/Readonly.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/983c926/src/Object/P/Readonly.ts#L22">Object/P/Readonly.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -111,17 +111,17 @@
 						<li>
 						<span class="name">O</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>                    </li>
 						<li>
-						<span class="name">Path</span><span class="tsd-signature-symbol">: </span><a href="__internal_.html#list" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span>                    </li>
+						<span class="name">Path</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>                    </li>
 						<li>
 						<span class="name">K</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>                    </li>
 						<li>
 						<span class="name">depth</span><span class="tsd-signature-symbol">: </span><a href="_object__internal_.html#depth" class="tsd-signature-type">Depth</a>                    </li>
 						<li>
-						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iterationof_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d573c5f/src/Object/P/Readonly.ts#L14">Object/P/Readonly.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/983c926/src/Object/P/Readonly.ts#L14">Object/P/Readonly.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>

@@ -1,6 +1,8 @@
 // /* eslint-disable fp/no-class */
 // /* eslint-disable no-implicit-coercion */
 import {Test, O} from '../src/index'
+import {Compute} from '../src/Any/Compute'
+import {x} from '../src/Any/x'
 
 const {checks, check} = Test
 
@@ -228,6 +230,7 @@ type FILTERKEYS_O_LOOSE = 'a' | 'd' | 'e' | 'g' | 'j' | 'k'
 
 type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k';
 
+
 checks([
     check<O.FilterKeys<O, string, 'extends'>,           FILTERKEYS_O_DEFAULT,   Test.Pass>(),
     check<O.FilterKeys<O, number | undefined, 'loose'>, FILTERKEYS_O_LOOSE,     Test.Pass>(),
@@ -397,6 +400,14 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// MODIFY
+
+checks([
+    check<O.Modify<{a?: string}, {a: x, b: 9}>,     {a: string, b: 9},  Test.Pass>(),
+    check<O.Modify<{}, {a: x, b: 9}>,               {a: never, b: 9},   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // NONNULLABLE
 
 type NONNULLABLE_O_FLAT = {
@@ -543,7 +554,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // OVERWRITE
 
-// No test needed - same as Merge
+// No test needed (same as Merge)
 
 // ---------------------------------------------------------------------------------------
 // PATH
@@ -680,7 +691,6 @@ type REPLACE_STRING_NUMBER_OPT = {
 
 checks([
     check<O.Replace<O, string, number>,             REPLACE_STRING_NUMBER,      Test.Pass>(),
-    check<O.Replace<O, string, number, ['?', 'W']>, REPLACE_STRING_NUMBER_OPT,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
