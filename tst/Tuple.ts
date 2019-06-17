@@ -486,6 +486,8 @@ type SELECT_T_NUMBER_EQUALS = [
     number
 ];
 
+type t = T.SelectKeys<[1, 2, string & number, number], number>
+
 checks([
     check<T.Select<T, number, 'default'>,  SELECT_T_NUMBER_EXTENDS,     Test.Pass>(),
     check<T.Select<T, number, 'extends'>,  SELECT_T_NUMBER_EXTENDS,     Test.Pass>(),

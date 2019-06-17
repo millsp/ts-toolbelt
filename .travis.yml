@@ -2,7 +2,6 @@ language: node_js
 node_js:
 - '8.0'
 before_install:
-- npm install tslib
-- npm install typescript@3.5
+- npm run setup:dev
 script:
 - npm run build:types
