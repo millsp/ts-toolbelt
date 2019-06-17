@@ -65,49 +65,67 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel">
-				<center>
-					<img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" alt="logo" width="400"/>
-				</center>
+				<h1 align="center">ts-toolbelt</h1><br>
+				<p align="center">
+					<a href="https://gitpoint.co/">
+						<img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300">
+					</a>
+				</p>
+				<h2>
+					<p align="center">
+						Higher type safety for TypeScript
+					</p>
+				</h2>
+				<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+				<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+				<h2 id="table-of-contents">Table of Contents</h2>
+				<ul>
+					<li><a href="#introduction">Introduction</a></li>
+					<li><a href="#features">Features</a></li>
+					<li><a href="#feedback">Feedback</a></li>
+					<li><a href="#contributors">Contributors</a></li>
+					<li><a href="#build-process">Build Process</a></li>
+					<li><a href="#backers-">Backers</a></li>
+					<li><a href="#sponsors-">Sponsors</a></li>
+					<li><a href="#acknowledgments">Acknowledgments</a></li>
+				</ul>
+				<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+				<h2 id="introduction">Introduction</h2>
+				<p><a href="https://travis-ci.org/gitpoint/git-point"><img src="https://img.shields.io/travis/gitpoint/git-point.svg?style=flat-square" alt="Build Status"></a>
+					<a href="https://coveralls.io/github/gitpoint/git-point"><img src="https://img.shields.io/coveralls/github/gitpoint/git-point.svg?style=flat-square" alt="Coveralls"></a>
+					<a href="./CONTRIBUTORS.md"><img src="https://img.shields.io/badge/all_contributors-73-orange.svg?style=flat-square" alt="All Contributors"></a>
+					<a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a>
+					<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square" alt="Commitizen friendly"></a>
+				<a href="https://gitter.im/git-point"><img src="https://img.shields.io/badge/chat-on_gitter-008080.svg?style=flat-square" alt="Gitter chat"></a></p>
+				<p>View repository and user information, control your notifications and even manage your issues and pull requests. Built with React Native, GitPoint is one of the most feature-rich unofficial GitHub clients that is 100% free.</p>
+				<p><strong>Available for both iOS and Android.</strong></p>
+				<p align="center">
+					<img src = "http://i.imgur.com/HowF6aM.png" width=350>
+				</p>
+				<h2 id="features">Features</h2>
+				<p>A few of the things you can do with GitPoint:</p>
+				<ul>
+					<li>View user activity feed</li>
+					<li>Communicate on your issue and pull request conversations</li>
+					<li>Close or lock issues</li>
+					<li>Apply labels and assignees</li>
+					<li>Review and merge pull requests</li>
+					<li>Create new issues</li>
+					<li>Star, watch and fork repositories</li>
+					<li>Control your unread and participating notifications</li>
+					<li>Easily search for any user or repository</li>
+				</ul>
+				<p align="center">
+					<img src = "http://i.imgur.com/IkSnFRL.png" width=700>
+				</p>
+				<p align="center">
+					<img src = "http://i.imgur.com/0iorG20.png" width=700>
+				</p>
+				<h2 id="contributors">Contributors</h2>
+				<p>This project follows the <a href="https://github.com/kentcdodds/all-contributors">all-contributors</a> specification and is brought to you by these <a href="./CONTRIBUTORS.md">awesome contributors</a>.</p>
 				<h2 id="installation">Installation</h2>
 				<pre><code class="language-sh">npm install ts-toolbelt --save</code></pre>
 				<pre><code class="language-sh">yarn add ts-toolbelt</code></pre>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> T <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
-
-<span class="hljs-comment">// Do basic number operations</span>
-<span class="hljs-keyword">type</span> test0 = T.N.Minus&lt;<span class="hljs-string">'5'</span>, <span class="hljs-string">'20'</span>&gt; <span class="hljs-comment">// -15</span>
-
-<span class="hljs-keyword">type</span> O = {
-    a: {
-        b: {
-            c: <span class="hljs-string">'hello'</span>
-            d: <span class="hljs-string">'goodbye'</span>
-        }
-    }
-}
-
-<span class="hljs-comment">// Deeply change a type</span>
-<span class="hljs-keyword">type</span> test1 = T.O.P.Update&lt;O, [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span> | <span class="hljs-string">'d'</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]&gt;
-
-<span class="hljs-comment">// Or just merge them</span>
-<span class="hljs-keyword">type</span> test2 = T.O.Merge&lt;O, {x: <span class="hljs-string">'hello'</span>}&gt;</code></pre>
-				<p>And so much more... But before you start reading the docs:</p>
-				<p>The library is organized around TypeScript concepts:</p>
-				<ul>
-					<li>T.<strong>A*<em>: *</em>A</strong>ny        types</li>
-					<li>T.<strong>B*<em>: *</em>B</strong>oolean    types</li>
-					<li>T.<strong>C*<em>: *</em>C</strong>lass      types</li>
-					<li>T.<strong>F*<em>: *</em>F</strong>untion    types</li>
-					<li>T.<strong>I*<em>: *</em>I</strong>teration  types</li>
-					<li>T.<strong>N*<em>: *</em>N</strong>umber     types</li>
-					<li>T.<strong>O*<em>: *</em>O</strong>bject     types</li>
-					<li>T.<strong>S*<em>: *</em>S</strong>tring     types</li>
-					<li>T.<strong>T*<em>: *</em>T</strong>uple      types</li>
-					<li>T.<strong>U*<em>: *</em>U</strong>nion      types</li>
-				</ul>
-				<pre><code class="language-ts"><span class="hljs-keyword">type</span> test3 = T.A.Is&lt;<span class="hljs-string">'hello'</span>, <span class="hljs-built_in">string</span>&gt;    <span class="hljs-comment">// true</span>
-
-<span class="hljs-keyword">type</span> test4 = T.T.Concat&lt;[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>]&gt; <span class="hljs-comment">// [1, 2, 3, 4]</span>
-</code></pre>
 				<h1 id="documentation"><a href="https://pirix-gh.github.io/ts-toolbelt/">Documentation</a></h1>
 			</div>
 		</div>
