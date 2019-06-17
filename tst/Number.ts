@@ -145,7 +145,7 @@ checks([
     check<N.Max<'-1' | '9' | '10'>,     '10',   Test.Pass>(),
     check<N.Max<'-1' | '9' | 'xxxx'>,   string, Test.Pass>(),
     check<N.Max<string>,                string, Test.Pass>(),
-    check<N.Max<any>,                   any,    Test.Pass>(),
+    check<N.Max<any>,                   string, Test.Pass>(),
     check<N.Max<never>,                 '-1',   Test.Pass>(),
 ])
 
@@ -157,7 +157,7 @@ checks([
     check<N.Min<'1' | '9' | '-10'>,     '-10',  Test.Pass>(),
     check<N.Min<'-1' | '9' | 'xxxx'>,   string, Test.Pass>(),
     check<N.Min<string>,                string, Test.Pass>(),
-    check<N.Min<any>,                   any,    Test.Pass>(),
+    check<N.Min<any>,                   string, Test.Pass>(),
     check<N.Min<never>,                 '1',    Test.Pass>(),
 ])
 

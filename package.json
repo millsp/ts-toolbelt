@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "Apache-2.0",
   "author": "Pierre-Antoine Mills",
   "description": "👷 Higher type safety for TypeScript",
@@ -8,6 +8,7 @@
     "types",
     "tools",
     "safe",
+    "typesafe",
     "typescript"
   ],
   "homepage": "https://github.com/pirix-gh/ts-toolbelt",
@@ -18,21 +19,22 @@
   "types": "out/types/src/index.d.ts",
   "main": "out/src/index.js",
   "scripts": {
-    "build:types":  "tsc --emitDeclarationOnly",
-    "build:docs":   "typedoc --out docs ./src/ --theme ../eledoc/bin/default/ && touch ./docs/.nojekyll",
-    "setup:dev":    "npm install --only=dev",
-    "git:push":     "git add docs/ && git commit -am 'release' && git push origin master",
-    "prepublish":   "rm -fr out && npm run build:types && npm run build:docs && npm run git:push"
+    "build:types": "rm -fr out && tsc --emitDeclarationOnly",
+    "build:docs": "typedoc --out docs ./src/ --theme ../eledoc/bin/default/ && touch ./docs/.nojekyll",
+    "setup:dev": "npm install --only=dev",
+    "git:push": "git add docs/ && git commit -am 'release' && git push origin master",
+    "prepublishOnly": "npm run build:types && npm run build:docs && npm run git:push"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^1.9.0",
+    "@typescript-eslint/parser": "^1.10.2",
     "eledoc": "^0.0.5",
     "eslint": "^5.16.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-react": "^7.13.0",
     "ts-node": "^8.2.0",
+    "tslib": "^1.10.0",
     "typedoc": "^0.14.2",
-    "typescript": "^3.6.0-dev.20190607"
+    "typescript": "next"
   },
   "peerDependencies": {
     "typescript": "^3.5.0"

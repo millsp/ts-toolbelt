@@ -22,10 +22,13 @@ type MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
 type MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MinNegative<Exclude<N, Key<I>>, Prev<I>> // Find smallest -
     1: Next<I>
+    2: string
 }[
     [N] extends [never]
     ? 1
-    : 0
+    : string extends N
+      ? 2
+      : 0
 ]
 
 export type _Min<N extends Iteration> =

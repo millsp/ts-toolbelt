@@ -13,10 +13,13 @@ import {Fmt} from '../Iteration/Fmt'
 type MaxPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
     1: Prev<I>
+    2: string
 }[
     [N] extends [never]
     ? 1
-    : 0
+    : string extends N
+      ? 2
+      : 0
 ]
 
 type MaxNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
