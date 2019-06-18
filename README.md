@@ -63,9 +63,10 @@ It uses the type system itself for TypeScript to compute more complex types. In
 other words, its API exposes types that trade **CPU & RAM** for higher type
 safety.
 
-**ts-toolbelt** completes TypeScript with a collection of more than 150 types.
+**ts-toolbelt** completes TypeScript with a collection of more than **150**
+tested types.
 
-### Goals?
+#### Goals
 * This package aims to be the home of all **utility types**
 * To keep reasonable **performance**, so it won't bloat TS
 * And write software that's more type-safe, more **robust**
