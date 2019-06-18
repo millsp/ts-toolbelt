@@ -40,8 +40,6 @@
   </a>
 </p>
 
-
-
 ## Table of Contents
 
 - [📜 About](#-about)
@@ -59,11 +57,11 @@
 
 ## 📜 About
 
-**ts-toolbelt** is a collection of types that makes programming with TypeScript even safer. It's goal is to improve type correctness while adding a whole new set of features to TypeScript.
-
-It uses the type system itself for TypeScript to compute more complex types. In
-other words, its API exposes types that trade **CPU & RAM** for higher type
-safety.
+**ts-toolbelt** is a collection of types that makes programming with TypeScript
+even safer. It's goal is to improve type correctness while adding a whole new
+set of features to TypeScript. It uses the type system itself for TypeScript to
+compute more complex types. In other words, its API exposes types that trade
+**CPU & RAM** for higher type safety.
 
 **ts-toolbelt** completes TypeScript with a collection of more thant 150 types.
 
@@ -85,6 +83,10 @@ Here's some of the most useful features:
 * [Concat two tuples together](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html#concat)
 * [Get the last item of a tuple](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_last_.html#last)
 * ... and so much more
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/demo.gif" id="demo">
+<p align="center">
 
 If you don't find the type you are looking for, you are welcome to open
 a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
