@@ -138,24 +138,22 @@ There are many ways to contribute to the project:
 * Add new types to the collection
 
 #### Pull Requests
-**1.** Fork the project
-
-**2.** Clone your fork
-
-**3.** Create a pr/**feature** branch
-```sh
-git checkout -b pr/CoolFeature
-```
-**4.** Commit your changes
-```sh
-git commit -m 'Added this CoolFeature'
-```
-**5.** Run the tests
-**6.** Commit your changes
+1. Fork the project
+2. Clone your fork
+3. Create a pr/**feature** branch
+  ```sh
+  git checkout -b pr/CoolFeature
+  ```
+4. Commit your changes
+  ```sh
+  git commit -m 'Added this CoolFeature'
+  ```
+5. Run the tests
+6. Commit your changes
   ```sh
   git push origin pr/CoolFeature
   ```
-**7.** Open a pull request
+7. Open a pull request
 
 ## 👏 Sponsoring issues
 
