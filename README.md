@@ -95,8 +95,6 @@ a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=
 
 ## 🏁 Getting Started
 
-The project is maintained to adapt to the constant [changes](#compatibility) of TypeScript.
-
 ### Prerequisites
 
 ```sh
@@ -127,9 +125,7 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny) | **C**(lass) | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber) | **S**(tring) | **U**(nion) |
 
-
 [🔍 Browse the docs](https://pirix-gh.github.io/ts-toolbelt/)
-
 
 ## ➕ Contributing
 
@@ -165,7 +161,6 @@ There are many ways to contribute to the project:
 
 ## 👏 Sponsoring issues
 
-
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
   <img
   src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
@@ -173,12 +168,47 @@ There are many ways to contribute to the project:
 
 ## 💉 Running tests
 
+To run the tests, simply run:
+
+```sh
+npm test
+```
+
+**ts-toolbelt** has its own type-testing system that you can use on your own
+project. If you desire to do so, create a test file and start with the
+following:
+```ts
+import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
+
+const {checks, check} = Test
+
+checks([
+    check<N.Plus<'1', '30'>,    '31',  Test.Pass>(),
+    check<N.Plus<'5', '-3'>,    '2',   Test.Pass>(),
+])
+```
+
 ## 🔧 Compatibility
 
+The project is maintained to adapt to the constant [changes](#compatibility) of
+TypeScript:
+
+
 ## 🔮 What's next
+* **Automated performance tests**
+  Performance is checked manually with 
+  ```sh
+  npx tsc --noEmit ----extendedDiagnostics
+  ```
+* **Improve with user feedback**
 
 ## 🙏 Acknowledgements
 
+Many thanks to all the [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
+* [Matt McCutchen](https://github.com/mattmccutchen)
+
 ## 💬 Contact
+
+
 
 ## 🔓 Licence
