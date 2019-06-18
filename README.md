@@ -77,8 +77,7 @@ tested types.
 Here's some of the most useful features:
 
 * [Merge two types together](https://pirix-gh.github.io/ts-toolbelt/modules/_object_merge_.html#merge)
-* [Update the field of a
-  type](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html#update)
+* [Update the field of a type](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html#update)
 * [Make some fields optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html#optional)
 * [Change a type at any depth!](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html#update)
 * [Concat two tuples together](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html#concat)
@@ -139,9 +138,9 @@ There are many ways to contribute to the project:
 * Add new types to the collection
 
 #### Pull Requests
-* Fork the project
-* Clone your fork
-* Create a pr/**feature** branch
+**1.** Fork the project
+**2.** Clone your fork
+**3.** Create a pr/**feature** branch
   ```sh
   git checkout -b pr/CoolFeature
   ```
