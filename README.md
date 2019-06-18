@@ -125,10 +125,12 @@ type concat = tb.T.Concat<['hello'], ['world']>
 If you read the example above you will notice that the project is organized around TypeScript's main concepts:
 
 <p align="center">
+
 |  |  |  |  |  |
 |----------------|----------------|-----------------|--------------|-------------|
 | **A**(ny) | **C**(lass) | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber) | **S**(tring) | **U**(nion) |
+
 </p>
 
 <h3 align="center">
