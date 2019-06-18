@@ -57,28 +57,31 @@
 
 ## About
 
-**ts-toolbelt** is a collection of types that makes programming with TypeScript even safer. 
-
-It's goal is to ensure type correctness without too much effort from
-your part, while adding a whole new set of features to TypeScript.
+**ts-toolbelt** is a collection of types that makes programming with TypeScript even safer. It's goal is to ensure type correctness without too much effort from your part, while adding a whole new set of features to TypeScript.
 
 ### How?
 
-**ts-toolbelt** performs complex operations on types. It's API exposes types that will trade your CPU & RAM for a higher type safety.
+**ts-toolbelt** uses the type system itself for TypeScript to compute more
+complex types. In other words, its API exposes types that trade **CPU & RAM**
+for higher type safety.
 
-### Demo
+### Goals?
+ * This package aims to be the home of all utility types
+ * To keep reasonable performance, so it won't bloat TS
+ * And write software that's more type-safe, more robust
+ * (And bring a whole new set of features to TypeScript)
 
 ## Features
 
-Only the most useful features are mentioned here. You will find the complete
-list in the [documentation](https://pirix-gh.github.io/ts-toolbelt/) website.
+Here's some of the most useful features:
 
-* Merge two types together (doc)
-* Update the field of a type (doc)
-* Make some fields optional (doc)
-* Change a type at any depth! (doc)
-* Concat two tuples together (doc)
-* Get the last item of a tuple (doc)
+* Merge two types together
+  
+* Update the field of a type 
+* Make some fields optional
+* Change a type at any depth!
+* Concat two tuples together
+* Get the last item of a tuple
 * ... and so much more
 
 One of the goals of **ts-toolbelt** is to bring all the types one would ever
@@ -110,17 +113,16 @@ import tb from 'ts-toolbelt'
 
 type merged = tb.O.Merge<{name: string}, {age: number}>
 // {name: string, age: number}
+// `O` stands for "object"
 
 type concat = tb.T.Concat<['hello'], ['world']>
 // ['hello', 'world']
+// `T` stands for "tuple"
 ```
 
 ## Documentation
 
-Right above, you might have notices that we've used `O` and `T` to access the
-tools. They stand for **O**bject and **T**uple, respectively. And the whole
-library is organized the same way, around TypeScript concepts:
-
+If you read the example above you will notice that the project is organized around TypeScript's main concepts:
 * **A**(ny)
 * **B**(boolean)
 * **C**(lass)
@@ -132,7 +134,7 @@ library is organized the same way, around TypeScript concepts:
 * **T**(uple)
 * **U**(nion)
 
-https://pirix-gh.github.io/ts-toolbelt/
+🔍 [Browse the documentation](https://pirix-gh.github.io/ts-toolbelt/)
 
 ## Contributing
 
