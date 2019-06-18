@@ -172,8 +172,9 @@ To run the tests, simply run:
 npm test
 ```
 
-**ts-toolbelt** has its own type-testing system that you can use on your own
+**ts-toolbelt** has a type-testing system that you can use on your own
 project. This is how to get started:
+
 ```ts
 import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
 
@@ -204,5 +205,7 @@ The project is maintained to adapt to the constant
 
 ## 🙏 Acknowledgements
 
-Many thanks to all the [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
+Many thanks to all the
+[contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
+
 * [Matt McCutchen](https://github.com/mattmccutchen)
