@@ -20,13 +20,25 @@
   </p>
 </p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Gitter](https://img.shields.io/gitter/room/ts-toolbelt/community.svg)](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-[![Release](https://img.shields.io/npm/v/ts-toolbelt.svg)](https://www.npmjs.com/package/ts-toolbelt)
-[![Travis](https://img.shields.io/travis/pirix-gh/ts-toolbelt.svg)](https://travis-ci.org/pirix-gh/ts-toolbelt)
-[![Downloads](https://img.shields.io/npm/dm/ts-toolbelt.svg)](#)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![License](https://img.shields.io/npm/l/ts-toolbelt.svg)](#)
-
+<p align="center">
+  <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link">
+    <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/ts-toolbelt">
+    <img src="https://img.shields.io/npm/v/ts-toolbelt.svg">
+  </a>
+  <a href="https://travis-ci.org/pirix-gh/ts-toolbelt">
+    <img src="https://img.shields.io/travis/pirix-gh/ts-toolbelt.svg">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/npm/dm/ts-toolbelt.svg">
+  </a>
+  <a href="http://makeapullrequest.com">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/npm/l/ts-toolbelt.svg">
+  </a>
 </p>
 
 ## Table of Contents
