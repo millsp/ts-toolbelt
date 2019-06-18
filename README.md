@@ -42,44 +42,88 @@
 
 ## Table of Contents
 
-- [Motivation](#motivation)
+- [About](#about)
 - [Features](#features)
 - [Getting started](#getting-started)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
 - [Sponsoring issues](#sponsoring-issues)
 - [Running tests](#running-tests)
-- [Acknowledgments](#acknowledgments)
+- [Compatibility](#compatibility)
 - [What's next](#whats-next)
+- [Acknowledgments](#acknowledgments)
 - [Contact](#contact)
 - [Licence](#licence)
 
-## Motivation
+## About
 
-## Features
+**ts-toolbelt** is a collection of types that makes programming with TypeScript even safer. 
 
-* A
-* B
-* C
-* Feature request
+It's goal is to ensure type correctness without too much effort from
+your part, while adding a whole new set of features to TypeScript.
 
-## Getting Started
+### How?
 
-### Prerequisites
-
-### Installation
-
-```sh  
-npm install ts-toolbelt --save
-```  
-
-```sh  
-yarn add ts-toolbelt
-``` 
+**ts-toolbelt** performs complex operations on types. It's API exposes types that will trade your CPU & RAM for a higher type safety.
 
 ### Demo
 
+## Features
+
+Only the most useful features are mentioned here. You will find the complete
+list in the [documentation](https://pirix-gh.github.io/ts-toolbelt/) website.
+
+* Merge two types together (doc)
+* Update the field of a type (doc)
+* Make some fields optional (doc)
+* Change a type at any depth! (doc)
+* Concat two tuples together (doc)
+* Get the last item of a tuple (doc)
+* ... and so much more
+
+One of the goals of **ts-toolbelt** is to bring all the types one would ever
+need to a single package.
+
+If you don't find the type you were looking for, please feel welcome to open
+a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
+
+## Getting Started
+
+The project is maintained to adapt to the constant changes of TypeScript. See [compatibility](#compatibility) for more information.
+
+### Prerequisites
+
+```sh
+npm install typescript@^3.5.0 --save
+```
+
+### Installation
+
+```sh
+npm install ts-toolbelt --save
+```
+
+### Hello World
+
+```ts
+import tb from 'ts-toolbelt'
+
+type merged = tb.O.Merge<{name: string}, {age: number}>
+// {name: string, age: number}
+
+type concat = tb.T.Concat<['hello'], ['world']>
+// ['hello', 'world']
+```
+
 ## Documentation
+
+Right above, you might have notices that we've used `O` and `T` to access the
+tools. They stand for **O**bject and **T**uple, respectively. And the whole
+library is organized the same way, around TypeScript concepts:
+
+- A[ny]
+- B[boolean]
+-  
 
 https://pirix-gh.github.io/ts-toolbelt/
 
@@ -93,6 +137,8 @@ https://pirix-gh.github.io/ts-toolbelt/
 </a>
 
 ## Running tests
+
+## Compatibility
 
 ## What's next
 
