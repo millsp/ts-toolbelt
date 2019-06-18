@@ -42,18 +42,18 @@
 
 ## Table of Contents
 
-- [📜 About](#-about)
-- [🎩 Features](#-features)
-- [🏁 Getting started](#-getting-started)
-- [📖 Documentation](#-documentation)
-- [➕ Contributing](#-contributing)
-- [👏 Sponsoring issues](#-sponsoring-issues)
-- [💉 Running tests](#-running-tests)
-- [🔧 Compatibility](#-compatibility)
-- [🔮 What's next](#-whats-next)
-- [🙏 Acknowledgments](#-acknowledgments)
-- [💬 Contact](#-contact)
-- [🔓 Licence](#-licence)
+* [📜 About](#-about)
+* [🎩 Features](#-features)
+* [🏁 Getting started](#-getting-started)
+* [📖 Documentation](#-documentation)
+* [➕ Contributing](#-contributing)
+* [👏 Sponsoring issues](#-sponsoring-issues)
+* [💉 Running tests](#-running-tests)
+* [🔧 Compatibility](#-compatibility)
+* [🔮 What's next](#-whats-next)
+* [🙏 Acknowledgments](#-acknowledgments)
+* [💬 Contact](#-contact)
+* [🔓 Licence](#-licence)
 
 ## 📜 About
 
@@ -65,13 +65,13 @@ It uses the type system itself for TypeScript to compute more complex types. In
 other words, its API exposes types that trade **CPU & RAM** for higher type
 safety.
 
-**ts-toolbelt** completes TypeScript with a collection of more thant 150 types.
+**ts-toolbelt** completes TypeScript with a collection of more than 150 types.
 
 ### Goals?
- * This package aims to be the home of all **utility types**
- * To keep reasonable **performance**, so it won't bloat TS
- * And write software that's more type-safe, more **robust**
- * (And bring a whole new set of **features** to TypeScript)
+* This package aims to be the home of all **utility types**
+* To keep reasonable **performance**, so it won't bloat TS
+* And write software that's more type-safe, more **robust**
+* (And bring a whole new set of **features** to TypeScript)
 
 ## 🎩 Features
 
@@ -95,7 +95,7 @@ a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=
 
 ## 🏁 Getting Started
 
-The project is maintained to adapt to the constant changes of TypeScript. See [compatibility](#compatibility) for more information.
+The project is maintained to adapt to the constant [changes](#compatibility) of TypeScript.
 
 ### Prerequisites
 
@@ -112,20 +112,15 @@ npm install ts-toolbelt --save
 ### Hello World
 
 ```ts
-import tb from 'ts-toolbelt'
+import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 
-type merged = tb.O.Merge<{name: string}, {age: number}>
-// {name: string, age: number}
-// `O` stands for "object"
-
-type concat = tb.T.Concat<['hello'], ['world']>
-// ['hello', 'world']
-// `T` stands for "tuple"
+// Merge two types together
+type merge = O.Merge<{name: string}, {age?: number}>
 ```
 
 ## 📖 Documentation
 
-If you read the example above you will notice that the project is organized around TypeScript's main concepts:
+The project is organized around TypeScript's main concepts:
 
 |  |  |  |  |  |
 |----------------|----------------|-----------------|--------------|-------------|
@@ -137,8 +132,39 @@ If you read the example above you will notice that the project is organized arou
     🔍 Browse the docs
   </a>
 </h3>
+<br>
 
 ## ➕ Contributing
+
+Contributions are what make the open source community such an amazing place to
+learn, inspire, and create. Any contributions you make are greatly appreciated.
+There are many ways to contribute to the project:
+
+### Community
+* Help the community with answers on Gitter
+* Reporting bugs or requesting new features
+
+### Codebase
+* Improving the existing documentation 
+* Add new types to the collection
+
+To get started with codebase modifications:
+* Fork the project
+* Clone your fork
+* Create a pr/**feature** branch
+  ```sh
+  git checkout -b pr/CoolFeature
+  ```
+* Commit your changes
+  ```sh
+  git commit -m 'Added this CoolFeature'
+  ```
+* Run the tests
+* Commit your changes
+  ```sh
+  git push origin pr/CoolFeature
+  ```
+* Open a pull request
 
 ## 👏 Sponsoring issues
 
