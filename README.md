@@ -172,7 +172,7 @@ You can either request a new feature or a bug fix then fund it.
 
 ## 💉 Running tests
 
-To run the lint & type tests, simply run:
+To run the `lint` & `type` tests, simply run:
 
 ```sh
 npm test
