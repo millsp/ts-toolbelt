@@ -2,6 +2,7 @@
  * If it fails, it will enforce **`Catch`** instead of **`A2`**
  * @param A1 to check against
  * @param A2 to try **`A1`** with
+ * @param Catch to fallback (fail)
  * @returns **`A1`** or **`Catch`**
  * @example
  */

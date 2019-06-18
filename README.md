@@ -1,4 +1,4 @@
-<h1 align="center">ts-toolbelt</h1>
+<h1>ts-toolbelt</h1>
 <p align="center">
   <a href="https://gitpoint.co/">
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300">
