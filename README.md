@@ -1,4 +1,3 @@
-<!-- PROJECT HEADER -->
 <p align="center">
   <a href="#">
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="250">
@@ -60,8 +59,12 @@
 * B
 * C
 
-## Contributors
+## Contribution
 
+<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
+  <img
+  src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg">
+</a>
 
 ## Installation  
 ```sh  
