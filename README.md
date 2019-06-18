@@ -196,14 +196,14 @@ The project is maintained to adapt to the constant
 ## 🔮 What's next
 * Automated performance tests
   ```sh
-  #Performance is checked manually with 
+  # performance is checked manually with 
   npx tsc --noEmit ----extendedDiagnostics
   ```
 * Improve with user feedback
 
 ## 🙏 Acknowledgements
 
-Many thanks to all the
+Many, many thanks to all the
 [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 
 * [Matt McCutchen](https://github.com/mattmccutchen)
