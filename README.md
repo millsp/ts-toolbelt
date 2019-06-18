@@ -118,10 +118,10 @@ type merge = O.Merge<{name: string}, {age?: number}>
 
 The project is organized around TypeScript's main concepts:
 
-|  |  |  |  |  |
+|                |                |                 |              |             |
 |----------------|----------------|-----------------|--------------|-------------|
-| **A**(ny) | **C**(lass) | **I**(teration) | **O**(bject) | **T**(uple) |
-| **B**(boolean) | **F**(unction) | **N**(umber) | **S**(tring) | **U**(nion) |
+| **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
+| **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
 
 [🔍 Browse the docs](https://pirix-gh.github.io/ts-toolbelt/)
 
@@ -191,6 +191,9 @@ checks([
 The project is maintained to adapt to the constant [changes](#compatibility) of
 TypeScript:
 
+| ts-toolbelt | typescript |
+|-------------|------------|
+| 1.0.x       | 3.5.0      |
 
 ## 🔮 What's next
 * Automated performance tests
