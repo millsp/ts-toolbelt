@@ -121,9 +121,16 @@ Right above, you might have notices that we've used `O` and `T` to access the
 tools. They stand for **O**bject and **T**uple, respectively. And the whole
 library is organized the same way, around TypeScript concepts:
 
-- A[ny]
-- B[boolean]
--  
+* **A**(ny)
+* **B**(boolean)
+* **C**(lass)
+* **F**(unction)
+* **I**(teration)
+* **N**(umber)
+* **O**(bject)
+* **S**(tring)
+* **T**(uple)
+* **U**(nion)
 
 https://pirix-gh.github.io/ts-toolbelt/
 

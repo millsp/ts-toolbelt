@@ -41,6 +41,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-react": "^7.13.0",
+    "npx": "^10.2.0",
     "release-it": "^12.3.0",
     "ts-node": "^8.2.0",
     "tslib": "^1.10.0",
