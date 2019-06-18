@@ -63,7 +63,7 @@
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
   <img
-  src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg">
+  src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
 </a>
 
 ## Installation  
