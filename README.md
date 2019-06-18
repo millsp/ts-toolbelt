@@ -4,11 +4,10 @@
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="200">
   </a>
 
-  <h3 align="center">ts-toolbelt</h3>
-
+  <h2 align="center">ts-toolbelt</h2>
+  <h3 align="center">👷 Higher type safety for TypeScript</h3>
+  <br>
   <p align="center">
-    👷 Higher type safety for TypeScript
-    <br />
     <a href="https://pirix-gh.github.io/ts-toolbelt/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
