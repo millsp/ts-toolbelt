@@ -164,7 +164,9 @@ You can either request a new feature or a bug fix then fund it.
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
   <img
   src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
-</a><br>
+</a>
+<br>
+<br>
 
 **The money will be transparently split with an issue's assignees.**
 
