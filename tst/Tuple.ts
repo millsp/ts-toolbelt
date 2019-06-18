@@ -1,6 +1,5 @@
 import {Test, T} from '../src/index'
 import {x} from '../src/Any/x'
-import {UnionOf} from '../src/Object/_api'
 
 const {checks, check} = Test
 

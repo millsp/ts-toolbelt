@@ -5,10 +5,9 @@
   </a>
 </p>
 
-<p align="center">
-    Higher type safety for TypeScript
-</p>
-
+<h2 align="center">
+  Higher type safety for TypeScript
+</h2>
 <p align="center">
 
 [![Gitter](https://img.shields.io/gitter/room/ts-toolbelt/community.svg)](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
