@@ -136,7 +136,7 @@ If you read the example above you will notice that the project is organized arou
 
 🔍 [Browse the documentation](https://pirix-gh.github.io/ts-toolbelt/)
 
-## Contributing
+## 🎩 Contributing
 
 ## Sponsoring issues
 
