@@ -188,8 +188,8 @@ checks([
 
 ## 🔧 Compatibility
 
-The project is maintained to adapt to the constant [changes](#compatibility) of
-TypeScript:
+The project is maintained to adapt to the constant
+[changes](#https://github.com/Microsoft/TypeScript/wiki/Roadmap) of TypeScript:
 
 | ts-toolbelt | typescript |
 |-------------|------------|
