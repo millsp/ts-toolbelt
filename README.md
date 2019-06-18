@@ -118,7 +118,7 @@ import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 type merge = O.Merge<{name: string}, {age?: number}>
 ```
 
-## 📖 Documentation
+## [📖 Documentation ⤢](https://pirix-gh.github.io/ts-toolbelt/)
 
 The project is organized around TypeScript's main concepts:
 
@@ -127,11 +127,8 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny) | **C**(lass) | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber) | **S**(tring) | **U**(nion) |
 
-<h3>
-  <a href="https://pirix-gh.github.io/ts-toolbelt/">
-    🔍 Browse the docs
-  </a>
-</h3>
+
+[🔍 Browse the docs](https://pirix-gh.github.io/ts-toolbelt/)
 
 
 ## ➕ Contributing
@@ -167,6 +164,7 @@ There are many ways to contribute to the project:
 * Open a pull request
 
 ## 👏 Sponsoring issues
+
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
   <img
