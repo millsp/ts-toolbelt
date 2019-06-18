@@ -52,8 +52,6 @@
 * [🔧 Compatibility](#-compatibility)
 * [🔮 What's next](#-whats-next)
 * [🙏 Acknowledgments](#-acknowledgments)
-* [💬 Contact](#-contact)
-* [🔓 Licence](#-licence)
 
 ## 📜 About
 
@@ -195,20 +193,14 @@ TypeScript:
 
 
 ## 🔮 What's next
-* **Automated performance tests**
-  Performance is checked manually with 
+* Automated performance tests
   ```sh
+  #Performance is checked manually with 
   npx tsc --noEmit ----extendedDiagnostics
   ```
-* **Improve with user feedback**
+* Improve with user feedback
 
 ## 🙏 Acknowledgements
 
 Many thanks to all the [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 * [Matt McCutchen](https://github.com/mattmccutchen)
-
-## 💬 Contact
-
-
-
-## 🔓 Licence
