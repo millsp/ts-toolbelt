@@ -134,7 +134,9 @@ If you read the example above you will notice that the project is organized arou
 * **T**(uple)
 * **U**(nion)
 
-🔍 [Browse the documentation](https://pirix-gh.github.io/ts-toolbelt/)
+<h3 align="center">
+  [🔍 Browse the documentation](https://pirix-gh.github.io/ts-toolbelt/)
+</h3>
 
 ## ➕ Contributing
 
