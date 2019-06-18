@@ -31,7 +31,7 @@
       "before:init": [
         "npm test"
       ],
-      "after:git:release": "npm run build",
+      "before:git:release": "npm run build",
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     }
   },
