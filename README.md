@@ -1,13 +1,13 @@
-<h1 align="center">ts-toolbelt</h1><br>
+<h1 align="center">ts-toolbelt</h1>
 <p align="center">
   <a href="https://gitpoint.co/">
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300">
   </a>
 </p>
 
-<h2 align="center">
+<h3 align="center">
   Higher type safety for TypeScript
-</h2>
+</h3>
 <p align="center">
 
 [![Gitter](https://img.shields.io/gitter/room/ts-toolbelt/community.svg)](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
