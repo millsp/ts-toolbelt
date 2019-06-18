@@ -19,7 +19,7 @@
   "types": "out/types/src/index.d.ts",
   "main": "out/src/index.js",
   "scripts": {
-    "test": "npm run build:types",
+    "test" : "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:types && npm run build:docs",
     "build:types": "rm -fr out && tsc --emitDeclarationOnly",
     "build:docs": "typedoc --out docs ./src/ --theme ../eledoc/bin/default/ && touch ./docs/.nojekyll && git add ./docs",
