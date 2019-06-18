@@ -173,8 +173,7 @@ npm test
 ```
 
 **ts-toolbelt** has its own type-testing system that you can use on your own
-project. If you desire to do so, create a test file and start with the
-following:
+project. This is how to get started:
 ```ts
 import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
 
@@ -189,7 +188,7 @@ checks([
 ## 🔧 Compatibility
 
 The project is maintained to adapt to the constant
-[changes](#https://github.com/Microsoft/TypeScript/wiki/Roadmap) of TypeScript:
+[changes of TypeScript](https://github.com/Microsoft/TypeScript/wiki/Roadmap):
 
 | ts-toolbelt | typescript |
 |-------------|------------|
