@@ -118,7 +118,6 @@ type merge = O.Merge<{name: string}, {age?: number}>
 
 The project is organized around TypeScript's main concepts:
 
-|                |                |                 |              |             |
 |----------------|----------------|-----------------|--------------|-------------|
 | **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
