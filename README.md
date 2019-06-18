@@ -193,7 +193,7 @@ TypeScript:
 
 | ts-toolbelt | typescript |
 |-------------|------------|
-| 1.0.x       | 3.5.0      |
+| 1.0.x       | 3.5.x      |
 
 ## 🔮 What's next
 * Automated performance tests
