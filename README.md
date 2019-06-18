@@ -215,3 +215,5 @@ Many, many thanks to all the
 [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 
 * [Matt McCutchen](https://github.com/mattmccutchen)
+
+## 💟 Friendly Projects
