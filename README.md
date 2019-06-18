@@ -172,14 +172,13 @@ You can either request a new feature or a bug fix then fund it.
 
 ## 💉 Running tests
 
-To run the tests, simply run:
+To run the lint & type tests, simply run:
 
 ```sh
 npm test
 ```
 
-**ts-toolbelt** has a type-testing system that you can use on your own
-project. This is how to get started:
+What to test your own types? Get started:
 
 ```ts
 import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
