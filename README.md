@@ -40,6 +40,7 @@
   </a>
 </p>
 
+<br>
 ## Table of Contents
 
 * [📜 About](#-about)
@@ -55,6 +56,7 @@
 * [💬 Contact](#-contact)
 * [🔓 Licence](#-licence)
 
+<br>
 ## 📜 About
 
 **ts-toolbelt** is a collection of types that makes TypeScript even safer. It's
@@ -73,6 +75,7 @@ safety.
 * And write software that's more type-safe, more **robust**
 * (And bring a whole new set of **features** to TypeScript)
 
+<br>
 ## 🎩 Features
 
 Here's some of the most useful features:
@@ -93,6 +96,7 @@ Here's some of the most useful features:
 If you don't find the type you are looking for, you are welcome to open
 a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
 
+<br>
 ## 🏁 Getting Started
 
 The project is maintained to adapt to the constant [changes](#compatibility) of TypeScript.
@@ -118,6 +122,7 @@ import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 type merge = O.Merge<{name: string}, {age?: number}>
 ```
 
+<br>
 ## 📖 Documentation
 
 The project is organized around TypeScript's main concepts:
@@ -132,8 +137,8 @@ The project is organized around TypeScript's main concepts:
     🔍 Browse the docs
   </a>
 </h3>
-<br>
 
+<br>
 ## ➕ Contributing
 
 Contributions are what make the open source community such an amazing place to
@@ -148,7 +153,7 @@ There are many ways to contribute to the project:
 * Improving the existing documentation 
 * Add new types to the collection
 
-To get started with codebase modifications:
+### Pull Requests
 * Fork the project
 * Clone your fork
 * Create a pr/**feature** branch
@@ -166,6 +171,7 @@ To get started with codebase modifications:
   ```
 * Open a pull request
 
+<br>
 ## 👏 Sponsoring issues
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
@@ -173,14 +179,20 @@ To get started with codebase modifications:
   src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
 </a>
 
+<br>
 ## 💉 Running tests
 
+<br>
 ## 🔧 Compatibility
 
+<br>
 ## 🔮 What's next
 
+<br>
 ## 🙏 Acknowledgements
 
+<br>
 ## 💬 Contact
 
+<br>
 ## 🔓 Licence
