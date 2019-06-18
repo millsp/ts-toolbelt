@@ -123,16 +123,9 @@ type concat = tb.T.Concat<['hello'], ['world']>
 ## 📖 Documentation
 
 If you read the example above you will notice that the project is organized around TypeScript's main concepts:
-* **A**(ny)
-* **B**(boolean)
-* **C**(lass)
-* **F**(unction)
-* **I**(teration)
-* **N**(umber)
-* **O**(bject)
-* **S**(tring)
-* **T**(uple)
-* **U**(nion)
+| **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
+|----------------|----------------|-----------------|--------------|-------------|
+| **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
 
 <h3 align="center">
   <a href="https://pirix-gh.github.io/ts-toolbelt/">
