@@ -20,11 +20,10 @@
   "main": "out/src/index.js",
   "scripts": {
     "test": "npm run build:types",
+    "build": "npm run build:types && npm run build:docs",
     "build:types": "rm -fr out && tsc --emitDeclarationOnly",
-    "build:docs": "typedoc --out docs ./src/ --theme ../eledoc/bin/default/ && touch ./docs/.nojekyll",
+    "build:docs": "typedoc --out docs ./src/ --theme ../eledoc/bin/default/ && touch ./docs/.nojekyll && git add ./docs",
     "setup:dev": "npm install --only=dev",
-    "git:push": "git add docs/ && git commit -am 'release' && git push origin master",
-    "prepublishOnly": "npm run build:types && npm run build:docs && npm run git:push",
     "release": "release-it"
   },
   "devDependencies": {

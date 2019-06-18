@@ -4,4 +4,4 @@ node_js:
 before_install:
 - npm run setup:dev
 script:
-- npm run build:types
+- npm run test
