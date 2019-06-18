@@ -45,15 +45,15 @@
 - [📜 About](#-about)
 - [🎩 Features](#-features)
 - [🏁 Getting started](#-getting-started)
-- [Documentation](#-documentation)
-- [Contributing](#-contributing)
-- [Sponsoring issues](#-sponsoring-issues)
-- [Running tests](#-running-tests)
-- [Compatibility](#-compatibility)
-- [What's next](#-whats-next)
-- [Acknowledgments](#-acknowledgments)
-- [Contact](#-contact)
-- [Licence](#-licence)
+- [📖 Documentation](#-documentation)
+- [📩 Contributing](#-contributing)
+- [👏 Sponsoring issues](#-sponsoring-issues)
+- [💉 Running tests](#-running-tests)
+- [🔧 Compatibility](#-compatibility)
+- [🔮 What's next](#-whats-next)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [💬 Contact](#-contact)
+- [🔓 Licence](#-licence)
 
 ## 📜 About
 
@@ -120,7 +120,7 @@ type concat = tb.T.Concat<['hello'], ['world']>
 // `T` stands for "tuple"
 ```
 
-## Documentation
+## 📖 Documentation
 
 If you read the example above you will notice that the project is organized around TypeScript's main concepts:
 * **A**(ny)
@@ -136,21 +136,23 @@ If you read the example above you will notice that the project is organized arou
 
 🔍 [Browse the documentation](https://pirix-gh.github.io/ts-toolbelt/)
 
-## Contributing
+## 📩 Contributing
 
-## Sponsoring issues
+## 👏 Sponsoring issues
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
   <img
   src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
 </a>
 
-## Running tests
+## 💉 Running tests
 
-## Compatibility
+## 🔧 Compatibility
 
-## What's next
+## 🔮 What's next
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
-## Licence
+## 💬 Contact
+
+## 🔓 Licence
