@@ -105,33 +105,65 @@
 				</p>
 				<h2 id="table-of-contents">Table of Contents</h2>
 				<ul>
-					<li><a href="#motivation">Motivation</a></li>
+					<li><a href="#about">About</a></li>
 					<li><a href="#features">Features</a></li>
 					<li><a href="#getting-started">Getting started</a></li>
 					<li><a href="#documentation">Documentation</a></li>
 					<li><a href="#contributing">Contributing</a></li>
 					<li><a href="#sponsoring-issues">Sponsoring issues</a></li>
 					<li><a href="#running-tests">Running tests</a></li>
-					<li><a href="#acknowledgments">Acknowledgments</a></li>
+					<li><a href="#compatibility">Compatibility</a></li>
 					<li><a href="#whats-next">What&#39;s next</a></li>
+					<li><a href="#acknowledgments">Acknowledgments</a></li>
 					<li><a href="#contact">Contact</a></li>
 					<li><a href="#licence">Licence</a></li>
 				</ul>
-				<h2 id="motivation">Motivation</h2>
+				<h2 id="about">About</h2>
+				<p><strong>ts-toolbelt</strong> is a collection of types that makes programming with TypeScript even safer. </p>
+				<p>It&#39;s goal is to ensure type correctness without too much effort from
+				your part, while adding a whole new set of features to TypeScript.</p>
+				<h3 id="how-">How?</h3>
+				<p><strong>ts-toolbelt</strong> performs complex operations on types. It&#39;s API exposes types that will trade your CPU &amp; RAM for a higher type safety.</p>
+				<h3 id="demo">Demo</h3>
 				<h2 id="features">Features</h2>
+				<p>Only the most useful features are mentioned here. You will find the complete
+				list in the <a href="https://pirix-gh.github.io/ts-toolbelt/">documentation</a> website.</p>
 				<ul>
-					<li>A</li>
-					<li>B</li>
-					<li>C</li>
-					<li>Feature request</li>
+					<li>Merge two types together (doc)</li>
+					<li>Update the field of a type (doc)</li>
+					<li>Make some fields optional (doc)</li>
+					<li>Change a type at any depth! (doc)</li>
+					<li>Concat two tuples together (doc)</li>
+					<li>Get the last item of a tuple (doc)</li>
+					<li>... and so much more</li>
 				</ul>
+				<p>One of the goals of <strong>ts-toolbelt</strong> is to bring all the types one would ever
+				need to a single package.</p>
+				<p>If you don&#39;t find the type you were looking for, please feel welcome to open
+				a <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md">feature request</a>!</p>
 				<h2 id="getting-started">Getting Started</h2>
+				<p>The project is maintained to adapt to the constant changes of TypeScript. See <a href="#compatibility">compatibility</a> for more information.</p>
 				<h3 id="prerequisites">Prerequisites</h3>
+				<pre><code class="language-sh">npm install typescript@^3.5.0 --save</code></pre>
 				<h3 id="installation">Installation</h3>
 				<pre><code class="language-sh">npm install ts-toolbelt --save</code></pre>
-				<pre><code class="language-sh">yarn add ts-toolbelt</code></pre>
-				<h3 id="demo">Demo</h3>
+				<h3 id="hello-world">Hello World</h3>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> tb <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> merged = tb.O.Merge&lt;{name: <span class="hljs-built_in">string</span>}, {age: <span class="hljs-built_in">number</span>}&gt;
+<span class="hljs-comment">// {name: string, age: number}</span>
+
+<span class="hljs-keyword">type</span> concat = tb.T.Concat&lt;[<span class="hljs-string">'hello'</span>], [<span class="hljs-string">'world'</span>]&gt;
+<span class="hljs-comment">// ['hello', 'world']</span></code></pre>
 				<h2 id="documentation">Documentation</h2>
+				<p>Right above, you might have notices that we&#39;ve used <code>O</code> and <code>T</code> to access the
+					tools. They stand for <strong>O*<em>bject and *</em>T</strong>uple, respectively. And the whole
+				library is organized the same way, around TypeScript concepts:</p>
+				<ul>
+					<li>A[ny]</li>
+					<li>B[boolean]</li>
+					<li></li>
+				</ul>
 				<p><a href="https://pirix-gh.github.io/ts-toolbelt/">https://pirix-gh.github.io/ts-toolbelt/</a></p>
 				<h2 id="contributing">Contributing</h2>
 				<h2 id="sponsoring-issues">Sponsoring issues</h2>
@@ -140,6 +172,7 @@
 					src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
 				</a>
 				<h2 id="running-tests">Running tests</h2>
+				<h2 id="compatibility">Compatibility</h2>
 				<h2 id="what-s-next">What&#39;s next</h2>
 				<h2 id="acknowledgements">Acknowledgements</h2>
 				<h2 id="licence">Licence</h2>
