@@ -1,7 +1,7 @@
 <!-- PROJECT HEADER -->
 <p align="center">
   <a href="#">
-    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="200">
+    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300">
   </a>
 
   <h3 align="center">ts-toolbelt</h3>
@@ -14,9 +14,9 @@
     <br>
     <a href="#">View Demo</a>
     ·
-    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new">Report Bug</a>
+    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---bug-report.md">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new">Request Feature</a>
+    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md">🍩 Request Feature</a>
   </p>
 </p>
 
