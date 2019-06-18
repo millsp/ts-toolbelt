@@ -159,6 +159,7 @@ There are many ways to contribute to the project:
 ## 👏 Sponsoring issues
 
 Sponsored issues have higher priority over non-critical issues.
+
 You can either request a new feature or a bug fix then fund it.
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
