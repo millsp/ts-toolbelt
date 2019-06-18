@@ -40,6 +40,8 @@
   </a>
 </p>
 
+
+
 ## Table of Contents
 
 - [📜 About](#-about)
@@ -57,37 +59,34 @@
 
 ## 📜 About
 
-**ts-toolbelt** is a collection of types that makes programming with TypeScript even safer. It's goal is to ensure type correctness without too much effort from your part, while adding a whole new set of features to TypeScript.
+**ts-toolbelt** is a collection of types that makes programming with TypeScript even safer. It's goal is to improve type correctness while adding a whole new set of features to TypeScript.
 
-### How?
+It uses the type system itself for TypeScript to compute more complex types. In
+other words, its API exposes types that trade **CPU & RAM** for higher type
+safety.
 
-**ts-toolbelt** uses the type system itself for TypeScript to compute more
-complex types. In other words, its API exposes types that trade **CPU & RAM**
-for higher type safety.
+**ts-toolbelt** completes TypeScript with a collection of more thant 150 types.
 
 ### Goals?
- * This package aims to be the home of all utility types
- * To keep reasonable performance, so it won't bloat TS
- * And write software that's more type-safe, more robust
- * (And bring a whole new set of features to TypeScript)
+ * This package aims to be the home of all **utility types**
+ * To keep reasonable **performance**, so it won't bloat TS
+ * And write software that's more type-safe, more **robust**
+ * (And bring a whole new set of **features** to TypeScript)
 
 ## 🎩 Features
 
 Here's some of the most useful features:
 
-* Merge two types together
-  
-* Update the field of a type 
-* Make some fields optional
-* Change a type at any depth!
-* Concat two tuples together
-* Get the last item of a tuple
+* [Merge two types together](https://pirix-gh.github.io/ts-toolbelt/modules/_object_merge_.html#merge)
+* [Update the field of a
+  type](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html#update)
+* [Make some fields optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html#optional)
+* [Change a type at any depth!](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html#update)
+* [Concat two tuples together](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html#concat)
+* [Get the last item of a tuple](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_last_.html#last)
 * ... and so much more
 
-One of the goals of **ts-toolbelt** is to bring all the types one would ever
-need to a single package.
-
-If you don't find the type you were looking for, please feel welcome to open
+If you don't find the type you are looking for, you are welcome to open
 a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
 
 ## 🏁 Getting Started
@@ -124,16 +123,12 @@ type concat = tb.T.Concat<['hello'], ['world']>
 
 If you read the example above you will notice that the project is organized around TypeScript's main concepts:
 
-<p align="center">
-
 |  |  |  |  |  |
 |----------------|----------------|-----------------|--------------|-------------|
 | **A**(ny) | **C**(lass) | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber) | **S**(tring) | **U**(nion) |
 
-</p>
-
-<h3 align="center">
+<h3>
   <a href="https://pirix-gh.github.io/ts-toolbelt/">
     🔍 Browse the docs
   </a>
