@@ -93,19 +93,19 @@ a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=
 
 ## 🏁 Getting Started
 
-### Prerequisites
+#### Prerequisites
 
 ```sh
 npm install typescript@^3.5.0 --save
 ```
 
-### Installation
+#### Installation
 
 ```sh
 npm install ts-toolbelt --save
 ```
 
-### Hello World
+#### Hello World
 
 ```ts
 import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
@@ -123,23 +123,21 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
 
-[🔍 Browse the docs](https://pirix-gh.github.io/ts-toolbelt/)
-
 ## 🎁 Contributing
 
 Contributions are what make the open source community such an amazing place to
 learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 There are many ways to contribute to the project:
 
-### Community
+#### Community
 * [Help the community with answers on Gitter](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 * [Reporting bugs or requesting new features](https://github.com/pirix-gh/ts-toolbelt/issues/new/choose)
 
-### Codebase
+#### Codebase
 * Improving existing documentation 
 * Add new types to the collection
 
-### Pull Requests
+#### Pull Requests
 * Fork the project
 * Clone your fork
 * Create a pr/**feature** branch
