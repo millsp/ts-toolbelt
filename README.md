@@ -125,7 +125,7 @@ The project is organized around TypeScript's main concepts:
 
 [🔍 Browse the docs](https://pirix-gh.github.io/ts-toolbelt/)
 
-## ➕ Contributing
+## 🎁 Contributing
 
 Contributions are what make the open source community such an amazing place to
 learn, inspire, and create. Any contributions you make are **greatly appreciated**.
