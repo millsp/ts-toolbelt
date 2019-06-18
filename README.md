@@ -46,7 +46,7 @@
 - [🎩 Features](#-features)
 - [🏁 Getting started](#-getting-started)
 - [📖 Documentation](#-documentation)
-- [📩 Contributing](#-contributing)
+- [➕ Contributing](#-contributing)
 - [👏 Sponsoring issues](#-sponsoring-issues)
 - [💉 Running tests](#-running-tests)
 - [🔧 Compatibility](#-compatibility)
@@ -136,7 +136,7 @@ If you read the example above you will notice that the project is organized arou
 
 🔍 [Browse the documentation](https://pirix-gh.github.io/ts-toolbelt/)
 
-## 📩 Contributing
+## ➕ Contributing
 
 ## 👏 Sponsoring issues
 
