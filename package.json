@@ -19,11 +19,13 @@
   "types": "out/types/src/index.d.ts",
   "main": "out/src/index.js",
   "scripts": {
+    "test": "npm run build:types",
     "build:types": "rm -fr out && tsc --emitDeclarationOnly",
     "build:docs": "typedoc --out docs ./src/ --theme ../eledoc/bin/default/ && touch ./docs/.nojekyll",
     "setup:dev": "npm install --only=dev",
     "git:push": "git add docs/ && git commit -am 'release' && git push origin master",
-    "prepublishOnly": "npm run build:types && npm run build:docs && npm run git:push"
+    "prepublishOnly": "npm run build:types && npm run build:docs && npm run git:push",
+    "release": "release-it"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^1.10.2",
@@ -31,6 +33,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-react": "^7.13.0",
+    "release-it": "^12.3.0",
     "ts-node": "^8.2.0",
     "tslib": "^1.10.0",
     "typedoc": "^0.14.2",
