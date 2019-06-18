@@ -57,13 +57,17 @@
 
 ## 📜 About
 
-**ts-toolbelt** is a collection of types that makes programming with TypeScript
-even safer. It's goal is to improve type correctness while adding a whole new
-set of features to TypeScript. It uses the type system itself for TypeScript to
-compute more complex types. In other words, its API exposes types that trade
-**CPU & RAM** for higher type safety.
+<p style="text-align: justify">
+  **ts-toolbelt** is a collection of types that makes programming with TypeScript
+  even safer. It's goal is to improve type correctness while adding a whole new
+  set of features to TypeScript. 
 
-**ts-toolbelt** completes TypeScript with a collection of more thant 150 types.
+  It uses the type system itself for TypeScript to
+  compute more complex types. In other words, its API exposes types that trade
+  **CPU & RAM** for higher type safety.
+
+  **ts-toolbelt** completes TypeScript with a collection of more thant 150 types.
+</p>p
 
 ### Goals?
  * This package aims to be the home of all **utility types**
