@@ -57,9 +57,9 @@
 
 ## 📜 About
 
-**ts-toolbelt** is a collection of types that makes TypeScript even safer. It's
-goal is to improve type correctness while adding a whole new set of features to
-TypeScript. 
+**ts-toolbelt** is a collection of types that makes TypeScript even **safer**.
+It's goal is to improve type correctness while adding a whole new set of
+**features** to TypeScript. 
 
 It uses the type system itself for TypeScript to compute more complex types. In
 other words, its API exposes types that trade **CPU & RAM** for higher type
@@ -90,7 +90,7 @@ Here's some of the most useful features:
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/demo.gif" id="demo">
 <p align="center">
 
-If you don't find the type you are looking for, you are welcome to open
+> If you don't find the type you are looking for, you are welcome to open
 a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
 
 ## 🏁 Getting Started
@@ -114,7 +114,7 @@ npm install ts-toolbelt --save
 ```ts
 import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 
-// Merge two types together
+// Merge two `object` together
 type merge = O.Merge<{name: string}, {age?: number}>
 ```
 
@@ -137,15 +137,15 @@ The project is organized around TypeScript's main concepts:
 ## ➕ Contributing
 
 Contributions are what make the open source community such an amazing place to
-learn, inspire, and create. Any contributions you make are greatly appreciated.
+learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 There are many ways to contribute to the project:
 
 ### Community
-* Help the community with answers on Gitter
-* Reporting bugs or requesting new features
+* [Help the community with answers on Gitter](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+* [Reporting bugs or requesting new features](https://github.com/pirix-gh/ts-toolbelt/issues/new/choose)
 
 ### Codebase
-* Improving the existing documentation 
+* Improving existing documentation 
 * Add new types to the collection
 
 ### Pull Requests
