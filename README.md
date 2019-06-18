@@ -42,20 +42,20 @@
 
 ## Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Getting started](#getting-started)
-- [Documentation](#documentation)
-- [Contributing](#contributing)
-- [Sponsoring issues](#sponsoring-issues)
-- [Running tests](#running-tests)
-- [Compatibility](#compatibility)
-- [What's next](#whats-next)
-- [Acknowledgments](#acknowledgments)
-- [Contact](#contact)
-- [Licence](#licence)
+- [📜 About](#-about)
+- [🎩 Features](#-features)
+- [🏁 Getting started](#-getting-started)
+- [Documentation](#-documentation)
+- [Contributing](#-contributing)
+- [Sponsoring issues](#-sponsoring-issues)
+- [Running tests](#-running-tests)
+- [Compatibility](#-compatibility)
+- [What's next](#-whats-next)
+- [Acknowledgments](#-acknowledgments)
+- [Contact](#-contact)
+- [Licence](#-licence)
 
-## About
+## 📜 About
 
 **ts-toolbelt** is a collection of types that makes programming with TypeScript even safer. It's goal is to ensure type correctness without too much effort from your part, while adding a whole new set of features to TypeScript.
 
@@ -71,7 +71,7 @@ for higher type safety.
  * And write software that's more type-safe, more robust
  * (And bring a whole new set of features to TypeScript)
 
-## Features
+## 🎩 Features
 
 Here's some of the most useful features:
 
@@ -90,7 +90,7 @@ need to a single package.
 If you don't find the type you were looking for, please feel welcome to open
 a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
 
-## Getting Started
+## 🏁 Getting Started
 
 The project is maintained to adapt to the constant changes of TypeScript. See [compatibility](#compatibility) for more information.
 
@@ -136,7 +136,7 @@ If you read the example above you will notice that the project is organized arou
 
 🔍 [Browse the documentation](https://pirix-gh.github.io/ts-toolbelt/)
 
-## 🎩 Contributing
+## Contributing
 
 ## Sponsoring issues
 
