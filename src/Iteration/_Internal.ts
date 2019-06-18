@@ -1,3 +1,6 @@
+/* eslint-disable fp/no-mutation */
+/* eslint-disable fp/no-let */
+
 /** Describes an **`Iteration`**-**number** relationship
  */
 export type FormatMap = {

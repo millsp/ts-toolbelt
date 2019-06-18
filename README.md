@@ -42,37 +42,60 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
+- [Motivation](#motivation)
 - [Features](#features)
-- [Feedback](#feedback)
-- [Contributors](#contributors)
-- [Build Process](#build-process)
-- [Backers](#backers-)
-- [Sponsors](#sponsors-)
+- [Getting started](#getting-started)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [Sponsoring issues](#sponsoring-issues)
+- [Running tests](#running-tests)
 - [Acknowledgments](#acknowledgments)
+- [What's next](#whats-next)
+- [Contact](#contact)
+- [Licence](#licence)
 
-## Introduction
+## Motivation
 
 ## Features
 
 * A
 * B
 * C
+* Feature request
 
-## Contribution
+## Getting Started
 
-<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
-  <img
-  src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
-</a>
+### Prerequisites
 
-## Installation  
+### Installation
+
 ```sh  
 npm install ts-toolbelt --save
 ```  
 
 ```sh  
 yarn add ts-toolbelt
-```  
+``` 
 
-# [Documentation](https://pirix-gh.github.io/ts-toolbelt/)
+### Demo
+
+## Documentation
+
+https://pirix-gh.github.io/ts-toolbelt/
+
+## Contributing
+
+## Sponsoring issues
+
+<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
+  <img
+  src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
+</a>
+
+## Running tests
+
+## What's next
+
+## Acknowledgements
+
+## Licence
