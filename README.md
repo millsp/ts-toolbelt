@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="#">
-    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="250">
+  <a href="https://github.com/pirix-gh/ts-toolbelt">
+    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300">
   </a>
 
   <h3 align="center">ts-toolbelt</h3>
