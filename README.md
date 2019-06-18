@@ -140,7 +140,7 @@ There are many ways to contribute to the project:
 #### Pull Requests
 1. Fork the project
 2. Clone your fork
-3. Create a pr/**feature** branch
+3  Create a pr/**feature** branch
    ```sh
    git checkout -b pr/CoolFeature
    ```
