@@ -26,11 +26,13 @@
     "setup:dev": "npm install --only=dev",
     "release": "release-it"
   },
-  "hooks": {
-    "before:init": ["npm test"],
-    "after:git:release": "npm run build",
-    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
-  },
+  "release-it": {
+    "hooks": {
+      "before:init": ["npm test"],
+      "after:git:release": "npm run build",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+    }
+  }, 
   "devDependencies": {
     "@typescript-eslint/parser": "^1.10.2",
     "eledoc": "^0.0.5",
