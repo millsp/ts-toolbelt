@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "license": "Apache-2.0",
   "author": "Pierre-Antoine Mills",
   "description": "👷 Higher type safety for TypeScript",
@@ -28,11 +28,13 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": ["npm test"],
+      "before:init": [
+        "npm test"
+      ],
       "after:git:release": "npm run build",
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
     }
-  }, 
+  },
   "devDependencies": {
     "@typescript-eslint/parser": "^1.10.2",
     "eledoc": "^0.0.5",
