@@ -20,7 +20,7 @@
   </p>
 </p>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Gitter](https://img.shields.io/gitter/room/ts-toolbelt/community.svg)](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Gitter](https://img.shields.io/gitter/room/ts-toolbelt/community.svg)](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 [![Release](https://img.shields.io/npm/v/ts-toolbelt.svg)](https://www.npmjs.com/package/ts-toolbelt)
 [![Travis](https://img.shields.io/travis/pirix-gh/ts-toolbelt.svg)](https://travis-ci.org/pirix-gh/ts-toolbelt)
 [![Downloads](https://img.shields.io/npm/dm/ts-toolbelt.svg)](#)

@@ -4,7 +4,7 @@ import {Match} from '../Any/_Internal'
 import {Length} from './Length'
 import {Cast} from '../Any/Cast'
 
-/** Filter out of **`T`** the entries that match **`M`**
+/** Filter out of **`T`** the entries that matchddddd **`M`**
  * @param T to remove from
  * @param M to select entries
  * @param match to change precision (?=`'default'`)
