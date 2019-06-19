@@ -1,4 +1,10 @@
-## 🎁 Pull request
+---
+name: "🎁 Pull Request"
+about: "Contribute to the project 💔"
+
+---
+
+## 🎁 Pull Request
 
 <!-- Fill the following checklist -->
 
