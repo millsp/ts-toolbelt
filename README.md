@@ -123,6 +123,10 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
 
+```ts
+import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
+```
+
 ## 🎁 Contributing
 
 Contributions are what make the open source community such an amazing place to
