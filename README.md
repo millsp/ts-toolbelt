@@ -214,6 +214,7 @@ The project is maintained to adapt to the constant
 Many, many thanks to all the
 [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 
+* [André Stalz](https://github.com/staltz)
 * [Matt McCutchen](https://github.com/mattmccutchen)
 
 ## 💟 Friendly Projects
