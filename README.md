@@ -183,7 +183,7 @@ npm test
 ```
 
 #### For your project
-What to test your own types? Get started:
+Want to test your own types? Let's get started:
 
 ```ts
 import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
@@ -195,6 +195,9 @@ checks([
     check<N.Plus<'5', '-3'>,    '2',   Test.Pass>(),
 ])
 ```
+
+> Place it in a file that won't be executed
+> It's just for TypeScript to test you types
 
 ## 🔧 Compatibility
 
@@ -209,7 +212,7 @@ The project is maintained to adapt to the constant
 * Automated performance tests
   ```sh
   # performance is checked manually with 
-  npx tsc --noEmit ----extendedDiagnostics
+  npx tsc --noEmit --extendedDiagnostics
   ```
 * Improve with user feedback
 
@@ -218,7 +221,7 @@ The project is maintained to adapt to the constant
 Many, many thanks to all the
 [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 
-* [André Stalz](https://github.com/staltz)
+* [André Staltz](https://github.com/staltz)
 * [Matt McCutchen](https://github.com/mattmccutchen)
 
 ## 💟 Friendly Projects
