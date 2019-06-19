@@ -129,9 +129,8 @@ import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 
 #### Internal Docs
 
-If you're interested to **learn** how the internals work, it's all explained [over
-here](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
-in a tutorial. It will get you on track to start writing your own types!
+If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get
+you on track to start writing your own types.
 
 ## 🎁 Contributing
 
