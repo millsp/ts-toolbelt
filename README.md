@@ -127,6 +127,13 @@ The project is organized around TypeScript's main concepts:
 import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 ```
 
+#### Internal Docs
+
+This is where everything started. If you're interested to **learn** how the
+internals work, it's all explained [over
+here](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
+in a tutorial. It will get you on track to start writing your own types!
+
 ## 🎁 Contributing
 
 Contributions are what make the open source community such an amazing place to
@@ -142,22 +149,23 @@ There are many ways to contribute to the project:
 * Add new types to the collection
 
 #### Pull Requests
-1. Fork the project
-2. Clone your fork
-3. Create a pr/**feature** branch
+1. [Read the tutorial](#internal-docs)
+2. Fork the project
+3. Clone your fork
+4. Create a pr/**feature** branch
    ```sh
    git checkout -b pr/CoolFeature
    ```
-4. Commit your changes
+5. Commit your changes
    ```sh
    git commit -m 'Added this CoolFeature'
    ```
-5. Run the tests
-6. Commit your changes
+6. Run the tests
+7. Commit your changes
    ```sh
    git push origin pr/CoolFeature
    ```
-7. Open a pull request
+8. Open a pull request
 
 ## 👏 Sponsoring issues
 
