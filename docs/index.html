@@ -209,7 +209,7 @@
 						<p>To run the <code>lint</code> &amp; <code>type</code> tests, simply run:</p>
 						<pre><code class="language-sh">npm <span class="hljs-built_in">test</span></code></pre>
 						<h4 id="for-your-project">For your project</h4>
-						<p>What to test your own types? Get started:</p>
+						<p>Want to test your own types? Let&#39;s get started:</p>
 						<pre><code class="language-ts"><span class="hljs-keyword">import</span> {A, B, C, F, I, N, O, S, T, U, Test} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 
 <span class="hljs-keyword">const</span> {checks, check} = Test
@@ -218,6 +218,10 @@ checks([
     check&lt;N.Plus&lt;<span class="hljs-string">'1'</span>, <span class="hljs-string">'30'</span>&gt;,    <span class="hljs-string">'31'</span>,  Test.Pass&gt;(),
     check&lt;N.Plus&lt;<span class="hljs-string">'5'</span>, <span class="hljs-string">'-3'</span>&gt;,    <span class="hljs-string">'2'</span>,   Test.Pass&gt;(),
 ])</code></pre>
+						<blockquote>
+							<p>Place it in a file that won&#39;t be executed
+							It&#39;s just for TypeScript to test you types</p>
+						</blockquote>
 						<h2 id="-compatibility">🔧 Compatibility</h2>
 						<p>The project is maintained to adapt to the constant
 						<a href="https://github.com/Microsoft/TypeScript/wiki/Roadmap">changes of TypeScript</a>:</p>
@@ -236,7 +240,7 @@ checks([
 						<h2 id="-what-s-next">🔮 What&#39;s next</h2>
 						<ul>
 							<li>Automated performance tests<pre><code class="language-sh"><span class="hljs-comment"># performance is checked manually with </span>
-npx tsc --noEmit ----extendedDiagnostics</code></pre>
+npx tsc --noEmit --extendedDiagnostics</code></pre>
 							</li>
 							<li>Improve with user feedback</li>
 						</ul>
@@ -244,7 +248,7 @@ npx tsc --noEmit ----extendedDiagnostics</code></pre>
 						<p>Many, many thanks to all the
 						<a href="https://github.com/pirix-gh/ts-toolbelt/graphs/contributors">contributors</a> and:</p>
 						<ul>
-							<li><a href="https://github.com/staltz">André Stalz</a></li>
+							<li><a href="https://github.com/staltz">André Staltz</a></li>
 							<li><a href="https://github.com/mattmccutchen">Matt McCutchen</a></li>
 						</ul>
 						<h2 id="-friendly-projects">💟 Friendly Projects</h2>
