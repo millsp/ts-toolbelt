@@ -43,7 +43,7 @@
 ## Table of Contents
 
 * [📜 About](#-about)
-* [🎩 Features](#-features)
+* [🍩 Features](#-features)
 * [🏁 Getting started](#-getting-started)
 * [📖 Documentation](#-documentation)
 * [➕ Contributing](#-contributing)
@@ -72,7 +72,7 @@ tested types.
 * And write software that's more type-safe, more **robust**
 * (And bring a whole new set of **features** to TypeScript)
 
-## 🎩 Features
+## 🍩 Features
 
 Here's some of the most useful features:
 
