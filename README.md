@@ -129,8 +129,7 @@ import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 
 #### Internal Docs
 
-This is where everything started. If you're interested to **learn** how the
-internals work, it's all explained [over
+If you're interested to **learn** how the internals work, it's all explained [over
 here](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
 in a tutorial. It will get you on track to start writing your own types!
 
@@ -149,7 +148,7 @@ There are many ways to contribute to the project:
 * Add new types to the collection
 
 #### Pull Requests
-1. [Read the tutorial](#internal-docs)
+1. [Read the tutorial](#https://medium.comfree-code-camptypescript-curry-ramda-types-f747e99744ab)
 2. Fork the project
 3. Clone your fork
 4. Create a pr/**feature** branch
