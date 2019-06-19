@@ -1,6 +1,6 @@
 ---
 name: "🎁 Pull Request"
-about: "Contribute to the project 💔"
+about: "Contribute to the project 🍩"
 
 ---
 
