@@ -1,8 +1,4 @@
----
-name: "🎁 Pull request"
-about: "Suggest your changes 💅"
-
----
+## 🎁 Pull request
 
 <!-- Fill the following checklist -->
 

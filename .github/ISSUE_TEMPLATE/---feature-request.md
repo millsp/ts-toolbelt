@@ -4,7 +4,7 @@ about: "Suggest an idea for this project 💡"
 
 ---
 
-## Feature Request
+## 🍩 Feature Request
 
 #### Is your feature request related to a problem? Please describe
 <!-- A clear and concise description of what the problem is. (e.g. I have an issue when [...]) -->
