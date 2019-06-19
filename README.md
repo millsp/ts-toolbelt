@@ -144,7 +144,7 @@ There are many ways to contribute to the project:
 
 #### Codebase
 * Improving existing documentation 
-* Add new types to the collection
+* Adding new types to the collection
 
 #### Pull Requests
 1. [Read the tutorial](#https://medium.comfree-code-camptypescript-curry-ramda-types-f747e99744ab)
