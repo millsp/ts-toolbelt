@@ -32,4 +32,7 @@
 
 #### Anything else worth mentioning?
 <!-- Please help with the PR process -->
-<!-- And leave any useful information -->
+<!-- Leave any extra useful information -->
+<!-- Or mention someone who is concerned -->
+
+#### Fixed issues
