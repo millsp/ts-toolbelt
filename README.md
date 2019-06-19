@@ -11,7 +11,7 @@
     <a href="https://pirix-gh.github.io/ts-toolbelt/" target="_blank"><strong>Explore the docs »</strong></a>
     <br>
     <br>
-    <a href="#">🎮 View Demo</a>
+    <a href="#demo">🎮 View Demo</a>
     ·
     <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---bug-report.md">🐞 Report Bug</a>
     ·
