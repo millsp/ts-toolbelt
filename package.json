@@ -32,7 +32,7 @@
         "npm test"
       ],
       "before:git:release": "npm run build",
-      "after:release": "Successfully released ${name} v${version} to ${repo.repository}."
+      "after:release": "echo 'Successfully released ${name} v${version} to ${repo.repository}'"
     }
   },
   "devDependencies": {
