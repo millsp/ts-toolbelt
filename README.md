@@ -215,6 +215,7 @@ The project is maintained to adapt to the constant
   npx tsc --noEmit --extendedDiagnostics
   ```
 * Improve with user feedback
+* Need to write the examples
 
 ## 🙏 Acknowledgements
 
