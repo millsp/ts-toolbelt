@@ -158,7 +158,7 @@ There are many ways to contribute to the project:
    ```sh
    git commit -m 'Added this CoolFeature'
    ```
-6. [Run the tests](-#running-tests)
+6. [Run the tests](#-running-tests)
 7. Commit your changes
    ```sh
    git push origin pr/CoolFeature
