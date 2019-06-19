@@ -202,8 +202,7 @@ checks([
 ])
 ```
 
-> Place it in a file that won't be executed
-> It's just for TypeScript to test you types
+> Place it in a file that won't be executed, it's just for TypeScript to test types
 
 ## 🔧 Compatibility
 
