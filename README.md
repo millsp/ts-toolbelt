@@ -124,7 +124,7 @@ The project is organized around TypeScript's main concepts:
 | **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
 
 ```ts
-import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
+import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
 ```
 
 ## 🎁 Contributing
