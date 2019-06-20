@@ -45,7 +45,7 @@
 * [📜 About](#-about)
 * [🍩 Features](#-features)
 * [🏁 Getting started](#-getting-started)
-* [📖 Documentation](#-documentation)
+* [📖 Documentation](#-documentation-)
 * [➕ Contributing](#-contributing)
 * [👏 Sponsoring issues](#-sponsoring-issues)
 * [💉 Running tests](#-running-tests)
