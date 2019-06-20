@@ -157,6 +157,7 @@
 						<pre><code class="language-sh">npm install ts-toolbelt --save</code></pre>
 						<h4 id="hello-world">Hello World</h4>
 						<pre><code class="language-ts"><span class="hljs-keyword">import</span> {A, B, C, F, I, N, O, S, T, U} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+<span class="hljs-comment">// Wonder what these letters mean? Check the docs below</span>
 
 <span class="hljs-comment">// Merge two `object` together</span>
 <span class="hljs-keyword">type</span> merge = O.Merge&lt;{name: <span class="hljs-built_in">string</span>}, {age?: <span class="hljs-built_in">number</span>}&gt;</code></pre>
@@ -166,7 +167,15 @@
 							|----------------|----------------|-----------------|--------------|-------------|
 							| <strong>A*<em>(ny)      | *</em>C</strong>(lass)    | <strong>I*<em>(teration) | *</em>O</strong>(bject) | <strong>T*<em>(uple) |
 						| *</em>B</strong>(boolean) | <strong>F*<em>(unction) | *</em>N</strong>(umber)    | <strong>S*<em>(tring) | *</em>U</strong>(nion) |</p>
+						<h4 id="you-can-either-use-it-like">You can either use it like</h4>
+						<p>When you are going to combine types together</p>
 						<pre><code class="language-ts"><span class="hljs-keyword">import</span> {A, B, C, F, I, N, O, S, T, U} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span></code></pre>
+						<h4 id="or-in-its-more-explicit-way">Or in its more explicit way</h4>
+						<p>When you are just using simple type operations</p>
+						<pre><code class="language-ts"><span class="hljs-keyword">import</span> {Any, <span class="hljs-built_in">Boolean</span>, Class, <span class="hljs-built_in">Function</span>, Iteration, <span class="hljs-built_in">Number</span>, <span class="hljs-built_in">Object</span>, <span class="hljs-built_in">String</span>, Tuple, Union} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span></code></pre>
+						<h4 id="or-in-its-most-compact-way">Or in its most compact way</h4>
+						<p>When you want to keep them in a single namespace</p>
+						<pre><code class="language-ts"><span class="hljs-keyword">import</span> tb <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span></code></pre>
 						<h4 id="internal-docs">Internal Docs</h4>
 						<p>If you&#39;re interested to <strong>learn</strong> how the internals work, <a href="https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab">this tutorial</a> will get
 						you on track to start writing your own types.</p>
