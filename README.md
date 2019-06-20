@@ -227,7 +227,10 @@ The project is maintained to adapt to the constant
 
 | ts-toolbelt | typescript |
 |-------------|------------|
-| 1.0.x       | 3.5.x      |
+| 1.x.x       | 3.5.x      |
+
+The major version number will be upgraded whenever TypeScript has breaking
+changes (sometimes it happens that TS has breaking changes on minor versions)
 
 ## 🔮 What's next
 * Automated performance tests
