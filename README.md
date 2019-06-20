@@ -126,7 +126,7 @@ The project is organized around TypeScript's main concepts:
 
 #### Imports
 
-There is many ways to import the types into your project
+There are many ways to import the types into your project:
 
 * Explicit
   ```ts
@@ -184,6 +184,7 @@ There are many ways to contribute to the project:
 ## 👏 Sponsoring issues
 
 **Sponsored issues have higher priority over non-critical issues**.<br>
+
 You can either request a new feature or a bug fix then fund it.
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
@@ -198,6 +199,7 @@ You can either request a new feature or a bug fix then fund it.
 ## 💉 Running tests
 
 #### For this project
+
 To run the `lint` & `type` tests, simply run:
 
 ```sh
@@ -205,6 +207,7 @@ npm test
 ```
 
 #### For your project
+
 Want to test your own types? Let's get started:
 
 ```ts
@@ -234,6 +237,7 @@ happened that TS had breaking changes on minor versions). Otherwise, the release
 versions will naturally follow semantic versioning.
 
 ## 🔮 What's next
+
 * Automated performance tests
   ```sh
   # performance is checked manually with 
