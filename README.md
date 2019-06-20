@@ -109,6 +109,7 @@ npm install ts-toolbelt --save
 
 ```ts
 import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
+// Wonder what these letters mean? Check the docs below
 
 // Merge two `object` together
 type merge = O.Merge<{name: string}, {age?: number}>
@@ -123,8 +124,19 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
 
+#### You can either use it like
 ```ts
 import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
+```
+
+#### Or in its more explicit way:
+```ts
+import {Any, Boolean, Class, Function, Iteration, Number, Object, String, Tuple, Union} from 'ts-toolbelt'
+```
+
+#### Or in its most compact way:
+```ts
+import tb from 'ts-toolbelt'
 ```
 
 #### Internal Docs
