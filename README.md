@@ -128,17 +128,17 @@ The project is organized around TypeScript's main concepts:
 
 There is many ways to import the types into your project
 
-* The explicit way
+* Explicit
   ```ts
   import {Any, Boolean, Class, Function, Iteration, Number, Object, String, Tuple, Union} from 'ts-toolbelt'
   ```
 
-* The compact way
+* Compact
   ```ts
   import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
   ```
 
-* The portable way
+* Portable
   ```ts
   import tb from 'ts-toolbelt'
   ```
