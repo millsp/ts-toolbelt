@@ -124,29 +124,24 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
 | **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
 
-#### You can either use it like
+#### Imports
 
-When you are going to combine types together
+There is many ways to import the types into your project
 
-```ts
-import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
-```
+* The explicit way
+  ```ts
+  import {Any, Boolean, Class, Function, Iteration, Number, Object, String, Tuple, Union} from 'ts-toolbelt'
+  ```
 
-#### Or in its more explicit way
+* The compact way
+  ```ts
+  import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
+  ```
 
-When you are just using simple type operations
-
-```ts
-import {Any, Boolean, Class, Function, Iteration, Number, Object, String, Tuple, Union} from 'ts-toolbelt'
-```
-
-#### Or in its most compact way
-
-When you want to keep them in a single namespace
-
-```ts
-import tb from 'ts-toolbelt'
-```
+* The portable way
+  ```ts
+  import tb from 'ts-toolbelt'
+  ```
 
 #### Internal Docs
 
