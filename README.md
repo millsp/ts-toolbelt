@@ -68,9 +68,10 @@ tested types.
 
 #### Goals
 * This package aims to be the home of all **utility types**
-* To keep reasonable **performance**, so it won't bloat TS
-* And write software that's more type-safe, more **robust**
-* (And bring a whole new set of **features** to TypeScript)
+* Keep reasonable **performance**, so it will not bloat TS
+* Computed types are always readable, like if you typed it
+* Software that's more type-safe, flexible & more **robust**
+* Bring a whole new set of extra **features** to TypeScript
 
 ## 🍩 Features
 
