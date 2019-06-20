@@ -229,8 +229,8 @@ The project is maintained to adapt to the constant
 |-------------|------------|
 | 1.x.x       | 3.5.x      |
 
-Major versions numbers will upgraded whenever TypeScript has breaking
-changes (it happens that TS has breaking changes on minor versions). And
+Major version numbers will upgrade whenever TypeScript had breaking changes (it
+happened that TS had breaking changes on minor versions). Otherwise, the release
 versions will naturally follow semantic versioning.
 
 ## 🔮 What's next
