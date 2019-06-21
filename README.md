@@ -164,7 +164,7 @@ There are many ways to contribute to the project:
 * Adding new types to the collection
 
 #### Pull Requests
-1. [Read the tutorial](https://medium.comfree-code-camptypescript-curry-ramda-types-f747e99744ab)
+1. [Read the tutorial](https://medium.com/free-code-camptypescript-curry-ramda-types-f747e99744ab)
 2. Fork the project
 3. Clone your fork
 4. Create a pr/**feature** branch
