@@ -72,6 +72,7 @@ tested types.
 * Computed types are always **readable**, like if you typed it
 * Software that's more type-safe, **flexible** & more **robust**
 * Bring a whole new set of extra **features** to TypeScript
+* Types can be **combined** together to create even more types!
 
 ## 🍩 Features
 
