@@ -9,8 +9,8 @@ export type FormatMap = {
 }
 
 /** Describes the format of a **number**
- * - `s`: **`string`**
- * - `n`: **`number`**
+ * * `s`: **`string`**
+ * * `n`: **`number`**
  */
 export type Format = keyof FormatMap
 
