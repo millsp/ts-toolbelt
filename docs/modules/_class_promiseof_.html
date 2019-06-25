@@ -106,11 +106,15 @@
 						<p><p><strong><code>any</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">string</span>&gt;<span class="hljs-function">(<span class="hljs-params">(<span class="hljs-params">res, rej</span>) =&gt; res(<span class="hljs-params">'x'</span>)</span>)
+
+<span class="hljs-params">type</span> <span class="hljs-params">test0</span> = <span class="hljs-params">PromiseOf</span>&lt;<span class="hljs-params">typeof</span> <span class="hljs-params">promise</span>&gt;  // <span class="hljs-params">string</span>
+<span class="hljs-params">type</span> <span class="hljs-params">test1</span> = <span class="hljs-params">PromiseOf</span>&lt;<span class="hljs-params">Promise</span>&lt;<span class="hljs-params">number</span>&gt;&gt; // <span class="hljs-params">number</span></span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5ab3a25/src/Class/PromiseOf.ts#L6">Class/PromiseOf.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7596606/src/Class/PromiseOf.ts#L12">Class/PromiseOf.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>

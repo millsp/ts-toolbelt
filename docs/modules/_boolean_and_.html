@@ -113,11 +113,14 @@
 						<p><p><strong><code>true</code></strong> or <strong><code>false</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = And&lt;<span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>&gt;        <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">type</span> test1 = And&lt;<span class="hljs-literal">true</span> &amp; <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>&gt; <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">type</span> test2 = And&lt;<span class="hljs-literal">true</span> | <span class="hljs-literal">false</span>, <span class="hljs-literal">true</span>&gt; <span class="hljs-comment">// boolean</span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5ab3a25/src/Boolean/And.ts#L7">Boolean/And.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7596606/src/Boolean/And.ts#L12">Boolean/And.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>

@@ -85,7 +85,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="type" class="tsd-anchor"></a>
 					<h3>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">Type&lt;A, Id&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">A</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Id</span><span class="tsd-signature-symbol">]</span></div>
+					<div class="tsd-signature tsd-kind-icon">Type&lt;A, Id&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">A</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">object</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Create your own named sub-type from a type <strong><code>A</code></strong></p>
@@ -113,11 +113,13 @@
 						<p><p>A new type <strong><code>Type&lt;A, Name&gt;</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> eur = Type&lt;<span class="hljs-built_in">number</span>, <span class="hljs-string">'eur'</span>&gt; <span class="hljs-comment">// number &amp; {__type: 'eur'}</span>
+<span class="hljs-keyword">type</span> usd = Type&lt;<span class="hljs-built_in">number</span>, <span class="hljs-string">'usd'</span>&gt; <span class="hljs-comment">// number &amp; {__type: 'eur'}</span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5ab3a25/src/Any/Type.ts#L7">Any/Type.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7596606/src/Any/Type.ts#L11">Any/Type.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>

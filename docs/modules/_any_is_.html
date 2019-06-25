@@ -120,11 +120,20 @@
 						<p><p><strong><code>true</code></strong> or <strong><code>false</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = Is&lt;<span class="hljs-string">'x'</span>, <span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>&gt;            <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">type</span> test1 = Is&lt;<span class="hljs-string">'x'</span>, <span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>, <span class="hljs-string">'extends'</span>&gt; <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">type</span> test2 = Is&lt;<span class="hljs-string">'x'</span>, <span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>, <span class="hljs-string">'equals'</span>&gt;  <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">type</span> test3 = Is&lt;<span class="hljs-string">'x'</span>, <span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>, <span class="hljs-string">'loose'</span>&gt;   <span class="hljs-comment">// true</span>
+
+<span class="hljs-keyword">type</span> test4 = Is&lt;<span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>&gt;            <span class="hljs-comment">// boolean</span>
+<span class="hljs-keyword">type</span> test5 = Is&lt;<span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'extends'</span>&gt; <span class="hljs-comment">// boolean</span>
+<span class="hljs-keyword">type</span> test6 = Is&lt;<span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'equals'</span>&gt;  <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">type</span> test7 = Is&lt;<span class="hljs-string">'x'</span> | <span class="hljs-number">0</span>, <span class="hljs-string">'x'</span>, <span class="hljs-string">'loose'</span>&gt;   <span class="hljs-comment">// true</span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5ab3a25/src/Any/Is.ts#L14">Any/Is.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7596606/src/Any/Is.ts#L25">Any/Is.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>

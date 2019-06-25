@@ -106,11 +106,19 @@
 						<p><p><strong><code>class</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-comment">/// `create` takes an instance constructor and creates an instance of it</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>&lt;<span class="hljs-title">C</span> <span class="hljs-title">extends</span> (<span class="hljs-params"><span class="hljs-keyword">new</span> (...args: <span class="hljs-built_in">any</span>[]) =&gt; <span class="hljs-built_in">any</span></span>)&gt;(<span class="hljs-params">c: C</span>): <span class="hljs-title">InstanceOf</span>&lt;<span class="hljs-title">C</span>&gt;
+
+<span class="hljs-title">class</span> <span class="hljs-title">A</span> </span>{}
+<span class="hljs-keyword">class</span> B {}
+
+<span class="hljs-keyword">let</span> a = create(A) <span class="hljs-comment">// A</span>
+<span class="hljs-keyword">let</span> b = create(B) <span class="hljs-comment">// B</span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5ab3a25/src/Class/InstanceOf.ts#L6">Class/InstanceOf.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7596606/src/Class/InstanceOf.ts#L18">Class/InstanceOf.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
