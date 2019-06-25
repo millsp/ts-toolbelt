@@ -155,7 +155,7 @@ you on track to start writing your own types.
 
 In this wiki, you will find more extra resources for your leaning & understanding.
 
-#### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-deschttps://pirix-gh.github.io/ts-toolbelt/)
+#### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
 
 Are you missing something? Participate to the open-wiki by posting your
 questions right here.
