@@ -5,6 +5,10 @@
  * @param A2 to cast **`A1`** to
  * @returns **`A1`** or **`A2`**
  * @example
+ * ```ts
+ * type test0 = Cast<'42', string> // '42'
+ * type test1 = Cast<'42', number> // number
+ * ```
  */
 export type Cast<A1 extends any, A2 extends any> =
     A1 extends A2

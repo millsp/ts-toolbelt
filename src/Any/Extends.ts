@@ -4,6 +4,12 @@
  * @param A2
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * type test0 = Extends<42, number>   // true
+ * type test1 = Extends<42, string>   // false
+ * type test2 = Extends<never, never> // false
+ * /// Nothing cannot extend nothing, use `Equals`
+ * ```
  */
 export type Extends<A1 extends any, A2 extends any> =
     (A1 extends infer A ? A : never) extends never

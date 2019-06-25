@@ -1,6 +1,3 @@
-import {Replace} from '../Union/Replace'
-import {Match} from './_Internal'
-
 type EqualsDefault<A1 extends any, A2 extends any> =
     (A1 | A2) extends A1   // If both of them are A1
     ? (A1 | A2) extends A2 // If both of them are A2
@@ -20,8 +17,14 @@ type EqualsStrict<A1 extends any, A2 extends any> =
  * @param match to change precision
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * type test0 =  Equals<42, 42>                                      // true
+ * type test1 =  Equals<{a: string}, {b: string}>                    // false
+ * type test2 =  Equals<{a: string}, {readonly a: string}>           // true
+ * type test3 =  Equals<{a: string}, {readonly a: string}, 'strict'> // false
+ * ```
  */
-export type Equals<A1 extends any, A2 extends any, match extends Match = 'default'> = {
+export type Equals<A1 extends any, A2 extends any, match extends 'default' | 'strict' = 'default'> = {
     'default': EqualsDefault<A1, A2>
-    'equals' : EqualsStrict<A1,  A2>
-}[Replace<match, 'extends' | 'loose', 'default'>]
+    'strict' : EqualsStrict<A1,  A2>
+}[match]

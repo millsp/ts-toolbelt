@@ -5,6 +5,11 @@
  * @param Catch to fallback (fail)
  * @returns **`A1`** or **`Catch`**
  * @example
+ * ```ts
+ * type test0 = Try<'42', string>          // '42'
+ * type test1 = Try<'42', number>          // never
+ * type test1 = Try<'42', number, 'tried'> // 'tried'
+ * ```
  */
 export type Try<A1 extends any, A2 extends any, Catch = never> =
     A1 extends A2

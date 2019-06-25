@@ -11,7 +11,7 @@ import {Equals} from '../Any/Equals'
 export type ReadonlyKeys<O extends object> = {
     [K in keyof O]-?: Equals<{-readonly [Q in K]: O[K]},
                              {          [Q in K]: O[K]},
-                            'equals'> extends true
+                            'strict'> extends true
                       ? never
                       : K
 }[Keys<O>]

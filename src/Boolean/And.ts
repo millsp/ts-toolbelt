@@ -3,6 +3,11 @@
  * @param B2 Right-hand side
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * type test0 = And<true, false>        // true
+ * type test1 = And<true & false, true> // false
+ * type test2 = And<true | false, true> // boolean
+ * ```
  */
 export type And<B1 extends boolean, B2 extends boolean> =
     (B1 & B2) extends false  // If one of them is false

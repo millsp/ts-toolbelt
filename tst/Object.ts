@@ -1,7 +1,6 @@
 // /* eslint-disable fp/no-class */
 // /* eslint-disable no-implicit-coercion */
 import {Test, O} from '../src/index'
-import {Compute} from '../src/Any/Compute'
 import {x} from '../src/Any/x'
 
 const {checks, check} = Test

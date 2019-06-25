@@ -5,3 +5,4 @@
  * * `default`: extends (unless mentioned)
  */
 export type Match = 'extends' | 'equals' | 'loose' | 'default'
+

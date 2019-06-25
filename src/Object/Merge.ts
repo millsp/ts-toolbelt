@@ -1,6 +1,13 @@
 import {Omit} from './Omit'
-import {Compute} from '../Any/Compute'
 import {Cast} from '../Any/Cast'
+
+type _Merge<O extends object, O1 extends object> = {
+    [K in keyof (O & O1)]: K extends keyof O1
+                         ? O1[K]
+                         : K extends keyof O
+                           ? O[K]
+                           : never
+}
 
 /** Complete the fields of **`O`** with the ones of **`O1`**
  * @param O to complete
@@ -9,6 +16,6 @@ import {Cast} from '../Any/Cast'
  * @example
  */
 export type Merge<O extends object, O1 extends object> =
-    Compute<O & Omit<O1, keyof O>> extends infer X
+    _Merge<O, Omit<O1, keyof O>> extends infer X
     ? Cast<X, object>
     : never
