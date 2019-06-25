@@ -11,7 +11,7 @@ const {checks, check} = Test
 type O = {
          a : string,
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -23,8 +23,8 @@ readonly f : 0
 
 type O1 = {
          a : string | number
-         b : number & object
-         c : string & number
+         b : object
+         c : {a: 'a'} & {b: 'b'}
          d?: never
 readonly e?: 'string1'
 readonly f : 0
@@ -39,9 +39,9 @@ readonly f : 0
 // AT
 
 checks([
-    check<O.At<O, 'a'>, string,             Test.Pass>(),
-    check<O.At<O, 'c'>, string & number,    Test.Pass>(),
-    check<O.At<O, 'g'>, O,                  Test.Pass>(),
+    check<O.At<O, 'a'>, string,                 Test.Pass>(),
+    check<O.At<O, 'c'>, {a: 'a'} & {b: 'b'},    Test.Pass>(),
+    check<O.At<O, 'g'>, O,                      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -52,6 +52,7 @@ type DIFF_O_O1_DEFAULT = {
 }
 
 type DIFF_O_O1_LOOSE = {
+    b: number
     g: O
     h?: 1 | undefined
     i: {a: string}
@@ -79,6 +80,7 @@ type DIFF_O1_O_DEFAULT = {
 }
 
 type DIFF_O1_O_LOOSE = {
+    b: object
     g: O1
     h: never
     i: {a: string}
@@ -86,7 +88,7 @@ type DIFF_O1_O_LOOSE = {
 
 type DIFF_O1_O_EQUALS = {
     a : string | number
-    b : number & object
+    b : object
     d?: never
     g : O1
     h : never
@@ -105,6 +107,7 @@ checks([
 type EXCLUDE_O_O1_DEFAULT = {}
 
 type EXCLUDE_O_O1_LOOSE = {
+    b : number
     g : O;
     h?: 1 | undefined
 }
@@ -130,6 +133,7 @@ type EXCLUDE_O1_O_DEFAULT = {
 }
 
 type EXCLUDE_O1_O_LOOSE = {
+    b: object
     g: O1
     h: never
     i: {a: string}
@@ -137,7 +141,7 @@ type EXCLUDE_O1_O_LOOSE = {
 
 type EXCLUDE_O1_O_EQUALS = {
     a : string | number
-    b : number & object
+    b : object
     d?: never
     g : O1
     h : never
@@ -155,7 +159,7 @@ checks([
 
 type EXCLUDEKEYS_O_DEFAULT = never
 
-type EXCLUDEKEYS_O_LOOSE = 'g' | 'h'
+type EXCLUDEKEYS_O_LOOSE = 'b' | 'g' | 'h'
 
 type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h';
 
@@ -169,7 +173,7 @@ checks([
 
 type EXCLUDEKEYS_O1_DEFAULT = 'i'
 
-type EXCLUDEKEYS_O1_LOOSE = 'g' | 'h' | 'i'
+type EXCLUDEKEYS_O1_LOOSE = 'b' | 'g' | 'h' | 'i'
 
 type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i';
 
@@ -184,6 +188,7 @@ checks([
 
 type FILTER_O_DEFAULT = {
          b : number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -195,6 +200,7 @@ readonly f : 0
 
 type FILTER_O_LOOSE = {
          a : string
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
          g : O
@@ -204,7 +210,7 @@ readonly e?: 'string1'
 
 type FILTER_O_EQUALS = {
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -213,6 +219,8 @@ readonly f : 0
          j : 'a' | undefined
          k : {a: {b: string}} | undefined
 };
+
+type t = O.Filter<O, number | undefined, 'loose'>
 
 checks([
     check<O.Filter<O, string, 'extends'>,           FILTER_O_DEFAULT,   Test.Pass>(),
@@ -223,12 +231,11 @@ checks([
 // ---------------------------------------------------------------------------------------
 // FILTERKEYS
 
-type FILTERKEYS_O_DEFAULT = 'b' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
+type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
 
-type FILTERKEYS_O_LOOSE = 'a' | 'd' | 'e' | 'g' | 'j' | 'k'
+type FILTERKEYS_O_LOOSE = 'a' | 'c' | 'd' | 'e' | 'g' | 'j' | 'k'
 
 type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k';
-
 
 checks([
     check<O.FilterKeys<O, string, 'extends'>,           FILTERKEYS_O_DEFAULT,   Test.Pass>(),
@@ -242,10 +249,10 @@ checks([
 checks([
     check<O.Has<O, 'X', string | number, 'extends'>,            false,      Test.Pass>(),
 
-    check<O.Has<O, 'c', string, 'extends'>,                     true,       Test.Pass>(),
-    check<O.Has<O, 'c', string & number, 'equals'>,             true,       Test.Pass>(),
-    check<O.Has<O, 'c', string | number, 'loose'>,              true,       Test.Pass>(),
-    check<O.Has<O, 'c', string & number | number, 'loose'>,     true,       Test.Pass>(),
+    check<O.Has<O, 'c', string, 'extends'>,                     false,      Test.Pass>(),
+    check<O.Has<O, 'c', {a: 'a'} & {b: 'b'}, 'equals'>,         true,       Test.Pass>(),
+    check<O.Has<O, 'c', string | number, 'loose'>,              false,      Test.Pass>(),
+    check<O.Has<O, 'c', {a: 'a'} & {b: 'b'} | number, 'loose'>, true,       Test.Pass>(),
 
     check<O.Has<O, 'd', string | undefined, 'extends'>,         true,       Test.Pass>(),
     check<O.Has<O, 'd', 'string0' | undefined, 'equals'>,       true,       Test.Pass>(),
@@ -308,8 +315,7 @@ type INTERSECT_O_O1_DEFAULT = O
 
 type INTERSECT_O_O1_LOOSE = {
          a : string;
-         b : number;
-         c : string & number;
+         c : {a: 'a'} & {b: 'b'};
          d?: 'string0' | undefined;
 readonly e?: 'string1' | undefined;
 readonly f : 0;
@@ -318,7 +324,7 @@ readonly f : 0;
 }
 
 type INTERSECT_O_O1_EQUALS = {
-         c : string & number;
+         c : {a: 'a'} & {b: 'b'};
 readonly e?: 'string1' | undefined;
 readonly f : 0;
          j : 'a' | undefined
@@ -336,7 +342,7 @@ checks([
 
 type INTERSECTKEYS_O_DEFAULT = keyof O
 
-type INTERSECTKEYS_O_LOOSE = 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'j' | 'k'
+type INTERSECTKEYS_O_LOOSE = 'a' | 'c' | 'd' | 'e' | 'f' | 'j' | 'k'
 
 type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j' | 'k';
 
@@ -360,7 +366,7 @@ checks([
 type MERGE_O_O1 = {
          a : string
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0' | undefined
 readonly e?: 'string1' | undefined
 readonly f : 0
@@ -373,8 +379,8 @@ readonly f : 0
 
 type MERGE_O1_O = {
          a : string | number
-         b : number & object
-         c : string & number
+         b : object
+         c : {a: 'a'} & {b: 'b'}
          d?: undefined
 readonly e?: 'string1' | undefined
 readonly f : 0
@@ -412,7 +418,7 @@ checks([
 type NONNULLABLE_O_FLAT = {
          a : string
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -425,7 +431,7 @@ readonly f : 0
 type NONNULLABLE_O_J_FLAT = {
          a : string
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -454,7 +460,7 @@ checks([
 type NULLABLE_O_FLAT = {
          a : string | undefined
          b : number | undefined
-         c : string & number | undefined
+         c : {a: 'a'} & {b: 'b'} | undefined
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0 | undefined
@@ -467,7 +473,7 @@ readonly f : 0 | undefined
 type NULLABLE_O_A_FLAT = {
          a : string | undefined
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -496,7 +502,7 @@ checks([
 type OMIT_O_DEH = {
     a: string
     b: number
-    c: string & number
+    c: {a: 'a'} & {b: 'b'}
     readonly f: 0
     g: O
     j: 'a' | undefined
@@ -514,7 +520,7 @@ checks([
 type OPTIONAL_O_FLAT = {
          a?: string,
          b?: number
-         c?: string & number
+         c?: {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f?: 0
@@ -527,7 +533,7 @@ readonly f?: 0
 type OPTIONAL_O_A_FLAT = {
          a?: string | undefined
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -585,7 +591,7 @@ checks([
 type READONLY_O_FLAT = {
 readonly a : string,
 readonly b : number
-readonly c : string & number
+readonly c : {a: 'a'} & {b: 'b'}
 readonly d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -598,7 +604,7 @@ readonly k : {a: {b: string}} | undefined
 type READONLY_O_A_FLAT = {
 readonly a : string,
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -655,37 +661,20 @@ checks([
 // REPLACE
 
 type REPLACE_STRING_NUMBER = {
-    a: number;
-    c: number;
-    b: number;
-    d?: 'string0' | undefined;
-    readonly e?: 'string1' | undefined;
-    readonly f: 0;
-    g: O;
-    h?: 1 | undefined;
-    j: 'a' | undefined;
+    a: number
+    b: number
+    c: {a: 'a'} & {b: 'b'}
+    d?: 'string0' | undefined
+    readonly e?: 'string1' | undefined
+    readonly f: 0
+    g: O
+    h?: 1 | undefined
+    j: 'a' | undefined
     k: {
         a: {
-            b: string;
+            b: string
         };
-    } | undefined;
-}
-
-type REPLACE_STRING_NUMBER_OPT = {
-    a?: number;
-    c?: number;
-    b: number;
-    d?: 'string0' | undefined;
-    readonly e?: 'string1' | undefined;
-    readonly f: 0;
-    g: O;
-    h?: 1 | undefined;
-    j: 'a' | undefined;
-    k: {
-        a: {
-            b: string;
-        };
-    } | undefined;
+    } | undefined
 };
 
 checks([
@@ -698,7 +687,7 @@ checks([
 type REQUIRED_O_FLAT = {
          a: string,
          b: number
-         c: string & number
+         c: {a: 'a'} & {b: 'b'}
          d: 'string0'
 readonly e: 'string1'
 readonly f: 0
@@ -711,7 +700,7 @@ readonly f: 0
 type REQUIRED_O_D_FLAT = {
          a : string,
          b : number
-         c : string & number
+         c : {a: 'a'} & {b: 'b'}
          d : 'string0'
 readonly e?: 'string1'
 readonly f : 0
@@ -739,12 +728,10 @@ checks([
 
 type SELECT_O_DEFAULT = {
          a : string,
-         c : string & number
 }
 
 type SELECT_O_LOOSE = {
          b : number
-         c : string & number
 readonly f : 0
          h?: 1
 }
@@ -762,9 +749,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // SELECTKEYS
 
-type SELECTKEYS_O_DEFAULT = 'a' | 'c'
+type SELECTKEYS_O_DEFAULT = 'a'
 
-type SELECTKEYS_O_LOOSE = 'b' | 'c' | 'f' | 'h'
+type SELECTKEYS_O_LOOSE = 'b' | 'f' | 'h'
 
 type SELECTKEYS_O_EQUALS = 'a';
 
@@ -829,7 +816,7 @@ checks([
 type WRITABLE_O_FLAT = {
     a : string,
     b : number
-    c : string & number
+    c : {a: 'a'} & {b: 'b'}
     d?: 'string0'
     e?: 'string1'
     f : 0
@@ -842,7 +829,7 @@ type WRITABLE_O_FLAT = {
 type WRITABLE_O_E_FLAT = {
     a : string,
     b : number
-    c : string & number
+    c : {a: 'a'} & {b: 'b'}
     d?: 'string0'
     e?: 'string1'
 readonly f : 0

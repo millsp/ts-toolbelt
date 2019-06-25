@@ -11,7 +11,7 @@ type T = [
     2,
     '3' | undefined,
     'xxxx',
-    string & number,
+    {a: 'a'} & {b: 'b'},
     string | number,
     number,
     object,
@@ -115,6 +115,7 @@ checks([
 type FILTER_T_NUMBER_EXTENDS = [
     '3' | undefined,
     'xxxx',
+    {a: 'a'} & {b: 'b'},
     string | number,
     object,
     readonly [
@@ -128,6 +129,7 @@ type FILTER_T_NUMBER_EXTENDS = [
 type FILTER_T_NUMBER_LOOSE = [
     '3' | undefined,
     'xxxx',
+    {a: 'a'} & {b: 'b'},
     object,
     readonly [
         0,
@@ -142,7 +144,7 @@ type FILTER_T_NUMBER_EQUALS = [
     2,
     '3' | undefined,
     'xxxx',
-    string & number,
+    {a: 'a'} & {b: 'b'},
     string | number,
     object,
     readonly [0, 1, 2?],
@@ -209,7 +211,7 @@ type INTERSECT_T_T1_NUMBER_DEFAULT = [
     2,
     '3' | undefined,
     'xxxx',
-    string & number,
+    {a: 'a'} & {b: 'b'},
     string | number,
     number,
     object,
@@ -221,7 +223,6 @@ type INTERSECT_T_T1_NUMBER_EXTENDS = [
     1,
     2,
     'xxxx',
-    string & number,
     number,
     object,
     readonly [0, 1, 2?]
@@ -240,7 +241,6 @@ type INTERSECT_T_T1_NUMBER_LOOSE =  [
     2,
     '3' | undefined,
     'xxxx',
-    string & number,
     string | number,
     number,
     object,
@@ -469,14 +469,12 @@ checks([
 type SELECT_T_NUMBER_EXTENDS = [
     1,
     2,
-    string & number,
     number
 ]
 
 type SELECT_T_NUMBER_LOOSE = [
     1,
     2,
-    string & number,
     string | number,
     number
 ]
@@ -484,8 +482,6 @@ type SELECT_T_NUMBER_LOOSE = [
 type SELECT_T_NUMBER_EQUALS = [
     number
 ];
-
-type t = T.SelectKeys<[1, 2, string & number, number], number>
 
 checks([
     check<T.Select<T, number, 'default'>,  SELECT_T_NUMBER_EXTENDS,     Test.Pass>(),

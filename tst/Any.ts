@@ -60,7 +60,7 @@ checks([
     check<A.Extends<any[], Array<any>>,     true,       Test.Pass>(),
     check<A.Extends<'a' | 'b', 'b' | 'a'>,  true,       Test.Pass>(),
     check<A.Extends<'a', 'a'>,              true,       Test.Pass>(),
-    check<A.Extends<true | false, boolean>, true,       Test.Pass>(),
+    check<A.Extends<never, never>,          false,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
