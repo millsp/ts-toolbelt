@@ -16,6 +16,8 @@
     <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---bug-report.md">🐞 Report Bug</a>
     ·
     <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md">🍩 Request Feature</a>
+    .
+    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">❓  Ask Questions</a>
   </p>
 </p>
 
@@ -158,7 +160,7 @@ In this wiki, you will find more extra resources for your leaning & understandin
 #### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
 
 Are you missing something? Participate to the open-wiki by posting your
-questions right here.
+questions [right here](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
 
 ## 🎁 Contributing
 
