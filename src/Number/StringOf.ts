@@ -7,6 +7,8 @@ import {FormatMap} from '../Iteration/_Internal'
  * @param N to stringify
  * @returns **`string`**
  * @example
+ * ```ts
+ * ```
  */
 export type StringOf<N extends number> =
     N extends Numbers['number']['all'] // Expensive with numbers

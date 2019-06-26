@@ -8,6 +8,8 @@ import {Match} from '../Any/_Internal'
  * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type HasPath<T extends any[], Path extends string[], M extends any = any, match extends Match = 'default'> =
     OHasPath<T, Path, M, match>

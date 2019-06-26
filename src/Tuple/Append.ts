@@ -6,6 +6,8 @@ import {Cast} from '../Any/Cast'
  * @param A to be added to
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Append<T extends any[], A extends any> =
     Concat<T, [A]> extends infer X

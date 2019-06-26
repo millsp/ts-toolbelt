@@ -12,6 +12,8 @@ export type _IsPositive<N extends Iteration> =
  * @param N to check
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type IsPositive<N extends Nbr> =
     _IsPositive<IterationOf<N>> extends infer X

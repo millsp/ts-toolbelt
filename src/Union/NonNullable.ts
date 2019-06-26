@@ -4,6 +4,8 @@ import {Exclude} from './Exclude'
  * @param U to make non-nullable
  * @returns **union**
  * @example
+ * ```ts
+ * ```
  */
 export type NonNullable<U extends any> =
     Exclude<U, undefined | null>

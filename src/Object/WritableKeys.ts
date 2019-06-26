@@ -7,6 +7,8 @@ import {Keys} from './Keys'
  * @param O
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type WritableKeys<O extends object> = {
     [K in keyof O]-?: Equals<{-readonly [Q in K]: O[K]},

@@ -17,6 +17,8 @@ export type _Absolute<N extends Iteration> =
  * @param fmt output (?=`'s'`)
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Absolute<N extends Nbr, fmt extends Format = 's'> =
     _Absolute<IterationOf<N>> extends infer I

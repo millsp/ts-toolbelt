@@ -44,6 +44,8 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> =
  * @param fmt output (?=`'s'`)
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Minus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =
     _Minus<IterationOf<N1>, IterationOf<N2>> extends infer I

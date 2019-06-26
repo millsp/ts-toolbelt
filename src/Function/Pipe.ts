@@ -17,6 +17,8 @@ type PipeItem<Fns extends Arrow[], K extends keyof Fns> =
 /** Compute what the input of **`Pipe`** should be
  * @param Fns to pipe
  * @example
+ * ```ts
+ * ```
  */
 export type Piper<Fns extends Arrow[]> = {
     [K in keyof Fns]: PipeItem<Fns, K>
@@ -26,6 +28,8 @@ export type Piper<Fns extends Arrow[]> = {
  * @param Fns to pipe
  * @returns **`Function`**
  * @example
+ * ```ts
+ * ```
  */
 export type Pipe<Fns extends Arrow[]> = (...args: Piper<Fns>) =>
     (...args: ParamsOf<Head<Fns>>) => ReturnOf<Last<Fns>>

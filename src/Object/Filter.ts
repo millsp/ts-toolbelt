@@ -9,6 +9,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Filter<O extends object, M extends any, match extends Match = 'default'> =
     Pick<O, FilterKeys<O, M, match>> extends infer X

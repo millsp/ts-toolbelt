@@ -7,6 +7,8 @@ import {Cast} from '../Any/Cast'
  * @param depth to do it deeply (?=`'flat'`)
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Optional<T extends any[], depth extends Depth = 'flat'> =
     Cast<OOptional<T, keyof T, depth>, any[]>

@@ -11,6 +11,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Exclude<T extends any[], T1 extends any[], match extends Match = 'default'> =
     TupleOf<OExclude<T, T1, match>, Length<T, 's'>> extends infer X

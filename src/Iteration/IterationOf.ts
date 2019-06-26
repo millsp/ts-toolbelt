@@ -93,6 +93,8 @@ export type IterationMap = {
  * @param N to transform
  * @returns **`Iteration`**
  * @example
+ * ```ts
+ * ```
  */
 export type IterationOf<N extends Nbr> =
     N extends keyof IterationMap

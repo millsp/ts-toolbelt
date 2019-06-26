@@ -4,6 +4,8 @@
  * @param A to update with
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Update<O extends object, K extends string, A extends any> = {
     [P in keyof O]: P extends K

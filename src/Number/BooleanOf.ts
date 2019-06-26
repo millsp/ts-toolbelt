@@ -16,6 +16,8 @@ export type _BooleanOf<N extends Iteration> =
  * @param N to transform
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type BooleanOf<N extends Nbr> =
     _BooleanOf<IterationOf<N>> extends infer X

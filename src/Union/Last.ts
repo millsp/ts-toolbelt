@@ -5,6 +5,8 @@ import {IntersectOf} from './IntersectOf'
  * @param U
  * @returns **any**
  * @example
+ * ```ts
+ * ```
  */
 export type Last<U extends any> =
     IntersectOf<

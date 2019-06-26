@@ -6,6 +6,8 @@ import {Format} from '../Iteration/_Internal'
  * @param fmt output (?=`'n'`)
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Length<T extends any[], fmt extends Format = 'n'> =  {
     's': StringOf<T['length']>

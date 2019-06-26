@@ -42,6 +42,8 @@ type Gaps<T extends any[]> = NonNullable<{
  * @param F to curry
  * @returns **`Function`**
  * @example
+ * ```ts
+ * ```
  */
 export type Curry<F extends Arrow> =
     <T extends any[]>(...args: Cast<T, Gaps<ParamsOf<F>>>) =>

@@ -4,6 +4,8 @@ import {Arrow} from './Arrow'
  * @param F
  * @returns **`class`**
  * @example
+ * ```ts
+ * ```
  */
 export type ClassOf<F extends Arrow> =
     new (...args: Parameters<F>) => ReturnType<F>

@@ -23,6 +23,8 @@ type NullablePart<O extends object, depth extends Depth> = {
  * @param depth to do it deeply (?=`'flat'`)
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Nullable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> =
     Equals<K, keyof O> extends true

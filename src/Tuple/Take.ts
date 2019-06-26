@@ -24,6 +24,8 @@ type _Take<T extends any[], N extends Nbr, TN extends any[] = [], I extends Iter
  * @param way to extract from end (?='->')
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Take<T extends any[], N extends Nbr, way extends Way = '->'> = {
     '->': Reverse<_Take<T, N>>

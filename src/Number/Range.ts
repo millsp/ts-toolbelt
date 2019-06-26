@@ -40,6 +40,8 @@ export type _Range<From extends Iteration, To extends Iteration, way extends Way
  * @param fmt output (?=`'s'`)
  * @returns **`string[]`** or **`number[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Range<From extends Nbr, To extends Nbr, way extends Way = '->', fmt extends Format = 's'> =
     _Range<IterationOf<From>, IterationOf<To>, way, fmt> extends infer X

@@ -4,6 +4,8 @@ import {ReadonlyKeys as OReadonlyKeys} from '../Object/ReadonlyKeys'
  * @param T
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type ReadonlyKeys<T extends any[]> =
     OReadonlyKeys<T>

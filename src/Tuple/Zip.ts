@@ -21,6 +21,8 @@ type _Zip<T extends any[], T1 extends any[], TN extends any[] = [], I extends It
  * @param T1 to pair up with
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Zip<T extends any[], T1 extends any[]> =
     _Zip<T, T1> extends infer X

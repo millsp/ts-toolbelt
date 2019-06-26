@@ -7,6 +7,8 @@ import {Cast} from '../Any/Cast'
  * @param K to chose fields
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Omit<O extends object, K extends string> =
     Pick<O, Exclude<keyof O, K>> extends infer X

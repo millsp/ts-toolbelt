@@ -5,6 +5,8 @@ import {MergeKeys as OMergeKeys} from '../Object/MergeKeys'
  * @param T1
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type MergeKeys<T extends any[], T1 extends any[]> =
     OMergeKeys<T, T1>

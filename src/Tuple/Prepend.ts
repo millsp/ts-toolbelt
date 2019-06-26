@@ -4,6 +4,8 @@
  * @param A to be added to
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Prepend<T extends any[], A extends any> =
     ((head: A, ...args: T) => any) extends ((...args: infer U) => any)

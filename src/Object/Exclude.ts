@@ -10,6 +10,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Exclude<O extends object, O1 extends object, match extends Match = 'default'> =
     Pick<O, ExcludeKeys<O, O1, match>> extends infer X

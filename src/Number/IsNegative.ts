@@ -11,6 +11,8 @@ export type _IsNegative<N extends Iteration> =
  * @param N to check
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type IsNegative<N extends Nbr> =
     _IsNegative<IterationOf<N>> extends infer X

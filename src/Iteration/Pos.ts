@@ -5,6 +5,8 @@ import {Format, FormatMap} from './_Internal'
  * @param I to query
  * @returns **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Pos<I extends Iteration> =
     I[FormatMap['n']] // iteration position

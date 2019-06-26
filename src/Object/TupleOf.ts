@@ -27,6 +27,8 @@ type _TupleOf<O extends object, TN extends any[], I extends Iteration> = {
  * @param LastK last index to pick
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type TupleOf<O extends object, LastK extends Nbr> =
     _TupleOf<O, [], IterationOf<Min<LastK>>> extends infer X

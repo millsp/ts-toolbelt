@@ -9,6 +9,8 @@ import {Cast} from '../Any/Cast'
  * @param To to end with
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Extract<T extends any[], From extends Nbr, To extends Nbr> =
     Pick<T, KeySet<From, To>> extends infer X

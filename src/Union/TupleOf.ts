@@ -18,6 +18,8 @@ type _TupleOf<U, TN extends any[] = [], LastU = Last<U>> = {
  * @param U to transform
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type TupleOf<U extends any> =
     _TupleOf<U>

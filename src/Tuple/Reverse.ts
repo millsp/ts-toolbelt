@@ -20,6 +20,8 @@ export type _Reverse<T extends any[], TO extends any[] = [], I extends Iteration
  * @param TO to append to (?=[])
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Reverse<T extends any[], TO extends any[] = []> =
     _Reverse<T, TO> extends infer X

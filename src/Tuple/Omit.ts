@@ -8,6 +8,8 @@ import {Cast} from '../Any/Cast'
  * @param K to chose entries
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Omit<T extends any[], K extends string> =
     TupleOf<OOmit<T, K>, Length<T, 's'>> extends infer X

@@ -10,6 +10,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type HasPath<O extends object, Path extends string[], M extends any = any, match extends Match = 'default'> =
     Is<OPath<O, Path>, M, match> extends infer X

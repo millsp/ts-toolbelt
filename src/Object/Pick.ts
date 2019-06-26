@@ -7,6 +7,8 @@ type _Pick<O extends object, K extends keyof O> = {
  * @param K to chose fields
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Pick<O extends object, K extends string> =
     _Pick<O, keyof O & K>

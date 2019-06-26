@@ -8,6 +8,8 @@ import {Keys} from './Keys'
  * @param match to change precision (?=`'default'`)
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
     [K in Keys<O>]: Is<O[K], M, match> extends true ? never : K

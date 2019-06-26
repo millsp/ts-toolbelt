@@ -21,6 +21,8 @@ type _ZipObj<TProp extends string[], TField extends any[], O extends object = {}
  * @param TFields its fields
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type ZipObj<TKeys extends string[], TFields extends any[]> =
     _ZipObj<TKeys, TFields> extends infer X

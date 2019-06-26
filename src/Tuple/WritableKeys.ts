@@ -4,6 +4,8 @@ import {WritableKeys as OWritableKeys} from '../Object/WritableKeys'
  * @param O
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type WritableKeys<T extends any[]> =
     OWritableKeys<T>

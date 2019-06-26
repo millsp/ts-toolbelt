@@ -3,6 +3,8 @@
  * @param M to select with
  * @returns **union**
  * @example
+ * ```ts
+ * ```
  */
 export type Select<U extends any, M extends any> =
     U extends M

@@ -7,6 +7,8 @@ import {Cast} from '../Any/Cast'
  * @param depth to do it deeply (?=`'flat'`)
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Readonly<T extends any[], depth extends Depth = 'flat'> =
     OReadonly<T, keyof T, depth>

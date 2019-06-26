@@ -6,6 +6,8 @@ import {Modx} from './_Internal'
  * @param modx to set modifiers (?=['!', 'W'])
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Record<K extends string, A extends any, modx extends Modx = ['!', 'W']> = {
     '!': {

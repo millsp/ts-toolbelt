@@ -11,6 +11,8 @@ import {Replace} from '../Union/Replace'
  * @param O1 to check similarities against
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type IntersectKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default': Intersect<keyof O, keyof O1>

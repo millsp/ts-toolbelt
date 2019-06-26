@@ -9,6 +9,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Replace<T extends any[], M extends any, A extends any, match extends Match = 'default'> =
     Cast<OReplace<T, M, A, match>, any[]>

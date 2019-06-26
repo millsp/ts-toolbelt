@@ -4,6 +4,8 @@ import {RequiredKeys as ORequiredKeys} from '../Object/RequiredKeys'
  * @param T
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type RequiredKeys<T extends any[]> =
     ORequiredKeys<T>

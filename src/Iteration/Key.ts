@@ -5,6 +5,8 @@ import {FormatMap, Format} from './_Internal'
  * @param I to query
  * @returns **`string`**
  * @example
+ * ```ts
+ * ```
  */
 export type Key<I extends Iteration> =
     I[FormatMap['s']] // iteration position

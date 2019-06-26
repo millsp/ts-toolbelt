@@ -6,6 +6,8 @@ import {At} from './At'
  * @param O1 to update with
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Overwrite<O extends object, O1 extends object> = {
     [K in keyof O]: At<O1, K>

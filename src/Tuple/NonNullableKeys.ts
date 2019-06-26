@@ -4,6 +4,8 @@ import {NonNullableKeys as ONonNullableKeys} from '../Object/NonNullableKeys'
  * @param T
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type NonNullableKeys<T extends any[]> =
     ONonNullableKeys<T>

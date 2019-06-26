@@ -7,6 +7,8 @@ import {IntersectKeys as OIntersectKeys} from '../Object/IntersectKeys'
  * @param T1 to check similarities against
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type IntersectKeys<T extends any[], T1 extends any[], match extends Match = 'default'> =
     OIntersectKeys<T, T1, match>

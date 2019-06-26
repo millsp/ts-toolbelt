@@ -15,6 +15,8 @@ export type _Negate<N extends Iteration> =
  * @param fmt output (?=`'s'`)
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Negate<N extends Nbr, fmt extends Format = 's'> =
     _Negate<IterationOf<N>> extends infer I

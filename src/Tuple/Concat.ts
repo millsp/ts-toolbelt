@@ -6,6 +6,8 @@ import {Cast} from '../Any/Cast'
  * @param T1 to be attached
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Concat<T extends any[], T1 extends any[]> =
     Reverse<Reverse<T>, T1> extends infer X

@@ -5,6 +5,8 @@ import {Pick} from './Pick'
  * @param O
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type RequiredKeys<O extends object> = {
     [K in keyof O]-?: {} extends Pick<O, K> ? never : K

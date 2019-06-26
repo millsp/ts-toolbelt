@@ -6,6 +6,8 @@ import {Last} from './Last'
  * @param U to remove from
  * @returns **union**
  * @example
+ * ```ts
+ * ```
  */
 export type Pop<U extends any> =
     Exclude<U, Last<U>>

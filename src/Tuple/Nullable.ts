@@ -12,6 +12,8 @@ import {Overwrite} from './Overwrite'
  * @param depth to do it deeply (?=`'flat'`)
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Nullable<T extends any[], K extends string = keyof T, depth extends Depth = 'flat'> =
     Equals<K, keyof T> extends true

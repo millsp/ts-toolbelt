@@ -8,6 +8,8 @@ import {Is} from '../Any/Is'
  * @param match to change precision (?=`'default'`)
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Replace<O extends object, M extends any, A extends any, match extends Match = 'default'> = {
     [K in keyof O]: Is<O[K], M, match> extends true ? A : O[K]

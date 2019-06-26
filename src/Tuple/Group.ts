@@ -19,6 +19,8 @@ type _Group<T extends any[], N extends Nbr, TN extends any[] = []> = {
  * @param N to split at
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Group<T extends any[], N extends Nbr> =
     _Group<T, N> extends infer X

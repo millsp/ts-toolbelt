@@ -5,6 +5,8 @@ import {Keys} from './Keys'
  * @param O1
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type MergeKeys<O extends object, O1 extends object> =
     Keys<O & O1>

@@ -24,6 +24,8 @@ type _UnNest<T extends any[], TN extends any[] = [], I extends Iteration = Itera
  * @param T to un-nest
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type UnNest<T extends any[]> =
     _UnNest<T> extends infer X

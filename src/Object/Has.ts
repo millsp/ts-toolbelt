@@ -10,6 +10,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type Has<O extends object, K extends string, M extends any = any, match extends Match = 'default'> =
     Is<At<O, K>, M, match> extends infer X

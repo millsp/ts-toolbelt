@@ -10,6 +10,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Select<T extends any[], M extends any, match extends Match = 'default'> =
     TupleOf<OSelect<T, M, match>, Length<T, 's'>> extends infer X

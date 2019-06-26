@@ -8,6 +8,8 @@ import {Has as OHas} from '../Object/Has'
  * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type Has<T extends any[], K extends string, M extends any = any, match extends Match = 'default'> =
     OHas<T, K, M, match>

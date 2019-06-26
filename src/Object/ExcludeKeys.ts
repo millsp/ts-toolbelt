@@ -12,6 +12,8 @@ import {Replace} from '../Union/Replace'
  * @param match to change precision (?=`'default'`)
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type ExcludeKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default': Exclude<keyof O, keyof O1>

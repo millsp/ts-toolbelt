@@ -32,6 +32,8 @@ type DropBack<T extends any[], N extends Nbr, I extends Iteration = IterationOf<
  * @param way to remove from end (?='->')
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Drop<T extends any[], N extends Nbr, way extends Way = '->'> = {
     '->': DropForth<T, N>

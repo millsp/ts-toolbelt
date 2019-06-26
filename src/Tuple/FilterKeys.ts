@@ -7,6 +7,8 @@ import {Match} from '../Any/_Internal'
  * @param match to change precision (?=`'default'`)
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type FilterKeys<T extends any[], M extends any, match extends Match = 'default'> =
     OFilterKeys<T, M, match>

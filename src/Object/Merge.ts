@@ -14,6 +14,8 @@ type _Merge<O extends object, O1 extends object> = {
  * @param O1 to copy from
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Merge<O extends object, O1 extends object> =
     _Merge<O, Omit<O1, keyof O>> extends infer X

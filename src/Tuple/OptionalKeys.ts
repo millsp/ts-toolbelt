@@ -4,6 +4,8 @@ import {OptionalKeys as OOptionalKeys} from '../Object/OptionalKeys'
  * @param T
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type OptionalKeys<T extends any[]> =
     OOptionalKeys<T>

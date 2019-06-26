@@ -7,6 +7,8 @@ import {SelectKeys as OSelectKeys} from '../Object/SelectKeys'
  * @param match to change precision (?=`'default'`)
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type SelectKeys<T extends any[], M extends any, match extends Match = 'default'> =
     OSelectKeys<T, M, match>

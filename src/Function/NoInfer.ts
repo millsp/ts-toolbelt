@@ -2,6 +2,8 @@
  * @param A to de-prioritize
  * @returns **`A`**
  * @example
+ * ```ts
+ * ```
  */
 export type NoInfer<A extends any> =
     A & {[K in keyof A]: A[K]}

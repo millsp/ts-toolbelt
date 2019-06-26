@@ -6,6 +6,8 @@ import {Format, FormatMap} from './_Internal'
  * @param fmt output
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Fmt<I extends Iteration, fmt extends Format> =
     I[FormatMap[fmt]]

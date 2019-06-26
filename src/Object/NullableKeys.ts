@@ -4,6 +4,8 @@ import {SelectKeys} from './SelectKeys'
  * @param O
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type NullableKeys<O extends object> =
     SelectKeys<O, undefined, 'loose'>

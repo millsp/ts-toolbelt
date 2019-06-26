@@ -21,6 +21,8 @@ type _Path<O, Path extends string[], I extends Iteration = IterationOf<'0'>> = {
  * @param Path to be followed
  * @returns **`any`**
  * @example
+ * ```ts
+ * ```
  */
 export type Path<O extends object, Path extends string[]> =
     _Path<O, Path> extends infer X

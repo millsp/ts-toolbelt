@@ -42,6 +42,8 @@ export type _Min<N extends Iteration> =
  * @param fmt output (?=`'s'`)
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Min<N extends Nbr, fmt extends Format = 's'> =
     _Min<IterationOf<N>> extends infer I

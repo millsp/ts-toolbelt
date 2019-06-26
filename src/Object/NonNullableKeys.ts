@@ -4,6 +4,8 @@ import {FilterKeys} from './FilterKeys'
  * @param O
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type NonNullableKeys<O extends object> =
     FilterKeys<O, undefined, 'loose'>

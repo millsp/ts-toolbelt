@@ -11,6 +11,8 @@ export type _IsZero<N extends Iteration> =
  * @param N to check
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type IsZero<N extends Nbr> =
     _IsZero<IterationOf<N>> extends infer X

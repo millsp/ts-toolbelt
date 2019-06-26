@@ -22,6 +22,8 @@ type _Clamp<N extends Iteration, Min extends Iteration, Max extends Iteration> =
  *
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Clamp<N extends Nbr, Min extends Nbr, Max extends Nbr, fmt extends Format = 's'> =
     _Clamp<IterationOf<N>, IterationOf<Min>, IterationOf<Max>> extends infer I

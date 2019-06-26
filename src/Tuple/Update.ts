@@ -7,6 +7,8 @@ import {Cast} from '../Any/Cast'
  * @param A to update with
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Update<O extends object, K extends string, A extends any> =
     Cast<OUpdate<O, K, A>, any[]>

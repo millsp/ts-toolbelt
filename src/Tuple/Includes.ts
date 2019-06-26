@@ -7,6 +7,8 @@ import {Includes as OIncludes} from '../Object/Includes'
  * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type Includes<T extends any[], M extends any, match extends Match = 'default'> =
     OIncludes<T, M, match>

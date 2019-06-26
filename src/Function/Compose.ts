@@ -19,6 +19,8 @@ type ComposeItem<Fns extends Arrow[], K extends keyof Fns> =
 /** Compute what the input of **`Compose`** should be
  * @param Fns to compose
  * @example
+ * ```ts
+ * ```
  */
 export type Composer<Fns extends Arrow[]> = {
     [K in keyof Fns]: ComposeItem<Fns, K>
@@ -28,6 +30,8 @@ export type Composer<Fns extends Arrow[]> = {
  * @param Fns to compose
  * @returns **`Function`**
  * @example
+ * ```ts
+ * ```
  */
 export type Compose<Fns extends Arrow[]> = (...args: Composer<Fns>) =>
     (...args: ParamsOf<Last<Fns>>) => ReturnOf<Head<Fns>>

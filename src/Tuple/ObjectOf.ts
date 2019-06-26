@@ -4,6 +4,8 @@ import {Omit} from '../Object/Omit'
  * @param T to transform
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type ObjectOf<T extends any[]> =
     Omit<T, keyof any[]>

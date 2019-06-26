@@ -7,6 +7,8 @@ import {Match} from '../Any/_Internal'
  * @param match to change precision (?=`'default'`)
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type Includes<O extends object, M extends any, match extends Match = 'default'> =
     [SelectKeys<O, M, match>] extends [never]

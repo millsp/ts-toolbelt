@@ -6,6 +6,8 @@ import {Intersect} from './Intersect'
  * @param A to check within
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type Has<U extends any, A extends any> =
     [Intersect<U, A>] extends [never]

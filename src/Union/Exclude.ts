@@ -3,6 +3,8 @@
  * @param M to remove out
  * @returns **union**
  * @example
+ * ```ts
+ * ```
  */
 export type Exclude<U extends any, M extends any> =
     U extends M

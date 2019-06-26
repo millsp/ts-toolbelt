@@ -4,6 +4,8 @@ import {Exclude} from '../Union/Exclude'
  * @param O
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type Keys<O extends object> =
     Exclude<keyof O, keyof any[]> // ! important

@@ -42,6 +42,8 @@ export type _Max<N extends Iteration> =
  * @param fmt output (?=`'s'`)
  * @returns **`string`** or **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type Max<N extends Nbr, fmt extends Format = 's'> =
     _Max<IterationOf<N>> extends infer I

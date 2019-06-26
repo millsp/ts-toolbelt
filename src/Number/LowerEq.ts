@@ -12,6 +12,8 @@ export type _LowerEq<N1 extends Iteration, N2 extends Iteration> =
  * @param N2 to compare to
  * @returns **`true`** or **`false`**
  * @example
+ * ```ts
+ * ```
  */
 export type LowerEq<N1 extends Nbr, N2 extends Nbr> =
     _LowerEq<IterationOf<N1>, IterationOf<N2>> extends infer X

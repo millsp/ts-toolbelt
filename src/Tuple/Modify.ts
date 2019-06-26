@@ -8,6 +8,8 @@ import {Exclude} from '../Union/Exclude'
  * @param TMod to copy to
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Modify<T extends any[], TMod extends any[]> = {
     [K in keyof TMod]: Replace<TMod[K], x, Exclude<At<T, K>, undefined>>

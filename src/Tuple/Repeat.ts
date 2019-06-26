@@ -21,6 +21,8 @@ type _Repeat<N extends Nbr, A, T extends any[] = [], I extends Iteration = Itera
  * @param T to be filled (?=[])
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Repeat<A extends any, N extends Nbr, T extends any[] = []> =
     _Repeat<N, A, T> extends infer X

@@ -4,6 +4,8 @@
  * @param U to transform
  * @returns **intersection**
  * @example
+ * ```ts
+ * ```
  */
 export type IntersectOf<U extends any> =
     (U extends any ? (k: U) => void : never) extends ((k: infer I) => void)

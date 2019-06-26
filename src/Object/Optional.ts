@@ -22,6 +22,8 @@ type OptionalPart<O extends object, depth extends Depth> = {
  * @param depth to do it deeply (?=`'default'`)
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Optional<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> =
     Equals<K, keyof O> extends true

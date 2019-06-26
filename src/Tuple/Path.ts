@@ -5,6 +5,8 @@ import {Path as OPath} from '../Object/Path'
  * @param Path to be followed
  * @returns **`any`**
  * @example
+ * ```ts
+ * ```
  */
 export type Path<T extends any[], Path extends string[]> =
     OPath<T, Path>

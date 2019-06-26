@@ -4,6 +4,8 @@ import {Arrow} from './Arrow'
  * @param F to extract from
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type ParamsOf<F extends Arrow> =
     F extends ((...args: infer T) => any)

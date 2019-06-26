@@ -11,6 +11,8 @@ import {Cast} from '../Any/Cast'
  * @param match to change precision (?=`'default'`)
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Diff<O extends object, O1 extends object, match extends Match = 'default'> =
     Merge<Exclude<O, O1, match>, Exclude<O1, O, match>> extends infer X

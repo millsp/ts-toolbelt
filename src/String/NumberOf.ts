@@ -5,6 +5,8 @@ import {Pos} from '../Iteration/Pos'
  * @param S to transform
  * @returns **`number`**
  * @example
+ * ```ts
+ * ```
  */
 export type NumberOf<N extends string> =
     Pos<IterationOf<N>>

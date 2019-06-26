@@ -9,6 +9,8 @@ import {Cast} from '../Any/Cast'
  * @param O1 to check similarities against
  * @returns **`object`**
  * @example
+ * ```ts
+ * ```
  */
 export type Intersect<O extends object, O1 extends object, match extends Match = 'default'> =
     Pick<O, IntersectKeys<O, O1, match>> extends infer X

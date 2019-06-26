@@ -4,6 +4,8 @@ import {NullableKeys as ONullableKeys} from '../Object/NullableKeys'
  * @param T
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type NullableKeys<T extends any[]> =
     ONullableKeys<T>

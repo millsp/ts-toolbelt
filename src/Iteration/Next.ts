@@ -5,6 +5,8 @@ import {Iteration} from './Iteration'
  * @param I to move
  * @returns **`Iteration`**
  * @example
+ * ```ts
+ * ```
  */
 export type Next<I extends Iteration> =
     IterationMap[I[1]] // continues iterating

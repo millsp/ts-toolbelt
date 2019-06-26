@@ -9,6 +9,8 @@ import {Max} from '../Number/Max'
  * @param T1 to copy from
  * @returns **`any[]`**
  * @example
+ * ```ts
+ * ```
  */
 export type Merge<T extends any[], T1 extends any[]> =
     T1 extends Longest<T, T1>

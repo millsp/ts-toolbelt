@@ -5,6 +5,8 @@ import {Exclude} from './Exclude'
  * @param A to remove out
  * @returns **union**
  * @example
+ * ```ts
+ * ```
  */
 export type Filter<U extends any, M extends any> =
     Exclude<U, M>

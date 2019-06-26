@@ -9,6 +9,8 @@ import {Compute} from '../Any/Compute'
  * @param match to change precision (?=`'default'`)
  * @returns **`keyof`**
  * @example
+ * ```ts
+ * ```
  */
 export type ExcludeKeys<T extends any[], T1 extends any[], match extends Match = 'default'> =
     OExcludeKeys<T, T1, match>
