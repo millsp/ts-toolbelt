@@ -93,9 +93,6 @@ Here's some of the most useful features:
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/demo.gif" id="demo">
 <p align="center">
 
-This package offers great features like being able to change an object type at
-any depth. Those in-depth utilities can be found in `Object` in `P` (for Path).
-
 > If you don't find the type you are looking for, you are welcome to open a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
 
 ## 🏁 Getting Started
@@ -126,10 +123,10 @@ type merge = O.Merge<{name: string}, {age?: number}>
 
 The project is organized around TypeScript's main concepts:
 
-|                |                |                 |              |             |
-|----------------|----------------|-----------------|--------------|-------------|
-| **A**(ny)      | **C**(lass)    | **I**(teration) | **O**(bject) | **T**(uple) |
-| **B**(boolean) | **F**(unction) | **N**(umber)    | **S**(tring) | **U**(nion) |
+|              |                    |              |                |                 |              |
+|--------------|--------------------|--------------|----------------|-----------------|--------------|
+| **A**(ny)    | **B**(boolean)     | **C**(lass)  | **F**(unction) | **I**(teration) | **N**(umber) |
+| **O**(bject) | **O**(bject).**P** | **S**(tring) | **T**(uple)    | **U**(nion)     | Test         |
 
 #### Imports
 
