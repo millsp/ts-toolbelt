@@ -1,10 +1,10 @@
 ---
-name: "❓ Question"
-about: "There's something unclear 🤔"
+name: "🤔 Question"
+about: "There's something unclear 🤯"
 
 ---
 
-## ❓ Question
+## 🤔 Question
 
 #### Describe your question
 <!-- A clear and concise description of what you need to know. -->

@@ -17,7 +17,7 @@
     ·
     <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md">🍩 Request Feature</a>
     .
-    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">❓  Ask Questions</a>
+    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">🤔  Ask Questions</a>
   </p>
 </p>
 
