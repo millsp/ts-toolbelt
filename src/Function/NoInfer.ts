@@ -3,6 +3,21 @@
  * @returns **`A`**
  * @example
  * ```ts
+ * const fn0 = <A extends any>(a0: A, a1: NoInfer<A>): A => {
+ *     return {} as unknown as A // just for the example
+ * }
+ *
+ * const fn1 = <A extends any>(a0: NoInfer<A>, a1: A): A => {
+ *     return {} as unknown as A // just for the example
+ * }
+ *
+ * const fn2 = <A extends any>(a0: NoInfer<A>, a1: NoInfer<A>): A => {
+ *     return {} as unknown as A // just for the example
+ * }
+ *
+ * const test0 = fn0('b', 'a') // error: infer priority is `a0`
+ * const test1 = fn1('b', 'a') // error: infer priority is `a1`
+ * const test2 = fn2('b', 'a') // works: infer priority is `a0` | `a1`
  * ```
  */
 export type NoInfer<A extends any> =
@@ -10,4 +25,5 @@ export type NoInfer<A extends any> =
 
 // https://github.com/microsoft/TypeScript/issues/14829#issuecomment-322267089
 // Better than `A & {}` that does not work very well with any kind of type
+
 

@@ -29,7 +29,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // COMPOSE
 
-declare function compose<Fns extends any[]>(...args: F.Composer<Fns>): F.ReturnOf<F.Compose<Fns>>
+declare function compose<Fns extends any[]>(...args: F.Composer<Fns>): F.Composed<Fns>
 
 const composed = compose(
     (message: string)                   => false,                   // receive previous return
@@ -73,7 +73,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PIPE
 
-declare function pipe<Fns extends any[]>(...args: F.Piper<Fns>): F.ReturnOf<F.Pipe<Fns>>
+declare function pipe<Fns extends any[]>(...args: F.Piper<Fns>): F.Piped<Fns>
 
 const piped = pipe(
     (name: string, age: number)         => ({name, age}),           // receive parameters

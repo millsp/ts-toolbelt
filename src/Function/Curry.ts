@@ -43,6 +43,9 @@ type Gaps<T extends any[]> = NonNullable<{
  * @returns **`Function`**
  * @example
  * ```ts
+ * /// If you are looking for creating types for `curry`
+ * /// It handles placeholders and variable arguments
+ * declare function curry<Fns extends Arrow>(fns: Fns): Curry<Fns>
  * ```
  */
 export type Curry<F extends Arrow> =
@@ -50,3 +53,4 @@ export type Curry<F extends Arrow> =
         GapsOf<T, ParamsOf<F>> extends [any, ...any[]]
         ? Curry<(...args: GapsOf<T, ParamsOf<F>>) => ReturnOf<F>>
         : ReturnOf<F>
+

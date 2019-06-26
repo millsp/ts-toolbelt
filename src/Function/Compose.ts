@@ -20,6 +20,9 @@ type ComposeItem<Fns extends Arrow[], K extends keyof Fns> =
  * @param Fns to compose
  * @example
  * ```ts
+ * /// If you are looking for creating types for compose
+ * /// `Composer` will check for input & `Composed` output
+ * declare function compose<Fns extends any[]>(...args: Composer<Fns>): Composed<Fns>
  * ```
  */
 export type Composer<Fns extends Arrow[]> = {
@@ -31,7 +34,10 @@ export type Composer<Fns extends Arrow[]> = {
  * @returns **`Function`**
  * @example
  * ```ts
+ * /// If you are looking for creating types for `compose`
+ * /// `Composer` will check for input & `Composed` output
+ * declare function compose<Fns extends any[]>(...args: Composer<Fns>): Composed<Fns>
  * ```
  */
-export type Compose<Fns extends Arrow[]> = (...args: Composer<Fns>) =>
+export type Composed<Fns extends Arrow[]> =
     (...args: ParamsOf<Last<Fns>>) => ReturnOf<Head<Fns>>

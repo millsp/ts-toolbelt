@@ -1,3 +1,4 @@
+/* eslint-disable fp/no-this */
 import {Arrow} from './Arrow'
 
 /** Create a class from a **`Function`**
@@ -5,6 +6,17 @@ import {Arrow} from './Arrow'
  * @returns **`class`**
  * @example
  * ```ts
+ * type Clazz = ClassOf<(name: string) => {
+ *     name: string
+ * }>
+ *
+ * const test0: Clazz = class X {
+ *     name: string
+ *
+ *     constructor(name: string) {
+ *         this.name = name
+ *     }
+ * }
  * ```
  */
 export type ClassOf<F extends Arrow> =
