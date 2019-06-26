@@ -2,8 +2,7 @@ import {Cast} from '../Any/Cast'
 import {HasPath} from './HasPath'
 import {Extract} from '../Tuple/_api'
 
-/** Get a validated path from an un-validated one. Invalid parts of the path are
- * replaced with `never`.
+/** Validate a path of **`O`**. Invalid parts are replaced with `never`.
  * @param O to be inspected
  * @param Path to be validated
  * @returns **`string[]`**
