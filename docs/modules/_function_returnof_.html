@@ -106,11 +106,16 @@
 						<p><p><strong><code>any</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">const</span> fn = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-keyword">type</span> test0 = ReturnOf&lt;<span class="hljs-keyword">typeof</span> fn&gt; <span class="hljs-comment">// boolean</span>
+
+<span class="hljs-keyword">type</span> test1 = ReturnOf&lt;<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>&gt; <span class="hljs-comment">// true</span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f4f306a/src/Function/ReturnOf.ts#L8">Function/ReturnOf.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/c8f3143/src/Function/ReturnOf.ts#L15">Function/ReturnOf.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>

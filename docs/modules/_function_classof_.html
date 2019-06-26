@@ -101,11 +101,22 @@
 						<p><p><strong><code>class</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> Clazz = ClassOf&lt;<span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>) =&gt;</span> {
+    name: <span class="hljs-built_in">string</span>
+}&gt;
+
+<span class="hljs-keyword">const</span> test0: Clazz = <span class="hljs-keyword">class</span> X {
+    name: <span class="hljs-built_in">string</span>
+
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>) {
+        <span class="hljs-keyword">this</span>.name = name
+    }
+}</code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f4f306a/src/Function/ClassOf.ts#L8">Function/ClassOf.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/c8f3143/src/Function/ClassOf.ts#L22">Function/ClassOf.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>

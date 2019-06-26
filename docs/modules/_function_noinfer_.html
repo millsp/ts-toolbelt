@@ -106,11 +106,26 @@
 						<p><p><strong><code>A</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">const</span> fn0 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: A, a1: NoInfer&lt;A&gt;): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> {} <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> A <span class="hljs-comment">// just for the example</span>
+}
+
+<span class="hljs-keyword">const</span> fn1 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: NoInfer&lt;A&gt;, a1: A): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> {} <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> A <span class="hljs-comment">// just for the example</span>
+}
+
+<span class="hljs-keyword">const</span> fn2 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: NoInfer&lt;A&gt;, a1: NoInfer&lt;A&gt;): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> {} <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> A <span class="hljs-comment">// just for the example</span>
+}
+
+<span class="hljs-keyword">const</span> test0 = fn0(<span class="hljs-string">'b'</span>, <span class="hljs-string">'a'</span>) <span class="hljs-comment">// error: infer priority is `a0`</span>
+<span class="hljs-keyword">const</span> test1 = fn1(<span class="hljs-string">'b'</span>, <span class="hljs-string">'a'</span>) <span class="hljs-comment">// error: infer priority is `a1`</span>
+<span class="hljs-keyword">const</span> test2 = fn2(<span class="hljs-string">'b'</span>, <span class="hljs-string">'a'</span>) <span class="hljs-comment">// works: infer priority is `a0` | `a1`</span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f4f306a/src/Function/NoInfer.ts#L6">Function/NoInfer.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/c8f3143/src/Function/NoInfer.ts#L23">Function/NoInfer.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
