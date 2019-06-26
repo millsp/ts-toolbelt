@@ -4,8 +4,10 @@
  * @returns A new type **`Type<A, Name>`**
  * @example
  * ```ts
- * type eur = Type<number, 'eur'> // number & {__type: 'eur'}
- * type usd = Type<number, 'usd'> // number & {__type: 'eur'}
+ * import {A} from 'ts-toolbelt'
+ *
+ * type eur = A.Type<number, 'eur'> // number & {__type: 'eur'}
+ * type usd = A.Type<number, 'usd'> // number & {__type: 'eur'}
  * ```
  */
 export type Type<A extends any, Id extends string> =

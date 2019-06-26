@@ -94,6 +94,15 @@ export type IterationMap = {
  * @returns **`Iteration`**
  * @example
  * ```ts
+ * import {I} from 'ts-toolbelt'
+ *
+ * type i = I.IterationOf<'0'> // ["-1", "1", "0", 0, "0"]
+ *
+ * type next = I.Next<i>       // ["0", "2", "1", 1, "+"]
+ * type prev = I.Prev<i>       // ["-2", "0", "-1", -1, "-"]
+ *
+ * type nnext = I.Pos<next>    // +1
+ * type nprev = I.Pos<prev>    // -1
  * ```
  */
 export type IterationOf<N extends Nbr> =

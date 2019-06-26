@@ -18,6 +18,12 @@ export type _Absolute<N extends Iteration> =
  * @returns **`string`** or **`number`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.Absolute<'-20'>      // '20'
+ *
+ * type test1 = N.Absolute<'-20', 's'> // '20'
+ * type test2 = N.Absolute<'-20', 'n'> //  20
  * ```
  */
 export type Absolute<N extends Nbr, fmt extends Format = 's'> =

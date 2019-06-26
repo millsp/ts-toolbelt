@@ -3,9 +3,11 @@
  * @returns **`0`** or **`1`**
  * @example
  * ```ts
- * type test0 = NumberOf<true>    // 1
- * type test1 = NumberOf<false>   // 0
- * type test2 = NumberOf<boolean> // 0 | 1
+ * import {B} from 'ts-toolbelt'
+ *
+ * type test0 = B.NumberOf<true>    // 1
+ * type test1 = B.NumberOf<false>   // 0
+ * type test2 = B.NumberOf<boolean> // 0 | 1
  * ```
  */
 export type NumberOf<B extends boolean> =

@@ -6,9 +6,11 @@ import {Equals} from '../Any/Equals'
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
- * type test0 = Xor<true, true>    // false
- * type test1 = Xor<false, true>   // true
- * type test2 = Xor<boolean, true> // boolean
+ * import {B} from 'ts-toolbelt'
+ *
+ * type test0 = B.Xor<true, true>    // false
+ * type test1 = B.Xor<false, true>   // true
+ * type test2 = B.Xor<boolean, true> // boolean
  * ```
  */
 export type Xor<B1 extends boolean, B2 extends boolean> =

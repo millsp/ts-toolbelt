@@ -11,15 +11,17 @@ import {Replace} from '../Union/Replace'
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
- * type test0 = Is<'x', 'x' | 0>            // true
- * type test1 = Is<'x', 'x' | 0, 'extends'> // true
- * type test2 = Is<'x', 'x' | 0, 'equals'>  // false
- * type test3 = Is<'x', 'x' | 0, 'loose'>   // true
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Is<'x', 'x' | 0>            // true
+ * type test1 = A.Is<'x', 'x' | 0, 'extends'> // true
+ * type test2 = A.Is<'x', 'x' | 0, 'equals'>  // false
+ * type test3 = A.Is<'x', 'x' | 0, 'loose'>   // true
 
- * type test4 = Is<'x' | 0, 'x'>            // boolean
- * type test5 = Is<'x' | 0, 'x', 'extends'> // boolean
- * type test6 = Is<'x' | 0, 'x', 'equals'>  // false
- * type test7 = Is<'x' | 0, 'x', 'loose'>   // true
+ * type test4 = A.Is<'x' | 0, 'x'>            // boolean
+ * type test5 = A.Is<'x' | 0, 'x', 'extends'> // boolean
+ * type test6 = A.Is<'x' | 0, 'x', 'equals'>  // false
+ * type test7 = A.Is<'x' | 0, 'x', 'loose'>   // true
  * ```
  */
 export type Is<A extends any, A1 extends any, match extends Match = 'default'> = {

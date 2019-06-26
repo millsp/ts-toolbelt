@@ -4,9 +4,11 @@
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
- * type test0 = And<true, false>        // true
- * type test1 = And<true & false, true> // false
- * type test2 = And<true | false, true> // boolean
+ * import {B} from 'ts-toolbelt'
+ *
+ * type test0 = B.And<true, false>        // true
+ * type test1 = B.And<true & false, true> // false
+ * type test2 = B.And<true | false, true> // boolean
  * ```
  */
 export type And<B1 extends boolean, B2 extends boolean> =

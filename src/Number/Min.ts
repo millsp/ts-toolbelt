@@ -43,6 +43,12 @@ export type _Min<N extends Iteration> =
  * @returns **`string`** or **`number`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.Min<'-2' | '10' | '3'>      // '-2'
+ * type test1 = N.Min<'-2' | '10' | '3', 's'> // '-2'
+ * type test2 = N.Min<'-2' | '10' | '3', 'n'> //  -2
+ * type test3 = N.Min<'-2' | '10' | 'oops'>   // string
  * ```
  */
 export type Min<N extends Nbr, fmt extends Format = 's'> =

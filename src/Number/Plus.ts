@@ -45,6 +45,14 @@ export type _Plus<N1 extends Iteration, N2 extends Iteration> =
  * @returns **`string`** or **`number`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.Plus<'2', '10'>        // '12'
+ * type test1 = N.Plus<'0', '40'>        // '40'
+ * type test2 = N.Plus<'0', '40', 's'>   // '40'
+ * type test3 = N.Plus<'0', '40', 'n'>   //  40
+ * type test4 = N.Plus<'-20', '40', 's'> // '20'
+ * type test5 = N.Plus<'-20', '40', 'n'> //  20
  * ```
  */
 export type Plus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =

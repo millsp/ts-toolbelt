@@ -12,6 +12,11 @@ export type _IsZero<N extends Iteration> =
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.IsZero<'0'>  // true
+ * type test1 = N.IsZero<'-7'> // false
+ * type test2 = N.IsZero<'7'>  // false
  * ```
  */
 export type IsZero<N extends Nbr> =

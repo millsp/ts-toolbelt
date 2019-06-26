@@ -5,9 +5,11 @@
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
- * type test0 = Extends<42, number>   // true
- * type test1 = Extends<42, string>   // false
- * type test2 = Extends<never, never> // false
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Extends<42, number>   // true
+ * type test1 = A.Extends<42, string>   // false
+ * type test2 = A.Extends<never, never> // false
  * /// Nothing cannot extend nothing, use `Equals`
  * ```
  */

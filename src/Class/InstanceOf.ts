@@ -5,8 +5,10 @@
  * @returns **`class`**
  * @example
  * ```ts
+ * import {C} from 'ts-toolbelt'
+ *
  * /// `create` takes an instance constructor and creates an instance of it
- * declare function create<C extends (new (...args: any[]) => any)>(c: C): InstanceOf<C>
+ * declare function create<C extends (new (...args: any[]) => any)>(c: C): C.InstanceOf<C>
  *
  * class A {}
  * class B {}

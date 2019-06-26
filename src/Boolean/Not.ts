@@ -3,8 +3,10 @@
  * @returns **`boolean`**
  * @example
  * ```ts
- * type test0 = Not<true>  // false
- * type test1 = Not<false> // true
+ * import {B} from 'ts-toolbelt'
+ *
+ * type test0 = B.Not<true>  // false
+ * type test1 = B.Not<false> // true
  * ```
  */
 export type Not<B extends boolean> =

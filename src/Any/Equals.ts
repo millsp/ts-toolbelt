@@ -18,10 +18,12 @@ type EqualsStrict<A1 extends any, A2 extends any> =
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
- * type test0 =  Equals<42, 42>                                      // true
- * type test1 =  Equals<{a: string}, {b: string}>                    // false
- * type test2 =  Equals<{a: string}, {readonly a: string}>           // true
- * type test3 =  Equals<{a: string}, {readonly a: string}, 'strict'> // false
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Equals<42, 42>                                      // true
+ * type test1 = A.Equals<{a: string}, {b: string}>                    // false
+ * type test2 = A.Equals<{a: string}, {readonly a: string}>           // true
+ * type test3 = A.Equals<{a: string}, {readonly a: string}, 'strict'> // false
  * ```
  */
 export type Equals<A1 extends any, A2 extends any, match extends 'default' | 'strict' = 'default'> = {

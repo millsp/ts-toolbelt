@@ -20,9 +20,11 @@ type ComposeItem<Fns extends Arrow[], K extends keyof Fns> =
  * @param Fns to compose
  * @example
  * ```ts
- * /// If you are looking for creating types for compose
+ * import {F} from 'ts-toolbelt'
+ *
+ * /// If you are looking for creating types for `compose`
  * /// `Composer` will check for input & `Composed` output
- * declare function compose<Fns extends any[]>(...args: Composer<Fns>): Composed<Fns>
+ * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Composed<Fns>
  * ```
  */
 export type Composer<Fns extends Arrow[]> = {
@@ -34,9 +36,11 @@ export type Composer<Fns extends Arrow[]> = {
  * @returns **`Function`**
  * @example
  * ```ts
+ * import {F} from 'ts-toolbelt'
+ *
  * /// If you are looking for creating types for `compose`
  * /// `Composer` will check for input & `Composed` output
- * declare function compose<Fns extends any[]>(...args: Composer<Fns>): Composed<Fns>
+ * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Composed<Fns>
  * ```
  */
 export type Composed<Fns extends Arrow[]> =

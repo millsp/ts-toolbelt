@@ -6,6 +6,12 @@ import {Iteration} from './Iteration'
  * @returns **`Iteration`**
  * @example
  * ```ts
+ * import {I} from 'ts-toolbelt'
+ *
+ * type i = I.IterationOf<'20'>
+ *
+ * type test0 = I.Pos<i>         // 20
+ * type test1 = I.Pos<I.Prev<i>> // 19
  * ```
  */
 export type Prev<I extends Iteration> =

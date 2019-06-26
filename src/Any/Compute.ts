@@ -6,7 +6,9 @@ import {Depth} from '../Object/_Internal'
  * @returns **`A`**
  * @example
  * ```ts
- * type test0 = Compute<{x: 'x'} & {y: 'y'}> // {x: 'x', y: 'y'}
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Compute<{x: 'x'} & {y: 'y'}> // {x: 'x', y: 'y'}
  * ```
  */
 

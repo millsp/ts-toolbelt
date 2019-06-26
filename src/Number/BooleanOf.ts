@@ -17,6 +17,10 @@ export type _BooleanOf<N extends Iteration> =
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.BooleanOf<'0'>   // false
+ * type test1 = N.BooleanOf<'-10'> // true
  * ```
  */
 export type BooleanOf<N extends Nbr> =

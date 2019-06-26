@@ -6,9 +6,11 @@
  * @returns **`A1`** or **`Catch`**
  * @example
  * ```ts
- * type test0 = Try<'42', string>          // '42'
- * type test1 = Try<'42', number>          // never
- * type test1 = Try<'42', number, 'tried'> // 'tried'
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Try<'42', string>          // '42'
+ * type test1 = A.Try<'42', number>          // never
+ * type test1 = A.Try<'42', number, 'tried'> // 'tried'
  * ```
  */
 export type Try<A1 extends any, A2 extends any, Catch = never> =

@@ -5,8 +5,10 @@ import {Not} from './Not'
  * @returns **`boolean`**
  * @example
  * ```ts
- * type test0 = Negate<true>  // false
- * type test1 = Negate<false> // true
+ * import {B} from 'ts-toolbelt'
+ *
+ * type test0 = B.Negate<true>  // false
+ * type test1 = B.Negate<false> // true
  * ```
  */
 export type Negate<B extends boolean> =

@@ -18,9 +18,11 @@ type PipeItem<Fns extends Arrow[], K extends keyof Fns> =
  * @param Fns to pipe
  * @example
  * ```ts
+ * import {F} from 'ts-toolbelt'
+ *
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends any[]>(...args: Piper<Fns>): Piped<Fns>
+ * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Piped<Fns>
  * ```
  */
 export type Piper<Fns extends Arrow[]> = {
@@ -32,9 +34,11 @@ export type Piper<Fns extends Arrow[]> = {
  * @returns **`Function`**
  * @example
  * ```ts
+ * import {F} from 'ts-toolbelt'
+ *
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends any[]>(...args: Piper<Fns>): Piped<Fns>
+ * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Piped<Fns>
  * ```
  */
 export type Piped<Fns extends Arrow[]> =

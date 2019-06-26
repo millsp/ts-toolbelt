@@ -43,6 +43,12 @@ export type _Max<N extends Iteration> =
  * @returns **`string`** or **`number`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.Max<'-2' | '10' | '3'>      // '10'
+ * type test1 = N.Max<'-2' | '10' | '3', 's'> // '10'
+ * type test2 = N.Max<'-2' | '10' | '3', 'n'> //  10
+ * type test3 = N.Min<'-2' | '10' | 'oops'>   // string
  * ```
  */
 export type Max<N extends Nbr, fmt extends Format = 's'> =

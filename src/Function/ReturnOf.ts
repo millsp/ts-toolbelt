@@ -5,11 +5,13 @@ import {Arrow} from './Arrow'
  * @returns **`any`**
  * @example
  * ```ts
+ * import {F} from 'ts-toolbelt'
+ *
  * const fn = () => true
  *
- * type test0 = ReturnOf<typeof fn> // boolean
+ * type test0 = F.ReturnOf<typeof fn>  // boolean
  *
- * type test1 = ReturnOf<() => true> // true
+ * type test1 = F.ReturnOf<() => true> // true
  * ```
  */
 export type ReturnOf<F extends Arrow> =

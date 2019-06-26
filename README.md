@@ -93,8 +93,10 @@ Here's some of the most useful features:
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/demo.gif" id="demo">
 <p align="center">
 
-> If you don't find the type you are looking for, you are welcome to open
-a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
+This package offers great features like being able to change an object type at
+any depth. Those in-depth utilities can be found in `Object` in `P` (for Path).
+
+> If you don't find the type you are looking for, you are welcome to open a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
 
 ## 🏁 Getting Started
 

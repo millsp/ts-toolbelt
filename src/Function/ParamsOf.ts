@@ -5,11 +5,13 @@ import {Arrow} from './Arrow'
  * @returns **`any[]`**
  * @example
  * ```ts
+ * import {F} from 'ts-toolbelt'
+ *
  * const fn = (name: string, age: number) => {}
  *
- * type test0 = ParamsOf<typeof fn>                         // [string, number]
+ * type test0 = F.ParamsOf<typeof fn>                         // [string, number]
  *
- * type test1 = ParamsOf<(name: string, age: number) => {}> // [string, number]
+ * type test1 = F.ParamsOf<(name: string, age: number) => {}> // [string, number]
  * ```
  */
 export type ParamsOf<F extends Arrow> =

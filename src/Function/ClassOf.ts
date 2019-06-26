@@ -6,7 +6,9 @@ import {Arrow} from './Arrow'
  * @returns **`class`**
  * @example
  * ```ts
- * type Clazz = ClassOf<(name: string) => {
+ * import {F} from 'ts-toolbelt'
+ *
+ * type Clazz = F.ClassOf<(name: string) => {
  *     name: string
  * }>
  *

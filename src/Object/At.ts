@@ -4,6 +4,18 @@
  * @returns **`any`**
  * @example
  * ```ts
+ * import {O} from 'ts-toolbelt'
+ *
+ * type User = {
+ *     info: {
+ *         name: string
+ *         age: number
+ *         payment: {}
+ *     }
+ *     id: number
+ * }
+ *
+ * type test0 = O.At<User, 'id'> // number
  * ```
  */
 export type At<O extends object, K extends string> =

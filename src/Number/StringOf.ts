@@ -8,6 +8,10 @@ import {FormatMap} from '../Iteration/_Internal'
  * @returns **`string`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.StringOf<5>  //  '5'
+ * type test1 = N.StringOf<-5> // '-5'
  * ```
  */
 export type StringOf<N extends number> =

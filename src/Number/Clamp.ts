@@ -23,6 +23,13 @@ type _Clamp<N extends Iteration, Min extends Iteration, Max extends Iteration> =
  * @returns **`string`** or **`number`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.Clamp<'5', '7', '10'> // '7'
+ * type test1 = N.Clamp<'8', '7', '10'> // '8'
+ *
+ * type test2 = N.Clamp<'18', '7', '10', 's'> // '10'
+ * type test3 = N.Clamp<'18', '7', '10', 'n'> //  10
  * ```
  */
 export type Clamp<N extends Nbr, Min extends Nbr, Max extends Nbr, fmt extends Format = 's'> =

@@ -6,6 +6,12 @@ import {FormatMap, Format} from './_Internal'
  * @returns **`string`**
  * @example
  * ```ts
+ * import {I} from 'ts-toolbelt'
+ *
+ * type i = I.IterationOf<'20'>
+ *
+ * type test0 = I.Key<i>         // '20'
+ * type test1 = I.Key<I.Next<i>> // '21'
  * ```
  */
 export type Key<I extends Iteration> =

@@ -6,8 +6,10 @@
  * @returns **`A1`** or **`A2`**
  * @example
  * ```ts
- * type test0 = Cast<'42', string> // '42'
- * type test1 = Cast<'42', number> // number
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Cast<'42', string> // '42'
+ * type test1 = A.Cast<'42', number> // number
  * ```
  */
 export type Cast<A1 extends any, A2 extends any> =

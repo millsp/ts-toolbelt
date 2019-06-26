@@ -41,6 +41,13 @@ export type _Range<From extends Iteration, To extends Iteration, way extends Way
  * @returns **`string[]`** or **`number[]`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.Range<'-2', '1'>            // ['-2', '-1', '0', '1']
+ * type test1 = N.Range<'-2', '1', '->'>      // ['-2', '-1', '0', '1']
+ * type test2 = N.Range<'-2', '1', '<-'>      // ['1', '0', '-1', '-2']
+ * type test3 = N.Range<'-2', '1', '->', 's'> // ['1', '0', '-1', '-2']
+ * type test4 = N.Range<'-2', '1', '->', 'n'> // [-2 , -1 ,   0 ,   1 ]
  * ```
  */
 export type Range<From extends Nbr, To extends Nbr, way extends Way = '->', fmt extends Format = 's'> =

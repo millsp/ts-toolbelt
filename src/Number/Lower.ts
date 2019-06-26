@@ -13,6 +13,11 @@ export type _Lower<N1 extends Iteration, N2 extends Iteration> =
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.Lower<'7', '5'> // false
+ * type test1 = N.Lower<'5', '5'> // false
+ * type test2 = N.Lower<'5', '7'> // true
  * ```
  */
 export type Lower<N1 extends Nbr, N2 extends Nbr> =

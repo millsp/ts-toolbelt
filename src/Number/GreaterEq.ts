@@ -16,6 +16,11 @@ export type _GreaterEq<N1 extends Iteration, N2 extends Iteration> =
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.GreaterEq<'7', '5'> // true
+ * type test1 = N.GreaterEq<'5', '5'> // true
+ * type test2 = N.GreaterEq<'5', '7'> // false
  * ```
  */
 export type GreaterEq<N1 extends Nbr, N2 extends Nbr> =

@@ -4,9 +4,11 @@
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
- * type test0 = Or<true, false>    // true
- * type test1 = Or<true, true>     // true
- * type test2 = Or<boolean, false> // boolean
+ * import {B} from 'ts-toolbelt'
+ *
+ * type test0 = B.Or<true, false>    // true
+ * type test1 = B.Or<true, true>     // true
+ * type test2 = B.Or<boolean, false> // boolean
  * ```
  */
 export type Or<B1 extends boolean, B2 extends boolean> =

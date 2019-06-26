@@ -12,6 +12,11 @@ export type _IsNegative<N extends Iteration> =
  * @returns **`true`** or **`false`**
  * @example
  * ```ts
+ * import {N} from 'ts-toolbelt'
+ *
+ * type test0 = N.IsNegative<'0'>  // false
+ * type test1 = N.IsNegative<'-7'> // true
+ * type test2 = N.IsNegative<'7'>  // false
  * ```
  */
 export type IsNegative<N extends Nbr> =

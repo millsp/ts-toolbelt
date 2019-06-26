@@ -2,6 +2,7 @@
 // /* eslint-disable no-implicit-coercion */
 import {Test, O} from '../src/index'
 import {x} from '../src/Any/x'
+import {NonNullable} from '../src/Tuple/_api'
 
 const {checks, check} = Test
 
@@ -569,6 +570,24 @@ checks([
     check<O.Path<O, ['g', 'g', 'g', 'a']>,  string, Test.Pass>(),
     check<O.Path<O, ['g', 'x', 'g']>,       never,  Test.Pass>(),
     check<O.Path<O, []>,                    O,      Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PATHS
+
+type PATHS_O = {
+    a: {
+        a: {}
+    }
+    b: {
+        a: {}
+        b: {}
+    }
+};
+
+checks([
+    check<O.PathValid<PATHS_O,  ['a', 'a']>, ['a', 'a'],    Test.Pass>(),
+    check<O.PathValid<PATHS_O,  ['a', 'x']>, ['a', never],  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
