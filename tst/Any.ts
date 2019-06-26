@@ -46,6 +46,7 @@ checks([
 // EXTENDS
 
 checks([
+    check<A.Extends<any, any>,              true,       Test.Pass>(),
     check<A.Extends<[0, 1], any>,           true,       Test.Pass>(),
     check<A.Extends<any, [0, 1]>,           false,      Test.Fail>(),
     check<A.Extends<any, [0, 1]>,           boolean,    Test.Pass>(),

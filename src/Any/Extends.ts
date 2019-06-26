@@ -14,7 +14,7 @@
  * ```
  */
 export type Extends<A1 extends any, A2 extends any> =
-    (A1 extends infer A ? A : never) extends never
+    [A1] extends [never]
     ? false // handle never, anything never is false
     : (A1 extends A2 ? true : false)
 

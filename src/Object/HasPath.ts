@@ -18,3 +18,4 @@ export type HasPath<O extends object, Path extends string[], M extends any = any
     ? Cast<X, boolean>
     : never
 
+type t = Is<any, any>
