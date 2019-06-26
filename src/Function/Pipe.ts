@@ -20,7 +20,7 @@ type PipeItem<Fns extends Arrow[], K extends keyof Fns> =
  * ```ts
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function compose<Fns extends any[]>(...args: Piper<Fns>): Piped<Fns>
+ * declare function pipe<Fns extends any[]>(...args: Piper<Fns>): Piped<Fns>
  * ```
  */
 export type Piper<Fns extends Arrow[]> = {
@@ -34,7 +34,7 @@ export type Piper<Fns extends Arrow[]> = {
  * ```ts
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function compose<Fns extends any[]>(...args: Piper<Fns>): Piped<Fns>
+ * declare function pipe<Fns extends any[]>(...args: Piper<Fns>): Piped<Fns>
  * ```
  */
 export type Piped<Fns extends Arrow[]> =
