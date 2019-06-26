@@ -19,11 +19,12 @@
  * const test1 = fn1('b', 'a') // error: infer priority is `a1`
  * const test2 = fn2('b', 'a') // works: infer priority is `a0` | `a1`
  * ```
+ * @see https://stackoverflow.com/questions/56687668
  */
 export type NoInfer<A extends any> =
-    A & {[K in keyof A]: A[K]}
+    [A][A extends any ? 0 : never]
 
 // https://github.com/microsoft/TypeScript/issues/14829#issuecomment-322267089
-// Better than `A & {}` that does not work very well with any kind of type
+// https://stackoverflow.com/questions/56687668
 
 
