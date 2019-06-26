@@ -114,12 +114,18 @@
 						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Negate&lt;<span class="hljs-string">'-10'</span>&gt;     <span class="hljs-comment">//  '10'</span>
+<span class="hljs-keyword">type</span> test1 = N.Negate&lt;<span class="hljs-string">'10'</span>&gt;      <span class="hljs-comment">// '-10'</span>
+<span class="hljs-keyword">type</span> test2 = N.Negate&lt;<span class="hljs-string">'10'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '-10'</span>
+<span class="hljs-keyword">type</span> test3 = N.Negate&lt;<span class="hljs-string">'10'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  -10</span>
+<span class="hljs-keyword">type</span> test4 = N.Negate&lt;<span class="hljs-string">'-100'</span>&gt;    <span class="hljs-comment">// string</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Negate.ts#L21">Number/Negate.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Negate.ts#L28">Number/Negate.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,7 +140,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Negate.ts#L10">Number/Negate.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Negate.ts#L10">Number/Negate.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>

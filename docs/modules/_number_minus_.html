@@ -123,12 +123,19 @@
 						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Minus&lt;<span class="hljs-string">'2'</span>, <span class="hljs-string">'10'</span>&gt;        <span class="hljs-comment">// '-8'</span>
+<span class="hljs-keyword">type</span> test1 = N.Minus&lt;<span class="hljs-string">'0'</span>, <span class="hljs-string">'40'</span>&gt;        <span class="hljs-comment">// '-40'</span>
+<span class="hljs-keyword">type</span> test2 = N.Minus&lt;<span class="hljs-string">'0'</span>, <span class="hljs-string">'40'</span>, <span class="hljs-string">'s'</span>&gt;   <span class="hljs-comment">// '-40'</span>
+<span class="hljs-keyword">type</span> test3 = N.Minus&lt;<span class="hljs-string">'0'</span>, <span class="hljs-string">'40'</span>, <span class="hljs-string">'n'</span>&gt;   <span class="hljs-comment">//  -40</span>
+<span class="hljs-keyword">type</span> test4 = N.Minus&lt;<span class="hljs-string">'-20'</span>, <span class="hljs-string">'40'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// string</span>
+<span class="hljs-keyword">type</span> test5 = N.Minus&lt;<span class="hljs-string">'-20'</span>, <span class="hljs-string">'40'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">// number</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Minus.ts#L50">Number/Minus.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Minus.ts#L58">Number/Minus.ts:58</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -145,7 +152,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Minus.ts#L24">Number/Minus.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Minus.ts#L24">Number/Minus.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -162,7 +169,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Minus.ts#L12">Number/Minus.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Minus.ts#L12">Number/Minus.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -179,7 +186,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Minus.ts#L36">Number/Minus.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Minus.ts#L36">Number/Minus.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>

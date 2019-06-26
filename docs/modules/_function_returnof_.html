@@ -106,16 +106,18 @@
 						<p><p><strong><code>any</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">const</span> fn = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 
-<span class="hljs-keyword">type</span> test0 = ReturnOf&lt;<span class="hljs-keyword">typeof</span> fn&gt; <span class="hljs-comment">// boolean</span>
+<span class="hljs-keyword">const</span> fn = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>
 
-<span class="hljs-keyword">type</span> test1 = ReturnOf&lt;<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>&gt; <span class="hljs-comment">// true</span></code></pre>
+<span class="hljs-keyword">type</span> test0 = F.ReturnOf&lt;<span class="hljs-keyword">typeof</span> fn&gt;  <span class="hljs-comment">// boolean</span>
+
+<span class="hljs-keyword">type</span> test1 = F.ReturnOf&lt;<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-literal">true</span>&gt; <span class="hljs-comment">// true</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Function/ReturnOf.ts#L15">Function/ReturnOf.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Function/ReturnOf.ts#L17">Function/ReturnOf.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>

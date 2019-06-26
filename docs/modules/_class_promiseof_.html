@@ -106,15 +106,17 @@
 						<p><p><strong><code>any</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">string</span>&gt;<span class="hljs-function">(<span class="hljs-params">(<span class="hljs-params">res, rej</span>) =&gt; res(<span class="hljs-params">'x'</span>)</span>)
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {C} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 
-<span class="hljs-params">type</span> <span class="hljs-params">test0</span> = <span class="hljs-params">PromiseOf</span>&lt;<span class="hljs-params">typeof</span> <span class="hljs-params">promise</span>&gt;  // <span class="hljs-params">string</span>
-<span class="hljs-params">type</span> <span class="hljs-params">test1</span> = <span class="hljs-params">PromiseOf</span>&lt;<span class="hljs-params">Promise</span>&lt;<span class="hljs-params">number</span>&gt;&gt; // <span class="hljs-params">number</span></span></code></pre>
+<span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">string</span>&gt;<span class="hljs-function">(<span class="hljs-params">(<span class="hljs-params">res, rej</span>) =&gt; res(<span class="hljs-params">'x'</span>)</span>)
+
+<span class="hljs-params">type</span> <span class="hljs-params">test0</span> = <span class="hljs-params">C</span>.<span class="hljs-params">PromiseOf</span>&lt;<span class="hljs-params">typeof</span> <span class="hljs-params">promise</span>&gt;  // <span class="hljs-params">string</span>
+<span class="hljs-params">type</span> <span class="hljs-params">test1</span> = <span class="hljs-params">C</span>.<span class="hljs-params">PromiseOf</span>&lt;<span class="hljs-params">Promise</span>&lt;<span class="hljs-params">number</span>&gt;&gt; // <span class="hljs-params">number</span></span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Class/PromiseOf.ts#L12">Class/PromiseOf.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Class/PromiseOf.ts#L14">Class/PromiseOf.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>

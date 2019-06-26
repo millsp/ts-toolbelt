@@ -97,7 +97,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Iteration/IterationOf.ts#L6">Iteration/IterationOf.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Iteration/IterationOf.ts#L6">Iteration/IterationOf.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -126,12 +126,20 @@
 						<p><p><strong><code>Iteration</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {I} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> i = I.IterationOf&lt;<span class="hljs-string">'0'</span>&gt; <span class="hljs-comment">// ["-1", "1", "0", 0, "0"]</span>
+
+<span class="hljs-keyword">type</span> next = I.Next&lt;i&gt;       <span class="hljs-comment">// ["0", "2", "1", 1, "+"]</span>
+<span class="hljs-keyword">type</span> prev = I.Prev&lt;i&gt;       <span class="hljs-comment">// ["-2", "0", "-1", -1, "-"]</span>
+
+<span class="hljs-keyword">type</span> nnext = I.Pos&lt;next&gt;    <span class="hljs-comment">// +1</span>
+<span class="hljs-keyword">type</span> nprev = I.Pos&lt;prev&gt;    <span class="hljs-comment">// -1</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Iteration/IterationOf.ts#L99">Iteration/IterationOf.ts:99</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Iteration/IterationOf.ts#L108">Iteration/IterationOf.ts:108</a></li>
 						</ul>
 					</aside>
 				</section>

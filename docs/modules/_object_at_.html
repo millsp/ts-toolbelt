@@ -113,12 +113,23 @@
 						<p><p><strong><code>any</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {O} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> User = {
+    info: {
+        name: <span class="hljs-built_in">string</span>
+        age: <span class="hljs-built_in">number</span>
+        payment: {}
+    }
+    id: <span class="hljs-built_in">number</span>
+}
+
+<span class="hljs-keyword">type</span> test0 = O.At&lt;User, <span class="hljs-string">'id'</span>&gt; <span class="hljs-comment">// number</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Object/At.ts#L9">Object/At.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Object/At.ts#L21">Object/At.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>

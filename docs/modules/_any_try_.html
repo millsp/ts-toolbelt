@@ -121,14 +121,16 @@
 						<p><p><strong><code>A1</code></strong> or <strong><code>Catch</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = Try&lt;<span class="hljs-string">'42'</span>, <span class="hljs-built_in">string</span>&gt;          <span class="hljs-comment">// '42'</span>
-<span class="hljs-keyword">type</span> test1 = Try&lt;<span class="hljs-string">'42'</span>, <span class="hljs-built_in">number</span>&gt;          <span class="hljs-comment">// never</span>
-<span class="hljs-keyword">type</span> test1 = Try&lt;<span class="hljs-string">'42'</span>, <span class="hljs-built_in">number</span>, <span class="hljs-string">'tried'</span>&gt; <span class="hljs-comment">// 'tried'</span></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {A} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = A.Try&lt;<span class="hljs-string">'42'</span>, <span class="hljs-built_in">string</span>&gt;          <span class="hljs-comment">// '42'</span>
+<span class="hljs-keyword">type</span> test1 = A.Try&lt;<span class="hljs-string">'42'</span>, <span class="hljs-built_in">number</span>&gt;          <span class="hljs-comment">// never</span>
+<span class="hljs-keyword">type</span> test1 = A.Try&lt;<span class="hljs-string">'42'</span>, <span class="hljs-built_in">number</span>, <span class="hljs-string">'tried'</span>&gt; <span class="hljs-comment">// 'tried'</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Any/Try.ts#L14">Any/Try.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Any/Try.ts#L16">Any/Try.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>

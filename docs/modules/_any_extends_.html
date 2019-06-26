@@ -104,15 +104,17 @@
 						<p><p><strong><code>true</code></strong> or <strong><code>false</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = Extends&lt;<span class="hljs-number">42</span>, <span class="hljs-built_in">number</span>&gt;   <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">type</span> test1 = Extends&lt;<span class="hljs-number">42</span>, <span class="hljs-built_in">string</span>&gt;   <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">type</span> test2 = Extends&lt;never, never&gt; <span class="hljs-comment">// false</span>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {A} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = A.Extends&lt;<span class="hljs-number">42</span>, <span class="hljs-built_in">number</span>&gt;   <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">type</span> test1 = A.Extends&lt;<span class="hljs-number">42</span>, <span class="hljs-built_in">string</span>&gt;   <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">type</span> test2 = A.Extends&lt;never, never&gt; <span class="hljs-comment">// false</span>
 <span class="hljs-comment">/// Nothing cannot extend nothing, use `Equals`</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Any/Extends.ts#L14">Any/Extends.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Any/Extends.ts#L16">Any/Extends.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>

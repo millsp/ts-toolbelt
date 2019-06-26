@@ -130,12 +130,18 @@
 						<p><p><strong><code>string[]</code></strong> or <strong><code>number[]</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Range&lt;<span class="hljs-string">'-2'</span>, <span class="hljs-string">'1'</span>&gt;            <span class="hljs-comment">// ['-2', '-1', '0', '1']</span>
+<span class="hljs-keyword">type</span> test1 = N.Range&lt;<span class="hljs-string">'-2'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-string">'-&gt;'</span>&gt;      <span class="hljs-comment">// ['-2', '-1', '0', '1']</span>
+<span class="hljs-keyword">type</span> test2 = N.Range&lt;<span class="hljs-string">'-2'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-string">'&lt;-'</span>&gt;      <span class="hljs-comment">// ['1', '0', '-1', '-2']</span>
+<span class="hljs-keyword">type</span> test3 = N.Range&lt;<span class="hljs-string">'-2'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-string">'-&gt;'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// ['1', '0', '-1', '-2']</span>
+<span class="hljs-keyword">type</span> test4 = N.Range&lt;<span class="hljs-string">'-2'</span>, <span class="hljs-string">'1'</span>, <span class="hljs-string">'-&gt;'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">// [-2 , -1 ,   0 ,   1 ]</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Range.ts#L46">Number/Range.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Range.ts#L53">Number/Range.ts:53</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,7 +162,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Range.ts#L22">Number/Range.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Range.ts#L22">Number/Range.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,7 +183,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Range.ts#L13">Number/Range.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Range.ts#L13">Number/Range.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -198,7 +204,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Range.ts#L31">Number/Range.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Range.ts#L31">Number/Range.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>

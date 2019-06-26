@@ -106,15 +106,17 @@
 						<p><p><strong><code>A</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">const</span> fn0 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: A, a1: NoInfer&lt;A&gt;): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">const</span> fn0 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: A, a1: F.NoInfer&lt;A&gt;): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
     <span class="hljs-keyword">return</span> {} <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> A <span class="hljs-comment">// just for the example</span>
 }
 
-<span class="hljs-keyword">const</span> fn1 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: NoInfer&lt;A&gt;, a1: A): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
+<span class="hljs-keyword">const</span> fn1 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: F.NoInfer&lt;A&gt;, a1: A): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
     <span class="hljs-keyword">return</span> {} <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> A <span class="hljs-comment">// just for the example</span>
 }
 
-<span class="hljs-keyword">const</span> fn2 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: NoInfer&lt;A&gt;, a1: NoInfer&lt;A&gt;): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
+<span class="hljs-keyword">const</span> fn2 = &lt;A <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>&gt;(a0: F.NoInfer&lt;A&gt;, a1: F.NoInfer&lt;A&gt;): <span class="hljs-function"><span class="hljs-params">A</span> =&gt;</span> {
     <span class="hljs-keyword">return</span> {} <span class="hljs-keyword">as</span> unknown <span class="hljs-keyword">as</span> A <span class="hljs-comment">// just for the example</span>
 }
 
@@ -128,7 +130,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Function/NoInfer.ts#L24">Function/NoInfer.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Function/NoInfer.ts#L26">Function/NoInfer.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>

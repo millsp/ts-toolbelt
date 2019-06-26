@@ -106,12 +106,17 @@
 						<p><p><strong><code>string</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {I} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> i = I.IterationOf&lt;<span class="hljs-string">'20'</span>&gt;
+
+<span class="hljs-keyword">type</span> test0 = I.Key&lt;i&gt;         <span class="hljs-comment">// '20'</span>
+<span class="hljs-keyword">type</span> test1 = I.Key&lt;I.Next&lt;i&gt;&gt; <span class="hljs-comment">// '21'</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Iteration/Key.ts#L11">Iteration/Key.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Iteration/Key.ts#L17">Iteration/Key.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>

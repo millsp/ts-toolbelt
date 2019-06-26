@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Iteration/Iteration&quot; | ts-toolbelt</title>
+	<title>&quot;Object/PathValid&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,10 +57,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_iteration_iteration_.html">&quot;Iteration/Iteration&quot;</a>
+					<a href="_object_pathvalid_.html">&quot;Object/PathValid&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Iteration/Iteration&quot;</h1>
+			<h1>External module &quot;Object/PathValid&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -74,7 +74,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_iteration_iteration_.html#iteration" class="tsd-kind-icon">Iteration</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_object_pathvalid_.html#pathvalid" class="tsd-kind-icon">Path<wbr>Valid</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,27 +82,44 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-descriptions">
-					<a name="iteration" class="tsd-anchor"></a>
-					<h3>Iteration</h3>
-					<div class="tsd-signature tsd-kind-icon">Iteration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">keyof IterationMap</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">keyof IterationMap</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"-"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"0"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"+"</span><span class="tsd-signature-symbol">]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
+					<a name="pathvalid" class="tsd-anchor"></a>
+					<h3>Path<wbr>Valid</h3>
+					<div class="tsd-signature tsd-kind-icon">PathValid&lt;O, Path&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Cast&lt;{ [K in keyof Path]: HasPath&lt;O, Extract&lt;Path, &quot;0&quot;, K&gt;, any, &quot;default&quot;&gt; extends true ? Path[K] : never; }, string[]&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Describes a valid entry of <strong><code>IterationMap</code></strong></p>
-							<ul>
-								<li><code>[0]</code>: Prev (&lt;-)</li>
-								<li><code>[1]</code>: Next (-&gt;)</li>
-								<li><code>[2]</code>: Current <strong><code>string</code></strong></li>
-								<li><code>[3]</code>: Current <strong><code>number</code></strong></li>
-								<li><code>[4]</code>: Sign (- / 0 / +)</li>
-							</ul>
+							<p>Get a validated path from an un-validated one. Invalid parts of the path are
+							replaced with <code>never</code>.</p>
 						</div>
 					</div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<span class="name">O</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to be inspected</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="name">Path</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to be validated</p>
+								</div>
+							</div>
+						</li>
+					</ul>
 					<div class="tsd-comment">
+						<h4>returns</h4>
+						<p><p><strong><code>string[]</code></strong></p>
+						</p>
+						<h4>example</h4>
+						<p><pre><code class="language-ts"></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Iteration/Iteration.ts#L10">Iteration/Iteration.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Object/PathValid.ts#L14">Object/PathValid.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -115,14 +132,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_iteration_iteration_.html">"<wbr>Iteration/<wbr>Iteration"</a>
+						<a href="_object_pathvalid_.html">"<wbr>Object/<wbr>Path<wbr>Valid"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
-						<a href="_iteration_iteration_.html#iteration" class="tsd-kind-icon">Iteration</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_object_pathvalid_.html#pathvalid" class="tsd-kind-icon">Path<wbr>Valid</a>
 					</li>
 				</ul>
 			</nav>

@@ -106,16 +106,18 @@
 						<p><p><strong><code>any[]</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">const</span> fn = <span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, age: <span class="hljs-built_in">number</span></span>) =&gt;</span> {}
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 
-<span class="hljs-keyword">type</span> test0 = ParamsOf&lt;<span class="hljs-keyword">typeof</span> fn&gt;                         <span class="hljs-comment">// [string, number]</span>
+<span class="hljs-keyword">const</span> fn = <span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, age: <span class="hljs-built_in">number</span></span>) =&gt;</span> {}
 
-<span class="hljs-keyword">type</span> test1 = ParamsOf&lt;<span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, age: <span class="hljs-built_in">number</span></span>) =&gt;</span> {}&gt; <span class="hljs-comment">// [string, number]</span></code></pre>
+<span class="hljs-keyword">type</span> test0 = F.ParamsOf&lt;<span class="hljs-keyword">typeof</span> fn&gt;                         <span class="hljs-comment">// [string, number]</span>
+
+<span class="hljs-keyword">type</span> test1 = F.ParamsOf&lt;<span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, age: <span class="hljs-built_in">number</span></span>) =&gt;</span> {}&gt; <span class="hljs-comment">// [string, number]</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Function/ParamsOf.ts#L15">Function/ParamsOf.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Function/ParamsOf.ts#L17">Function/ParamsOf.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>

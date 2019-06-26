@@ -106,8 +106,10 @@
 						<p><p><strong><code>class</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-comment">/// `create` takes an instance constructor and creates an instance of it</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>&lt;<span class="hljs-title">C</span> <span class="hljs-title">extends</span> (<span class="hljs-params"><span class="hljs-keyword">new</span> (...args: <span class="hljs-built_in">any</span>[]) =&gt; <span class="hljs-built_in">any</span></span>)&gt;(<span class="hljs-params">c: C</span>): <span class="hljs-title">InstanceOf</span>&lt;<span class="hljs-title">C</span>&gt;
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {C} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-comment">/// `create` takes an instance constructor and creates an instance of it</span>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>&lt;<span class="hljs-title">C</span> <span class="hljs-title">extends</span> (<span class="hljs-params"><span class="hljs-keyword">new</span> (...args: <span class="hljs-built_in">any</span>[]) =&gt; <span class="hljs-built_in">any</span></span>)&gt;(<span class="hljs-params">c: C</span>): <span class="hljs-title">C</span>.<span class="hljs-title">InstanceOf</span>&lt;<span class="hljs-title">C</span>&gt;
 
 <span class="hljs-title">class</span> <span class="hljs-title">A</span> </span>{}
 <span class="hljs-keyword">class</span> B {}
@@ -118,7 +120,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Class/InstanceOf.ts#L18">Class/InstanceOf.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Class/InstanceOf.ts#L20">Class/InstanceOf.ts:20</a></li>
 						</ul>
 					</aside>
 				</section>

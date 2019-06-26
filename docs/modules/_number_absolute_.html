@@ -114,12 +114,17 @@
 						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Absolute&lt;<span class="hljs-string">'-20'</span>&gt;      <span class="hljs-comment">// '20'</span>
+
+<span class="hljs-keyword">type</span> test1 = N.Absolute&lt;<span class="hljs-string">'-20'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '20'</span>
+<span class="hljs-keyword">type</span> test2 = N.Absolute&lt;<span class="hljs-string">'-20'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  20</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Absolute.ts#L23">Number/Absolute.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Absolute.ts#L29">Number/Absolute.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,7 +139,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Absolute.ts#L10">Number/Absolute.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Absolute.ts#L10">Number/Absolute.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>

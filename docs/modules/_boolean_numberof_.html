@@ -106,14 +106,16 @@
 						<p><p><strong><code>0</code></strong> or <strong><code>1</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = NumberOf&lt;<span class="hljs-literal">true</span>&gt;    <span class="hljs-comment">// 1</span>
-<span class="hljs-keyword">type</span> test1 = NumberOf&lt;<span class="hljs-literal">false</span>&gt;   <span class="hljs-comment">// 0</span>
-<span class="hljs-keyword">type</span> test2 = NumberOf&lt;<span class="hljs-built_in">boolean</span>&gt; <span class="hljs-comment">// 0 | 1</span></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {B} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = B.NumberOf&lt;<span class="hljs-literal">true</span>&gt;    <span class="hljs-comment">// 1</span>
+<span class="hljs-keyword">type</span> test1 = B.NumberOf&lt;<span class="hljs-literal">false</span>&gt;   <span class="hljs-comment">// 0</span>
+<span class="hljs-keyword">type</span> test2 = B.NumberOf&lt;<span class="hljs-built_in">boolean</span>&gt; <span class="hljs-comment">// 0 | 1</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Boolean/NumberOf.ts#L11">Boolean/NumberOf.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Boolean/NumberOf.ts#L13">Boolean/NumberOf.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>

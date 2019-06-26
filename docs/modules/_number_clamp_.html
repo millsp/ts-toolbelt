@@ -128,12 +128,18 @@
 						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Clamp&lt;<span class="hljs-string">'5'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>&gt; <span class="hljs-comment">// '7'</span>
+<span class="hljs-keyword">type</span> test1 = N.Clamp&lt;<span class="hljs-string">'8'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>&gt; <span class="hljs-comment">// '8'</span>
+
+<span class="hljs-keyword">type</span> test2 = N.Clamp&lt;<span class="hljs-string">'18'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '10'</span>
+<span class="hljs-keyword">type</span> test3 = N.Clamp&lt;<span class="hljs-string">'18'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  10</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Clamp.ts#L28">Number/Clamp.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Clamp.ts#L35">Number/Clamp.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -152,7 +158,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Clamp.ts#L10">Number/Clamp.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Clamp.ts#L10">Number/Clamp.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>

@@ -116,12 +116,17 @@
 						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Min&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'3'</span>&gt;      <span class="hljs-comment">// '-2'</span>
+<span class="hljs-keyword">type</span> test1 = N.Min&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'3'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '-2'</span>
+<span class="hljs-keyword">type</span> test2 = N.Min&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'3'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  -2</span>
+<span class="hljs-keyword">type</span> test3 = N.Min&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'oops'</span>&gt;   <span class="hljs-comment">// string</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Min.ts#L48">Number/Min.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Min.ts#L54">Number/Min.ts:54</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -138,7 +143,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Min.ts#L22">Number/Min.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Min.ts#L22">Number/Min.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -155,7 +160,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Min.ts#L13">Number/Min.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Min.ts#L13">Number/Min.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -170,7 +175,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Number/Min.ts#L34">Number/Min.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Number/Min.ts#L34">Number/Min.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>

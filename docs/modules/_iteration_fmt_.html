@@ -113,12 +113,18 @@
 						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {I} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-comment">/// Let's make '20' an iteration</span>
+<span class="hljs-keyword">type</span> i = I.IterationOf&lt;<span class="hljs-string">'20'</span>&gt; <span class="hljs-comment">// [...]</span>
+
+<span class="hljs-keyword">type</span> fmtS = I.Fmt&lt;i, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '20'</span>
+<span class="hljs-keyword">type</span> fmtN = I.Fmt&lt;i, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  20</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/932f6df/src/Iteration/Fmt.ts#L12">Iteration/Fmt.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/d9be424/src/Iteration/Fmt.ts#L19">Iteration/Fmt.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
