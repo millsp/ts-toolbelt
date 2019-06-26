@@ -1,19 +1,19 @@
 ## 🎁 Pull Request
 
-<!-- Fill the following checklist -->
+<!-- Fill the following checklist. -->
 * [ ] Used a clear / meaningful title for this pull request
 * [ ] Tested the changes in your own code (on your projects)
 * [ ] Added / Edited tests to reflect changes (`tst` folder)
 * [ ] Have read the **Contributing** part of the **Readme**
 * [ ] Passed `npm test`
 
-<!-- Complete the following parts -->
+<!-- Complete the following parts. -->
 
 #### Fixes
-<!-- List the issues that this fixes -->
+<!-- List the issues that this fixes. -->
 
 #### Why have you made changes?
-<!-- Explain in a few sentences why -->
+<!-- A clear & concise explanation. -->
 
 #### What changes have you made?
 * changed this to achieve this
@@ -26,7 +26,7 @@
 * ...
 
 #### Is there any breaking changes?
-<!-- Fill the following checklist -->
+<!-- Fill the following checklist. -->
 * [ ] Yes, I changed the public API & documented it
 * [ ] Yes, I changed existing tests
 * [ ] No,  I added to the public API & documented it
@@ -34,6 +34,6 @@
 * [ ] I don't know
 
 #### Anything else worth mentioning?
-<!-- Please help with the PR process -->
-<!-- Leave any extra useful information -->
-<!-- Or mention someone who is concerned -->
+<!-- Please help with the PR process. -->
+<!-- Leave any extra useful information. -->
+<!-- Or mention someone who is concerned. -->

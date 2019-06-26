@@ -11,18 +11,18 @@ about: "Something isn't working well 💔"
 
 #### Reproduce the bug
 ```ts
-// REPL or just a link to your repository if applicable
-// A *self-contained* demonstration of the problem
+// REPL or a link to your repository if applicable.
+// A *self-contained* demonstration of the problem.
 ```
 
 #### Expected behavior
-<!-- A clear and concise description of what you expected to happen. -->
+<!-- A clear & concise description of what you expected to happen. -->
 
 #### Possible Solution
-<!-- Only if you have suggestions on a fix for the bug -->
+<!-- Only if you have suggestions on a fix for the bug. -->
 
 #### Screenshots
-<!-- If applicable, add screenshots to help explain your problem. -->
+<!-- If applicable, add screenshots to help explaining. -->
 
 #### Additional context
-<!-- Add any other context about the problem here (version, environment, tools...) -->
+<!-- Add any other context about the problem here (version, environment, tools...). -->
