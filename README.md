@@ -274,3 +274,4 @@ Many, many thanks to all the
 * [Matt McCutchen](https://github.com/mattmccutchen)
 
 ## 💟 Friendly Projects
+- [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases (think "lodash" for static types)
