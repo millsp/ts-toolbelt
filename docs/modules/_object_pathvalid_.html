@@ -75,6 +75,7 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_object_pathvalid_.html#pathvalid" class="tsd-kind-icon">Path<wbr>Valid</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_object_pathvalid_.html#_pathvalid" class="tsd-kind-icon">_<wbr>Path<wbr>Valid</a></li>
 							</ul>
 						</section>
 					</div>
@@ -85,10 +86,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="pathvalid" class="tsd-anchor"></a>
 					<h3>Path<wbr>Valid</h3>
-					<div class="tsd-signature tsd-kind-icon">PathValid&lt;O, Path&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Cast&lt;{ [K in keyof Path]: HasPath&lt;O, Extract&lt;Path, &quot;0&quot;, K&gt;, any, &quot;default&quot;&gt; extends true ? Path[K] : never; }, string[]&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">PathValid&lt;O, Path&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PathValid&lt;O, Path&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Replaces invalid parts of a path with <code>never</code></p>
+							<p>Get in <strong><code>O</code></strong> the type of nested properties</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -103,10 +104,52 @@
 						<li>
 							<span class="name">Path</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
 								<div class="lead">
+									<p>to be followed</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="tsd-comment">
+						<h4>returns</h4>
+						<p><p><strong><code>any</code></strong></p>
+						</p>
+						<h4>example</h4>
+						<p><pre><code class="language-ts"></code></pre>
+						</p>
+					</div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/881a045/src/Object/PathValid.ts#L39">Object/PathValid.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="_pathvalid" class="tsd-anchor"></a>
+					<h3>_<wbr>Path<wbr>Valid</h3>
+					<div class="tsd-signature tsd-kind-icon">_PathValid&lt;O, Path, I&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: any[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[IterationMap[I[1]][1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[IterationMap[I[1]][1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt; &amp; {}, Path[IterationMap[I[1]][3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[IterationMap[I[1]][0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[Exclude&lt;At&lt;O &amp; {}, Path[I[3]]&gt;, null | undefined&gt;] extends [never] ? 1 : 0]; 1: Cast&lt;Update&lt;Path, KeySet&lt;IterationMap[I[0]][2], StringOf&lt;Path[&quot;length&quot;]&gt;&gt;, never&gt;, any[]&gt;; }[[O] extends [never] ? 1 : 0]</span></div>
+					<div class="tsd-comment">
+						<div class="lead">
+							<p>Replaces invalid parts of a path with <code>never</code></p>
+						</div>
+					</div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<span class="name">O</span>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to be inspected</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="name">Path</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+								<div class="lead">
 									<p>to be validated</p>
 								</div>
 							</div>
 						</li>
+						<li>
+						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
@@ -118,7 +161,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/bc66c3d/src/Object/PathValid.ts#L13">Object/PathValid.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/881a045/src/Object/PathValid.ts#L22">Object/PathValid.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -139,6 +182,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_object_pathvalid_.html#pathvalid" class="tsd-kind-icon">Path<wbr>Valid</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_object_pathvalid_.html#_pathvalid" class="tsd-kind-icon">_<wbr>Path<wbr>Valid</a>
 					</li>
 				</ul>
 			</nav>
