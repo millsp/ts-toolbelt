@@ -1,7 +1,6 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Prepend} from '../Tuple/Prepend'
-import {Pos} from '../Iteration/Pos'
 import {Prev} from '../Iteration/Prev'
 import {Next} from '../Iteration/Next'
 import {Nbr} from './_Internal'

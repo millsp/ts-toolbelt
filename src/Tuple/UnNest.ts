@@ -13,11 +13,11 @@ type _UnNest<T extends any[], TN extends any[] = [], I extends Iteration = Itera
     2: TN
 }[
 
-    Pos<I> extends Length<T>
+    Pos<I> extends Length<T>  // its the end
     ? 2
-    : T[Pos<I>] extends any[]
+    : T[Pos<I>] extends any[] // element is tuple -> concat
       ? 0
-      : 1
+      : 1                     // element is other -> Append
 ]
 
 /** Remove a dimension of **`T`**
