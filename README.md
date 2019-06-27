@@ -99,6 +99,8 @@ Here's some of the most useful features:
 
 #### Prerequisites
 
+This is important, the lowest TypeScript version that is [supported](#-compatibility) is 3.5
+
 ```sh
 npm install typescript@^3.5.0 --save
 ```
