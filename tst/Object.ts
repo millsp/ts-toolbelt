@@ -573,23 +573,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// PATHOF
-
-type PATHSOF_O = {
-    a: {
-        a: {}
-    }
-    b: {
-        a: {}
-        b: {}
-    }
-};
-
-checks([
-    check<O.PathOf<PATHSOF_O>, ['a'] | ['b'] | ['a', 'a'] | ['b', 'a'] | ['b', 'b'], Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // PATHS
 
 type PATHS_O = {
@@ -597,14 +580,36 @@ type PATHS_O = {
         a: {}
     }
     b: {
-        a: {}
+        a: {
+            a: {}
+        }
         b: {}
     }
 };
 
 checks([
-    check<O.PathValid<PATHS_O,  ['a', 'a']>, ['a', 'a'],    Test.Pass>(),
-    check<O.PathValid<PATHS_O,  ['a', 'x']>, ['a', never],  Test.Pass>(),
+    check<O.Paths<PATHS_O>, NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PATHVALID
+
+type PATHVALID_O = {
+    a: {
+        a: {}
+    }
+    b: {
+        a: {
+            a: {}
+        }
+        b: {}
+    }
+};
+
+checks([
+    check<O.PathValid<PATHVALID_O,  ['a', 'a']>, ['a', 'a'],            Test.Pass>(),
+    check<O.PathValid<PATHVALID_O,  ['a', 'x']>, ['a', never],          Test.Pass>(),
+    check<O.PathValid<PATHVALID_O,  ['b', 'a', 'a']>, ['b', 'a', 'a'],  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

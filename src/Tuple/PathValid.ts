@@ -1,8 +1,9 @@
 import {PathValid as OPathValid} from '../Object/PathValid'
 
-/** Validate a path of **`T`**. Invalid parts are replaced with `never`.
- * @param O to be inspected
- * @returns **`any[]`**
+/** Replaces invalid parts of a path with `never`
+ * @param T to be inspected
+ * @param Path to be validated
+ * @returns **`string[]`**
  * @example
  * ```ts
  * ```

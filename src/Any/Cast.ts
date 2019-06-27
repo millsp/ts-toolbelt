@@ -11,6 +11,9 @@
  * type test0 = A.Cast<'42', string> // '42'
  * type test1 = A.Cast<'42', number> // number
  * ```
+ * @extras
+ * * test
+ * * test
  */
 export type Cast<A1 extends any, A2 extends any> =
     A1 extends A2
