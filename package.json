@@ -22,7 +22,7 @@
     "test": "npx eslint 'src/**' && npm run build:types",
     "build": "npm run build:types && npm run build:docs",
     "build:types": "rm -fr out && tsc --emitDeclarationOnly",
-    "build:docs": "typedoc --out docs ./src/ --theme ../eledoc/bin/default/ && touch ./docs/.nojekyll && git add ./docs",
+    "build:docs": "typedoc --out docs ./src/ --theme ./node_modules/eledoc/bin/default/ && touch ./docs/.nojekyll && git add ./docs",
     "setup:dev": "npm install --only=dev",
     "release": "release-it"
   },
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^1.10.2",
-    "eledoc": "^0.0.5",
+    "eledoc": "^0.0.6",
     "eslint": "^5.16.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-react": "^7.13.0",

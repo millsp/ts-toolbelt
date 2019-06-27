@@ -48,7 +48,7 @@
 * [🍩 Features](#-features)
 * [🏁 Getting started](#-getting-started)
 * [📖 Documentation](#-documentation-)
-* [👌 Good to know](#-good-to-know-)
+* [🧠 Good to know](#-good-to-know-)
 * [🎁 Contributing](#-contributing)
 * [👏 Sponsoring issues](#-sponsoring-issues)
 * [💉 Running tests](#-running-tests)
@@ -154,7 +154,7 @@ There are many ways to import the types into your project:
 If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get
 you on track to start writing your own types.
 
-## [👌 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/wiki)
+## [🧠 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/wiki)
 
 In this wiki, you'll find some extra resources for your learning & understanding.
 
