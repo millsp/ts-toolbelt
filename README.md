@@ -156,7 +156,8 @@ you on track to start writing your own types.
 
 ## [👌 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/wiki)
 
-In this wiki, you will find more extra resources for your leaning & understanding.
+In this wiki, you will find some extra resources for your learning & understanding.
+The wiki is incremental and will be completed on demand, you can ask for this below.
 
 #### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
 
