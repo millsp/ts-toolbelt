@@ -19,7 +19,7 @@ type _Paths<O, Paths extends string[] = []> = {
 ] // #bit-crazy
 
 /** Get all the possible paths of **`O`**
- * (⚠️ This won't work on self-references)
+ * (⚠️ this won't work with circular-refs)
  * @param O to be inspected
  * @returns **`string[]`**
  * @example
