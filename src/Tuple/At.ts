@@ -5,7 +5,6 @@ import {At as OAt} from '../Object/At'
  * @param K to extract at
  * @returns **`any`**
  * @example
- * @internal
  */
 export type At<T extends any[], K extends string> =
     OAt<T, K>
