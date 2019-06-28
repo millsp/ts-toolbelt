@@ -9,9 +9,7 @@ type _TupleOf<U, TN extends any[] = [], LastU = Last<U>> = {
     [U] extends [never]
     ? 1
     : 0
-] extends infer X // ! important (prevent ts from crash)
-? X
-: never
+]
 
 /** Transform a **union** into a **tuple**
  * (⚠️ it might not preserve order)
@@ -22,4 +20,6 @@ type _TupleOf<U, TN extends any[] = [], LastU = Last<U>> = {
  * ```
  */
 export type TupleOf<U extends any> =
-    _TupleOf<U>
+    _TupleOf<U> extends infer X
+    ? X
+    : never
