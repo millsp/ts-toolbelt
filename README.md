@@ -54,7 +54,7 @@
 * [💉 Running tests](#-running-tests)
 * [🔧 Compatibility](#-compatibility)
 * [🔮 What's next](#-whats-next)
-* [🙏 Acknowledgments](#-acknowledgments)
+* [🙏 Acknowledgements](#-acknowledgements)
 
 ## 📜 About
 
