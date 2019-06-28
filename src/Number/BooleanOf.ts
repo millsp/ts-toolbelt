@@ -6,10 +6,10 @@ import {Key} from '../Iteration/Key'
 import {Cast} from '../Any/Cast'
 
 export type _BooleanOf<N extends Iteration> =
-    Equals<Key<N>, string> extends true
-    ? boolean
-    : Key<N> extends '0'
-      ? false
+    Key<N> extends '0'
+    ? false
+    : string extends Key<N>
+      ? boolean
       : true
 
 /** Transform a **number** into a **`boolean`**
