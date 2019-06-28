@@ -20,7 +20,7 @@ type EqualsStrict<A1 extends any, A2 extends any> =
  * ```ts
  * import {A} from 'ts-toolbelt'
  *
- * type test0 = A.Equals<42, 42>                                      // true
+ * type test0 = A.Equals<42 | 0, 42 | 0>                              // true
  * type test1 = A.Equals<{a: string}, {b: string}>                    // false
  * type test2 = A.Equals<{a: string}, {readonly a: string}>           // true
  * type test3 = A.Equals<{a: string}, {readonly a: string}, 'strict'> // false
