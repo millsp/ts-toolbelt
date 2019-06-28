@@ -36,3 +36,5 @@ export type Clamp<N extends Nbr, Min extends Nbr, Max extends Nbr, fmt extends F
     _Clamp<IterationOf<N>, IterationOf<Min>, IterationOf<Max>> extends infer I
     ? Fmt<Cast<I, Iteration>, fmt>
     : never
+
+// type t = Clamp<'1' | '5', '1', '2'> // todo
