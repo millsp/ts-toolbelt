@@ -1,4 +1,4 @@
-import {Omit} from '../Object/Omit'
+import {Omit as OOmit} from '../Object/Omit'
 
 /** Transform a **tuple** into an **`object`**
  * @param T to transform
@@ -8,4 +8,4 @@ import {Omit} from '../Object/Omit'
  * ```
  */
 export type ObjectOf<T extends any[]> =
-    Omit<T, keyof any[]>
+    OOmit<T, keyof any[]>
