@@ -1,10 +1,10 @@
 import {Exclude} from '../Union/Exclude'
 
-/** Get the longest **tuple** of **`T`** & **`T2`**
+/** Get the longest **tuple** of **`T`** & **`T1`**
  * (**`T`** has priority if both lengths are equal)
  * @param T to compare length
  * @param T1 to compare length
- * @returns **`T1`** or **`T2`**
+ * @returns **`T`** or **`T1`**
  * @example
  * ```ts
  * ```
