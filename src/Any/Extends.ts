@@ -17,7 +17,7 @@ import {False, True} from '../Boolean/_Boolean'
  * ```
  */
 export type Extends<A1 extends any, A2 extends any> =
-    Equals<A1, never> extends true
+    [A1] extends [never] // todo to check has been changed
     ? False // anything never is false
     : (A1 extends A2 ? True : False)
 
