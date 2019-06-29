@@ -1,4 +1,6 @@
-import {Format, FormatMap} from './_Internal'
+import {Format} from './_Internal'
+import {Fmt} from './Fmt'
+import {Boolean} from './_Boolean'
 
 /** Logical **`&&`** operator (behaves like the JS one)
  * @param B1 Left-hand side
@@ -13,9 +15,14 @@ import {Format, FormatMap} from './_Internal'
  * type test2 = B.And<true | false, true> // boolean
  * ```
  */
-export type And<B1 extends boolean, B2 extends boolean, fmt extends Format = 'b'> =
-    (B1 & B2) extends false   // If one of them is false
-    ? FormatMap[fmt][0]       // false
-    : (B1 | B2) extends true  // If both of them are true
-      ? FormatMap[fmt][1]     // true
-      : FormatMap[fmt][0 | 1] // boolean
+export type And<B1 extends Boolean, B2 extends Boolean, fmt extends Format = 'b'> = {
+    0: {
+      0: Fmt<0, fmt>
+      1: Fmt<0, fmt>
+    }
+    1: {
+      0: Fmt<0, fmt>
+      1: Fmt<1, fmt>
+    }
+}[B1][B2]
+

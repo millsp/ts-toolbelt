@@ -1,4 +1,5 @@
 import {Format, FormatMap} from './_Internal'
+import {Boolean} from './_Boolean'
 
-export type Fmt<B extends 0 | 1, fmt extends Format> =
+export type Fmt<B extends Boolean, fmt extends Format> =
     FormatMap[fmt][B]

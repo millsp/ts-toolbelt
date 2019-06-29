@@ -1,4 +1,6 @@
-import {Format, FormatMap} from './_Internal'
+import {Format} from './_Internal'
+import {Fmt} from './Fmt'
+import {Boolean} from './_Boolean'
 
 /** Logical **`!`** operator (behaves like the JS one)
  * @param B to negate
@@ -11,7 +13,7 @@ import {Format, FormatMap} from './_Internal'
  * type test1 = B.Not<false> // true
  * ```
  */
-export type Not<B extends boolean, fmt extends Format = 'b'> =
-    B extends false
-    ? FormatMap[fmt][1] // true
-    : FormatMap[fmt][0] // false
+export type Not<B extends Boolean, fmt extends Format = 'b'> = {
+    0: Fmt<1, fmt>
+    1: Fmt<0, fmt>
+}[B]

@@ -1,3 +1,5 @@
+import {Boolean} from './_Boolean'
+
 /** Transform a **`boolean`** to **`true`** or **`false`**
  * @param B to transform
  * @returns **`'true'`** or **`'false'`**
@@ -10,7 +12,8 @@
  * type test2 = B.StringOf<boolean> // 'false' | 'true'
  * ```
  */
-export type StringOf<B extends boolean> =
-    B extends false
-    ? 'false'
-    : 'true'
+export type StringOf<B extends Boolean> = {
+    0: 'false'
+    1: 'true'
+}[B]
+

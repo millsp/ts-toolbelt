@@ -1,5 +1,6 @@
-import {Equals} from '../Any/Equals'
-import {Format, FormatMap} from './_Internal'
+import {Fmt} from './Fmt'
+import {Boolean} from './_Boolean'
+import {Format} from './_Internal'
 
 /** Logical **`^`** operator (behaves like the JS one)
  * @param B1 Left-hand side
@@ -14,9 +15,13 @@ import {Format, FormatMap} from './_Internal'
  * type test2 = B.Xor<boolean, true> // boolean
  * ```
  */
-export type Xor<B1 extends boolean, B2 extends boolean, fmt extends Format = 'b'> =
-    (Equals<B1, boolean> & Equals<B2, boolean>) extends true // If one of them is boolean
-    ? FormatMap[fmt][0 | 1]                                  // boolean
-    : Equals<B1, B2> extends true                            // If both of them are equal
-      ? FormatMap[fmt][0]                                    // false
-      : FormatMap[fmt][1]                                    // true
+export type Xor<B1 extends Boolean, B2 extends Boolean, fmt extends Format = 'b'> = {
+    0: {
+        0: Fmt<0, fmt>
+        1: Fmt<1, fmt>
+    }
+    1: {
+        0: Fmt<1, fmt>
+        1: Fmt<0, fmt>
+    }
+}[B1][B2]
