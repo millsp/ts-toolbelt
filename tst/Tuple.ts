@@ -546,7 +546,14 @@ checks([
 // ---------------------------------------------------------------------------------------
 // WRITABLE
 
-// No test needed (same as O.Writable)
+type WRITABLE_T_ARR = ['a', 'b'];
+
+type READONLY_T_ARR = readonly ['a', 'b'];
+
+checks([
+    check<T.Writable<READONLY_T_ARR>,                         WRITABLE_T_ARR,                Test.Pass>(),
+    check<T.Writable<WRITABLE_T_ARR>,                         WRITABLE_T_ARR,                Test.Pass>(),
+])
 
 // ---------------------------------------------------------------------------------------
 // WRITABLEKEYS
