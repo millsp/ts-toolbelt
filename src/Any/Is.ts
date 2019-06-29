@@ -2,7 +2,6 @@ import {Match} from './_Internal'
 import {Extends} from './Extends'
 import {Equals} from './Equals'
 import {Or} from '../Boolean/Or'
-import {Replace} from '../Union/Replace'
 
 /** Check whether `A` is similar to `A1` or not
  * @param A to be compared

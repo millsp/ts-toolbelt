@@ -1,21 +1,23 @@
+import {True, False} from '../Boolean/_Boolean'
+
 type EqualsDefault<A1 extends any, A2 extends any> =
     (A1 | A2) extends A1   // If both of them are A1
     ? (A1 | A2) extends A2 // If both of them are A2
-      ? true
-      : false
-    : false
+      ? True
+      : False
+    : False
 
 // Credit https://stackoverflow.com/a/52473108/3570903
 type EqualsStrict<A1 extends any, A2 extends any> =
-    (<A>() => A extends A1 ? 1 : 2) extends (<A>() => A extends A2 ? 1 : 2)
-    ? true
-    : false
+    (<A>() => A extends A1 ? True : False) extends (<A>() => A extends A2 ? True : False)
+    ? True
+    : False
 
 /** Check whether **`A1`** is equal to **`A2`** or not
  * @param A1
  * @param A2
  * @param match to change precision
- * @returns **`true`** or **`false`**
+ * @returns **`True`** or **`False`**
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'

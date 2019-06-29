@@ -1,4 +1,5 @@
 import {Equals} from './Equals'
+import {False, True} from '../Boolean/_Boolean'
 
 /** Check whether **`A1`** is part of **`A2`** or not
  * (diff. w/ `extends`: forces a **`boolean`** return)
@@ -17,8 +18,8 @@ import {Equals} from './Equals'
  */
 export type Extends<A1 extends any, A2 extends any> =
     Equals<A1, never> extends true
-    ? false // anything never is false
-    : (A1 extends A2 ? true : false)
+    ? False // anything never is false
+    : (A1 extends A2 ? True : False)
 
 // Comes from the fact that `never` is a fall-through type that we want to
 // narrow down to `false`. So it means that `Extends<never, any>` is false
