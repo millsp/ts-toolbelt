@@ -3,7 +3,7 @@ import {Pos} from '../Iteration/Pos'
 import {Next} from '../Iteration/Next'
 import {Length} from './Length'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/Iteration'
+import {Iteration} from '../Iteration/_Iteration'
 import {Cast} from '../Any/Cast'
 
 export type _Reverse<T extends any[], TO extends any[] = [], I extends Iteration = IterationOf<'0'>> = {

@@ -1,5 +1,5 @@
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/Iteration'
+import {Iteration} from '../Iteration/_Iteration'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
 import {Length} from '../Tuple/Length'

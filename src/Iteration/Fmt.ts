@@ -1,4 +1,4 @@
-import {Iteration} from './Iteration'
+import {Iteration} from './_Iteration'
 import {Format, FormatMap} from './_Internal'
 
 /** Is **`Key`** and **`Pos`** in a single type

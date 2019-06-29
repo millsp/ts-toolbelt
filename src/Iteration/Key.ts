@@ -1,4 +1,4 @@
-import {Iteration} from './Iteration'
+import {Iteration} from './_Iteration'
 import {FormatMap, Format} from './_Internal'
 
 /** Get the position of **`I`** (**string**)

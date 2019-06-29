@@ -1,5 +1,5 @@
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/Iteration'
+import {Iteration} from '../Iteration/_Iteration'
 import {Nbr} from './_Internal'
 import {Key} from '../Iteration/Key'
 import {Cast} from '../Any/Cast'

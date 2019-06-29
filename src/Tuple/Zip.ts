@@ -1,5 +1,5 @@
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/Iteration'
+import {Iteration} from '../Iteration/_Iteration'
 import {Prepend} from './Prepend'
 import {Next} from '../Iteration/Next'
 import {Length} from './Length'

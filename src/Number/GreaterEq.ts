@@ -1,7 +1,7 @@
 import {Equals} from '../Any/Equals'
 import {_Greater} from './Greater'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/Iteration'
+import {Iteration} from '../Iteration/_Iteration'
 import {Nbr} from './_Internal'
 import {Cast} from '../Any/Cast'
 
