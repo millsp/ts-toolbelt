@@ -29,7 +29,7 @@ const IterationOfGenerator = (min: number, max: number) => {
         console.log(`"${i}": ["${i - 1}", "${i + 1}", "${i}", ${i}, "${i > 0 ? '+' : i < 0 ? '-' : '0'}"],`)
 
     console.log(`"${max}": ["${max - 1}", "__", "${max}", ${max}, "+"],`)
-    console.log('"__": ["__", "__", string, number, "-" | "0" | "+"]}')
+    console.log('[x: string]: [string, string, string, number, "-" | "0" | "+"]}')
 }
 
 IterationOfGenerator(-40, +40)
