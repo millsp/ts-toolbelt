@@ -10,7 +10,7 @@ import {Head} from '../Tuple/Head'
 import {ReturnOf} from './ReturnOf'
 import {ParamsOf} from './ParamsOf'
 
-type ComposeItem<Fns extends Arrow[], K extends keyof Fns> =
+type ComposeFn<Fns extends Arrow[], K extends keyof Fns> =
     Length<Tail<Fns>> extends NumberOf<K>
     ? Fns[K] // If mapped type reached the end
     : (arg: ReturnOf<Fns[Pos<Next<IterationOf<K>>>]>) =>
@@ -28,7 +28,7 @@ type ComposeItem<Fns extends Arrow[], K extends keyof Fns> =
  * ```
  */
 export type Composer<Fns extends Arrow[]> = {
-    [K in keyof Fns]: ComposeItem<Fns, K>
+    [K in keyof Fns]: ComposeFn<Fns, K>
 }
 
 /** Compose **`Function`**s together like **`compose()`**

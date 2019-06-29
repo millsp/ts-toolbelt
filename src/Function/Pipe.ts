@@ -8,9 +8,9 @@ import {NumberOf} from '../String/NumberOf'
 import {ReturnOf} from './ReturnOf'
 import {ParamsOf} from './ParamsOf'
 
-type PipeItem<Fns extends Arrow[], K extends keyof Fns> =
+type PipeFn<Fns extends Arrow[], K extends keyof Fns> =
     NumberOf<K> extends 0
-    ? Fns[K] // If it's the first item, do nothing to it. Otherwise, pipe them:
+    ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
     : (arg: ReturnOf<Fns[Pos<Prev<IterationOf<K>>>]>) =>
         ReturnOf<Fns[Pos<IterationOf<K>>]>
 
@@ -26,7 +26,7 @@ type PipeItem<Fns extends Arrow[], K extends keyof Fns> =
  * ```
  */
 export type Piper<Fns extends Arrow[]> = {
-    [K in keyof Fns]: PipeItem<Fns, K>
+    [K in keyof Fns]: PipeFn<Fns, K>
 }
 
 /** Pipe **`Function`**s together like **`pipe()`**
