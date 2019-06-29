@@ -8,9 +8,11 @@ import {Format} from '../Iteration/_Internal'
 import {Fmt} from '../Iteration/Fmt'
 
 export type _Absolute<N extends Iteration> =
-    _IsNegative<N> extends true
-    ? _Negate<N>
-    : N
+    N extends any
+    ? _IsNegative<N> extends true
+      ? _Negate<N>
+      : N
+    : never
 
 /** Get the absolute value of a **number**
  * @param N to absolute
@@ -30,3 +32,5 @@ export type Absolute<N extends Nbr, fmt extends Format = 's'> =
     _Absolute<IterationOf<N>> extends infer I
     ? Fmt<Cast<I, Iteration>, fmt>
     : never
+
+type t = Absolute<'-1' | '0' | '-2'>
