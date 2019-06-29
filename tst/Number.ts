@@ -11,7 +11,6 @@ const {checks, check} = Test
 // ABSOLUTE
 
 checks([
-    check<N.Absolute<'0' | '-4'>,   '0' | '4',  Test.Pass>(),
     check<N.Absolute<'0'>,          '0',        Test.Pass>(),
     check<N.Absolute<'10'>,         '10',       Test.Pass>(),
     check<N.Absolute<'-10'>,        '10',       Test.Pass>(),
