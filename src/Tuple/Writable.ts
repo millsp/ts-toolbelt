@@ -10,5 +10,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Writable<T extends readonly any[] | any[], depth extends Depth = 'flat'> =
+export type Writable<T extends any[], depth extends Depth = 'flat'> =
     Cast<OWritable<T, keyof T, depth>, any[]>
