@@ -4,15 +4,20 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {Nbr} from './_Internal'
-import {Format} from '../Iteration/_Internal'
+import {Format, FormatMap} from '../Iteration/_Internal'
 import {Fmt} from '../Iteration/Fmt'
+import {_Minus} from './Minus'
 
-export type _Absolute<N extends Iteration> =
-    N extends any
-    ? _IsNegative<N> extends true
-      ? _Negate<N>
-      : N
-    : never
+type IsNegative<N extends Iteration> = {
+    '0': 'false'
+    '+': 'false'
+    '-': 'true'
+}[N[4]]
+
+export type _Absolute<N extends Iteration> = {
+    'true' : _Minus<IterationOf<'0'>, N>
+    'false': N
+}[IsNegative<N>]
 
 /** Get the absolute value of a **number**
  * @param N to absolute
@@ -29,8 +34,22 @@ export type _Absolute<N extends Iteration> =
  * ```
  */
 export type Absolute<N extends Nbr, fmt extends Format = 's'> =
-    _Absolute<IterationOf<N>> extends infer I
-    ? Fmt<Cast<I, Iteration>, fmt>
+    N extends any // force distribution
+    ? Fmt<_Absolute<IterationOf<N>>, fmt>
     : never
 
-type t = Absolute<'-1' | '0' | '-2'>
+type t = Absolute<'-2' | '-1'>
+
+type IfABC<C extends 'a' | 'b' | 'c'> =
+    C extends 'a'
+    ? 'a'
+    : C extends 'b'
+      ? 'b'
+      : 'c'
+
+type test0 = IfABC<'a' | 'b'> // 'a' | 'b'
+
+type NestABC<C extends 'a' | 'b' | 'c'> =
+    IfABC<C>
+
+type test1 = IfABC<'a' | 'b'>

@@ -1,3 +1,7 @@
+import {Format} from '../Iteration/_Internal'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Fmt} from '../Iteration/Fmt'
+
 /** Transform a **`boolean`** to **`0`** or **`1`**
  * @param B to transform
  * @returns **`0`** or **`1`**
