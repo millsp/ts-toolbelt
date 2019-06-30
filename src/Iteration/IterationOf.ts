@@ -85,7 +85,7 @@ export type IterationMap = {
     '38': ['37', '39', '38', 38, '+'],
     '39': ['38', '40', '39', 39, '+'],
     '40': ['39', '__', '40', 40, '+'],
-    [x: string]: [string, string, string, number, '-' | '0' | '+']
+    '__': ['__', '__', string, number, '-' | '0' | '+']
 }
 
 /** Transform a **number** to an **`Iteration`**
@@ -106,4 +106,6 @@ export type IterationMap = {
  * ```
  */
 export type IterationOf<N extends Nbr> =
-    IterationMap[N]
+    N extends keyof IterationMap
+    ? IterationMap[N]
+    : IterationMap['__']

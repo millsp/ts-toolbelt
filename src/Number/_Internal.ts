@@ -14,10 +14,12 @@ export type Numbers = {
         'all': IterationMap[Exclude<keyof IterationMap, '__'>][FormatMap['s']]                   // union of all string
         '+'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '+']>][FormatMap['s']] // union of +   string
         '-'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '-']>][FormatMap['s']] // union of -   string
+        '0'  : IterationMap['0'][FormatMap['s']]
     }
     'number': {
         'all': IterationMap[Exclude<keyof IterationMap, '__'>][FormatMap['n']]                   // union of all number
         '+'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '+']>][FormatMap['n']] // union of +   number
         '-'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '-']>][FormatMap['n']] // union of -   number
+        '0'  : IterationMap['0'][FormatMap['n']]
     }
 }

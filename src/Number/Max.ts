@@ -9,13 +9,14 @@ import {_IsNegative} from './IsNegative'
 import {Exclude} from '../Union/Exclude'
 import {Cast} from '../Any/Cast'
 import {Fmt} from '../Iteration/Fmt'
+import {True} from '../Boolean/_api'
 
 type MaxPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
     1: Prev<I>
     2: string
 }[
-    [N] extends [never]
+    [N] extends [never] // stops when nothing's left
     ? 1
     : string extends N
       ? 2
@@ -26,13 +27,13 @@ type MaxNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
     1: I
 }[
-    Key<I> extends N
+    Key<I> extends N // stops as soon as it finds
     ? 1
     : 0
 ]
 
 export type _Max<N extends Iteration> =
-    _IsNegative<N> extends true
+    _IsNegative<N> extends True
     ? MaxNegative<Key<N>>
     : MaxPositive<Exclude<Key<N>, Numbers['string']['-']>>
     // Exclude (-) numbers, MinPositive only works with (+)

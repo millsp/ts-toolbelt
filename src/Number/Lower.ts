@@ -2,7 +2,6 @@ import {_Greater} from './Greater'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
-import {Cast} from '../Any/Cast'
 
 export type _Lower<N1 extends Iteration, N2 extends Iteration> =
     _Greater<N2, N1>
@@ -21,6 +20,4 @@ export type _Lower<N1 extends Iteration, N2 extends Iteration> =
  * ```
  */
 export type Lower<N1 extends Nbr, N2 extends Nbr> =
-    _Lower<IterationOf<N1>, IterationOf<N2>> extends infer X
-    ? Cast<X, boolean>
-    : never
+    _Lower<IterationOf<N1>, IterationOf<N2>>

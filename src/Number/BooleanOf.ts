@@ -1,15 +1,13 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
-import {Key} from '../Iteration/Key'
-import {Cast} from '../Any/Cast'
+import {True, False, Boolean} from '../Boolean/Boolean'
 
-export type _BooleanOf<N extends Iteration> =
-    Key<N> extends '0'
-    ? false
-    : string extends Key<N>
-      ? boolean
-      : true
+export type _BooleanOf<N extends Iteration> = {
+    '-': True
+    '+': True
+    '0': False
+}[N[4]]
 
 /** Transform a **number** into a **`boolean`**
  * @param N to transform
@@ -23,6 +21,4 @@ export type _BooleanOf<N extends Iteration> =
  * ```
  */
 export type BooleanOf<N extends Nbr> =
-    _BooleanOf<IterationOf<N>> extends infer X
-    ? Cast<X, boolean>
-    : never
+    _BooleanOf<IterationOf<N>>

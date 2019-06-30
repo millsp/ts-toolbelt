@@ -9,12 +9,13 @@ import {Prev} from '../Iteration/Prev'
 import {_IsPositive} from './IsPositive'
 import {Exclude} from '../Union/Exclude'
 import {Fmt} from '../Iteration/Fmt'
+import {True} from '../Boolean/Boolean'
 
 type MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     0: MinPositive<N, Next<I>> // Find smallest +
     1: I
 }[
-    Key<I> extends N
+    Key<I> extends N // stops as soon as it finds
     ? 1
     : 0
 ]
@@ -24,7 +25,7 @@ type MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     1: Next<I>
     2: string
 }[
-    [N] extends [never]
+    [N] extends [never] // stops when nothing's left
     ? 1
     : string extends N
       ? 2
@@ -32,7 +33,7 @@ type MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
 ]
 
 export type _Min<N extends Iteration> =
-    _IsPositive<N> extends true
+    _IsPositive<N> extends True
     ? MinPositive<Key<N>>
     : MinNegative<Exclude<Key<N>, Numbers['string']['+']>>
     // Exclude (+) numbers, MinNegative only works with (-)

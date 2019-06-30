@@ -7,12 +7,13 @@ import {Nbr} from './_Internal'
 import {Format} from '../Iteration/_Internal'
 import {Fmt} from '../Iteration/Fmt'
 
-type _Clamp<N extends Iteration, Min extends Iteration, Max extends Iteration> =
-    _Greater<N, Max> extends true
-    ? Max
-    : _Lower<N, Min> extends true
-      ? Min
-      : N
+type _Clamp<N extends Iteration, Min extends Iteration, Max extends Iteration> = {
+    0: {
+        0: N
+        1: Min
+    }[_Lower<N, Min>]
+    1: Max
+}[_Greater<N, Max>]
 
 /** Keep a **number** within a range of **number**s
  * @param N to clamp
@@ -33,8 +34,6 @@ type _Clamp<N extends Iteration, Min extends Iteration, Max extends Iteration> =
  * ```
  */
 export type Clamp<N extends Nbr, Min extends Nbr, Max extends Nbr, fmt extends Format = 's'> =
-    _Clamp<IterationOf<N>, IterationOf<Min>, IterationOf<Max>> extends infer I
-    ? Fmt<Cast<I, Iteration>, fmt>
-    : never
+    Fmt<_Clamp<IterationOf<N>, IterationOf<Min>, IterationOf<Max>>, fmt>
 
 // type t = Clamp<'1' | '5', '1', '2'> // todo

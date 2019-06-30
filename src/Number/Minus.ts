@@ -9,8 +9,8 @@ import {Nbr} from './_Internal'
 import {Format} from '../Iteration/_Internal'
 import {Fmt} from '../Iteration/Fmt'
 
-type MinusPositive<N1 extends Iteration, N2 extends Iteration> = {
-    0: MinusPositive<Prev<N1>, Prev<N2>> // N1 = -/+, N2 = +
+type _MinusPositive<N1 extends Iteration, N2 extends Iteration> = {
+    0: _MinusPositive<Prev<N1>, Prev<N2>> // N1 = -/+, N2 = +
     1: N1
     2: N2
 }[
@@ -21,8 +21,8 @@ type MinusPositive<N1 extends Iteration, N2 extends Iteration> = {
       : 0                       // Or continue
 ]
 
-type MinusNegative<N1 extends Iteration, N2 extends Iteration> = {
-    0: MinusNegative<Next<N1>, Next<N2>> // N1 = -/+, N2 = -
+type _MinusNegative<N1 extends Iteration, N2 extends Iteration> = {
+    0: _MinusNegative<Next<N1>, Next<N2>> // N1 = -/+, N2 = -
     1: N1
     2: N2
 }[
@@ -33,10 +33,12 @@ type MinusNegative<N1 extends Iteration, N2 extends Iteration> = {
       : 0                       // Or continue
 ]
 
-export type _Minus<N1 extends Iteration, N2 extends Iteration> =
-    _IsNegative<N2> extends true
-    ? MinusNegative<N1, N2>
-    : MinusPositive<N1, N2>
+export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
+    0: _MinusPositive<N1, N2>
+    1: _MinusNegative<N1, N2>
+}[_IsNegative<N2>] extends infer X
+? Cast<X, Iteration>
+: never
 
 /** Subtract a **number** from another one
  * @param N1 Left-hand side
@@ -56,6 +58,4 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> =
  * ```
  */
 export type Minus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =
-    _Minus<IterationOf<N1>, IterationOf<N2>> extends infer I
-    ? Fmt<Cast<I, Iteration>, fmt>
-    : never
+    Fmt<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
