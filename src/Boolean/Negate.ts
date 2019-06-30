@@ -1,6 +1,6 @@
 import {Not} from './Not'
 import {Format} from './_Internal'
-import {Boolean} from './_Boolean'
+import {Boolean} from './Boolean'
 
 /** Logical **`!`** operator (behaves like the JS one)
  * @param B to negate

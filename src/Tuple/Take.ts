@@ -1,6 +1,6 @@
 import {Nbr} from '../Number/_Internal'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/_Iteration'
+import {Iteration} from '../Iteration/Iteration'
 import {Pos} from '../Iteration/Pos'
 import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'

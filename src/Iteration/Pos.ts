@@ -1,5 +1,5 @@
-import {Iteration} from './_Iteration'
-import {Format, FormatMap} from './_Internal'
+import {Iteration} from './Iteration'
+import {FormatMap} from './_Internal'
 
 /** Get the position of **`I`** (**number**)
  * @param I to query

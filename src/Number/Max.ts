@@ -1,6 +1,6 @@
 import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/_Iteration'
+import {Iteration} from '../Iteration/Iteration'
 import {Next} from '../Iteration/Next'
 import {Nbr, Numbers} from './_Internal'
 import {Format} from '../Iteration/_Internal'

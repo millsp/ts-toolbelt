@@ -1,7 +1,7 @@
 import {Repeat} from './Tuple/Repeat'
 import {Equals} from './Any/Equals'
 import {Compute} from './Any/Compute'
-import {True, False, Boolean} from './Boolean/_Boolean'
+import {True, False, Boolean} from './Boolean/Boolean'
 
 export type Pass = True
 export type Fail = False

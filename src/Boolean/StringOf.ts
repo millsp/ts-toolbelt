@@ -1,4 +1,4 @@
-import {Boolean} from './_Boolean'
+import {Boolean} from './Boolean'
 
 /** Transform a **`boolean`** to **`true`** or **`false`**
  * @param B to transform

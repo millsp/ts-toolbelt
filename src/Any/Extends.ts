@@ -1,5 +1,5 @@
 import {Equals} from './Equals'
-import {False, True} from '../Boolean/_Boolean'
+import {False, True} from '../Boolean/Boolean'
 
 /** Check whether **`A1`** is part of **`A2`** or not
  * (diff. w/ `extends`: forces a **`boolean`** return)

@@ -3,7 +3,7 @@ import {_IsPositive} from './IsPositive'
 import {Cast} from '../Any/Cast'
 import {_IsNegative} from './IsNegative'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/_Iteration'
+import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
 
 export type _Greater<N1 extends Iteration, N2 extends Iteration> =

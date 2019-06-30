@@ -1,4 +1,4 @@
-import {True, False} from '../Boolean/_Boolean'
+import {True, False} from '../Boolean/Boolean'
 
 type EqualsDefault<A1 extends any, A2 extends any> =
     (A1 | A2) extends A1   // If both of them are A1

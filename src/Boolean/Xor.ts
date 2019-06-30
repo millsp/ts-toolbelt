@@ -1,5 +1,5 @@
 import {Fmt} from './Fmt'
-import {Boolean} from './_Boolean'
+import {Boolean} from './Boolean'
 import {Format} from './_Internal'
 
 /** Logical **`^`** operator (behaves like the JS one)

@@ -1,6 +1,6 @@
 import {_Minus} from './Minus'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/_Iteration'
+import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {Nbr} from './_Internal'
 import {Format} from '../Iteration/_Internal'

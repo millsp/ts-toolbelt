@@ -1,4 +1,4 @@
-import {True, False} from './_Boolean'
+import {True, False} from './Boolean'
 
 export type BooleanOf<B extends boolean> =
     B extends true

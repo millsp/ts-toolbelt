@@ -1,5 +1,5 @@
 import {IterationMap} from './IterationOf'
-import {Iteration} from './_Iteration'
+import {Iteration} from './Iteration'
 
 /** Move **`I`**'s position forward
  * @param I to move
