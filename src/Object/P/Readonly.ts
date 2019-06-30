@@ -12,11 +12,11 @@ import {Path as PPath} from './_Internal'
 import {Prepend} from '../../Tuple/Prepend'
 
 type _Readonly<O extends object, Path extends string[], K extends string, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
-  [P in keyof O]: P extends Path[Pos<I>]                                     // If K is part of Path
-                  ? Pos<Next<I>> extends Length<Path>                        // & if it's the target
-                    ? OReadonly<O[P] & {}, K, depth> // immutable            // Update - target
-                    : Compute<_Readonly<O[P] & {}, Path, K, depth, Next<I>>> // Or continue diving
-                  : O[P] // don't update                                     // Not part of path - x
+  [P in keyof O]: Compute<P extends Path[Pos<I>]                    // If K is part of Path
+                  ? Pos<Next<I>> extends Length<Path>               // & if it's the target
+                    ? OReadonly<O[P] & {}, K, depth> // immutable   // Update - target
+                    : _Readonly<O[P] & {}, Path, K, depth, Next<I>> // Or continue diving
+                  : O[P]> // don't update                           // Not part of path - x
 }
 
 export type Readonly<O extends object, Path extends PPath, depth extends Depth = 'flat'> =
