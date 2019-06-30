@@ -15,13 +15,13 @@ import {Boolean} from './Boolean'
  * type test2 = B.Or<boolean, false> // boolean
  * ```
  */
-export type Or<B1 extends Boolean, B2 extends Boolean, fmt extends Format = 'b'> = {
+export type Or<B1 extends Boolean, B2 extends Boolean> = {
     0: {
-        0: Fmt<0, fmt>
-        1: Fmt<1, fmt>
+        0: 0
+        1: 1
     }
     1: {
-        0: Fmt<1, fmt>
-        1: Fmt<1, fmt>
+        0: 1
+        1: 1
     }
 }[B1][B2]

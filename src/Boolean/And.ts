@@ -1,5 +1,3 @@
-import {Format} from './_Internal'
-import {Fmt} from './Fmt'
 import {Boolean} from './Boolean'
 
 /** Logical **`&&`** operator (behaves like the JS one)
@@ -15,14 +13,14 @@ import {Boolean} from './Boolean'
  * type test2 = B.And<true | false, true> // boolean
  * ```
  */
-export type And<B1 extends Boolean, B2 extends Boolean, fmt extends Format = 'b'> = {
+export type And<B1 extends Boolean, B2 extends Boolean> = {
     0: {
-      0: Fmt<0, fmt>
-      1: Fmt<0, fmt>
+      0: 0
+      1: 0
     }
     1: {
-      0: Fmt<0, fmt>
-      1: Fmt<1, fmt>
+      0: 0
+      1: 1
     }
 }[B1][B2]
 

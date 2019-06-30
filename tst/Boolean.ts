@@ -9,52 +9,52 @@ const {checks, check} = Test
 // AND
 
 checks([
-    check<B.And<B.True, B.True>,            true,       Test.Pass>(true && true),
-    check<B.And<B.True, B.False>,           false,      Test.Pass>(true && false),
-    check<B.And<B.False, B.True>,           false,      Test.Pass>(false && true),
-    check<B.And<B.False, B.False>,          false,      Test.Pass>(false && false),
-    check<B.And<B.Boolean, B.False>,        false,      Test.Pass>(),
-    check<B.And<B.False, B.Boolean>,        false,      Test.Pass>(),
-    check<B.And<B.Boolean, B.True>,         boolean,    Test.Pass>(),
-    check<B.And<B.True, B.Boolean>,         boolean,    Test.Pass>(),
-    check<B.And<B.Boolean, B.Boolean>,      boolean,    Test.Pass>(),
+    check<B.And<B.True, B.True>,            1,          Test.Pass>(1 && 1),
+    check<B.And<B.True, B.False>,           0,          Test.Pass>(1 && 0),
+    check<B.And<B.False, B.True>,           0,          Test.Pass>(0 && 1),
+    check<B.And<B.False, B.False>,          0,          Test.Pass>(0 && 0),
+    check<B.And<B.Boolean, B.False>,        0,          Test.Pass>(),
+    check<B.And<B.False, B.Boolean>,        0,          Test.Pass>(),
+    check<B.And<B.Boolean, B.True>,         0 | 1,      Test.Pass>(),
+    check<B.And<B.True, B.Boolean>,         0 | 1,      Test.Pass>(),
+    check<B.And<B.Boolean, B.Boolean>,      0 | 1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // NEGATE
 
 checks([
-    check<B.Negate<B.True>,             false,          Test.Pass>(!true),
-    check<B.Negate<B.False>,            true,           Test.Pass>(!false),
-    check<B.Negate<B.True | B.False>,   true | false,   Test.Pass>(),
-    check<B.Negate<B.True | B.False>,   boolean,        Test.Pass>(),
-    check<B.Negate<B.Boolean>,          boolean,        Test.Pass>(),
+    check<B.Negate<B.True>,             0,          Test.Pass>(),
+    check<B.Negate<B.False>,            1,          Test.Pass>(),
+    check<B.Negate<B.True | B.False>,   1 | 0,      Test.Pass>(),
+    check<B.Negate<B.True | B.False>,   0 | 1,      Test.Pass>(),
+    check<B.Negate<B.Boolean>,          0 | 1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // NOT
 
 checks([
-    check<B.Not<B.True>,            false,          Test.Pass>(!true),
-    check<B.Not<B.False>,           true,           Test.Pass>(!false),
-    check<B.Not<B.True | B.False>,  true | false,   Test.Pass>(),
-    check<B.Not<B.True | B.False>,  boolean,        Test.Pass>(),
-    check<B.Not<B.Boolean>,         boolean,        Test.Pass>(),
+    check<B.Not<B.True>,                0,          Test.Pass>(),
+    check<B.Not<B.False>,               1,          Test.Pass>(),
+    check<B.Not<B.True | B.False>,      1 | 0,      Test.Pass>(),
+    check<B.Not<B.True | B.False>,      0 | 1,      Test.Pass>(),
+    check<B.Not<B.Boolean>,             0 | 1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // OR
 
 checks([
-    check<B.Or<B.True, B.True>,             true,       Test.Pass>(true || true),
-    check<B.Or<B.True, B.False>,            true,       Test.Pass>(true || false),
-    check<B.Or<B.False, B.True>,            true,       Test.Pass>(false || true),
-    check<B.Or<B.False, B.False>,           false,      Test.Pass>(false || false),
-    check<B.Or<B.Boolean, B.True>,          true,       Test.Pass>(),
-    check<B.Or<B.True, B.Boolean>,          true,       Test.Pass>(),
-    check<B.Or<B.Boolean, B.False>,         boolean,    Test.Pass>(),
-    check<B.Or<B.False, B.Boolean>,         boolean,    Test.Pass>(),
-    check<B.Or<B.Boolean, B.Boolean>,       boolean,    Test.Pass>(),
+    check<B.Or<B.True, B.True>,         1,          Test.Pass>(1 || 1),
+    check<B.Or<B.True, B.False>,        1,          Test.Pass>(1 || 0),
+    check<B.Or<B.False, B.True>,        1,          Test.Pass>(0 || 1),
+    check<B.Or<B.False, B.False>,       0,          Test.Pass>(0 || 0),
+    check<B.Or<B.Boolean, B.True>,      1,          Test.Pass>(),
+    check<B.Or<B.True, B.Boolean>,      1,          Test.Pass>(),
+    check<B.Or<B.Boolean, B.False>,     0 | 1,      Test.Pass>(),
+    check<B.Or<B.False, B.Boolean>,     0 | 1,      Test.Pass>(),
+    check<B.Or<B.Boolean, B.Boolean>,   0 | 1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -71,13 +71,13 @@ checks([
 // XOR
 
 checks([
-    check<B.Xor<B.True, B.True>,            false,      Test.Pass>(),
-    check<B.Xor<B.True, B.False>,           true,       Test.Pass>(),
-    check<B.Xor<B.False, B.True>,           true,       Test.Pass>(),
-    check<B.Xor<B.False, B.False>,          false,      Test.Pass>(),
-    check<B.Xor<B.Boolean, B.True>,         boolean,    Test.Pass>(),
-    check<B.Xor<B.True, B.Boolean>,         boolean,    Test.Pass>(),
-    check<B.Xor<B.Boolean, B.False>,        boolean,    Test.Pass>(),
-    check<B.Xor<B.False, B.Boolean>,        boolean,    Test.Pass>(),
-    check<B.Xor<B.Boolean, B.Boolean>,      boolean,    Test.Pass>(),
+    check<B.Xor<B.True, B.True>,            0,          Test.Pass>(),
+    check<B.Xor<B.True, B.False>,           1,          Test.Pass>(),
+    check<B.Xor<B.False, B.True>,           1,          Test.Pass>(),
+    check<B.Xor<B.False, B.False>,          0,          Test.Pass>(),
+    check<B.Xor<B.Boolean, B.True>,         0 | 1,      Test.Pass>(),
+    check<B.Xor<B.True, B.Boolean>,         0 | 1,      Test.Pass>(),
+    check<B.Xor<B.Boolean, B.False>,        0 | 1,      Test.Pass>(),
+    check<B.Xor<B.False, B.Boolean>,        0 | 1,      Test.Pass>(),
+    check<B.Xor<B.Boolean, B.Boolean>,      0 | 1,      Test.Pass>(),
 ])

@@ -15,13 +15,13 @@ import {Format} from './_Internal'
  * type test2 = B.Xor<boolean, true> // boolean
  * ```
  */
-export type Xor<B1 extends Boolean, B2 extends Boolean, fmt extends Format = 'b'> = {
+export type Xor<B1 extends Boolean, B2 extends Boolean> = {
     0: {
-        0: Fmt<0, fmt>
-        1: Fmt<1, fmt>
+        0: 0
+        1: 1
     }
     1: {
-        0: Fmt<1, fmt>
-        1: Fmt<0, fmt>
+        0: 1
+        1: 0
     }
 }[B1][B2]

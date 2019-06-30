@@ -1,5 +1,4 @@
 import {Not} from './Not'
-import {Format} from './_Internal'
 import {Boolean} from './Boolean'
 
 /** Logical **`!`** operator (behaves like the JS one)
@@ -13,5 +12,5 @@ import {Boolean} from './Boolean'
  * type test1 = B.Negate<false> // true
  * ```
  */
-export type Negate<B extends Boolean, fmt extends Format = 'b'> =
-    Not<B, fmt>
+export type Negate<B extends Boolean> =
+    Not<B>

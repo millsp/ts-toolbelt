@@ -13,7 +13,7 @@ import {Boolean} from './Boolean'
  * type test1 = B.Not<false> // true
  * ```
  */
-export type Not<B extends Boolean, fmt extends Format = 'b'> = {
-    0: Fmt<1, fmt>
-    1: Fmt<0, fmt>
+export type Not<B extends Boolean> = {
+    0: 1
+    1: 0
 }[B]
