@@ -3,7 +3,6 @@ import {Match} from '../Any/_Internal'
 import {TupleOf} from '../Object/TupleOf'
 import {Longest} from './Longest'
 import {Length} from './Length'
-import {Cast} from '../Any/Cast'
 
 /** Get the intersecting entries of **`T`** & **`T1`**
  * (If `match = 'default'`, no type checks are done)

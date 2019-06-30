@@ -1,4 +1,4 @@
-import {Test, T} from '../src/index'
+import {Test, T, A} from '../src/index'
 import {x} from '../src/Any/x'
 
 const {checks, check} = Test
@@ -222,7 +222,9 @@ type INTERSECT_T_T1_NUMBER_DEFAULT = [
 type INTERSECT_T_T1_NUMBER_EXTENDS = [
     1,
     2,
+    '3' | undefined,
     'xxxx',
+    number | string,
     number,
     object,
     readonly [0, 1, 2?]
@@ -232,7 +234,6 @@ type INTERSECT_T_T1_NUMBER_EQUALS = [
     1,
     2,
     'xxxx',
-    number,
     object,
 ]
 

@@ -26,8 +26,10 @@ type _Paths<O, Paths extends string[] = []> = {
  * ```
  */
 export type Paths<O extends object> = {
-    1: string[]
+    1: never
     0: _Paths<O>
 }[Equals<O, any>] extends infer X
 ? Cast<X, string[]>
 : never
+
+type t = Equals<'', any>

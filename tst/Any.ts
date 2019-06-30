@@ -25,15 +25,15 @@ checks([
 // EQUALS
 
 checks([
-    check<A.Equals<[0, 1], any>,            0 | 1,    Test.Pass>(),
-    check<A.Equals<any, [0, 1]>,            0 | 1,    Test.Pass>(),
-    check<A.Equals<any, [0, 1]>,            0 | 1,    Test.Pass>(),
+    check<A.Equals<[0, 1], any>,            0,    Test.Pass>(),
+    check<A.Equals<any, [0, 1]>,            0,    Test.Pass>(),
+    check<A.Equals<any, [0, 1]>,            0,    Test.Pass>(),
     check<A.Equals<0, 0>,                   1,       Test.Pass>(),
     check<A.Equals<0, 1>,                   0,      Test.Pass>(),
     check<A.Equals<0, number>,              0,      Test.Pass>(),
-    check<A.Equals<any, string>,            0 | 1,    Test.Pass>(),
-    check<A.Equals<string, any>,            0 | 1,    Test.Pass>(),
-    check<A.Equals<{}, object>,             1,       Test.Pass>(),
+    check<A.Equals<any, string>,            0,    Test.Pass>(),
+    check<A.Equals<string, any>,            0,    Test.Pass>(),
+    check<A.Equals<{}, object>,             0,       Test.Pass>(),
     check<A.Equals<{a: any}, object>,       0,      Test.Pass>(),
     check<A.Equals<object, {a: any}>,       0,      Test.Pass>(),
     check<A.Equals<any[], Array<any>>,      1,       Test.Pass>(),

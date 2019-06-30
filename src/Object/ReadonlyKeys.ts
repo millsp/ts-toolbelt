@@ -15,5 +15,5 @@ export type ReadonlyKeys<O extends object> = {
     [K in keyof O]-?: {
         1: never
         0: K
-    }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}, 'strict'>]
+    }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}>]
 }[Keys<O>]
