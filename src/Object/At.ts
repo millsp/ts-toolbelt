@@ -19,5 +19,6 @@
  * ```
  */
 export type At<O extends object, K extends string> =
-    O[K & keyof O]
-
+    K extends keyof O
+    ? O[K]
+    : never

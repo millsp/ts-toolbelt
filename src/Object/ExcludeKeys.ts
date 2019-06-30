@@ -24,4 +24,3 @@ export type ExcludeKeys<O extends object, O1 extends object, match extends Match
         }[Is<O[K], At<O1, K>, match>]
     }[Keys<O>]
 }[Replace<match, 'extends' | 'equals' | 'loose', 'matches'>]
-
