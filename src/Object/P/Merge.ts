@@ -17,14 +17,3 @@ type _Merge<O extends object, Path extends string[], O1 extends object, I extend
 
 export type Merge<O extends object, Path extends PPath, O1 extends object> =
    _Merge<O, Path, O1>
-
-
-  type O = {
-    a: {
-      b: {
-        c: {}
-      }
-    }
-  }
-
-  type t = Merge<O, ['a', 'b', 'c'], {a: string}>
