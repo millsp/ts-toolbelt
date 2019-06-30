@@ -29,8 +29,8 @@ checks([
 checks([
     check<I.IterationOf<'3' | '4'>, ['2', '4', '3', 3, '+'] | ['3', '5', '4', 4, '+'],  Test.Pass>(),
     check<I.IterationOf<'3'>,       ['2', '4', '3', 3, '+'],                            Test.Pass>(),
-    check<I.IterationOf<string>,    [string, string, string, number, '-' | '0' | '+'],      Test.Pass>(),
-    check<I.IterationOf<'100'>,     [string, string, string, number, '-' | '0' | '+'],      Test.Pass>(),
+    check<I.IterationOf<string>,    ['__', '__', string, number, '-' | '0' | '+'],      Test.Pass>(),
+    check<I.IterationOf<'100'>,     ['__', '__', string, number, '-' | '0' | '+'],      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ checks([
     check<I.Next<I.IterationOf<'3' | '4'>>, ['3', '5', '4', 4, '+'] | ['4', '6', '5', 5, '+'],  Test.Pass>(),
     check<I.Next<I.IterationOf<'3'>>,       ['3', '5', '4', 4, '+'],                            Test.Pass>(),
     check<I.Next<I.IterationOf<'-40'>>,     ['-40', '-38', '-39', -39, '-'],                    Test.Pass>(),
-    check<I.Next<I.IterationOf<'40'>>,      [string, string, string, number, '-' | '0' | '+'],      Test.Pass>(),
+    check<I.Next<I.IterationOf<'40'>>,      ['__', '__', string, number, '-' | '0' | '+'],      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -72,5 +72,5 @@ checks([
     check<I.Prev<I.IterationOf<'3' | '4'>>, ['1', '3', '2', 2, '+'] | ['2', '4', '3', 3, '+'],  Test.Pass>(),
     check<I.Prev<I.IterationOf<'3'>>,       ['1', '3', '2', 2, '+'],                            Test.Pass>(),
     check<I.Prev<I.IterationOf<'30'>>,      ['28', '30', '29', 29, '+'],                        Test.Pass>(),
-    check<I.Prev<I.IterationOf<'-40'>>,     [string, string, string, number, '-' | '0' | '+'],      Test.Pass>(),
+    check<I.Prev<I.IterationOf<'-40'>>,     ['__', '__', string, number, '-' | '0' | '+'],      Test.Pass>(),
 ])

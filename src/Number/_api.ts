@@ -1,6 +1,5 @@
 export {Absolute} from './Absolute'
 export {BooleanOf} from './BooleanOf'
-export {Clamp} from './Clamp'
 export {Greater} from './Greater'
 export {GreaterEq} from './GreaterEq'
 export {IsNegative} from './IsNegative'

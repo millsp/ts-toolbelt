@@ -11,8 +11,8 @@ import {Exclude} from '../Union/Exclude'
 import {Fmt} from '../Iteration/Fmt'
 import {True} from '../Boolean/Boolean'
 
-type MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
-    0: MinPositive<N, Next<I>> // Find smallest +
+type _MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+    0: _MinPositive<N, Next<I>> // Find smallest +
     1: I
 }[
     Key<I> extends N // stops as soon as it finds
@@ -20,8 +20,13 @@ type MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     : 0
 ]
 
-type MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
-    0: MinNegative<Exclude<N, Key<I>>, Prev<I>> // Find smallest -
+type MinPositive<N extends Nbr> =
+    _MinPositive<N> extends infer X
+    ? Cast<X, Iteration>
+    : never
+
+type _MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+    0: _MinNegative<Exclude<N, Key<I>>, Prev<I>> // Find smallest -
     1: Next<I>
     2: string
 }[
@@ -31,6 +36,11 @@ type MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
       ? 2
       : 0
 ]
+
+type MinNegative<N extends Nbr> =
+    _MinNegative<N> extends infer X
+    ? Cast<X, Iteration>
+    : never
 
 export type _Min<N extends Iteration> =
     _IsPositive<N> extends True
@@ -53,6 +63,4 @@ export type _Min<N extends Iteration> =
  * ```
  */
 export type Min<N extends Nbr, fmt extends Format = 's'> =
-    _Min<IterationOf<N>> extends infer I
-    ? Fmt<Cast<I, Iteration>, fmt>
-    : never
+    Fmt<_Min<IterationOf<N>>, fmt>

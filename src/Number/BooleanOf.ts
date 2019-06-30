@@ -1,7 +1,7 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
-import {True, False, Boolean} from '../Boolean/Boolean'
+import {True, False} from '../Boolean/Boolean'
 
 export type _BooleanOf<N extends Iteration> = {
     '-': True

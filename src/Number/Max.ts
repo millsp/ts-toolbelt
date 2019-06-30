@@ -11,8 +11,8 @@ import {Cast} from '../Any/Cast'
 import {Fmt} from '../Iteration/Fmt'
 import {True} from '../Boolean/_api'
 
-type MaxPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
-    0: MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
+type _MaxPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+    0: _MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
     1: Prev<I>
     2: string
 }[
@@ -23,8 +23,13 @@ type MaxPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
       : 0
 ]
 
-type MaxNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
-    0: MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
+type MaxPositive<N extends Nbr> =
+    _MaxPositive<N> extends infer X
+    ? Cast<X, Iteration>
+    : never
+
+type _MaxNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+    0: _MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
     1: I
 }[
     Key<I> extends N // stops as soon as it finds
@@ -32,8 +37,13 @@ type MaxNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
     : 0
 ]
 
+type MaxNegative<N extends Nbr> =
+    _MaxNegative<N> extends infer X
+    ? Cast<X, Iteration>
+    : never
+
 export type _Max<N extends Iteration> =
-    _IsNegative<N> extends True
+    _IsNegative<N> extends True // breaks distribution
     ? MaxNegative<Key<N>>
     : MaxPositive<Exclude<Key<N>, Numbers['string']['-']>>
     // Exclude (-) numbers, MinPositive only works with (+)
@@ -53,6 +63,4 @@ export type _Max<N extends Iteration> =
  * ```
  */
 export type Max<N extends Nbr, fmt extends Format = 's'> =
-    _Max<IterationOf<N>> extends infer I
-    ? Fmt<Cast<I, Iteration>, fmt>
-    : never
+    Fmt<_Max<IterationOf<N>>, fmt>

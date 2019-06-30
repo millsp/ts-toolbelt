@@ -3,9 +3,7 @@ import {_Greater} from './Greater'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
-import {Cast} from '../Any/Cast'
 import {Or} from '../Boolean/Or'
-import {Boolean} from '../Boolean/Boolean'
 
 export type _GreaterEq<N1 extends Iteration, N2 extends Iteration> =
     Or<Equals<N1, N2>, _Greater<N1, N2>>
@@ -24,6 +22,4 @@ export type _GreaterEq<N1 extends Iteration, N2 extends Iteration> =
  * ```
  */
 export type GreaterEq<N1 extends Nbr, N2 extends Nbr> =
-    _GreaterEq<IterationOf<N1>, IterationOf<N2>> extends infer X
-    ? Cast<X, Boolean>
-    : never
+    _GreaterEq<IterationOf<N1>, IterationOf<N2>>

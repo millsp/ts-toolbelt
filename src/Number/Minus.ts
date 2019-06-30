@@ -21,6 +21,11 @@ type _MinusPositive<N1 extends Iteration, N2 extends Iteration> = {
       : 0                       // Or continue
 ]
 
+type MinusPositive<N1 extends Iteration, N2 extends Iteration> =
+    _MinusPositive<N1, N2> extends infer X
+    ? Cast<X, Iteration>
+    : never
+
 type _MinusNegative<N1 extends Iteration, N2 extends Iteration> = {
     0: _MinusNegative<Next<N1>, Next<N2>> // N1 = -/+, N2 = -
     1: N1
@@ -33,12 +38,15 @@ type _MinusNegative<N1 extends Iteration, N2 extends Iteration> = {
       : 0                       // Or continue
 ]
 
+type MinusNegative<N1 extends Iteration, N2 extends Iteration> =
+    _MinusNegative<N1, N2> extends infer X
+    ? Cast<X, Iteration>
+    : never
+
 export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
-    0: _MinusPositive<N1, N2>
-    1: _MinusNegative<N1, N2>
-}[_IsNegative<N2>] extends infer X
-? Cast<X, Iteration>
-: never
+    0: MinusPositive<N1, N2>
+    1: MinusNegative<N1, N2>
+}[_IsNegative<N2>]
 
 /** Subtract a **number** from another one
  * @param N1 Left-hand side
@@ -58,4 +66,6 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
  * ```
  */
 export type Minus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =
-    Fmt<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
+    N2 extends any // force N2's distribution, only N1 is
+    ? Fmt<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
+    : never
