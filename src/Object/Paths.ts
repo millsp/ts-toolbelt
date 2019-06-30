@@ -31,5 +31,3 @@ export type Paths<O extends object> = {
 }[Equals<O, any>] extends infer X
 ? Cast<X, string[]>
 : never
-
-type t = Equals<'', any>
