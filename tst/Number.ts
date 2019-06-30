@@ -34,19 +34,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// CLAMP
-
-checks([
-    check<N.Clamp<'9', '10', '20'>,     '10',   Test.Pass>(),
-    check<N.Clamp<'21', '10', '20'>,    '20',   Test.Pass>(),
-    check<N.Clamp<'-10', '10', '20'>,   '10',   Test.Pass>(),
-    check<N.Clamp<'100', '10', '20'>,   string, Test.Pass>(),
-    check<N.Clamp<string, '10', '20'>,  string, Test.Pass>(),
-    check<N.Clamp<any, '10', '20'>,     any,    Test.Pass>(),
-    check<N.Clamp<never, '10', '20'>,   never,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // GREATER
 
 checks([

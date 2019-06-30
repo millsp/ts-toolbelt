@@ -11,7 +11,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Omit<O extends object, K extends string> =
-    Pick<O, Exclude<keyof O, K>> extends infer X
-    ? Cast<X, object>
-    : never
-
+    Pick<O, Exclude<keyof O, K>>

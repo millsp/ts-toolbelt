@@ -13,7 +13,5 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Filter<O extends object, M extends any, match extends Match = 'default'> =
-    Pick<O, FilterKeys<O, M, match>> extends infer X
-    ? Cast<X, object>
-    : never
+    Pick<O, FilterKeys<O, M, match>>
 

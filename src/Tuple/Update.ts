@@ -11,4 +11,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Update<O extends object, K extends string, A extends any> =
-    Cast<OUpdate<O, K, A>, any[]>
+    OUpdate<O, K, A> & any[]

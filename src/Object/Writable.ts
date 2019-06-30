@@ -25,7 +25,8 @@ type WritablePart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type Writable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> =
-    Equals<K, keyof O> extends true
-    ? WritablePart<O, depth> // Merge is not necessary
-    : Merge<WritablePart<Pick<O, K>, depth>, O>
+export type Writable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> = {
+    1: WritablePart<O, depth>
+    0: Merge<WritablePart<Pick<O, K>, depth>, O>
+    // Pick a part of O (with K) -> nullable -> merge it with O
+}[Equals<K, keyof O>]

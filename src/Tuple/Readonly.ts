@@ -11,5 +11,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Readonly<T extends any[], depth extends Depth = 'flat'> =
-    OReadonly<T, keyof T, depth>
-    // Cast<OReadonly<T, keyof T, depth>, any[]> // docgen
+    OReadonly<T, keyof T, depth> & any[]

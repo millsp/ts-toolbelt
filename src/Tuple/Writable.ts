@@ -11,4 +11,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Writable<T extends ReadonlyArray<any> | any[], depth extends Depth = 'flat'> =
-    Cast<OWritable<T, keyof T, depth>, any[]>
+    OWritable<T, keyof T, depth> & any[]

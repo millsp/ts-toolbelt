@@ -14,6 +14,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Filter<T extends any[], M extends any, match extends Match = 'default'> =
-    TupleOf<OFilter<T, M, match>, Length<T, 's'>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    TupleOf<OFilter<T, M, match>, Length<T, 's'>>

@@ -3,8 +3,8 @@ import {Nullable as ONullable} from '../Object/Nullable'
 import {TupleOf} from '../Object/TupleOf'
 import {Equals} from '../Any/Equals'
 import {Length} from './Length'
-import {Cast} from '../Any/Cast'
 import {Overwrite} from './Overwrite'
+import {Cast} from '../Any/Cast'
 
 /** Make some entries of **`T`** nullable (deeply or not)
  * @param T to make nullable
@@ -15,7 +15,8 @@ import {Overwrite} from './Overwrite'
  * ```ts
  * ```
  */
-export type Nullable<T extends any[], K extends string = keyof T, depth extends Depth = 'flat'> =
-    Equals<K, keyof T> extends true
-    ? Cast<ONullable<T, K, depth>, any[]>
-    : Overwrite<T, TupleOf<ONullable<T, K, depth>, Length<T, 's'>>>
+export type Nullable<T extends any[], K extends string = keyof T, depth extends Depth = 'flat'> = {
+    1: Cast<ONullable<T, K, depth>, any[]>
+    0: Overwrite<T, TupleOf<ONullable<T, K, depth>, Length<T, 's'>>>
+    // `Overwrite` to keep modx, `TupleOf` to transform from object
+}[Equals<K, keyof T>]

@@ -1,4 +1,3 @@
-
 /** Remove the first item out of a **tuple**
  * @param T
  * @returns **`any[]`**

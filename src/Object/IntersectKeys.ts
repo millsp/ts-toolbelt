@@ -16,5 +16,9 @@ import {Replace} from '../Union/Replace'
  */
 export type IntersectKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default': Intersect<keyof O, keyof O1>
-    'matches': {[K in Keys<O>]: Is<O[K], At<O1, K>, match> extends true ? K : never}[Keys<O>]
+    'matches': {[K in Keys<O>]: {
+            1: K
+            0: never
+        }[Is<O[K], At<O1, K>, match>]
+    }[Keys<O>]
 }[Replace<match, 'extends' | 'equals' | 'loose', 'matches'>]

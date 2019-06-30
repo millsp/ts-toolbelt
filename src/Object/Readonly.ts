@@ -25,8 +25,8 @@ type ReadonlyPart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type Readonly<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> =
-    Equals<K, keyof O> extends true
-    ? ReadonlyPart<O, depth> // Merge is not necessary
-    : Merge<ReadonlyPart<Pick<O, K>, depth>, O>
-    // Pick a part of O (with K), make it nullable, and merge it back into O
+export type Readonly<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> = {
+    1: ReadonlyPart<O, depth>
+    0: Merge<ReadonlyPart<Pick<O, K>, depth>, O>
+    // Pick a part of O (with K) -> nullable -> merge it with O
+}[Equals<K, keyof O>]

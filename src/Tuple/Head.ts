@@ -1,4 +1,3 @@
-
 /** Get the first entry of **`T`**
  * @param T to extract from
  * @returns **`any`**

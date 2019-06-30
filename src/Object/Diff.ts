@@ -1,7 +1,6 @@
 import {Merge} from './Merge'
 import {Exclude} from './Exclude'
 import {Match} from '../Any/_Internal'
-import {Cast} from '../Any/Cast'
 
 /** Get an **`object`** that is the difference between **`O`** & **`O1`**
  * (**`O`**'s differences have priority over **`O1`**'s if fields overlap)
@@ -15,6 +14,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Diff<O extends object, O1 extends object, match extends Match = 'default'> =
-    Merge<Exclude<O, O1, match>, Exclude<O1, O, match>> extends infer X
-    ? Cast<X, object>
-    : never
+    Merge<Exclude<O, O1, match>, Exclude<O1, O, match>>

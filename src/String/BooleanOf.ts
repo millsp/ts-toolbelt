@@ -1,3 +1,4 @@
+import {False, True, Boolean} from '../Boolean/Boolean'
 import {Equals} from '../Any/Equals'
 
 /** Transform a **`string`** into a **`boolean`**
@@ -7,9 +8,9 @@ import {Equals} from '../Any/Equals'
  * ```ts
  * ```
  */
-export type BooleanOf<S extends string> =
-    Equals<S, string> extends true
-    ? boolean
-    : S extends 'false'
-      ? false
-      : true
+export type BooleanOf<S extends string> = {
+    1: Boolean
+    0: S extends 'false'
+       ? False
+       : True
+}[Equals<S, string>]

@@ -12,9 +12,8 @@ import {True} from '../Boolean/Boolean'
  * ```
  */
 export type ReadonlyKeys<O extends object> = {
-    [K in keyof O]-?: Equals<{-readonly [Q in K]: O[K]},
-                             {          [Q in K]: O[K]},
-                            'strict'> extends True
-                      ? never
-                      : K
+    [K in keyof O]-?: {
+        1: never
+        0: K
+    }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}, 'strict'>]
 }[Keys<O>]

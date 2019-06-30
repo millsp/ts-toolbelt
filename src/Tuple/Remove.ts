@@ -13,6 +13,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Remove<T extends any[], From extends Nbr, To extends Nbr> =
-    Omit<T, KeySet<From, To>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    Omit<T, KeySet<From, To>> & any[]

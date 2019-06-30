@@ -12,6 +12,9 @@ import {Keys} from './Keys'
  * ```
  */
 export type FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
-    [K in Keys<O>]: Is<O[K], M, match> extends true ? never : K
+    [K in Keys<O>]: {
+        1: never
+        0: K
+    }[Is<O[K], M, match>]
 }[Keys<O>]
 

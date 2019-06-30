@@ -1,7 +1,6 @@
 import {Pick as OPick} from '../Object/Pick'
 import {TupleOf} from '../Object/TupleOf'
 import {Length} from './Length'
-import {Cast} from '../Any/Cast'
 
 /** Extract out of **`T`** the entries of key **`K`**
  * @param T to extract from
@@ -12,6 +11,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Pick<T extends any[], K extends string> =
-    TupleOf<OPick<T, K>, Length<T, 's'>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    TupleOf<OPick<T, K>, Length<T, 's'>>

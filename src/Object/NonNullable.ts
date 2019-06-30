@@ -27,8 +27,8 @@ type NonNullablePart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type NonNullable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> =
-    Equals<K, keyof O> extends true
-    ? NonNullablePart<O, depth> // Merge is not necessary
-    : Merge<NonNullablePart<Pick<O, K>, depth>, O>
-    // Pick a part of O (with K), make it non-nullable, and merge it back into O
+export type NonNullable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> = {
+    1: NonNullablePart<O, depth>
+    0: Merge<NonNullablePart<Pick<O, K>, depth>, O>
+    // Pick a part of O (with K) -> non-nullable -> merge it with O
+}[Equals<K, keyof O>]

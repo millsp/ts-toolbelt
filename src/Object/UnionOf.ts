@@ -1,3 +1,5 @@
+import {Keys} from './Keys'
+
 /** Transform an **`object`** into an **union**
  * @param O to transform
  * @returns **`any`**
@@ -6,4 +8,4 @@
  * ```
  */
 export type UnionOf<O extends object> =
-    O[keyof O]
+    O[Keys<O>]

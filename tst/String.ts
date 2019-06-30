@@ -9,11 +9,11 @@ const {checks, check} = Test
 // BOOLEANOF
 
 checks([
-    check<S.BooleanOf<'false'>,             false,      Test.Pass>(),
-    check<S.BooleanOf<'true'>,              true,       Test.Pass>(),
-    check<S.BooleanOf<'false' | 'true'>,    boolean,    Test.Pass>(),
-    check<S.BooleanOf<string>,              boolean,    Test.Pass>(),
-    check<S.BooleanOf<'xxxx'>,              true,       Test.Pass>(),
+    check<S.BooleanOf<'false'>,             0,      Test.Pass>(),
+    check<S.BooleanOf<'true'>,              1,       Test.Pass>(),
+    check<S.BooleanOf<'false' | 'true'>,    0 | 1,    Test.Pass>(),
+    check<S.BooleanOf<string>,              0 | 1,    Test.Pass>(),
+    check<S.BooleanOf<'xxxx'>,              1,       Test.Pass>(),
     check<S.BooleanOf<never>,               never,      Test.Pass>(),
 ])
 

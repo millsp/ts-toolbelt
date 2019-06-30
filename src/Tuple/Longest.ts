@@ -10,6 +10,6 @@ import {Exclude} from '../Union/Exclude'
  * ```
  */
 export type Longest<T extends any[], T1 extends any[]> =
-    Exclude<keyof T1, keyof T> extends never
+    [Exclude<keyof T1, keyof T>] extends [never]
     ? T
     : T1

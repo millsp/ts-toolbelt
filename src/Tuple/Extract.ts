@@ -13,6 +13,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Extract<T extends any[], From extends Nbr, To extends Nbr> =
-    Pick<T, KeySet<From, To>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    Pick<T, KeySet<From, To>>

@@ -11,9 +11,8 @@ import {Keys} from './Keys'
  * ```
  */
 export type WritableKeys<O extends object> = {
-    [K in keyof O]-?: Equals<{-readonly [Q in K]: O[K]},
-                             {          [Q in K]: O[K]},
-                            'strict'> extends true
-                      ? K
-                      : never
+    [K in keyof O]-?: {
+        1: K
+        0: never
+    }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}, 'strict'>]
 }[Keys<O>]

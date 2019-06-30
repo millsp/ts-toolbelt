@@ -25,8 +25,8 @@ type OptionalPart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type Optional<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> =
-    Equals<K, keyof O> extends true
-    ? OptionalPart<O, depth> // Merge is not necessary
-    : Merge<OptionalPart<Pick<O, K>, depth>, O>
-    // Pick a part of O (with K), make it optional and merge it back into O
+export type Optional<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> = {
+    1: OptionalPart<O, depth>
+    0: Merge<OptionalPart<Pick<O, K>, depth>, O>
+    // Pick a part of O (with K) -> nullable -> merge it with O
+}[Equals<K, keyof O>]

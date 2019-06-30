@@ -1,7 +1,6 @@
 import {Omit as OOmit} from '../Object/Omit'
 import {TupleOf} from '../Object/TupleOf'
 import {Length} from './Length'
-import {Cast} from '../Any/Cast'
 
 /** Remove out of **`T`** the entries of key **`K`**
  * @param T to remove from
@@ -12,6 +11,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Omit<T extends any[], K extends string> =
-    TupleOf<OOmit<T, K>, Length<T, 's'>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    TupleOf<OOmit<T, K>, Length<T, 's'>>

@@ -3,7 +3,6 @@ import {TupleOf} from '../Object/TupleOf'
 import {Longest} from './Longest'
 import {Match} from '../Any/_Internal'
 import {Length} from './Length'
-import {Cast} from '../Any/Cast'
 
 /** Get a **tuple** that is the difference between **`T`** & **`T1`**
  * (**`T`**'s differences have priority over **`T1`**'s if entries overlap)
@@ -17,6 +16,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Diff<T extends any[], T1 extends any[], match extends Match = 'default'> =
-    TupleOf<ODiff<T, T1, match>, Length<Longest<T, T1>, 's'>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    TupleOf<ODiff<T, T1, match>, Length<Longest<T, T1>, 's'>>

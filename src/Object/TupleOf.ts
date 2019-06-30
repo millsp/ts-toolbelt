@@ -16,7 +16,7 @@ type _TupleOf<O extends object, TN extends any[], I extends Iteration> = {
     0: _TupleOf<O, PickIfEntry<O, TN, I>, Prev<I>>
     1: TN
 }[
-    '-1' extends Key<I>
+    Key<I> extends '-1'
     ? 1
     : 0
 ]

@@ -2,7 +2,6 @@ import {Match} from '../Any/_Internal'
 import {TupleOf} from '../Object/TupleOf'
 import {Exclude as OExclude} from '../Object/Exclude'
 import {Length} from './Length'
-import {Cast} from '../Any/Cast'
 
 /** Exclude the entries of **`T1`** out of **`T`**
  * (If `match = 'default'`, no type checks are done)
@@ -15,6 +14,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Exclude<T extends any[], T1 extends any[], match extends Match = 'default'> =
-    TupleOf<OExclude<T, T1, match>, Length<T, 's'>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    TupleOf<OExclude<T, T1, match>, Length<T, 's'>>

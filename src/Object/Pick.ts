@@ -11,4 +11,4 @@ type _Pick<O extends object, K extends keyof O> = {
  * ```
  */
 export type Pick<O extends object, K extends string> =
-    _Pick<O, keyof O & K>
+    _Pick<O, K & keyof O>

@@ -2,9 +2,8 @@ import {Prepend} from '../Tuple/Prepend'
 import {Reverse} from '../Tuple/Reverse'
 import {Optional} from '../Tuple/Optional'
 import {NonNullable} from '../Tuple/NonNullable'
-import {Cast} from '../Any/Cast'
 import {Keys} from './Keys'
-import {Equals} from '../Any/_api'
+import {Equals, Cast} from '../Any/_api'
 
 type _Paths<O, Paths extends string[] = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[Keys<O & {}>]
@@ -26,9 +25,9 @@ type _Paths<O, Paths extends string[] = []> = {
  * ```ts
  * ```
  */
-export type Paths<O extends object> =
-    Equals<O, any> extends true
-    ? string[]
-    : _Paths<O> extends infer X
-      ? Cast<X, string[]>
-      : never
+export type Paths<O extends object> = {
+    1: string[]
+    0: _Paths<O>
+}[Equals<O, any>] extends infer X
+? Cast<X, string[]>
+: never

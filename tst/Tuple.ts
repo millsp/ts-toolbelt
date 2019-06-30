@@ -546,12 +546,12 @@ checks([
 // ---------------------------------------------------------------------------------------
 // WRITABLE
 
-type WRITABLE_WRITABLE_T_ARR = ['a', 'b']
-type WRITABLE_READONLY_T_ARR = readonly ['a', 'b']
+type WRITABLE_W_T_ARR = ['a', 'b']
+type WRITABLE_R_T_ARR = readonly ['a', 'b']
 
 checks([
-    check<T.Writable<WRITABLE_WRITABLE_T_ARR>,  WRITABLE_WRITABLE_T_ARR,    Test.Pass>(),
-    check<T.Writable<WRITABLE_READONLY_T_ARR>,  WRITABLE_WRITABLE_T_ARR,    Test.Pass>(),
+    check<T.Writable<WRITABLE_W_T_ARR>,  WRITABLE_W_T_ARR,    Test.Pass>(),
+    check<T.Writable<WRITABLE_R_T_ARR>,  WRITABLE_W_T_ARR,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

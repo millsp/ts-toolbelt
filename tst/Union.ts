@@ -28,8 +28,8 @@ checks([
 // HAS
 
 checks([
-    check<U.Has<1 | 2 | 3, string>,     false,      Test.Pass>(),
-    check<U.Has<1 | 2 | 3, 1>,          true,       Test.Pass>(),
+    check<U.Has<1 | 2 | 3, string>,     0,      Test.Pass>(),
+    check<U.Has<1 | 2 | 3, 1>,          1,       Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

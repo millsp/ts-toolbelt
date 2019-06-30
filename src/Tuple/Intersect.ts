@@ -15,6 +15,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Intersect<T extends any[], T1 extends any[], match extends Match = 'default'> =
-    TupleOf<OIntersect<T, T1, match>, Length<Longest<T, T1>, 's'>> extends infer X
-    ? Cast<X, any[]>
-    : never
+    TupleOf<OIntersect<T, T1, match>, Length<Longest<T, T1>, 's'>>

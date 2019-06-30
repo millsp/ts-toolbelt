@@ -12,5 +12,8 @@ import {Is} from '../Any/Is'
  * ```
  */
 export type Replace<O extends object, M extends any, A extends any, match extends Match = 'default'> = {
-    [K in keyof O]: Is<O[K], M, match> extends true ? A : O[K]
+    [K in keyof O]: {
+        1: A
+        0: O[K]
+    }[Is<M, O[K], match>]
 }
