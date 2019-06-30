@@ -14,4 +14,4 @@ import {Length} from './Length'
  * ```
  */
 export type Exclude<T extends any[], T1 extends any[], match extends Match = 'default'> =
-    TupleOf<OExclude<T, T1, match>, Length<T, 's'>>
+    TupleOf<OExclude<T, T1, match>>

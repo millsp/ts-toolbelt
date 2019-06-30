@@ -1,19 +1,18 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Prepend} from '../Tuple/Prepend'
 import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {Next} from '../Iteration/Next'
-import {Reverse} from '../Tuple/Reverse'
+import {Append} from '../Tuple/Append'
 
 type PickIfEntry<O extends object, TN extends any[], I extends Iteration> =
     Key<I> extends keyof O
-    ? Prepend<TN, O[Cast<Key<I>, keyof O>]>
+    ? Append<TN, O[Cast<Key<I>, keyof O>]>
     : TN
 
 type _TupleOf<O extends object, K = keyof O, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
     0: _TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
-    1: Reverse<TN>
+    1: TN
 }[
     [K] extends [never]
     ? 1

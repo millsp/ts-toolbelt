@@ -2,7 +2,7 @@ import {Longest} from './Longest'
 import {Length} from './Length'
 import {Concat} from './Concat'
 import {Drop} from './Drop'
-import {Max} from '../Number/Max'
+// import {Max} from '../Number/Max'
 
 /** Complete the entries of **`T`** with the ones of **`T1`**
  * @param T to complete

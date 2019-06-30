@@ -807,17 +807,16 @@ checks([
 
 type TUPLEOF_O = {
     '0': 1
-    'b': 2
     '2': 3
     '3': never
     '5': 5
     '6': 6
 }
 
-type TUPLEOF = [1, 3, never, 5];
+type TUPLEOF = [1, 3, never, 5, 6];
 
 checks([
-    check<O.TupleOf<TUPLEOF_O, '5'>,    TUPLEOF,    Test.Pass>(),
+    check<O.TupleOf<TUPLEOF_O>,    TUPLEOF,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

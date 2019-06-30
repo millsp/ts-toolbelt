@@ -128,24 +128,24 @@ checks([
 // MAX
 
 checks([
-    check<N.Max<'1' | '2'>,             '2',        Test.Pass>(),
-    check<N.Max<'-1' | '9' | '10'>,     '10',       Test.Pass>(),
-    check<N.Max<'-1' | '9' | 'xxxx'>,   string,     Test.Pass>(),
-    check<N.Max<string>,                string,     Test.Pass>(),
-    check<N.Max<any>,                   string,     Test.Pass>(),
-    check<N.Max<never>,                 any,        Test.Pass>(),
+    // check<N.Max<'1' | '2'>,             '2',        Test.Pass>(),
+    // check<N.Max<'-1' | '9' | '10'>,     '10',       Test.Pass>(),
+    // check<N.Max<'-1' | '9' | 'xxxx'>,   string,     Test.Pass>(),
+    // check<N.Max<string>,                string,     Test.Pass>(),
+    // check<N.Max<any>,                   string,     Test.Pass>(),
+    // check<N.Max<never>,                 any,        Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // MIN
 
 checks([
-    check<N.Min<'1' | '2'>,             '1',        Test.Pass>(),
-    check<N.Min<'1' | '9' | '-10'>,     '-10',      Test.Pass>(),
-    check<N.Min<'-1' | '9' | 'xxxx'>,   string,     Test.Pass>(),
-    check<N.Min<string>,                string,     Test.Pass>(),
-    check<N.Min<any>,                   string,     Test.Pass>(),
-    check<N.Min<never>,                 any,        Test.Pass>(),
+    // check<N.Min<'1' | '2'>,             '1',        Test.Pass>(),
+    // check<N.Min<'1' | '9' | '-10'>,     '-10',      Test.Pass>(),
+    // check<N.Min<'-1' | '9' | 'xxxx'>,   string,     Test.Pass>(),
+    // check<N.Min<string>,                string,     Test.Pass>(),
+    // check<N.Min<any>,                   string,     Test.Pass>(),
+    // check<N.Min<never>,                 any,        Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

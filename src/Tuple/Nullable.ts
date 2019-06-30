@@ -17,6 +17,6 @@ import {Cast} from '../Any/Cast'
  */
 export type Nullable<T extends any[], K extends string = keyof T, depth extends Depth = 'flat'> = {
     1: Cast<ONullable<T, K, depth>, any[]>
-    0: Overwrite<T, TupleOf<ONullable<T, K, depth>, Length<T, 's'>>>
+    0: Overwrite<T, TupleOf<ONullable<T, K, depth>>>
     // `Overwrite` to keep modx, `TupleOf` to transform from object
 }[Equals<K, keyof T>]

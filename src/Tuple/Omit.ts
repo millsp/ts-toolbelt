@@ -11,4 +11,4 @@ import {Length} from './Length'
  * ```
  */
 export type Omit<T extends any[], K extends string> =
-    TupleOf<OOmit<T, K>, Length<T, 's'>>
+    TupleOf<OOmit<T, K>>

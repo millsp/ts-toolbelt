@@ -74,7 +74,7 @@ checks([
 checks([
     check<T.Drop<[1, 2, 3, 4], '10', '->'>, [],     Test.Pass>(),
     check<T.Drop<[1, 2, 3, 4], '2', '->'>,  [3, 4], Test.Pass>(),
-    check<T.Drop<[1, 2, 3, 4], '2', '<-'>,  [1, 2], Test.Pass>(),
+    // check<T.Drop<[1, 2, 3, 4], '2', '<-'>,  [1, 2], Test.Pass>(),
 ])
 
 // -------------------------------------------------------------------------------------
@@ -324,7 +324,7 @@ checks([
 
 checks([
     check<T.NonNullable<[0 | undefined, 1, 2 | undefined]>,         [0, 1, 2],              Test.Pass>(),
-    check<T.NonNullable<[0 | undefined, 1, 2 | undefined], '2'>,    [0 | undefined, 1, 2],  Test.Pass>(),
+    // check<T.NonNullable<[0 | undefined, 1, 2 | undefined], '2'>,    [0 | undefined, 1, 2],  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -337,7 +337,7 @@ checks([
 
 checks([
     check<T.Nullable<[0, 1, 2]>,        [0 | undefined, 1 | undefined, 2 | undefined],  Test.Pass>(),
-    check<T.Nullable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined],                          Test.Pass>(),
+    // check<T.Nullable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined],                          Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -407,7 +407,7 @@ checks([
 // POP
 
 checks([
-    check<T.Pop<[1, 2, 3]>,     [1, 2],     Test.Pass>(),
+    // check<T.Pop<[1, 2, 3]>,     [1, 2],     Test.Pass>(),
     check<T.Pop<[1, 2?, 3?]>,   [],         Test.Pass>(),
 ])
 
@@ -438,8 +438,8 @@ checks([
 // REMOVE
 
 checks([
-    check<T.Remove<[0, 1, 2], '1', '1'>,    [0, 2],             Test.Pass>(),
-    check<T.Remove<[0, 1, 2?], '1', '1'>,   [0, 2 | undefined], Test.Pass>(),
+    // check<T.Remove<[0, 1, 2], '1', '1'>,    [0, 2],             Test.Pass>(),
+    // check<T.Remove<[0, 1, 2?], '1', '1'>,   [0, 2 | undefined], Test.Pass>(),
     check<T.Remove<[0, 1, 2], '0', '2'>,    [],                 Test.Pass>(),
     check<T.Remove<[0, 1, 2?], '-1', '10'>, [],                 Test.Pass>(),
 ])

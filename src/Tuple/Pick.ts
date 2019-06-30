@@ -11,4 +11,4 @@ import {Length} from './Length'
  * ```
  */
 export type Pick<T extends any[], K extends string> =
-    TupleOf<OPick<T, K>, Length<T, 's'>>
+    TupleOf<OPick<T, K>>

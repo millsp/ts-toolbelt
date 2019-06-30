@@ -16,4 +16,4 @@ import {Length} from './Length'
  * ```
  */
 export type Diff<T extends any[], T1 extends any[], match extends Match = 'default'> =
-    TupleOf<ODiff<T, T1, match>, Length<Longest<T, T1>, 's'>>
+    TupleOf<ODiff<T, T1, match>>

@@ -13,4 +13,4 @@ import {TupleOf} from '../Object/TupleOf'
  * ```
  */
 export type Select<T extends any[], M extends any, match extends Match = 'default'> =
-    TupleOf<OSelect<T, M, match>, Length<T, 's'>>
+    TupleOf<OSelect<T, M, match>>
