@@ -1,22 +1,21 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Prepend} from '../Tuple/Prepend'
-import {Prev} from '../Iteration/Prev'
-import {Nbr} from '../Number/_Internal'
 import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
-import {Min} from '../Number/Min'
+import {Next} from '../Iteration/Next'
+import {Reverse} from '../Tuple/Reverse'
 
 type PickIfEntry<O extends object, TN extends any[], I extends Iteration> =
     Key<I> extends keyof O
     ? Prepend<TN, O[Cast<Key<I>, keyof O>]>
     : TN
 
-type _TupleOf<O extends object, TN extends any[], I extends Iteration> = {
-    0: _TupleOf<O, PickIfEntry<O, TN, I>, Prev<I>>
-    1: TN
+type _TupleOf<O extends object, K = keyof O, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
+    1: Reverse<TN>
 }[
-    Key<I> extends '-1'
+    [K] extends [never]
     ? 1
     : 0
 ]
@@ -30,7 +29,9 @@ type _TupleOf<O extends object, TN extends any[], I extends Iteration> = {
  * ```ts
  * ```
  */
-export type TupleOf<O extends object, LastK extends Nbr> =
-    _TupleOf<O, [], IterationOf<Min<LastK>>> extends infer X
+export type TupleOf<O extends object> =
+    _TupleOf<O> extends infer X
     ? Cast<X, any[]>
     : never
+
+type t = TupleOf<[1, 2, 3]>

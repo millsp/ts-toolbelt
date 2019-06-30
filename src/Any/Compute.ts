@@ -12,6 +12,6 @@ import {Depth} from '../Object/_Internal'
  * ```
  */
 export type Compute<A extends any, depth extends Depth = 'flat'> = {
-    'flat': A extends infer X ? {[K in keyof X]: X[K]}          : never,
-    'deep': A extends infer X ? {[K in keyof X]: Compute<X[K]>} : never,
+    'flat': {[K in keyof A]: A[K]},
+    'deep': {[K in keyof A]: Compute<A[K]>},
 }[depth]
