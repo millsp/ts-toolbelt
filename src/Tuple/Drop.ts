@@ -7,34 +7,16 @@ import {Nbr} from '../Number/_Internal'
 import {Key} from '../Iteration/Key'
 import {Way} from '../_Internal'
 import {Pop} from './Pop'
+import {Reverse} from './Reverse'
 
-type _DropForth<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
-    0: _DropForth<Tail<T>, N, Next<I>>
+type _Drop<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+    0: _Drop<Tail<T>, N, Next<I>>
     1: T
 }[
     N extends Key<I>
     ? 1
     : 0
 ]
-
-type DropForth<T extends any[], N extends Nbr> =
-    _DropForth<T, N> extends infer X
-    ? Cast<X, any[]>
-    : never
-
-type _DropBack<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
-    0: _DropBack<Pop<T>, N, Next<I>>
-    1: T
-}[
-    N extends Key<I>
-    ? 1
-    : 0
-]
-
-type DropBack<T extends any[], N extends Nbr> =
-    _DropBack<T, N> extends infer X
-    ? Cast<X, any[]>
-    : never
 
 /** Remove **`N`** entries out of **`T`**
  * @param T to remove from
@@ -46,6 +28,8 @@ type DropBack<T extends any[], N extends Nbr> =
  * ```
  */
 export type Drop<T extends any[], N extends Nbr, way extends Way = '->'> = {
-    '->': DropForth<T, N>
-    '<-': DropBack<T, N>
-}[way]
+    '->': _Drop<T, N>
+    '<-': Reverse<Drop<Reverse<T>, N>>
+}[way] extends infer X
+? Cast<X, any[]>
+: never

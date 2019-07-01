@@ -4,17 +4,19 @@ import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {Next} from '../Iteration/Next'
 import {Append} from '../Tuple/Append'
+import {Equals} from '../Any/_api'
+import {True} from '../Boolean/Boolean'
 
 type PickIfEntry<O extends object, TN extends any[], I extends Iteration> =
     Key<I> extends keyof O
     ? Append<TN, O[Cast<Key<I>, keyof O>]>
     : TN
 
-type _TupleOf<O extends object, K = keyof O, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+type _TupleOf<O extends object, K, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
     0: _TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
     1: TN
 }[
-    [K] extends [never]
+    Equals<K, never> extends True
     ? 1
     : 0
 ]
@@ -29,8 +31,6 @@ type _TupleOf<O extends object, K = keyof O, TN extends any[] = [], I extends It
  * ```
  */
 export type TupleOf<O extends object> =
-    _TupleOf<O> extends infer X
-    ? Cast<X, any[]>
+    _TupleOf<O, keyof O> extends infer X
+    ? Cast<X, any[]> // ^^^^ Clear keys from array
     : never
-
-type t = TupleOf<[1, 2, 3]>

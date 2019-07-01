@@ -1,7 +1,6 @@
 import {Depth} from '../Object/_Internal'
 import {NonNullable as ONonNullable} from '../Object/NonNullable'
 import {TupleOf} from '../Object/TupleOf'
-import {Length} from './Length'
 import {Equals} from '../Any/Equals'
 import {Overwrite} from './Overwrite'
 import {Cast} from '../Any/Cast'
@@ -17,6 +16,5 @@ import {Cast} from '../Any/Cast'
  */
 export type NonNullable<T extends any[], K extends string = keyof T, depth extends Depth = 'flat'> = {
     1: Cast<ONonNullable<T, K, depth>, any[]>
-    0: Overwrite<T, TupleOf<ONonNullable<T, K, depth>>>
-    // `Overwrite` to keep modx, `TupleOf` to transform from object
+    0: TupleOf<ONonNullable<T, K, depth>>
 }[Equals<K, keyof T>]
