@@ -1,6 +1,5 @@
 import {Match} from '../Any/_Internal'
 import {Select as OSelect} from '../Object/Select'
-import {Length} from './Length'
 import {TupleOf} from '../Object/TupleOf'
 
 /** Extract the entries of **`T`** that match **`M`**
