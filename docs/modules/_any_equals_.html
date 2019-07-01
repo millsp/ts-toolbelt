@@ -75,8 +75,6 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_any_equals_.html#equals" class="tsd-kind-icon">Equals</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_any_equals_.html#equalsdefault" class="tsd-kind-icon">Equals<wbr>Default</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_any_equals_.html#equalsstrict" class="tsd-kind-icon">Equals<wbr>Strict</a></li>
 							</ul>
 						</section>
 					</div>
@@ -87,7 +85,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="equals" class="tsd-anchor"></a>
 					<h3>Equals</h3>
-					<div class="tsd-signature tsd-kind-icon">Equals&lt;A1, A2, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;default&#x27;: EqualsDefault&lt;A1, A2&gt;; &#x27;strict&#x27;: EqualsStrict&lt;A1, A2&gt;; }[match]</span></div>
+					<div class="tsd-signature tsd-kind-icon">Equals&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Equals&lt;A1, A2&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Check whether <strong><code>A1</code></strong> is equal to <strong><code>A2</code></strong> or not</p>
@@ -99,64 +97,25 @@
 						<span class="name">A1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
 						<li>
 						<span class="name">A2</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
-						<li>
-							<span class="name">match</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"default"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"strict"</span>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to change precision</p>
-								</div>
-							</div>
-						</li>
 					</ul>
 					<div class="tsd-comment">
+						<h4>param</h4>
+						<p><p>to change precision</p>
+						</p>
 						<h4>returns</h4>
-						<p><p><strong><code>true</code></strong> or <strong><code>false</code></strong></p>
+						<p><p><strong><code>True</code></strong> or <strong><code>False</code></strong></p>
 						</p>
 						<h4>example</h4>
 						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {A} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 
-<span class="hljs-keyword">type</span> test0 = A.Equals&lt;<span class="hljs-number">42</span> | <span class="hljs-number">0</span>, <span class="hljs-number">42</span> | <span class="hljs-number">0</span>&gt;                              <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">type</span> test1 = A.Equals&lt;{a: <span class="hljs-built_in">string</span>}, {b: <span class="hljs-built_in">string</span>}&gt;                    <span class="hljs-comment">// false</span>
-<span class="hljs-keyword">type</span> test2 = A.Equals&lt;{a: <span class="hljs-built_in">string</span>}, {readonly a: <span class="hljs-built_in">string</span>}&gt;           <span class="hljs-comment">// true</span>
-<span class="hljs-keyword">type</span> test3 = A.Equals&lt;{a: <span class="hljs-built_in">string</span>}, {readonly a: <span class="hljs-built_in">string</span>}, <span class="hljs-string">'strict'</span>&gt; <span class="hljs-comment">// false</span></code></pre>
+<span class="hljs-keyword">type</span> test0 = A.Equals&lt;<span class="hljs-number">42</span> | <span class="hljs-number">0</span>, <span class="hljs-number">42</span> | <span class="hljs-number">0</span>&gt;                    <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">type</span> test1 = A.Equals&lt;{a: <span class="hljs-built_in">string</span>}, {b: <span class="hljs-built_in">string</span>}&gt;          <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">type</span> test3 = A.Equals&lt;{a: <span class="hljs-built_in">string</span>}, {readonly a: <span class="hljs-built_in">string</span>}&gt; <span class="hljs-comment">// false</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/17f912e/src/Any/Equals.ts#L29">Any/Equals.ts:29</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="equalsdefault" class="tsd-anchor"></a>
-					<h3>Equals<wbr>Default</h3>
-					<div class="tsd-signature tsd-kind-icon">EqualsDefault&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EqualsDefault&lt;A1, A2&gt;</span></div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-						<span class="name">A1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
-						<li>
-						<span class="name">A2</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
-					</ul>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/17f912e/src/Any/Equals.ts#L1">Any/Equals.ts:1</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="equalsstrict" class="tsd-anchor"></a>
-					<h3>Equals<wbr>Strict</h3>
-					<div class="tsd-signature tsd-kind-icon">EqualsStrict&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EqualsStrict&lt;A1, A2&gt;</span></div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-						<span class="name">A1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
-						<li>
-						<span class="name">A2</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
-					</ul>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/17f912e/src/Any/Equals.ts#L9">Any/Equals.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5128a37/src/Any/Equals.ts#L17">Any/Equals.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,12 +136,6 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_any_equals_.html#equals" class="tsd-kind-icon">Equals</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_any_equals_.html#equalsdefault" class="tsd-kind-icon">Equals<wbr>Default</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_any_equals_.html#equalsstrict" class="tsd-kind-icon">Equals<wbr>Strict</a>
 					</li>
 				</ul>
 			</nav>

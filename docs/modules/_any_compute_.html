@@ -85,7 +85,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="compute" class="tsd-anchor"></a>
 					<h3>Compute</h3>
-					<div class="tsd-signature tsd-kind-icon">Compute&lt;A, depth&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;flat&#x27;: A extends infer X ? { [K in keyof X]: X[K]; } : never; &#x27;deep&#x27;: A extends infer X ? { [K in keyof X]: X[K] extends infer X ? { [K in keyof X]: X[K]; } : never; } : never; }[depth]</span></div>
+					<div class="tsd-signature tsd-kind-icon">Compute&lt;A&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Force TS to load a type that has not been computed
@@ -96,8 +96,6 @@
 					<ul class="tsd-type-parameters">
 						<li>
 						<span class="name">A</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
-						<li>
-						<span class="name">depth</span><span class="tsd-signature-symbol">: </span><a href="_object__internal_.html#depth" class="tsd-signature-type">Depth</a>                    </li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
@@ -111,7 +109,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/17f912e/src/Any/Compute.ts#L14">Any/Compute.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5128a37/src/Any/Compute.ts#L15">Any/Compute.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>

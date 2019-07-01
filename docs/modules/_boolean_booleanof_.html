@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Number/Clamp&quot; | ts-toolbelt</title>
+	<title>&quot;Boolean/BooleanOf&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,10 +57,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_number_clamp_.html">&quot;Number/Clamp&quot;</a>
+					<a href="_boolean_booleanof_.html">&quot;Boolean/BooleanOf&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Number/Clamp&quot;</h1>
+			<h1>External module &quot;Boolean/BooleanOf&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -74,8 +74,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_number_clamp_.html#clamp" class="tsd-kind-icon">Clamp</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_number_clamp_.html#_clamp" class="tsd-kind-icon">_<wbr>Clamp</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_boolean_booleanof_.html#booleanof" class="tsd-kind-icon">Boolean<wbr>Of</a></li>
 							</ul>
 						</section>
 					</div>
@@ -84,81 +83,17 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="clamp" class="tsd-anchor"></a>
-					<h3>Clamp</h3>
-					<div class="tsd-signature tsd-kind-icon">Clamp&lt;N, Min, Max, fmt&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Clamp&lt;N, Min, Max, fmt&gt;</span></div>
-					<div class="tsd-comment">
-						<div class="lead">
-							<p>Keep a <strong>number</strong> within a range of <strong>number</strong>s</p>
-						</div>
-					</div>
+					<a name="booleanof" class="tsd-anchor"></a>
+					<h3>Boolean<wbr>Of</h3>
+					<div class="tsd-signature tsd-kind-icon">BooleanOf&lt;B&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BooleanOf&lt;B&gt;</span></div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to clamp</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<span class="name">Min</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>min output</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<span class="name">Max</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>max output</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<span class="name">fmt</span><span class="tsd-signature-symbol">: </span><a href="_boolean__internal_.html#format" class="tsd-signature-type">Format</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>output (?=<code>&#39;s&#39;</code>)</p>
-								</div>
-							</div>
-						</li>
-					</ul>
-					<div class="tsd-comment">
-						<h4>returns</h4>
-						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
-						</p>
-						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
-
-<span class="hljs-keyword">type</span> test0 = N.Clamp&lt;<span class="hljs-string">'5'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>&gt; <span class="hljs-comment">// '7'</span>
-<span class="hljs-keyword">type</span> test1 = N.Clamp&lt;<span class="hljs-string">'8'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>&gt; <span class="hljs-comment">// '8'</span>
-
-<span class="hljs-keyword">type</span> test2 = N.Clamp&lt;<span class="hljs-string">'18'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '10'</span>
-<span class="hljs-keyword">type</span> test3 = N.Clamp&lt;<span class="hljs-string">'18'</span>, <span class="hljs-string">'7'</span>, <span class="hljs-string">'10'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  10</span></code></pre>
-						</p>
-					</div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/17f912e/src/Number/Clamp.ts#L35">Number/Clamp.ts:35</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="_clamp" class="tsd-anchor"></a>
-					<h3>_<wbr>Clamp</h3>
-					<div class="tsd-signature tsd-kind-icon">_Clamp&lt;N, Min, Max&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">_Clamp&lt;N, Min, Max&gt;</span></div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
-						<li>
-						<span class="name">Min</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
-						<li>
-						<span class="name">Max</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+						<span class="name">B</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>                    </li>
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/17f912e/src/Number/Clamp.ts#L10">Number/Clamp.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5128a37/src/Boolean/BooleanOf.ts#L3">Boolean/BooleanOf.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -171,17 +106,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_number_clamp_.html">"<wbr>Number/<wbr>Clamp"</a>
+						<a href="_boolean_booleanof_.html">"<wbr>Boolean/<wbr>Boolean<wbr>Of"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_number_clamp_.html#clamp" class="tsd-kind-icon">Clamp</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_number_clamp_.html#_clamp" class="tsd-kind-icon">_<wbr>Clamp</a>
+						<a href="_boolean_booleanof_.html#booleanof" class="tsd-kind-icon">Boolean<wbr>Of</a>
 					</li>
 				</ul>
 			</nav>
