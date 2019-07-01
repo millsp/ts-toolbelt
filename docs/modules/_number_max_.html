@@ -67,6 +67,151 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_number_max_.html#max" class="tsd-kind-icon">Max</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_number_max_.html#maxnegative" class="tsd-kind-icon">Max<wbr>Negative</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_number_max_.html#maxpositive" class="tsd-kind-icon">Max<wbr>Positive</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_number_max_.html#_max" class="tsd-kind-icon">_<wbr>Max</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_number_max_.html#_maxnegative" class="tsd-kind-icon">_<wbr>Max<wbr>Negative</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_number_max_.html#_maxpositive" class="tsd-kind-icon">_<wbr>Max<wbr>Positive</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
+					<a name="max" class="tsd-anchor"></a>
+					<h3>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">Max&lt;N, fmt&gt;<span class="tsd-signature-symbol">:</span> <a href="_boolean_fmt_.html#fmt" class="tsd-signature-type">Fmt</a><span class="tsd-signature-symbol">&lt;</span><a href="_number_max_.html#_max" class="tsd-signature-type">_Max</a><span class="tsd-signature-symbol">&lt;</span><a href="_iteration_iterationof_.html#iterationof" class="tsd-signature-type">IterationOf</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">N</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">fmt</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-comment">
+						<div class="lead">
+							<p>Get the biggest <strong>number</strong> within an <strong>union</strong></p>
+						</div>
+					</div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+							<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p><strong>union</strong></p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="name">fmt</span><span class="tsd-signature-symbol">: </span><a href="_boolean__internal_.html#format" class="tsd-signature-type">Format</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>output (?=<code>&#39;s&#39;</code>)</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="tsd-comment">
+						<h4>returns</h4>
+						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
+						</p>
+						<h4>example</h4>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Max&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'3'</span>&gt;      <span class="hljs-comment">// '10'</span>
+<span class="hljs-keyword">type</span> test1 = N.Max&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'3'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '10'</span>
+<span class="hljs-keyword">type</span> test2 = N.Max&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'3'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  10</span>
+<span class="hljs-keyword">type</span> test3 = N.Min&lt;<span class="hljs-string">'-2'</span> | <span class="hljs-string">'10'</span> | <span class="hljs-string">'oops'</span>&gt;   <span class="hljs-comment">// string</span></code></pre>
+						</p>
+					</div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Number/Max.ts#L64">Number/Max.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="maxnegative" class="tsd-anchor"></a>
+					<h3>Max<wbr>Negative</h3>
+					<div class="tsd-signature tsd-kind-icon">MaxNegative&lt;N&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MaxNegative&lt;N&gt;</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Number/Max.ts#L39">Number/Max.ts:39</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="maxpositive" class="tsd-anchor"></a>
+					<h3>Max<wbr>Positive</h3>
+					<div class="tsd-signature tsd-kind-icon">MaxPositive&lt;N&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">MaxPositive&lt;N&gt;</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Number/Max.ts#L27">Number/Max.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
+					<a name="_max" class="tsd-anchor"></a>
+					<h3>_<wbr>Max</h3>
+					<div class="tsd-signature tsd-kind-icon">_Max&lt;N&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">_Max&lt;N&gt;</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Number/Max.ts#L44">Number/Max.ts:44</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="_maxnegative" class="tsd-anchor"></a>
+					<h3>_<wbr>Max<wbr>Negative</h3>
+					<div class="tsd-signature tsd-kind-icon">_MaxNegative&lt;N, I&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: any[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;, IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[IterationMap[I[0]][0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[IterationMap[I[0]][0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2], Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;, IterationMap[IterationMap[I[0]][0]][2]&gt;&gt;][string extends IterationMap[IterationMap[IterationMap[I[0]][0]][0]][2] ? 1 : 0]]; 1: IterationMap[IterationMap[I[0]][0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[IterationMap[I[0]][0]][2], Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[0]][2]&gt;&gt;][string extends IterationMap[IterationMap[I[0]][0]][2] ? 1 : 0]]; 1: IterationMap[I[0]]; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;IterationMap[I[0]][2], Exclude&lt;N, I[2]&gt;&gt;][string extends IterationMap[I[0]][2] ? 1 : 0]]; 1: I; }[{ 0: { 0: 0; 1: 1; }; 1: { 0: 1; 1: 1; }; }[Extends&lt;I[2], N&gt;][string extends I[2] ? 1 : 0]]</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    </li>
+						<li>
+						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Number/Max.ts#L32">Number/Max.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="_maxpositive" class="tsd-anchor"></a>
+					<h3>_<wbr>Max<wbr>Positive</h3>
+					<div class="tsd-signature tsd-kind-icon">_MaxPositive&lt;N, I&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: { 0: any[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;, IterationMap[IterationMap[IterationMap[I[1]][1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[IterationMap[I[1]][1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;, IterationMap[IterationMap[I[1]][1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[IterationMap[I[1]][1]][0]]; 2: string; }[[Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt;] extends [never] ? 1 : string extends Exclude&lt;Exclude&lt;N, I[2]&gt;, IterationMap[I[1]][2]&gt; ? 2 : 0]; 1: IterationMap[IterationMap[I[1]][0]]; 2: string; }[[Exclude&lt;N, I[2]&gt;] extends [never] ? 1 : string extends Exclude&lt;N, I[2]&gt; ? 2 : 0]; 1: IterationMap[I[0]]; 2: string; }[[N] extends [never] ? 1 : string extends N ? 2 : 0]</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number__internal_.html#nbr" class="tsd-signature-type">Nbr</a>                    </li>
+						<li>
+						<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Number/Max.ts#L15">Number/Max.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
@@ -81,6 +226,24 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_number_max_.html#max" class="tsd-kind-icon">Max</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_number_max_.html#maxnegative" class="tsd-kind-icon">Max<wbr>Negative</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_number_max_.html#maxpositive" class="tsd-kind-icon">Max<wbr>Positive</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_number_max_.html#_max" class="tsd-kind-icon">_<wbr>Max</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_number_max_.html#_maxnegative" class="tsd-kind-icon">_<wbr>Max<wbr>Negative</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_number_max_.html#_maxpositive" class="tsd-kind-icon">_<wbr>Max<wbr>Positive</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
