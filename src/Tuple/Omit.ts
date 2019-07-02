@@ -1,6 +1,5 @@
 import {Omit as OOmit} from '../Object/Omit'
 import {TupleOf} from '../Object/TupleOf'
-import {Length} from './Length'
 
 /** Remove out of **`T`** the entries of key **`K`**
  * @param T to remove from

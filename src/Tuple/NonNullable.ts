@@ -2,7 +2,6 @@ import {Depth} from '../Object/_Internal'
 import {NonNullable as ONonNullable} from '../Object/NonNullable'
 import {TupleOf} from '../Object/TupleOf'
 import {Equals} from '../Any/Equals'
-import {Overwrite} from './Overwrite'
 import {Cast} from '../Any/Cast'
 
 /** Make some entries of **`T`** not nullable (deeply or not)
