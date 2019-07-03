@@ -1,5 +1,7 @@
 export * from './Boolean'
 export {And} from './And'
+export {BooleanOf} from './BooleanOf'
+export {Fmt} from './Fmt'
 export {Negate} from './Negate'
 export {Not} from './Not'
 export {Or} from './Or'
