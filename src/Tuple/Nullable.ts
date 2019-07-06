@@ -5,6 +5,8 @@ import {Equals} from '../Any/Equals'
 import {Cast} from '../Any/Cast'
 import {Index} from '../_Internal'
 import {ObjectOf} from './ObjectOf'
+import {Contains} from '../Any/Contains'
+import {Keys} from './Keys'
 
 /** Make some entries of **`T`** nullable (deeply or not)
  * @param T to make nullable
@@ -18,4 +20,4 @@ import {ObjectOf} from './ObjectOf'
 export type Nullable<T extends any[], K extends Index = keyof T, depth extends Depth = 'flat'> = {
     1: Cast<ONullable<T, K, depth>, any[]>
     0: TupleOf<ONullable<ObjectOf<T>, K, depth>>
-}[Equals<K, keyof T>]
+}[Contains<Keys<T>, K>]

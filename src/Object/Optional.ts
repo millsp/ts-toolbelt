@@ -1,8 +1,9 @@
 import {Merge} from './Merge'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {Equals} from '../Any/Equals'
 import {Index} from '../_Internal'
+import {Keys} from './Keys'
+import {Contains} from '../Any/Contains'
 
 type OptionalFlat<O> = {
     [K in keyof O]?: O[K]
@@ -30,4 +31,4 @@ export type Optional<O extends object, K extends Index = keyof O, depth extends 
     1: OptionalPart<O, depth>
     0: Merge<OptionalPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Equals<K, keyof O>]
+}[Contains<Keys<O>, K>]
