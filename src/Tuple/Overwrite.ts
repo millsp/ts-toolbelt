@@ -9,5 +9,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Overwrite<T extends any[], T1 extends any[]> =
+export type Overwrite<T extends any[], T1 extends object> =
     Cast<OOverwrite<T, T1>, any[]>

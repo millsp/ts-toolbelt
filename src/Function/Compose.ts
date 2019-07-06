@@ -9,7 +9,6 @@ import {Next} from '../Iteration/Next'
 import {Head} from '../Tuple/Head'
 import {ReturnOf} from './ReturnOf'
 import {ParamsOf} from './ParamsOf'
-import {Keys} from '../Tuple/Keys'
 
 type ComposeFn<Fns extends Arrow[], K extends keyof Fns> =
     Length<Tail<Fns>> extends NumberOf<K & string>

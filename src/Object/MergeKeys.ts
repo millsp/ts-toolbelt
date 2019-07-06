@@ -9,4 +9,4 @@ import {Keys} from './Keys'
  * ```
  */
 export type MergeKeys<O extends object, O1 extends object> =
-    Keys<O & O1>
+    keyof (O & O1)

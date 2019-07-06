@@ -3,6 +3,7 @@
 import {Test, O} from '../src/index'
 import {x} from '../src/Any/x'
 import {NonNullable} from '../src/Tuple/_api'
+import {Extends} from '../src/Any/_api'
 
 const {checks, check} = Test
 
@@ -768,13 +769,20 @@ checks([
 // SELECT
 
 type SELECT_O_DEFAULT = {
-         a : string,
+         a: string
+         d?: 'string0' | undefined
+readonly e?: 'string1' | undefined
+         j: 'a' | undefined
 }
 
 type SELECT_O_LOOSE = {
-         b : number
-readonly f : 0
-         h?: 1
+         b: number
+         d?: 'string0' | undefined
+readonly e?: 'string1' | undefined
+readonly f: 0
+         h?: 1 | undefined
+         j: 'a' | undefined
+         k: {a: {b: string}} | undefined
 }
 
 type SELECT_O_EQUALS = {
@@ -790,9 +798,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // SELECTKEYS
 
-type SELECTKEYS_O_DEFAULT = 'a'
+type SELECTKEYS_O_DEFAULT = 'a' | 'd' | 'e' | 'j'
 
-type SELECTKEYS_O_LOOSE = 'b' | 'f' | 'h'
+type SELECTKEYS_O_LOOSE = 'b' | 'f' | 'h' | 'd' | 'e' | 'j' | 'k'
 
 type SELECTKEYS_O_EQUALS = 'a';
 
