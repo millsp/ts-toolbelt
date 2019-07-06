@@ -9,4 +9,4 @@ import {MergeKeys as OMergeKeys} from '../Object/MergeKeys'
  * ```
  */
 export type MergeKeys<T extends any[], T1 extends any[]> =
-    OMergeKeys<T, T1>
+    Exclude<OMergeKeys<T, T1>, keyof any[]>

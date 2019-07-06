@@ -1,4 +1,5 @@
 import {ExcludeKeys as OExcludeKeys} from '../Object/ExcludeKeys'
+import {Exclude} from '../Union/Exclude'
 import {Match} from '../Any/_Internal'
 
 /** Exclude the keys of **`T1`** out of the keys of **`T`**
@@ -12,4 +13,5 @@ import {Match} from '../Any/_Internal'
  * ```
  */
 export type ExcludeKeys<T extends any[], T1 extends any[], match extends Match = 'default'> =
-    OExcludeKeys<T, T1, match>
+    Exclude<OExcludeKeys<T, T1, match>, keyof any[]>
+

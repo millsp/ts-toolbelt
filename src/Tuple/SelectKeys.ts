@@ -11,4 +11,4 @@ import {SelectKeys as OSelectKeys} from '../Object/SelectKeys'
  * ```
  */
 export type SelectKeys<T extends any[], M extends any, match extends Match = 'default'> =
-    OSelectKeys<T, M, match>
+    Exclude<OSelectKeys<T, M, match>, keyof any[]>

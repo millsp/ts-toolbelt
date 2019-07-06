@@ -8,4 +8,4 @@ import {OptionalKeys as OOptionalKeys} from '../Object/OptionalKeys'
  * ```
  */
 export type OptionalKeys<T extends any[]> =
-    OOptionalKeys<T>
+    Exclude<OOptionalKeys<T>, keyof any[]>

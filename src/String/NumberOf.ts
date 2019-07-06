@@ -1,4 +1,4 @@
-import {IterationOf, IterationMap} from '../Iteration/IterationOf'
+import {IterationOf} from '../Iteration/IterationOf'
 import {Pos} from '../Iteration/Pos'
 
 /** Transform a **`string`** into a **`number`**

@@ -8,4 +8,4 @@ import {WritableKeys as OWritableKeys} from '../Object/WritableKeys'
  * ```
  */
 export type WritableKeys<T extends any[]> =
-    OWritableKeys<T>
+    Exclude<OWritableKeys<T>, keyof any[]>

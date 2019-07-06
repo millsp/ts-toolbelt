@@ -8,4 +8,4 @@ import {ReadonlyKeys as OReadonlyKeys} from '../Object/ReadonlyKeys'
  * ```
  */
 export type ReadonlyKeys<T extends any[]> =
-    OReadonlyKeys<T>
+    Exclude<OReadonlyKeys<T>, keyof any[]>

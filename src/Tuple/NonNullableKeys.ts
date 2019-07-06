@@ -8,4 +8,4 @@ import {NonNullableKeys as ONonNullableKeys} from '../Object/NonNullableKeys'
  * ```
  */
 export type NonNullableKeys<T extends any[]> =
-    ONonNullableKeys<T>
+    Exclude<ONonNullableKeys<T>, keyof any[]>

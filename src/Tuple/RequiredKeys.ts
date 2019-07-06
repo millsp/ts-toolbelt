@@ -8,4 +8,4 @@ import {RequiredKeys as ORequiredKeys} from '../Object/RequiredKeys'
  * ```
  */
 export type RequiredKeys<T extends any[]> =
-    ORequiredKeys<T>
+    Exclude<ORequiredKeys<T>, keyof any[]>
