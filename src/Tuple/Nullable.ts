@@ -1,12 +1,11 @@
+import {Index} from '../_Internal'
+import {Cast} from '../Any/Cast'
+import {Contains} from '../Any/Contains'
 import {Depth} from '../Object/_Internal'
 import {Nullable as ONullable} from '../Object/Nullable'
 import {TupleOf} from '../Object/TupleOf'
-import {Equals} from '../Any/Equals'
-import {Cast} from '../Any/Cast'
-import {Index} from '../_Internal'
-import {ObjectOf} from './ObjectOf'
-import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'
+import {ObjectOf} from './ObjectOf'
 
 /** Make some entries of **`T`** nullable (deeply or not)
  * @param T to make nullable

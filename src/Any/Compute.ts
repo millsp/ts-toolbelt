@@ -1,6 +1,3 @@
-import {Depth} from '../Object/_Internal'
-import {Cast} from './Cast'
-
 /** Force TS to load a type that has not been computed
  * (to resolve composed types that TS hasn't resolved)
  * @param A

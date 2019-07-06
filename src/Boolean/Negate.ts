@@ -1,5 +1,5 @@
-import {Not} from './Not'
 import {Boolean} from './Boolean'
+import {Not} from './Not'
 
 /** Logical **`!`** operator (behaves like the JS one)
  * @param B to negate
