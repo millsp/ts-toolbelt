@@ -10,6 +10,7 @@ import {Update} from '../Tuple/Update'
 import {KeySet} from '../Tuple/_api'
 import {Key} from '../Iteration/Key'
 import {Prev} from '../Iteration/Prev'
+import {Index} from '../_Internal'
 
 /** Replaces invalid parts of a path with `never`
  * @param O to be inspected
@@ -19,7 +20,7 @@ import {Prev} from '../Iteration/Prev'
  * ```ts
  * ```
  */
-type _PathValid<O, Path extends string[], I extends Iteration = IterationOf<'0'>> = {
+type _PathValid<O, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, Length<Path, 's'>>, never>
 }[
@@ -36,7 +37,7 @@ type _PathValid<O, Path extends string[], I extends Iteration = IterationOf<'0'>
  * ```ts
  * ```
  */
-export type PathValid<O extends object, Path extends string[]> =
+export type PathValid<O extends object, Path extends Index[]> =
     _PathValid<O, Path> extends infer X
-    ? Cast<X, string[]>
+    ? Cast<X, Index[]>
     : never

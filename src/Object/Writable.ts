@@ -2,6 +2,7 @@ import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Merge} from './Merge'
 import {Equals} from '../Any/Equals'
+import {Index} from '../_Internal'
 
 type WritableFlat<O> = {
     -readonly [K in keyof O]: O[K]
@@ -25,7 +26,7 @@ type WritablePart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type Writable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> = {
+export type Writable<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
     1: WritablePart<O, depth>
     0: Merge<WritablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O

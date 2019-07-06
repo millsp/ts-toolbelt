@@ -1,5 +1,6 @@
 import {HasPath as OHasPath} from '../Object/HasPath'
 import {Match} from '../Any/_Internal'
+import {Index} from '../_Internal'
 
 /** Check whether **`T`** has nested entries that match **`M`**
  * @param T to be inspected
@@ -11,5 +12,5 @@ import {Match} from '../Any/_Internal'
  * ```ts
  * ```
  */
-export type HasPath<T extends any[], Path extends string[], M extends any = any, match extends Match = 'default'> =
+export type HasPath<T extends any[], Path extends Index[], M extends any = any, match extends Match = 'default'> =
     OHasPath<T, Path, M, match>

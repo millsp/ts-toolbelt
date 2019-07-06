@@ -9,12 +9,13 @@ import {Next} from '../Iteration/Next'
 import {Head} from '../Tuple/Head'
 import {ReturnOf} from './ReturnOf'
 import {ParamsOf} from './ParamsOf'
+import {Keys} from '../Tuple/Keys'
 
 type ComposeFn<Fns extends Arrow[], K extends keyof Fns> =
-    Length<Tail<Fns>> extends NumberOf<K>
+    Length<Tail<Fns>> extends NumberOf<K & string>
     ? Fns[K] // If mapped type reached the end
-    : (arg: ReturnOf<Fns[Pos<Next<IterationOf<K>>>]>) =>
-        ReturnOf<Fns[Pos<IterationOf<K>>]>
+    : (arg: ReturnOf<Fns[Pos<Next<IterationOf<K & string>>>]>) =>
+        ReturnOf<Fns[Pos<IterationOf<K & string>>]>
 
 /** Compute what the input of **`Compose`** should be
  * @param Fns to compose

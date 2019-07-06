@@ -1,6 +1,7 @@
 import {Pick} from './Pick'
 import {Exclude} from '../Union/Exclude'
 import {Cast} from '../Any/Cast'
+import {Index} from '../_Internal'
 
 /** Remove out of **`O`** the fields of key **`K`**
  * @param O to remove from
@@ -10,5 +11,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Omit<O extends object, K extends string> =
+export type Omit<O extends object, K extends Index> =
     Pick<O, Exclude<keyof O, K>>

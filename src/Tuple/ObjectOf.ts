@@ -7,5 +7,5 @@ import {Omit as OOmit} from '../Object/Omit'
  * ```ts
  * ```
  */
-export type ObjectOf<T extends any[]> =
+export type ObjectOf<T extends object> =
     OOmit<T, keyof any[]>

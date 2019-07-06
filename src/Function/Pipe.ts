@@ -7,12 +7,13 @@ import {Last} from '../Tuple/Last'
 import {NumberOf} from '../String/NumberOf'
 import {ReturnOf} from './ReturnOf'
 import {ParamsOf} from './ParamsOf'
+import {Keys} from '../Tuple/Keys'
 
 type PipeFn<Fns extends Arrow[], K extends keyof Fns> =
-    NumberOf<K> extends 0
+    NumberOf<K & string> extends 0
     ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
-    : (arg: ReturnOf<Fns[Pos<Prev<IterationOf<K>>>]>) =>
-        ReturnOf<Fns[Pos<IterationOf<K>>]>
+    : (arg: ReturnOf<Fns[Pos<Prev<IterationOf<K & string>>>]>) =>
+        ReturnOf<Fns[Pos<IterationOf<K & string>>]>
 
 /** Compute what the input of **`Pipe`** should be
  * @param Fns to pipe

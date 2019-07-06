@@ -3,6 +3,7 @@ import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
 import {Equals} from '../Any/Equals'
+import {Index} from '../_Internal'
 
 type NonNullableFlat<O> = {
     [K in keyof O]: UNonNullable<O[K]>
@@ -27,7 +28,7 @@ type NonNullablePart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type NonNullable<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> = {
+export type NonNullable<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
     1: NonNullablePart<O, depth>
     0: Merge<NonNullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> non-nullable -> merge it with O

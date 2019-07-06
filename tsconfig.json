@@ -37,7 +37,7 @@
       //    "isolatedModules": true, /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
       //    "jsx": "react", /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
       //    "jsxFactory": "React.createElement", /* Equivalent of Babel's pragma option, Replace the function used when compiling JSX expressions. */
-      "keyofStringsOnly": true,
+      // "keyofStringsOnly": false,
       /* Resolve 'keyof' to string valued property names only (no numbers or symbols). */
       "lib": [
         "es7",

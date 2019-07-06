@@ -4,8 +4,9 @@ import {Optional} from '../Tuple/Optional'
 import {NonNullable} from '../Tuple/NonNullable'
 import {Keys} from './Keys'
 import {Equals, Cast} from '../Any/_api'
+import {Index} from '../_Internal'
 
-type _Paths<O, Paths extends string[] = []> = {
+type _Paths<O, Paths extends Index[] = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[Keys<O & {}>]
     // Dives deep, and as it dives, it adds the paths to `Paths`
     1: NonNullable<Optional<Reverse<Paths>>> // make convenient

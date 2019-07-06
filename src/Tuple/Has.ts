@@ -1,5 +1,6 @@
 import {Match} from '../Any/_Internal'
 import {Has as OHas} from '../Object/Has'
+import {Index} from '../_Internal'
 
 /** Check whether **`T`** has a entry of key **`K`** that matches **`M`**
  * @param T to be inspected
@@ -11,5 +12,5 @@ import {Has as OHas} from '../Object/Has'
  * ```ts
  * ```
  */
-export type Has<T extends any[], K extends string, M extends any = any, match extends Match = 'default'> =
+export type Has<T extends any[], K extends Index, M extends any = any, match extends Match = 'default'> =
     OHas<T, K, M, match>

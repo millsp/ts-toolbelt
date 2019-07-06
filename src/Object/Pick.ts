@@ -1,3 +1,5 @@
+import {Index} from '../_Internal'
+
 type _Pick<O extends object, K extends keyof O> = {
     [P in K]: O[P]
 }
@@ -10,5 +12,5 @@ type _Pick<O extends object, K extends keyof O> = {
  * ```ts
  * ```
  */
-export type Pick<O extends object, K extends string> =
+export type Pick<O extends object, K extends Index> =
     _Pick<O, K & keyof O>
