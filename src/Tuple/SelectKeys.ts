@@ -1,5 +1,6 @@
 import {Match} from '../Any/_Internal'
 import {SelectKeys as OSelectKeys} from '../Object/SelectKeys'
+import {ObjectOf} from './ObjectOf'
 
 /** Get the keys of **`T`** which entries match **`M`**
  * @param T to extract from
@@ -11,4 +12,4 @@ import {SelectKeys as OSelectKeys} from '../Object/SelectKeys'
  * ```
  */
 export type SelectKeys<T extends any[], M extends any, match extends Match = 'default'> =
-    Exclude<OSelectKeys<T, M, match>, keyof any[]>
+    OSelectKeys<ObjectOf<T>, M, match>

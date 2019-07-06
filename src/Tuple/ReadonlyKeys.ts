@@ -1,4 +1,5 @@
 import {ReadonlyKeys as OReadonlyKeys} from '../Object/ReadonlyKeys'
+import {ObjectOf} from './ObjectOf'
 
 /** Get the keys of **`T`** that are readonly
  * @param T
@@ -8,4 +9,4 @@ import {ReadonlyKeys as OReadonlyKeys} from '../Object/ReadonlyKeys'
  * ```
  */
 export type ReadonlyKeys<T extends any[]> =
-    Exclude<OReadonlyKeys<T>, keyof any[]>
+    OReadonlyKeys<ObjectOf<T>>

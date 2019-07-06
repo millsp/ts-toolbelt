@@ -1,5 +1,6 @@
 import {PathValid as OPathValid} from '../Object/PathValid'
 import {Index} from '../_Internal'
+import {ObjectOf} from './ObjectOf'
 
 /** Replaces invalid parts of a path with `never`
  * @param T to be inspected
@@ -10,4 +11,4 @@ import {Index} from '../_Internal'
  * ```
  */
 export type PathValid<T extends any[], Path extends Index[]> =
-    OPathValid<T, Path>
+    OPathValid<ObjectOf<T>, Path>

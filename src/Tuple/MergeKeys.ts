@@ -1,4 +1,5 @@
 import {MergeKeys as OMergeKeys} from '../Object/MergeKeys'
+import {ObjectOf} from './ObjectOf'
 
 /** Get the keys of **`T` & `T1`**
  * @param T
@@ -9,4 +10,4 @@ import {MergeKeys as OMergeKeys} from '../Object/MergeKeys'
  * ```
  */
 export type MergeKeys<T extends any[], T1 extends any[]> =
-    Exclude<OMergeKeys<T, T1>, keyof any[]>
+    OMergeKeys<ObjectOf<T>, T1>

@@ -11,5 +11,5 @@ import {Index} from '../_Internal'
  * ```ts
  * ```
  */
-export type Update<O extends object, K extends Index, A extends any> =
-    Cast<OUpdate<O, K, A>, any[]>
+export type Update<T extends any[], K extends Index, A extends any> =
+    Cast<OUpdate<T, K, A>, any[]>

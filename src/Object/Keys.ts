@@ -9,5 +9,5 @@ import {Exclude} from '../Union/Exclude'
  * ```
  */
 export type Keys<O extends object> =
-    Exclude<keyof O, keyof any[]> & Index
+    keyof O & Index
     // Prevents `undefined` to appear in the keys

@@ -1,4 +1,5 @@
 import {RequiredKeys as ORequiredKeys} from '../Object/RequiredKeys'
+import {ObjectOf} from './ObjectOf'
 
 /** Get the keys of **`T`** that are readonly
  * @param T
@@ -8,4 +9,4 @@ import {RequiredKeys as ORequiredKeys} from '../Object/RequiredKeys'
  * ```
  */
 export type RequiredKeys<T extends any[]> =
-    Exclude<ORequiredKeys<T>, keyof any[]>
+    ORequiredKeys<ObjectOf<T>>

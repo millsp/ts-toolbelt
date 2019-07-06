@@ -1,8 +1,6 @@
 import {Diff as ODiff} from '../Object/Diff'
 import {TupleOf} from '../Object/TupleOf'
-import {Longest} from './Longest'
 import {Match} from '../Any/_Internal'
-import {Length} from './Length'
 import {ObjectOf} from './ObjectOf'
 
 /** Get a **tuple** that is the difference between **`T`** & **`T1`**

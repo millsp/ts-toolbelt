@@ -1,7 +1,6 @@
 import {KeySet} from './KeySet'
 import {Nbr} from '../Number/_Internal'
 import {Pick} from './Pick'
-import {Cast} from '../Any/Cast'
 
 /** Pick a range of entries (portion) from **`T`**
  * @param T to pick from
