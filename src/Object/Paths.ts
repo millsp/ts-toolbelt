@@ -4,6 +4,7 @@ import {Optional} from '../Tuple/Optional'
 import {Equals, Cast} from '../Any/_api'
 import {Index} from '../_Internal'
 import {NonNullable} from '../Tuple/NonNullable'
+import {Contains} from '../Any/Contains'
 
 type _Paths<O, Paths extends Index[] = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]

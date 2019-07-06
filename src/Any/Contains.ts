@@ -5,6 +5,6 @@ import {Extends} from './Extends'
  * (works as **`Extends`** does but is much stricter)
  */
 export type Contains<A1 extends any, A2 extends any> =
-    Extends<A1, A2> extends True
+    Extends<A2, A1> extends True
     ? True
     : False
