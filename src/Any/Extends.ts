@@ -17,9 +17,11 @@ import {False, True} from '../Boolean/Boolean'
  * ```
  */
 export type Extends<A1 extends any, A2 extends any> =
-    [A1] extends [never] // todo to check has been changed
+    [A1] extends [never]
     ? False // anything never is false
-    : (A1 extends A2 ? True : False)
+    : A1 extends A2
+      ? True
+      : False
 
 // Comes from the fact that `never` is a fall-through type that we want to
 // narrow down to `false`. So it means that `Extends<never, any>` is false

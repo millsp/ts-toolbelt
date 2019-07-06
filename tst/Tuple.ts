@@ -98,7 +98,7 @@ checks([
     check<T.ExcludeKeys<[1, 2, 3, 4], [1, string, 3], 'extends'>,   '1' | '3',          Test.Pass>(),
     check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'extends'>,   '1' | '3',          Test.Pass>(),
     check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'loose'>,     '3',                Test.Pass>(),
-    check<T.ExcludeKeys<[1, 2, 3, 4], [1, number, 3], 'loose'>,     '3',                Test.Pass>(),
+    check<T.ExcludeKeys<[1, 2, 3, 4], [1, number, 3], 'loose'>,     '3',                Test.Pass>(), // ! todo no idea why this fails
 ])
 
 // -------------------------------------------------------------------------------------
@@ -480,6 +480,7 @@ checks([
 type SELECT_T_NUMBER_EXTENDS = [
     1,
     2,
+    string | number,
     number
 ]
 

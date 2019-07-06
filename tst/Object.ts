@@ -2,8 +2,7 @@
 // /* eslint-disable no-implicit-coercion */
 import {Test, O} from '../src/index'
 import {x} from '../src/Any/x'
-import {NonNullable} from '../src/Tuple/_api'
-import {Extends} from '../src/Any/_api'
+import {NonNullable} from '../src/Tuple/NonNullable'
 
 const {checks, check} = Test
 

@@ -3,7 +3,13 @@ import {Exclude} from '../Union/Exclude'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
-import {Replace} from '../Union/Replace'
+
+type ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
+    [K in Keys<O>]: {
+        1: never
+        0: K
+    }[Is<O[K], At<O1, K>, match>]
+}[Keys<O>]
 
 /** Exclude the keys of **`O1`** out of the keys of **`O`**
  * (If `match = 'default'`, no type checks are done)
@@ -17,10 +23,7 @@ import {Replace} from '../Union/Replace'
  */
 export type ExcludeKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default': Exclude<keyof O, keyof O1>
-    'matches': {
-        [K in Keys<O>]: {
-            1: never
-            0: K
-        }[Is<O[K], At<O1, K>, match>]
-    }[Keys<O>]
-}[Replace<match, 'extends' | 'equals' | 'loose', 'matches'>]
+    'extends': ExcludeMatch<O, O1, 'extends'>
+    'equals' : ExcludeMatch<O, O1, 'equals'>
+    'loose'  : ExcludeMatch<O, O1, 'loose'>
+}[match]
