@@ -1,14 +1,14 @@
 import {Prepend} from '../Tuple/Prepend'
 import {Reverse} from '../Tuple/Reverse'
 import {Optional} from '../Tuple/Optional'
-import {Equals} from '../Any/_api'
+import {Equals, Cast} from '../Any/_api'
 import {Index} from '../_Internal'
-import {Overwrite} from './Overwrite'
+import {NonNullable} from '../Tuple/NonNullable'
 
 type _Paths<O, Paths extends Index[] = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]
     // It dives deep, and as it dives, it adds the paths to `Paths`
-    1: Overwrite<Optional<Paths>, Reverse<Paths>> // make optional
+    1: NonNullable<Optional<Reverse<Paths>>> // make optional
 }[
     [keyof O] extends [never] // Then if we can't go deeper
     ? 1                       // We return accumulated path
@@ -26,6 +26,8 @@ type _Paths<O, Paths extends Index[] = []> = {
  * ```
  */
 export type Paths<O extends object> = {
-    1: any
+    1: Index[]
     0: _Paths<O>
-}[Equals<O, any>]
+}[Equals<O, any>] extends infer X
+? Cast<X, Index[]>
+: never

@@ -5,5 +5,3 @@
  * (Useful for **tuple**s with optionals)
  */
 export type Limit = 'min' | 'max' | 'reg'
-
-export type Tuple<A = any> = ReadonlyArray<A> | A[]
