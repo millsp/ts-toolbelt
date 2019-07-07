@@ -14,4 +14,4 @@ import {ObjectOf} from './ObjectOf'
  * ```
  */
 export type ExcludeKeys<T extends any[], T1 extends any[], match extends Match = 'default'> =
-    Exclude<OExcludeKeys<ObjectOf<T>, ObjectOf<T1>, match>, keyof any[]>
+    OExcludeKeys<ObjectOf<T>, ObjectOf<T1>, match>

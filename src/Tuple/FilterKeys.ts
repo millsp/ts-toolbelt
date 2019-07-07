@@ -13,4 +13,4 @@ import {ObjectOf} from './ObjectOf'
  * ```
  */
 export type FilterKeys<T extends any[], M extends any, match extends Match = 'default'> =
-    Exclude<OFilterKeys<ObjectOf<T>, M, match>, keyof any[]>
+    OFilterKeys<ObjectOf<T>, M, match>
