@@ -1,5 +1,5 @@
 /* eslint-disable fp/no-this */
-import {Arrow} from './Arrow'
+import {Function} from './Function'
 
 /** Create a class from a **`Function`**
  * @param F
@@ -21,5 +21,5 @@ import {Arrow} from './Arrow'
  * }
  * ```
  */
-export type ClassOf<F extends Arrow> =
+export type ClassOf<F extends Function> =
     new (...args: Parameters<F>) => ReturnType<F>

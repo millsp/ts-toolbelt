@@ -1,4 +1,4 @@
-export {Arrow} from './Arrow'
+export {Function} from './Function'
 export {ClassOf} from './ClassOf'
 export {Composer, Composed} from './Compose'
 export {Curry} from './Curry'

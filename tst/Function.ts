@@ -1,7 +1,7 @@
 /* eslint-disable fp/no-class */
 /* eslint-disable no-implicit-coercion */
 import {Test, F} from '../src/index'
-import {Arrow} from '../src/Function/Arrow'
+import {Function} from '../src/Function/Function'
 import {Curry} from '../src/Function/Curry'
 import {x} from '../src/Any/x'
 
@@ -16,7 +16,7 @@ const FN = (a: string, b: number, c: object) => true
 // ARROW
 
 checks([
-    check<F.Arrow<[string, number, object], boolean>,   typeof FN,  Test.Pass>(),
+    check<F.Function<[string, number, object], boolean>,   typeof FN,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // COMPOSE
 
-declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Composed<Fns>
+declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Composed<Fns>
 
 const composed = compose(
     (message: string)                   => false,                   // receive previous return
@@ -45,7 +45,7 @@ checks([
 // CURRY
 
 // Not testable
-declare function curry<F extends Arrow>(f: F): Curry<F>
+declare function curry<F extends Function>(f: F): Curry<F>
 
 const __ = {} as x
 
@@ -73,7 +73,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PIPE
 
-declare function pipe<Fns extends F.Arrow[]>(...args: F.Piper<Fns>): F.Piped<Fns>
+declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Piped<Fns>
 
 const piped = pipe(
     (name: string, age: number)         => ({name, age}),           // receive parameters

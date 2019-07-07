@@ -1,4 +1,4 @@
-import {Arrow} from './Arrow'
+import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Last} from '../Tuple/Last'
@@ -10,7 +10,7 @@ import {Head} from '../Tuple/Head'
 import {ReturnOf} from './ReturnOf'
 import {ParamsOf} from './ParamsOf'
 
-type ComposeFn<Fns extends Arrow[], K extends keyof Fns> =
+type ComposeFn<Fns extends Function[], K extends keyof Fns> =
     Length<Tail<Fns>> extends NumberOf<K & string>
     ? Fns[K] // If mapped type reached the end
     : (arg: ReturnOf<Fns[Pos<Next<IterationOf<K & string>>>]>) =>
@@ -27,7 +27,7 @@ type ComposeFn<Fns extends Arrow[], K extends keyof Fns> =
  * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Composed<Fns>
  * ```
  */
-export type Composer<Fns extends Arrow[]> = {
+export type Composer<Fns extends Function[]> = {
     [K in keyof Fns]: ComposeFn<Fns, K>
 }
 
@@ -43,5 +43,5 @@ export type Composer<Fns extends Arrow[]> = {
  * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Composed<Fns>
  * ```
  */
-export type Composed<Fns extends Arrow[]> =
+export type Composed<Fns extends Function[]> =
     (...args: ParamsOf<Last<Fns>>) => ReturnOf<Head<Fns>>

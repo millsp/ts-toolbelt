@@ -1,4 +1,4 @@
-import {Arrow} from './Arrow'
+import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
@@ -9,7 +9,7 @@ import {ReturnOf} from './ReturnOf'
 import {ParamsOf} from './ParamsOf'
 import {Keys} from '../Tuple/Keys'
 
-type PipeFn<Fns extends Arrow[], K extends keyof Fns> =
+type PipeFn<Fns extends Function[], K extends keyof Fns> =
     NumberOf<K & string> extends 0
     ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
     : (arg: ReturnOf<Fns[Pos<Prev<IterationOf<K & string>>>]>) =>
@@ -26,7 +26,7 @@ type PipeFn<Fns extends Arrow[], K extends keyof Fns> =
  * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Piped<Fns>
  * ```
  */
-export type Piper<Fns extends Arrow[]> = {
+export type Piper<Fns extends Function[]> = {
     [K in keyof Fns]: PipeFn<Fns, K>
 }
 
@@ -42,5 +42,5 @@ export type Piper<Fns extends Arrow[]> = {
  * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Piped<Fns>
  * ```
  */
-export type Piped<Fns extends Arrow[]> =
+export type Piped<Fns extends Function[]> =
     (...args: ParamsOf<Head<Fns>>) => ReturnOf<Last<Fns>>
