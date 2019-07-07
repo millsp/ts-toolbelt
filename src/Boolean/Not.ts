@@ -1,4 +1,4 @@
-import {Boolean} from './Boolean'
+import {Boolean, False, True} from './Boolean'
 
 /** Logical **`!`** operator (behaves like the JS one)
  * @param B to negate
@@ -12,6 +12,6 @@ import {Boolean} from './Boolean'
  * ```
  */
 export type Not<B extends Boolean> = {
-    0: 1
-    1: 0
+    0: True
+    1: False
 }[B]

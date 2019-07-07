@@ -6,7 +6,6 @@ import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from '../Number/_Internal'
 import {Key} from '../Iteration/Key'
 import {Way} from '../_Internal'
-import {Pop} from './Pop'
 import {Reverse} from './Reverse'
 
 type _Drop<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
