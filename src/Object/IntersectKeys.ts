@@ -22,9 +22,9 @@ type IntersectMatch<O extends object, O1 extends object, match extends Match> = 
  */
 export type IntersectKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default'   : Intersect<keyof O, keyof O1>
-    'r-contains': IntersectMatch<O, O1, 'r-contains'>
-    'r-extends' : IntersectMatch<O, O1, 'r-extends'>
-    'l-contains': IntersectMatch<O, O1, 'l-contains'>
-    'l-extends' : IntersectMatch<O, O1, 'l-extends'>
+    'contains->': IntersectMatch<O, O1, 'contains->'>
+    'extends->' : IntersectMatch<O, O1, 'extends->'>
+    '<-contains': IntersectMatch<O, O1, '<-contains'>
+    '<-extends' : IntersectMatch<O, O1, '<-extends'>
     'equals'    : IntersectMatch<O, O1, 'equals'>
 }[match]

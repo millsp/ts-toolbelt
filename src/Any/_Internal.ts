@@ -1,14 +1,14 @@
 /** Describes the match strategy when matching types
- * * `r-contains`: X contains Y
- * * `r-extends` : X extends  Y
- * * `l-contains`: Y contains X
- * * `l-extends` : Y extends  X
+ * * `contains->`: X contains Y
+ * * `extends->` : X extends  Y
+ * * `<-contains`: Y contains X
+ * * `<-extends` : Y extends  X
  * * `equals`    : X equals   Y
- * * `default`   : `r-extends`
+ * * `default`   : `extends->`
  */
-export type Match = 'r-contains'
-                  | 'r-extends'
-                  | 'l-contains'
-                  | 'l-extends'
+export type Match = 'contains->'
+                  | 'extends->'
+                  | '<-contains'
+                  | '<-extends'
                   | 'equals'
                   | 'default'

@@ -8,5 +8,5 @@ import {SelectKeys} from './SelectKeys'
  * ```
  */
 export type NullableKeys<O extends object> =
-    SelectKeys<O, undefined, 'l-extends'>
-    | SelectKeys<O, null, 'l-extends'>
+    SelectKeys<O, undefined, '<-extends'>
+    | SelectKeys<O, null, '<-extends'>

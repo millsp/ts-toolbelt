@@ -93,14 +93,14 @@ checks([
 // IS
 
 checks([
-    check<A.Is<'xxxx', string, 'r-extends'>,  1,  Test.Pass>(),
-    check<A.Is<string, 'xxxx', 'r-extends'>,  0,  Test.Pass>(),
+    check<A.Is<'xxxx', string, 'extends->'>,  1,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', 'extends->'>,  0,  Test.Pass>(),
 
     check<A.Is<'xxxx', string, 'equals'>,   0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', 'equals'>,   0,  Test.Pass>(),
 
-    check<A.Is<string, string | number, 'r-extends'>, 1,      Test.Pass>(),
-    check<A.Is<string | number, string, 'r-extends'>, 0 | 1,  Test.Pass>(),
+    check<A.Is<string, string | number, 'extends->'>, 1,      Test.Pass>(),
+    check<A.Is<string | number, string, 'extends->'>, 0 | 1,  Test.Pass>(),
 
     check<A.Is<string, string | number, 'equals'>,  0,  Test.Pass>(),
     check<A.Is<string | number, string, 'equals'>,  0,  Test.Pass>(),

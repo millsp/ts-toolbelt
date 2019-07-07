@@ -23,9 +23,9 @@ type ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
  */
 export type ExcludeKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default'   : Exclude<keyof O, keyof O1>
-    'r-contains': ExcludeMatch<O, O1, 'r-contains'>
-    'r-extends' : ExcludeMatch<O, O1, 'r-extends'>
-    'l-contains': ExcludeMatch<O, O1, 'l-contains'>
-    'l-extends' : ExcludeMatch<O, O1, 'l-extends'>
+    'contains->': ExcludeMatch<O, O1, 'contains->'>
+    'extends->' : ExcludeMatch<O, O1, 'extends->'>
+    '<-contains': ExcludeMatch<O, O1, '<-contains'>
+    '<-extends' : ExcludeMatch<O, O1, '<-extends'>
     'equals'    : ExcludeMatch<O, O1, 'equals'>
 }[match]
