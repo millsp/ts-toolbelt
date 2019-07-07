@@ -93,14 +93,32 @@ checks([
 // IS
 
 checks([
-    check<A.Is<'xxxx', string, 'extends->'>,  1,  Test.Pass>(),
-    check<A.Is<string, 'xxxx', 'extends->'>,  0,  Test.Pass>(),
+    check<A.Is<'xxxx', string, 'extends->'>,    1,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', 'extends->'>,    0,  Test.Pass>(),
 
-    check<A.Is<'xxxx', string, 'equals'>,   0,  Test.Pass>(),
-    check<A.Is<string, 'xxxx', 'equals'>,   0,  Test.Pass>(),
+    check<A.Is<'xxxx', string, '<-extends'>,    0,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', '<-extends'>,    1,  Test.Pass>(),
 
-    check<A.Is<string, string | number, 'extends->'>, 1,      Test.Pass>(),
-    check<A.Is<string | number, string, 'extends->'>, 0 | 1,  Test.Pass>(),
+    check<A.Is<'xxxx', string, 'contains->'>,   1,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', 'contains->'>,   0,  Test.Pass>(),
+
+    check<A.Is<'xxxx', string, '<-contains'>,   0,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', '<-contains'>,   1,  Test.Pass>(),
+
+    check<A.Is<string, string | number, 'extends->'>,   1,      Test.Pass>(),
+    check<A.Is<string | number, string, 'extends->'>,   0 | 1,  Test.Pass>(),
+
+    check<A.Is<string, string | number, '<-extends'>,   0 | 1,  Test.Pass>(),
+    check<A.Is<string | number, string, '<-extends'>,   1,      Test.Pass>(),
+
+    check<A.Is<string, string | number, 'contains->'>,  1,      Test.Pass>(),
+    check<A.Is<string | number, string, 'contains->'>,  0,      Test.Pass>(),
+
+    check<A.Is<string, string | number, '<-contains'>,   0,     Test.Pass>(),
+    check<A.Is<string | number, string, '<-contains'>,   1,     Test.Pass>(),
+
+    check<A.Is<'xxxx', string, 'equals'>,           0,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', 'equals'>,           0,  Test.Pass>(),
 
     check<A.Is<string, string | number, 'equals'>,  0,  Test.Pass>(),
     check<A.Is<string | number, string, 'equals'>,  0,  Test.Pass>(),
