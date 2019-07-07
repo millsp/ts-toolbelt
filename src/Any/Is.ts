@@ -26,8 +26,8 @@ import {Contains} from './Contains'
  */
 export type Is<A extends any, A1 extends any, match extends Match = 'default'> = {
     'default' : Extends<A, A1>                       // Is A within A1
-    'contains': Contains<A, A1>                       // Is A within A1
-    'extends' : Extends<A, A1>,                       // Is A part of A1
-    'equals'  : Equals<A, A1>,                        // Is A equal to A1
+    'contains': Contains<A, A1>                      // Is A within A1
+    'extends' : Extends<A, A1>,                      // Is A part of A1
+    'equals'  : Equals<A, A1>,                       // Is A equal to A1
     'loose'   : Or<Extends<A, A1>, Extends<A1, A>>, // Within each other
 }[match]

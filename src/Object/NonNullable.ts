@@ -2,7 +2,6 @@ import {Merge} from './Merge'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
-import {Equals} from '../Any/Equals'
 import {Index} from '../_Internal'
 import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'
@@ -34,4 +33,4 @@ export type NonNullable<O extends object, K extends Index = keyof O, depth exten
     1: NonNullablePart<O, depth>
     0: Merge<NonNullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> non-nullable -> merge it with O
-}[Contains<K, Keys<O>>]
+}[Contains<Keys<O>, K>]

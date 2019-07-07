@@ -1,7 +1,6 @@
 import {Merge} from './Merge'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {Equals} from '../Any/Equals'
 import {Index} from '../_Internal'
 import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'
@@ -32,4 +31,4 @@ export type Required<O extends object, K extends Index = keyof O, depth extends 
     1: RequiredPart<O, depth>
     0: Merge<RequiredPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<K, Keys<O>>]
+}[Contains<Keys<O>, K>]
