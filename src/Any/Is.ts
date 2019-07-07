@@ -1,7 +1,6 @@
 import {Match} from './_Internal'
 import {Extends} from './Extends'
 import {Equals} from './Equals'
-import {Or} from '../Boolean/Or'
 import {Contains} from './Contains'
 
 /** Check whether `A` is similar to `A1` or not
