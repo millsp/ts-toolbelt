@@ -371,14 +371,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// MERGEKEYS
-
-checks([
-    check<O.MergeKeys<O, O1>,   keyof O.Merge<O, O1>,   Test.Pass>(),
-    check<O.MergeKeys<O1, O>,   keyof O.Merge<O1, O>,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // MODIFY
 
 checks([
