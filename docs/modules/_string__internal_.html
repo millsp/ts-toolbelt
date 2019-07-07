@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Iteration/Fmt&quot; | ts-toolbelt</title>
+	<title>&quot;String/_Internal&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,10 +57,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_iteration_fmt_.html">&quot;Iteration/Fmt&quot;</a>
+					<a href="_string__internal_.html">&quot;String/_Internal&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Iteration/Fmt&quot;</h1>
+			<h1>External module &quot;String/_Internal&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -74,7 +74,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_iteration_fmt_.html#fmt" class="tsd-kind-icon">Fmt</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_string__internal_.html#formats" class="tsd-kind-icon">Formats</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,49 +82,25 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="fmt" class="tsd-anchor"></a>
-					<h3>Fmt</h3>
-					<div class="tsd-signature tsd-kind-icon">Fmt&lt;I, fmt&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">I[FormatMap[fmt]]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-descriptions">
+					<a name="formats" class="tsd-anchor"></a>
+					<h3>Formats</h3>
+					<div class="tsd-signature tsd-kind-icon">Formats<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"s"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"n"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"b"</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Is <strong><code>Key</code></strong> and <strong><code>Pos</code></strong> in a single type</p>
+							<p>Describes compatible type formats</p>
+							<ul>
+								<li><code>s</code>: <strong><code>string</code></strong></li>
+								<li><code>n</code>: <strong><code>number</code></strong></li>
+								<li><code>b</code>: <strong><code>boolean</code></strong></li>
+							</ul>
 						</div>
 					</div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-							<span class="name">I</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to query</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<span class="name">fmt</span><span class="tsd-signature-symbol">: </span><a href="_boolean__internal_.html#format" class="tsd-signature-type">Format</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>output</p>
-								</div>
-							</div>
-						</li>
-					</ul>
 					<div class="tsd-comment">
-						<h4>returns</h4>
-						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
-						</p>
-						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {I} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
-
-<span class="hljs-comment">/// Let's make '20' an iteration</span>
-<span class="hljs-keyword">type</span> i = I.IterationOf&lt;<span class="hljs-string">'20'</span>&gt; <span class="hljs-comment">// [...]</span>
-
-<span class="hljs-keyword">type</span> fmtS = I.Fmt&lt;i, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '20'</span>
-<span class="hljs-keyword">type</span> fmtN = I.Fmt&lt;i, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  20</span></code></pre>
-						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/4b22998/src/Iteration/Fmt.ts#L19">Iteration/Fmt.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/1aea173/src/String/_Internal.ts#L6">String/_Internal.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -137,14 +113,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_iteration_fmt_.html">"<wbr>Iteration/<wbr>Fmt"</a>
+						<a href="_string__internal_.html">"<wbr>String/_<wbr><wbr>Internal"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_iteration_fmt_.html#fmt" class="tsd-kind-icon">Fmt</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_string__internal_.html#formats" class="tsd-kind-icon">Formats</a>
 					</li>
 				</ul>
 			</nav>
