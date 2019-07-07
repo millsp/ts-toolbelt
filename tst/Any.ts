@@ -74,17 +74,11 @@ checks([
     check<A.Is<'xxxx', string, 'equals'>,   0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', 'equals'>,   0,  Test.Pass>(),
 
-    check<A.Is<'xxxx', string, 'loose'>,    1,   Test.Pass>(),
-    check<A.Is<string, 'xxxx', 'loose'>,    1,   Test.Pass>(),
-
     check<A.Is<string, string | number, 'extends'>, 1,      Test.Pass>(),
     check<A.Is<string | number, string, 'extends'>, 0 | 1,  Test.Pass>(),
 
     check<A.Is<string, string | number, 'equals'>,  0,  Test.Pass>(),
     check<A.Is<string | number, string, 'equals'>,  0,  Test.Pass>(),
-
-    check<A.Is<string, string | number, 'loose'>,   1,   Test.Pass>(),
-    check<A.Is<string | number, string, 'loose'>,   1,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

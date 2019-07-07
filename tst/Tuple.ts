@@ -65,7 +65,6 @@ checks([
     check<T.Diff<[1, 2, 3], [4, 5, 6], 'default'>,      [],             Test.Pass>(),
     check<T.Diff<[1, 2, 3], [4, number, 6], 'extends'>, [1, number, 3], Test.Pass>(),
     check<T.Diff<[1, 2, 3], [4, 5, 6, 7], 'equals'>,    [1, 2, 3, 7],   Test.Pass>(),
-    check<T.Diff<[1, 2, 3], [4, 5, 6, 7], 'loose'>,     [1, 2, 3, 7],   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -85,8 +84,6 @@ checks([
     check<T.Exclude<[1, 2, 3, 4], [1, 0, 0], 'equals'>,         [2, 3, 4],      Test.Pass>(),
     check<T.Exclude<[1, 2, 3, 4], [1, string, 3], 'extends'>,   [2, 4],         Test.Pass>(),
     check<T.Exclude<[1, number, 3, 4], [1, 2, 3], 'extends'>,   [number, 4],    Test.Pass>(),
-    check<T.Exclude<[1, number, 3, 4], [1, 2, 3], 'loose'>,     [4],            Test.Pass>(),
-    check<T.Exclude<[1, 2, 3, 4], [1, number, 3], 'loose'>,     [4],            Test.Pass>(),
 ])
 
 // -------------------------------------------------------------------------------------
@@ -97,8 +94,6 @@ checks([
     check<T.ExcludeKeys<[1, 2, 3, 4], [1, 0, 0], 'equals'>,         '1' | '2' | '3',    Test.Pass>(),
     check<T.ExcludeKeys<[1, 2, 3, 4], [1, string, 3], 'extends'>,   '1' | '3',          Test.Pass>(),
     check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'extends'>,   '1' | '3',          Test.Pass>(),
-    check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'loose'>,     '3',                Test.Pass>(),
-    check<T.ExcludeKeys<[1, 2, 3, 4], [1, number, 3], 'loose'>,     '3',                Test.Pass>(), // ! todo no idea why this fails
 ])
 
 // -------------------------------------------------------------------------------------
@@ -154,7 +149,6 @@ type FILTER_T_NUMBER_EQUALS = [
 checks([
     check<T.Filter<T, number, 'default'>,  FILTER_T_NUMBER_EXTENDS,     Test.Pass>(),
     check<T.Filter<T, number, 'extends'>,  FILTER_T_NUMBER_EXTENDS,     Test.Pass>(),
-    check<T.Filter<T, number, 'loose'>,    FILTER_T_NUMBER_LOOSE,       Test.Pass>(),
     check<T.Filter<T, number, 'equals'>,   FILTER_T_NUMBER_EQUALS,      Test.Pass>(),
 ])
 
@@ -252,7 +246,6 @@ checks([
     check<T.Intersect<T, T1, 'default'>,    INTERSECT_T_T1_NUMBER_DEFAULT,  Test.Pass>(),
     check<T.Intersect<T, T1, 'extends'>,    INTERSECT_T_T1_NUMBER_EXTENDS,  Test.Pass>(),
     check<T.Intersect<T, T1, 'equals'>,     INTERSECT_T_T1_NUMBER_EQUALS,   Test.Pass>(),
-    check<T.Intersect<T, T1, 'loose'>,      INTERSECT_T_T1_NUMBER_LOOSE,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -498,7 +491,6 @@ type SELECT_T_NUMBER_EQUALS = [
 checks([
     check<T.Select<T, number, 'default'>,  SELECT_T_NUMBER_EXTENDS,     Test.Pass>(),
     check<T.Select<T, number, 'extends'>,  SELECT_T_NUMBER_EXTENDS,     Test.Pass>(),
-    check<T.Select<T, number, 'loose'>,    SELECT_T_NUMBER_LOOSE,       Test.Pass>(),
     check<T.Select<T, number, 'equals'>,   SELECT_T_NUMBER_EQUALS,      Test.Pass>(),
 ])
 

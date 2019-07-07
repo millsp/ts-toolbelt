@@ -70,7 +70,6 @@ type DIFF_O_O1_EQUALS = {
 
 checks([
     check<O.Diff<O, O1, 'default'>, DIFF_O_O1_DEFAULT,  Test.Pass>(),
-    check<O.Diff<O, O1, 'loose'>,   DIFF_O_O1_LOOSE,    Test.Pass>(),
     check<O.Diff<O, O1, 'equals'>,  DIFF_O_O1_EQUALS,   Test.Pass>(),
 ])
 
@@ -98,7 +97,6 @@ type DIFF_O1_O_EQUALS = {
 
 checks([
     check<O.Diff<O1, O, 'default'>, DIFF_O1_O_DEFAULT,  Test.Pass>(),
-    check<O.Diff<O1, O, 'loose'>,   DIFF_O1_O_LOOSE,    Test.Pass>(),
     check<O.Diff<O1, O, 'equals'>,  DIFF_O1_O_EQUALS,   Test.Pass>(),
 ])
 
@@ -123,7 +121,6 @@ type EXCLUDE_O_O1_EQUALS = {
 
 checks([
     check<O.Exclude<O, O1, 'default'>,  EXCLUDE_O_O1_DEFAULT,   Test.Pass>(),
-    check<O.Exclude<O, O1, 'loose'>,    EXCLUDE_O_O1_LOOSE,     Test.Pass>(),
     check<O.Exclude<O, O1, 'equals'>,   EXCLUDE_O_O1_EQUALS,    Test.Pass>(),
 ])
 
@@ -151,7 +148,6 @@ type EXCLUDE_O1_O_EQUALS = {
 
 checks([
     check<O.Exclude<O1, O, 'default'>,  EXCLUDE_O1_O_DEFAULT,   Test.Pass>(),
-    check<O.Exclude<O1, O, 'loose'>,    EXCLUDE_O1_O_LOOSE,     Test.Pass>(),
     check<O.Exclude<O1, O, 'equals'>,   EXCLUDE_O1_O_EQUALS,    Test.Pass>(),
 ])
 
@@ -166,7 +162,6 @@ type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h';
 
 checks([
     check<O.ExcludeKeys<O, O1, 'default'>,  EXCLUDEKEYS_O_DEFAULT,  Test.Pass>(),
-    check<O.ExcludeKeys<O, O1, 'loose'>,    EXCLUDEKEYS_O_LOOSE,    Test.Pass>(),
     check<O.ExcludeKeys<O, O1, 'equals'>,   EXCLUDEKEYS_O_EQUALS,   Test.Pass>(),
 ])
 
@@ -180,7 +175,6 @@ type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i';
 
 checks([
     check<O.ExcludeKeys<O1, O, 'default'>,  EXCLUDEKEYS_O1_DEFAULT, Test.Pass>(),
-    check<O.ExcludeKeys<O1, O, 'loose'>,    EXCLUDEKEYS_O1_LOOSE,   Test.Pass>(),
     check<O.ExcludeKeys<O1, O, 'equals'>,   EXCLUDEKEYS_O1_EQUALS,  Test.Pass>(),
 ])
 
@@ -221,11 +215,8 @@ readonly f : 0
          k : {a: {b: string}} | undefined
 };
 
-type t = O.Filter<O, number | undefined, 'loose'>
-
 checks([
     check<O.Filter<O, string, 'extends'>,           FILTER_O_DEFAULT,   Test.Pass>(),
-    check<O.Filter<O, number | undefined, 'loose'>, FILTER_O_LOOSE,     Test.Pass>(),
     check<O.Filter<O, string, 'equals'>,            FILTER_O_EQUALS,    Test.Pass>(),
 ])
 
@@ -240,7 +231,6 @@ type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k';
 
 checks([
     check<O.FilterKeys<O, string, 'extends'>,           FILTERKEYS_O_DEFAULT,   Test.Pass>(),
-    check<O.FilterKeys<O, number | undefined, 'loose'>, FILTERKEYS_O_LOOSE,     Test.Pass>(),
     check<O.FilterKeys<O, string, 'equals'>,            FILTERKEYS_O_EQUALS,    Test.Pass>(),
 ])
 
@@ -252,31 +242,21 @@ checks([
 
     check<O.Has<O, 'c', string, 'extends'>,                     0,      Test.Pass>(),
     check<O.Has<O, 'c', {a: 'a'} & {b: 'b'}, 'equals'>,         1,      Test.Pass>(),
-    check<O.Has<O, 'c', string | number, 'loose'>,              0,      Test.Pass>(),
-    check<O.Has<O, 'c', {a: 'a'} & {b: 'b'} | number, 'loose'>, 1,      Test.Pass>(),
 
     check<O.Has<O, 'd', string | undefined, 'extends'>,         1,      Test.Pass>(),
     check<O.Has<O, 'd', 'string0' | undefined, 'equals'>,       1,      Test.Pass>(),
-    check<O.Has<O, 'd', string | undefined, 'loose'>,           1,      Test.Pass>(),
 
     check<O.Has<O, 'd', string, 'extends'>,                     0 | 1,  Test.Pass>(),
     check<O.Has<O, 'd', 'string0', 'equals'>,                   0,      Test.Pass>(),
-    check<O.Has<O, 'd', string, 'loose'>,                       0 | 1,  Test.Pass>(),
 
     check<O.Has<O, 'd', undefined, 'extends'>,                  0 | 1,  Test.Pass>(),
     check<O.Has<O, 'd', 'string0', 'equals'>,                   0,      Test.Pass>(),
-    check<O.Has<O, 'd', undefined, 'loose'>,                    1,      Test.Pass>(),
-
     check<O.Has<O1, 'a', string, 'extends'>,                    0 | 1,  Test.Pass>(),
-    check<O.Has<O1, 'a', 'xxxx', 'loose'>,                      1,      Test.Pass>(),
-    check<O.Has<O1, 'a', 100000, 'loose'>,                      1,      Test.Pass>(),
 
     check<O.Has<O, 'f', 0 | undefined | 'a', 'extends'>,        1,      Test.Pass>(),
     check<O.Has<O, 'f', 0 | undefined | 'a', 'equals'>,         0,      Test.Pass>(),
-    check<O.Has<O, 'f', 0 | undefined | 'a', 'loose'>,          1,      Test.Pass>(),
 
     check<O.Has<O, 'a' | 'd', string, 'extends'>,               0 | 1,  Test.Pass>(),
-    check<O.Has<O, 'a' | 'd', string, 'loose'>,                 1,      Test.Pass>(),
 
     check<O.Has<O, 'a' | 'd', string | undefined, 'extends'>,   1,      Test.Pass>(),
     check<O.Has<O, 'x' | 'd', string | undefined, 'extends'>,   1,      Test.Pass>(),
@@ -288,7 +268,6 @@ checks([
 checks([
     check<O.HasPath<O, ['g', 'g', 'g'], object, 'extends'>,         1,      Test.Pass>(),
     check<O.HasPath<O, ['g', 'g', 'g'], O, 'equals'>,               1,      Test.Pass>(),
-    check<O.HasPath<O, ['g', 'g', 'g'], object, 'loose'>,           1,      Test.Pass>(),
 
     check<O.HasPath<O, ['g', 'g', 'g', 'a'], string, 'extends'>,    1,      Test.Pass>(),
     check<O.HasPath<O, ['g', 'x', 'g'], object, 'extends'>,         0,      Test.Pass>(),
@@ -302,11 +281,9 @@ checks([
 checks([
     check<O.Includes<O, 'xxxx', 'extends'>,     0,      Test.Pass>(),
     check<O.Includes<O, 'xxxx', 'equals'>,      0,      Test.Pass>(),
-    check<O.Includes<O, 'xxxx', 'loose'>,       1,      Test.Pass>(),
 
     check<O.Includes<O, string, 'extends'>,     1,      Test.Pass>(),
     check<O.Includes<O, string, 'equals'>,      1,      Test.Pass>(),
-    check<O.Includes<O, string, 'loose'>,       1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -335,7 +312,6 @@ readonly f : 0;
 checks([
     check<O.Intersect<O, O1, 'default'>,    INTERSECT_O_O1_DEFAULT, Test.Pass>(),
     check<O.Intersect<O, O1, 'equals'>,     INTERSECT_O_O1_EQUALS,  Test.Pass>(),
-    check<O.Intersect<O, O1, 'loose'>,      INTERSECT_O_O1_LOOSE,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -350,7 +326,6 @@ type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j' | 'k';
 checks([
     check<O.IntersectKeys<O, O1, 'default'>,    INTERSECTKEYS_O_DEFAULT,    Test.Pass>(),
     check<O.IntersectKeys<O, O1, 'equals'>,     INTERSECTKEYS_O_EQUALS,     Test.Pass>(),
-    check<O.IntersectKeys<O, O1, 'loose'>,      INTERSECTKEYS_O_LOOSE,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -790,7 +765,6 @@ type SELECT_O_EQUALS = {
 
 checks([
     check<O.Select<O, string, 'extends'>,           SELECT_O_DEFAULT,   Test.Pass>(),
-    check<O.Select<O, number | undefined, 'loose'>, SELECT_O_LOOSE,     Test.Pass>(),
     check<O.Select<O, string, 'equals'>,            SELECT_O_EQUALS,    Test.Pass>(),
 ])
 
@@ -805,7 +779,6 @@ type SELECTKEYS_O_EQUALS = 'a';
 
 checks([
     check<O.SelectKeys<O, string, 'extends'>,           SELECTKEYS_O_DEFAULT,  Test.Pass>(),
-    check<O.SelectKeys<O, number | undefined, 'loose'>, SELECTKEYS_O_LOOSE,    Test.Pass>(),
     check<O.SelectKeys<O, string, 'equals'>,            SELECTKEYS_O_EQUALS,   Test.Pass>(),
 ])
 
