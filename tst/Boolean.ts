@@ -21,17 +21,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// NEGATE
-
-checks([
-    check<B.Negate<B.True>,             0,          Test.Pass>(),
-    check<B.Negate<B.False>,            1,          Test.Pass>(),
-    check<B.Negate<B.True | B.False>,   1 | 0,      Test.Pass>(),
-    check<B.Negate<B.True | B.False>,   0 | 1,      Test.Pass>(),
-    check<B.Negate<B.Boolean>,          0 | 1,      Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // NOT
 
 checks([
