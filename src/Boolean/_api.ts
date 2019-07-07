@@ -1,5 +1,5 @@
-export * from './Boolean'
 export {And} from './And'
+export {True, False, Boolean} from './Boolean'
 export {BooleanOf} from './BooleanOf'
 export {Fmt} from './Fmt'
 export {Negate} from './Negate'
