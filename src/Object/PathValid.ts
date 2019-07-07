@@ -21,7 +21,7 @@ import {Index} from '../_Internal'
  * ```
  */
 type _PathValid<O, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
-    0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
+    0: _PathValid<UNonNullable<At<O & [], Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, Length<Path, 's'>>, never>
 }[
     [O] extends [never] // Inspect til we find a problem
