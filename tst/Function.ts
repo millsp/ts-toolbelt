@@ -18,13 +18,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// CLASSOF
-
-checks([
-    check<F.ClassOf<typeof FN>, new(a: string, b: number, c: object) => boolean,    Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // COMPOSE
 
 declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>

@@ -1,4 +1,3 @@
-export {ClassOf} from './ClassOf'
 export {Composer, Compose} from './Compose'
 export {Curry} from './Curry'
 export {Function} from './Function'
