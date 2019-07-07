@@ -1,6 +1,7 @@
 export {Composer, Compose} from './Compose'
 export {Curry} from './Curry'
 export {Function} from './Function'
+export {NoInfer} from './NoInfer'
 export {Parameters} from './Parameters'
 export {Piper, Pipe} from './Pipe'
 export {Return} from './Return'
