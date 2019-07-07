@@ -3,7 +3,6 @@ import {Intersect} from '../Union/Intersect'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
-import {Replace} from '../Union/Replace'
 
 type IntersectMatch<O extends object, O1 extends object, match extends Match> = {
     [K in Keys<O>]: {
@@ -22,11 +21,10 @@ type IntersectMatch<O extends object, O1 extends object, match extends Match> = 
  * ```
  */
 export type IntersectKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
-    'default'  : Intersect<keyof O, keyof O1>
-    'contains' : IntersectMatch<O, O1, 'contains'>
-    'extends'  : IntersectMatch<O, O1, 'extends'>
-    'equals'   : IntersectMatch<O, O1, 'equals'>
-    'rcontains': IntersectMatch<O, O1, 'rcontains'>
-    'rextends' : IntersectMatch<O, O1, 'rextends'>
-    'requals'  : IntersectMatch<O, O1, 'requals'>
+    'default'   : Intersect<keyof O, keyof O1>
+    'r-contains': IntersectMatch<O, O1, 'r-contains'>
+    'r-extends' : IntersectMatch<O, O1, 'r-extends'>
+    'l-contains': IntersectMatch<O, O1, 'l-contains'>
+    'l-extends' : IntersectMatch<O, O1, 'l-extends'>
+    'equals'    : IntersectMatch<O, O1, 'equals'>
 }[match]

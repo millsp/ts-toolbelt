@@ -9,5 +9,5 @@ import {Filter} from './Filter'
  * ```
  */
 export type NonNullableKeys<O extends object> =
-    FilterKeys<O, undefined, 'rextends'>
-    & FilterKeys<O, null, 'rextends'>
+    FilterKeys<O, undefined, 'l-extends'>
+    & FilterKeys<O, null, 'l-extends'>
