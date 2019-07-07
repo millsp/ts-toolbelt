@@ -1,5 +1,5 @@
 import {Iteration} from './Iteration'
-import {FormatMap} from './_Internal'
+import {Format} from './Format'
 
 /** Get the position of **`I`** (**number**)
  * @param I to query
@@ -15,4 +15,4 @@ import {FormatMap} from './_Internal'
  * ```
  */
 export type Pos<I extends Iteration> =
-    I[FormatMap['n']] // iteration position
+    Format<I, 'n'>

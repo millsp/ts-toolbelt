@@ -2,13 +2,13 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Next} from '../Iteration/Next'
 import {Nbr, Numbers} from './_Internal'
-import {Format} from '../Iteration/_Internal'
+import {Formats} from '../Iteration/_Internal'
 import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {Prev} from '../Iteration/Prev'
 import {_IsPositive} from './IsPositive'
 import {Exclude} from '../Union/Exclude'
-import {Fmt} from '../Iteration/Fmt'
+import {Format} from '../Iteration/Format'
 import {True} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
@@ -64,5 +64,5 @@ export type _Min<N extends Iteration> =
  * type test3 = N.Min<'-2' | '10' | 'oops'>   // string
  * ```
  */
-export type Min<N extends Nbr, fmt extends Format = 's'> =
-    Fmt<_Min<IterationOf<N>>, fmt>
+export type Min<N extends Nbr, fmt extends Formats = 's'> =
+    Format<_Min<IterationOf<N>>, fmt>

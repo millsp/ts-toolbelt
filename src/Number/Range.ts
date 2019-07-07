@@ -5,12 +5,12 @@ import {Prev} from '../Iteration/Prev'
 import {Next} from '../Iteration/Next'
 import {Nbr} from './_Internal'
 import {Cast} from '../Any/Cast'
-import {Format} from '../Iteration/_Internal'
+import {Formats} from '../Iteration/_Internal'
 import {Way} from '../_Internal'
-import {Fmt} from '../Iteration/Fmt'
+import {Format} from '../Iteration/Format'
 
-type RangeForth<From extends Iteration, To extends Iteration, fmt extends Format = 's', T extends any[] = []> = {
-    0: RangeForth<Prev<From>, To, fmt, Prepend<T, Fmt<From, fmt>>>
+type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends any[] = []> = {
+    0: RangeForth<Prev<From>, To, fmt, Prepend<T, Format<From, fmt>>>
     1: T
 }[
     From extends To
@@ -18,8 +18,8 @@ type RangeForth<From extends Iteration, To extends Iteration, fmt extends Format
     : 0
 ]
 
-type RangeBack<From extends Iteration, To extends Iteration, fmt extends Format = 's', T extends any[] = []> = {
-    0: RangeBack<Next<From>, To, fmt, Prepend<T, Fmt<From, fmt>>>
+type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends any[] = []> = {
+    0: RangeBack<Next<From>, To, fmt, Prepend<T, Format<From, fmt>>>
     1: T
 }[
     From extends To
@@ -27,7 +27,7 @@ type RangeBack<From extends Iteration, To extends Iteration, fmt extends Format 
     : 0
 ]
 
-export type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt extends Format> = {
+export type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt extends Formats> = {
     '->': RangeForth<To, Prev<From>, fmt> // Reverse logic to work naturally #`Prepend`
     '<-': RangeBack<From, Next<To>, fmt>  // Works in reverse mode (default) #`Prepend`
 }[way]
@@ -49,7 +49,7 @@ export type _Range<From extends Iteration, To extends Iteration, way extends Way
  * type test4 = N.Range<'-2', '1', '->', 'n'> // [-2 , -1 ,   0 ,   1 ]
  * ```
  */
-export type Range<From extends Nbr, To extends Nbr, way extends Way = '->', fmt extends Format = 's'> =
+export type Range<From extends Nbr, To extends Nbr, way extends Way = '->', fmt extends Formats = 's'> =
     _Range<IterationOf<From>, IterationOf<To>, way, fmt> extends infer X
     ? Cast<X, {s: string[], n: number[]}[fmt]>
     : never

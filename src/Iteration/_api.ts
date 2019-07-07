@@ -1,5 +1,5 @@
-export * from './Iteration'
-export {Fmt} from './Fmt'
+export {Format} from './Format'
+export {Iteration} from './Iteration'
 export {IterationOf} from './IterationOf'
 export {Key} from './Key'
 export {Next} from './Next'

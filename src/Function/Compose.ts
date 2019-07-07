@@ -2,19 +2,19 @@ import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Last} from '../Tuple/Last'
-import {NumberOf} from '../String/NumberOf'
+import {Format} from '../String/Format'
 import {Length} from '../Tuple/Length'
 import {Tail} from '../Tuple/Tail'
 import {Next} from '../Iteration/Next'
 import {Head} from '../Tuple/Head'
-import {ReturnOf} from './ReturnOf'
-import {ParamsOf} from './ParamsOf'
+import {Return} from './Return'
+import {Parameters} from './Parameters'
 
 type ComposeFn<Fns extends Function[], K extends keyof Fns> =
-    Length<Tail<Fns>> extends NumberOf<K & string>
+    Length<Tail<Fns>> extends Format<K & string, 'n'>
     ? Fns[K] // If mapped type reached the end
-    : (arg: ReturnOf<Fns[Pos<Next<IterationOf<K & string>>>]>) =>
-        ReturnOf<Fns[Pos<IterationOf<K & string>>]>
+    : (arg: Return<Fns[Pos<Next<IterationOf<K & string>>>]>) =>
+        Return<Fns[Pos<IterationOf<K & string>>]>
 
 /** Compute what the input of **`Compose`** should be
  * @param Fns to compose
@@ -24,7 +24,7 @@ type ComposeFn<Fns extends Function[], K extends keyof Fns> =
  *
  * /// If you are looking for creating types for `compose`
  * /// `Composer` will check for input & `Composed` output
- * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Composed<Fns>
+ * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Compose<Fns>
  * ```
  */
 export type Composer<Fns extends Function[]> = {
@@ -40,8 +40,8 @@ export type Composer<Fns extends Function[]> = {
  *
  * /// If you are looking for creating types for `compose`
  * /// `Composer` will check for input & `Composed` output
- * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Composed<Fns>
+ * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Compose<Fns>
  * ```
  */
-export type Composed<Fns extends Function[]> =
-    (...args: ParamsOf<Last<Fns>>) => ReturnOf<Head<Fns>>
+export type Compose<Fns extends Function[]> =
+    (...args: Parameters<Last<Fns>>) => Return<Head<Fns>>

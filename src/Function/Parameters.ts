@@ -14,7 +14,7 @@ import {Function} from './Function'
  * type test1 = F.ParamsOf<(name: string, age: number) => {}> // [string, number]
  * ```
  */
-export type ParamsOf<F extends Function> =
+export type Parameters<F extends Function> =
     F extends ((...args: infer T) => any)
     ? T
     : never

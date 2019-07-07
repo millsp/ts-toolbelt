@@ -1,5 +1,3 @@
-/* eslint-disable fp/no-class */
-/* eslint-disable no-implicit-coercion */
 import {Test, F} from '../src/index'
 import {Function} from '../src/Function/Function'
 import {Curry} from '../src/Function/Curry'
@@ -29,7 +27,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // COMPOSE
 
-declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Composed<Fns>
+declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>
 
 const composed = compose(
     (message: string)                   => false,                   // receive previous return
@@ -67,13 +65,13 @@ checks([
 // PARAMSOF
 
 checks([
-    check<F.ParamsOf<typeof FN>,    [string, number, object],   Test.Pass>(),
+    check<F.Parameters<typeof FN>,    [string, number, object],   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // PIPE
 
-declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Piped<Fns>
+declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
 
 const piped = pipe(
     (name: string, age: number)         => ({name, age}),           // receive parameters
@@ -89,7 +87,7 @@ checks([
 // RETURNOF
 
 checks([
-    check<F.ReturnOf<typeof FN>,    boolean,    Test.Pass>(),
+    check<F.Return<typeof FN>,    boolean,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

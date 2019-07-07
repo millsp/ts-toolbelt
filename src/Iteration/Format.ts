@@ -1,5 +1,7 @@
 import {Iteration} from './Iteration'
-import {Format, FormatMap} from './_Internal'
+import {_IsZero} from '../Number/IsZero'
+import {Not} from '../Boolean/Not'
+import {Formats} from './_Internal'
 
 /** Is **`Key`** and **`Pos`** in a single type
  * @param I to query
@@ -16,5 +18,7 @@ import {Format, FormatMap} from './_Internal'
  * type fmtN = I.Fmt<i, 'n'> //  20
  * ```
  */
-export type Fmt<I extends Iteration, fmt extends Format> =
-    I[FormatMap[fmt]]
+export type Format<I extends Iteration, fmt extends Formats> = {
+    's': I[2]
+    'n': I[3]
+}[fmt]

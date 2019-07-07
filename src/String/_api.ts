@@ -1,2 +1,1 @@
-export {BooleanOf} from './BooleanOf'
-export {NumberOf} from './NumberOf'
+export {Format} from './Format'

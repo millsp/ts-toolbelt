@@ -6,8 +6,8 @@ import {Length} from '../Tuple/Length'
 import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'
 import {Function} from './Function'
-import {ParamsOf} from './ParamsOf'
-import {ReturnOf} from './ReturnOf'
+import {Parameters} from './Parameters'
+import {Return} from './Return'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Key} from '../Iteration/Key'
@@ -51,8 +51,8 @@ type Gaps<T extends any[]> = NonNullable<{
  * ```
  */
 export type Curry<F extends Function> =
-    <T extends any[]>(...args: Cast<T, Gaps<ParamsOf<F>>>) =>
-        GapsOf<T, ParamsOf<F>> extends [any, ...any[]]
-        ? Curry<(...args: GapsOf<T, ParamsOf<F>>) => ReturnOf<F>>
-        : ReturnOf<F>
+    <T extends any[]>(...args: Cast<T, Gaps<Parameters<F>>>) =>
+        GapsOf<T, Parameters<F>> extends [any, ...any[]]
+        ? Curry<(...args: GapsOf<T, Parameters<F>>) => Return<F>>
+        : Return<F>
 

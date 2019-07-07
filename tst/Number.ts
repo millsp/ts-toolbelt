@@ -1,5 +1,3 @@
-// /* eslint-disable fp/no-class */
-// /* eslint-disable no-implicit-coercion */
 import {Test, N} from '../src/index'
 
 const {checks, check} = Test
@@ -18,19 +16,6 @@ checks([
     check<N.Absolute<string>,       string,     Test.Pass>(),
     check<N.Absolute<any>,          any,        Test.Pass>(),
     check<N.Absolute<never>,        never,      Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// BOOLEANOF
-
-checks([
-    check<N.BooleanOf<'0'>,         0,          Test.Pass>(),
-    check<N.BooleanOf<'10'>,        1,          Test.Pass>(),
-    check<N.BooleanOf<'-10'>,       1,          Test.Pass>(),
-    check<N.BooleanOf<'100'>,       0 | 1,      Test.Pass>(),
-    check<N.BooleanOf<string>,      0 | 1,      Test.Pass>(),
-    check<N.BooleanOf<any>,         any,        Test.Pass>(),
-    check<N.BooleanOf<never>,       never,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -197,15 +182,15 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// STRINGOF
+// NUMBEROF
 
 checks([
-    check<N.StringOf<9>,        '9',        Test.Pass>(),
-    check<N.StringOf<21>,       '21',       Test.Pass>(),
-    check<N.StringOf<-10>,      '-10',      Test.Pass>(),
-    check<N.StringOf<10>,       '10',       Test.Pass>(),
-    check<N.StringOf<100>,      string,     Test.Pass>(),
-    check<N.StringOf<number>,   string,     Test.Pass>(),
-    check<N.StringOf<any>,      string,     Test.Pass>(),
-    check<N.StringOf<never>,    never,      Test.Pass>(),
+    check<N.NumberOf<9>,        '9',        Test.Pass>(),
+    check<N.NumberOf<21>,       '21',       Test.Pass>(),
+    check<N.NumberOf<-10>,      '-10',      Test.Pass>(),
+    check<N.NumberOf<10>,       '10',       Test.Pass>(),
+    check<N.NumberOf<100>,      string,     Test.Pass>(),
+    check<N.NumberOf<number>,   string,     Test.Pass>(),
+    check<N.NumberOf<any>,      string,     Test.Pass>(),
+    check<N.NumberOf<never>,    never,      Test.Pass>(),
 ])

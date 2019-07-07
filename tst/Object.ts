@@ -1,5 +1,3 @@
-// /* eslint-disable fp/no-class */
-// /* eslint-disable no-implicit-coercion */
 import {Test, O} from '../src/index'
 import {x} from '../src/Any/x'
 import {NonNullable} from '../src/Tuple/NonNullable'

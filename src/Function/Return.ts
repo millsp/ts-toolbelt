@@ -14,7 +14,7 @@ import {Function} from './Function'
  * type test1 = F.ReturnOf<() => true> // true
  * ```
  */
-export type ReturnOf<F extends Function> =
+export type Return<F extends Function> =
     F extends ((...args: any[]) => infer R)
     ? R
     : never

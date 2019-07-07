@@ -6,8 +6,8 @@ import {Next} from '../Iteration/Next'
 import {_IsNegative} from './IsNegative'
 import {Cast} from '../Any/Cast'
 import {Nbr} from './_Internal'
-import {Format} from '../Iteration/_Internal'
-import {Fmt} from '../Iteration/Fmt'
+import {Formats} from '../Iteration/_Internal'
+import {Format} from '../Iteration/Format'
 
 type _PlusPositive<N1 extends Iteration, N2 extends Iteration> = {
     0: _PlusPositive<Next<N1>, Prev<N2>> // N1 = -/+, N2 = +
@@ -65,7 +65,7 @@ export type _Plus<N1 extends Iteration, N2 extends Iteration> = {
  * type test5 = N.Plus<'-20', '40', 'n'> //  20
  * ```
  */
-export type Plus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =
+export type Plus<N1 extends Nbr, N2 extends Nbr, fmt extends Formats = 's'> =
     N2 extends any // force N2's distribution, only N1 is
-    ? Fmt<_Plus<IterationOf<N1>, IterationOf<N2>>, fmt>
+    ? Format<_Plus<IterationOf<N1>, IterationOf<N2>>, fmt>
     : never

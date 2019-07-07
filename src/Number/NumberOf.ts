@@ -1,7 +1,7 @@
 import {IterationMap} from '../Iteration/IterationOf'
 import {SelectKeys} from '../Object/SelectKeys'
 import {Numbers} from './_Internal'
-import {FormatMap} from '../Iteration/_Internal'
+import {Key} from '../Iteration/Key'
 
 /** Transform a**number**into a **`string`**
  * @param N to stringify
@@ -14,7 +14,7 @@ import {FormatMap} from '../Iteration/_Internal'
  * type test1 = N.StringOf<-5> // '-5'
  * ```
  */
-export type StringOf<N extends number> =
+export type NumberOf<N extends number> =
     N extends Numbers['number']['all'] // Expensive with numbers
-    ? IterationMap[SelectKeys<IterationMap, [any, any, any, N, any]>][FormatMap['s']]
+    ? Key<IterationMap[SelectKeys<IterationMap, [any, any, any, N, any]>]>
     : string

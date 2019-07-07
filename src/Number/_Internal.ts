@@ -1,25 +1,36 @@
 import {IterationMap} from '../Iteration/IterationOf'
 import {Exclude} from '../Union/Exclude'
 import {SelectKeys} from '../Object/SelectKeys'
-import {FormatMap} from '../Iteration/_Internal'
+import {Format} from '../Iteration/Format'
+
+/** Describes compatible type formats
+ * * `s`: **`string`**
+ * * `n`: **`number`**
+ * * `b`: **`boolean`**
+ */
+export type Formats = 's' | 'n' | 'b'
 
 /** Describes what a valid **number** is
  */
 export type Nbr = string
 
-/** Describes working versions of a **number**
+type KnownIterationMapKeys = Exclude<keyof IterationMap, '__'>
+type PositiveIterationKeys = SelectKeys<IterationMap, [any, any, any, any, '+']>
+type NegativeIterationKeys = SelectKeys<IterationMap, [any, any, any, any, '-']>
+
+/** Describes known values of a **number**
  */
 export type Numbers = {
     'string': {
-        'all': IterationMap[Exclude<keyof IterationMap, '__'>][FormatMap['s']]                   // union of all string
-        '+'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '+']>][FormatMap['s']] // union of +   string
-        '-'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '-']>][FormatMap['s']] // union of -   string
-        '0'  : IterationMap['0'][FormatMap['s']]
+        'all': Format<IterationMap[KnownIterationMapKeys], 's'> // union of all string
+        '+'  : Format<IterationMap[PositiveIterationKeys], 's'> // union of +   string
+        '-'  : Format<IterationMap[NegativeIterationKeys], 's'> // union of -   string
+        '0'  : Format<IterationMap['0'], 's'>
     }
     'number': {
-        'all': IterationMap[Exclude<keyof IterationMap, '__'>][FormatMap['n']]                   // union of all number
-        '+'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '+']>][FormatMap['n']] // union of +   number
-        '-'  : IterationMap[SelectKeys<IterationMap, [any, any, any, any, '-']>][FormatMap['n']] // union of -   number
-        '0'  : IterationMap['0'][FormatMap['n']]
+        'all': Format<IterationMap[KnownIterationMapKeys], 'n'> // union of all string
+        '+'  : Format<IterationMap[PositiveIterationKeys], 'n'> // union of +   string
+        '-'  : Format<IterationMap[NegativeIterationKeys], 'n'> // union of -   string
+        '0'  : Format<IterationMap['0'], 'n'>
     }
 }

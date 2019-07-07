@@ -4,16 +4,15 @@ import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Head} from '../Tuple/Head'
 import {Last} from '../Tuple/Last'
-import {NumberOf} from '../String/NumberOf'
-import {ReturnOf} from './ReturnOf'
-import {ParamsOf} from './ParamsOf'
-import {Keys} from '../Tuple/Keys'
+import {Format} from '../String/Format'
+import {Return} from './Return'
+import {Parameters} from './Parameters'
 
 type PipeFn<Fns extends Function[], K extends keyof Fns> =
-    NumberOf<K & string> extends 0
+    Format<K & string, 'n'> extends 0
     ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
-    : (arg: ReturnOf<Fns[Pos<Prev<IterationOf<K & string>>>]>) =>
-        ReturnOf<Fns[Pos<IterationOf<K & string>>]>
+    : (arg: Return<Fns[Pos<Prev<IterationOf<K & string>>>]>) =>
+        Return<Fns[Pos<IterationOf<K & string>>]>
 
 /** Compute what the input of **`Pipe`** should be
  * @param Fns to pipe
@@ -23,7 +22,7 @@ type PipeFn<Fns extends Function[], K extends keyof Fns> =
  *
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Piped<Fns>
+ * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
  * ```
  */
 export type Piper<Fns extends Function[]> = {
@@ -39,8 +38,8 @@ export type Piper<Fns extends Function[]> = {
  *
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Piped<Fns>
+ * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
  * ```
  */
-export type Piped<Fns extends Function[]> =
-    (...args: ParamsOf<Head<Fns>>) => ReturnOf<Last<Fns>>
+export type Pipe<Fns extends Function[]> =
+    (...args: Parameters<Head<Fns>>) => Return<Last<Fns>>

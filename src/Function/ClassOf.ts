@@ -1,5 +1,7 @@
 /* eslint-disable fp/no-this */
 import {Function} from './Function'
+import {Parameters} from './Parameters'
+import {Return} from './Return'
 
 /** Create a class from a **`Function`**
  * @param F
@@ -22,4 +24,4 @@ import {Function} from './Function'
  * ```
  */
 export type ClassOf<F extends Function> =
-    new (...args: Parameters<F>) => ReturnType<F>
+    new (...args: Parameters<F>) => Return<F>

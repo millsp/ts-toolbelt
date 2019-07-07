@@ -2,8 +2,8 @@ import {_Minus} from './Minus'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Nbr} from './_Internal'
-import {Format} from '../Iteration/_Internal'
-import {Fmt} from '../Iteration/Fmt'
+import {Formats} from '../Iteration/_Internal'
+import {Format} from '../Iteration/Format'
 
 export type _Negate<N extends Iteration> =
     _Minus<IterationOf<'0'>, N>
@@ -23,5 +23,5 @@ export type _Negate<N extends Iteration> =
  * type test4 = N.Negate<'-100'>    // string
  * ```
  */
-export type Negate<N extends Nbr, fmt extends Format = 's'> =
-    Fmt<_Negate<IterationOf<N>>, fmt>
+export type Negate<N extends Nbr, fmt extends Formats = 's'> =
+    Format<_Negate<IterationOf<N>>, fmt>
