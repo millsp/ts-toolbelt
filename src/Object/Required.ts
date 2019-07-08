@@ -31,4 +31,4 @@ export type Required<O extends object, K extends Index = keyof O, depth extends 
     1: RequiredPart<O, depth>
     0: Merge<RequiredPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<Keys<O>, K>]
+}[Contains<K, Keys<O>>]

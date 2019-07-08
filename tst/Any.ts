@@ -26,20 +26,20 @@ checks([
 
 checks([
     check<A.Contains<any, any>,              1,     Test.Pass>(),
-    check<A.Contains<[0, 1], any>,           1,     Test.Pass>(),
-    check<A.Contains<any, [0, 1]>,           0,     Test.Pass>(),
+    check<A.Contains<[0, 1], any>,           0,     Test.Pass>(),
+    check<A.Contains<any, [0, 1]>,           1,     Test.Pass>(),
     check<A.Contains<0, 0>,                  1,     Test.Pass>(),
     check<A.Contains<0, 1>,                  0,     Test.Pass>(),
-    check<A.Contains<0, number>,             1,     Test.Pass>(),
-    check<A.Contains<any, string>,           0,     Test.Pass>(),
-    check<A.Contains<string, any>,           1,     Test.Pass>(),
+    check<A.Contains<0, number>,             0,     Test.Pass>(),
+    check<A.Contains<any, string>,           1,     Test.Pass>(),
+    check<A.Contains<string, any>,           0,     Test.Pass>(),
     check<A.Contains<{}, object>,            1,     Test.Pass>(),
-    check<A.Contains<{a: any}, object>,      1,     Test.Pass>(),
-    check<A.Contains<object, {a: any}>,      0,     Test.Pass>(),
+    check<A.Contains<{a: any}, object>,      0,     Test.Pass>(),
+    check<A.Contains<object, {a: any}>,      1,     Test.Pass>(),
     check<A.Contains<any[], Array<any>>,     1,     Test.Pass>(),
     check<A.Contains<'a' | 'b', 'b' | 'a'>,  1,     Test.Pass>(),
-    check<A.Contains<'b', 'b' | 'a'>,        1,     Test.Pass>(),
-    check<A.Contains<'b' | 'a', 'b'>,        0,     Test.Pass>(),
+    check<A.Contains<'b', 'b' | 'a'>,        0,     Test.Pass>(),
+    check<A.Contains<'b' | 'a', 'b'>,        1,     Test.Pass>(),
     check<A.Contains<'a', 'a'>,              1,     Test.Pass>(),
     check<A.Contains<never, never>,          0,     Test.Pass>(),
 ])
@@ -99,11 +99,11 @@ checks([
     check<A.Is<'xxxx', string, '<-extends'>,    0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', '<-extends'>,    1,  Test.Pass>(),
 
-    check<A.Is<'xxxx', string, 'contains->'>,   1,  Test.Pass>(),
-    check<A.Is<string, 'xxxx', 'contains->'>,   0,  Test.Pass>(),
+    check<A.Is<'xxxx', string, 'contains->'>,   0,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', 'contains->'>,   1,  Test.Pass>(),
 
-    check<A.Is<'xxxx', string, '<-contains'>,   0,  Test.Pass>(),
-    check<A.Is<string, 'xxxx', '<-contains'>,   1,  Test.Pass>(),
+    check<A.Is<'xxxx', string, '<-contains'>,   1,  Test.Pass>(),
+    check<A.Is<string, 'xxxx', '<-contains'>,   0,  Test.Pass>(),
 
     check<A.Is<string, string | number, 'extends->'>,   1,      Test.Pass>(),
     check<A.Is<string | number, string, 'extends->'>,   0 | 1,  Test.Pass>(),
@@ -111,11 +111,11 @@ checks([
     check<A.Is<string, string | number, '<-extends'>,   0 | 1,  Test.Pass>(),
     check<A.Is<string | number, string, '<-extends'>,   1,      Test.Pass>(),
 
-    check<A.Is<string, string | number, 'contains->'>,  1,      Test.Pass>(),
-    check<A.Is<string | number, string, 'contains->'>,  0,      Test.Pass>(),
+    check<A.Is<string, string | number, 'contains->'>,  0,      Test.Pass>(),
+    check<A.Is<string | number, string, 'contains->'>,  1,      Test.Pass>(),
 
-    check<A.Is<string, string | number, '<-contains'>,   0,     Test.Pass>(),
-    check<A.Is<string | number, string, '<-contains'>,   1,     Test.Pass>(),
+    check<A.Is<string, string | number, '<-contains'>,   1,     Test.Pass>(),
+    check<A.Is<string | number, string, '<-contains'>,   0,     Test.Pass>(),
 
     check<A.Is<'xxxx', string, 'equals'>,           0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', 'equals'>,           0,  Test.Pass>(),

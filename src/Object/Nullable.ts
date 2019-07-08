@@ -32,4 +32,4 @@ export type Nullable<O extends object, K extends Index = keyof O, depth extends 
     1: NullablePart<O, depth>
     0: Merge<NullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<Keys<O>, K>]
+}[Contains<K, Keys<O>>]
