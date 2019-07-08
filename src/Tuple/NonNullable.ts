@@ -20,3 +20,5 @@ export type NonNullable<T extends any[], K extends Index = keyof T, depth extend
     1: Cast<ONonNullable<T, K, depth>, any[]>
     0: TupleOf<ONonNullable<ObjectOf<T>, K, depth>>
 }[Contains<Keys<T>, K>]
+
+type t = keyof Index[]

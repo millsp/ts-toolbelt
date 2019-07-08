@@ -11,6 +11,8 @@ import {KeySet} from '../Tuple/_api'
 import {Key} from '../Iteration/Key'
 import {Prev} from '../Iteration/Prev'
 import {Index} from '../_Internal'
+import {Extends} from '../Any/Extends'
+import {Equals} from '../Any/Equals'
 
 /** Replaces invalid parts of a path with `never`
  * @param O to be inspected
@@ -23,10 +25,15 @@ import {Index} from '../_Internal'
 type _PathValid<O, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & [], Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, Length<Path, 's'>>, never>
+    2: Path
 }[
-    [O] extends [never] // Inspect til we find a problem
-    ? 1                 // Its either the end or invalid
-    : 0                 // No problem so far so continue
+    {
+        1: 2
+        0: {
+            1: 1
+            0: 0
+        }[Extends<[O], [never]>]
+    }[Equals<O, any>]
 ] // Similar logic to Path
 
 /** Get in **`O`** the type of nested properties

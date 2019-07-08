@@ -8,4 +8,5 @@ import {Index} from '../_Internal'
  * ```
  */
 export type Keys<T extends any[]> =
-    Exclude<keyof T, keyof any[]> & Index
+    Exclude<keyof T, keyof any[]> & Index | number
+    // We re-include `number`, it is an 'own key'

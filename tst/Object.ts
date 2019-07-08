@@ -1,6 +1,7 @@
 import {Test, O} from '../src/index'
 import {x} from '../src/Any/x'
 import {NonNullable} from '../src/Tuple/NonNullable'
+import {Index} from '../src/_Internal'
 
 const {checks, check} = Test
 
@@ -553,6 +554,7 @@ type PATHS_O = {
 };
 
 checks([
+    check<O.Paths<any>,     Index[],                                                        Test.Pass>(),
     check<O.Paths<PATHS_O>, NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,  Test.Pass>(),
 ])
 
@@ -572,6 +574,7 @@ type PATHVALID_O = {
 };
 
 checks([
+    check<O.PathValid<any,          ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<PATHVALID_O,  ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<PATHVALID_O,  ['a', 'x']>,        ['a', never],       Test.Pass>(),
     check<O.PathValid<PATHVALID_O,  ['b', 'a', 'a']>,   ['b', 'a', 'a'],    Test.Pass>(),
