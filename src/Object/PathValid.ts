@@ -26,28 +26,9 @@ import {True} from '../Boolean/_api'
 type _PathValid<O, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & [], Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, Length<Path, 's'>>, never>
-    2: Path
 }[
-    Extends<[O], [never]> extends True
-    ? 1
-    : Extends<Pos<I>, Length<Path>> extends True
-      ? 2
-      : 0
-    // {
-    //     1: 1
-    //     0: {
-    //         1: 2
-    //         0: 0
-    //     }[Equals<Pos<I>, Length<Path>>]
-    // }[Extends<[O], [never]>]
+    Extends<[O], [never]>
 ]
-
-type O = {
-    0: O
-    b: ''
-}
-
-type t = PathValid<O, [0, 0, 'b']>
 
 /** Get in **`O`** the type of nested properties
  * @param O to be inspected

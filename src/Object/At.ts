@@ -21,4 +21,6 @@ import {Index} from '../_Internal'
  * ```
  */
 export type At<O extends object, K extends Index> =
-    O[K & keyof O]
+    K extends keyof O
+    ? O[K]
+    : never

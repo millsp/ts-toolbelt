@@ -5,7 +5,6 @@ import {Equals, Cast, Extends} from '../Any/_api'
 import {Index} from '../_Internal'
 import {NonNullable} from '../Tuple/NonNullable'
 import {Concat} from '../Tuple/Concat'
-import {True} from '../Boolean/Boolean'
 
 type _Paths<O, Paths extends Index[] = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]
@@ -13,18 +12,10 @@ type _Paths<O, Paths extends Index[] = []> = {
     1: NonNullable<Optional<Reverse<Paths>>> // make optional
     2: NonNullable<Optional<Concat<Reverse<Paths>, Index[]>>>
 }[
-    Extends<[keyof O], [never]> extends True
-    ? 1
-    : Equals<O, any> extends True
-      ? 2
-      : 0
-    // {
-    //     1: 2
-    //     0: {
-    //         1: 1
-    //         0: 0
-    //     }[Extends<[keyof O], [never]>]
-    // }[Equals<O, any>]
+    {
+        1: 2
+        0: Extends<[keyof O], [never]>
+    }[Equals<O, any>]
 ]
 
 /** Get all the possible paths of **`O`**

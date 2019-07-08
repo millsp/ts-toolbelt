@@ -553,6 +553,8 @@ type PATHS_O = {
     }
 };
 
+type t = O.Paths<{a: {b: any}}>
+
 checks([
     check<O.Paths<any>,     Index[],                                                        Test.Pass>(),
     check<O.Paths<PATHS_O>, NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,  Test.Pass>(),
