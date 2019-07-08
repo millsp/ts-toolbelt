@@ -86,7 +86,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="excludekeys" class="tsd-anchor"></a>
 					<h3>Exclude<wbr>Keys</h3>
-					<div class="tsd-signature tsd-kind-icon">ExcludeKeys&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;default&#x27;: Exclude&lt;keyof O, keyof O1&gt;; &#x27;contains-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Contains&lt;O[K], O1[K &amp; keyof O1]&gt;]; }[Keys&lt;O&gt;]; &#x27;extends-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Extends&lt;O[K], O1[K &amp; keyof O1]&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-contains&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Contains&lt;O1[K &amp; keyof O1], O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-extends&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Extends&lt;O1[K &amp; keyof O1], O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;equals&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Equals&lt;O1[K &amp; keyof O1], O[K]&gt;]; }[Keys&lt;O&gt;]; }[match]</span></div>
+					<div class="tsd-signature tsd-kind-icon">ExcludeKeys&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;default&#x27;: Exclude&lt;keyof O, keyof O1&gt;; &#x27;contains-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Contains&lt;O[K], At&lt;O1, K&gt;&gt;]; }[Keys&lt;O&gt;]; &#x27;extends-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Extends&lt;O[K], At&lt;O1, K&gt;&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-contains&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Contains&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-extends&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Extends&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;equals&#x27;: { [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[Equals&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; }[match]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Exclude the keys of <strong><code>O1</code></strong> out of the keys of <strong><code>O</code></strong>
@@ -127,14 +127,14 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7fd0bd6/src/Object/ExcludeKeys.ts#L24">Object/ExcludeKeys.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f356de5c/src/Object/ExcludeKeys.ts#L24">Object/ExcludeKeys.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
 					<a name="excludematch" class="tsd-anchor"></a>
 					<h3>Exclude<wbr>Match</h3>
-					<div class="tsd-signature tsd-kind-icon">ExcludeMatch&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[{ &#x27;default&#x27;: Extends&lt;O[K], O1[K &amp; keyof O1]&gt;; &#x27;contains-&gt;&#x27;: Contains&lt;O[K], O1[K &amp; keyof O1]&gt;; &#x27;extends-&gt;&#x27;: Extends&lt;O[K], O1[K &amp; keyof O1]&gt;; &#x27;&lt;-contains&#x27;: Contains&lt;O1[K &amp; keyof O1], O[K]&gt;; &#x27;&lt;-extends&#x27;: Extends&lt;O1[K &amp; keyof O1], O[K]&gt;; &#x27;equals&#x27;: Equals&lt;O1[K &amp; keyof O1], O[K]&gt;; }[match]]; }[Keys&lt;O&gt;]</span></div>
+					<div class="tsd-signature tsd-kind-icon">ExcludeMatch&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in Keys&lt;O&gt;]: { 1: never; 0: K; }[{ &#x27;default&#x27;: Extends&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;contains-&gt;&#x27;: Contains&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;extends-&gt;&#x27;: Extends&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;&lt;-contains&#x27;: Contains&lt;At&lt;O1, K&gt;, O[K]&gt;; &#x27;&lt;-extends&#x27;: Extends&lt;At&lt;O1, K&gt;, O[K]&gt;; &#x27;equals&#x27;: Equals&lt;At&lt;O1, K&gt;, O[K]&gt;; }[match]]; }[Keys&lt;O&gt;]</span></div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -146,7 +146,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7fd0bd6/src/Object/ExcludeKeys.ts#L7">Object/ExcludeKeys.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f356de5c/src/Object/ExcludeKeys.ts#L7">Object/ExcludeKeys.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
