@@ -7,8 +7,8 @@
  * * `equals`    : X equals   Y
  */
 export type Match = | 'default'
-                    | 'contains->'
-                    | '<-contains'
+                    | 'implements->'
+                    | '<-implements'
                     | 'extends->'
                     | '<-extends'
                     | 'equals'
