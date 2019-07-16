@@ -86,7 +86,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="intersectkeys" class="tsd-anchor"></a>
 					<h3>Intersect<wbr>Keys</h3>
-					<div class="tsd-signature tsd-kind-icon">IntersectKeys&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;default&#x27;: Intersect&lt;keyof O, keyof O1&gt;; &#x27;contains-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Contains&lt;O[K], At&lt;O1, K&gt;&gt;]; }[Keys&lt;O&gt;]; &#x27;extends-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Extends&lt;O[K], At&lt;O1, K&gt;&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-contains&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Contains&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-extends&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Extends&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;equals&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Equals&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; }[match]</span></div>
+					<div class="tsd-signature tsd-kind-icon">IntersectKeys&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;default&#x27;: Intersect&lt;keyof O, keyof O1&gt;; &#x27;implements-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Implements&lt;O[K], At&lt;O1, K&gt;&gt;]; }[Keys&lt;O&gt;]; &#x27;extends-&gt;&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Extends&lt;O[K], At&lt;O1, K&gt;&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-implements&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Implements&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;&lt;-extends&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Extends&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; &#x27;equals&#x27;: { [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[Equals&lt;At&lt;O1, K&gt;, O[K]&gt;]; }[Keys&lt;O&gt;]; }[match]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Get the intersecting keys of <strong><code>O</code></strong> &amp; <strong><code>O1</code></strong>
@@ -122,14 +122,14 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f356de5c/src/Object/IntersectKeys.ts#L23">Object/IntersectKeys.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/81993516/src/Object/IntersectKeys.ts#L23">Object/IntersectKeys.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
 					<a name="intersectmatch" class="tsd-anchor"></a>
 					<h3>Intersect<wbr>Match</h3>
-					<div class="tsd-signature tsd-kind-icon">IntersectMatch&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[{ &#x27;default&#x27;: Extends&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;contains-&gt;&#x27;: Contains&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;extends-&gt;&#x27;: Extends&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;&lt;-contains&#x27;: Contains&lt;At&lt;O1, K&gt;, O[K]&gt;; &#x27;&lt;-extends&#x27;: Extends&lt;At&lt;O1, K&gt;, O[K]&gt;; &#x27;equals&#x27;: Equals&lt;At&lt;O1, K&gt;, O[K]&gt;; }[match]]; }[Keys&lt;O&gt;]</span></div>
+					<div class="tsd-signature tsd-kind-icon">IntersectMatch&lt;O, O1, match&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in Keys&lt;O&gt;]: { 1: K; 0: never; }[{ &#x27;default&#x27;: Extends&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;implements-&gt;&#x27;: Implements&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;extends-&gt;&#x27;: Extends&lt;O[K], At&lt;O1, K&gt;&gt;; &#x27;&lt;-implements&#x27;: Implements&lt;At&lt;O1, K&gt;, O[K]&gt;; &#x27;&lt;-extends&#x27;: Extends&lt;At&lt;O1, K&gt;, O[K]&gt;; &#x27;equals&#x27;: Equals&lt;At&lt;O1, K&gt;, O[K]&gt;; }[match]]; }[Keys&lt;O&gt;]</span></div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -141,7 +141,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f356de5c/src/Object/IntersectKeys.ts#L7">Object/IntersectKeys.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/81993516/src/Object/IntersectKeys.ts#L7">Object/IntersectKeys.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
