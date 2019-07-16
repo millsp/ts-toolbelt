@@ -88,8 +88,8 @@
 					<div class="tsd-signature tsd-kind-icon">Implements&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Implements&lt;A1, A2&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Check whether <strong><code>A1</code></strong> is part of <strong><code>A2</code></strong> or not
-							(works like <strong><code>Extends</code></strong> but with stricter results)</p>
+							<p>Check whether <strong><code>A1</code></strong> is part of <strong><code>A2</code></strong> or not. It works like
+							<strong><code>Extends</code></strong> but <strong><code>Boolean</code></strong> results are narrowed to <strong><code>False</code></strong>.</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -104,12 +104,19 @@
 						<p><p><strong><code>Boolean</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = A.Implements&lt;<span class="hljs-string">'a'</span> | <span class="hljs-string">'b'</span>, <span class="hljs-string">'b'</span>&gt; <span class="hljs-comment">// False</span>
+<span class="hljs-keyword">type</span> test1 = A.Implements&lt;<span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span> | <span class="hljs-string">'b'</span>&gt; <span class="hljs-comment">// True</span>
+
+<span class="hljs-keyword">type</span> test2 = A.Implements&lt;{a: <span class="hljs-built_in">string</span>}, {a: <span class="hljs-built_in">any</span>}&gt;      <span class="hljs-comment">// True</span>
+<span class="hljs-keyword">type</span> test3 = A.Implements&lt;{a: <span class="hljs-built_in">any</span>}, {a: <span class="hljs-built_in">any</span>, b: <span class="hljs-built_in">any</span>}&gt; <span class="hljs-comment">// False</span>
+
+<span class="hljs-keyword">type</span> test4 = A.Implements&lt;never, never&gt; <span class="hljs-comment">// False</span>
+<span class="hljs-comment">/// Nothing cannot implement nothing, use `A.Equals`</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/81993516/src/Any/Implements.ts#L13">Any/Implements.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/b2385155/src/Any/Implements.ts#L21">Any/Implements.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
