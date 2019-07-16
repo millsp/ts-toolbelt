@@ -1,10 +1,10 @@
 import {False, True} from '../Boolean/Boolean'
 
 /** Check whether **`A1`** is part of **`A2`** or not
- * (diff. w/ `extends`: forces a **`boolean`** return)
+ * (diff. w/ `extends`: forces a **`Boolean`** return)
  * @param A1
  * @param A2
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'

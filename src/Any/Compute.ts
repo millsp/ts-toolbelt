@@ -1,6 +1,6 @@
 /** Force TS to load a type that has not been computed
  * (to resolve composed types that TS hasn't resolved)
- * @param A
+ * @param A to compute
  * @returns **`A`**
  * @example
  * ```ts

@@ -3,7 +3,7 @@ import {Nullable as UNullable} from '../Union/Nullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
 import {Index} from '../_Internal'
-import {Contains} from '../Any/Contains'
+import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 
 type NullableFlat<O> = {
@@ -32,4 +32,4 @@ export type Nullable<O extends object, K extends Index = keyof O, depth extends 
     1: NullablePart<O, depth>
     0: Merge<NullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<K, Keys<O>>]
+}[Implements<K, Keys<O>>]

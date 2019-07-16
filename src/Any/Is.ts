@@ -1,7 +1,7 @@
 import {Match} from './_Internal'
 import {Extends} from './Extends'
 import {Equals} from './Equals'
-import {Contains} from './Contains'
+import {Implements} from './Implements'
 
 /** Check whether `A` is similar to `A1` or not
  * @param A to be compared
@@ -23,9 +23,9 @@ import {Contains} from './Contains'
  */
 export type Is<A extends any, A1 extends any, match extends Match = 'default'> = {
     'default'   : Extends<A,   A1>
-    'contains->': Contains<A,  A1>
+    'contains->': Implements<A,  A1>
     'extends->' : Extends<A,   A1>
-    '<-contains': Contains<A1, A>
+    '<-contains': Implements<A1, A>
     '<-extends' : Extends<A1,  A>
     'equals'    : Equals<A1,   A>
 }[match]

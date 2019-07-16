@@ -1,6 +1,6 @@
 import {Index} from '../_Internal'
 import {Cast} from '../Any/Cast'
-import {Contains} from '../Any/Contains'
+import {Implements} from '../Any/Implements'
 import {Depth} from '../Object/_Internal'
 import {Nullable as ONullable} from '../Object/Nullable'
 import {TupleOf} from '../Object/TupleOf'
@@ -19,4 +19,4 @@ import {ObjectOf} from './ObjectOf'
 export type Nullable<T extends any[], K extends Index = keyof T, depth extends Depth = 'flat'> = {
     1: Cast<ONullable<T, K, depth>, any[]>
     0: TupleOf<ONullable<ObjectOf<T>, K, depth>>
-}[Contains<K, Keys<T>>]
+}[Implements<K, Keys<T>>]
