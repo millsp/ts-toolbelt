@@ -1,12 +1,10 @@
 import {Iteration} from './Iteration'
-import {_IsZero} from '../Number/IsZero'
-import {Not} from '../Boolean/Not'
 import {Formats} from './_Internal'
 
 /** Is **`Key`** and **`Pos`** in a single type
  * @param I to query
  * @param fmt output
- * @returns **`string`** or **`number`**
+ * @returns **`string | number`**
  * @example
  * ```ts
  * import {I} from 'ts-toolbelt'
