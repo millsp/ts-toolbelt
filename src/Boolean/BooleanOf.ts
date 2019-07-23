@@ -1,6 +1,6 @@
 import {False, True} from './Boolean'
 
-/** Transform a **boolean** into a **`Boolean`**
+/** Transform a **`boolean`** into a **`Boolean`**
  * @param B to transform
  * @returns **`Boolean`**
  * @example
