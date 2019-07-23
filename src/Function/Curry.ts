@@ -38,7 +38,7 @@ type Gaps<T extends any[]> = NonNullable<{
     [K in keyof T]?: T[K] | x
 }>
 
-/** Curry a **`Function`** like **`curry()`**
+/** Curry a **`Function`**
  * @param F to curry
  * @returns **`Function`**
  * @example

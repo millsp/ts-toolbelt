@@ -29,7 +29,7 @@ export type Piper<Fns extends Function[]> = {
     [K in keyof Fns]: PipeFn<Fns, K>
 }
 
-/** Pipe **`Function`**s together like **`pipe()`**
+/** Pipe **`Function`**s together
  * @param Fns to pipe
  * @returns **`Function`**
  * @example

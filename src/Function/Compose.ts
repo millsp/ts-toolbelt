@@ -23,7 +23,7 @@ type ComposeFn<Fns extends Function[], K extends keyof Fns> =
  * import {F} from 'ts-toolbelt'
  *
  * /// If you are looking for creating types for `compose`
- * /// `Composer` will check for input & `Composed` output
+ * /// `Composer` will check for input & `Compose` the output
  * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Compose<Fns>
  * ```
  */
@@ -31,7 +31,7 @@ export type Composer<Fns extends Function[]> = {
     [K in keyof Fns]: ComposeFn<Fns, K>
 }
 
-/** Compose **`Function`**s together like **`compose()`**
+/** Compose **`Function`**s together
  * @param Fns to compose
  * @returns **`Function`**
  * @example
@@ -39,7 +39,7 @@ export type Composer<Fns extends Function[]> = {
  * import {F} from 'ts-toolbelt'
  *
  * /// If you are looking for creating types for `compose`
- * /// `Composer` will check for input & `Composed` output
+ * /// `Composer` will check for input & `Compose` the output
  * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Compose<Fns>
  * ```
  */
