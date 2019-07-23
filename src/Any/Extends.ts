@@ -7,7 +7,7 @@ import {False, True} from '../Boolean/Boolean'
  * @returns **`Boolean`**
  * @example
  * ```ts
- * import {A} from 'ts-toolbelt';
+ * import {A} from 'ts-toolbelt'
  *
  * type test0 = A.Extends<'a' | 'b', 'b'> // Boolean
  * type test1 = A.Extends<'a', 'a' | 'b'> // True

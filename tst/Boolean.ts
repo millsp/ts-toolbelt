@@ -21,9 +21,13 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// BOOLEAN
+// TRUE, FALSE, BOOLEAN
 
-// Cannot be tested
+checks([
+    check<B.True,       1,          Test.Pass>(),
+    check<B.False,      0,          Test.Pass>(),
+    check<B.Boolean,    0 | 1,      Test.Pass>(),
+])
 
 // ---------------------------------------------------------------------------------------
 // BOOLEANOF

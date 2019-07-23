@@ -11,7 +11,7 @@ import {Implements} from './Implements'
  * @returns **`Boolean`**
  * @example
  * ```ts
- * import {A} from 'ts-toolbelt';
+ * import {A} from 'ts-toolbelt'
  *
  * type test0 = A.Is<'a', 'a' | 'b', 'extends->'> // True
  * type test1 = A.Is<'a' | 'b', 'a', 'extends->'> // Boolean
