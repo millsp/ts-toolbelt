@@ -33,4 +33,6 @@ type _Paths<O, Paths extends Index[] = []> = {
  * ```
  */
 export type Paths<O extends object> =
-    _Paths<O>
+    _Paths<O> extends infer X
+    ? Cast<X, Index[]>
+    : never
