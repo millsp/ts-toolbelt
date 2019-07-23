@@ -543,7 +543,7 @@ checks([
 
 type PATHS_O = {
     a: {
-        a: {}
+        a: boolean
     }
     b: {
         a: {
@@ -552,8 +552,6 @@ type PATHS_O = {
         b: {}
     }
 };
-
-type t = O.Paths<{a: {b: any}}>
 
 checks([
     check<O.Paths<any>,     Index[],                                                        Test.Pass>(),

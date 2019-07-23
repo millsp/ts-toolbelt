@@ -14,7 +14,13 @@ type _Paths<O, Paths extends Index[] = []> = {
 }[
     {
         1: 2
-        0: Extends<[keyof O], [never]>
+        0: {
+            1: {
+                1: 1
+                0: 0
+            }[Extends<[keyof O], [never]>]
+            0: 1
+        }[Extends<O, object>]
     }[Equals<O, any>]
 ]
 
@@ -27,6 +33,4 @@ type _Paths<O, Paths extends Index[] = []> = {
  * ```
  */
 export type Paths<O extends object> =
-    _Paths<O> extends infer X
-    ? Cast<X, Index[]>
-    : never
+    _Paths<O>

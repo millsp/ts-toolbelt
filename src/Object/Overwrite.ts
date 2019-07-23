@@ -10,5 +10,5 @@ import {At} from './At'
  * ```
  */
 export type Overwrite<O extends object, O1 extends object> = {
-    [K in keyof O]: At<O1, K>
+    [K in keyof O]: At<O1, K> // todo wrong
 }
