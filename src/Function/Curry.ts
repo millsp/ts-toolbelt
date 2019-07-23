@@ -55,4 +55,3 @@ export type Curry<F extends Function> =
         GapsOf<T, Parameters<F>> extends [any, ...any[]]
         ? Curry<(...args: GapsOf<T, Parameters<F>>) => Return<F>>
         : Return<F>
-
