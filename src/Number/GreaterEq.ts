@@ -2,7 +2,7 @@ import {Equals} from '../Any/Equals'
 import {_Greater} from './Greater'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Nbr} from './_Internal'
+import {Number} from './Number'
 import {Or} from '../Boolean/Or'
 
 export type _GreaterEq<N1 extends Iteration, N2 extends Iteration> =
@@ -16,10 +16,10 @@ export type _GreaterEq<N1 extends Iteration, N2 extends Iteration> =
  * ```ts
  * import {N} from 'ts-toolbelt'
  *
- * type test0 = N.GreaterEq<'7', '5'> // true
- * type test1 = N.GreaterEq<'5', '5'> // true
- * type test2 = N.GreaterEq<'5', '7'> // false
+ * type test0 = N.GreaterEq<'7', '5'> // True
+ * type test1 = N.GreaterEq<'5', '5'> // True
+ * type test2 = N.GreaterEq<'5', '7'> // False
  * ```
  */
-export type GreaterEq<N1 extends Nbr, N2 extends Nbr> =
+export type GreaterEq<N1 extends Number, N2 extends Number> =
     _GreaterEq<IterationOf<N1>, IterationOf<N2>>

@@ -1,7 +1,7 @@
 import {_IsNegative} from './IsNegative'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Nbr} from './_Internal'
+import {Number} from './Number'
 import {True, False} from '../Boolean/Boolean'
 
 export type _IsPositive<N extends Iteration> = {
@@ -17,10 +17,10 @@ export type _IsPositive<N extends Iteration> = {
  * ```ts
  * import {N} from 'ts-toolbelt'
  *
- * type test0 = N.IsPositive<'0'>  // false
- * type test1 = N.IsPositive<'-7'> // false
- * type test2 = N.IsPositive<'7'>  // true
+ * type test0 = N.IsPositive<'0'>  // False
+ * type test1 = N.IsPositive<'-7'> // False
+ * type test2 = N.IsPositive<'7'>  // True
  * ```
  */
-export type IsPositive<N extends Nbr> =
+export type IsPositive<N extends Number> =
     _IsPositive<IterationOf<N>>

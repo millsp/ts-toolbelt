@@ -5,7 +5,7 @@ import {Prev} from '../Iteration/Prev'
 import {Next} from '../Iteration/Next'
 import {_IsNegative} from './IsNegative'
 import {Cast} from '../Any/Cast'
-import {Nbr} from './_Internal'
+import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 
@@ -65,7 +65,7 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
  * type test5 = N.Minus<'-20', '40', 'n'> // number
  * ```
  */
-export type Minus<N1 extends Nbr, N2 extends Nbr, fmt extends Formats = 's'> =
+export type Minus<N1 extends Number, N2 extends Number, fmt extends Formats = 's'> =
     N2 extends any // force N2's distribution, only N1 is
     ? Format<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
     : never

@@ -3,7 +3,7 @@ import {SelectKeys} from '../Object/SelectKeys'
 import {Numbers} from './_Internal'
 import {Key} from '../Iteration/Key'
 
-/** Transform a **number** into a **`string`**
+/** Transform a **number** into a **`Number`**
  * @param N to stringify
  * @returns **`string`**
  * @example

@@ -8,11 +8,7 @@ import {Format} from '../Iteration/Format'
  * * `n`: **`number`**
  * * `b`: **`boolean`**
  */
-export type Formats = 's' | 'n' | 'b'
-
-/** Describes what a valid **number** is
- */
-export type Nbr = string
+export type Formats = 'b' | 'n'
 
 type KnownIterationMapKeys = Exclude<keyof IterationMap, '__'>
 type PositiveIterationKeys = SelectKeys<IterationMap, [any, any, any, any, '+']>

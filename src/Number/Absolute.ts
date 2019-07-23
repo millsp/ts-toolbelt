@@ -2,7 +2,7 @@ import {_Negate} from './Negate'
 import {_IsNegative} from './IsNegative'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Nbr} from './_Internal'
+import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 
@@ -25,5 +25,5 @@ export type _Absolute<N extends Iteration> = {
  * type test2 = N.Absolute<'-20', 'n'> //  20
  * ```
  */
-export type Absolute<N extends Nbr, fmt extends Formats = 's'> =
+export type Absolute<N extends Number, fmt extends Formats = 's'> =
     Format<_Absolute<IterationOf<N>>, fmt>

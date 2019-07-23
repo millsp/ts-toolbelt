@@ -3,7 +3,7 @@ import {Iteration} from '../Iteration/Iteration'
 import {Prepend} from '../Tuple/Prepend'
 import {Prev} from '../Iteration/Prev'
 import {Next} from '../Iteration/Next'
-import {Nbr} from './_Internal'
+import {Number} from './Number'
 import {Cast} from '../Any/Cast'
 import {Formats} from '../Iteration/_Internal'
 import {Way} from '../_Internal'
@@ -49,7 +49,7 @@ export type _Range<From extends Iteration, To extends Iteration, way extends Way
  * type test4 = N.Range<'-2', '1', '->', 'n'> // [-2 , -1 ,   0 ,   1 ]
  * ```
  */
-export type Range<From extends Nbr, To extends Nbr, way extends Way = '->', fmt extends Formats = 's'> =
+export type Range<From extends Number, To extends Number, way extends Way = '->', fmt extends Formats = 's'> =
     _Range<IterationOf<From>, IterationOf<To>, way, fmt> extends infer X
     ? Cast<X, {s: string[], n: number[]}[fmt]>
     : never

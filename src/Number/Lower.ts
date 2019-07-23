@@ -1,7 +1,7 @@
 import {_Greater} from './Greater'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Nbr} from './_Internal'
+import {Number} from './Number'
 
 export type _Lower<N1 extends Iteration, N2 extends Iteration> =
     _Greater<N2, N1>
@@ -14,10 +14,10 @@ export type _Lower<N1 extends Iteration, N2 extends Iteration> =
  * ```ts
  * import {N} from 'ts-toolbelt'
  *
- * type test0 = N.Lower<'7', '5'> // false
- * type test1 = N.Lower<'5', '5'> // false
- * type test2 = N.Lower<'5', '7'> // true
+ * type test0 = N.Lower<'7', '5'> // False
+ * type test1 = N.Lower<'5', '5'> // False
+ * type test2 = N.Lower<'5', '7'> // True
  * ```
  */
-export type Lower<N1 extends Nbr, N2 extends Nbr> =
+export type Lower<N1 extends Number, N2 extends Number> =
     _Lower<IterationOf<N1>, IterationOf<N2>>

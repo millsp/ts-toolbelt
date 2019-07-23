@@ -1,7 +1,8 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Next} from '../Iteration/Next'
-import {Nbr, Numbers} from './_Internal'
+import {Numbers} from './_Internal'
+import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
 import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
@@ -13,19 +14,19 @@ import {True} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 
-type _MinPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+type _MinPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MinPositive<N, Next<I>> // Find smallest +
     1: I
 }[
     Or<Extends<Key<I>, N>, Extends<string, Key<I>>> // stops as soon as it finds
 ]
 
-type MinPositive<N extends Nbr> =
+type MinPositive<N extends Number> =
     _MinPositive<N> extends infer X
     ? Cast<X, Iteration>
     : never
 
-type _MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+type _MinNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MinNegative<Exclude<N, Key<I>>, Prev<I>> // Find smallest -
     1: Next<I>
     2: string
@@ -39,7 +40,7 @@ type _MinNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
 
 type t = Extends<never, never>
 
-type MinNegative<N extends Nbr> =
+type MinNegative<N extends Number> =
     _MinNegative<N> extends infer X
     ? Cast<X, Iteration>
     : never
@@ -64,5 +65,5 @@ export type _Min<N extends Iteration> =
  * type test3 = N.Min<'-2' | '10' | 'oops'>   // string
  * ```
  */
-export type Min<N extends Nbr, fmt extends Formats = 's'> =
+export type Min<N extends Number, fmt extends Formats = 's'> =
     Format<_Min<IterationOf<N>>, fmt>

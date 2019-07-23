@@ -3,12 +3,12 @@ import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Nbr} from '../Number/_Internal'
+import {Number} from '../Number/Number'
 import {Key} from '../Iteration/Key'
 import {Way} from '../_Internal'
 import {Reverse} from './Reverse'
 
-type _Drop<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+type _Drop<T extends any[], N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _Drop<Tail<T>, N, Next<I>>
     1: T
 }[
@@ -26,7 +26,7 @@ type _Drop<T extends any[], N extends Nbr, I extends Iteration = IterationOf<'0'
  * ```ts
  * ```
  */
-export type Drop<T extends any[], N extends Nbr, way extends Way = '->'> = {
+export type Drop<T extends any[], N extends Number, way extends Way = '->'> = {
     '->': _Drop<T, N>
     '<-': Reverse<Drop<Reverse<T>, N>>
 }[way] extends infer X

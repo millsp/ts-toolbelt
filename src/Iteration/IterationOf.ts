@@ -1,4 +1,4 @@
-import {Nbr} from '../Number/_Internal'
+import {Number} from '../Number/Number'
 
 /** Describes a map of number relationships
  * (Generated with "./_Internal/IterationOfGenerator")
@@ -105,7 +105,7 @@ export type IterationMap = {
  * type nprev = I.Pos<prev>    // -1
  * ```
  */
-export type IterationOf<N extends Nbr> =
+export type IterationOf<N extends Number> =
     N extends keyof IterationMap
     ? IterationMap[N]
     : IterationMap['__']

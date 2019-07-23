@@ -1,4 +1,4 @@
-import {Nbr} from '../Number/_Internal'
+import {Number} from '../Number/Number'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Pos} from '../Iteration/Pos'
@@ -9,7 +9,7 @@ import {Prepend} from './Prepend'
 import {Key} from '../Iteration/Key'
 import {Way} from '../_Internal'
 
-type _Take<T extends any[], N extends Nbr, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+type _Take<T extends any[], N extends Number, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
     0: _Take<T, N, Prepend<TN, T[Pos<I>]>, Next<I>>
     1: TN
 }[
@@ -27,7 +27,7 @@ type _Take<T extends any[], N extends Nbr, TN extends any[] = [], I extends Iter
  * ```ts
  * ```
  */
-export type Take<T extends any[], N extends Nbr, way extends Way = '->'> = {
+export type Take<T extends any[], N extends Number, way extends Way = '->'> = {
     '->': Reverse<_Take<T, N>>
     '<-': _Take<Reverse<T>, N>
 }[way] extends infer X

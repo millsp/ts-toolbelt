@@ -1,5 +1,5 @@
 import {GreaterEq} from './GreaterEq'
-import {Nbr} from './_Internal'
+import {Number} from './Number'
 
 /** Check if a **number** is lower or equal to another one
  * @param N1 to compare
@@ -9,10 +9,10 @@ import {Nbr} from './_Internal'
  * ```ts
  * import {N} from 'ts-toolbelt'
  *
- * type test0 = N.LowerEq<'7', '5'> // false
- * type test1 = N.LowerEq<'5', '5'> // true
- * type test2 = N.LowerEq<'5', '7'> // true
+ * type test0 = N.LowerEq<'7', '5'> // False
+ * type test1 = N.LowerEq<'5', '5'> // True
+ * type test2 = N.LowerEq<'5', '7'> // True
  * ```
  */
-export type LowerEq<N1 extends Nbr, N2 extends Nbr> =
+export type LowerEq<N1 extends Number, N2 extends Number> =
     GreaterEq<N2, N1>

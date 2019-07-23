@@ -3,4 +3,4 @@
  * * `n`: **`number`**
  * * `b`: **`boolean`**
  */
-export type Formats = 's' | 'n' | 'b'
+export type Formats = 's' | 'b'

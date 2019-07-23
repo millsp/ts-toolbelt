@@ -2,11 +2,11 @@ import {Next} from '../Iteration/Next'
 import {Prepend} from './Prepend'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Nbr} from '../Number/_Internal'
+import {Number} from '../Number/Number'
 import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 
-type _Repeat<N extends Nbr, A, T extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+type _Repeat<N extends Number, A, T extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
     0: _Repeat<N, A, Prepend<T, A>, Next<I>>
     1: T
 }[
@@ -24,7 +24,7 @@ type _Repeat<N extends Nbr, A, T extends any[] = [], I extends Iteration = Itera
  * ```ts
  * ```
  */
-export type Repeat<A extends any, N extends Nbr, T extends any[] = []> =
+export type Repeat<A extends any, N extends Number, T extends any[] = []> =
     _Repeat<N, A, T> extends infer X
     ? Cast<X, any[]>
     : never

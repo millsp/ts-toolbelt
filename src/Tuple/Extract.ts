@@ -1,5 +1,5 @@
 import {KeySet} from './KeySet'
-import {Nbr} from '../Number/_Internal'
+import {Number} from '../Number/Number'
 import {Pick} from './Pick'
 
 /** Pick a range of entries (portion) from **`T`**
@@ -11,5 +11,5 @@ import {Pick} from './Pick'
  * ```ts
  * ```
  */
-export type Extract<T extends any[], From extends Nbr, To extends Nbr> =
+export type Extract<T extends any[], From extends Number, To extends Number> =
     Pick<T, KeySet<From, To>>
