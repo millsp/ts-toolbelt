@@ -48,10 +48,10 @@ export type _Max<N extends Iteration> =
     : MaxPositive<Exclude<Key<N>, Numbers['string']['-']>>
     // Exclude (-) numbers, MinPositive only works with (+)
 
-/** Get the biggest **number** within an **union**
+/** Get the biggest **`Number`** within an **union**
  * @param N **union**
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

@@ -51,10 +51,10 @@ export type _Min<N extends Iteration> =
     : MinNegative<Exclude<Key<N>, Numbers['string']['+']>>
     // Exclude (+) numbers, MinNegative only works with (-)
 
-/** Get the smallest **number** within an **union**
+/** Get the smallest **`Number`** within an **union**
  * @param N **union**
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

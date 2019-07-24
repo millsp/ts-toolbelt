@@ -48,11 +48,11 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
     1: MinusNegative<N1, N2>
 }[_IsNegative<N2>]
 
-/** Subtract a **number** from another one
+/** Subtract a **`Number`** from another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

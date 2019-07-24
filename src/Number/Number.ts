@@ -1,3 +1,3 @@
-/** Describes what a valid **number** is
+/** Describes what a **`Number`** is
  */
 export type Number = string;

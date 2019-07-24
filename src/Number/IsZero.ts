@@ -9,9 +9,9 @@ export type _IsZero<N extends Iteration> = {
     '0': True
 }[N[4]]
 
-/** Check whether a **number** is null or not
+/** Check whether a **`Number`** is null or not
  * @param N to check
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

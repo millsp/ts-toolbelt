@@ -11,10 +11,10 @@ export type _Absolute<N extends Iteration> = {
     1: _Negate<N>
 }[_IsNegative<N>]
 
-/** Get the absolute value of a **number**
+/** Get the absolute value of a **`Number`**
  * @param N to absolute
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

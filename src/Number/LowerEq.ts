@@ -1,10 +1,10 @@
 import {GreaterEq} from './GreaterEq'
 import {Number} from './Number'
 
-/** Check if a **number** is lower or equal to another one
+/** Check if a **`Number`** is lower or equal to another one
  * @param N1 to compare
  * @param N2 to compare to
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

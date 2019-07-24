@@ -8,10 +8,10 @@ import {Format} from '../Iteration/Format'
 export type _Negate<N extends Iteration> =
     _Minus<IterationOf<'0'>, N>
 
-/** Negate a **number**
+/** Negate a **`Number`**
  * @param N to negate
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

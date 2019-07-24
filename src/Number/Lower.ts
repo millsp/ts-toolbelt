@@ -6,10 +6,10 @@ import {Number} from './Number'
 export type _Lower<N1 extends Iteration, N2 extends Iteration> =
     _Greater<N2, N1>
 
-/** Check if a **number** is lower than another one
+/** Check if a **`Number`** is lower than another one
  * @param N1 to compare
  * @param N2 to compare to
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

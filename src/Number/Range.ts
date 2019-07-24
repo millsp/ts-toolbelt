@@ -35,9 +35,9 @@ export type _Range<From extends Iteration, To extends Iteration, way extends Way
 /** Create a range of **number**s
  * @param From to start with
  * @param To to end with
- * @param way to reverse it (?='->')
+ * @param way to reverse it (?=`'->'`)
  * @param fmt output (?=`'s'`)
- * @returns **`string[]`** or **`number[]`**
+ * @returns **`string[] | number[] | boolean[]`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'
