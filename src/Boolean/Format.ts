@@ -14,5 +14,6 @@ import {Formats} from './_Internal'
  */
 export type Format<B extends Boolean, fmt extends Formats> = {
     'b': [ false,   true ][B] // 0:  false , 1:  true
+    'n': B
     's': ['false', 'true'][B] // 0: 'false', 1: 'true'
 }[fmt]

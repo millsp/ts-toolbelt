@@ -4,10 +4,11 @@ import {SelectKeys} from '../Object/SelectKeys'
 import {Format} from '../Iteration/Format'
 
 /** Describes compatible type formats
- * * `n`: **`number`**
  * * `b`: **`boolean`**
+ * * `n`: **`number`**
+ * * `s`: **`string`**
  */
-export type Formats = 'b' | 'n'
+export type Formats = 'b' | 'n' | 's'
 
 type KnownIterationMapKeys = Exclude<keyof IterationMap, '__'>
 type PositiveIterationKeys = SelectKeys<IterationMap, [any, any, any, any, '+']>
@@ -23,9 +24,9 @@ export type Numbers = {
         '0'  : Format<IterationMap['0'], 's'>
     }
     'number': {
-        'all': Format<IterationMap[KnownIterationMapKeys], 'n'> // union of all string
-        '+'  : Format<IterationMap[PositiveIterationKeys], 'n'> // union of +   string
-        '-'  : Format<IterationMap[NegativeIterationKeys], 'n'> // union of -   string
+        'all': Format<IterationMap[KnownIterationMapKeys], 'n'> // union of all number
+        '+'  : Format<IterationMap[PositiveIterationKeys], 'n'> // union of +   number
+        '-'  : Format<IterationMap[NegativeIterationKeys], 'n'> // union of -   number
         '0'  : Format<IterationMap['0'], 'n'>
     }
 }

@@ -19,4 +19,5 @@ import {IterationOf} from '../Iteration/IterationOf'
 export type Format<N extends Number, fmt extends Formats> = {
     'b': Not<IsZero<N>>
     'n': Pos<IterationOf<N>>
+    's': N
 }[fmt]

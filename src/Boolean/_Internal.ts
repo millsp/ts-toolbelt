@@ -1,5 +1,6 @@
 /** Describes compatible type formats
- * * `s`: **`string`**
  * * `b`: **`boolean`**
+ * * `n`: **`number`**
+ * * `s`: **`string`**
  */
-export type Formats = 's' | 'b'
+export type Formats = 'b' | 'n' | 's'
