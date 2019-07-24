@@ -4,7 +4,6 @@ import {SelectKeys} from '../Object/SelectKeys'
 import {Format} from '../Iteration/Format'
 
 /** Describes compatible type formats
- * * `s`: **`string`**
  * * `n`: **`number`**
  * * `b`: **`boolean`**
  */

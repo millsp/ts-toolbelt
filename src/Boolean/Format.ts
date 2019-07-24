@@ -10,7 +10,6 @@ import {Formats} from './_Internal'
  *
  * type test0 = B.Format<B.True, 's'> // 'true'
  * type test1 = B.Format<B.True, 'b'> //  true
- * type test2 = B.Format<B.True, 'n'> //  1
  * ```
  */
 export type Format<B extends Boolean, fmt extends Formats> = {
