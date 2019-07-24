@@ -5,12 +5,12 @@ import {False, True} from '../Boolean/Boolean'
 import {Extends} from '../Any/Extends'
 
 export type Format<S extends string, fmt extends Formats> = {
-    's': S
-    'n': Pos<IterationOf<S>>
     'b': {
         1: Boolean
         0: S extends 'false'
            ? False
            : True
     }[Extends<string, S>]
+    'n': Pos<IterationOf<S>>
+    's': S
 }[fmt]
