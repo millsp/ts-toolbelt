@@ -130,6 +130,10 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny)    | **B**(boolean)     | **C**(lass)  | **F**(unction) | **I**(teration) | **N**(umber) |
 | **O**(bject) | **O**(bject).**P** | **S**(tring) | **T**(uple)    | **U**(nion)     | Test         |
 
+**The documentation is complete but needs more examples**. So feel free to [ask for
+examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md),
+and I will update the docs on demand.
+
 #### Imports
 
 There are many ways to import the types into your project:
@@ -249,10 +253,11 @@ The project is maintained to adapt to the constant
 |-------------|------------|
 | 1.x.x       | ~3.5.x     |
 | 2.x.x       | ^3.5.x     |
+| 3.x.x       | ^3.5.x     |
 
 Major version numbers will upgrade whenever TypeScript had breaking changes (it
 happened that TS had breaking changes on minor versions). Otherwise, the release
-versions will naturally follow semantic versioning.
+versions will naturally follow the semantic versioning.
 
 ## 🔮 What's next
 
