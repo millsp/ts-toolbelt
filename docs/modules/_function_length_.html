@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Function/Compose&quot; | ts-toolbelt</title>
+	<title>&quot;Function/Length&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,10 +57,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_function_compose_.html">&quot;Function/Compose&quot;</a>
+					<a href="_function_length_.html">&quot;Function/Length&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Function/Compose&quot;</h1>
+			<h1>External module &quot;Function/Length&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -74,9 +74,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_compose_.html#compose" class="tsd-kind-icon">Compose</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_compose_.html#composefn" class="tsd-kind-icon">Compose<wbr>Fn</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_compose_.html#composer" class="tsd-kind-icon">Composer</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_length_.html#length" class="tsd-kind-icon">Length</a></li>
 							</ul>
 						</section>
 					</div>
@@ -85,90 +83,48 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="compose" class="tsd-anchor"></a>
-					<h3>Compose</h3>
-					<div class="tsd-signature tsd-kind-icon">Compose&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="length" class="tsd-anchor"></a>
+					<h3>Length</h3>
+					<div class="tsd-signature tsd-kind-icon">Length&lt;Fn, fmt&gt;<span class="tsd-signature-symbol">:</span> <a href="_function_length_.html#length" class="tsd-signature-type">Length</a><span class="tsd-signature-symbol">&lt;</span><a href="_function_parameters_.html#parameters" class="tsd-signature-type">Parameters</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Fn</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">fmt</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Compose <strong><code>Function</code></strong>s together</p>
+							<p>Extract arguments&#39; length from a <strong><code>Function</code></strong></p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+						<span class="name">Fn</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a>                    </li>
+						<li>
+							<span class="name">fmt</span><span class="tsd-signature-symbol">: </span><a href="_boolean__internal_.html#formats" class="tsd-signature-type">Formats</a>                    <div class="tsd-comment">
 								<div class="lead">
-									<p>to compose</p>
+									<p>output (?=<code>&#39;n&#39;</code>)</p>
 								</div>
 							</div>
 						</li>
 					</ul>
 					<div class="tsd-comment">
+						<h4>param</h4>
+						<p><p>to extract from</p>
+						</p>
 						<h4>returns</h4>
-						<p><p><strong><code>Function</code></strong></p>
+						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
 						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 
-<span class="hljs-comment">/// If you are looking for creating types for `compose`</span>
-<span class="hljs-comment">/// `Composer` will check for input &amp; `Compose` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compose</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Arrow</span>[]&gt;(<span class="hljs-params">...args: F.Composer&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Compose</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
-						</p>
-					</div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/666850c2/src/Function/Compose.ts#L46">Function/Compose.ts:46</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="composefn" class="tsd-anchor"></a>
-					<h3>Compose<wbr>Fn</h3>
-					<div class="tsd-signature tsd-kind-icon">ComposeFn&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ComposeFn&lt;Fns, K&gt;</span></div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-						<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    </li>
-						<li>
-						<span class="name">K</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Fns</span>                    </li>
-					</ul>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/666850c2/src/Function/Compose.ts#L13">Function/Compose.ts:13</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="composer" class="tsd-anchor"></a>
-					<h3>Composer</h3>
-					<div class="tsd-signature tsd-kind-icon">Composer&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<div class="tsd-comment">
-						<div class="lead">
-							<p>Compute what the input of <strong><code>Compose</code></strong> should be</p>
-						</div>
-					</div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-							<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to compose</p>
-								</div>
-							</div>
-						</li>
-					</ul>
-					<div class="tsd-comment">
-						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+<span class="hljs-keyword">const</span> fn = <span class="hljs-function">(<span class="hljs-params">a1: <span class="hljs-built_in">any</span>, a2: <span class="hljs-built_in">any</span></span>) =&gt;</span> {}
 
-<span class="hljs-comment">/// If you are looking for creating types for `compose`</span>
-<span class="hljs-comment">/// `Composer` will check for input &amp; `Compose` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compose</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Arrow</span>[]&gt;(<span class="hljs-params">...args: F.Composer&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Compose</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
+<span class="hljs-keyword">type</span> test0 = F.LengthOf&lt;<span class="hljs-keyword">typeof</span> fn&gt;               <span class="hljs-comment">// 2</span>
+
+<span class="hljs-keyword">type</span> test1 = F.LengthOf&lt;<span class="hljs-function">(<span class="hljs-params">a1?: <span class="hljs-built_in">any</span></span>) =&gt;</span> <span class="hljs-built_in">any</span>&gt;       <span class="hljs-comment">// 0 | 1</span>
+
+<span class="hljs-keyword">type</span> test2 = F.LengthOf&lt;<span class="hljs-function">(<span class="hljs-params">...a: <span class="hljs-built_in">any</span>[]</span>) =&gt;</span> <span class="hljs-built_in">any</span>&gt;    <span class="hljs-comment">// number</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/666850c2/src/Function/Compose.ts#L30">Function/Compose.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/666850c2/src/Function/Length.ts#L23">Function/Length.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -181,20 +137,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_function_compose_.html">"<wbr>Function/<wbr>Compose"</a>
+						<a href="_function_length_.html">"<wbr>Function/<wbr>Length"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_function_compose_.html#compose" class="tsd-kind-icon">Compose</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_function_compose_.html#composefn" class="tsd-kind-icon">Compose<wbr>Fn</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_function_compose_.html#composer" class="tsd-kind-icon">Composer</a>
+						<a href="_function_length_.html#length" class="tsd-kind-icon">Length</a>
 					</li>
 				</ul>
 			</nav>
