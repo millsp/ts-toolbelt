@@ -1,5 +1,3 @@
-import {At} from './At'
-
 /** Update the fields of **`O`** with the ones of **`O1`**
  * (only the existing fields will be updated)
  * @param O to update
@@ -10,5 +8,7 @@ import {At} from './At'
  * ```
  */
 export type Overwrite<O extends object, O1 extends object> = {
-    [K in keyof O]: At<O1, K> // todo wrong
+    [K in keyof O]: K extends keyof O1
+                    ? O1[K]
+                    : O[K]
 }
