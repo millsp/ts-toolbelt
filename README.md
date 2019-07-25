@@ -132,7 +132,7 @@ The project is organized around TypeScript's main concepts:
 
 **The documentation is complete but needs more examples**. So feel free to [ask for
 examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md),
-and I will update the docs on demand.
+and I will update the docs.
 
 #### Imports
 
