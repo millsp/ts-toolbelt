@@ -86,16 +86,37 @@
 					<a name="format" class="tsd-anchor"></a>
 					<h3>Format</h3>
 					<div class="tsd-signature tsd-kind-icon">Format&lt;S, fmt&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;b&#x27;: { 1: Boolean; 0: S extends &quot;false&quot; ? 0 : 1; }[string extends S ? 1 : 0]; &#x27;n&#x27;: IterationOf&lt;S&gt;[3]; &#x27;s&#x27;: S; }[fmt]</span></div>
+					<div class="tsd-comment">
+						<div class="lead">
+							<p>Change the format of a <strong><code>string</code></strong></p>
+						</div>
+					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-						<span class="name">S</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>                    </li>
+							<span class="name">S</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to transform</p>
+								</div>
+							</div>
+						</li>
 						<li>
 						<span class="name">fmt</span><span class="tsd-signature-symbol">: </span><a href="_boolean__internal_.html#formats" class="tsd-signature-type">Formats</a>                    </li>
 					</ul>
+					<div class="tsd-comment">
+						<h4>returns</h4>
+						<p><p><strong><code>string | number | boolean</code></strong></p>
+						</p>
+						<h4>example</h4>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {S} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = S.Format&lt;<span class="hljs-string">'30'</span>, <span class="hljs-string">'b'</span>&gt; <span class="hljs-comment">// True</span>
+<span class="hljs-keyword">type</span> test1 = S.Format&lt;<span class="hljs-string">'30'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">// 30</span></code></pre>
+						</p>
+					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/666850c2/src/String/Format.ts#L7">String/Format.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/c462e324/src/String/Format.ts#L18">String/Format.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
