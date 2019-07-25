@@ -17,7 +17,7 @@
     "url": "https://github.com/pirix-gh/ts-toolbelt"
   },
   "types": "out/types/src/index.d.ts",
-  "main": "out/src/index.js",
+  "main": "out/index.js",
   "scripts": {
     "test": "npx eslint 'src/**' && npm run build:types",
     "build": "npm run build:types && npm run build:docs && touch out/index.js",
