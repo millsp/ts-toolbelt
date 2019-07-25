@@ -55,18 +55,19 @@ checks([
 
 
 // ---------------------------------------------------------------------------------------
-// PARAMSOF
+// PARAMETERS
 
 checks([
     check<F.Parameters<typeof FN>,    [string, number, object],   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
-// LENGTHOF
+// LENGTH
 
 checks([
-    check<F.LengthOf<typeof FN>,                     3,        Test.Pass>(),
-    check<F.LengthOf<(a1: any, a2?: any) => any>,    1 | 2,    Test.Pass>(),
+    check<F.Length<typeof FN>,                          3,          Test.Pass>(),
+    check<F.Length<(a1: any, a2?: any) => any>,         1 | 2,      Test.Pass>(),
+    check<F.Length<(a1: any, a2?: any) => any, 's'>,    '1' | '2',  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -85,7 +86,7 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// RETURNOF
+// RETURN
 
 checks([
     check<F.Return<typeof FN>,    boolean,    Test.Pass>(),
