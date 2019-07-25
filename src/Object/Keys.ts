@@ -1,3 +1,4 @@
+import {Index} from '../_Internal'
 import {Exclude} from '../Union/Exclude'
 
 /** Get the own keys of an **`object`**
@@ -8,4 +9,5 @@ import {Exclude} from '../Union/Exclude'
  * ```
  */
 export type Keys<O extends object> =
-    Exclude<keyof O, keyof any[]> // ! important
+    keyof O & Index
+    // Prevents `undefined` to appear in the keys

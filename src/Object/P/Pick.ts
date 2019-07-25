@@ -6,8 +6,9 @@ import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Select} from '../Select'
 import {Path as PPath} from './_Internal'
+import {Index} from '../../_Internal'
 
-type _Pick<O extends object, Path extends string[], I extends Iteration = IterationOf<'0'>> = {
+type _Pick<O extends object, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
     [K in keyof O]: Compute<K extends Path[Pos<I>]      // If K is part of Path
                     ? Pos<Next<I>> extends Length<Path> // & if it's the target
                       ? O[K] // pick it                 // Update - target
@@ -18,15 +19,3 @@ type _Pick<O extends object, Path extends string[], I extends Iteration = Iterat
 export type Pick<O extends object, Path extends PPath> =
     _Pick<O, Path>
 
-    type O = {
-      a: {
-        b: {
-          c: {
-            a: 'string'
-            b: string
-          }
-        }
-      }
-    }
-
-    type t = Pick<O, ['a', 'b', 'c', 'a']>

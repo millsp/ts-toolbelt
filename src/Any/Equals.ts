@@ -1,10 +1,9 @@
 import {True, False} from '../Boolean/Boolean'
 
-/** Check whether **`A1`** is equal to **`A2`** or not
+/** Check whether **`A1`** is equal to **`A2`** or not.
  * @param A1
  * @param A2
- * @param match to change precision
- * @returns **`True`** or **`False`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'

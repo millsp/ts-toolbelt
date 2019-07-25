@@ -1,4 +1,5 @@
 import {Paths as OPaths} from '../Object/Paths'
+import {ObjectOf} from './ObjectOf'
 
 /** Get all the possible paths of **`T`**
  * (⚠️ this won't work with circular-refs)
@@ -9,4 +10,4 @@ import {Paths as OPaths} from '../Object/Paths'
  * ```
  */
 export type Paths<T extends any[]> =
-    OPaths<T>
+    OPaths<ObjectOf<T>>

@@ -2,17 +2,18 @@ import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Next} from '../Iteration/Next'
-import {Nbr, Numbers} from './_Internal'
-import {Format} from '../Iteration/_Internal'
+import {Numbers} from './_Internal'
+import {Number} from './Number'
+import {Formats} from '../Iteration/_Internal'
 import {Key} from '../Iteration/Key'
 import {_IsNegative} from './IsNegative'
 import {Exclude} from '../Union/Exclude'
 import {Cast} from '../Any/Cast'
-import {Fmt} from '../Iteration/Fmt'
+import {Format} from '../Iteration/Format'
 import {True, Or} from '../Boolean/_api'
 import {Extends} from '../Any/Extends'
 
-type _MaxPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
     1: Prev<I>
     2: string
@@ -24,19 +25,19 @@ type _MaxPositive<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
       : 0
 ]
 
-type MaxPositive<N extends Nbr> =
+type MaxPositive<N extends Number> =
     _MaxPositive<N> extends infer X
     ? Cast<X, Iteration>
     : never
 
-type _MaxNegative<N extends Nbr, I extends Iteration = IterationOf<'0'>> = {
+type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
     1: I
 }[
     Or<Extends<Key<I>, N>, Extends<string, Key<I>>> // stops as soon as it finds
 ]
 
-type MaxNegative<N extends Nbr> =
+type MaxNegative<N extends Number> =
     _MaxNegative<N> extends infer X
     ? Cast<X, Iteration>
     : never
@@ -47,10 +48,10 @@ export type _Max<N extends Iteration> =
     : MaxPositive<Exclude<Key<N>, Numbers['string']['-']>>
     // Exclude (-) numbers, MinPositive only works with (+)
 
-/** Get the biggest **number** within an **union**
+/** Get the biggest **`Number`** within an **union**
  * @param N **union**
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'
@@ -61,5 +62,5 @@ export type _Max<N extends Iteration> =
  * type test3 = N.Min<'-2' | '10' | 'oops'>   // string
  * ```
  */
-export type Max<N extends Nbr, fmt extends Format = 's'> =
-    Fmt<_Max<IterationOf<N>>, fmt>
+export type Max<N extends Number, fmt extends Formats = 's'> =
+    Format<_Max<IterationOf<N>>, fmt>

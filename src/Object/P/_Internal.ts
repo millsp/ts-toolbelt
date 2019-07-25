@@ -1,1 +1,3 @@
-export type Path = [string, ...string[]]
+import {Index} from '../../_Internal'
+
+export type Path = [Index, ...Index[]]

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Function/ParamsOf&quot; | ts-toolbelt</title>
+	<title>&quot;Any/Implements&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,10 +57,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_function_paramsof_.html">&quot;Function/ParamsOf&quot;</a>
+					<a href="_any_implements_.html">&quot;Any/Implements&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Function/ParamsOf&quot;</h1>
+			<h1>External module &quot;Any/Implements&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -74,7 +74,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_paramsof_.html#paramsof" class="tsd-kind-icon">Params<wbr>Of</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_any_implements_.html#implements" class="tsd-kind-icon">Implements</a></li>
 							</ul>
 						</section>
 					</div>
@@ -83,41 +83,40 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="paramsof" class="tsd-anchor"></a>
-					<h3>Params<wbr>Of</h3>
-					<div class="tsd-signature tsd-kind-icon">ParamsOf&lt;F&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ParamsOf&lt;F&gt;</span></div>
+					<a name="implements" class="tsd-anchor"></a>
+					<h3>Implements</h3>
+					<div class="tsd-signature tsd-kind-icon">Implements&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Implements&lt;A1, A2&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Extract parameters from a <strong><code>Function</code></strong></p>
+							<p>Check whether <strong><code>A1</code></strong> is part of <strong><code>A2</code></strong> or not. It works like
+							<strong><code>Extends</code></strong> but <strong><code>Boolean</code></strong> results are narrowed to <strong><code>False</code></strong>.</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">F</span><span class="tsd-signature-symbol">: </span><a href="_function_arrow_.html#arrow" class="tsd-signature-type">Arrow</a>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to extract from</p>
-								</div>
-							</div>
-						</li>
+						<span class="name">A1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
+						<li>
+						<span class="name">A2</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>any[]</code></strong></p>
+						<p><p><strong><code>Boolean</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = A.Implements&lt;<span class="hljs-string">'a'</span> | <span class="hljs-string">'b'</span>, <span class="hljs-string">'b'</span>&gt; <span class="hljs-comment">// False</span>
+<span class="hljs-keyword">type</span> test1 = A.Implements&lt;<span class="hljs-string">'a'</span>, <span class="hljs-string">'a'</span> | <span class="hljs-string">'b'</span>&gt; <span class="hljs-comment">// True</span>
 
-<span class="hljs-keyword">const</span> fn = <span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, age: <span class="hljs-built_in">number</span></span>) =&gt;</span> {}
+<span class="hljs-keyword">type</span> test2 = A.Implements&lt;{a: <span class="hljs-built_in">string</span>}, {a: <span class="hljs-built_in">any</span>}&gt;      <span class="hljs-comment">// True</span>
+<span class="hljs-keyword">type</span> test3 = A.Implements&lt;{a: <span class="hljs-built_in">any</span>}, {a: <span class="hljs-built_in">any</span>, b: <span class="hljs-built_in">any</span>}&gt; <span class="hljs-comment">// False</span>
 
-<span class="hljs-keyword">type</span> test0 = F.ParamsOf&lt;<span class="hljs-keyword">typeof</span> fn&gt;                         <span class="hljs-comment">// [string, number]</span>
-
-<span class="hljs-keyword">type</span> test1 = F.ParamsOf&lt;<span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, age: <span class="hljs-built_in">number</span></span>) =&gt;</span> {}&gt; <span class="hljs-comment">// [string, number]</span></code></pre>
+<span class="hljs-keyword">type</span> test4 = A.Implements&lt;never, never&gt; <span class="hljs-comment">// False</span>
+<span class="hljs-comment">/// Nothing cannot implement nothing, use `A.Equals`</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Function/ParamsOf.ts#L17">Function/ParamsOf.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5dc4f9a6/src/Any/Implements.ts#L21">Any/Implements.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -130,14 +129,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_function_paramsof_.html">"<wbr>Function/<wbr>Params<wbr>Of"</a>
+						<a href="_any_implements_.html">"<wbr>Any/<wbr>Implements"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_function_paramsof_.html#paramsof" class="tsd-kind-icon">Params<wbr>Of</a>
+						<a href="_any_implements_.html#implements" class="tsd-kind-icon">Implements</a>
 					</li>
 				</ul>
 			</nav>

@@ -1,4 +1,5 @@
 import {FilterKeys} from './FilterKeys'
+import {Filter} from './Filter'
 
 /** Get the keys of **`O`** that are non-nullable
  * @param O
@@ -8,5 +9,5 @@ import {FilterKeys} from './FilterKeys'
  * ```
  */
 export type NonNullableKeys<O extends object> =
-    FilterKeys<O, undefined, 'loose'>
-    & FilterKeys<O, null, 'loose'>
+    FilterKeys<O, undefined, '<-extends'>
+    & FilterKeys<O, null, '<-extends'>

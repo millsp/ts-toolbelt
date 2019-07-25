@@ -13,5 +13,8 @@ import {True} from '../Boolean/Boolean'
  * ```
  */
 export type SelectKeys<O extends object, M extends any, match extends Match = 'default'> = {
-    [K in Keys<O>]: Is<O[K], M, match> extends True ? K : never
+    [K in Keys<O>]: {
+        1: K
+        0: never
+    }[Is<O[K], M, match>]
 }[Keys<O>]

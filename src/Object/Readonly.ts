@@ -1,7 +1,9 @@
 import {Merge} from './Merge'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {Equals} from '../Any/Equals'
+import {Index} from '../_Internal'
+import {Implements} from '../Any/Implements'
+import {Keys} from './Keys'
 
 type ReadonlyFlat<O> = {
     +readonly [K in keyof O]: O[K]
@@ -25,8 +27,8 @@ type ReadonlyPart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type Readonly<O extends object, K extends string = keyof O, depth extends Depth = 'flat'> = {
+export type Readonly<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
     1: ReadonlyPart<O, depth>
     0: Merge<ReadonlyPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Equals<K, keyof O>]
+}[Implements<Keys<O>, K>]

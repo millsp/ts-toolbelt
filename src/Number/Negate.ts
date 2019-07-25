@@ -1,17 +1,17 @@
 import {_Minus} from './Minus'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Nbr} from './_Internal'
-import {Format} from '../Iteration/_Internal'
-import {Fmt} from '../Iteration/Fmt'
+import {Number} from './Number'
+import {Formats} from '../Iteration/_Internal'
+import {Format} from '../Iteration/Format'
 
 export type _Negate<N extends Iteration> =
     _Minus<IterationOf<'0'>, N>
 
-/** Negate a **number**
+/** Negate a **`Number`**
  * @param N to negate
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'
@@ -23,5 +23,5 @@ export type _Negate<N extends Iteration> =
  * type test4 = N.Negate<'-100'>    // string
  * ```
  */
-export type Negate<N extends Nbr, fmt extends Format = 's'> =
-    Fmt<_Negate<IterationOf<N>>, fmt>
+export type Negate<N extends Number, fmt extends Formats = 's'> =
+    Format<_Negate<IterationOf<N>>, fmt>

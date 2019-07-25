@@ -85,7 +85,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="readonlykeys" class="tsd-anchor"></a>
 					<h3>Readonly<wbr>Keys</h3>
-					<div class="tsd-signature tsd-kind-icon">ReadonlyKeys&lt;O&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in keyof O]-?: { 1: never; 0: K; }[Equals&lt;{ -readonly [Q in K]: O[K]; }, { [Q in K]: O[K]; }&gt;]; }[Exclude&lt;keyof O, &quot;length&quot; | &quot;toString&quot; | &quot;toLocaleString&quot; | &quot;pop&quot; | &quot;push&quot; | &quot;concat&quot; | &quot;join&quot; | &quot;reverse&quot; | &quot;shift&quot; | &quot;slice&quot; | &quot;sort&quot; | &quot;splice&quot; | &quot;unshift&quot; | &quot;indexOf&quot; | &quot;lastIndexOf&quot; | &quot;every&quot; | &quot;some&quot; | &quot;forEach&quot; | &quot;map&quot; | &quot;filter&quot; | &quot;reduce&quot; | &quot;reduceRight&quot; | &quot;find&quot; | &quot;findIndex&quot; | &quot;fill&quot; | &quot;copyWithin&quot; | &quot;entries&quot; | &quot;keys&quot; | &quot;values&quot; | &quot;includes&quot;&gt;]</span></div>
+					<div class="tsd-signature tsd-kind-icon">ReadonlyKeys&lt;O&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ [K in keyof O]-?: { 1: never; 0: K; }[Equals&lt;{ -readonly [Q in K]: O[K]; }, { [Q in K]: O[K]; }&gt;]; }[Keys&lt;O&gt;]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Get the keys of <strong><code>O</code></strong> that are readonly</p>
@@ -106,7 +106,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Object/ReadonlyKeys.ts#L14">Object/ReadonlyKeys.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5dc4f9a6/src/Object/ReadonlyKeys.ts#L14">Object/ReadonlyKeys.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>

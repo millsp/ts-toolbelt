@@ -1,4 +1,6 @@
 import {Path as OPath} from '../Object/Path'
+import {Index} from '../_Internal'
+import {ObjectOf} from './ObjectOf'
 
 /** Get in **`T`** the type of nested properties
  * @param T to be inspected
@@ -8,5 +10,5 @@ import {Path as OPath} from '../Object/Path'
  * ```ts
  * ```
  */
-export type Path<T extends any[], Path extends string[]> =
-    OPath<T, Path>
+export type Path<T extends any[], Path extends Index[]> =
+    OPath<ObjectOf<T>, Path>

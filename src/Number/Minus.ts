@@ -5,9 +5,9 @@ import {Prev} from '../Iteration/Prev'
 import {Next} from '../Iteration/Next'
 import {_IsNegative} from './IsNegative'
 import {Cast} from '../Any/Cast'
-import {Nbr} from './_Internal'
-import {Format} from '../Iteration/_Internal'
-import {Fmt} from '../Iteration/Fmt'
+import {Number} from './Number'
+import {Formats} from '../Iteration/_Internal'
+import {Format} from '../Iteration/Format'
 
 type _MinusPositive<N1 extends Iteration, N2 extends Iteration> = {
     0: _MinusPositive<Prev<N1>, Prev<N2>> // N1 = -/+, N2 = +
@@ -48,11 +48,11 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
     1: MinusNegative<N1, N2>
 }[_IsNegative<N2>]
 
-/** Subtract a **number** from another one
+/** Subtract a **`Number`** from another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
  * @param fmt output (?=`'s'`)
- * @returns **`string`** or **`number`**
+ * @returns **`string | number | boolean`**
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'
@@ -65,7 +65,7 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
  * type test5 = N.Minus<'-20', '40', 'n'> // number
  * ```
  */
-export type Minus<N1 extends Nbr, N2 extends Nbr, fmt extends Format = 's'> =
+export type Minus<N1 extends Number, N2 extends Number, fmt extends Formats = 's'> =
     N2 extends any // force N2's distribution, only N1 is
-    ? Fmt<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
+    ? Format<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
     : never

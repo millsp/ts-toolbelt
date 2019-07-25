@@ -3,6 +3,7 @@ import {TupleOf} from '../Object/TupleOf'
 import {Match} from '../Any/_Internal'
 import {Length} from './Length'
 import {Cast} from '../Any/Cast'
+import {ObjectOf} from './ObjectOf'
 
 /** Filter out of **`T`** the entries that match **`M`**
  * @param T to remove from
@@ -14,4 +15,4 @@ import {Cast} from '../Any/Cast'
  * ```
  */
 export type Filter<T extends any[], M extends any, match extends Match = 'default'> =
-    TupleOf<OFilter<T, M, match>>
+    TupleOf<OFilter<ObjectOf<T>, M, match>>

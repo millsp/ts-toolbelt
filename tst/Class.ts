@@ -15,7 +15,6 @@ class TestClass {}
 checks([
     check<C.InstanceOf<typeof TestClass>,   TestClass,          Test.Pass>(TestClass),
     check<C.InstanceOf<typeof TestClass>,   TestClass,          Test.Pass>(new TestClass()),
-    check<typeof TestClass,                 typeof TestClass,   Test.Pass>(TestClass),
 ])
 
 // ---------------------------------------------------------------------------------------

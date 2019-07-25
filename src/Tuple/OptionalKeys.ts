@@ -1,4 +1,5 @@
 import {OptionalKeys as OOptionalKeys} from '../Object/OptionalKeys'
+import {ObjectOf} from './ObjectOf'
 
 /** Get the keys of **`T`** that are optional
  * @param T
@@ -8,4 +9,4 @@ import {OptionalKeys as OOptionalKeys} from '../Object/OptionalKeys'
  * ```
  */
 export type OptionalKeys<T extends any[]> =
-    OOptionalKeys<T>
+    OOptionalKeys<ObjectOf<T>>

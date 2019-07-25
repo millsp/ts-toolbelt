@@ -1,4 +1,4 @@
-import {Arrow} from './Arrow'
+import {Function} from './Function'
 
 /** Extract the return type of a **`Function`**
  * @param F to extract from
@@ -14,7 +14,7 @@ import {Arrow} from './Arrow'
  * type test1 = F.ReturnOf<() => true> // true
  * ```
  */
-export type ReturnOf<F extends Arrow> =
+export type Return<F extends Function> =
     F extends ((...args: any[]) => infer R)
     ? R
     : never

@@ -1,6 +1,7 @@
 import {Omit as OOmit} from '../Object/Omit'
 import {TupleOf} from '../Object/TupleOf'
-import {Length} from './Length'
+import {ObjectOf} from './ObjectOf'
+import {Index} from '../_Internal'
 
 /** Remove out of **`T`** the entries of key **`K`**
  * @param T to remove from
@@ -10,5 +11,5 @@ import {Length} from './Length'
  * ```ts
  * ```
  */
-export type Omit<T extends any[], K extends string> =
-    TupleOf<OOmit<T, K>>
+export type Omit<T extends any[], K extends Index> =
+    TupleOf<OOmit<ObjectOf<T>, K>>

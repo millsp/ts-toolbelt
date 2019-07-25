@@ -1,4 +1,4 @@
-import {Exclude} from '../Union/Exclude'
+import {Index} from '../_Internal'
 
 /** Get the own keys of a **tuple**
  * @param T
@@ -8,4 +8,5 @@ import {Exclude} from '../Union/Exclude'
  * ```
  */
 export type Keys<T extends any[]> =
-    Exclude<keyof T, keyof any[]>
+    Exclude<keyof T, keyof any[]> & Index | number
+    // We re-include `number`, it is an 'own key'

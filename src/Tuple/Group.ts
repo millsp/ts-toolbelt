@@ -1,11 +1,11 @@
-import {Nbr} from '../Number/_Internal'
+import {Number} from '../Number/Number'
 import {Drop} from './Drop'
 import {Take} from './Take'
 import {Cast} from '../Any/Cast'
 import {Prepend} from './Prepend'
 import {Reverse} from './Reverse'
 
-type _Group<T extends any[], N extends Nbr, TN extends any[] = []> = {
+type _Group<T extends any[], N extends Number, TN extends any[] = []> = {
     0: _Group<Drop<T, N>, N, Prepend<TN, Take<T, N>>>
     1: Reverse<TN>
 }[
@@ -22,7 +22,7 @@ type _Group<T extends any[], N extends Nbr, TN extends any[] = []> = {
  * ```ts
  * ```
  */
-export type Group<T extends any[], N extends Nbr> =
+export type Group<T extends any[], N extends Number> =
     _Group<T, N> extends infer X
     ? Cast<X, any[]>
     : never

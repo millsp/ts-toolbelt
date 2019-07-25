@@ -1,18 +1,11 @@
 /* eslint-disable fp/no-mutation */
 /* eslint-disable fp/no-let */
 
-/** Describes an **`Iteration`**-**number** relationship
- */
-export type FormatMap = {
-    's': 2 // Iteration[2] => string
-    'n': 3 // Iteration[3] => number
-}
-
-/** Describes the format of a **number**
+/** Describes compatible type formats
  * * `s`: **`string`**
  * * `n`: **`number`**
  */
-export type Format = keyof FormatMap
+export type Formats = 'n' | 's'
 
 // ---------------------------------------------------------------------------------------
 

@@ -5,9 +5,9 @@ import {Drop} from '../Tuple/Drop'
 import {Length} from '../Tuple/Length'
 import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'
-import {Arrow} from './Arrow'
-import {ParamsOf} from './ParamsOf'
-import {ReturnOf} from './ReturnOf'
+import {Function} from './Function'
+import {Parameters} from './Parameters'
+import {Return} from './Return'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Key} from '../Iteration/Key'
@@ -38,7 +38,7 @@ type Gaps<T extends any[]> = NonNullable<{
     [K in keyof T]?: T[K] | x
 }>
 
-/** Curry a **`Function`** like **`curry()`**
+/** Curry a **`Function`**
  * @param F to curry
  * @returns **`Function`**
  * @example
@@ -50,9 +50,8 @@ type Gaps<T extends any[]> = NonNullable<{
  * declare function curry<Fns extends F.Arrow>(fns: Fns): F.Curry<Fns>
  * ```
  */
-export type Curry<F extends Arrow> =
-    <T extends any[]>(...args: Cast<T, Gaps<ParamsOf<F>>>) =>
-        GapsOf<T, ParamsOf<F>> extends [any, ...any[]]
-        ? Curry<(...args: GapsOf<T, ParamsOf<F>>) => ReturnOf<F>>
-        : ReturnOf<F>
-
+export type Curry<F extends Function> =
+    <T extends any[]>(...args: Cast<T, Gaps<Parameters<F>>>) =>
+        GapsOf<T, Parameters<F>> extends [any, ...any[]]
+        ? Curry<(...args: GapsOf<T, Parameters<F>>) => Return<F>>
+        : Return<F>

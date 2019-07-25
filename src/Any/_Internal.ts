@@ -1,8 +1,14 @@
 /** Describes the match strategy when matching types
- * * `extends`: X extends Y
- * * `equals` : X equals  Y
- * * `loose`  : X extends Y || Y extends X
- * * `default`: extends (unless mentioned)
+ * * `default`   : `extends->`
+ * * `contains->`: X contains Y
+ * * `extends->` : X extends  Y
+ * * `<-contains`: Y contains X
+ * * `<-extends` : Y extends  X
+ * * `equals`    : X equals   Y
  */
-export type Match = 'extends' | 'equals' | 'loose' | 'default'
-
+export type Match = | 'default'
+                    | 'implements->'
+                    | '<-implements'
+                    | 'extends->'
+                    | '<-extends'
+                    | 'equals'

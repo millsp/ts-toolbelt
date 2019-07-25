@@ -1,4 +1,4 @@
-import {Arrow} from './Arrow'
+import {Function} from './Function'
 
 /** Extract parameters from a **`Function`**
  * @param F to extract from
@@ -14,7 +14,7 @@ import {Arrow} from './Arrow'
  * type test1 = F.ParamsOf<(name: string, age: number) => {}> // [string, number]
  * ```
  */
-export type ParamsOf<F extends Arrow> =
+export type Parameters<F extends Function> =
     F extends ((...args: infer T) => any)
     ? T
     : never

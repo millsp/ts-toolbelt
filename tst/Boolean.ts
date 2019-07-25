@@ -21,15 +21,39 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// NEGATE
+// TRUE, FALSE, BOOLEAN
 
 checks([
-    check<B.Negate<B.True>,             0,          Test.Pass>(),
-    check<B.Negate<B.False>,            1,          Test.Pass>(),
-    check<B.Negate<B.True | B.False>,   1 | 0,      Test.Pass>(),
-    check<B.Negate<B.True | B.False>,   0 | 1,      Test.Pass>(),
-    check<B.Negate<B.Boolean>,          0 | 1,      Test.Pass>(),
+    check<B.True,       1,          Test.Pass>(),
+    check<B.False,      0,          Test.Pass>(),
+    check<B.Boolean,    0 | 1,      Test.Pass>(),
 ])
+
+// ---------------------------------------------------------------------------------------
+// BOOLEANOF
+
+checks([
+    check<B.BooleanOf<true>,            1,          Test.Pass>(),
+    check<B.BooleanOf<false>,           0,          Test.Pass>(),
+    check<B.BooleanOf<false | true>,    0 | 1,      Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// FORMAT
+
+checks([
+    check<B.Format<B.True, 'b'>,            true,               Test.Pass>(),
+    check<B.Format<B.False, 'b'>,           false,              Test.Pass>(),
+    check<B.Format<B.False | B.True, 'b'>,  boolean,            Test.Pass>(),
+
+    check<B.Format<B.True, 's'>,            'true',             Test.Pass>(),
+    check<B.Format<B.False, 's'>,           'false',            Test.Pass>(),
+    check<B.Format<B.False | B.True, 's'>,  'false' | 'true',   Test.Pass>(),
+
+    check<B.Format<B.True, 'b' | 's'>,      'true' | true,      Test.Pass>(),
+    check<B.Format<B.False, 'b' | 's'>,     'false' | false,    Test.Pass>(),
+])
+
 
 // ---------------------------------------------------------------------------------------
 // NOT
@@ -55,16 +79,6 @@ checks([
     check<B.Or<B.Boolean, B.False>,     0 | 1,      Test.Pass>(),
     check<B.Or<B.False, B.Boolean>,     0 | 1,      Test.Pass>(),
     check<B.Or<B.Boolean, B.Boolean>,   0 | 1,      Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// STRINGOF
-
-checks([
-    check<B.StringOf<B.True>,           'true',             Test.Pass>(),
-    check<B.StringOf<B.False>,          'false',            Test.Pass>(),
-    check<B.StringOf<B.False | B.True>, 'true' | 'false',   Test.Pass>(),
-    check<B.StringOf<B.Boolean>,        'true' | 'false',   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

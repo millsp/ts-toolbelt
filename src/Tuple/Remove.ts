@@ -1,4 +1,4 @@
-import {Nbr} from '../Number/_Internal'
+import {Number} from '../Number/Number'
 import {KeySet} from './KeySet'
 import {Omit} from './Omit'
 import {Cast} from '../Any/Cast'
@@ -12,5 +12,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Remove<T extends any[], From extends Nbr, To extends Nbr> =
-    Cast<Omit<T, KeySet<From, To>>, any[]>
+export type Remove<T extends any[], From extends Number, To extends Number> =
+    Omit<T, KeySet<From, To>>

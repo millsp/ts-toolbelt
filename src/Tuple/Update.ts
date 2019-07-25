@@ -1,5 +1,6 @@
 import {Update as OUpdate} from '../Object/Update'
 import {Cast} from '../Any/Cast'
+import {Index} from '../_Internal'
 
 /** Update in **`T`** the entries of key **`K`** with **`A`**
  * @param T to update
@@ -10,5 +11,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Update<O extends object, K extends string, A extends any> =
-    Cast<OUpdate<O, K, A>, any[]>
+export type Update<T extends any[], K extends Index, A extends any> =
+    Cast<OUpdate<T, K, A>, any[]>

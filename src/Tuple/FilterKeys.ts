@@ -1,5 +1,7 @@
 import {FilterKeys as OFilterKeys} from '../Object/FilterKeys'
 import {Match} from '../Any/_Internal'
+import {Exclude} from '../Union/Exclude'
+import {ObjectOf} from './ObjectOf'
 
 /** Filter out the keys of **`T`** which entries match **`M`**
  * @param T to remove from
@@ -11,4 +13,4 @@ import {Match} from '../Any/_Internal'
  * ```
  */
 export type FilterKeys<T extends any[], M extends any, match extends Match = 'default'> =
-    OFilterKeys<T, M, match>
+    OFilterKeys<ObjectOf<T>, M, match>

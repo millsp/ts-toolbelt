@@ -1,5 +1,3 @@
-/* eslint-disable fp/no-class */
-/* eslint-disable no-implicit-coercion */
 import {Test, I} from '../src/index'
 
 const {checks, check} = Test
@@ -8,14 +6,14 @@ const {checks, check} = Test
 // ITERATION /////////////////////////////////////////////////////////////////////////////
 
 // ---------------------------------------------------------------------------------------
-// FMT
+// FORMAT
 
 checks([
-    check<I.Fmt<I.IterationOf<'32' | '12'>, 'n'>,   32 | 12,        Test.Pass>(),
-    check<I.Fmt<I.IterationOf<'32' | '12'>, 's'>,   '32' | '12',    Test.Pass>(),
+    check<I.Format<I.IterationOf<'32' | '12'>, 'n'>,   32 | 12,        Test.Pass>(),
+    check<I.Format<I.IterationOf<'32' | '12'>, 's'>,   '32' | '12',    Test.Pass>(),
 
-    check<I.Fmt<I.IterationOf<'32'>, 'n'>,  32,     Test.Pass>(),
-    check<I.Fmt<I.IterationOf<'32'>, 's'>,  '32',   Test.Pass>(),
+    check<I.Format<I.IterationOf<'32'>, 'n'>,  32,     Test.Pass>(),
+    check<I.Format<I.IterationOf<'32'>, 's'>,  '32',   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

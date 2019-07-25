@@ -74,8 +74,8 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_pipe_.html#pipe" class="tsd-kind-icon">Pipe</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_pipe_.html#pipefn" class="tsd-kind-icon">Pipe<wbr>Fn</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_pipe_.html#piped" class="tsd-kind-icon">Piped</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_pipe_.html#piper" class="tsd-kind-icon">Piper</a></li>
 							</ul>
 						</section>
@@ -84,36 +84,19 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="pipefn" class="tsd-anchor"></a>
-					<h3>Pipe<wbr>Fn</h3>
-					<div class="tsd-signature tsd-kind-icon">PipeFn&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PipeFn&lt;Fns, K&gt;</span></div>
-					<h4 class="tsd-type-parameters-title">Type parameters</h4>
-					<ul class="tsd-type-parameters">
-						<li>
-						<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_arrow_.html#arrow" class="tsd-signature-type">Arrow</a><span class="tsd-signature-symbol">[]</span>                    </li>
-						<li>
-						<span class="name">K</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Fns</span>                    </li>
-					</ul>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Function/Pipe.ts#L11">Function/Pipe.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="piped" class="tsd-anchor"></a>
-					<h3>Piped</h3>
-					<div class="tsd-signature tsd-kind-icon">Piped&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="pipe" class="tsd-anchor"></a>
+					<h3>Pipe</h3>
+					<div class="tsd-signature tsd-kind-icon">Pipe&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Pipe <strong><code>Function</code></strong>s together like <strong><code>pipe()</code></strong></p>
+							<p>Pipe <strong><code>Function</code></strong>s together</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_arrow_.html#arrow" class="tsd-signature-type">Arrow</a><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+							<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
 								<div class="lead">
 									<p>to pipe</p>
 								</div>
@@ -129,12 +112,29 @@
 
 <span class="hljs-comment">/// If you are looking for creating types for `pipe`</span>
 <span class="hljs-comment">/// `Piper` will check for input &amp; `Piped` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pipe</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">Arrow</span>[]&gt;(<span class="hljs-params">...args: F.Piper&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Piped</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pipe</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">Arrow</span>[]&gt;(<span class="hljs-params">...args: F.Piper&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Pipe</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Function/Pipe.ts#L44">Function/Pipe.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5dc4f9a6/src/Function/Pipe.ts#L44">Function/Pipe.ts:44</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="pipefn" class="tsd-anchor"></a>
+					<h3>Pipe<wbr>Fn</h3>
+					<div class="tsd-signature tsd-kind-icon">PipeFn&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PipeFn&lt;Fns, K&gt;</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    </li>
+						<li>
+						<span class="name">K</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Fns</span>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5dc4f9a6/src/Function/Pipe.ts#L11">Function/Pipe.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -150,7 +150,7 @@
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_arrow_.html#arrow" class="tsd-signature-type">Arrow</a><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+							<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
 								<div class="lead">
 									<p>to pipe</p>
 								</div>
@@ -163,12 +163,12 @@
 
 <span class="hljs-comment">/// If you are looking for creating types for `pipe`</span>
 <span class="hljs-comment">/// `Piper` will check for input &amp; `Piped` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pipe</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">Arrow</span>[]&gt;(<span class="hljs-params">...args: F.Piper&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Piped</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pipe</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">Arrow</span>[]&gt;(<span class="hljs-params">...args: F.Piper&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Pipe</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Function/Pipe.ts#L28">Function/Pipe.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5dc4f9a6/src/Function/Pipe.ts#L28">Function/Pipe.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -187,11 +187,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_function_pipe_.html#pipe" class="tsd-kind-icon">Pipe</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
 						<a href="_function_pipe_.html#pipefn" class="tsd-kind-icon">Pipe<wbr>Fn</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_function_pipe_.html#piped" class="tsd-kind-icon">Piped</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_function_pipe_.html#piper" class="tsd-kind-icon">Piper</a>

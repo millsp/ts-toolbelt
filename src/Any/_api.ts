@@ -1,4 +1,5 @@
 export {Cast} from './Cast'
+export {Implements} from './Implements'
 export {Compute} from './Compute'
 export {Equals} from './Equals'
 export {Extends} from './Extends'

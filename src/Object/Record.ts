@@ -1,4 +1,5 @@
 import {Modx} from './_Internal'
+import {Index} from '../_Internal'
 
 /** Create an object filled with **`A`** for the fields **`K`**
  * @param K to choose fields
@@ -9,7 +10,7 @@ import {Modx} from './_Internal'
  * ```ts
  * ```
  */
-export type Record<K extends string, A extends any, modx extends Modx = ['!', 'W']> = {
+export type Record<K extends Index, A extends any, modx extends Modx = ['!', 'W']> = {
     '!': {
         'R': {readonly [P in K]: A}
         'W': {         [P in K]: A}

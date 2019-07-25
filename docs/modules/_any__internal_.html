@@ -85,15 +85,17 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-descriptions">
 					<a name="match" class="tsd-anchor"></a>
 					<h3>Match</h3>
-					<div class="tsd-signature tsd-kind-icon">Match<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"extends"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"equals"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"loose"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"default"</span></div>
+					<div class="tsd-signature tsd-kind-icon">Match<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"default"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"implements-&gt;"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"&lt;-implements"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"extends-&gt;"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"&lt;-extends"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"equals"</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Describes the match strategy when matching types</p>
 							<ul>
-								<li><code>extends</code>: X extends Y</li>
-								<li><code>equals</code> : X equals  Y</li>
-								<li><code>loose</code>  : X extends Y || Y extends X</li>
-								<li><code>default</code>: extends (unless mentioned)</li>
+								<li><code>default</code>   : <code>extends-&gt;</code></li>
+								<li><code>contains-&gt;</code>: X contains Y</li>
+								<li><code>extends-&gt;</code> : X extends  Y</li>
+								<li><code>&lt;-contains</code>: Y contains X</li>
+								<li><code>&lt;-extends</code> : Y extends  X</li>
+								<li><code>equals</code>    : X equals   Y</li>
 							</ul>
 						</div>
 					</div>
@@ -101,7 +103,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Any/_Internal.ts#L7">Any/_Internal.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5dc4f9a6/src/Any/_Internal.ts#L9">Any/_Internal.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>

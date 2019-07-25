@@ -85,7 +85,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="update" class="tsd-anchor"></a>
 					<h3>Update</h3>
-					<div class="tsd-signature tsd-kind-icon">Update&lt;O, K, A&gt;<span class="tsd-signature-symbol">:</span> <a href="_any_cast_.html#cast" class="tsd-signature-type">Cast</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">OUpdate</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">Update&lt;T, K, A&gt;<span class="tsd-signature-symbol">:</span> <a href="_any_cast_.html#cast" class="tsd-signature-type">Cast</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">OUpdate</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Update in <strong><code>T</code></strong> the entries of key <strong><code>K</code></strong> with <strong><code>A</code></strong></p>
@@ -94,9 +94,14 @@
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-						<span class="name">O</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>                    </li>
+							<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to update</p>
+								</div>
+							</div>
+						</li>
 						<li>
-							<span class="name">K</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>                    <div class="tsd-comment">
+							<span class="name">K</span><span class="tsd-signature-symbol">: </span><a href="__internal_.html#index" class="tsd-signature-type">Index</a>                    <div class="tsd-comment">
 								<div class="lead">
 									<p>to chose fields</p>
 								</div>
@@ -111,9 +116,6 @@
 						</li>
 					</ul>
 					<div class="tsd-comment">
-						<h4>param</h4>
-						<p><p>to update</p>
-						</p>
 						<h4>returns</h4>
 						<p><p><strong><code>any[]</code></strong></p>
 						</p>
@@ -123,7 +125,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5aa0d6/src/Tuple/Update.ts#L13">Tuple/Update.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5dc4f9a6/src/Tuple/Update.ts#L14">Tuple/Update.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>

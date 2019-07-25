@@ -14,4 +14,3 @@ import {Pick} from './Pick'
  */
 export type Exclude<O extends object, O1 extends object, match extends Match = 'default'> =
     Pick<O, ExcludeKeys<O, O1, match>>
-

@@ -5,7 +5,7 @@ import {True, False} from '../Boolean/Boolean'
  * (Note: **`U`** & **`A`** can be interchanged)
  * @param U to be inspected
  * @param A to check within
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * ```

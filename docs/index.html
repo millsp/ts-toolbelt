@@ -81,7 +81,7 @@
 						<a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---bug-report.md">🐞 Report Bug</a>
 						·
 						<a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md">🍩 Request Feature</a>
-						.
+						·
 						<a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">🤔  Ask Questions</a>
 					</p>
 				</p>
@@ -131,7 +131,7 @@
 				<h4 id="goals">Goals</h4>
 				<ul>
 					<li>This package aims to be the home of all <strong>utility types</strong></li>
-					<li>Keep reasonable <strong>performance</strong>, so it will not bloat TS</li>
+					<li>High <a href="https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0"><strong>performance</strong></a>, so it will not bloat TS (max +4sec)</li>
 					<li>Computed types are always <strong>readable</strong>, like if you typed it</li>
 					<li>Software that&#39;s more type-safe, <strong>flexible</strong> &amp; more <strong>robust</strong></li>
 					<li>Bring a whole new set of extra <strong>features</strong> to TypeScript</li>
@@ -172,6 +172,9 @@
 							|--------------|--------------------|--------------|----------------|-----------------|--------------|
 							| <strong>A*<em>(ny)    | *</em>B</strong>(boolean)     | <strong>C*<em>(lass)  | *</em>F</strong>(unction) | <strong>I*<em>(teration) | *</em>N</strong>(umber) |
 						| <strong>O*<em>(bject) | *</em>O</strong>(bject).<strong>P** | **S</strong>(tring) | <strong>T*<em>(uple)    | *</em>U</strong>(nion)     | Test         |</p>
+						<p><strong>The documentation is complete but needs more examples</strong>. So feel free to <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">ask for
+							examples</a>,
+						and I will update the docs.</p>
 						<h4 id="imports">Imports</h4>
 						<p>There are many ways to import the types into your project:</p>
 						<ul>
@@ -267,10 +270,14 @@ checks([
 									<td>2.x.x</td>
 									<td>^3.5.x</td>
 								</tr>
+								<tr>
+									<td>3.x.x</td>
+									<td>^3.5.x</td>
+								</tr>
 						</tbody></table>
 						<p>Major version numbers will upgrade whenever TypeScript had breaking changes (it
 							happened that TS had breaking changes on minor versions). Otherwise, the release
-						versions will naturally follow semantic versioning.</p>
+						versions will naturally follow the semantic versioning.</p>
 						<h2 id="-what-s-next">🔮 What&#39;s next</h2>
 						<ul>
 							<li>Automated performance tests<pre><code class="language-sh"><span class="hljs-comment"># performance is checked manually with </span>
@@ -312,6 +319,9 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 						<a href="modules/_any_extends_.html">"<wbr>Any/<wbr>Extends"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_any_implements_.html">"<wbr>Any/<wbr>Implements"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_any_is_.html">"<wbr>Any/<wbr>Is"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -339,19 +349,13 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 						<a href="modules/_boolean_booleanof_.html">"<wbr>Boolean/<wbr>Boolean<wbr>Of"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_boolean_fmt_.html">"<wbr>Boolean/<wbr>Fmt"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_boolean_negate_.html">"<wbr>Boolean/<wbr>Negate"</a>
+						<a href="modules/_boolean_format_.html">"<wbr>Boolean/<wbr>Format"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_boolean_not_.html">"<wbr>Boolean/<wbr>Not"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_boolean_or_.html">"<wbr>Boolean/<wbr>Or"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_boolean_stringof_.html">"<wbr>Boolean/<wbr>String<wbr>Of"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_boolean_xor_.html">"<wbr>Boolean/<wbr>Xor"</a>
@@ -372,28 +376,25 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 						<a href="modules/_class__api_.html">"<wbr>Class/_<wbr>api"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_function_arrow_.html">"<wbr>Function/<wbr>Arrow"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_function_classof_.html">"<wbr>Function/<wbr>Class<wbr>Of"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
 						<a href="modules/_function_compose_.html">"<wbr>Function/<wbr>Compose"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_function_curry_.html">"<wbr>Function/<wbr>Curry"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_function_function_.html">"<wbr>Function/<wbr>Function"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_function_noinfer_.html">"<wbr>Function/<wbr>NoInfer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_function_paramsof_.html">"<wbr>Function/<wbr>Params<wbr>Of"</a>
+						<a href="modules/_function_parameters_.html">"<wbr>Function/<wbr>Parameters"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_function_pipe_.html">"<wbr>Function/<wbr>Pipe"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_function_returnof_.html">"<wbr>Function/<wbr>Return<wbr>Of"</a>
+						<a href="modules/_function_return_.html">"<wbr>Function/<wbr>Return"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_function_uncurry_.html">"<wbr>Function/<wbr>UnCurry"</a>
@@ -402,7 +403,7 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 						<a href="modules/_function__api_.html">"<wbr>Function/_<wbr>api"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_iteration_fmt_.html">"<wbr>Iteration/<wbr>Fmt"</a>
+						<a href="modules/_iteration_format_.html">"<wbr>Iteration/<wbr>Format"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_iteration_iteration_.html">"<wbr>Iteration/<wbr>Iteration"</a>
@@ -432,7 +433,7 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 						<a href="modules/_number_absolute_.html">"<wbr>Number/<wbr>Absolute"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_number_booleanof_.html">"<wbr>Number/<wbr>Boolean<wbr>Of"</a>
+						<a href="modules/_number_format_.html">"<wbr>Number/<wbr>Format"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_number_greater_.html">"<wbr>Number/<wbr>Greater"</a>
@@ -468,13 +469,16 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 						<a href="modules/_number_negate_.html">"<wbr>Number/<wbr>Negate"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_number_number_.html">"<wbr>Number/<wbr>Number"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_number_numberof_.html">"<wbr>Number/<wbr>Number<wbr>Of"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_number_plus_.html">"<wbr>Number/<wbr>Plus"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_number_range_.html">"<wbr>Number/<wbr>Range"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_number_stringof_.html">"<wbr>Number/<wbr>String<wbr>Of"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_number__internal_.html">"<wbr>Number/_<wbr><wbr>Internal"</a>
@@ -520,9 +524,6 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_object_merge_.html">"<wbr>Object/<wbr>Merge"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_object_mergekeys_.html">"<wbr>Object/<wbr>Merge<wbr>Keys"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_object_modify_.html">"<wbr>Object/<wbr>Modify"</a>
@@ -630,10 +631,10 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 						<a href="modules/_object__api_.html">"<wbr>Object/_<wbr>api"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_string_booleanof_.html">"<wbr>String/<wbr>Boolean<wbr>Of"</a>
+						<a href="modules/_string_format_.html">"<wbr>String/<wbr>Format"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_string_numberof_.html">"<wbr>String/<wbr>Number<wbr>Of"</a>
+						<a href="modules/_string__internal_.html">"<wbr>String/_<wbr><wbr>Internal"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_string__api_.html">"<wbr>String/_<wbr>api"</a>
@@ -709,9 +710,6 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_tuple_merge_.html">"<wbr>Tuple/<wbr>Merge"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_tuple_mergekeys_.html">"<wbr>Tuple/<wbr>Merge<wbr>Keys"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_tuple_modify_.html">"<wbr>Tuple/<wbr>Modify"</a>

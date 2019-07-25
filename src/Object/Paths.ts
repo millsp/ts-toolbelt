@@ -1,21 +1,28 @@
 import {Prepend} from '../Tuple/Prepend'
 import {Reverse} from '../Tuple/Reverse'
 import {Optional} from '../Tuple/Optional'
+import {Equals, Cast, Extends} from '../Any/_api'
+import {Index} from '../_Internal'
 import {NonNullable} from '../Tuple/NonNullable'
-import {Keys} from './Keys'
-import {Equals, Cast} from '../Any/_api'
+import {Concat} from '../Tuple/Concat'
 
-type _Paths<O, Paths extends string[] = []> = {
-    0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[Keys<O & {}>]
-    // Dives deep, and as it dives, it adds the paths to `Paths`
-    1: NonNullable<Optional<Reverse<Paths>>> // make convenient
+type _Paths<O, Paths extends Index[] = []> = {
+    0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]
+    // It dives deep, and as it dives, it adds the paths to `Paths`
+    1: NonNullable<Optional<Reverse<Paths>>> // make optional
+    2: NonNullable<Optional<Concat<Reverse<Paths>, Index[]>>>
 }[
-    [keyof O] extends [never] // Then if we can't go deeper
-    ? 1                       // We return accumulated path
-    : O extends object        // Otherwise if it's an `object`
-      ? 0                     // We can continue going deeper
-      : 1                     // We return accumulated path
-] // #bit-crazy
+    {
+        1: 2
+        0: {
+            1: {
+                1: 1
+                0: 0
+            }[Extends<[keyof O], [never]>]
+            0: 1
+        }[Extends<O, object>]
+    }[Equals<O, any>]
+]
 
 /** Get all the possible paths of **`O`**
  * (⚠️ this won't work with circular-refs)
@@ -25,9 +32,7 @@ type _Paths<O, Paths extends string[] = []> = {
  * ```ts
  * ```
  */
-export type Paths<O extends object> = {
-    1: never
-    0: _Paths<O>
-}[Equals<O, any>] extends infer X
-? Cast<X, string[]>
-: never
+export type Paths<O extends object> =
+    _Paths<O> extends infer X
+    ? Cast<X, Index[]>
+    : never

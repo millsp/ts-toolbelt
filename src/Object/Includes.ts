@@ -6,7 +6,7 @@ import {False, True} from '../Boolean/_api'
  * @param O to be inspected
  * @param M to check field type
  * @param match to change precision (?=`'default'`)
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * ```

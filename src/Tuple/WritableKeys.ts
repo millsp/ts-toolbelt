@@ -1,4 +1,5 @@
 import {WritableKeys as OWritableKeys} from '../Object/WritableKeys'
+import {ObjectOf} from './ObjectOf'
 
 /** Get the keys of **`O`** that are writable
  * @param O
@@ -8,4 +9,4 @@ import {WritableKeys as OWritableKeys} from '../Object/WritableKeys'
  * ```
  */
 export type WritableKeys<T extends any[]> =
-    OWritableKeys<T>
+    OWritableKeys<ObjectOf<T>>

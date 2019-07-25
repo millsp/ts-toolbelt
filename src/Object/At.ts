@@ -1,3 +1,5 @@
+import {Index} from '../_Internal'
+
 /** Get in **`O`** the type of a field of key **`K`**
  * @param O to extract from
  * @param K **`keyof`** to extract at
@@ -18,7 +20,7 @@
  * type test0 = O.At<User, 'id'> // number
  * ```
  */
-export type At<O extends object, K extends string> =
+export type At<O extends object, K extends Index> =
     K extends keyof O
     ? O[K]
     : never
