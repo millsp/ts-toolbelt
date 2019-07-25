@@ -6,7 +6,7 @@ import {ObjectOf} from './ObjectOf'
  * @param T to be inspected
  * @param M to check entry type
  * @param match to change precision (?=`'default'`)
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * ```

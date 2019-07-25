@@ -11,6 +11,23 @@ import {Match} from '../Any/_Internal'
  * @returns **`object`**
  * @example
  * ```ts
+ * import {O} from 'ts-toolbelt'
+ *
+ * type Person0 = {
+ *     name: string
+ *     age: string
+ * }
+ *
+ * type Person1 = {
+ *     name: string
+ *     age: number | string
+ *     nick: string
+ * }
+ *
+ * type test0 = O.Diff<Person0, Person1, 'default'>   // {nick: string}
+ * type test1 = O.Diff<Person0, Person1, 'extends->'> // {nick: string; age: string | number}
+ * type test2 = O.Diff<Person0, Person1, '<-extends'> // {nick: string; age: string}
+ * type test3 = O.Diff<Person0, Person1, 'equals'>    // {nick: string; age: string}
  * ```
  */
 export type Diff<O extends object, O1 extends object, match extends Match = 'default'> =

@@ -8,7 +8,7 @@ import {ObjectOf} from './ObjectOf'
  * @param Path to be followed
  * @param M to check entry type (?=`any`)
  * @param match to change precision (?=`'default'`)
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * ```

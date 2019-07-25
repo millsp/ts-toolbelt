@@ -8,7 +8,7 @@ import {Index} from '../_Internal'
  * @param K to choose field
  * @param M to check field type (?=`any`)
  * @param match to change precision (?=`'default'`)
- * @returns **`true`** or **`false`**
+ * @returns **`Boolean`**
  * @example
  * ```ts
  * ```
