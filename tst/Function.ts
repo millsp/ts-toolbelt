@@ -62,6 +62,14 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// LENGTHOF
+
+checks([
+    check<F.LengthOf<typeof FN>,                     3,        Test.Pass>(),
+    check<F.LengthOf<(a1: any, a2?: any) => any>,    1 | 2,    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // PIPE
 
 declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
