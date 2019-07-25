@@ -122,12 +122,28 @@
 						<p><p><strong><code>object</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {O} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> Person0 = {
+    name: <span class="hljs-built_in">string</span>
+    age: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-keyword">type</span> Person1 = {
+    name: <span class="hljs-built_in">string</span>
+    age: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>
+    nick: <span class="hljs-built_in">string</span>
+}
+
+<span class="hljs-keyword">type</span> test0 = O.Diff&lt;Person0, Person1, <span class="hljs-string">'default'</span>&gt;   <span class="hljs-comment">// {nick: string}</span>
+<span class="hljs-keyword">type</span> test1 = O.Diff&lt;Person0, Person1, <span class="hljs-string">'extends-&gt;'</span>&gt; <span class="hljs-comment">// {nick: string; age: string | number}</span>
+<span class="hljs-keyword">type</span> test2 = O.Diff&lt;Person0, Person1, <span class="hljs-string">'&lt;-extends'</span>&gt; <span class="hljs-comment">// {nick: string; age: string}</span>
+<span class="hljs-keyword">type</span> test3 = O.Diff&lt;Person0, Person1, <span class="hljs-string">'equals'</span>&gt;    <span class="hljs-comment">// {nick: string; age: string}</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/27155c6d/src/Object/Diff.ts#L16">Object/Diff.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/6ffaafa7/src/Object/Diff.ts#L33">Object/Diff.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
