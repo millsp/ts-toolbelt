@@ -516,7 +516,7 @@ type PATHVALID_O = {
         a: {
             a: {}
         }
-        b: {}
+        b: string[]
     }
 };
 
@@ -525,6 +525,7 @@ checks([
     check<O.PathValid<PATHVALID_O,  ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<PATHVALID_O,  ['a', 'x']>,        ['a', never],       Test.Pass>(),
     check<O.PathValid<PATHVALID_O,  ['b', 'a', 'a']>,   ['b', 'a', 'a'],    Test.Pass>(),
+    check<O.PathValid<PATHVALID_O,  ['b', 'b', 0]>,     ['b', 'b', 0],      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
