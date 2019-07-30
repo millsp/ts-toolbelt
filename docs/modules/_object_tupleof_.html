@@ -8,8 +8,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script>
+        var test = 0
+        function openNav(e) {
+            document.getElementById("global-nav").style.width   = "250px";
+            document.getElementById("global-nav").style.padding = "25px";
+            e.stopPropagation()
+        }
+
+        function closeNav(e) {
+            if (!document.getElementById("global-nav").contains(e.target)) {
+                document.getElementById("global-nav").style.width   = "0";
+                document.getElementById("global-nav").style.padding = "0";
+            }
+        }
+    </script>
 </head>
-<body>
+<body onclick="closeNav(event)">
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
@@ -64,7 +79,391 @@
 		</div>
 	</div>
 </header>
-<div class="container container-main">
+<nav id="global-nav" class="tsd-navigation sidenav">
+	<ul>
+		<li class=" ">
+			<a href="../globals.html">Globals</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_cast_.html">"<wbr>Any/<wbr>Cast"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_compute_.html">"<wbr>Any/<wbr>Compute"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_equals_.html">"<wbr>Any/<wbr>Equals"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_extends_.html">"<wbr>Any/<wbr>Extends"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_implements_.html">"<wbr>Any/<wbr>Implements"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_is_.html">"<wbr>Any/<wbr>Is"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_try_.html">"<wbr>Any/<wbr>Try"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_type_.html">"<wbr>Any/<wbr>Type"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any__internal_.html">"<wbr>Any/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any__api_.html">"<wbr>Any/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_any_x_.html">"<wbr>Any/x"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean_and_.html">"<wbr>Boolean/<wbr>And"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean_boolean_.html">"<wbr>Boolean/<wbr>Boolean"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean_booleanof_.html">"<wbr>Boolean/<wbr>Boolean<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean_format_.html">"<wbr>Boolean/<wbr>Format"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean_not_.html">"<wbr>Boolean/<wbr>Not"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean_or_.html">"<wbr>Boolean/<wbr>Or"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean_xor_.html">"<wbr>Boolean/<wbr>Xor"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean__internal_.html">"<wbr>Boolean/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_boolean__api_.html">"<wbr>Boolean/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_class_instanceof_.html">"<wbr>Class/<wbr>Instance<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_class_promiseof_.html">"<wbr>Class/<wbr>Promise<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_class__api_.html">"<wbr>Class/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_compose_.html">"<wbr>Function/<wbr>Compose"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_curry_.html">"<wbr>Function/<wbr>Curry"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_function_.html">"<wbr>Function/<wbr>Function"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_length_.html">"<wbr>Function/<wbr>Length"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_noinfer_.html">"<wbr>Function/<wbr>NoInfer"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_parameters_.html">"<wbr>Function/<wbr>Parameters"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_pipe_.html">"<wbr>Function/<wbr>Pipe"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_return_.html">"<wbr>Function/<wbr>Return"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function_uncurry_.html">"<wbr>Function/<wbr>UnCurry"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function__api_.html">"<wbr>Function/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration_format_.html">"<wbr>Iteration/<wbr>Format"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration_iteration_.html">"<wbr>Iteration/<wbr>Iteration"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration_iterationof_.html">"<wbr>Iteration/<wbr>Iteration<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration_key_.html">"<wbr>Iteration/<wbr>Key"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration_next_.html">"<wbr>Iteration/<wbr>Next"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration_pos_.html">"<wbr>Iteration/<wbr>Pos"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration_prev_.html">"<wbr>Iteration/<wbr>Prev"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration__internal_.html">"<wbr>Iteration/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_iteration__api_.html">"<wbr>Iteration/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_absolute_.html">"<wbr>Number/<wbr>Absolute"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_format_.html">"<wbr>Number/<wbr>Format"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_greater_.html">"<wbr>Number/<wbr>Greater"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_greatereq_.html">"<wbr>Number/<wbr>Greater<wbr>Eq"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_isnegative_.html">"<wbr>Number/<wbr>IsNegative"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_ispositive_.html">"<wbr>Number/<wbr>IsPositive"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_iszero_.html">"<wbr>Number/<wbr>IsZero"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_lower_.html">"<wbr>Number/<wbr>Lower"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_lowereq_.html">"<wbr>Number/<wbr>Lower<wbr>Eq"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_max_.html">"<wbr>Number/<wbr>Max"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_min_.html">"<wbr>Number/<wbr>Min"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_minus_.html">"<wbr>Number/<wbr>Minus"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_negate_.html">"<wbr>Number/<wbr>Negate"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_number_.html">"<wbr>Number/<wbr>Number"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_numberof_.html">"<wbr>Number/<wbr>Number<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_plus_.html">"<wbr>Number/<wbr>Plus"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number_range_.html">"<wbr>Number/<wbr>Range"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number__internal_.html">"<wbr>Number/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_number__api_.html">"<wbr>Number/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_at_.html">"<wbr>Object/<wbr>At"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_diff_.html">"<wbr>Object/<wbr>Diff"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_exclude_.html">"<wbr>Object/<wbr>Exclude"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_excludekeys_.html">"<wbr>Object/<wbr>Exclude<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_filter_.html">"<wbr>Object/<wbr>Filter"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_filterkeys_.html">"<wbr>Object/<wbr>Filter<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_has_.html">"<wbr>Object/<wbr>Has"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_haspath_.html">"<wbr>Object/<wbr>Has<wbr>Path"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_includes_.html">"<wbr>Object/<wbr>Includes"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_intersect_.html">"<wbr>Object/<wbr>Intersect"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_intersectkeys_.html">"<wbr>Object/<wbr>Intersect<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_keys_.html">"<wbr>Object/<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_merge_.html">"<wbr>Object/<wbr>Merge"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_modify_.html">"<wbr>Object/<wbr>Modify"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_nonnullable_.html">"<wbr>Object/<wbr>Non<wbr>Nullable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_nonnullablekeys_.html">"<wbr>Object/<wbr>Non<wbr>Nullable<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_nullable_.html">"<wbr>Object/<wbr>Nullable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_nullablekeys_.html">"<wbr>Object/<wbr>Nullable<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_omit_.html">"<wbr>Object/<wbr>Omit"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_optional_.html">"<wbr>Object/<wbr>Optional"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_optionalkeys_.html">"<wbr>Object/<wbr>Optional<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_overwrite_.html">"<wbr>Object/<wbr>Overwrite"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_p_merge_.html">"<wbr>Object/<wbr>P/Merge"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_p_omit_.html">"<wbr>Object/<wbr>P/Omit"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_p_pick_.html">"<wbr>Object/<wbr>P/Pick"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_p_readonly_.html">"<wbr>Object/<wbr>P/Readonly"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_p_update_.html">"<wbr>Object/<wbr>P/Update"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_p__internal_.html">"<wbr>Object/<wbr>P/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_p__api_.html">"<wbr>Object/<wbr>P/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_path_.html">"<wbr>Object/<wbr>Path"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_pathvalid_.html">"<wbr>Object/<wbr>Path<wbr>Valid"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_paths_.html">"<wbr>Object/<wbr>Paths"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_pick_.html">"<wbr>Object/<wbr>Pick"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_readonly_.html">"<wbr>Object/<wbr>Readonly"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_readonlykeys_.html">"<wbr>Object/<wbr>Readonly<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_record_.html">"<wbr>Object/<wbr>Record"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_replace_.html">"<wbr>Object/<wbr>Replace"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_required_.html">"<wbr>Object/<wbr>Required"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_requiredkeys_.html">"<wbr>Object/<wbr>Required<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_select_.html">"<wbr>Object/<wbr>Select"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_selectkeys_.html">"<wbr>Object/<wbr>Select<wbr>Keys"</a>
+			</li>            <li class="current tsd-kind-external-module">
+			<a href="_object_tupleof_.html">"<wbr>Object/<wbr>Tuple<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_unionof_.html">"<wbr>Object/<wbr>Union<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_update_.html">"<wbr>Object/<wbr>Update"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_writable_.html">"<wbr>Object/<wbr>Writable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object_writablekeys_.html">"<wbr>Object/<wbr>Writable<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object__internal_.html">"<wbr>Object/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_object__api_.html">"<wbr>Object/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_string_format_.html">"<wbr>String/<wbr>Format"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_string__internal_.html">"<wbr>String/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_string__api_.html">"<wbr>String/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_test_.html">"<wbr>Test"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_append_.html">"<wbr>Tuple/<wbr>Append"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_at_.html">"<wbr>Tuple/<wbr>At"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_concat_.html">"<wbr>Tuple/<wbr>Concat"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_diff_.html">"<wbr>Tuple/<wbr>Diff"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_drop_.html">"<wbr>Tuple/<wbr>Drop"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_exclude_.html">"<wbr>Tuple/<wbr>Exclude"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_excludekeys_.html">"<wbr>Tuple/<wbr>Exclude<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_extract_.html">"<wbr>Tuple/<wbr>Extract"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_filter_.html">"<wbr>Tuple/<wbr>Filter"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_filterkeys_.html">"<wbr>Tuple/<wbr>Filter<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_group_.html">"<wbr>Tuple/<wbr>Group"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_has_.html">"<wbr>Tuple/<wbr>Has"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_haspath_.html">"<wbr>Tuple/<wbr>Has<wbr>Path"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_head_.html">"<wbr>Tuple/<wbr>Head"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_includes_.html">"<wbr>Tuple/<wbr>Includes"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_intersect_.html">"<wbr>Tuple/<wbr>Intersect"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_intersectkeys_.html">"<wbr>Tuple/<wbr>Intersect<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_keyset_.html">"<wbr>Tuple/<wbr>Key<wbr>Set"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_keys_.html">"<wbr>Tuple/<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_last_.html">"<wbr>Tuple/<wbr>Last"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_length_.html">"<wbr>Tuple/<wbr>Length"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_longest_.html">"<wbr>Tuple/<wbr>Longest"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_merge_.html">"<wbr>Tuple/<wbr>Merge"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_modify_.html">"<wbr>Tuple/<wbr>Modify"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_nonnullable_.html">"<wbr>Tuple/<wbr>Non<wbr>Nullable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_nonnullablekeys_.html">"<wbr>Tuple/<wbr>Non<wbr>Nullable<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_nullable_.html">"<wbr>Tuple/<wbr>Nullable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_nullablekeys_.html">"<wbr>Tuple/<wbr>Nullable<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_objectof_.html">"<wbr>Tuple/<wbr>Object<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_omit_.html">"<wbr>Tuple/<wbr>Omit"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_optional_.html">"<wbr>Tuple/<wbr>Optional"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_optionalkeys_.html">"<wbr>Tuple/<wbr>Optional<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_overwrite_.html">"<wbr>Tuple/<wbr>Overwrite"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_path_.html">"<wbr>Tuple/<wbr>Path"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_pathvalid_.html">"<wbr>Tuple/<wbr>Path<wbr>Valid"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_paths_.html">"<wbr>Tuple/<wbr>Paths"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_pick_.html">"<wbr>Tuple/<wbr>Pick"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_pop_.html">"<wbr>Tuple/<wbr>Pop"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_prepend_.html">"<wbr>Tuple/<wbr>Prepend"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_readonly_.html">"<wbr>Tuple/<wbr>Readonly"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_readonlykeys_.html">"<wbr>Tuple/<wbr>Readonly<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_remove_.html">"<wbr>Tuple/<wbr>Remove"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_repeat_.html">"<wbr>Tuple/<wbr>Repeat"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_replace_.html">"<wbr>Tuple/<wbr>Replace"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_required_.html">"<wbr>Tuple/<wbr>Required"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_requiredkeys_.html">"<wbr>Tuple/<wbr>Required<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_reverse_.html">"<wbr>Tuple/<wbr>Reverse"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_select_.html">"<wbr>Tuple/<wbr>Select"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_selectkeys_.html">"<wbr>Tuple/<wbr>Select<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_tail_.html">"<wbr>Tuple/<wbr>Tail"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_take_.html">"<wbr>Tuple/<wbr>Take"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_unnest_.html">"<wbr>Tuple/<wbr>UnNest"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_unionof_.html">"<wbr>Tuple/<wbr>Union<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_update_.html">"<wbr>Tuple/<wbr>Update"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_writable_.html">"<wbr>Tuple/<wbr>Writable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_writablekeys_.html">"<wbr>Tuple/<wbr>Writable<wbr>Keys"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_zip_.html">"<wbr>Tuple/<wbr>Zip"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_zipobj_.html">"<wbr>Tuple/<wbr>Zip<wbr>Obj"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple__internal_.html">"<wbr>Tuple/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple__api_.html">"<wbr>Tuple/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_diff_.html">"<wbr>Union/<wbr>Diff"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_exclude_.html">"<wbr>Union/<wbr>Exclude"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_filter_.html">"<wbr>Union/<wbr>Filter"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_has_.html">"<wbr>Union/<wbr>Has"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_intersect_.html">"<wbr>Union/<wbr>Intersect"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_intersectof_.html">"<wbr>Union/<wbr>Intersect<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_last_.html">"<wbr>Union/<wbr>Last"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_nonnullable_.html">"<wbr>Union/<wbr>Non<wbr>Nullable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_nullable_.html">"<wbr>Union/<wbr>Nullable"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_pop_.html">"<wbr>Union/<wbr>Pop"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_replace_.html">"<wbr>Union/<wbr>Replace"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_select_.html">"<wbr>Union/<wbr>Select"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union_tupleof_.html">"<wbr>Union/<wbr>Tuple<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_union__api_.html">"<wbr>Union/_<wbr>api"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="__internal_.html">"_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_index_.html">"index"</a>
+	</li>    </ul>
+</nav>
+<div id="main" class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
 			<section class="tsd-panel-group tsd-index-group">
@@ -99,7 +498,7 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/c462e324/src/Object/TupleOf.ts#L10">Object/TupleOf.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/2e6c7c28/src/Object/TupleOf.ts#L10">Object/TupleOf.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,7 +535,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/c462e324/src/Object/TupleOf.ts#L33">Object/TupleOf.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/2e6c7c28/src/Object/TupleOf.ts#L33">Object/TupleOf.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,24 +556,23 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/c462e324/src/Object/TupleOf.ts#L15">Object/TupleOf.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/2e6c7c28/src/Object/TupleOf.ts#L15">Object/TupleOf.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
+			<nav class="tsd-navigation secondary menu-sticky">
 				<ul>
-					<li class="globals  ">
-						<a href="../globals.html"><em>Globals</em></a>
-					</li>
-					<li class="current tsd-kind-external-module">
-						<a href="_object_tupleof_.html">"<wbr>Object/<wbr>Tuple<wbr>Of"</a>
+					<li>
+						📑
+						<span onclick="openNav(event)" style="cursor: pointer; padding-left: 10px">
+							Documentation
+						</span>
 					</li>
 				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
+				<br>
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
 						<a href="_object_tupleof_.html#pickifentry" class="tsd-kind-icon">Pick<wbr>IfEntry</a>
