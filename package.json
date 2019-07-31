@@ -2,7 +2,10 @@
   "name": "ts-toolbelt",
   "version": "3.1.2",
   "license": "Apache-2.0",
-  "author": "Pierre-Antoine Mills",
+  "author": {
+    "name": "Pierre-Antoine Mills",
+    "url": "https://github.com/pirix-gh"
+  },
   "description": "👷 Higher type safety for TypeScript",
   "keywords": [
     "types",
