@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Sort the package.json to keep it neat
+npx sort-package-json
+git commit -m "chore(package.json): organize"
+
 # Get the name of the current working branch
 BRANCH=`git rev-parse --symbolic-full-name --abbrev-ref HEAD`
 

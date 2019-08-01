@@ -1,34 +1,39 @@
 {
   "name": "ts-toolbelt",
   "version": "3.2.7",
-  "license": "Apache-2.0",
-  "author": {
-    "name": "Pierre-Antoine Mills",
-    "url": "https://github.com/pirix-gh"
-  },
   "description": "👷 Higher type safety for TypeScript",
   "keywords": [
-    "types",
-    "tools",
     "safe",
+    "types",
     "typesafe",
-    "typescript"
+    "typescript",
+    "tools"
   ],
   "homepage": "https://github.com/pirix-gh/ts-toolbelt",
   "repository": {
     "type": "git",
     "url": "https://github.com/pirix-gh/ts-toolbelt"
   },
-  "types": "out/types/src/index.d.ts",
-  "main": "out/index.js",
-  "scripts": {
-    "test": "npx eslint 'src/**' && npm run build:types",
-    "build": "npm run build:types && npm run build:docs && touch out/index.js",
-    "build:types": "rm -fr out && tsc --emitDeclarationOnly && rm -fr out/types/tst",
-    "build:docs": "typedoc --out docs src --theme node_modules/eledoc/bin/default/ && touch docs/.nojekyll && git add docs",
-    "setup:dev": "npm install --only=dev",
-    "release": "./release.sh"
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Pierre-Antoine Mills",
+    "url": "https://github.com/pirix-gh"
   },
+  "files": [
+    "out/types",
+    "out/src"
+  ],
+  "main": "out/index.js",
+  "types": "out/types/src/index.d.ts",
+  "scripts": {
+    "build": "npm run build:types && npm run build:docs && touch out/index.js",
+    "build:docs": "typedoc --out docs src --theme node_modules/eledoc/bin/default/ && touch docs/.nojekyll && git add docs",
+    "build:types": "rm -fr out && tsc --emitDeclarationOnly && rm -fr out/types/tst",
+    "release": "./release.sh",
+    "setup:dev": "npm install --only=dev",
+    "test": "npx eslint 'src/**' && npm run build:types"
+  },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
@@ -38,6 +43,7 @@
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.2",
+    "sort-package-json": "^1.22.1",
     "standard-version": "^7.0.0",
     "ts-node": "^8.3.0",
     "tslib": "^1.10.0",
@@ -46,10 +52,5 @@
   },
   "peerDependencies": {
     "typescript": "^3.5.0"
-  },
-  "dependencies": {},
-  "files": [
-    "out/types",
-    "out/src"
-  ]
+  }
 }
