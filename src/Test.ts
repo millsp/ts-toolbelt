@@ -8,5 +8,3 @@ export type Fail = False
 
 export declare function check<Type, Expect, Outcome extends Boolean>(debug?: Compute<Type>): Equals<Equals<Type, Expect>, Outcome>
 export declare function checks(asserts: Partial<Repeat<Pass, '30'>>): void;
-
-// docs: correct spelling of CHANGELOG
