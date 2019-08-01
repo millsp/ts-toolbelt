@@ -27,7 +27,7 @@
     "build:types": "rm -fr out && tsc --emitDeclarationOnly && rm -fr out/types/tst",
     "build:docs": "typedoc --out docs src --theme node_modules/eledoc/bin/default/ && touch docs/.nojekyll && git add docs",
     "setup:dev": "npm install --only=dev",
-    "release": "standard-version && git push --follow-tags origin HEAD && npm publish"
+    "release": "release.sh"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^1.13.0",
