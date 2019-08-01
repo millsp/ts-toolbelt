@@ -190,23 +190,32 @@ There are many ways to contribute to the project:
 * Adding new types to the collection
 
 #### Pull Requests
-1. [Read the tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
+1. [Read the
+   tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
+
 2. Fork the project
+
 3. Clone your fork
+
 4. Create a pr/**feature** branch
+
    ```sh
    git checkout -b pr/CoolFeature
    ```
 5. Commit your changes
+
    Make sure that you follow the [conventional commit](https://conventionalcommits.org) specs or you won't be able to commit
    ```sh
    git commit -m 'feat(name): Added this CoolFeature'
    ```
+
 6. [Run the tests](#-running-tests)
 7. Commit your changes
+
    ```sh
    git push origin pr/CoolFeature
    ```
+
 8. Open a pull request
 
 ## 👏 Sponsoring issues
