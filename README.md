@@ -201,8 +201,7 @@ There are many ways to contribute to the project:
    ```sh
    git commit -m 'feat(name): Added this CoolFeature'
    ```
-   Make sure that you follow the [conventional
-   commit](https://conventionalcommits.org) specs or you won't be able to commit
+   Make sure that you follow the [conventional commit](https://conventionalcommits.org) specs or you won't be able to commit
 6. [Run the tests](#-running-tests)
 7. Commit your changes
    ```sh
