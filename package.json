@@ -1,13 +1,13 @@
 {
   "name": "ts-toolbelt",
-  "version": "3.2.7",
+  "version": "3.2.8",
   "description": "👷 Higher type safety for TypeScript",
   "keywords": [
     "safe",
+    "tools",
     "types",
     "typesafe",
-    "typescript",
-    "tools"
+    "typescript"
   ],
   "homepage": "https://github.com/pirix-gh/ts-toolbelt",
   "repository": {
