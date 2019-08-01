@@ -280,4 +280,5 @@ Many, many thanks to all the
 * [Matt McCutchen](https://github.com/mattmccutchen)
 
 ## 💟 Friendly Projects
-- [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases
+* [`eledoc`](https://github.com/pirix-gh/eledoc) - 🌒 A material dark theme for TypeDoc 
+* [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases
