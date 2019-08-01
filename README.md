@@ -41,6 +41,11 @@
     <img src="https://img.shields.io/npm/l/ts-toolbelt.svg">
   </a>
 </p>
+<p align="center">
+  <a href="https://conventionalcommits.org" target="_blank">
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg">
+  </a>
+</p>
 
 ## Table of Contents
 
@@ -194,8 +199,10 @@ There are many ways to contribute to the project:
    ```
 5. Commit your changes
    ```sh
-   git commit -m 'Added this CoolFeature'
+   git commit -m 'feat(name): Added this CoolFeature'
    ```
+   Make sure that you follow the [conventional
+   commit](https://conventionalcommits.org) specs or you won't be able to commit
 6. [Run the tests](#-running-tests)
 7. Commit your changes
    ```sh
