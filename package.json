@@ -26,12 +26,12 @@
   "main": "out/index.js",
   "types": "out/types/src/index.d.ts",
   "scripts": {
-    "build": "npm run build:types && npm run build:docs && touch out/index.js",
-    "build:docs": "typedoc --out docs src --theme node_modules/eledoc/bin/default/ && touch docs/.nojekyll && git add docs",
-    "build:types": "rm -fr out && tsc --emitDeclarationOnly && rm -fr out/types/tst",
-    "release": "./release.sh",
-    "setup:dev": "npm install --only=dev",
-    "test": "npx eslint 'src/**' && npm run build:types"
+    "build": "bash ./scr/build.sh",
+    "build:docs": "bash ./scr/build:docs.sh",
+    "build:types": "bash ./scr/build:types.sh",
+    "release": "bash ./scr/release.sh",
+    "setup:dev": "bash ./scr/setup:dev.sh",
+    "test": "bash ./scr/test.sh"
   },
   "dependencies": {},
   "devDependencies": {
