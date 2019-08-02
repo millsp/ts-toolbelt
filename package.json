@@ -26,12 +26,12 @@
   "main": "out/index.js",
   "types": "out/types/src/index.d.ts",
   "scripts": {
-    "build": "bash ./scr/build.sh",
-    "build:docs": "bash ./scr/build:docs.sh",
-    "build:types": "bash ./scr/build:types.sh",
-    "release": "bash ./scr/release.sh",
-    "setup:dev": "bash ./scr/setup:dev.sh",
-    "test": "bash ./scr/test.sh"
+    "build": "bash scr/build.sh",
+    "build:docs": "bash scr/build:docs.sh",
+    "build:types": "bash scr/build:types.sh",
+    "release": "bash scr/release.sh",
+    "setup:dev": "bash scr/setup:dev.sh",
+    "test": "bash scr/test.sh"
   },
   "dependencies": {},
   "devDependencies": {
