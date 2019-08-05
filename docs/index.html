@@ -509,7 +509,9 @@
 						<img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg">
 					</a>
 				</p>
-				<h2 id="table-of-contents">Table of Contents</h2>
+				<a href="#table-of-contents" id="table-of-contents" style="color: inherit; text-decoration: none;">
+					<h2>Table of Contents</h2>
+				</a>
 				<ul>
 					<li><a href="#-about">📜 About</a></li>
 					<li><a href="#-features">🍩 Features</a></li>
@@ -523,7 +525,9 @@
 					<li><a href="#-whats-next">🔮 What&#39;s next</a></li>
 					<li><a href="#-acknowledgements">🙏 Acknowledgements</a></li>
 				</ul>
-				<h2 id="-about">📜 About</h2>
+				<a href="#📜-about" id="📜-about" style="color: inherit; text-decoration: none;">
+					<h2>📜 About</h2>
+				</a>
 				<p><strong>ts-toolbelt</strong> is a collection of types that makes TypeScript even <strong>safer</strong>.
 					It&#39;s goal is to improve type correctness while adding a whole new set of
 				<strong>features</strong> to TypeScript. </p>
@@ -532,7 +536,9 @@
 				safety.</p>
 				<p><strong>ts-toolbelt</strong> completes TypeScript with a collection of more than <strong>150</strong>
 				tested types.</p>
-				<h4 id="goals">Goals</h4>
+				<a href="#goals" id="goals" style="color: inherit; text-decoration: none;">
+					<h4>Goals</h4>
+				</a>
 				<ul>
 					<li>This package aims to be the home of all <strong>utility types</strong></li>
 					<li>High <a href="https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0"><strong>performance</strong></a>, so it will not bloat TS (~ +2sec)</li>
@@ -541,7 +547,9 @@
 					<li>Bring a whole new set of extra <strong>features</strong> to TypeScript</li>
 					<li>Types can be <strong>combined</strong> together to create new ones!</li>
 				</ul>
-				<h2 id="-features">🍩 Features</h2>
+				<a href="#🍩-features" id="🍩-features" style="color: inherit; text-decoration: none;">
+					<h2>🍩 Features</h2>
+				</a>
 				<p>Here&#39;s some of the most useful features:</p>
 				<ul>
 					<li><a href="https://pirix-gh.github.io/ts-toolbelt/modules/_object_merge_.html#merge">Merge two types together</a></li>
@@ -558,28 +566,64 @@
 						<blockquote>
 							<p>If you don&#39;t find the type you are looking for, you are welcome to open a <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md">feature request</a>!</p>
 						</blockquote>
-						<h2 id="-getting-started">🏁 Getting Started</h2>
-						<h4 id="prerequisites">Prerequisites</h4>
+						<a href="#🏁-getting-started" id="🏁-getting-started" style="color: inherit; text-decoration: none;">
+							<h2>🏁 Getting Started</h2>
+						</a>
+						<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
+							<h4>Prerequisites</h4>
+						</a>
 						<p>This is important, the lowest TypeScript version that is <a href="#-compatibility">supported</a> is 3.5</p>
 						<pre><code class="language-sh">npm install typescript@^3.5.0 --save</code></pre>
-						<h4 id="installation">Installation</h4>
+						<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+							<h4>Installation</h4>
+						</a>
 						<pre><code class="language-sh">npm install ts-toolbelt --save</code></pre>
-						<h4 id="hello-world">Hello World</h4>
+						<a href="#hello-world" id="hello-world" style="color: inherit; text-decoration: none;">
+							<h4>Hello World</h4>
+						</a>
 						<pre><code class="language-ts"><span class="hljs-keyword">import</span> {A, B, C, F, I, N, O, S, T, U} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 <span class="hljs-comment">// Wonder what these letters mean? Check the docs below</span>
 
 <span class="hljs-comment">// Merge two `object` together</span>
 <span class="hljs-keyword">type</span> merge = O.Merge&lt;{name: <span class="hljs-built_in">string</span>}, {age?: <span class="hljs-built_in">number</span>}&gt;</code></pre>
-						<h2 id="-documentation-"><a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Documentation ⤢</a></h2>
+						<a href="#a-hrefhttpspirix-ghgithubiots-toolbelt📖-documentation-⤢a" id="a-hrefhttpspirix-ghgithubiots-toolbelt📖-documentation-⤢a" style="color: inherit; text-decoration: none;">
+							<h2><a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Documentation ⤢</a></h2>
+						</a>
 						<p>The project is organized around TypeScript&#39;s main concepts:</p>
-						<p>|              |                    |              |                |                 |              |
-							|--------------|--------------------|--------------|----------------|-----------------|--------------|
-							| <strong>A*<em>(ny)    | *</em>B</strong>(boolean)     | <strong>C*<em>(lass)  | *</em>F</strong>(unction) | <strong>I*<em>(teration) | *</em>N</strong>(umber) |
-						| <strong>O*<em>(bject) | *</em>O</strong>(bject).<strong>P** | **S</strong>(tring) | <strong>T*<em>(uple)    | *</em>U</strong>(nion)     | Test         |</p>
+						<table>
+							<thead>
+								<tr>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody><tr>
+									<td><strong>A</strong>(ny)</td>
+									<td><strong>B</strong>(boolean)</td>
+									<td><strong>C</strong>(lass)</td>
+									<td><strong>F</strong>(unction)</td>
+									<td><strong>I</strong>(teration)</td>
+									<td><strong>N</strong>(umber)</td>
+								</tr>
+								<tr>
+									<td><strong>O</strong>(bject)</td>
+									<td><strong>O</strong>(bject).<strong>P</strong></td>
+									<td><strong>S</strong>(tring)</td>
+									<td><strong>T</strong>(uple)</td>
+									<td><strong>U</strong>(nion)</td>
+									<td>Test</td>
+								</tr>
+						</tbody></table>
 						<p><strong>The documentation is complete but needs more examples</strong>. So feel free to <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">ask for
 							examples</a>,
 						and I will update the docs.</p>
-						<h4 id="imports">Imports</h4>
+						<a href="#imports" id="imports" style="color: inherit; text-decoration: none;">
+							<h4>Imports</h4>
+						</a>
 						<p>There are many ways to import the types into your project:</p>
 						<ul>
 							<li><p>Explicit</p>
@@ -592,30 +636,44 @@
 								<pre><code class="language-ts"><span class="hljs-keyword">import</span> tb <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span></code></pre>
 							</li>
 						</ul>
-						<h4 id="internal-docs">Internal Docs</h4>
+						<a href="#internal-docs" id="internal-docs" style="color: inherit; text-decoration: none;">
+							<h4>Internal Docs</h4>
+						</a>
 						<p>If you&#39;re interested to <strong>learn</strong> how the internals work, <a href="https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab">this tutorial</a> will get
 						you on track to start writing your own types.</p>
-						<h2 id="-good-to-know-"><a href="https://github.com/pirix-gh/ts-toolbelt/wiki">🧠 Good to Know ⤢</a></h2>
+						<a href="#a-hrefhttpsgithubcompirix-ghts-toolbeltwiki🧠-good-to-know-⤢a" id="a-hrefhttpsgithubcompirix-ghts-toolbeltwiki🧠-good-to-know-⤢a" style="color: inherit; text-decoration: none;">
+							<h2><a href="https://github.com/pirix-gh/ts-toolbelt/wiki">🧠 Good to Know ⤢</a></h2>
+						</a>
 						<p>In this wiki, you&#39;ll find some extra resources for your learning &amp; understanding.</p>
 						<p>It is incremental and it will be completed on demand, you can ask for this below.</p>
-						<h4 id="questions-"><a href="https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc">Questions ⤢</a></h4>
+						<a href="#a-hrefhttpsgithubcompirix-ghts-toolbeltissuesqlabel3aquestionsort3areactions-2b1-descquestions-⤢a" id="a-hrefhttpsgithubcompirix-ghts-toolbeltissuesqlabel3aquestionsort3areactions-2b1-descquestions-⤢a" style="color: inherit; text-decoration: none;">
+							<h4><a href="https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc">Questions ⤢</a></h4>
+						</a>
 						<p>Are you missing something? Participate to the open-wiki by posting your
 						questions <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">right here</a>.</p>
-						<h2 id="-contributing">🎁 Contributing</h2>
+						<a href="#🎁-contributing" id="🎁-contributing" style="color: inherit; text-decoration: none;">
+							<h2>🎁 Contributing</h2>
+						</a>
 						<p>Contributions are what make the open source community such an amazing place to
 							learn, inspire, and create. Any contributions you make are <strong>greatly appreciated</strong>.
 						There are many ways to contribute to the project:</p>
-						<h4 id="community">Community</h4>
+						<a href="#community" id="community" style="color: inherit; text-decoration: none;">
+							<h4>Community</h4>
+						</a>
 						<ul>
 							<li><a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&amp;utm_medium=link&amp;utm_campaign=share-link">Help the community with answers on Gitter</a></li>
 							<li><a href="https://github.com/pirix-gh/ts-toolbelt/issues/new/choose">Reporting bugs or requesting new features</a></li>
 						</ul>
-						<h4 id="codebase">Codebase</h4>
+						<a href="#codebase" id="codebase" style="color: inherit; text-decoration: none;">
+							<h4>Codebase</h4>
+						</a>
 						<ul>
 							<li>Improving existing documentation </li>
 							<li>Adding new types to the collection</li>
 						</ul>
-						<h4 id="pull-requests">Pull Requests</h4>
+						<a href="#pull-requests" id="pull-requests" style="color: inherit; text-decoration: none;">
+							<h4>Pull Requests</h4>
+						</a>
 						<ol>
 							<li><p><a href="https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab">Read the
 								tutorial</a></p>
@@ -639,7 +697,9 @@
 							<li><p>Open a pull request</p>
 							</li>
 						</ol>
-						<h2 id="-sponsoring-issues">👏 Sponsoring issues</h2>
+						<a href="#👏-sponsoring-issues" id="👏-sponsoring-issues" style="color: inherit; text-decoration: none;">
+							<h2>👏 Sponsoring issues</h2>
+						</a>
 						<p><strong>Sponsored issues have higher priority over non-critical issues</strong>.<br></p>
 						<p>You can either request a new feature or a bug fix then fund it.</p>
 						<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
@@ -649,11 +709,17 @@
 						<br>
 						<br>
 						<p><strong>The money will be transparently split with an issue&#39;s assignees.</strong></p>
-						<h2 id="-running-tests">💉 Running tests</h2>
-						<h4 id="for-this-project">For this project</h4>
+						<a href="#💉-running-tests" id="💉-running-tests" style="color: inherit; text-decoration: none;">
+							<h2>💉 Running tests</h2>
+						</a>
+						<a href="#for-this-project" id="for-this-project" style="color: inherit; text-decoration: none;">
+							<h4>For this project</h4>
+						</a>
 						<p>To run the <code>lint</code> &amp; <code>type</code> tests, simply run:</p>
 						<pre><code class="language-sh">npm <span class="hljs-built_in">test</span></code></pre>
-						<h4 id="for-your-project">For your project</h4>
+						<a href="#for-your-project" id="for-your-project" style="color: inherit; text-decoration: none;">
+							<h4>For your project</h4>
+						</a>
 						<p>Want to test your own types? Let&#39;s get started:</p>
 						<pre><code class="language-ts"><span class="hljs-keyword">import</span> {A, B, C, F, I, N, O, S, T, U, Test} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
 
@@ -666,7 +732,9 @@ checks([
 						<blockquote>
 							<p>Place it in a file that won&#39;t be executed, it&#39;s just for TypeScript to test types</p>
 						</blockquote>
-						<h2 id="-compatibility">🔧 Compatibility</h2>
+						<a href="#🔧-compatibility" id="🔧-compatibility" style="color: inherit; text-decoration: none;">
+							<h2>🔧 Compatibility</h2>
+						</a>
 						<p>The project is maintained to adapt to the constant
 						<a href="https://github.com/Microsoft/TypeScript/wiki/Roadmap">changes of TypeScript</a>:</p>
 						<table>
@@ -692,7 +760,9 @@ checks([
 						<p>Major version numbers will upgrade whenever TypeScript had breaking changes (it
 							happened that TS had breaking changes on minor versions). Otherwise, the release
 						versions will naturally follow the semantic versioning.</p>
-						<h2 id="-what-s-next">🔮 What&#39;s next</h2>
+						<a href="#🔮-what39s-next" id="🔮-what39s-next" style="color: inherit; text-decoration: none;">
+							<h2>🔮 What&#39;s next</h2>
+						</a>
 						<ul>
 							<li>Automated performance tests<pre><code class="language-sh"><span class="hljs-comment"># performance is checked manually with </span>
 npx tsc --noEmit --extendedDiagnostics</code></pre>
@@ -700,7 +770,9 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 							<li>Improve with user feedback</li>
 							<li>Need to write the examples</li>
 						</ul>
-						<h2 id="-acknowledgements">🙏 Acknowledgements</h2>
+						<a href="#🙏-acknowledgements" id="🙏-acknowledgements" style="color: inherit; text-decoration: none;">
+							<h2>🙏 Acknowledgements</h2>
+						</a>
 						<p>Many, many thanks to all the
 						<a href="https://github.com/pirix-gh/ts-toolbelt/graphs/contributors">contributors</a> and:</p>
 						<ul>
@@ -708,7 +780,9 @@ npx tsc --noEmit --extendedDiagnostics</code></pre>
 							<li><a href="https://github.com/jcalz">Joe Calzaretta</a></li>
 							<li><a href="https://github.com/mattmccutchen">Matt McCutchen</a></li>
 						</ul>
-						<h2 id="-friendly-projects">💟 Friendly Projects</h2>
+						<a href="#💟-friendly-projects" id="💟-friendly-projects" style="color: inherit; text-decoration: none;">
+							<h2>💟 Friendly Projects</h2>
+						</a>
 						<ul>
 							<li><a href="https://github.com/pirix-gh/eledoc"><code>eledoc</code></a> - 🌒 A material dark theme for TypeDoc </li>
 							<li><a href="https://github.com/piotrwitek/utility-types"><code>utility-types</code></a> - Collection of utility types, complementing TypeScript built-in mapped types and aliases</li>
