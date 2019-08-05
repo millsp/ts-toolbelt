@@ -1,6 +1,3 @@
-/* eslint-disable fp/no-mutation */
-/* eslint-disable fp/no-let */
-
 /** Describes compatible type formats
  * * `s`: **`string`**
  * * `n`: **`number`**

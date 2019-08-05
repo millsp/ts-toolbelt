@@ -1,5 +1,3 @@
-/* eslint-disable fp/no-class */
-
 /** Get the instance type of a **`class`** from a class object
  * @param C **`typeof`** **`class`**
  * @returns **`class`**
