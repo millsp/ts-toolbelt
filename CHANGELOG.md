@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.17](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.16...v3.2.17) (2019-08-05)
+
+
+### Others
+
+* **eslint:** remove fp settings ([83a7658](https://github.com/pirix-gh/ts-toolbelt/commit/83a7658))
+* update ([83ced5f](https://github.com/pirix-gh/ts-toolbelt/commit/83ced5f))
+
 ### [3.2.16](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.15...v3.2.16) (2019-08-05)
 
 
