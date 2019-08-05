@@ -39,7 +39,7 @@
     "@commitlint/config-conventional": "^8.1.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eledoc": "^0.0.9",
-    "eslint": "^5.16.0",
+    "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.2",
     "npx": "^10.2.0",
@@ -47,7 +47,7 @@
     "standard-version": "^7.0.0",
     "ts-node": "^8.3.0",
     "tslib": "^1.10.0",
-    "typedoc": "^0.14.2",
+    "typedoc": "^0.15.0",
     "typescript": "^3.5.3"
   },
   "peerDependencies": {
