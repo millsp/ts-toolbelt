@@ -20,6 +20,15 @@ type _Readonly<O extends object, Path extends Index[], K extends Index, depth ex
                   : O[P]> // don't update                           // Not part of path - x
 }
 
+/** Make some fields of **`O`** readonly at **`Path`** (deeply or not)
+ * @param O to make readonly
+ * @param Path to be followed
+ * @param depth to do it deeply (?=`'default'`)
+ * @returns **`object`**
+ * @example
+ * ```ts
+ * ```
+ */
 export type Readonly<O extends object, Path extends PPath, depth extends Depth = 'flat'> =
     _Readonly<Record<'_', O>, Pop<Prepend<Path, '_'>>, Last<Path>, depth>['_']
     // We have nested `O` to be able to perform 0-depth operations as well

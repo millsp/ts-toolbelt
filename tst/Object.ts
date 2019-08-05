@@ -800,3 +800,159 @@ checks([
 checks([
     check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k',  Test.Pass>(),
 ])
+
+// ///////////////////////////////////////////////////////////////////////////////////////
+// OBJECT.P //////////////////////////////////////////////////////////////////////////////
+
+type OP = { // A binary tree
+    a: {
+        a: {
+            a: 'aaa'
+            b: 'aab'
+        }
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    }
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    }
+};
+
+// ---------------------------------------------------------------------------------------
+// P.MERGE
+
+type PMERGE_OP = {
+    a: {
+        a: {
+            a: 'aaa'
+            b: 'aab'
+            x: string
+        }
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    }
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+            x: string
+        }
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | undefined
+};
+
+checks([
+    check<O.P.Merge<OP, ['a' | 'b', 'a'], {x: string}>, PMERGE_OP,  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// P.OMIT
+
+type POMIT_OP = {
+    a: {
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    }
+    b?: {
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | undefined
+};
+
+checks([
+    check<O.P.Omit<OP, ['a' | 'b', 'a']>,   POMIT_OP,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// P.PICK
+
+type PPICK_OP = {
+    a: {
+        a: {
+            a: 'aaa'
+            b: 'aab'
+        }
+    }
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }
+    } | undefined
+};
+
+checks([
+    check<O.P.Pick<OP, ['a' | 'b', 'a']>,   PPICK_OP,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// P.READONLY
+
+type PREADONLY_OP = {
+    a: {
+        readonly a: {
+            a: 'aaa'
+            b: 'aab'
+        }
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    }
+    b?: {
+        readonly a: {
+            a: 'baa'
+            b: 'bab'
+        }
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | undefined
+};
+
+checks([
+    check<O.P.Readonly<OP, ['a' | 'b', 'a']>,   PREADONLY_OP,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// P.UPDATE
+
+type PUPDATE_OP = {
+    a: {
+        a: 'x'
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    }
+    b?: {
+        a: 'x'
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | undefined
+};
+
+checks([
+    check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,    PUPDATE_OP,     Test.Pass>(),
+])

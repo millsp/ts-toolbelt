@@ -15,5 +15,14 @@ type _Update<O extends object, Path extends Index[], A, I extends Iteration = It
                   : O[K]> // don't update                   // Not part of path - x
 }
 
+/** Update in **`O`** the fields at **`Path`** with **`A`**
+ * @param O to update
+ * @param Path to be followed
+ * @param A to update with
+ * @returns **`object`**
+ * @example
+ * ```ts
+ * ```
+ */
 export type Update<O extends object, Path extends PPath, A extends any> =
     _Update<O, Path, A>

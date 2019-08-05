@@ -8,7 +8,6 @@ import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../_Internal'
 
-// todo docs
 type _Merge<O extends object, Path extends Index[], O1 extends object, I extends Iteration = IterationOf<'0'>> = {
   [K in keyof O]: Compute<K extends Path[Pos<I>]            // If K is part of Path
                   ? Pos<Next<I>> extends Length<Path>       // & if it's the target
@@ -17,5 +16,14 @@ type _Merge<O extends object, Path extends Index[], O1 extends object, I extends
                   : O[K]>                                   // Not part of path - x
 }
 
+/** Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**
+ * @param O to complete
+ * @param Path to be followed
+ * @param O1 to copy from
+ * @returns **`object`**
+ * @example
+ * ```ts
+ * ```
+ */
 export type Merge<O extends object, Path extends PPath, O1 extends object> =
    _Merge<O, Path, O1>
