@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.18](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.17...v3.2.18) (2019-08-05)
+
+
+### Bug Fixes
+
+* **eslint:** remove fp flags ([e009db0](https://github.com/pirix-gh/ts-toolbelt/commit/e009db0))
+* **eslint:** remove fp inlined flags ([f4848b0](https://github.com/pirix-gh/ts-toolbelt/commit/f4848b0))
+
+
+### Others
+
+* **deps:** update deps versions ([993b9bb](https://github.com/pirix-gh/ts-toolbelt/commit/993b9bb))
+* update ([cf3f697](https://github.com/pirix-gh/ts-toolbelt/commit/cf3f697))
+* update ([1dec110](https://github.com/pirix-gh/ts-toolbelt/commit/1dec110))
+
 ### [3.2.17](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.16...v3.2.17) (2019-08-05)
 
 
