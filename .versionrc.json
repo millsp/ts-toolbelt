@@ -1,0 +1,16 @@
+{
+    "types": [
+        {"type": "feat", "section": "Features"},
+        {"type": "fix", "section": "Bug Fixes"},
+        {"type": "build", "section": "Others"},
+        {"type": "ci", "section": "Others"},
+        {"type": "chore", "section": "Others"},
+        {"type": "docs", "section": "Others"},
+        {"type": "feat", "section": "Others"},
+        {"type": "perf", "section": "Others"},
+        {"type": "refactor", "section": "Others"},
+        {"type": "revert", "section": "Others"},
+        {"type": "style", "section": "Others"},
+        {"type": "test", "section": "Others"}
+    ]
+}
