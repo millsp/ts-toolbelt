@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.19](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.18...v3.2.19) (2019-08-05)
+
+
+### Others
+
+* update ([1c560de](https://github.com/pirix-gh/ts-toolbelt/commit/1c560de))
+* Update docstring for Curry type ([52f5c95](https://github.com/pirix-gh/ts-toolbelt/commit/52f5c95))
+
 ### [3.2.18](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.17...v3.2.18) (2019-08-05)
 
 
