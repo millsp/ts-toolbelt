@@ -40,7 +40,6 @@
     "@typescript-eslint/parser": "^1.13.0",
     "eledoc": "^0.0.9",
     "eslint": "^5.16.0",
-    "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.2",
     "npx": "^10.2.0",
