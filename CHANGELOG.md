@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.22](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.21...v3.2.22) (2019-08-05)
+
+
+### Others
+
+* **travis:** debug failure -> eslint version rollback ([5fcaffa](https://github.com/pirix-gh/ts-toolbelt/commit/5fcaffa))
+* **travis:** debug failure, cleared cache ([f6a919d](https://github.com/pirix-gh/ts-toolbelt/commit/f6a919d))
+* update ([f766846](https://github.com/pirix-gh/ts-toolbelt/commit/f766846))
+
 ### [3.2.21](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.20...v3.2.21) (2019-08-05)
 
 
