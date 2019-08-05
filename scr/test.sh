@@ -1,4 +1,4 @@
 #!/bin/bash
 
-npx eslint 'src/**' &&
+npx eslint 'src/**'
 # npm run build:types
