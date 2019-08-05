@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.16](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.15...v3.2.16) (2019-08-05)
+
+
+### Others
+
+* **cleanup:** removed fp ([647c622](https://github.com/pirix-gh/ts-toolbelt/commit/647c622))
+* **commits:** display all the commits in the changelog ([94d62ee](https://github.com/pirix-gh/ts-toolbelt/commit/94d62ee))
+* update ([8c23630](https://github.com/pirix-gh/ts-toolbelt/commit/8c23630))
+
 ### [3.2.15](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.14...v3.2.15) (2019-08-05)
 
 
