@@ -1,10 +1,14 @@
 { // https://github.com/Microsoft/vscode-eslint/issues/284
     "parser": "@typescript-eslint/parser",
     "extends": ["eslint:recommended"],
-    "plugins": ["react", "fp"],
+    "plugins": ["react"],
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "commonjs": true
+    },
+    "globals": {
+        "__dirname": false
     },
     "parserOptions": {
         "jsx": true,
@@ -61,24 +65,6 @@
         "template-curly-spacing"      : ["error"],
         "yield-star-spacing"          : ["error", "before"],
         "yoda"                        : ["error"],
-        // functional programming
-        "fp/no-arguments"        : ["error"],
-        "fp/no-class"            : ["error"],
-        "fp/no-delete"           : ["error"],
-        "fp/no-events"           : ["error"],
-        "fp/no-get-set"          : ["error"],
-        "fp/no-let"              : ["warn"],
-        "fp/no-loops"            : ["error"],
-        "fp/no-mutating-assign"  : ["error"],
-        "fp/no-mutating-methods" : ["warn"],
-        "fp/no-mutation"         : ["warn"],
-        "fp/no-nil"              : ["off"],
-        "fp/no-proxy"            : ["off"],
-        "fp/no-rest-parameters"  : ["off"],
-        "fp/no-this"             : ["error"],
-        "fp/no-throw"            : ["error"],
-        "fp/no-unused-expression": ["off"],
-        "fp/no-valueof-field"    : ["off"],
         // code style
         "array-bracket-newline"        : ["error", "consistent"],
         "array-bracket-spacing"        : ["error"],
