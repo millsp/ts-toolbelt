@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.21](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.20...v3.2.21) (2019-08-05)
+
+
+### Others
+
+* **travis:** debug failure ([3576ae8](https://github.com/pirix-gh/ts-toolbelt/commit/3576ae8))
+* update ([4369f09](https://github.com/pirix-gh/ts-toolbelt/commit/4369f09))
+
 ### [3.2.20](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.19...v3.2.20) (2019-08-05)
 
 
