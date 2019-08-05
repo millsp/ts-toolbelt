@@ -13,7 +13,6 @@ export type Formats = 'n' | 's'
 const IterationOfGenerator = (min: number, max: number) => {
     console.log(`{"${min}": ["__", "${min + 1}", "${min}", ${min}, "-"],`)
 
-    // eslint-disable-next-line fp/no-loops
     for (let i = min + 1, k = 1; i <= max - 1; i++, k++)
         // eslint-disable-next-line no-nested-ternary
         console.log(`"${i}": ["${i - 1}", "${i + 1}", "${i}", ${i}, "${i > 0 ? '+' : i < 0 ? '-' : '0'}"],`)
