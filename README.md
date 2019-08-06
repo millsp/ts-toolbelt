@@ -114,6 +114,7 @@ npm install typescript@^3.5.0 --save
 For best results, add this to your `tsconfig.json`
 
 ```ts
+// Optional, recommended
 {
   "compilerOptions": {
     // ...
