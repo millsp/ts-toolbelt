@@ -251,7 +251,11 @@
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="modules/_object_p_omit_.html">"<wbr>Object/<wbr>P/Omit"</a>
 			</li>            <li class=" tsd-kind-external-module">
+			<a href="modules/_object_p_omitall_.html">"<wbr>Object/<wbr>P/Omit<wbr>All"</a>
+			</li>            <li class=" tsd-kind-external-module">
 			<a href="modules/_object_p_pick_.html">"<wbr>Object/<wbr>P/Pick"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="modules/_object_p_pickall_.html">"<wbr>Object/<wbr>P/Pick<wbr>All"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="modules/_object_p_readonly_.html">"<wbr>Object/<wbr>P/Readonly"</a>
 			</li>            <li class=" tsd-kind-external-module">
@@ -541,7 +545,7 @@
 				</a>
 				<ul>
 					<li>This package aims to be the home of all <strong>utility types</strong></li>
-					<li>High <a href="https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0"><strong>performance</strong></a>, so it will not bloat TS (~ +2sec)</li>
+					<li>High <a href="https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0"><strong>performance</strong></a>, so it will not bloat TS (~ +2sec, +30MB)</li>
 					<li>Computed types are always <strong>readable</strong>, like if you typed it</li>
 					<li>Software that&#39;s more type-safe, <strong>flexible</strong> &amp; more <strong>robust</strong></li>
 					<li>Bring a whole new set of extra <strong>features</strong> to TypeScript</li>
@@ -572,8 +576,16 @@
 						<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
 							<h4>Prerequisites</h4>
 						</a>
-						<p>This is important, the lowest TypeScript version that is <a href="#-compatibility">supported</a> is 3.5</p>
+						<p>Lowest TypeScript <a href="#-compatibility">support</a> starts at version 3.5</p>
 						<pre><code class="language-sh">npm install typescript@^3.5.0 --save</code></pre>
+						<p>For best results, add this to your <code>tsconfig.json</code></p>
+						<pre><code class="language-ts"><span class="hljs-comment">// Optional, recommended</span>
+{
+  <span class="hljs-string">"compilerOptions"</span>: {
+    <span class="hljs-comment">// ...</span>
+    <span class="hljs-string">"strict"</span>: <span class="hljs-literal">true</span>
+  }
+}</code></pre>
 						<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 							<h4>Installation</h4>
 						</a>
