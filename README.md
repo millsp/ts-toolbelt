@@ -77,7 +77,7 @@ tested types.
 #### Goals
 
 * This package aims to be the home of all **utility types**
-* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec)
+* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +30MB)
 * Computed types are always **readable**, like if you typed it
 * Software that's more type-safe, **flexible** & more **robust**
 * Bring a whole new set of extra **features** to TypeScript
@@ -105,10 +105,21 @@ Here's some of the most useful features:
 
 #### Prerequisites
 
-This is important, the lowest TypeScript version that is [supported](#-compatibility) is 3.5
+Lowest TypeScript [support](#-compatibility) starts at version 3.5
 
 ```sh
 npm install typescript@^3.5.0 --save
+```
+
+For best results, add this to your `tsconfig.json`
+
+```ts
+{
+  "compilerOptions": {
+    // ...
+    "strict": true
+  }
+}
 ```
 
 #### Installation
