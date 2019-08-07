@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.24](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.23...v3.2.24) (2019-08-07)
+
+
+### Bug Fixes
+
+* **p.merge:** now picks up fields as it dives [#28](https://github.com/pirix-gh/ts-toolbelt/issues/28) ([68d49f0](https://github.com/pirix-gh/ts-toolbelt/commit/68d49f0))
+
+
+### Others
+
+* **tsconfig:** add missing fields ([c97a34c](https://github.com/pirix-gh/ts-toolbelt/commit/c97a34c))
+* update ([5539f64](https://github.com/pirix-gh/ts-toolbelt/commit/5539f64))
+
 ### [3.2.23](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.22...v3.2.23) (2019-08-06)
 
 
