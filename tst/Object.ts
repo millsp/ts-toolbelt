@@ -806,10 +806,7 @@ checks([
 
 type OP = { // A binary tree
     a: {
-        a: {
-            a: 'aaa'
-            b: 'aab'
-        }
+        a: string
         b: {
             a: 'aba'
             b: 'abb'
@@ -825,6 +822,7 @@ type OP = { // A binary tree
             b: 'bbb'
         }
     }
+    c?: string
 };
 
 // ---------------------------------------------------------------------------------------
@@ -832,31 +830,30 @@ type OP = { // A binary tree
 
 type PMERGE_OP = {
     a: {
-        a: {
-            a: 'aaa'
-            b: 'aab'
-            x: string
-        }
+        a: string
         b: {
             a: 'aba'
             b: 'abb'
+            x: string
         }
     }
     b?: {
         a: {
             a: 'baa'
             b: 'bab'
-            x: string
         }
         b: {
             a: 'bba'
             b: 'bbb'
+            x: string
         }
-    } | undefined
+    }
+    c?: string
+
 };
 
 checks([
-    check<O.P.Merge<OP, ['a' | 'b', 'a'], {x: string}>, PMERGE_OP,  Test.Pass>(),
+    check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>, PMERGE_OP,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -874,7 +871,8 @@ type POMIT_OP = {
             a: 'bba'
             b: 'bbb'
         }
-    } | undefined
+    }
+    c?: string
 };
 
 checks([
@@ -886,18 +884,17 @@ checks([
 
 type PPICK_OP = {
     a: {
-        a: {
-            a: 'aaa'
-            b: 'aab'
-        }
+        a: string
     }
     b?: {
         a: {
             a: 'baa'
             b: 'bab'
         }
-    } | undefined
+    }
 };
+
+type t = O.P.Pick<OP, ['a' | 'b', 'a']>
 
 checks([
     check<O.P.Pick<OP, ['a' | 'b', 'a']>,   PPICK_OP,   Test.Pass>(),
@@ -908,10 +905,7 @@ checks([
 
 type PREADONLY_OP = {
     a: {
-        readonly a: {
-            a: 'aaa'
-            b: 'aab'
-        }
+        readonly a: string
         b: {
             a: 'aba'
             b: 'abb'
@@ -926,7 +920,8 @@ type PREADONLY_OP = {
             a: 'bba'
             b: 'bbb'
         }
-    } | undefined
+    }
+    c?: string
 };
 
 checks([
@@ -950,7 +945,8 @@ type PUPDATE_OP = {
             a: 'bba'
             b: 'bbb'
         }
-    } | undefined
+    }
+    c?: string
 };
 
 checks([

@@ -9,11 +9,13 @@ import {Path as PPath} from './_Internal'
 import {Index} from '../../_Internal'
 
 type _Merge<O extends object, Path extends Index[], O1 extends object, I extends Iteration = IterationOf<'0'>> = {
-  [K in keyof O]: Compute<K extends Path[Pos<I>]            // If K is part of Path
-                  ? Pos<Next<I>> extends Length<Path>       // & if it's the target
-                    ? OMerge<O[K] & {}, O1> // merge it     // Update - target
-                    : _Merge<O[K] & {}, Path, O1, Next<I>>  // Or continue diving
-                  : O[K]>                                   // Not part of path - x
+  [K in keyof O]: Compute<
+                  K extends Path[Pos<I>]                   // If K is part of Path
+                  ? Pos<Next<I>> extends Length<Path>      // & if it's the target
+                    ? OMerge<O[K] & {}, O1> // merge it    // Update - target
+                    : _Merge<O[K] & {}, Path, O1, Next<I>> // Or continue diving
+                  : O[K]                                   // Not part of path - x
+                  >
 }
 
 /** Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**

@@ -12,11 +12,12 @@ import {Type} from '../../Any/Type'
 type Never = Type<{}, 'never'>
 
 type _Omit<O extends object, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
-    [K in keyof O]: Compute<K extends Path[Pos<I>]             // If K is part of Path
-                    ? Pos<Next<I>> extends Length<Path>        // & if it's the target
-                      ? Never // don't pick                    // Update - target
-                      : _Omit<O[K] & {}, Path, Next<I>>        // Or continue diving
-                    : O[K]> // pick it                         // Not part of path - x
+    [K in keyof O]: Compute<
+                    K extends Path[Pos<I>]              // If K is part of Path
+                    ? Pos<Next<I>> extends Length<Path> // & if it's the target
+                      ? Never // don't pick             // Update - target
+                      : _Omit<O[K] & {}, Path, Next<I>> // Or continue diving
+                    : O[K]> // pick it                  // Not part of path - x
 } extends infer X ? Filter<X & {}, Never, '<-extends'> : never // No `never` fields
 
 /** Remove out of **`O`** the fields at **`Path`**

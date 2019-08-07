@@ -13,7 +13,8 @@ import {Prepend} from '../../Tuple/Prepend'
 import {Index} from '../../_Internal'
 
 type _Readonly<O extends object, Path extends Index[], K extends Index, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
-  [P in keyof O]: Compute<P extends Path[Pos<I>]                    // If K is part of Path
+  [P in keyof O]: Compute<
+                  P extends Path[Pos<I>]                            // If K is part of Path
                   ? Pos<Next<I>> extends Length<Path>               // & if it's the target
                     ? OReadonly<O[P] & {}, K, depth> // immutable   // Update - target
                     : _Readonly<O[P] & {}, Path, K, depth, Next<I>> // Or continue diving
