@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Function/Function&quot; | ts-toolbelt</title>
+	<title>&quot;Tuple/EndOf&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -72,10 +72,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_function_function_.html">&quot;Function/Function&quot;</a>
+					<a href="_tuple_endof_.html">&quot;Tuple/EndOf&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Function/Function&quot;</h1>
+			<h1>External module &quot;Tuple/EndOf&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -133,7 +133,7 @@
 			<a href="_function_compose_.html">"<wbr>Function/<wbr>Compose"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_function_curry_.html">"<wbr>Function/<wbr>Curry"</a>
-			</li>            <li class="current tsd-kind-external-module">
+			</li>            <li class=" tsd-kind-external-module">
 			<a href="_function_function_.html">"<wbr>Function/<wbr>Function"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_function_length_.html">"<wbr>Function/<wbr>Length"</a>
@@ -319,7 +319,7 @@
 			<a href="_tuple_diff_.html">"<wbr>Tuple/<wbr>Diff"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_drop_.html">"<wbr>Tuple/<wbr>Drop"</a>
-			</li>            <li class=" tsd-kind-external-module">
+			</li>            <li class="current tsd-kind-external-module">
 			<a href="_tuple_endof_.html">"<wbr>Tuple/<wbr>End<wbr>Of"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_exclude_.html">"<wbr>Tuple/<wbr>Exclude"</a>
@@ -475,7 +475,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_function_.html#function" class="tsd-kind-icon">Function</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_tuple_endof_.html#endof" class="tsd-kind-icon">End<wbr>Of</a></li>
 							</ul>
 						</section>
 					</div>
@@ -484,45 +484,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="function" class="tsd-anchor"></a>
-					<h3>Function</h3>
-					<div class="tsd-signature tsd-kind-icon">Function&lt;P, R&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="endof" class="tsd-anchor"></a>
+					<h3>End<wbr>Of</h3>
+					<div class="tsd-signature tsd-kind-icon">EndOf&lt;T, fmt&gt;<span class="tsd-signature-symbol">:</span> <a href="_tuple_length_.html#length" class="tsd-signature-type">Length</a><span class="tsd-signature-symbol">&lt;</span><a href="_tuple_tail_.html#tail" class="tsd-signature-type">Tail</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">fmt</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Alias to create a <strong><code>Function</code></strong></p>
+							<p>Get the last index of <strong><code>T</code></strong></p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">P</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+							<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
 								<div class="lead">
-									<p>parameters</p>
+									<p>to get from</p>
 								</div>
 							</div>
 						</li>
 						<li>
-							<span class="name">R</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    <div class="tsd-comment">
+							<span class="name">fmt</span><span class="tsd-signature-symbol">: </span><a href="_boolean__internal_.html#formats" class="tsd-signature-type">Formats</a>                    <div class="tsd-comment">
 								<div class="lead">
-									<p>return type</p>
+									<p>output (?=<code>&#39;n&#39;</code>)</p>
 								</div>
 							</div>
 						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>Function</code></strong></p>
+						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
-
-<span class="hljs-keyword">type</span> test0 = F.Function&lt;[<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>], <span class="hljs-built_in">boolean</span>&gt;
-<span class="hljs-comment">/// (args_0: string, args_1: number) =&gt; boolean</span></code></pre>
+						<p><pre><code class="language-ts"></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5eae9ffd/src/Function/Function.ts#L13">Function/Function.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/5eae9ffd/src/Tuple/EndOf.ts#L13">Tuple/EndOf.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -541,7 +538,7 @@
 				<br>
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_function_function_.html#function" class="tsd-kind-icon">Function</a>
+						<a href="_tuple_endof_.html#endof" class="tsd-kind-icon">End<wbr>Of</a>
 					</li>
 				</ul>
 			</nav>
