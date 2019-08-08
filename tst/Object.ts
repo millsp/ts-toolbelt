@@ -875,6 +875,8 @@ type POMIT_OP = {
     c?: string
 };
 
+type t = O.P.Omit<OP, ['c', 'a']>
+
 checks([
     check<O.P.Omit<OP, ['a' | 'b', 'a']>,   POMIT_OP,   Test.Pass>(),
 ])
@@ -893,8 +895,6 @@ type PPICK_OP = {
         }
     }
 };
-
-type t = O.P.Pick<OP, ['a' | 'b', 'a']>
 
 checks([
     check<O.P.Pick<OP, ['a' | 'b', 'a']>,   PPICK_OP,   Test.Pass>(),
