@@ -24,7 +24,7 @@ type ComposeFn<Fns extends Function[], K extends keyof Fns> =
  *
  * /// If you are looking for creating types for `compose`
  * /// `Composer` will check for input & `Compose` the output
- * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Compose<Fns>
+ * declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>
  * ```
  */
 export type Composer<Fns extends Function[]> = {
@@ -40,7 +40,7 @@ export type Composer<Fns extends Function[]> = {
  *
  * /// If you are looking for creating types for `compose`
  * /// `Composer` will check for input & `Compose` the output
- * declare function compose<Fns extends F.Arrow[]>(...args: F.Composer<Fns>): F.Compose<Fns>
+ * declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>
  * ```
  */
 export type Compose<Fns extends Function[]> =

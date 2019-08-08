@@ -22,7 +22,7 @@ type PipeFn<Fns extends Function[], K extends keyof Fns> =
  *
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
+ * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
  * ```
  */
 export type Piper<Fns extends Function[]> = {
@@ -38,7 +38,7 @@ export type Piper<Fns extends Function[]> = {
  *
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends Arrow[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
+ * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
  * ```
  */
 export type Pipe<Fns extends Function[]> =
