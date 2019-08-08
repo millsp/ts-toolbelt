@@ -4,7 +4,7 @@ import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {Next} from '../Iteration/Next'
 import {Append} from '../Tuple/Append'
-import {Equals} from '../Any/_api'
+import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
 
 type PickIfEntry<O extends object, TN extends any[], I extends Iteration> =

@@ -1,10 +1,12 @@
 import {Prepend} from '../Tuple/Prepend'
 import {Reverse} from '../Tuple/Reverse'
 import {Optional} from '../Tuple/Optional'
-import {Equals, Cast, Extends} from '../Any/_api'
 import {Index} from '../_Internal'
 import {NonNullable} from '../Tuple/NonNullable'
 import {Concat} from '../Tuple/Concat'
+import {Cast} from '../Any/Cast'
+import {Equals} from '../Any/Equals'
+import {Extends} from '../Any/Extends'
 
 type _Paths<O, Paths extends Index[] = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]

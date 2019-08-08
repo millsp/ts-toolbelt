@@ -10,8 +10,9 @@ import {_IsNegative} from './IsNegative'
 import {Exclude} from '../Union/Exclude'
 import {Cast} from '../Any/Cast'
 import {Format} from '../Iteration/Format'
-import {True, Or} from '../Boolean/_api'
 import {Extends} from '../Any/Extends'
+import {Or} from '../Boolean/Or'
+import {True} from '../Boolean/Boolean'
 
 type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +

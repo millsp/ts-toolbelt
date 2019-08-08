@@ -38,8 +38,6 @@ type _MinNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
       : 0
 ]
 
-type t = Extends<never, never>
-
 type MinNegative<N extends Number> =
     _MinNegative<N> extends infer X
     ? Cast<X, Iteration>

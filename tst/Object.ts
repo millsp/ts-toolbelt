@@ -875,8 +875,6 @@ type POMIT_OP = {
     c?: string
 };
 
-type t = O.P.Omit<OP, ['c', 'a']>
-
 checks([
     check<O.P.Omit<OP, ['a' | 'b', 'a']>,   POMIT_OP,   Test.Pass>(),
 ])
