@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.5.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.4.1...v3.5.0) (2019-08-08)
+
+
+### Others
+
+* **assign:** assign for Object & Tuple ([8ecc461](https://github.com/pirix-gh/ts-toolbelt/commit/8ecc461))
+* update ([7094d07](https://github.com/pirix-gh/ts-toolbelt/commit/7094d07))
+
 ### [3.4.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.4.0...v3.4.1) (2019-08-08)
 
 
