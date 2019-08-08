@@ -1,6 +1,5 @@
 import {Pick} from './Pick'
 import {Exclude} from '../Union/Exclude'
-import {Cast} from '../Any/Cast'
 import {Index} from '../_Internal'
 
 /** Remove out of **`O`** the fields of key **`K`**
