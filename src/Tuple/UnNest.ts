@@ -12,7 +12,6 @@ type _UnNest<T extends any[], TN extends any[] = [], I extends Iteration = Itera
     1: _UnNest<T, Append<TN, T[Pos<I>]>, Next<I>>
     2: TN
 }[
-
     Pos<I> extends Length<T>  // its the end
     ? 2
     : T[Pos<I>] extends any[] // element is tuple -> concat

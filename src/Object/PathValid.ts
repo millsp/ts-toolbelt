@@ -25,7 +25,9 @@ type _PathValid<O, Path extends Index[], I extends Iteration = IterationOf<'0'>>
     0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, Length<Path, 's'>>, never>
 }[
-    Extends<[O], [never]>
+    [O] extends [never]
+    ? 1
+    : 0
 ]
 
 /** Get in **`O`** the type of nested properties
