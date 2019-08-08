@@ -1,4 +1,5 @@
 export {Append} from './Append'
+export {Assign} from './Assign'
 export {At} from './At'
 export {Concat} from './Concat'
 export {Diff} from './Diff'

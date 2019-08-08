@@ -1,3 +1,4 @@
+export {Assign} from './Assign'
 export {At} from './At'
 export {Diff} from './Diff'
 export {Exclude} from './Exclude'
