@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.4.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.4.0...v3.4.1) (2019-08-08)
+
+
+### Others
+
+* finish renaming arrow to function ([55fbb78](https://github.com/pirix-gh/ts-toolbelt/commit/55fbb78))
+* update ([22c4cd3](https://github.com/pirix-gh/ts-toolbelt/commit/22c4cd3))
+
 ## [3.4.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.23...v3.4.0) (2019-08-08)
 
 
