@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.23...v3.3.0) (2019-08-08)
+
+
+### Bug Fixes
+
+* **p.merge:** now picks up fields as it dives [#28](https://github.com/pirix-gh/ts-toolbelt/issues/28) ([68d49f0](https://github.com/pirix-gh/ts-toolbelt/commit/68d49f0))
+
+
+### Others
+
+* **release:** 3.2.24 ([fdeab77](https://github.com/pirix-gh/ts-toolbelt/commit/fdeab77))
+* **tsconfig:** add missing fields ([c97a34c](https://github.com/pirix-gh/ts-toolbelt/commit/c97a34c))
+* **tuple:** added EndOf type ([73ddc8a](https://github.com/pirix-gh/ts-toolbelt/commit/73ddc8a))
+* cleanup ([5eae9ff](https://github.com/pirix-gh/ts-toolbelt/commit/5eae9ff))
+* cleanup ([b65c757](https://github.com/pirix-gh/ts-toolbelt/commit/b65c757))
+* update ([c9890c8](https://github.com/pirix-gh/ts-toolbelt/commit/c9890c8))
+* update ([5539f64](https://github.com/pirix-gh/ts-toolbelt/commit/5539f64))
+* using EndOf ([8154168](https://github.com/pirix-gh/ts-toolbelt/commit/8154168))
+
 ### [3.2.24](https://github.com/pirix-gh/ts-toolbelt/compare/v3.2.23...v3.2.24) (2019-08-07)
 
 
