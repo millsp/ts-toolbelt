@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.5.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.5.0...v3.5.1) (2019-08-09)
+
+
+### Others
+
+* prepare the tests to be compatible with DT ([f5f060b](https://github.com/pirix-gh/ts-toolbelt/commit/f5f060b))
+* update ([3be3e93](https://github.com/pirix-gh/ts-toolbelt/commit/3be3e93))
+
 ## [3.5.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.4.1...v3.5.0) (2019-08-08)
 
 
