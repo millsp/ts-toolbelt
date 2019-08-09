@@ -85,6 +85,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EXCLUDE
 
+// tslint:disable-next-line
 type EXCLUDE_O_O1_DEFAULT = {}
 
 type EXCLUDE_O_O1_EQUALS = {
