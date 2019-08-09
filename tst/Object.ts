@@ -51,9 +51,9 @@ type DIFF_O_O1_DEFAULT = {
 type DIFF_O_O1_EQUALS = {
     a : string
     b : number
-    d?: 'string0' | undefined
+    d?: 'string0'
     g : O
-    h?: 1 | undefined
+    h?: 1
     i: {a: string}
 }
 
@@ -90,9 +90,9 @@ type EXCLUDE_O_O1_DEFAULT = {}
 type EXCLUDE_O_O1_EQUALS = {
     a : string
     b : number
-    d?: 'string0' | undefined
+    d?: 'string0'
     g : O
-    h?: 1 | undefined
+    h?: 1
 };
 
 checks([
@@ -246,7 +246,7 @@ type INTERSECT_O_O1_DEFAULT = O
 
 type INTERSECT_O_O1_EQUALS = {
          c : {a: 'a'} & {b: 'b'};
-readonly e?: 'string1' | undefined;
+readonly e?: 'string1';
 readonly f : 0;
          j : 'a' | undefined
          k : {a: {b: string}} | undefined
@@ -284,11 +284,11 @@ type MERGE_O_O1 = {
          a : string
          b : number
          c : {a: 'a'} & {b: 'b'}
-         d?: 'string0' | undefined
-readonly e?: 'string1' | undefined
+         d?: 'string0'
+readonly e?: 'string1'
 readonly f : 0
          g : O
-         h?: 1 | undefined;
+         h?: 1;
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string}} | undefined
@@ -299,7 +299,7 @@ type MERGE_O1_O = {
          b : object
          c : {a: 'a'} & {b: 'b'}
          d?: undefined
-readonly e?: 'string1' | undefined
+readonly e?: 'string1'
 readonly f : 0
          g : O1
          h : never
@@ -435,12 +435,12 @@ readonly e?: 'string1'
 readonly f?: 0
          g?: O
          h?: 1
-         j?: 'a' | undefined
-         k?: {a: {b: string}} | undefined
+         j?: 'a'
+         k?: {a: {b: string}}
 }
 
 type OPTIONAL_O_A_FLAT = {
-         a?: string | undefined
+         a?: string
          b : number
          c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
@@ -620,11 +620,11 @@ type REPLACE_STRING_NUMBER = {
     a: number
     b: number
     c: {a: 'a'} & {b: 'b'}
-    d?: 'string0' | undefined
-    readonly e?: 'string1' | undefined
+    d?: 'string0'
+    readonly e?: 'string1'
     readonly f: 0
     g: O
-    h?: 1 | undefined
+    h?: 1
     j: 'a' | undefined
     k: {
         a: {
@@ -684,8 +684,8 @@ checks([
 
 type SELECT_O_DEFAULT = {
          a: string
-         d?: 'string0' | undefined
-readonly e?: 'string1' | undefined
+         d?: 'string0'
+readonly e?: 'string1'
          j: 'a' | undefined
 }
 
@@ -848,7 +848,6 @@ type PMERGE_OP = {
         }
     }
     c?: string
-
 };
 
 checks([
