@@ -1,3 +1,5 @@
+/* tslint:disable:use-default-type-parameter */
+
 import {Test, T, A} from '../src/index'
 
 const {checks, check} = Test
