@@ -1,5 +1,3 @@
-/* eslint-disable fp/no-class */
-/* eslint-disable no-implicit-coercion */
 import {Test, C} from '../src/index'
 
 const {checks, check} = Test

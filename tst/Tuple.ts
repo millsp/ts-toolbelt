@@ -1,5 +1,4 @@
-import {Test, T} from '../src/index'
-import {x} from '../src/Any/x'
+import {Test, T, A} from '../src/index'
 
 const {checks, check} = Test
 
@@ -284,8 +283,8 @@ checks([
 // MODIFY
 
 checks([
-    check<T.Modify<[9, string], [9, x?]>,   [9, string?],   Test.Pass>(),
-    check<T.Modify<[], [9, x]>,             [9, never],     Test.Pass>(),
+    check<T.Modify<[9, string], [9, A.x?]>, [9, string?],   Test.Pass>(),
+    check<T.Modify<[], [9, A.x]>,           [9, never],     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

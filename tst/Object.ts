@@ -1,7 +1,4 @@
-import {Test, O} from '../src/index'
-import {x} from '../src/Any/x'
-import {NonNullable} from '../src/Tuple/NonNullable'
-import {Index} from '../src/_Internal'
+import {Test, O, A, T} from '../src/index'
 
 const {checks, check} = Test
 
@@ -320,8 +317,8 @@ checks([
 // MODIFY
 
 checks([
-    check<O.Modify<{a?: string}, {a: x, b: 9}>,     {a: string, b: 9},  Test.Pass>(),
-    check<O.Modify<{}, {a: x, b: 9}>,               {a: never, b: 9},   Test.Pass>(),
+    check<O.Modify<{a?: string}, {a: A.x, b: 9}>,   {a: string, b: 9},  Test.Pass>(),
+    check<O.Modify<{}, {a: A.x, b: 9}>,             {a: never, b: 9},   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -500,9 +497,11 @@ type PATHS_O = {
     }
 };
 
+type Index = (string | number | symbol);
+
 checks([
-    check<O.Paths<any>,     Index[],                                                        Test.Pass>(),
-    check<O.Paths<PATHS_O>, NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,  Test.Pass>(),
+    check<O.Paths<any>,     Index[],                                                            Test.Pass>(),
+    check<O.Paths<PATHS_O>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

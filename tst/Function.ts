@@ -1,7 +1,4 @@
-import {Test, F} from '../src/index'
-import {Function} from '../src/Function/Function'
-import {Curry} from '../src/Function/Curry'
-import {x} from '../src/Any/x'
+import {Test, F, A} from '../src/index'
 
 const {checks, check} = Test
 
@@ -36,9 +33,9 @@ checks([
 // CURRY
 
 // Not testable
-declare function curry<F extends Function>(f: F): Curry<F>
+declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
 
-const __ = {} as x
+const __ = {} as A.x
 
 const toCurry = (name: string, age: number, single: true, ...nicknames: string[]) => true
 const curried = curry(toCurry)
