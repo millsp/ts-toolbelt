@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.6.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.6.0...v3.6.1) (2019-08-10)
+
+
+### Others
+
+* added tests for Assign ([2b7ca70](https://github.com/pirix-gh/ts-toolbelt/commit/2b7ca70))
+* update ([87737d8](https://github.com/pirix-gh/ts-toolbelt/commit/87737d8))
+
 ## [3.6.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.5.1...v3.6.0) (2019-08-10)
 
 
