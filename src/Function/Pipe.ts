@@ -4,33 +4,38 @@ import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Head} from '../Tuple/Head'
 import {Last} from '../Tuple/Last'
-import {Format} from '../String/Format'
 import {Return} from './Return'
 import {Parameters} from './Parameters'
+import {Mode} from './_Internal'
+import {PromiseOf} from '../Class/PromiseOf'
 
-type PipeFn<Fns extends Function[], K extends keyof Fns> =
-    Format<K & string, 'n'> extends 0
+type PipeFnSync<Fns extends Function[], K extends keyof Fns> =
+    K extends '0'
     ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
     : (arg: Return<Fns[Pos<Prev<IterationOf<K & string>>>]>) =>
         Return<Fns[Pos<IterationOf<K & string>>]>
 
+type PipeFnAsync<Fns extends Function[], K extends keyof Fns> =
+    K extends '0'
+    ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
+    : (arg: PromiseOf<Return<Fns[Pos<Prev<IterationOf<K & string>>>]>>) =>
+        Return<Fns[Pos<IterationOf<K & string>>]>
+
 /** Compute what the input of **`Pipe`** should be
  * @param Fns to pipe
+ * @param mode sync/async (?=`'sync'`)
  * @example
  * ```ts
- * import {F} from 'ts-toolbelt'
- *
- * /// If you are looking for creating types for `pipe`
- * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
  * ```
  */
-export type Piper<Fns extends Function[]> = {
-    [K in keyof Fns]: PipeFn<Fns, K>
-}
+export type Piper<Fns extends Function[], mode extends Mode = 'sync'> = {
+    'sync' : {[K in keyof Fns]: PipeFnSync<Fns, K>}
+    'async': {[K in keyof Fns]: PipeFnAsync<Fns, K>}
+}[mode]
 
 /** Pipe **`Function`**s together
  * @param Fns to pipe
+ * @param mode sync/async (?=`'sync'`)
  * @returns **`Function`**
  * @example
  * ```ts
@@ -39,7 +44,24 @@ export type Piper<Fns extends Function[]> = {
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
  * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
+ *
+ * const a = (a1: number) => `${a1}`
+ * const b = (b1: string) => [b1]
+ * const c = (c1: string[]) => [c1]
+ *
+ * pipe(a, b, c)(42)
+ *
+ * /// And if you are looking for an async `pipe` type
+ * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Pipe<Fns, 'async'>
+ *
+ * const a = async (a1: number) => `${a1}`
+ * const b = async (b1: string) => [b1]
+ * const c = async (c1: string[]) => [c1]
+ *
+ * await pipe(a, b, c)(42)
  * ```
  */
-export type Pipe<Fns extends Function[]> =
-    (...args: Parameters<Head<Fns>>) => Return<Last<Fns>>
+export type Pipe<Fns extends Function[], mode extends Mode = 'sync'> = {
+    'sync' : (...args: Parameters<Head<Fns>>) => Return<Last<Fns>>
+    'async': (...args: Parameters<Head<Fns>>) => Promise<Return<Last<Fns>>>
+}[mode]

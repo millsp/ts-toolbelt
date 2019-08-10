@@ -19,22 +19,38 @@ checks([
 // ---------------------------------------------------------------------------------------
 // COMPOSE
 
+// sync
+
 declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>
 
-const composed = compose(
+const composedSync = compose(
     (message: string)                   => false,                   // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     (name: string, age: number)         => ({name, age}),           // receive parameters
 )
 
 checks([
-    check<(typeof composed),    (name: string, age: number) => boolean,  Test.Pass>(),
+    check<(typeof composedSync),    (name: string, age: number) => boolean,  Test.Pass>(),
 ])
+
+// async
+
+declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns, 'async'>): F.Compose<Fns, 'async'>
+
+const composedAsync = compose(
+    (message: string)                   => false,                   // receive previous return
+    async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    async (name: string, age: number)         => ({name, age}),           // receive parameters
+)
+
+checks([
+    check<(typeof composedAsync),   (name: string, age: number) => Promise<boolean>,    Test.Pass>(),
+])
+
 
 // ---------------------------------------------------------------------------------------
 // CURRY
 
-// Not testable
 declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
 
 // tslint:disable-next-line
@@ -73,16 +89,32 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PIPE
 
+// sync
+
 declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
 
-const piped = pipe(
+const pipedSync = pipe(
     (name: string, age: number)         => ({name, age}),           // receive parameters
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     (message: string)                   => false,                   // receive previous return
 )
 
 checks([
-    check<(typeof piped),   (name: string, age: number) => boolean,  Test.Pass>(),
+    check<(typeof pipedSync),   (name: string, age: number) => boolean,  Test.Pass>(),
+])
+
+// async
+
+declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Pipe<Fns, 'async'>
+
+const pipedAsync = pipe(
+    async (name: string, age: number)         => ({name, age}),           // receive parameters
+    async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    (message: string)                   => false,                   // receive previous return
+)
+
+checks([
+    check<(typeof pipedAsync),   (name: string, age: number) => Promise<boolean>,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
