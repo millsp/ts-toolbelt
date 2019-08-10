@@ -6,7 +6,6 @@
         {"type": "ci", "section": "Others"},
         {"type": "chore", "section": "Others"},
         {"type": "docs", "section": "Others"},
-        {"type": "feat", "section": "Others"},
         {"type": "perf", "section": "Others"},
         {"type": "refactor", "section": "Others"},
         {"type": "revert", "section": "Others"},
