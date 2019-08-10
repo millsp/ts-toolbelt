@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.6.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.5.1...v3.6.0) (2019-08-10)
+
+
+### Others
+
+* fix tests for DT ([253b179](https://github.com/pirix-gh/ts-toolbelt/commit/253b179))
+* fix tslint default type for DT ([5fcade2](https://github.com/pirix-gh/ts-toolbelt/commit/5fcade2))
+* fix typo for DT ([9685af8](https://github.com/pirix-gh/ts-toolbelt/commit/9685af8))
+* fix typo for DT ([fb25217](https://github.com/pirix-gh/ts-toolbelt/commit/fb25217))
+* **function:** the Pipe and Compose can be async ([8d9d974](https://github.com/pirix-gh/ts-toolbelt/commit/8d9d974))
+* update ([cf140f2](https://github.com/pirix-gh/ts-toolbelt/commit/cf140f2))
+
 ### [3.5.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.5.0...v3.5.1) (2019-08-09)
 
 
