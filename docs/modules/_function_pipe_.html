@@ -148,6 +148,8 @@
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_function_uncurry_.html">"<wbr>Function/<wbr>UnCurry"</a>
 			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function__internal_.html">"<wbr>Function/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
 			<a href="_function__api_.html">"<wbr>Function/_<wbr>api"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_iteration_format_.html">"<wbr>Iteration/<wbr>Format"</a>
@@ -480,7 +482,8 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_pipe_.html#pipe" class="tsd-kind-icon">Pipe</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_pipe_.html#pipefn" class="tsd-kind-icon">Pipe<wbr>Fn</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_pipe_.html#pipefnasync" class="tsd-kind-icon">Pipe<wbr>FnAsync</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_pipe_.html#pipefnsync" class="tsd-kind-icon">Pipe<wbr>FnSync</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_pipe_.html#piper" class="tsd-kind-icon">Piper</a></li>
 							</ul>
 						</section>
@@ -492,7 +495,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="pipe" class="tsd-anchor"></a>
 					<h3>Pipe</h3>
-					<div class="tsd-signature tsd-kind-icon">Pipe&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<div class="tsd-signature tsd-kind-icon">Pipe&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: (...args: Parameters&lt;Head&lt;Fns&gt;&gt;) &#x3D;&gt; Return&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;; &#x27;async&#x27;: (...args: Parameters&lt;Head&lt;Fns&gt;&gt;) &#x3D;&gt; Promise&lt;Return&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;&gt;; }[mode]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Pipe <strong><code>Function</code></strong>s together</p>
@@ -507,6 +510,13 @@
 								</div>
 							</div>
 						</li>
+						<li>
+							<span class="name">mode</span><span class="tsd-signature-symbol">: </span><a href="_function__internal_.html#mode" class="tsd-signature-type">Mode</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>sync/async (?=<code>&#39;sync&#39;</code>)</p>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
@@ -517,19 +527,34 @@
 
 <span class="hljs-comment">/// If you are looking for creating types for `pipe`</span>
 <span class="hljs-comment">/// `Piper` will check for input &amp; `Piped` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pipe</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Function</span>[]&gt;(<span class="hljs-params">...args: F.Piper&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Pipe</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pipe</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Function</span>[]&gt;(<span class="hljs-params">...args: F.Piper&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Pipe</span>&lt;<span class="hljs-title">Fns</span>&gt;
+
+<span class="hljs-title">const</span> <span class="hljs-title">a</span> = (<span class="hljs-params">a1: <span class="hljs-built_in">number</span></span>) =&gt; `<span class="hljs-title">$</span></span>{a1}<span class="hljs-string">`
+const b = (b1: string) =&gt; [b1]
+const c = (c1: string[]) =&gt; [c1]
+
+pipe(a, b, c)(42)
+
+/// And if you are looking for an async `</span>pipe<span class="hljs-string">` type
+declare function pipe&lt;Fns extends F.Function[]&gt;(...args: F.Piper&lt;Fns, 'async'&gt;): F.Pipe&lt;Fns, 'async'&gt;
+
+const a = async (a1: number) =&gt; `</span>${a1}<span class="hljs-string">`
+const b = async (b1: string) =&gt; [b1]
+const c = async (c1: string[]) =&gt; [c1]
+
+await pipe(a, b, c)(42)</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5f060bd/src/Function/Pipe.ts#L44">Function/Pipe.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Pipe.ts#L64">Function/Pipe.ts:64</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="pipefn" class="tsd-anchor"></a>
-					<h3>Pipe<wbr>Fn</h3>
-					<div class="tsd-signature tsd-kind-icon">PipeFn&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PipeFn&lt;Fns, K&gt;</span></div>
+					<a name="pipefnasync" class="tsd-anchor"></a>
+					<h3>Pipe<wbr>FnAsync</h3>
+					<div class="tsd-signature tsd-kind-icon">PipeFnAsync&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PipeFnAsync&lt;Fns, K&gt;</span></div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -539,14 +564,31 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5f060bd/src/Function/Pipe.ts#L11">Function/Pipe.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Pipe.ts#L18">Function/Pipe.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="pipefnsync" class="tsd-anchor"></a>
+					<h3>Pipe<wbr>FnSync</h3>
+					<div class="tsd-signature tsd-kind-icon">PipeFnSync&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PipeFnSync&lt;Fns, K&gt;</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    </li>
+						<li>
+						<span class="name">K</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Fns</span>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Pipe.ts#L12">Function/Pipe.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="piper" class="tsd-anchor"></a>
 					<h3>Piper</h3>
-					<div class="tsd-signature tsd-kind-icon">Piper&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">Piper&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: { [K in keyof Fns]: PipeFnSync&lt;Fns, K&gt;; }; &#x27;async&#x27;: { [K in keyof Fns]: PipeFnAsync&lt;Fns, K&gt;; }; }[mode]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Compute what the input of <strong><code>Pipe</code></strong> should be</p>
@@ -561,19 +603,22 @@
 								</div>
 							</div>
 						</li>
+						<li>
+							<span class="name">mode</span><span class="tsd-signature-symbol">: </span><a href="_function__internal_.html#mode" class="tsd-signature-type">Mode</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>sync/async (?=<code>&#39;sync&#39;</code>)</p>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
-
-<span class="hljs-comment">/// If you are looking for creating types for `pipe`</span>
-<span class="hljs-comment">/// `Piper` will check for input &amp; `Piped` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pipe</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Function</span>[]&gt;(<span class="hljs-params">...args: F.Piper&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Pipe</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
+						<p><pre><code class="language-ts"></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5f060bd/src/Function/Pipe.ts#L28">Function/Pipe.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Pipe.ts#L31">Function/Pipe.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -595,7 +640,10 @@
 						<a href="_function_pipe_.html#pipe" class="tsd-kind-icon">Pipe</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_function_pipe_.html#pipefn" class="tsd-kind-icon">Pipe<wbr>Fn</a>
+						<a href="_function_pipe_.html#pipefnasync" class="tsd-kind-icon">Pipe<wbr>FnAsync</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_function_pipe_.html#pipefnsync" class="tsd-kind-icon">Pipe<wbr>FnSync</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_function_pipe_.html#piper" class="tsd-kind-icon">Piper</a>

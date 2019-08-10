@@ -148,6 +148,8 @@
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_function_uncurry_.html">"<wbr>Function/<wbr>UnCurry"</a>
 			</li>            <li class=" tsd-kind-external-module">
+			<a href="_function__internal_.html">"<wbr>Function/_<wbr><wbr>Internal"</a>
+			</li>            <li class=" tsd-kind-external-module">
 			<a href="_function__api_.html">"<wbr>Function/_<wbr>api"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_iteration_format_.html">"<wbr>Iteration/<wbr>Format"</a>
@@ -480,7 +482,8 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_compose_.html#compose" class="tsd-kind-icon">Compose</a></li>
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_compose_.html#composefn" class="tsd-kind-icon">Compose<wbr>Fn</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_compose_.html#composefnasync" class="tsd-kind-icon">Compose<wbr>FnAsync</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported"><a href="_function_compose_.html#composefnsync" class="tsd-kind-icon">Compose<wbr>FnSync</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_function_compose_.html#composer" class="tsd-kind-icon">Composer</a></li>
 							</ul>
 						</section>
@@ -492,7 +495,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="compose" class="tsd-anchor"></a>
 					<h3>Compose</h3>
-					<div class="tsd-signature tsd-kind-icon">Compose&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<div class="tsd-signature tsd-kind-icon">Compose&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: (...args: Parameters&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;) &#x3D;&gt; Return&lt;Head&lt;Fns&gt;&gt;; &#x27;async&#x27;: (...args: Parameters&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;) &#x3D;&gt; Promise&lt;Return&lt;Head&lt;Fns&gt;&gt;&gt;; }[mode]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Compose <strong><code>Function</code></strong>s together</p>
@@ -507,6 +510,8 @@
 								</div>
 							</div>
 						</li>
+						<li>
+						<span class="name">mode</span><span class="tsd-signature-symbol">: </span><a href="_function__internal_.html#mode" class="tsd-signature-type">Mode</a>                    </li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
@@ -517,19 +522,34 @@
 
 <span class="hljs-comment">/// If you are looking for creating types for `compose`</span>
 <span class="hljs-comment">/// `Composer` will check for input &amp; `Compose` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compose</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Function</span>[]&gt;(<span class="hljs-params">...args: F.Composer&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Compose</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
+<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compose</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Function</span>[]&gt;(<span class="hljs-params">...args: F.Composer&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Compose</span>&lt;<span class="hljs-title">Fns</span>&gt;
+
+<span class="hljs-title">const</span> <span class="hljs-title">a</span> = (<span class="hljs-params">a1: <span class="hljs-built_in">number</span></span>) =&gt; `<span class="hljs-title">$</span></span>{a1}<span class="hljs-string">`
+const c = (c1: string[]) =&gt; [c1]
+const b = (b1: string) =&gt; [b1]
+
+compose(c, b, a)(42)
+
+/// And if you are looking for an async `</span>pipe<span class="hljs-string">` type
+declare function compose&lt;Fns extends F.Function[]&gt;(...args: F.Composer&lt;Fns, 'async'&gt;): F.Composer&lt;Fns, 'async'&gt;
+
+const a = async (a1: number) =&gt; `</span>${a1}<span class="hljs-string">`
+const b = async (b1: string) =&gt; [b1]
+const c = async (c1: string[]) =&gt; [c1]
+
+await compose(c, b, a)(42)</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5f060bd/src/Function/Compose.ts#L46">Function/Compose.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Compose.ts#L65">Function/Compose.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
-					<a name="composefn" class="tsd-anchor"></a>
-					<h3>Compose<wbr>Fn</h3>
-					<div class="tsd-signature tsd-kind-icon">ComposeFn&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ComposeFn&lt;Fns, K&gt;</span></div>
+					<a name="composefnasync" class="tsd-anchor"></a>
+					<h3>Compose<wbr>FnAsync</h3>
+					<div class="tsd-signature tsd-kind-icon">ComposeFnAsync&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ComposeFnAsync&lt;Fns, K&gt;</span></div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
@@ -539,14 +559,31 @@
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5f060bd/src/Function/Compose.ts#L13">Function/Compose.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Compose.ts#L21">Function/Compose.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported tsd-descriptions">
+					<a name="composefnsync" class="tsd-anchor"></a>
+					<h3>Compose<wbr>FnSync</h3>
+					<div class="tsd-signature tsd-kind-icon">ComposeFnSync&lt;Fns, K&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ComposeFnSync&lt;Fns, K&gt;</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">Fns</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">[]</span>                    </li>
+						<li>
+						<span class="name">K</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Fns</span>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Compose.ts#L15">Function/Compose.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="composer" class="tsd-anchor"></a>
 					<h3>Composer</h3>
-					<div class="tsd-signature tsd-kind-icon">Composer&lt;Fns&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">Composer&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: { [K in keyof Fns]: ComposeFnSync&lt;Fns, K&gt;; }; &#x27;async&#x27;: { [K in keyof Fns]: ComposeFnAsync&lt;Fns, K&gt;; }; }[mode]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Compute what the input of <strong><code>Compose</code></strong> should be</p>
@@ -561,19 +598,22 @@
 								</div>
 							</div>
 						</li>
+						<li>
+							<span class="name">mode</span><span class="tsd-signature-symbol">: </span><a href="_function__internal_.html#mode" class="tsd-signature-type">Mode</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>sync/async (?=<code>&#39;sync&#39;</code>)</p>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
-
-<span class="hljs-comment">/// If you are looking for creating types for `compose`</span>
-<span class="hljs-comment">/// `Composer` will check for input &amp; `Compose` the output</span>
-<span class="hljs-keyword">declare</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compose</span>&lt;<span class="hljs-title">Fns</span> <span class="hljs-title">extends</span> <span class="hljs-title">F</span>.<span class="hljs-title">Function</span>[]&gt;(<span class="hljs-params">...args: F.Composer&lt;Fns&gt;</span>): <span class="hljs-title">F</span>.<span class="hljs-title">Compose</span>&lt;<span class="hljs-title">Fns</span>&gt;</span></code></pre>
+						<p><pre><code class="language-ts"></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/f5f060bd/src/Function/Compose.ts#L30">Function/Compose.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/8d9d9746/src/Function/Compose.ts#L34">Function/Compose.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -595,7 +635,10 @@
 						<a href="_function_compose_.html#compose" class="tsd-kind-icon">Compose</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="_function_compose_.html#composefn" class="tsd-kind-icon">Compose<wbr>Fn</a>
+						<a href="_function_compose_.html#composefnasync" class="tsd-kind-icon">Compose<wbr>FnAsync</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-is-not-exported">
+						<a href="_function_compose_.html#composefnsync" class="tsd-kind-icon">Compose<wbr>FnSync</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_function_compose_.html#composer" class="tsd-kind-icon">Composer</a>
