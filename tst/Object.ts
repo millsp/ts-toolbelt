@@ -35,6 +35,13 @@ readonly f : 0
 };
 
 // ---------------------------------------------------------------------------------------
+// ASSIGN
+
+checks([
+    check<O.Assign<{readonly a: 1}, [{a: 2, readonly b: 1}, {a: 3, c?: 1}]>,    {a: 3, readonly b: 1, c?: 1},   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // AT
 
 checks([
@@ -57,7 +64,7 @@ type DIFF_O_O1_EQUALS = {
     g : O
     h?: 1
     i: {a: string}
-}
+};
 
 checks([
     check<O.Diff<O, O1, 'default'>, DIFF_O_O1_DEFAULT,  Test.Pass>(),

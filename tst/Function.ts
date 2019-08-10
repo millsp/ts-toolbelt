@@ -19,7 +19,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // COMPOSE
 
-// sync
+// sync ----------------------------------------------------------------------------------
 
 declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>
 
@@ -33,7 +33,7 @@ checks([
     check<(typeof composedSync),    (name: string, age: number) => boolean,  Test.Pass>(),
 ])
 
-// async
+// async ---------------------------------------------------------------------------------
 
 declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns, 'async'>): F.Compose<Fns, 'async'>
 
@@ -89,7 +89,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PIPE
 
-// sync
+// sync ----------------------------------------------------------------------------------
 
 declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
 
@@ -103,7 +103,7 @@ checks([
     check<(typeof pipedSync),   (name: string, age: number) => boolean,  Test.Pass>(),
 ])
 
-// async
+// async ---------------------------------------------------------------------------------
 
 declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Pipe<Fns, 'async'>
 
