@@ -66,6 +66,6 @@ export type _Plus<N1 extends Iteration, N2 extends Iteration> = {
  * ```
  */
 export type Plus<N1 extends Number, N2 extends Number, fmt extends Formats = 's'> =
-    N2 extends any // force N2's distribution, only N1 is
+    N2 extends unknown // force N2's distribution, only N1 is
     ? Format<_Plus<IterationOf<N1>, IterationOf<N2>>, fmt>
     : never

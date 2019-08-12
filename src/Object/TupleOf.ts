@@ -31,6 +31,8 @@ type _TupleOf<O extends object, K, TN extends any[] = [], I extends Iteration = 
  * ```
  */
 export type TupleOf<O extends object> =
-    _TupleOf<O, keyof O> extends infer X
-    ? Cast<X, any[]> // ^^^^ Clear keys from array
+    O extends unknown // distribute
+    ? _TupleOf<O, keyof O> extends infer X
+      ? Cast<X, any[]>
+      : never
     : never

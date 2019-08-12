@@ -1,6 +1,6 @@
 import {IntersectOf} from './IntersectOf'
 
-/** Get the last item within an ***union**
+/** Get the last item within an **union**
  * (⚠️ it might not preserve order)
  * @param U
  * @returns **any**
@@ -10,7 +10,7 @@ import {IntersectOf} from './IntersectOf'
  */
 export type Last<U extends any> =
     IntersectOf<
-        U extends any       // Distribute U
+        U extends unknown   // Distribute U
         ? (x: U) => void
         : never             // To intersect
     > extends (x: infer P) => void
