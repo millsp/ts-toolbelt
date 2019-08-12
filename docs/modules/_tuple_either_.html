@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Object/Keys&quot; | ts-toolbelt</title>
+	<title>&quot;Tuple/Either&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -72,10 +72,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_object_keys_.html">&quot;Object/Keys&quot;</a>
+					<a href="_tuple_either_.html">&quot;Tuple/Either&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Object/Keys&quot;</h1>
+			<h1>External module &quot;Tuple/Either&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -233,7 +233,7 @@
 			<a href="_object_intersect_.html">"<wbr>Object/<wbr>Intersect"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_object_intersectkeys_.html">"<wbr>Object/<wbr>Intersect<wbr>Keys"</a>
-			</li>            <li class="current tsd-kind-external-module">
+			</li>            <li class=" tsd-kind-external-module">
 			<a href="_object_keys_.html">"<wbr>Object/<wbr>Keys"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_object_merge_.html">"<wbr>Object/<wbr>Merge"</a>
@@ -327,7 +327,7 @@
 			<a href="_tuple_diff_.html">"<wbr>Tuple/<wbr>Diff"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_drop_.html">"<wbr>Tuple/<wbr>Drop"</a>
-			</li>            <li class=" tsd-kind-external-module">
+			</li>            <li class="current tsd-kind-external-module">
 			<a href="_tuple_either_.html">"<wbr>Tuple/<wbr>Either"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_endof_.html">"<wbr>Tuple/<wbr>End<wbr>Of"</a>
@@ -489,7 +489,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_object_keys_.html#keys" class="tsd-kind-icon">Keys</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_tuple_either_.html#either" class="tsd-kind-icon">Either</a></li>
 							</ul>
 						</section>
 					</div>
@@ -498,22 +498,35 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="keys" class="tsd-anchor"></a>
-					<h3>Keys</h3>
-					<div class="tsd-signature tsd-kind-icon">Keys&lt;O&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">keyof O</span><span class="tsd-signature-symbol"> &amp; </span><a href="__internal_.html#index" class="tsd-signature-type">Index</a></div>
+					<a name="either" class="tsd-anchor"></a>
+					<h3>Either</h3>
+					<div class="tsd-signature tsd-kind-icon">Either&lt;T, K&gt;<span class="tsd-signature-symbol">:</span> <a href="_object_tupleof_.html#tupleof" class="tsd-signature-type">TupleOf</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">OEither</span><span class="tsd-signature-symbol">&lt;</span><a href="_tuple_objectof_.html#objectof" class="tsd-signature-type">ObjectOf</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Get the keys of an <strong><code>object</code></strong></p>
+							<p>Split <strong><code>T</code></strong> into a <strong>union</strong> with <strong><code>K</code></strong> keys in such a way that none of
+							the keys are ever present with one another within the different unions.</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-						<span class="name">O</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>                    </li>
+							<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to split</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<span class="name">K</span><span class="tsd-signature-symbol">: </span><a href="__internal_.html#index" class="tsd-signature-type">Index</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to split with</p>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>keyof</code></strong></p>
+						<p><p><strong><code>any[]</code></strong> <strong>union</strong></p>
 						</p>
 						<h4>example</h4>
 						<p><pre><code class="language-ts"></code></pre>
@@ -521,7 +534,7 @@
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/740742c0/src/Object/Keys.ts#L11">Object/Keys.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/740742c0/src/Tuple/Either.ts#L15">Tuple/Either.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -540,7 +553,7 @@
 				<br>
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_object_keys_.html#keys" class="tsd-kind-icon">Keys</a>
+						<a href="_tuple_either_.html#either" class="tsd-kind-icon">Either</a>
 					</li>
 				</ul>
 			</nav>
