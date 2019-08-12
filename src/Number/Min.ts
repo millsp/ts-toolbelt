@@ -44,7 +44,7 @@ type MinNegative<N extends Number> =
     : never
 
 export type _Min<N extends Iteration> =
-    _IsPositive<N> extends True
+    _IsPositive<N> extends True // breaks distribution
     ? MinPositive<Key<N>>
     : MinNegative<Exclude<Key<N>, Numbers['string']['+']>>
     // Exclude (+) numbers, MinNegative only works with (-)

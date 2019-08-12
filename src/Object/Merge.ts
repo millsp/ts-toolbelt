@@ -18,3 +18,5 @@ type _Merge<O extends object, O1 extends object> = {
  */
 export type Merge<O extends object, O1 extends object> =
     _Merge<O, Omit<O1, keyof O>>
+    // We make sure keys do NOT overlap
+    // Otherwise we'd loose field meta
