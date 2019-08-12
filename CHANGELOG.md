@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.7.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.6.1...v3.7.0) (2019-08-12)
+
+
+### Bug Fixes
+
+* changelog had `feat` in wrong category ([2b6a86e](https://github.com/pirix-gh/ts-toolbelt/commit/2b6a86e))
+* improved type distribution on TupleOf, ObjectOf, Last, IntersectOf ([0e628df](https://github.com/pirix-gh/ts-toolbelt/commit/0e628df))
+
+
+### Features
+
+* added a Keys type for Union ([3ce0afd](https://github.com/pirix-gh/ts-toolbelt/commit/3ce0afd))
+* added a Strict type for Union ([7997fc0](https://github.com/pirix-gh/ts-toolbelt/commit/7997fc0))
+* added an Either type for Object, Tuple ([740742c](https://github.com/pirix-gh/ts-toolbelt/commit/740742c))
+
+
+### Others
+
+* added comments ([ac21f1b](https://github.com/pirix-gh/ts-toolbelt/commit/ac21f1b))
+* update ([3fc977d](https://github.com/pirix-gh/ts-toolbelt/commit/3fc977d))
+
 ### [3.6.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.6.0...v3.6.1) (2019-08-10)
 
 
