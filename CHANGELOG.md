@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.7.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.7.0...v3.7.1) (2019-08-12)
+
+
+### Bug Fixes
+
+* resolved Compute breaking unions ([08da1fa](https://github.com/pirix-gh/ts-toolbelt/commit/08da1fa))
+
+
+### Others
+
+* update ([07df193](https://github.com/pirix-gh/ts-toolbelt/commit/07df193))
+
 ## [3.7.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.6.1...v3.7.0) (2019-08-12)
 
 
