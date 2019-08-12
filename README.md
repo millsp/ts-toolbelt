@@ -303,6 +303,7 @@ Many, many thanks to all the
 [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 
 * [André Staltz](https://github.com/staltz)
+* [Titian C.-Dragomir](https://github.com/dragomirtitian)
 * [Joe Calzaretta](https://github.com/jcalz)
 * [Matt McCutchen](https://github.com/mattmccutchen)
 

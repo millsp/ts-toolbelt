@@ -1,7 +1,7 @@
 import {Index} from '../_Internal'
 import {Exclude} from '../Union/Exclude'
 
-/** Get the own keys of an **`object`**
+/** Get the keys of an **`object`**
  * @param O
  * @returns **`keyof`**
  * @example

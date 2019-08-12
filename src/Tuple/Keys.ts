@@ -1,6 +1,6 @@
 import {Index} from '../_Internal'
 
-/** Get the own keys of a **tuple**
+/** Get the keys of a **tuple**
  * @param T
  * @returns **`keyof`**
  * @example

@@ -72,6 +72,29 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// EITHER
+
+type EITHER_O = {
+         a : string
+         b?: number
+readonly c?: object
+}
+
+type EITHER_O_AB = {
+    a: string;
+    b?: undefined;
+    readonly c?: object;
+} | {
+    a?: undefined;
+    b?: number;
+    readonly c?: object;
+};
+
+checks([
+    check<O.Either<EITHER_O, 'a' | 'b'>,    EITHER_O_AB,    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 
 type DIFF_O1_O_DEFAULT = {
     i: {a: string}

@@ -1,6 +1,7 @@
 export {Assign} from './Assign'
 export {At} from './At'
 export {Diff} from './Diff'
+export {Either} from './Either'
 export {Exclude} from './Exclude'
 export {ExcludeKeys} from './ExcludeKeys'
 export {Filter} from './Filter'
