@@ -10,6 +10,4 @@
  * ```
  */
 export type Compute<A extends any> =
-    {[K in keyof A]: A[K]} extends infer X
-    ? X
-    : never
+    {[K in keyof A]: A[K]} & {}
