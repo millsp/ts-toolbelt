@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.8.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.7.1...v3.8.0) (2019-08-16)
+
+
+### Features
+
+* added Invert type for Object ([1f41a09](https://github.com/pirix-gh/ts-toolbelt/commit/1f41a09))
+
+
+### Others
+
+* added tests for Invert ([ddadee1](https://github.com/pirix-gh/ts-toolbelt/commit/ddadee1))
+* update ([00dee85](https://github.com/pirix-gh/ts-toolbelt/commit/00dee85))
+
 ### [3.7.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.7.0...v3.7.1) (2019-08-12)
 
 
