@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Tuple/Concat&quot; | ts-toolbelt</title>
+	<title>&quot;Object/Invert&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -72,10 +72,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_tuple_concat_.html">&quot;Tuple/Concat&quot;</a>
+					<a href="_object_invert_.html">&quot;Object/Invert&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Tuple/Concat&quot;</h1>
+			<h1>External module &quot;Object/Invert&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -233,7 +233,7 @@
 			<a href="_object_intersect_.html">"<wbr>Object/<wbr>Intersect"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_object_intersectkeys_.html">"<wbr>Object/<wbr>Intersect<wbr>Keys"</a>
-			</li>            <li class=" tsd-kind-external-module">
+			</li>            <li class="current tsd-kind-external-module">
 			<a href="_object_invert_.html">"<wbr>Object/<wbr>Invert"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_object_keys_.html">"<wbr>Object/<wbr>Keys"</a>
@@ -323,7 +323,7 @@
 			<a href="_tuple_assign_.html">"<wbr>Tuple/<wbr>Assign"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_at_.html">"<wbr>Tuple/<wbr>At"</a>
-			</li>            <li class="current tsd-kind-external-module">
+			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_concat_.html">"<wbr>Tuple/<wbr>Concat"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_diff_.html">"<wbr>Tuple/<wbr>Diff"</a>
@@ -491,7 +491,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_tuple_concat_.html#concat" class="tsd-kind-icon">Concat</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_object_invert_.html#invert" class="tsd-kind-icon">Invert</a></li>
 							</ul>
 						</section>
 					</div>
@@ -500,42 +500,49 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="concat" class="tsd-anchor"></a>
-					<h3>Concat</h3>
-					<div class="tsd-signature tsd-kind-icon">Concat&lt;T, T1&gt;<span class="tsd-signature-symbol">:</span> <a href="_tuple_reverse_.html#reverse" class="tsd-signature-type">Reverse</a><span class="tsd-signature-symbol">&lt;</span><a href="_tuple_reverse_.html#reverse" class="tsd-signature-type">Reverse</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T1</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="invert" class="tsd-anchor"></a>
+					<h3>Invert</h3>
+					<div class="tsd-signature tsd-kind-icon">Invert&lt;O&gt;<span class="tsd-signature-symbol">:</span> <a href="_any_compute_.html#compute" class="tsd-signature-type">Compute</a><span class="tsd-signature-symbol">&lt;</span><a href="_union_intersectof_.html#intersectof" class="tsd-signature-type">IntersectOf</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">{ [K in keyof O]: { [P in O[K]]: K; }; }[keyof O]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Attach <strong><code>T1</code></strong> at the end of <strong><code>T</code></strong></p>
+							<p>Swaps the keys and values of an <strong><code>object</code></strong> (if applicable)</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">T</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to concat with</p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<span class="name">T1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>                    <div class="tsd-comment">
-								<div class="lead">
-									<p>to be attached</p>
-								</div>
-							</div>
-						</li>
+						<span class="name">O</span><span class="tsd-signature-symbol">: </span><a href="_object_record_.html#record" class="tsd-signature-type">Record</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">keyof O</span><span class="tsd-signature-symbol">, </span><a href="__internal_.html#index" class="tsd-signature-type">Index</a><span class="tsd-signature-symbol">&gt;</span>                    </li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>any[]</code></strong></p>
+						<p><p><strong><code>object</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {O} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">enum</span> E {
+    A = <span class="hljs-string">'Av'</span>,
+    B = <span class="hljs-string">'Bv'</span>,
+    C = <span class="hljs-string">'Cv'</span>,
+    D = <span class="hljs-string">'Dv'</span>,
+    X = <span class="hljs-number">1</span>
+}
+
+<span class="hljs-keyword">type</span> O = {
+    A: <span class="hljs-string">'Av'</span>
+    B: <span class="hljs-string">'Bv'</span>
+    C: <span class="hljs-string">'Cv'</span>
+    D: <span class="hljs-string">'Dv'</span>
+    X: <span class="hljs-number">1</span>
+}
+
+<span class="hljs-keyword">type</span> test0 = O.Invert&lt;<span class="hljs-keyword">typeof</span> E&gt;
+<span class="hljs-keyword">type</span> test1 = O.Invert&lt;O&gt;</code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/ddadee1d/src/Tuple/Concat.ts#L11">Tuple/Concat.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/ddadee1d/src/Object/Invert.ts#L33">Object/Invert.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -554,7 +561,7 @@
 				<br>
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_tuple_concat_.html#concat" class="tsd-kind-icon">Concat</a>
+						<a href="_object_invert_.html#invert" class="tsd-kind-icon">Invert</a>
 					</li>
 				</ul>
 			</nav>
