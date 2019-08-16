@@ -303,6 +303,27 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// INVERT
+
+const INVERT_SYM = Symbol('')
+
+type INVERT_O = {
+    A: 'Av',
+    B: typeof INVERT_SYM,
+    C: 42
+}
+
+type INVERT_O_ = {
+    Av          : 'A';
+    [INVERT_SYM]: 'B';
+    42          : 'C';
+};
+
+checks([
+    check<O.Invert<INVERT_O>,   INVERT_O_,  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // KEYS
 
 checks([
