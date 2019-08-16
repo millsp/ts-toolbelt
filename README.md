@@ -63,25 +63,23 @@
 
 ## 📜 About
 
-**ts-toolbelt** is a collection of types that makes TypeScript even **safer**.
+**ts-toolbelt** completes TypeScript with a collection of more than **175**
+tested types. This makes it the biggest type collection out there.
+
 It's goal is to improve type correctness while adding a whole new set of
-**features** to TypeScript. 
-
-It uses the type system itself for TypeScript to compute more complex types. In
-other words, its API exposes types that trade **CPU & RAM** for higher type
-safety.
-
-**ts-toolbelt** completes TypeScript with a collection of more than **150**
-tested types.
+**features** to TypeScript. It uses the type system itself for TypeScript to
+compute more complex types. In other words, its API exposes types that trade
+**CPU & RAM** for higher type safety.
 
 #### Goals
 
 * This package aims to be the home of all **utility types**
-* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +30MB)
+* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +50MB)
 * Computed types are always **readable**, like if you typed it
 * Software that's more type-safe, **flexible** & more **robust**
 * Bring a whole new set of extra **features** to TypeScript
 * Types can be **combined** together to create new ones!
+* Answer the question to "How do I do this in TypeScript?"
 
 ## 🍩 Features
 
@@ -303,9 +301,10 @@ Many, many thanks to all the
 [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 
 * [André Staltz](https://github.com/staltz)
-* [Titian C.-Dragomir](https://github.com/dragomirtitian)
 * [Joe Calzaretta](https://github.com/jcalz)
 * [Matt McCutchen](https://github.com/mattmccutchen)
+* [Regev Brody](https://github.com/regevbr)
+* [Titian C.-Dragomir](https://github.com/dragomirtitian)
 
 ## 💟 Friendly Projects
 * [`eledoc`](https://github.com/pirix-gh/eledoc) - 🌒 A material dark theme for TypeDoc 
