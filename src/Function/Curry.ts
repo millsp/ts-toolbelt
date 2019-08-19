@@ -47,7 +47,7 @@ type Gaps<T extends any[]> = NonNullable<{
  *
  * /// If you are looking for creating types for `curry`
  * /// It handles placeholders and variable arguments
- * declare function curry<Fns extends F.Function>(fns: Fns): F.Curry<Fns>
+ * declare function curry<Fn extends F.Function>(fn: Fn): F.Curry<Fn>
  * ```
  */
 export type Curry<F extends Function> =
