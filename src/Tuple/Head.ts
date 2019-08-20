@@ -1,3 +1,5 @@
+import {Length} from './Length'
+
 /** Get the first entry of **`T`**
  * @param T to extract from
  * @returns **`any`**
@@ -6,6 +8,6 @@
  * ```
  */
 export type Head<T extends any[]> =
-    T extends [any, ...any[]]
-    ? T[0]
-    : never
+    Length<T> extends 0
+    ? never
+    : T[0]
