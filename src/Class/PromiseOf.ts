@@ -11,7 +11,7 @@
  * type test1 = C.PromiseOf<Promise<number>> // number
  * ```
  */
-export type PromiseOf<P extends Promise<any>> =
+export type PromiseOf<P extends any> =
     P extends Promise<infer A>
     ? A
-    : never
+    : P
