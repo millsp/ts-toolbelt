@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.2](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.1...v3.8.2) (2019-08-20)
+
+
+### Bug Fixes
+
+* now PromiseOf unwraps any kind of type like the JS Promise does ([186544d](https://github.com/pirix-gh/ts-toolbelt/commit/186544d))
+
+
+### Others
+
+* update ([c8e9a5f](https://github.com/pirix-gh/ts-toolbelt/commit/c8e9a5f))
+
 ### [3.8.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.0...v3.8.1) (2019-08-19)
 
 
