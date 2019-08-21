@@ -29,8 +29,8 @@ type PipeFnAsync<Fns extends Function[], K extends keyof Fns> =
  * ```
  */
 export type Piper<Fns extends Function[], mode extends Mode = 'sync'> = {
-    'sync' : {[K in keyof Fns]: PipeFnSync<Fns, K>}
-    'async': {[K in keyof Fns]: PipeFnAsync<Fns, K>}
+    'sync' : {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : PipeFnSync<Fns, K>}
+    'async': {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : PipeFnAsync<Fns, K>}
 }[mode]
 
 /** Pipe **`Function`**s together

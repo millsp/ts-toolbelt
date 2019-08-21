@@ -32,8 +32,8 @@ type ComposeFnAsync<Fns extends Function[], K extends keyof Fns> =
  * ```
  */
 export type Composer<Fns extends Function[], mode extends Mode = 'sync'> = {
-    'sync' : {[K in keyof Fns]: ComposeFnSync<Fns, K>},
-    'async': {[K in keyof Fns]: ComposeFnAsync<Fns, K>}
+    'sync' : {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : ComposeFnSync<Fns, K>},
+    'async': {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : ComposeFnAsync<Fns, K>}
 }[mode]
 
 /** Compose **`Function`**s together
