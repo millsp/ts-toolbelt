@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.4](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.3...v3.8.4) (2019-08-22)
+
+
+### Bug Fixes
+
+* compose & pipe were transforming array properties ([5c423f6](https://github.com/pirix-gh/ts-toolbelt/commit/5c423f6))
+* https://github.com/DefinitelyTyped/DefinitelyTyped/issues/37837 ([62b783e](https://github.com/pirix-gh/ts-toolbelt/commit/62b783e))
+
+
+### Others
+
+* update ([6776a9c](https://github.com/pirix-gh/ts-toolbelt/commit/6776a9c))
+
 ### [3.8.3](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.2...v3.8.3) (2019-08-20)
 
 
