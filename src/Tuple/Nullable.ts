@@ -19,4 +19,6 @@ import {ObjectOf} from './ObjectOf'
 export type Nullable<T extends any[], K extends Index = keyof T, depth extends Depth = 'flat'> = {
     1: Cast<ONullable<T, K, depth>, any[]>
     0: TupleOf<ONullable<ObjectOf<T>, K, depth>>
-}[Implements<Keys<T>, K>]
+}[Implements<Keys<T>, K>] extends infer X
+? Cast<X, any[]>
+: never

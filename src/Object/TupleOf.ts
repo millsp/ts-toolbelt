@@ -12,14 +12,19 @@ type PickIfEntry<O extends object, TN extends any[], I extends Iteration> =
     ? Append<TN, O[Cast<Key<I>, keyof O>]>
     : TN
 
-type _TupleOf<O extends object, K, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
+type __TupleOf<O extends object, K, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+    0: __TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
     1: TN
 }[
     Equals<K, never> extends True
     ? 1
     : 0
 ]
+
+type _TupleOf<O extends object> =
+    __TupleOf<O, keyof O> extends infer X
+    ? Cast<X, any[]>
+    : never
 
 /** Transform an **`object`** into a **tuple**
  * (It will only pick numeric literal indexes)
@@ -32,7 +37,5 @@ type _TupleOf<O extends object, K, TN extends any[] = [], I extends Iteration = 
  */
 export type TupleOf<O extends object> =
     O extends unknown // distribute
-    ? _TupleOf<O, keyof O> extends infer X
-      ? Cast<X, any[]>
-      : never
+    ? _TupleOf<O>
     : never

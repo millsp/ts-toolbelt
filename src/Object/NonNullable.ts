@@ -5,6 +5,7 @@ import {Pick} from './Pick'
 import {Index} from '../_Internal'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
+import {Cast} from '../Any/Cast'
 
 type NonNullableFlat<O> = {
     [K in keyof O]: UNonNullable<O[K]>
@@ -33,4 +34,6 @@ export type NonNullable<O extends object, K extends Index = keyof O, depth exten
     1: NonNullablePart<O, depth>
     0: Merge<NonNullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> non-nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<Keys<O>, K>] extends infer X
+? Cast<X, object>
+: never

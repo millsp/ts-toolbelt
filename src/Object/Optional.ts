@@ -4,6 +4,7 @@ import {Depth} from './_Internal'
 import {Index} from '../_Internal'
 import {Keys} from './Keys'
 import {Implements} from '../Any/Implements'
+import {Cast} from '../Any/Cast'
 
 type OptionalFlat<O> = {
     [K in keyof O]?: O[K]
@@ -31,4 +32,6 @@ export type Optional<O extends object, K extends Index = keyof O, depth extends 
     1: OptionalPart<O, depth>
     0: Merge<OptionalPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<Keys<O>, K>] extends infer X
+? Cast<X, object>
+: never

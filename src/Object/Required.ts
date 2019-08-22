@@ -4,6 +4,7 @@ import {Depth} from './_Internal'
 import {Index} from '../_Internal'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
+import {Cast} from '../Any/Cast'
 
 type RequiredFlat<O> = {
     [K in keyof O]-?: O[K]
@@ -31,4 +32,6 @@ export type Required<O extends object, K extends Index = keyof O, depth extends 
     1: RequiredPart<O, depth>
     0: Merge<RequiredPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<Keys<O>, K>] extends infer X
+? Cast<X, object>
+: never
