@@ -69,6 +69,10 @@ checks([
     check<typeof test01,        boolean,                                Test.Pass>(),
 ])
 
+// ramda ---------------------------------------------------------------------------------
+
+const test02                                         = curry(toCurry)('a')(2)
+const test03: (age: number, single: true) => boolean = curry(toCurry)('a')
 
 // ---------------------------------------------------------------------------------------
 // PARAMETERS
