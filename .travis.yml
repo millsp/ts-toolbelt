@@ -5,11 +5,22 @@ before_install:
 - npm run setup:dev
 script:
 - npm run release:ci
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  tag: $TRAVIS_BRANCH
-  on:
-    tags: false
-    all_branches: true
+jobs:
+  include:
+    - stage: master
+      if: branch = master
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+        on:
+          all_branches: true
+    - stage: branch
+      if: branch != master
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+        tag: $TRAVIS_BRANCH
+        on:
+          all_branches: true
