@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.19](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.18...v3.8.19) (2019-08-23)
+
+
+### Bug Fixes
+
+* improved performance for Curry ([17f77f0](https://github.com/pirix-gh/ts-toolbelt/commit/17f77f0))
+
+
+### Others
+
+* update ([c01cbd1](https://github.com/pirix-gh/ts-toolbelt/commit/c01cbd1))
+
 ### [3.8.18](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.17...v3.8.18) (2019-08-23)
 
 
