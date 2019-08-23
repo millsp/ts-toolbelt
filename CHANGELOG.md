@@ -9,6 +9,43 @@ All notable changes to this project will be documented in this file. See [standa
 
 * release with Travis works ([fd4a19a](https://github.com/pirix-gh/ts-toolbelt/commit/fd4a19a))
 * update ([7788d64](https://github.com/pirix-gh/ts-toolbelt/commit/7788d64))
+### [3.8.32](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.31...v3.8.32) (2019-08-23)
+
+
+### Bug Fixes
+
+* docs only build for master ([fe5f823](https://github.com/pirix-gh/ts-toolbelt/commit/fe5f823))
+* travis build ([31b08ba](https://github.com/pirix-gh/ts-toolbelt/commit/31b08ba))
+* travis was cleaning files to publish ([35883f5](https://github.com/pirix-gh/ts-toolbelt/commit/35883f5))
+
+### [3.8.31](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.23...v3.8.31) (2019-08-23)
+
+
+### Bug Fixes
+
+* travis deploy stages for branches ([03cdb1f](https://github.com/pirix-gh/ts-toolbelt/commit/03cdb1f))
+* update version ([2d466b4](https://github.com/pirix-gh/ts-toolbelt/commit/2d466b4))
+
+
+### Others
+
+* release with Travis works ([fd4a19a](https://github.com/pirix-gh/ts-toolbelt/commit/fd4a19a))
+* **release:** 3.8.24 ([a09644b](https://github.com/pirix-gh/ts-toolbelt/commit/a09644b))
+* update ([5f9abb6](https://github.com/pirix-gh/ts-toolbelt/commit/5f9abb6))
+* update ([4d5fd4a](https://github.com/pirix-gh/ts-toolbelt/commit/4d5fd4a))
+
+### [3.8.24](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.23...v3.8.24) (2019-08-23)
+
+
+### Bug Fixes
+
+* travis deploy stages for branches ([03cdb1f](https://github.com/pirix-gh/ts-toolbelt/commit/03cdb1f))
+
+
+### Others
+
+* release with Travis works ([fd4a19a](https://github.com/pirix-gh/ts-toolbelt/commit/fd4a19a))
+* update ([4d5fd4a](https://github.com/pirix-gh/ts-toolbelt/commit/4d5fd4a))
 
 ### [3.8.23](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.22...v3.8.23) (2019-08-23)
 

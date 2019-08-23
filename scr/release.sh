@@ -15,6 +15,7 @@ npx standard-version &&
 
 # # Publish the current branch
 if [ "$BRANCH" = "master" ]; then
+    npx run docs
     git push --follow-tags origin $BRANCH
 else
     git push origin $BRANCH

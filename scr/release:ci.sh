@@ -2,7 +2,8 @@
 
 rm -fr dt
 
-npm run test &&
+npm run build &&
+# npm run test && no need, build === test
 
 git clone --depth=1 https://github.com/DefinitelyTyped/DefinitelyTyped.git dt &&
 
