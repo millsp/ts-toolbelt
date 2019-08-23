@@ -1,3 +1,4 @@
 #!/bin/bash
 
-npm run test
+npm run build
+# non need to run test
