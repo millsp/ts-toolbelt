@@ -4,4 +4,4 @@ node_js:
 before_install:
 - npm run setup:dev
 script:
-- npm run test
+- npm run release:ci
