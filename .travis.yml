@@ -11,5 +11,4 @@ deploy:
   api_key: $NPM_TOKEN
   tag: $TRAVIS_BRANCH
   on:
-    tags: false
     all_branches: true
