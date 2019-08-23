@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.16](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.9...v3.8.16) (2019-08-23)
+
+
+### Bug Fixes
+
+* don't push tags on non-master branch ([13708df](https://github.com/pirix-gh/ts-toolbelt/commit/13708df))
+* ramda tests ([607fb01](https://github.com/pirix-gh/ts-toolbelt/commit/607fb01))
+* version ([31e28c1](https://github.com/pirix-gh/ts-toolbelt/commit/31e28c1))
+
+
+### Others
+
+* **release:** 3.8.10 ([80d7af6](https://github.com/pirix-gh/ts-toolbelt/commit/80d7af6))
+* update ([6d28807](https://github.com/pirix-gh/ts-toolbelt/commit/6d28807))
+* update ([eb1110a](https://github.com/pirix-gh/ts-toolbelt/commit/eb1110a))
+
 ### [3.8.10](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.9...v3.8.10) (2019-08-23)
 
 
