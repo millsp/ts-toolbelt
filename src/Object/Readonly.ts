@@ -32,6 +32,4 @@ export type Readonly<O extends object, K extends Index = keyof O, depth extends 
     1: ReadonlyPart<O, depth>
     0: Merge<ReadonlyPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>] extends infer X
-? Cast<X, object>
-: never
+}[Implements<Keys<O>, K>]

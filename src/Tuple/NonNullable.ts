@@ -19,7 +19,5 @@ import {Keys} from './Keys'
 export type NonNullable<T extends any[], K extends Index = keyof T, depth extends Depth = 'flat'> = {
     1: Cast<ONonNullable<T, K, depth>, any[]>
     0: TupleOf<ONonNullable<ObjectOf<T>, K, depth>>
-}[Implements<Keys<T>, K>] extends infer X
-? Cast<X, any[]>
-: never
+}[Implements<Keys<T>, K>]
 
