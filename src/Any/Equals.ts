@@ -14,8 +14,8 @@ import {True, False} from '../Boolean/Boolean'
  * ```
  */
 export type Equals<A1 extends any, A2 extends any> =
-    (<A>() => A extends A1 ? False : True) extends (<A>() => A extends A2 ? True : False)
-    ? False
-    : True
+    (<A>() => A extends A1 ? True : False) extends (<A>() => A extends A2 ? True : False)
+    ? True
+    : False
 
 // Credit https://stackoverflow.com/a/52473108/3570903
