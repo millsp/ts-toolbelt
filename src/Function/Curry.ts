@@ -38,14 +38,6 @@ type Gaps<T extends any[]> = NonNullable<{
     [K in keyof T]?: T[K] | x
 }>
 
-type _Curry<P extends any[], R> =
-    <T extends Gaps<P>>(...args: T) =>
-        GapsOf<T, P> extends infer G
-        ? G extends [any, ...any[]]
-          ? _Curry<G, R>
-          : R
-        : never
-
 /** Curry a **`Function`**
  * @param F to curry
  * @returns **`Function`**
@@ -59,4 +51,9 @@ type _Curry<P extends any[], R> =
  * ```
  */
 export type Curry<F extends Function> =
-    _Curry<Parameters<F>, Return<F>>
+    <T extends Gaps<Parameters<F>>>(...args: T) =>
+    GapsOf<T, Parameters<F>> extends infer G
+    ? G extends [any, ...any[]]
+      ? Curry<(...args: G) => Return<F>>
+      : Return<F>
+    : never
