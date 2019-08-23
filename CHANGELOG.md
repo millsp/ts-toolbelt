@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.33](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.32...v3.8.33) (2019-08-23)
+
+
+### Bug Fixes
+
+* travis did not push mater (tags disabled) ([b5238a1](https://github.com/pirix-gh/ts-toolbelt/commit/b5238a1))
+
+
+### Others
+
+* merge branch next ([6b9b185](https://github.com/pirix-gh/ts-toolbelt/commit/6b9b185))
+* move folder ([97ad6bd](https://github.com/pirix-gh/ts-toolbelt/commit/97ad6bd))
+* tests for dt ([054b2a3](https://github.com/pirix-gh/ts-toolbelt/commit/054b2a3))
+
+### [3.8.24](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.23...v3.8.24) (2019-08-23)
+
+
+### Others
+
+* update ([7788d64](https://github.com/pirix-gh/ts-toolbelt/commit/7788d64))
+* **release:** 3.8.24 ([b6ba9bd](https://github.com/pirix-gh/ts-toolbelt/commit/b6ba9bd))
+
 ### [3.8.24](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.23...v3.8.24) (2019-08-23)
 
 
