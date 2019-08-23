@@ -17,7 +17,7 @@ const dtUpdateVersion = (path: string) => fs.readdir(path, 'utf8', (error, docs)
                     const match = /"ts-toolbelt": ".*"/u
 
                     if (doc.match(/package.json/u) && data.match(match)) {
-                        data = data.replace(match, '"ts-toolbelt": "../../"')
+                        data = data.replace(match, '"ts-toolbelt": "../../../../ts-toolbelt"')
 
                         fs.writeFile(doc, data, (error) => {
                             if (error) throw error
