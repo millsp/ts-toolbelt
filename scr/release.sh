@@ -2,7 +2,7 @@
 
 npm run test &&
 
-npm run build &&
+#npm run build &&
 
 # # Sort the package.json to keep it neat
 npx sort-package-json &&
