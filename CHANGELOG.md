@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.35](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.34...v3.8.35) (2019-08-23)
+
+
+### Bug Fixes
+
+* build docs on master only, run tests against dt dependents ([50fa9c9](https://github.com/pirix-gh/ts-toolbelt/commit/50fa9c9))
+* do not track dt ([8dc2f11](https://github.com/pirix-gh/ts-toolbelt/commit/8dc2f11))
+* dt test script ([1ea1376](https://github.com/pirix-gh/ts-toolbelt/commit/1ea1376))
+* test dt with local version ([20e3b90](https://github.com/pirix-gh/ts-toolbelt/commit/20e3b90))
+
+
+### Others
+
+* update ([5f806b7](https://github.com/pirix-gh/ts-toolbelt/commit/5f806b7))
+* update ([dbfd642](https://github.com/pirix-gh/ts-toolbelt/commit/dbfd642))
+
 ### [3.8.34](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.33...v3.8.34) (2019-08-23)
 
 
