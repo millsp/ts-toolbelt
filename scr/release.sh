@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npm test &&
+npm run test &&
 
 npm run build &&
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-npx run test &&
+npm run test &&
 
 if [ "$TRAVIS_BRANCH" = "master" ]; then
     npm publish
