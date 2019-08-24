@@ -1,8 +1,8 @@
 #!/bin/bash
 
-npm run test &&
+#npm run test &&
 
-(rm -fr dt; git clone --depth=1 https://github.com/DefinitelyTyped/DefinitelyTyped.git dt) &&
+#(rm -fr dt; git clone --depth=1 https://github.com/DefinitelyTyped/DefinitelyTyped.git dt) &&
 
 npx ts-node scr/tools/dt-update-version.ts &&
 
