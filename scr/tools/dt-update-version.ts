@@ -1,50 +1,76 @@
 import * as fs from 'fs'
 import * as rl from 'readline'
 
-const match = /"ts-toolbelt": ".*"/u
-const replc = '"ts-toolbelt": "dt"'
+const replaceInFile = (
+    file : string,
+    path : string,
+    match: string,
+    replc: string,
+) => {
+    let   content  = ''
+    let   didMatch = false
 
-const tryToUpdateDeep = (path: string) => (doc: string) => {
-    const pathToDoc = `${path}/${doc}`
+    const matchRgx = new RegExp(match, 'u')
+    const filePath = `${path}/${file}`
+    const streamFD = fs.createReadStream(filePath)
 
-    if (fs.statSync(pathToDoc).isDirectory()) {
-        dtUpdateVersion(pathToDoc)
-    } else if (fs.statSync(pathToDoc).isFile()) {
-        if (doc !== 'package.json') {return}
+    rl.createInterface(streamFD).
+    on('line', (line) => {
+        if (line.match(matchRgx)) {
+            line     = line.replace(matchRgx, replc)
+            didMatch = true
+        }
 
-        let   content  = ''
-        let   didMatch = false
-        const streamFD = fs.createReadStream(pathToDoc)
+        content += `${line}\n`
+    }).
+    on('close', () => {
+        if (didMatch) {
+            fs.writeFileSync(filePath, content)
+            console.info(`updated ${filePath}`)
+        }
 
-        rl.createInterface(streamFD).
-        on('line', (line) => {
-            if (line.match(match)) {
-                line = line.replace(match, replc)
+        streamFD.close()
+    })
+}
 
-                didMatch = true
-            }
+const replaceDeep = (
+    path   : string,
+    match  : string,
+    replc  : string,
+    include: string[],
+    exclude: string[]
+) => (doc: string) => {
+    const docPath = `${path}/${doc}`
+    const includes = include.includes(doc)
+    const excludes = exclude.includes(doc) || exclude.includes(docPath)
 
-            content += `${line}\n`
-        }).
-        on('close', () => {
-            if (didMatch) {
-                fs.writeFileSync(pathToDoc, content)
+    // This file has not been included
+    if (!includes || excludes) {return}
 
-                console.info(`updated ${pathToDoc}`)
-            }
+    console.log(docPath)
 
-            streamFD.close()
-        })
+    if (fs.statSync(docPath).isDirectory()) {
+        replaceInDir(docPath, match, replc, include, exclude) // recurse
+    } else if (fs.statSync(docPath).isFile()) {
+        replaceInFile(doc, path, match, replc)
     }
 }
 
-// update the ts-toolbelt dependents to the latest ts-toolbelt version
-const dtUpdateVersion = (path: string) => fs.readdir(path, 'utf8', (error, docs) => {
+const replaceInDir = (
+    path   : string,
+    match  : string,
+    replc  : string,
+    include: string[] = [],
+    exclude: string[] = [],
+    depth  : number = 0
+) => fs.readdir(path, 'utf8', (error, docs) => {
     if (error) {
         console.error(error)
     } else {
-        docs.forEach(tryToUpdateDeep(path))
+        docs.forEach(replaceDeep(path, match, replc, include, exclude))
     }
 })
 
-dtUpdateVersion('./dt/types')
+const replaceArgs
+
+replaceInDir('./dt/types', '"ts-toolbelt": ".*"', '"ts-toolbelt": "test"', ['package.json'])

@@ -23,11 +23,13 @@ jobs:
         email: $NPM_EMAIL
         api_key: $NPM_TOKEN
         skip_cleanup: true
-        tag: dt
+        tag: test
         on:
           all_branches: true
+      before_deploy:
+        - npm run ci:bd:test
       after_deploy:
-        - npm run ci:dt
+        - npm run ci:ad:test
 
     - stage: deploy:master
       if: branch = master
