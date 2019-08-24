@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.45](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.44...v3.8.45) (2019-08-24)
+
+
+### Bug Fixes
+
+* less piggy script for travis ([87b8eb7](https://github.com/pirix-gh/ts-toolbelt/commit/87b8eb7))
+
+
+### Others
+
+* reorganize scripts ([dd35557](https://github.com/pirix-gh/ts-toolbelt/commit/dd35557))
+* testing travis deploy ([1307350](https://github.com/pirix-gh/ts-toolbelt/commit/1307350))
+* update ([95be342](https://github.com/pirix-gh/ts-toolbelt/commit/95be342))
+* update ([90e1cdb](https://github.com/pirix-gh/ts-toolbelt/commit/90e1cdb))
+
 ### [3.8.44](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.43...v3.8.44) (2019-08-23)
 
 
