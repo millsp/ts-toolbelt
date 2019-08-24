@@ -23,7 +23,7 @@
         "array-callback-return"       : ["error"],
         "arrow-parens"                : ["error"],
         "arrow-spacing"               : ["error"],
-        "curly"                       : ["error", "multi-or-nest"],
+        "curly"                       : ["error"],
         "default-case"                : ["error"],
         "dot-location"                : ["error"],
         "eqeqeq"                      : ["warn"],

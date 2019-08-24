@@ -1,45 +1,49 @@
 import * as fs from 'fs'
+import * as rl from 'readline'
+
+const match = /"ts-toolbelt": ".*"/u
+const replc = '"ts-toolbelt": "../../../../ts-toolbelt"'
+
+const tryToUpdateDeep = (path: string) => (doc: string) => {
+    const pathToDoc = `${path}/${doc}`
+
+    if (fs.statSync(pathToDoc).isDirectory()) {
+        dtUpdateVersion(pathToDoc)
+    } else if (fs.statSync(pathToDoc).isFile()) {
+        if (doc !== 'package.json') {return}
+
+        let   content  = ''
+        let   didMatch = false
+        const streamFD = fs.createReadStream(pathToDoc)
+
+        rl.createInterface(streamFD).
+        on('line', (line) => {
+            if (line.match(match)) {
+                line = line.replace(match, replc)
+
+                didMatch = true
+            }
+
+            content += `${line}\n`
+        }).
+        on('close', () => {
+            if (didMatch) {
+                fs.writeFileSync(pathToDoc, content)
+
+                console.info(`updated ${pathToDoc}`)
+            }
+
+            streamFD.close()
+        })
+    }
+}
 
 // update the ts-toolbelt dependents to the latest ts-toolbelt version
 const dtUpdateVersion = (path: string) => fs.readdir(path, 'utf8', (error, docs) => {
-    if (error)
+    if (error) {
         console.error(error)
-    else {
-        docs.forEach((doc) => {
-            doc = `${path}/${doc}`
-
-            if (fs.statSync(doc).isDirectory())
-                dtUpdateVersion(`${doc}`)
-            else {
-                let data = fs.readFileSync(doc).toString('utf8')
-
-                const match = /"ts-toolbelt": ".*"/u
-
-                if (doc.match(/package.json/u) && data.match(match)) {
-                    data = data.replace(match, '"ts-toolbelt": "../../../../ts-toolbelt"')
-
-                    fs.writeFileSync(doc, data)
-
-                    console.info(`updated ${doc}`)
-                }
-
-                fs.readFile(doc, 'utf8', (error, data) => {
-                    if (error) throw error
-
-                    const match = /"ts-toolbelt": ".*"/u
-
-                    if (doc.match(/package.json/u) && data.match(match)) {
-                        data = data.replace(match, '"ts-toolbelt": "../../../../ts-toolbelt"')
-
-                        fs.writeFile(doc, data, (error) => {
-                            if (error) throw error
-
-                            console.info(`updated ${doc}`)
-                        })
-                    }
-                })
-            }
-        })
+    } else {
+        docs.forEach(tryToUpdateDeep(path))
     }
 })
 
