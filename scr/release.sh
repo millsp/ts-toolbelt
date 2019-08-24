@@ -1,8 +1,8 @@
 #!/bin/bash
 
-npm run build &&
+# npm run build &&
 
-#npm run test &&
+npm run test &&
 
 # Sort the package.json to keep it neat
 npx sort-package-json &&
