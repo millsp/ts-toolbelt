@@ -30,7 +30,8 @@
     "build:docs": "bash scr/build:docs.sh",
     "build:types": "bash scr/build:types.sh",
     "release": "bash scr/release.sh",
-    "release:ci": "bash scr/release:ci.sh",
+    "ci:dt": "bash scr/ci:dt.sh",
+    "ci:test": "bash scr/ci:test.sh",
     "setup:dev": "bash scr/setup:dev.sh",
     "test": "bash scr/test.sh"
   },

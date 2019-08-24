@@ -17,7 +17,7 @@ jobs:
   include:
     - stage: test
       script:
-        - npm run release:ci
+        - npm run ci:test
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -27,7 +27,7 @@ jobs:
         on:
           all_branches: true
       after_deploy:
-        - npm run release:ci:dt
+        - npm run ci:dt
 
     - stage: deploy:master
       deploy:
