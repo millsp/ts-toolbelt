@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as rl from 'readline'
 
 const match = /"ts-toolbelt": ".*"/u
-const replc = '"ts-toolbelt": "../../../../ts-toolbelt"'
+const replc = '"ts-toolbelt": "dt"'
 
 const tryToUpdateDeep = (path: string) => (doc: string) => {
     const pathToDoc = `${path}/${doc}`
@@ -47,4 +47,4 @@ const dtUpdateVersion = (path: string) => fs.readdir(path, 'utf8', (error, docs)
     }
 })
 
-dtUpdateVersion('./dt')
+dtUpdateVersion('./dt/types')
