@@ -30,6 +30,7 @@ jobs:
         - npm run ci:dt
 
     - stage: deploy:master
+      if: branch = master
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -39,6 +40,7 @@ jobs:
           all_branches: true
 
     - stage: deploy:branch
+      if: branch != master
       deploy:
         provider: npm
         email: $NPM_EMAIL
