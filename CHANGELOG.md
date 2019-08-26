@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.50](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.49...v3.8.50) (2019-08-26)
+
+
+### Bug Fixes
+
+* improved travis scripts ([73949a6](https://github.com/pirix-gh/ts-toolbelt/commit/73949a6))
+* travis scripts ([093cd93](https://github.com/pirix-gh/ts-toolbelt/commit/093cd93))
+
+
+### Others
+
+* eslint config ([5524463](https://github.com/pirix-gh/ts-toolbelt/commit/5524463))
+* update ([530dda3](https://github.com/pirix-gh/ts-toolbelt/commit/530dda3))
+
 ### [3.8.49](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.48...v3.8.49) (2019-08-24)
 
 
