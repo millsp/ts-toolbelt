@@ -44,7 +44,7 @@
       "noEmitOnError": true, /* Do not emit outputs if any type checking errors were reported. */
       "noErrorTruncation": true, /* Do not truncate error messages. */
       "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-      //    "noImplicitAny": true, /* Raise error on expressions and declarations with an implied 'any' type. */
+         "noImplicitAny": true, /* Raise error on expressions and declarations with an implied 'any' type. */
       "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
       //    "noImplicitThis": true, /* Raise error on 'this' expressions with an implied 'any' type. */
       //    "noImplicitUseStrict": false, /* Do not emit 'use strict' directives in module output. */
@@ -91,7 +91,7 @@
     },
     "include": [
       "./src/**/*",
-      "./tst/**/*"
+      "./tst/**/*",
     ],
     "exclude": [
       "./node_modules/**/*",
