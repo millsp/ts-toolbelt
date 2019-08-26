@@ -26,7 +26,7 @@
         "fp/no-events"           : ["off"],
         "fp/no-get-set"          : ["error"],
         "fp/no-let"              : ["off"],
-        "fp/no-loops"            : ["error"],
+        "fp/no-loops"            : ["off"],
         "fp/no-mutating-assign"  : ["error"],
         "fp/no-mutating-methods" : ["warn"],
         "fp/no-mutation"         : ["off"],
