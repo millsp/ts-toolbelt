@@ -192,16 +192,18 @@ learn, inspire, and create. Any contributions you make are **greatly appreciated
 There are many ways to contribute to the project:
 
 #### Community
+
 * [Help the community with answers on Gitter](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 * [Reporting bugs or requesting new features](https://github.com/pirix-gh/ts-toolbelt/issues/new/choose)
 
 #### Codebase
+
 * Improving existing documentation 
 * Adding new types to the collection
 
 #### Pull Requests
-1. [Read the
-   tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
+
+1. [Read the tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
 
 2. Fork the project
 
@@ -212,15 +214,17 @@ There are many ways to contribute to the project:
    ```sh
    git checkout -b pr/CoolFeature
    ```
+   
 5. Commit your changes
 
-   Make sure that you follow the [conventional commit](https://conventionalcommits.org) specs or you won't be able to commit
+   You **must** follow the [conventional commit](https://conventionalcommits.org) to be able to commit
    ```sh
    git commit -m 'feat(name): Added this CoolFeature'
    ```
 
 6. [Run the tests](#-running-tests)
-7. Commit your changes
+
+7. Push your changes
 
    ```sh
    git push origin pr/CoolFeature
@@ -263,12 +267,22 @@ import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
 const {checks, check} = Test
 
 checks([
-    check<N.Plus<'1', '30'>,    '31',  Test.Pass>(),
-    check<N.Plus<'5', '-3'>,    '2',   Test.Pass>(),
+    check<N.Plus<'1', '30'>, '31', Test.Pass>(),
+    check<N.Plus<'5', '-3'>, '2',  Test.Pass>(),
 ])
 ```
 
 > Place it in a file that won't be executed, it's just for TypeScript to test types
+
+#### Continuous Integration
+
+The releases are done with Travis CI in stages & whenever a branch or PR is pushed:
+
+- Tests are run with `npm test`
+- Tests against [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/)
+- Releases to npm@[branch-name]
+
+If you wrote tests & would like your project to be tested too, please open an issue.
 
 ## 🔧 Compatibility
 
@@ -307,5 +321,6 @@ Many, many thanks to all the
 * [Titian C.-Dragomir](https://github.com/dragomirtitian)
 
 ## 💟 Friendly Projects
+
 * [`eledoc`](https://github.com/pirix-gh/eledoc) - 🌒 A material dark theme for TypeDoc 
 * [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases
