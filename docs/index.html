@@ -700,8 +700,7 @@
 							<h4>Pull Requests</h4>
 						</a>
 						<ol>
-							<li><p><a href="https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab">Read the
-								tutorial</a></p>
+							<li><p><a href="https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab">Read the tutorial</a></p>
 							</li>
 							<li><p>Fork the project</p>
 							</li>
@@ -711,12 +710,12 @@
 								<pre><code class="language-sh">git checkout -b pr/CoolFeature</code></pre>
 							</li>
 							<li><p>Commit your changes</p>
-								<p>Make sure that you follow the <a href="https://conventionalcommits.org">conventional commit</a> specs or you won&#39;t be able to commit</p>
+								<p>You <strong>must</strong> follow the <a href="https://conventionalcommits.org">conventional commit</a> to be able to commit</p>
 								<pre><code class="language-sh">git commit -m <span class="hljs-string">'feat(name): Added this CoolFeature'</span></code></pre>
 							</li>
 							<li><p><a href="#-running-tests">Run the tests</a></p>
 							</li>
-							<li><p>Commit your changes</p>
+							<li><p>Push your changes</p>
 								<pre><code class="language-sh">git push origin pr/CoolFeature</code></pre>
 							</li>
 							<li><p>Open a pull request</p>
@@ -751,12 +750,22 @@
 <span class="hljs-keyword">const</span> {checks, check} = Test
 
 checks([
-    check&lt;N.Plus&lt;<span class="hljs-string">'1'</span>, <span class="hljs-string">'30'</span>&gt;,    <span class="hljs-string">'31'</span>,  Test.Pass&gt;(),
-    check&lt;N.Plus&lt;<span class="hljs-string">'5'</span>, <span class="hljs-string">'-3'</span>&gt;,    <span class="hljs-string">'2'</span>,   Test.Pass&gt;(),
+    check&lt;N.Plus&lt;<span class="hljs-string">'1'</span>, <span class="hljs-string">'30'</span>&gt;, <span class="hljs-string">'31'</span>, Test.Pass&gt;(),
+    check&lt;N.Plus&lt;<span class="hljs-string">'5'</span>, <span class="hljs-string">'-3'</span>&gt;, <span class="hljs-string">'2'</span>,  Test.Pass&gt;(),
 ])</code></pre>
 						<blockquote>
 							<p>Place it in a file that won&#39;t be executed, it&#39;s just for TypeScript to test types</p>
 						</blockquote>
+						<a href="#continuous-integration" id="continuous-integration" style="color: inherit; text-decoration: none;">
+							<h4>Continuous Integration</h4>
+						</a>
+						<p>The releases are done with Travis CI in stages &amp; whenever a branch or PR is pushed:</p>
+						<ul>
+							<li>Tests are run with <code>npm test</code></li>
+							<li>Tests against <a href="https://github.com/DefinitelyTyped/DefinitelyTyped/">DefinitelyTyped</a></li>
+							<li>Releases to npm@[branch-name]</li>
+						</ul>
+						<p>If you wrote tests &amp; would like your project to be tested too, please open an issue.</p>
 						<a href="#🔧-compatibility" id="🔧-compatibility" style="color: inherit; text-decoration: none;">
 							<h2>🔧 Compatibility</h2>
 						</a>
