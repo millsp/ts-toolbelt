@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.53](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.52...v3.8.53) (2019-08-27)
+
+
+### Bug Fixes
+
+* add missing && ([e4d5da8](https://github.com/pirix-gh/ts-toolbelt/commit/e4d5da8))
+* attempt to fix [#42](https://github.com/pirix-gh/ts-toolbelt/issues/42) ([d58cea8](https://github.com/pirix-gh/ts-toolbelt/commit/d58cea8))
+
+
+### Others
+
+* update ([422cdab](https://github.com/pirix-gh/ts-toolbelt/commit/422cdab))
+
 ### [3.8.52](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.51...v3.8.52) (2019-08-27)
 
 
