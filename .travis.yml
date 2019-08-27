@@ -27,9 +27,9 @@ jobs:
         on:
           all_branches: true
       before_deploy:
-        - npm run ci:bd:test
+        - npm run ci:test:bd
       after_deploy:
-        - npm run ci:ad:test
+        - npm run ci:test:ad
 
     - stage: deploy:master
       if: branch = master
@@ -51,3 +51,5 @@ jobs:
         skip_cleanup: true
         on:
           all_branches: true
+        before_deploy:
+          - npm run ci:branch:bd

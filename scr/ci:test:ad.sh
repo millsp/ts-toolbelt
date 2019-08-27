@@ -10,6 +10,4 @@ git commit -am "prepared tests" &&
 
 npm i &&
 
-npm run test &&
-
-(cd .. ; rm -fr dt)
+npm run test
