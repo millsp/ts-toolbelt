@@ -37,6 +37,7 @@ jobs:
         provider: npm
         email: $NPM_EMAIL
         api_key: $NPM_TOKEN
+        tag: latest
         skip_cleanup: true
         on:
           all_branches: true
