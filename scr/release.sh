@@ -16,7 +16,7 @@ if [ "$BRANCH" = "master" ]; then
 
     npx standard-version &&
 
-    git push #--follow-tags origin $BRANCH // TODO:
+    git push --follow-tags origin $BRANCH
 else
     git push origin $BRANCH
 fi;
