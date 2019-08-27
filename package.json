@@ -20,8 +20,7 @@
     "url": "https://github.com/pirix-gh"
   },
   "files": [
-    "out/types",
-    "out/src"
+    "out"
   ],
   "main": "out/index.js",
   "types": "out/types/src/index.d.ts",
