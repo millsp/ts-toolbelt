@@ -29,10 +29,10 @@
     "build": "bash scr/build.sh",
     "build:docs": "bash scr/build:docs.sh",
     "build:types": "bash scr/build:types.sh",
+    "ci:branch:bd": "bash scr/ci:branch:bd.sh",
+    "ci:test": "bash scr/ci:test.sh",
     "ci:test:ad": "bash scr/ci:test:ad.sh",
     "ci:test:bd": "bash scr/ci:test:bd.sh",
-    "ci:test": "bash scr/ci:test.sh",
-    "ci:branch:bd": "bash scr/ci:branch:bd.sh",
     "release": "bash scr/release.sh",
     "setup:dev": "bash scr/setup:dev.sh",
     "test": "bash scr/test.sh"
