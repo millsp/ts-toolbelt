@@ -1,3 +1,5 @@
+import {_Function} from './_Internal'
+
 /** Alias to create a **`Function`**
  * @param P parameters
  * @param R return type
@@ -11,4 +13,4 @@
  * ```
  */
 export type Function<P extends any[] = any, R extends any = any> =
-    (...args: P) => R
+    ((...args: P) => R) & _Function

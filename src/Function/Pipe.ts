@@ -8,18 +8,28 @@ import {Return} from './Return'
 import {Parameters} from './Parameters'
 import {Mode} from './_Internal'
 import {PromiseOf} from '../Class/PromiseOf'
+import {Or} from '../Boolean/Or'
+import {Extends} from '../Any/_api'
 
 type PipeFnSync<Fns extends Function[], K extends keyof Fns> =
     K extends '0'
     ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
-    : (arg: Return<Fns[Pos<Prev<IterationOf<K & string>>>]>) =>
-        Return<Fns[Pos<IterationOf<K & string>>]>
+    : Function<[ // handling unknown generics, waiting for proposal
+        Return<Fns[Pos<Prev<IterationOf<K & string>>>]> extends infer X
+        ? {1: any, 0: X}[Or<Extends<unknown, X>, Extends<unknown[], X>>]
+        : never
+    ], Return<Fns[Pos<IterationOf<K & string>>]>
+    >
 
 type PipeFnAsync<Fns extends Function[], K extends keyof Fns> =
     K extends '0'
     ? PromiseOf<Fns[K]> // If first item, do nothing to it. Otherwise, pipe them:
-    : (arg: PromiseOf<Return<Fns[Pos<Prev<IterationOf<K & string>>>]>>) =>
-        Return<Fns[Pos<IterationOf<K & string>>]>
+    : Function<[ // handling unknown generics, waiting for proposal
+        PromiseOf<Return<Fns[Pos<Prev<IterationOf<K & string>>>]>> extends infer X
+        ? {1: any, 0: X}[Or<Extends<unknown, X>, Extends<unknown[], X>>]
+        : never
+    ], Return<Fns[Pos<IterationOf<K & string>>]>
+    >
 
 /** Compute what the input of **`Pipe`** should be
  * @param Fns to pipe

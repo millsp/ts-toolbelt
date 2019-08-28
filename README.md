@@ -73,13 +73,13 @@ compute more complex types. In other words, its API exposes types that trade
 
 #### Goals
 
-* This package aims to be the home of all **utility types**
-* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +50MB)
-* Computed types are always **readable**, like if you typed it
+* Answer the question to **"How do I do this in TypeScript?"**
 * Software that's more type-safe, **flexible** & more **robust**
 * Bring a whole new set of extra **features** to TypeScript
 * Types can be **combined** together to create new ones!
-* Answer the question to "How do I do this in TypeScript?"
+* This package aims to be the home of all **utility types**
+* Computed types are always **readable**, like if you typed it
+* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +50MB)
 
 ## 🍩 Features
 

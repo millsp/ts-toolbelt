@@ -10,4 +10,6 @@
  * ```
  */
 export type Compute<A extends any> =
-    {[K in keyof A]: A[K]} & {}
+    A extends Function
+    ? A
+    : {[K in keyof A]: A[K]} & {}

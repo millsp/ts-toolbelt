@@ -11,18 +11,28 @@ import {Return} from './Return'
 import {Parameters} from './Parameters'
 import {Mode} from './_Internal'
 import {PromiseOf} from '../Class/PromiseOf'
+import {Or} from '../Boolean/Or'
+import {Extends} from '../Any/Extends'
 
 type ComposeFnSync<Fns extends Function[], K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
     ? Fns[K] // If mapped type reached the end
-    : (arg: Return<Fns[Pos<Next<IterationOf<K & string>>>]>) =>
-        Return<Fns[Pos<IterationOf<K & string>>]>
+    : Function<[ // handling unknown generics, waiting for proposal
+        Return<Fns[Pos<Next<IterationOf<K & string>>>]> extends infer X
+        ? {1: any, 0: X}[Or<Extends<unknown, X>, Extends<unknown[], X>>]
+        : never
+    ], Return<Fns[Pos<IterationOf<K & string>>]>
+    >
 
 type ComposeFnAsync<Fns extends Function[], K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
     ? PromiseOf<Fns[K]> // If mapped type reached the end
-    : (arg: PromiseOf<Return<Fns[Pos<Next<IterationOf<K & string>>>]>>) =>
-        Return<Fns[Pos<IterationOf<K & string>>]>
+    : Function<[ // handling unknown generics, waiting for proposal
+        PromiseOf<Return<Fns[Pos<Next<IterationOf<K & string>>>]>> extends infer X
+        ? {1: any, 0: X}[Or<Extends<unknown, X>, Extends<unknown[], X>>]
+        : never
+    ], Return<Fns[Pos<IterationOf<K & string>>]>
+    >
 
 /** Compute what the input of **`Compose`** should be
  * @param Fns to compose
