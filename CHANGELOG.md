@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.63](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.62...v3.8.63) (2019-08-28)
+
+
+### Bug Fixes
+
+* make Pipe & Compose more tolerant with generics (unknown) ([a0c754d](https://github.com/pirix-gh/ts-toolbelt/commit/a0c754d))
+
+
+### Others
+
+* update ([6a2ed21](https://github.com/pirix-gh/ts-toolbelt/commit/6a2ed21))
+
 ### [3.8.62](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.61...v3.8.62) (2019-08-28)
 
 
