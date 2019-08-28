@@ -43,6 +43,8 @@ jobs:
           all_branches: true
       before_deploy:
         - npm run ci:branch:bd
+      after_deploy:
+        - npm run ci:branch:ad
   
     - stage: deploy:branch
       if: branch != master
@@ -56,3 +58,5 @@ jobs:
           all_branches: true
       before_deploy:
         - npm run ci:branch:bd
+      after_deploy:
+        - npm run ci:branch:ad
