@@ -505,7 +505,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="compose" class="tsd-anchor"></a>
 					<h3>Compose</h3>
-					<div class="tsd-signature tsd-kind-icon">Compose&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: (...args: Parameters&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;) &#x3D;&gt; Return&lt;Head&lt;Fns&gt;&gt;; &#x27;async&#x27;: (...args: Parameters&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;) &#x3D;&gt; Promise&lt;Return&lt;Head&lt;Fns&gt;&gt;&gt;; }[mode]</span></div>
+					<div class="tsd-signature tsd-kind-icon">Compose&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: (...args: Parameters&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;) &#x3D;&gt; Return&lt;Head&lt;Fns&gt;&gt;; &#x27;async&#x27;: (...args: Parameters&lt;Fns[Tail&lt;Fns&gt;[&quot;length&quot;]]&gt;) &#x3D;&gt; Promise&lt;PromiseOf&lt;Return&lt;Head&lt;Fns&gt;&gt;&gt;&gt;; }[mode]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Compose <strong><code>Function</code></strong>s together</p>
@@ -552,7 +552,7 @@ await compose(c, b, a)(42)</span></code></pre>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/62c1e9cd/src/Function/Compose.ts#L65">Function/Compose.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/6a5fb0d9/src/Function/Compose.ts#L65">Function/Compose.ts:65</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -569,7 +569,7 @@ await compose(c, b, a)(42)</span></code></pre>
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/62c1e9cd/src/Function/Compose.ts#L21">Function/Compose.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/6a5fb0d9/src/Function/Compose.ts#L21">Function/Compose.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -586,14 +586,14 @@ await compose(c, b, a)(42)</span></code></pre>
 					</ul>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/62c1e9cd/src/Function/Compose.ts#L15">Function/Compose.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/6a5fb0d9/src/Function/Compose.ts#L15">Function/Compose.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
 					<a name="composer" class="tsd-anchor"></a>
 					<h3>Composer</h3>
-					<div class="tsd-signature tsd-kind-icon">Composer&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: { [K in keyof Fns]: K extends number | &quot;length&quot; | &quot;toString&quot; | &quot;toLocaleString&quot; | &quot;pop&quot; | &quot;push&quot; | &quot;concat&quot; | &quot;join&quot; | &quot;reverse&quot; | &quot;shift&quot; | &quot;slice&quot; | &quot;sort&quot; | &quot;splice&quot; | &quot;unshift&quot; | &quot;indexOf&quot; | &quot;lastIndexOf&quot; | &quot;every&quot; | &quot;some&quot; | &quot;forEach&quot; | &quot;map&quot; | &quot;filter&quot; | &quot;reduce&quot; | &quot;reduceRight&quot; | &quot;find&quot; | &quot;findIndex&quot; | &quot;fill&quot; | &quot;copyWithin&quot; | &quot;entries&quot; | &quot;keys&quot; | &quot;values&quot; | &quot;includes&quot; ? Fns[K] : ComposeFnSync&lt;Fns, K&gt;; }; &#x27;async&#x27;: { [K in keyof Fns]: K extends number | &quot;length&quot; | &quot;toString&quot; | &quot;toLocaleString&quot; | &quot;pop&quot; | &quot;push&quot; | &quot;concat&quot; | &quot;join&quot; | &quot;reverse&quot; | &quot;shift&quot; | &quot;slice&quot; | &quot;sort&quot; | &quot;splice&quot; | &quot;unshift&quot; | &quot;indexOf&quot; | &quot;lastIndexOf&quot; | &quot;every&quot; | &quot;some&quot; | &quot;forEach&quot; | &quot;map&quot; | &quot;filter&quot; | &quot;reduce&quot; | &quot;reduceRight&quot; | &quot;find&quot; | &quot;findIndex&quot; | &quot;fill&quot; | &quot;copyWithin&quot; | &quot;entries&quot; | &quot;keys&quot; | &quot;values&quot; | &quot;includes&quot; ? Fns[K] : ComposeFnAsync&lt;Fns, K&gt;; }; }[mode]</span></div>
+					<div class="tsd-signature tsd-kind-icon">Composer&lt;Fns, mode&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ &#x27;sync&#x27;: { [K in keyof Fns]: ComposeFnSync&lt;Fns, K&gt;; }; &#x27;async&#x27;: { [K in keyof Fns]: ComposeFnAsync&lt;Fns, K&gt;; }; }[mode]</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
 							<p>Compute what the input of <strong><code>Compose</code></strong> should be</p>
@@ -623,7 +623,7 @@ await compose(c, b, a)(42)</span></code></pre>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/62c1e9cd/src/Function/Compose.ts#L34">Function/Compose.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/6a5fb0d9/src/Function/Compose.ts#L34">Function/Compose.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
