@@ -20,7 +20,7 @@ type ComposeFnSync<Fns extends Function[], K extends keyof Fns> =
 
 type ComposeFnAsync<Fns extends Function[], K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
-    ? Fns[K] // If mapped type reached the end
+    ? PromiseOf<Fns[K]> // If mapped type reached the end
     : (arg: PromiseOf<Return<Fns[Pos<Next<IterationOf<K & string>>>]>>) =>
         Return<Fns[Pos<IterationOf<K & string>>]>
 
@@ -32,8 +32,8 @@ type ComposeFnAsync<Fns extends Function[], K extends keyof Fns> =
  * ```
  */
 export type Composer<Fns extends Function[], mode extends Mode = 'sync'> = {
-    'sync' : {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : ComposeFnSync<Fns, K>},
-    'async': {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : ComposeFnAsync<Fns, K>}
+    'sync' : {[K in keyof Fns]: ComposeFnSync<Fns, K>},
+    'async': {[K in keyof Fns]: ComposeFnAsync<Fns, K>}
 }[mode]
 
 /** Compose **`Function`**s together
@@ -64,5 +64,5 @@ export type Composer<Fns extends Function[], mode extends Mode = 'sync'> = {
  */
 export type Compose<Fns extends Function[], mode extends Mode = 'sync'> = {
     'sync' : (...args: Parameters<Last<Fns>>) => Return<Head<Fns>>
-    'async': (...args: Parameters<Last<Fns>>) => Promise<Return<Head<Fns>>>
+    'async': (...args: Parameters<Last<Fns>>) => Promise<PromiseOf<Return<Head<Fns>>>>
 }[mode]

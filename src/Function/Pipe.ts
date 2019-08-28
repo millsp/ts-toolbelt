@@ -17,7 +17,7 @@ type PipeFnSync<Fns extends Function[], K extends keyof Fns> =
 
 type PipeFnAsync<Fns extends Function[], K extends keyof Fns> =
     K extends '0'
-    ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
+    ? PromiseOf<Fns[K]> // If first item, do nothing to it. Otherwise, pipe them:
     : (arg: PromiseOf<Return<Fns[Pos<Prev<IterationOf<K & string>>>]>>) =>
         Return<Fns[Pos<IterationOf<K & string>>]>
 
@@ -29,8 +29,8 @@ type PipeFnAsync<Fns extends Function[], K extends keyof Fns> =
  * ```
  */
 export type Piper<Fns extends Function[], mode extends Mode = 'sync'> = {
-    'sync' : {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : PipeFnSync<Fns, K>}
-    'async': {[K in keyof Fns]: K extends keyof any[] ? Fns[K] : PipeFnAsync<Fns, K>}
+    'sync' : {[K in keyof Fns]: PipeFnSync<Fns, K>}
+    'async': {[K in keyof Fns]: PipeFnAsync<Fns, K>}
 }[mode]
 
 /** Pipe **`Function`**s together
@@ -63,5 +63,5 @@ export type Piper<Fns extends Function[], mode extends Mode = 'sync'> = {
  */
 export type Pipe<Fns extends Function[], mode extends Mode = 'sync'> = {
     'sync' : (...args: Parameters<Head<Fns>>) => Return<Last<Fns>>
-    'async': (...args: Parameters<Head<Fns>>) => Promise<Return<Last<Fns>>>
+    'async': (...args: Parameters<Head<Fns>>) => Promise<PromiseOf<Return<Last<Fns>>>>
 }[mode]

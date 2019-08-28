@@ -37,14 +37,21 @@ checks([
 
 declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns, 'async'>): F.Compose<Fns, 'async'>
 
-const composedAsync = compose(
-    (message: string)                   => false,                   // receive previous return
+const composedAsync0 = compose(
+    (message: string)                         => false,                   // receive previous return
+    async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    async (name: string, age: number)         => ({name, age}),           // receive parameters
+)
+
+const composedAsync1 = compose(
+    async (message: string)                   => false,                   // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     async (name: string, age: number)         => ({name, age}),           // receive parameters
 )
 
 checks([
-    check<(typeof composedAsync),   (name: string, age: number) => Promise<boolean>,    Test.Pass>(),
+    check<(typeof composedAsync0),   (name: string, age: number) => Promise<boolean>,    Test.Pass>(),
+    check<(typeof composedAsync1),   (name: string, age: number) => Promise<boolean>,    Test.Pass>(),
 ])
 
 
@@ -107,14 +114,21 @@ checks([
 
 declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Pipe<Fns, 'async'>
 
-const pipedAsync = pipe(
+const pipedAsync0 = pipe(
     async (name: string, age: number)         => ({name, age}),           // receive parameters
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
-    (message: string)                   => false,                   // receive previous return
+    async (message: string)                   => false,                   // receive previous return
+)
+
+const pipedAsync1 = pipe(
+    async (name: string, age: number)         => ({name, age}),           // receive parameters
+    async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    (message: string)                         => false,                   // receive previous return
 )
 
 checks([
-    check<(typeof pipedAsync),   (name: string, age: number) => Promise<boolean>,   Test.Pass>(),
+    check<(typeof pipedAsync0),   (name: string, age: number) => Promise<boolean>,   Test.Pass>(),
+    check<(typeof pipedAsync1),   (name: string, age: number) => Promise<boolean>,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
