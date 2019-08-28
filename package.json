@@ -1,7 +1,7 @@
 {
   "name": "ts-toolbelt",
   "version": "3.8.60",
-  "description": "👷 Higher type safety for TypeScript",
+  "description": "👷 All the types you need for TypeScript",
   "keywords": [
     "safe",
     "tools",
