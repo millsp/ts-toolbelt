@@ -12,9 +12,9 @@ BRANCH=`git rev-parse --symbolic-full-name --abbrev-ref HEAD` &&
 
 # Publish the current branch
 if [ "$BRANCH" = "master" ]; then
-    # npm run build:docs &&
+    npm run build:docs &&
 
-    # npx standard-version &&
+    npx standard-version &&
 
     git push origin $BRANCH #--follow-tags
 else
