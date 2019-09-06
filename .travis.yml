@@ -32,7 +32,7 @@ jobs:
         - npm run ci:test:ad
 
     - stage: deploy:master
-      if: tag NOT blank
+      if: tag IS NOT blank
       deploy:
         provider: npm
         email: $NPM_EMAIL
