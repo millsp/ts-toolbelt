@@ -65,11 +65,6 @@ const t = curried()
 const test00 = curried(__, 26)(__, true, 'JJ', __)('Jane', 'Jini') // boolean
 const test01 = curried('Jane', 26, true, __)('JJ', __)('Jini')     // boolean
 
-checks([
-    check<typeof test00,        boolean,                                Test.Pass>(),
-    check<typeof test01,        boolean,                                Test.Pass>(),
-])
-
 // ---------------------------------------------------------------------------------------
 // PARAMETERS
 
