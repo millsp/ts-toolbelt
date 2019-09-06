@@ -32,7 +32,7 @@ jobs:
         - npm run ci:test:ad
 
     - stage: deploy:master
-      if: branch = master
+      if: tag NOT blank
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -47,7 +47,7 @@ jobs:
         - npm run ci:branch:ad
   
     - stage: deploy:branch
-      if: branch != master
+      if: tag IS blank
       deploy:
         provider: npm
         email: $NPM_EMAIL
