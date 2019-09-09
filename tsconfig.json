@@ -92,7 +92,7 @@
     "include": [
       "./src/**/*",
       "./scr/**/*",
-      "./tst/**/*",
+      "./tst/**/*"
     ],
     "exclude": [
       "./node_modules/**/*",
