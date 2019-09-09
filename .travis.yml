@@ -46,17 +46,17 @@ jobs:
       after_deploy:
         - npm run ci:branch:ad
   
-    - stage: deploy:branch
-      if: tag IS blank
-      deploy:
-        provider: npm
-        email: $NPM_EMAIL
-        api_key: $NPM_TOKEN
-        tag: $TRAVIS_BRANCH
-        skip_cleanup: true
-        on:
-          all_branches: true
-      before_deploy:
-        - npm run ci:branch:bd
-      after_deploy:
-        - npm run ci:branch:ad
+    # - stage: deploy:branch
+    #   if: tag IS blank
+    #   deploy:
+    #     provider: npm
+    #     email: $NPM_EMAIL
+    #     api_key: $NPM_TOKEN
+    #     tag: $TRAVIS_BRANCH
+    #     skip_cleanup: true
+    #     on:
+    #       all_branches: true
+    #   before_deploy:
+    #     - npm run ci:branch:bd
+    #   after_deploy:
+    #     - npm run ci:branch:ad
