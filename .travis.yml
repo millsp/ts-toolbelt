@@ -10,8 +10,10 @@ install:
 
 stages:
   - test
-  - deploy:master
-  - deploy:branch
+  - name: deploy:master
+    if: tag IS NOT blank
+  - name: deploy:branch
+    if: tag IS blank
 
 jobs:
   include:
@@ -32,7 +34,6 @@ jobs:
         - npm run ci:test:ad
 
     - stage: deploy:master
-      if: tag IS NOT blank
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -46,17 +47,16 @@ jobs:
       after_deploy:
         - npm run ci:branch:ad
   
-    # - stage: deploy:branch
-    #   if: tag IS blank
-    #   deploy:
-    #     provider: npm
-    #     email: $NPM_EMAIL
-    #     api_key: $NPM_TOKEN
-    #     tag: $TRAVIS_BRANCH
-    #     skip_cleanup: true
-    #     on:
-    #       all_branches: true
-    #   before_deploy:
-    #     - npm run ci:branch:bd
-    #   after_deploy:
-    #     - npm run ci:branch:ad
+    - stage: deploy:branch
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+        tag: $TRAVIS_BRANCH
+        skip_cleanup: true
+        on:
+          all_branches: true
+      before_deploy:
+        - npm run ci:branch:bd
+      after_deploy:
+        - npm run ci:branch:ad
