@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.73](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.72...v3.8.73) (2019-09-09)
+
+
+### Bug Fixes
+
+* ramda ([6abf5cd](https://github.com/pirix-gh/ts-toolbelt/commit/6abf5cd))
+
+
+### Others
+
+* update ([7d505ca](https://github.com/pirix-gh/ts-toolbelt/commit/7d505ca))
+
 ### [3.8.72](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.71...v3.8.72) (2019-09-07)
 
 
