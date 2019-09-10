@@ -2,6 +2,4 @@
 
 npx typedoc --out docs src --theme node_modules/eledoc/bin/default/ && 
 
-touch docs/.nojekyll && 
-
-git commit -am "docs: update"
+touch docs/.nojekyll
