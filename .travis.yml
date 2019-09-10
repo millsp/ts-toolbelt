@@ -16,9 +16,9 @@ stages:
 jobs:
   include:
     - stage: test
-      if: tag IS blank
+      if: tag IS blank # filter double build with tags
       script:
-        - npm run ci:test
+        - npm run ci:test 
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -26,12 +26,11 @@ jobs:
         skip_cleanup: true
         tag: test
         on:
-          tags: false
           all_branches: true
-      before_deploy:
-        - npm run ci:test:bd
-      after_deploy:
-        - npm run ci:test:ad
+      before_deploy: # https://github.com/travis-ci/travis-ci/issues/1574#issuecomment-451787844
+        - if ! npm run ci:test:bd; then travis_terminate 1; fi
+      after_deploy: # the above link explains how to make the build fail if something went wrong
+        - if ! npm run ci:test:ad; then travis_terminate 1; fi
 
     - stage: deploy:master
       if: tag IS blank AND branch = master
@@ -42,12 +41,11 @@ jobs:
         tag: latest
         skip_cleanup: true
         on:
-          tags: false          
           all_branches: true
       before_deploy:
-        - npm run ci:branch:bd
+        - if ! npm run ci:branch:bd; then travis_terminate 1; fi
       after_deploy:
-        - npm run ci:branch:ad
+        - if ! npm run ci:branch:ad; then travis_terminate 1; fi
   
     - stage: deploy:branch
       if: tag IS blank AND branch != master
@@ -60,6 +58,6 @@ jobs:
         on:
           all_branches: true
       before_deploy:
-        - npm run ci:branch:bd
+        - if ! npm run ci:branch:bd; then travis_terminate 1; fi
       after_deploy:
-        - npm run ci:branch:ad
+        - if ! npm run ci:branch:ad; then travis_terminate 1; fi
