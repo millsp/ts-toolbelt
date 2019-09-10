@@ -43,9 +43,9 @@ jobs:
         on:
           all_branches: true
       before_deploy:
-        - if ! npm run ci:branch:bd; then travis_terminate 1; fi
+        - if ! npm run ci:master:bd; then travis_terminate 1; fi
       after_deploy:
-        - if ! npm run ci:branch:ad; then travis_terminate 1; fi
+        - if ! npm run ci:master:ad; then travis_terminate 1; fi
   
     - stage: deploy:branch
       if: tag IS blank AND branch != master
@@ -61,3 +61,17 @@ jobs:
         - if ! npm run ci:branch:bd; then travis_terminate 1; fi
       after_deploy:
         - if ! npm run ci:branch:ad; then travis_terminate 1; fi
+
+    - stage: deploy:docs
+      if: tag IS blank AND branch = master
+      deploy:
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GH_TOKEN
+          keep_history: true
+          on:
+            all_branches: true
+      before_deploy:
+        - if ! npm run ci:docs:bd; then travis_terminate 1; fi
+      after_deploy:
+        - if ! npm run ci:docs:ad; then travis_terminate 1; fi

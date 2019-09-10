@@ -1,22 +1,20 @@
 #!/bin/bash
 
-# npm run build &&
-
+# Make sure that we passed all tests
 npm run test &&
 
-# Sort the package.json to keep it neat
+# Sorts package.json to keep it neat
 npx sort-package-json &&
 
-# Get the name of the current working branch
+# Get the name of the current branch
 BRANCH=`git rev-parse --symbolic-full-name --abbrev-ref HEAD` &&
 
-# Publish the current branch
+# Publish the current branch origin
 if [ "$BRANCH" = "master" ]; then
-    npm run build:docs &&
-
+    # Bump the version & changelogs
     npx standard-version &&
 
-    git push origin $BRANCH --follow-tags
+    git push origin $BRANCH #--follow-tags
 else
     git push origin $BRANCH
 fi;
