@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.91](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.90...v3.8.91) (2019-09-10)
+
+
+### Bug Fixes
+
+* doc deploy ([54b9b6f](https://github.com/pirix-gh/ts-toolbelt/commit/54b9b6f))
+
+
+### Others
+
+* remove provider list ([f34a5e5](https://github.com/pirix-gh/ts-toolbelt/commit/f34a5e5))
+
 ### [3.8.90](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.89...v3.8.90) (2019-09-10)
 
 
