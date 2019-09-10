@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "3.8.81",
+  "version": "3.8.82",
   "description": "👷 All the types you need for TypeScript",
   "keywords": [
     "safe",
@@ -37,11 +37,11 @@
     "ci:master:bd": "bash scr/ci/master/bd.sh",
     "ci:test:ad": "bash scr/ci/test/ad.sh",
     "ci:test:bd": "bash scr/ci/test/bd.sh",
+    "release": "bash scr/release.sh",
     "test": "bash scr/test/all.sh",
     "test:code": "bash scr/test/code.sh",
     "test:lint": "bash scr/test/lint.sh",
-    "test:types": "bash scr/test/types.sh",
-    "release": "bash scr/release.sh"
+    "test:types": "bash scr/test/types.sh"
   },
   "dependencies": {},
   "devDependencies": {

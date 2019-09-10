@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.82](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.81...v3.8.82) (2019-09-10)
+
+
+### Bug Fixes
+
+* typo ([cf281ce](https://github.com/pirix-gh/ts-toolbelt/commit/cf281ce))
+
+
+### Others
+
+* reorganize scripts for CI ([64ca2d0](https://github.com/pirix-gh/ts-toolbelt/commit/64ca2d0))
+
 ### [3.8.81](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.80...v3.8.81) (2019-09-10)
 
 
