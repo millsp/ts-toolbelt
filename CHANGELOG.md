@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.87](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.81...v3.8.87) (2019-09-10)
+
+
+### Bug Fixes
+
+* create missing folder ([e10bdf7](https://github.com/pirix-gh/ts-toolbelt/commit/e10bdf7))
+* git depth ([e53de3f](https://github.com/pirix-gh/ts-toolbelt/commit/e53de3f))
+* travis doc deploy ([75779cb](https://github.com/pirix-gh/ts-toolbelt/commit/75779cb))
+* typo ([5e5eb5e](https://github.com/pirix-gh/ts-toolbelt/commit/5e5eb5e))
+* typo ([cf281ce](https://github.com/pirix-gh/ts-toolbelt/commit/cf281ce))
+* wrong install script ([c4b9ee6](https://github.com/pirix-gh/ts-toolbelt/commit/c4b9ee6))
+
+
+### Others
+
+* reorganize scripts for CI ([64ca2d0](https://github.com/pirix-gh/ts-toolbelt/commit/64ca2d0))
+* **release:** 3.8.82 ([a2dd282](https://github.com/pirix-gh/ts-toolbelt/commit/a2dd282))
+* **release:** 3.8.83 ([efba258](https://github.com/pirix-gh/ts-toolbelt/commit/efba258))
+* **release:** 3.8.84 ([94deca5](https://github.com/pirix-gh/ts-toolbelt/commit/94deca5))
+* **release:** 3.8.85 ([e5371b1](https://github.com/pirix-gh/ts-toolbelt/commit/e5371b1))
+* **release:** 3.8.86 ([b1c73a5](https://github.com/pirix-gh/ts-toolbelt/commit/b1c73a5))
+
 ### [3.8.86](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.85...v3.8.86) (2019-09-10)
 
 
