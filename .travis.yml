@@ -6,12 +6,13 @@ node_js:
 - '10.0'
 
 install:
-- npm run setup:dev
+- npm install --only=dev
 
 stages:
   - test
   - deploy:master
   - deploy:branch
+  - deploy:docs
 
 jobs:
   include:
