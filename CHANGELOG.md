@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.83](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.82...v3.8.83) (2019-09-10)
+
+
+### Bug Fixes
+
+* wrong install script ([c4b9ee6](https://github.com/pirix-gh/ts-toolbelt/commit/c4b9ee6))
+
 ### [3.8.82](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.81...v3.8.82) (2019-09-10)
 
 
