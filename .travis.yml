@@ -5,6 +5,9 @@ language: node_js
 node_js:
 - '10.0'
 
+git:
+  depth: 5
+
 install:
 - npm install --only=dev
 
@@ -19,7 +22,7 @@ jobs:
     - stage: test
       if: tag IS blank # filter double build with tags
       script:
-        - npm run ci:test 
+        - npm run test 
       deploy:
         provider: npm
         email: $NPM_EMAIL
