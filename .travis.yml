@@ -16,6 +16,7 @@ stages:
 jobs:
   include:
     - stage: test
+      if: tag IS blank
       script:
         - npm run ci:test
       deploy:
@@ -33,7 +34,7 @@ jobs:
         - npm run ci:test:ad
 
     - stage: deploy:master
-      if: branch = master
+      if: tag IS blank AND branch = master
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -49,7 +50,7 @@ jobs:
         - npm run ci:branch:ad
   
     - stage: deploy:branch
-      if: branch != master
+      if: tag IS blank AND branch != master
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -57,7 +58,6 @@ jobs:
         tag: $TRAVIS_BRANCH
         skip_cleanup: true
         on:
-          tags: false
           all_branches: true
       before_deploy:
         - npm run ci:branch:bd
