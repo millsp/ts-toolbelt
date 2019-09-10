@@ -34,8 +34,6 @@ const replaceInFile = (
     const filePath = `${path}/${file}`
     const streamFD = fs.createReadStream(filePath)
 
-    console.log(`found: ${filePath}`)
-
     rl.createInterface(streamFD).
     on('line', (line) => {
         if (line.match(match)) {

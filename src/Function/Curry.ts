@@ -54,10 +54,8 @@ export type Curry<F extends Function> =
     <T extends any[]>(...args: Cast<T, Gaps<Parameters<F>>>) =>
         GapsOf<T, Parameters<F>> extends infer G
         ? Length<Cast<G, any[]>> extends infer L
-          ? L extends 0
-            ? Return<F>
-            : L extends 1
-              ? (...args: Cast<G, any[]>)       => Return<F>
-              : Curry<(...args: Cast<G, any[]>) => Return<F>>
+          ? L extends 1
+            ? (...args: Cast<G, any[]>)       => Return<F>
+            : Curry<(...args: Cast<G, any[]>) => Return<F>>
         : never
     : never
