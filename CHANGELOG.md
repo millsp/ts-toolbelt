@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.85](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.84...v3.8.85) (2019-09-10)
+
+
+### Bug Fixes
+
+* create missing folder ([e10bdf7](https://github.com/pirix-gh/ts-toolbelt/commit/e10bdf7))
+
 ### [3.8.84](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.83...v3.8.84) (2019-09-10)
 
 
