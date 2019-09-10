@@ -66,13 +66,13 @@ jobs:
       after_deploy:
         - if ! npm run ci:branch:ad; then travis_terminate 1; fi
 
-    - stage: deploy:docs
+    - stage: deploy:docs #deploys doc to gh-pages branch
       if: tag IS blank AND branch = master
       deploy:
         - provider: pages
           skip_cleanup: true
           github_token: $GH_TOKEN
-          keep_history: true
+          local_dir: "docs"
           on:
             all_branches: true
       before_deploy:
