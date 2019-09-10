@@ -1,4 +1,4 @@
 #!/bin/bash
 
 npm run build:clean
-npx run build:docs
+npm run build:docs
