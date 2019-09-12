@@ -70,13 +70,9 @@
 
 ## 📜 About
 
-**ts-toolbelt** completes TypeScript with a collection of more than **175**
-tested types. This makes it the biggest type collection out there.
+**ts-toolbelt** completes TypeScript with a collection of more than **175** tested types. This makes it the biggest type collection out there.
 
-It's goal is to improve type correctness while adding a whole new set of
-**features** to TypeScript. It uses the type system itself for TypeScript to
-compute more complex types. In other words, its API exposes types that trade
-**CPU & RAM** for higher type safety.
+It's goal is to improve type correctness while adding a whole new set of **features** to TypeScript. It uses the type system itself for TypeScript to compute more complex types. In other words, its API exposes types that trade **CPU & RAM** for higher type safety.
 
 #### Goals
 
@@ -150,12 +146,12 @@ The project is organized around TypeScript's main concepts:
 
 |              |                    |              |                |                 |              |
 |--------------|--------------------|--------------|----------------|-----------------|--------------|
-| **A**(ny)    | **B**(boolean)     | **C**(lass)  | **F**(unction) | **I**(teration) | **N**(umber) |
-| **O**(bject) | **O**(bject).**P** | **S**(tring) | **T**(uple)    | **U**(nion)     | Test         |
+| **A**(ny)    | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber |
+| **O**bject   | **O**bject.**P**   | **S**tring   | **T**uple      | **U**nion       | Test         |
 
-**The documentation is complete but needs more examples**. So feel free to [ask for
-examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md),
-and I will update the docs.
+> **`TIP`** Match the type you need to operate on to the categories right above
+
+**The documentation is complete but needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
 
 #### Imports
 
@@ -178,8 +174,7 @@ There are many ways to import the types into your project:
 
 #### Internal Docs
 
-If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get
-you on track to start writing your own types.
+If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get you on track to start writing your own types.
 
 ## [🧠 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
 
@@ -189,14 +184,11 @@ It is incremental and it will be completed on demand, you can ask for this below
 
 #### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
 
-Are you missing something? Participate to the open-wiki by posting your
-questions [right here](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
+Are you missing something? Participate to the open-wiki by posting your questions [right here](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
 
 ## 🎁 Contributing
 
-Contributions are what make the open source community such an amazing place to
-learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-There are many ways to contribute to the project:
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. There are many ways to contribute to the project:
 
 #### Community
 
