@@ -60,8 +60,5 @@
     "tslib": "^1.10.0",
     "typedoc": "^0.15.0",
     "typescript": "^3.5.3"
-  },
-  "peerDependencies": {
-    "typescript": "^3.5.0"
   }
 }
