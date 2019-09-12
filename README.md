@@ -146,7 +146,7 @@ The project is organized around TypeScript's main concepts:
 
 |              |                    |              |                |                 |              |
 |--------------|--------------------|--------------|----------------|-----------------|--------------|
-| **A**(ny)    | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber |
+| **A**(ny)    | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber   |
 | **O**bject   | **O**bject.**P**   | **S**tring   | **T**uple      | **U**nion       | Test         |
 
 > **`TIP`** Match the type you need to operate on to the categories right above
