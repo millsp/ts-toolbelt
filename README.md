@@ -149,7 +149,7 @@ The project is organized around TypeScript's main concepts:
 | **A**(ny)    | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber   |
 | **O**bject   | **O**bject.**P**   | **S**tring   | **T**uple      | **U**nion       | Test         |
 
-> **`TIP`** Match the type you need to operate on to the categories right above
+> **`TIP`** match the type kind you need to operate on with the above categories
 
 **The documentation is complete but needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
 
