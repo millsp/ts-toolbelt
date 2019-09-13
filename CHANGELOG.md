@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.8.93](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.92...v3.8.93) (2019-09-13)
+
+
+### Bug Fixes
+
+*  use UnNest with narrowed types ([dc4402d](https://github.com/pirix-gh/ts-toolbelt/commit/dc4402d))
+
 ### [3.8.92](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.91...v3.8.92) (2019-09-12)
 
 
