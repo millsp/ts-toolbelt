@@ -6,10 +6,21 @@ import {Iteration} from '../Iteration/Iteration'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
+import {Filter} from './Filter'
 
-type _UnNest<T extends any[], TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _UnNest<T, Concat<TN, T[Pos<I>]>, Next<I>>
-    1: _UnNest<T, Append<TN, T[Pos<I>]>, Next<I>>
+type _UnNestCheap<T extends any[]> =
+    T extends Array<infer ST>
+    ? ST extends Array<any>
+      ? Concat<
+            Filter<T, Array<any>>, // join the parent of all arrays  - without its sub-arrays
+            ST                       // to the union of its sub arrays - without its parent-items
+        >
+      : never
+    : T
+
+type _UnNestExact<T extends any[], TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _UnNestExact<T, Concat<TN, T[Pos<I>]>, Next<I>>
+    1: _UnNestExact<T, Append<TN, T[Pos<I>]>, Next<I>>
     2: TN
 }[
     Pos<I> extends Length<T>  // its the end
@@ -18,6 +29,11 @@ type _UnNest<T extends any[], TN extends any[] = [], I extends Iteration = Itera
       ? 0
       : 1                     // element is other -> Append
 ]
+
+export type _UnNest<T extends any[]> =
+    number extends Length<T>
+    ? _UnNestCheap<T>
+    : _UnNestExact<T>
 
 /** Remove a dimension of **`T`**
  * @param T to un-nest
