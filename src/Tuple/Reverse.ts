@@ -7,9 +7,10 @@ import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {Max} from '../Number/Max'
 import {Key} from '../Iteration/Key'
+import {Number} from '../Number/Number'
 
-export type _Reverse<T extends any[], TO extends any[] = [], L = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
-    0: _Reverse<T, Prepend<TO, T[Pos<I>]>, Next<I>>
+export type _Reverse<T extends any[], TO extends any[] = [], L extends Number = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
+    0: _Reverse<T, Prepend<TO, T[Pos<I>]>, L, Next<I>>
     1: TO
 }[
     Key<I> extends L
