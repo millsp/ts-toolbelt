@@ -30,7 +30,7 @@ type _MergeFlat<O extends object, O1P extends object> = {
 }
 
 type MergeDeep<T extends any[], T1 extends any[]> =
-    TupleOf<Compute<_MergeDeep<T, Omit<ObjectOf<T1>, keyof T>, ObjectOf<T1>>>>
+    TupleOf<Compute<_MergeDeep<ObjectOf<T>, Omit<ObjectOf<T1>, keyof T>, ObjectOf<T1>>>>
     // same principle as above, but with a little tweak
     // we keep the original `O1` to know if we can merge
     // => if `O` and `O1` have `object` fields of same name
