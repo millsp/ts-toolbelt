@@ -293,9 +293,9 @@ checks([
 // MERGE
 
 checks([
-    check<T.Merge<[0],  [1, 2, 3?]>,        [0, 2, 3?],     Test.Pass>(),
-    check<T.Merge<[0?], [1, 2, 3?]>,        [2, 3?],        Test.Fail>(),
-    check<T.Merge<[1, 2, 3?], [0, 0, 0]>,   [1, 2, 3?],     Test.Pass>(),
+    check<T.Merge<[0],  [1, 2, 3]>,         [0, 2, 3],              Test.Pass>(),
+    check<T.Merge<[0?], [1, 2, 3]>,         [2, 3?],                Test.Fail>(),
+    check<T.Merge<[1, 2, 3?], [0, 0, 0]>,   [1, 2, 3 | undefined],  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -399,15 +399,15 @@ checks([
 // POP
 
 checks([
-    check<T.Pop<[1, 2, 3]>,     [1, 2],     Test.Pass>(),
-    check<T.Pop<[1, 2?, 3?]>,   [],         Test.Pass>(),
+    check<T.Pop<[1, 2, 3]>,     [1, 2],                 Test.Pass>(),
+    check<T.Pop<[1, 2?, 3?]>,   [1, 2 | undefined],     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // PREPEND
 
 checks([
-    check<T.Prepend<[0, 1, 2, 3], 4>,       [4, 0, 1, 2, 3],        Test.Pass>(),
+    check<T.Prepend<[0, 1, 2, 3?], 4>,      [4, 0, 1, 2, 3?],       Test.Pass>(),
     check<T.Prepend<[0, 1, 2, 3], [4, 5?]>, [[4, 5?], 0, 1, 2, 3],  Test.Pass>(),
     check<T.Prepend<never, [4, 5]>,         never,                  Test.Pass>(),
 ])
@@ -462,8 +462,8 @@ checks([
 // REVERSE
 
 checks([
-    check<T.Reverse<[1, 2, 3]>,     [3, 2, 1],      Test.Pass>(),
-    check<T.Reverse<[1, 2, 3?]>,    [2, 1],         Test.Pass>(),
+    check<T.Reverse<[1, 2, 3]>,     [3, 2, 1],              Test.Pass>(),
+    check<T.Reverse<[1, 2, 3?]>,    [3 | undefined, 2, 1],  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -504,9 +504,9 @@ checks([
 // TAKE
 
 checks([
-    check<T.Take<[1, 2, 3?, 4?], '2', '->'>,    [1, 2],    Test.Pass>(),
-    check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [1, 2],    Test.Pass>(), // nothing happens
-    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],    Test.Pass>(), // nothing happens
+    check<T.Take<[1, 2, 3?, 4?], '2', '->'>,    [1, 2],                             Test.Pass>(),
+    check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3 | undefined, 4 | undefined],     Test.Pass>(), // nothing happens
+    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],                         Test.Pass>(), // nothing happens
 ])
 
 // --------------------------------------------------------------------------------?-------
