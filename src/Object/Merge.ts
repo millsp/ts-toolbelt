@@ -43,6 +43,7 @@ type _MergeDeep<O extends object, O1P extends object, O1 extends object> = {
  * ('deep' option will skip any nullable object to be merged)
  * @param O to complete
  * @param O1 to copy from
+ * @param depth to do it deeply (?=`'flat'`)
  * @returns **`object`**
  * @example
  * ```ts
