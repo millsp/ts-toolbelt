@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.10.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.9.2...v3.10.0) (2019-09-14)
+
+
+### Bug Fixes
+
+* allow Pop to work with optionals ([17bb61f](https://github.com/pirix-gh/ts-toolbelt/commit/17bb61f))
+* allow Reverse to work with optionals ([3276dee](https://github.com/pirix-gh/ts-toolbelt/commit/3276dee))
+* missing Length in recursion ([b2e6eab](https://github.com/pirix-gh/ts-toolbelt/commit/b2e6eab))
+* missing transformation for T ([c4d9e50](https://github.com/pirix-gh/ts-toolbelt/commit/c4d9e50))
+
+
+### Features
+
+* 'deep' option for Tuple Merge ([6e15410](https://github.com/pirix-gh/ts-toolbelt/commit/6e15410))
+* allow deep merge for P.Merge ([b4ad1bc](https://github.com/pirix-gh/ts-toolbelt/commit/b4ad1bc))
+
+
+### Others
+
+* 'deep' option of Tuple/Merge ([004afae](https://github.com/pirix-gh/ts-toolbelt/commit/004afae))
+* fix wrong option ([3236466](https://github.com/pirix-gh/ts-toolbelt/commit/3236466))
+* updated tests to allow optionals ([9ec2757](https://github.com/pirix-gh/ts-toolbelt/commit/9ec2757))
+
 ### [3.9.2](https://github.com/pirix-gh/ts-toolbelt/compare/v3.9.1...v3.9.2) (2019-09-14)
 
 
