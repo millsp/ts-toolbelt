@@ -323,3 +323,5 @@ Many, many thanks to all the
 
 * [`eledoc`](https://github.com/pirix-gh/eledoc) - 🌒 A material dark theme for TypeDoc 
 * [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases
+* [`$mol_type`](https://github.com/eigenmethod/mol/tree/master/type) - Collection of TypeScript meta types for complex logic
+
