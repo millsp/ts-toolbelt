@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.9.2](https://github.com/pirix-gh/ts-toolbelt/compare/v3.9.1...v3.9.2) (2019-09-14)
+
+
+### Others
+
+* added migging parameter ([0e5a1cb](https://github.com/pirix-gh/ts-toolbelt/commit/0e5a1cb))
+
 ### [3.9.1](https://github.com/pirix-gh/ts-toolbelt/compare/v3.9.0...v3.9.1) (2019-09-14)
 
 
