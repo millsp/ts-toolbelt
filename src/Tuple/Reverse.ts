@@ -5,12 +5,14 @@ import {Length} from './Length'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
+import {Max} from '../Number/Max'
+import {Key} from '../Iteration/Key'
 
-export type _Reverse<T extends any[], TO extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+export type _Reverse<T extends any[], TO extends any[] = [], L = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
     0: _Reverse<T, Prepend<TO, T[Pos<I>]>, Next<I>>
     1: TO
 }[
-    Pos<I> extends Length<T>
+    Key<I> extends L
     ? 1
     : 0
 ]
