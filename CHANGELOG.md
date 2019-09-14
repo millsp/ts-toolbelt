@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.9.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.95...v3.9.0) (2019-09-14)
+
+
+### Features
+
+* 'deep' option for Merge ([5dfde49](https://github.com/pirix-gh/ts-toolbelt/commit/5dfde49))
+
+
+### Others
+
+* simplify Merge ([06e2671](https://github.com/pirix-gh/ts-toolbelt/commit/06e2671))
+
 ### [3.8.95](https://github.com/pirix-gh/ts-toolbelt/compare/v3.8.94...v3.8.95) (2019-09-13)
 
 
