@@ -17,7 +17,7 @@ readonly f : 0
          g : O // recursion
          h?: 1
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 }
 
 type O1 = {
@@ -31,7 +31,7 @@ readonly f : 0
          h : never
          i : {a: string}
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string, c: 0}}
 };
 
 // ---------------------------------------------------------------------------------------
@@ -63,12 +63,34 @@ type DIFF_O_O1_EQUALS = {
     d?: 'string0'
     g : O
     h?: 1
-    i: {a: string}
+    i : {a: string}
+    k : {a: {b: string}}
 };
 
 checks([
     check<O.Diff<O, O1, 'default'>, DIFF_O_O1_DEFAULT,  Test.Pass>(),
     check<O.Diff<O, O1, 'equals'>,  DIFF_O_O1_EQUALS,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+
+type DIFF_O1_O_DEFAULT = {
+    i: {a: string}
+}
+
+type DIFF_O1_O_EQUALS = {
+    a : string | number
+    b : object
+    d?: never
+    g : O1
+    h : never
+    i : {a: string}
+    k : {a: {b: string, c: 0}}
+};
+
+checks([
+    check<O.Diff<O1, O, 'default'>, DIFF_O1_O_DEFAULT,  Test.Pass>(),
+    check<O.Diff<O1, O, 'equals'>,  DIFF_O1_O_EQUALS,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -95,26 +117,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-
-type DIFF_O1_O_DEFAULT = {
-    i: {a: string}
-}
-
-type DIFF_O1_O_EQUALS = {
-    a : string | number
-    b : object
-    d?: never
-    g : O1
-    h : never
-    i: {a: string}
-};
-
-checks([
-    check<O.Diff<O1, O, 'default'>, DIFF_O1_O_DEFAULT,  Test.Pass>(),
-    check<O.Diff<O1, O, 'equals'>,  DIFF_O1_O_EQUALS,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // EXCLUDE
 
 // tslint:disable-next-line
@@ -126,6 +128,7 @@ type EXCLUDE_O_O1_EQUALS = {
     d?: 'string0'
     g : O
     h?: 1
+    k : {a: {b: string}}
 };
 
 checks([
@@ -146,6 +149,7 @@ type EXCLUDE_O1_O_EQUALS = {
     g : O1
     h : never
     i : {a: string}
+    k : {a: {b: string, c: 0}}
 };
 
 checks([
@@ -158,7 +162,7 @@ checks([
 
 type EXCLUDEKEYS_O_DEFAULT = never
 
-type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h';
+type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k';
 
 checks([
     check<O.ExcludeKeys<O, O1, 'default'>,  EXCLUDEKEYS_O_DEFAULT,  Test.Pass>(),
@@ -169,7 +173,7 @@ checks([
 
 type EXCLUDEKEYS_O1_DEFAULT = 'i'
 
-type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i';
+type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i' | 'k';
 
 checks([
     check<O.ExcludeKeys<O1, O, 'default'>,  EXCLUDEKEYS_O1_DEFAULT, Test.Pass>(),
@@ -188,7 +192,7 @@ readonly f : 0
          g : O
          h?: 1
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 }
 
 type FILTER_O_EQUALS = {
@@ -200,7 +204,7 @@ readonly f : 0
          g : O
          h?: 1
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 };
 
 checks([
@@ -282,7 +286,6 @@ type INTERSECT_O_O1_EQUALS = {
 readonly e?: 'string1';
 readonly f : 0;
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
 };
 
 checks([
@@ -295,7 +298,7 @@ checks([
 
 type INTERSECTKEYS_O_DEFAULT = keyof O
 
-type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j' | 'k';
+type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j';
 
 checks([
     check<O.IntersectKeys<O, O1, 'default'>,    INTERSECTKEYS_O_DEFAULT,    Test.Pass>(),
@@ -345,7 +348,7 @@ readonly f : 0
          h?: 1;
          i : {a: string}
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 }
 
 type MERGE_O1_O = {
@@ -359,12 +362,27 @@ readonly f : 0
          h : never
          i : {a: string}
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string, c: 0}}
+};
+
+type MERGE_O_O1_DEEP = {
+         a : string
+         b : number
+         c : {a: 'a', b: 'b'}
+         d?: 'string0'
+readonly e?: 'string1'
+readonly f : 0
+         g : O.Merge<O, O1, 'deep'>
+         h?: 1
+         i : {a: string}
+         j : 'a' | undefined
+         k : {a: {b: string, c: 0}}
 };
 
 checks([
-    check<O.Merge<O, O1>,   MERGE_O_O1, Test.Pass>(),
-    check<O.Merge<O1, O>,   MERGE_O1_O, Test.Pass>(),
+    check<O.Merge<O, O1>,           MERGE_O_O1,         Test.Pass>(),
+    check<O.Merge<O1, O>,           MERGE_O1_O,         Test.Pass>(),
+    check<O.Merge<O, O1, 'deep'>,   MERGE_O_O1_DEEP,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -401,7 +419,7 @@ readonly f : 0
          g : O
          h?: 1
          j : 'a'
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 };
 
 checks([
@@ -414,7 +432,7 @@ checks([
 // NONNULLABLEKEYS
 
 checks([
-    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g',    Test.Pass>(),
+    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g' | 'k',    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -443,7 +461,7 @@ readonly f : 0
          g : O
          h?: 1
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 };
 
 checks([
@@ -456,7 +474,7 @@ checks([
 // NULLABLEKEYS
 
 checks([
-    check<O.NullableKeys<O>,    'd' | 'e' | 'h' | 'j' | 'k',    Test.Pass>(),
+    check<O.NullableKeys<O>,    'd' | 'e' | 'h' | 'j',    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -469,7 +487,7 @@ type OMIT_O_DEH = {
     readonly f: 0
     g: O
     j: 'a' | undefined
-    k: {a: {b: string}} | undefined
+    k: {a: {b: string}}
 };
 
 checks([
@@ -503,7 +521,7 @@ readonly f : 0
          g : O
          h?: 1
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 };
 
 checks([
@@ -608,7 +626,7 @@ readonly f : 0
 readonly g : O
 readonly h?: 1
 readonly j : 'a' | undefined
-readonly k : {a: {b: string}} | undefined
+readonly k : {a: {b: string}}
 }
 
 type READONLY_O_A_FLAT = {
@@ -621,7 +639,7 @@ readonly f : 0
          g : O
          h?: 1
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 };
 
 checks([
@@ -704,7 +722,7 @@ readonly f: 0
          g: O
          h: 1
          j: 'a' | undefined
-         k: {a: {b: string}} | undefined
+         k: {a: {b: string}}
 }
 
 type REQUIRED_O_D_FLAT = {
@@ -717,7 +735,7 @@ readonly f : 0
          g : O
          h?: 1
          j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         k : {a: {b: string}}
 };
 
 checks([
@@ -825,7 +843,7 @@ type WRITABLE_O_FLAT = {
     g : O
     h?: 1
     j : 'a' | undefined
-    k : {a: {b: string}} | undefined
+    k : {a: {b: string}}
 }
 
 type WRITABLE_O_E_FLAT = {
@@ -838,7 +856,7 @@ readonly f : 0
     g : O
     h?: 1
     j : 'a' | undefined
-    k : {a: {b: string}} | undefined
+    k : {a: {b: string}}
 };
 
 checks([

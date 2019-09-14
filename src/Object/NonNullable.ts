@@ -5,7 +5,6 @@ import {Pick} from './Pick'
 import {Index} from '../_Internal'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
-import {Cast} from '../Any/Cast'
 
 type NonNullableFlat<O> = {
     [K in keyof O]: UNonNullable<O[K]>
