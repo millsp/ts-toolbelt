@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.11.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.10.0...v3.11.0) (2019-09-16)
+
+
+### Bug Fixes
+
+* added K feature ([9e460d1](https://github.com/pirix-gh/ts-toolbelt/commit/9e460d1))
+* added Unionize exports, made it available for Tuple too ([d51d9c7](https://github.com/pirix-gh/ts-toolbelt/commit/d51d9c7))
+* clearer Merge ([158a5fa](https://github.com/pirix-gh/ts-toolbelt/commit/158a5fa))
+* prevent call to API within API ([d463d04](https://github.com/pirix-gh/ts-toolbelt/commit/d463d04))
+* refactor names in Tuple Merge ([006f2c1](https://github.com/pirix-gh/ts-toolbelt/commit/006f2c1))
+* typo ([25fc0a9](https://github.com/pirix-gh/ts-toolbelt/commit/25fc0a9))
+* useless fields are not to be picked ([1b38290](https://github.com/pirix-gh/ts-toolbelt/commit/1b38290))
+* useless fields are not to be picked ([79c2332](https://github.com/pirix-gh/ts-toolbelt/commit/79c2332))
+
+
+### Features
+
+* added MergeUp ([d301e10](https://github.com/pirix-gh/ts-toolbelt/commit/d301e10))
+* added possibility to specify keys ([308e78b](https://github.com/pirix-gh/ts-toolbelt/commit/308e78b))
+* added Unionize ([151f846](https://github.com/pirix-gh/ts-toolbelt/commit/151f846))
+
+
+### Others
+
+* for MergeUp ([9f1595f](https://github.com/pirix-gh/ts-toolbelt/commit/9f1595f))
+
 ## [3.10.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.9.2...v3.10.0) (2019-09-14)
 
 
