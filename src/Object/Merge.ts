@@ -14,10 +14,10 @@ type MergeProp<O extends object, O1P extends object, K extends Index> =
       ? O1P[K]
       : never
 
-type MergeFlat<O extends object, O1P extends object> =
-    _MergeFlat<O, Omit<O1P, keyof O>>
+type MergeFlat<O extends object, O1 extends object> =
+    _MergeFlat<O, Omit<O1, keyof O>>
     // We need to exclude `O` out of `O1` to preserve modifiers
-    // because doing `keyof (O & O1O)` mixes the modifiers up
+    // because doing `keyof (O & O1P)` mixes the modifiers up
 
 type _MergeFlat<O extends object, O1P extends object> = {
     [K in keyof (O & O1P)]: MergeProp<O, O1P, K>
