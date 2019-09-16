@@ -9,7 +9,7 @@ import {Parameters} from './Parameters'
 import {Mode} from './_Internal'
 import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 type PipeFnSync<Fns extends Function[], K extends keyof Fns> =
     K extends '0'
