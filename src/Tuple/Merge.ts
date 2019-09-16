@@ -11,36 +11,27 @@ import {TupleOf} from '../Object/TupleOf'
 
 // todo One day, make this cleaner with type references
 
-type MergeProp<O extends object, O1 extends object, K extends Index> =
-    K extends keyof O
-    ? O[K]
-    : K extends keyof O1
-      ? O1[K]
+type MergeProp<T extends object, T1P extends object, K extends Index> =
+    K extends keyof T
+    ? T[K]
+    : K extends keyof T1P
+      ? T1P[K]
       : never
 
 type MergeFlat<T extends any[], T1 extends any[]> =
     TupleOf<_MergeFlat<ObjectOf<T>, Omit<ObjectOf<T1>, keyof T>>>
-    // We need to exclude `O` out of `O1` to preserve modifiers
-    // because doing `keyof (O & O1O)` mixes the modifiers up
 
-type _MergeFlat<O extends object, O1P extends object> = {
-    [K in keyof (O & O1P)]: MergeProp<O, O1P, K>
-    // for each property, pick what's available in `O` or `O1`
-    // at this stage `O1P` is just a part of the original `O1`
+type _MergeFlat<T extends object, T1P extends object> = {
+    [K in keyof (T & T1P)]: MergeProp<T, T1P, K>
 }
 
 type MergeDeep<T extends any[], T1 extends any[]> =
     TupleOf<Compute<_MergeDeep<ObjectOf<T>, Omit<ObjectOf<T1>, keyof T>, ObjectOf<T1>>>>
-    // same principle as above, but with a little tweak
-    // we keep the original `O1` to know if we can merge
-    // => if `O` and `O1` have `object` fields of same name
-    // => then it means that both fields can be merged deeply
-    // => and this is the meaning of what is programmed below
 
-type _MergeDeep<O extends object, O1P extends object, O1 extends object> = {
-    [K in keyof (O & O1P)]: And<Extends<At<O, K>, any[]>, Extends<At<O1, K>, any[]>> extends True
-                            ? MergeDeep<At<O, K> & [], At<O1, K> & []>
-                            : MergeProp<O, O1, K>
+type _MergeDeep<T extends object, T1P extends object, T1 extends object> = {
+    [K in keyof (T & T1P)]: And<Extends<At<T, K>, any[]>, Extends<At<T1, K>, any[]>> extends True
+                            ? MergeDeep<At<T, K> & [], At<T1, K> & []>
+                            : MergeProp<T, T1, K>
 }
 
 /** Complete the fields of **`O`** with the ones of **`O1`**
