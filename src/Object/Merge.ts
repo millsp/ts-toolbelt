@@ -7,15 +7,15 @@ import {Compute} from '../Any/Compute'
 import {Index} from '../_Internal'
 import {Depth} from './_Internal'
 
-type MergeProp<O extends object, O1 extends object, K extends Index> =
+type MergeProp<O extends object, O1P extends object, K extends Index> =
     K extends keyof O
     ? O[K]
-    : K extends keyof O1
-      ? O1[K]
+    : K extends keyof O1P
+      ? O1P[K]
       : never
 
-type MergeFlat<O extends object, O1 extends object> =
-    _MergeFlat<O, Omit<O1, keyof O>>
+type MergeFlat<O extends object, O1P extends object> =
+    _MergeFlat<O, Omit<O1P, keyof O>>
     // We need to exclude `O` out of `O1` to preserve modifiers
     // because doing `keyof (O & O1O)` mixes the modifiers up
 
@@ -23,12 +23,13 @@ type _MergeFlat<O extends object, O1P extends object> = {
     [K in keyof (O & O1P)]: MergeProp<O, O1P, K>
     // for each property, pick what's available in `O` or `O1`
     // at this stage `O1P` is just a part of the original `O1`
+    // => it's the part of `O1` that does not overlap with `O`
 }
 
 type MergeDeep<O extends object, O1 extends object> =
     Compute<_MergeDeep<O, Omit<O1, keyof O>, O1>>
     // same principle as above, but with a little tweak
-    // we keep the original `O1` to know if we can merge
+    // we keep the original `O1` to know if we can merge it
     // => if `O` and `O1` have `object` fields of same name
     // => then it means that both fields can be merged deeply
     // => and this is the meaning of what is programmed below

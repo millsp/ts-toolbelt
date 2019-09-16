@@ -4,7 +4,6 @@ import {Depth} from './_Internal'
 import {Index} from '../_Internal'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
-import {Cast} from '../Any/Cast'
 
 type RequiredFlat<O> = {
     [K in keyof O]-?: O[K]
