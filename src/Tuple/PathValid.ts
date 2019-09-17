@@ -1,6 +1,7 @@
 import {PathValid as OPathValid} from '../Object/PathValid'
 import {Index} from '../_Internal'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Replaces invalid parts of a path with `never`
  * @param T to be inspected
@@ -10,5 +11,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type PathValid<T extends any[], Path extends Index[]> =
+export type PathValid<T extends Tuple, Path extends Index[]> =
     OPathValid<ObjectOf<T>, Path>

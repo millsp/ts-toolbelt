@@ -2,6 +2,7 @@ import {Match} from '../Any/_Internal'
 import {Select as OSelect} from '../Object/Select'
 import {TupleOf} from '../Object/TupleOf'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Extract the entries of **`T`** that match **`M`**
  * @param T to extract from
@@ -12,5 +13,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type Select<T extends any[], M extends any, match extends Match = 'default'> =
+export type Select<T extends Tuple, M extends any, match extends Match = 'default'> =
     TupleOf<OSelect<ObjectOf<T>, M, match>>

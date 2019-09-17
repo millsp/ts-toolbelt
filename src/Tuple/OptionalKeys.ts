@@ -1,5 +1,6 @@
 import {OptionalKeys as OOptionalKeys} from '../Object/OptionalKeys'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get the keys of **`T`** that are optional
  * @param T
@@ -8,5 +9,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type OptionalKeys<T extends any[]> =
+export type OptionalKeys<T extends Tuple> =
     OOptionalKeys<ObjectOf<T>>

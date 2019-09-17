@@ -1,4 +1,5 @@
 import {Omit as OOmit} from '../Object/Omit'
+import {Tuple} from './Tuple'
 
 /** Transform a **tuple** into an **`object`**
  * @param T to transform
@@ -7,7 +8,7 @@ import {Omit as OOmit} from '../Object/Omit'
  * ```ts
  * ```
  */
-export type ObjectOf<T extends any[]> =
+export type ObjectOf<T extends Tuple> =
     T extends unknown // distribute
     ? OOmit<T, keyof any[]>
     : never

@@ -1,7 +1,7 @@
 import {FilterKeys as OFilterKeys} from '../Object/FilterKeys'
 import {Match} from '../Any/_Internal'
-import {Exclude} from '../Union/Exclude'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Filter out the keys of **`T`** which entries match **`M`**
  * @param T to remove from
@@ -12,5 +12,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type FilterKeys<T extends any[], M extends any, match extends Match = 'default'> =
+export type FilterKeys<T extends Tuple, M extends any, match extends Match = 'default'> =
     OFilterKeys<ObjectOf<T>, M, match>

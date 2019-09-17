@@ -1,7 +1,7 @@
 import {Number} from '../Number/Number'
 import {KeySet} from './KeySet'
 import {Omit} from './Omit'
-import {Cast} from '../Any/Cast'
+import {Tuple} from './Tuple'
 
 /** Remove out of **`T`** a range of entries
  * @param T to remove from
@@ -12,5 +12,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Remove<T extends any[], From extends Number, To extends Number> =
+export type Remove<T extends Tuple, From extends Number, To extends Number> =
     Omit<T, KeySet<From, To>>

@@ -8,8 +8,9 @@ import {Cast} from '../Any/Cast'
 import {Max} from '../Number/Max'
 import {Key} from '../Iteration/Key'
 import {Number} from '../Number/Number'
+import {Tuple} from './Tuple'
 
-export type _Reverse<T extends any[], TO extends any[] = [], L extends Number = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
+export type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
     0: _Reverse<T, Prepend<TO, T[Pos<I>]>, L, Next<I>>
     1: TO
 }[
@@ -26,7 +27,7 @@ export type _Reverse<T extends any[], TO extends any[] = [], L extends Number = 
  * ```ts
  * ```
  */
-export type Reverse<T extends any[], TO extends any[] = []> =
+export type Reverse<T extends Tuple, TO extends Tuple = []> =
     _Reverse<T, TO> extends infer X
     ? Cast<X, any[]>
     : never

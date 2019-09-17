@@ -1,6 +1,7 @@
 import {Depth} from '../Object/_Internal'
 import {Writable as OWritable} from '../Object/Writable'
 import {Cast} from '../Any/Cast'
+import {Tuple} from './Tuple'
 
 /** Make **`T`** writable (deeply or not)
  * @param T to make writable
@@ -10,5 +11,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Writable<T extends ReadonlyArray<any> | any[], depth extends Depth = 'flat'> =
+export type Writable<T extends Tuple, depth extends Depth = 'flat'> =
     Cast<OWritable<T, keyof T, depth>, any[]>

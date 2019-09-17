@@ -1,5 +1,6 @@
 import {Paths as OPaths} from '../Object/Paths'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get all the possible paths of **`T`**
  * (⚠️ this won't work with circular-refs)
@@ -9,5 +10,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type Paths<T extends any[]> =
+export type Paths<T extends Tuple> =
     OPaths<ObjectOf<T>>

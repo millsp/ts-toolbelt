@@ -1,6 +1,7 @@
 import {Depth} from '../Object/_Internal'
 import {Required as ORequired} from '../Object/Required'
 import {Cast} from '../Any/Cast'
+import {Tuple} from './Tuple'
 
 /** Make **`T`** required (deeply or not)
  * @param T to make required
@@ -10,5 +11,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Required<T extends any[], depth extends Depth = 'flat'> =
+export type Required<T extends Tuple, depth extends Depth = 'flat'> =
     Cast<ORequired<T, keyof T, depth>, any[]>

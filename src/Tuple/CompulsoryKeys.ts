@@ -1,5 +1,6 @@
 import {Compulsory as OCompulsory} from '../Object/Compulsory'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get the keys of **`T`** that are compulsory
  * @param T
@@ -8,5 +9,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type CompulsoryKeys<T extends any[]> =
+export type CompulsoryKeys<T extends Tuple> =
     OCompulsory<ObjectOf<T>>

@@ -1,7 +1,7 @@
 import {Match} from '../Any/_Internal'
 import {IntersectKeys as OIntersectKeys} from '../Object/IntersectKeys'
-import {Exclude} from '../Union/Exclude'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get the intersecting entries of **`T`** & **`T1`**
  * (If `match = 'default'`, no type checks are done)
@@ -12,5 +12,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type IntersectKeys<T extends any[], T1 extends any[], match extends Match = 'default'> =
+export type IntersectKeys<T extends Tuple, T1 extends Tuple, match extends Match = 'default'> =
     OIntersectKeys<ObjectOf<T>, T1, match>

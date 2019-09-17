@@ -6,6 +6,7 @@ import {Nullable as ONullable} from '../Object/Nullable'
 import {TupleOf} from '../Object/TupleOf'
 import {Keys} from './Keys'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Make some entries of **`T`** nullable (deeply or not)
  * @param T to make nullable
@@ -16,7 +17,7 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type Nullable<T extends any[], K extends Index = keyof T, depth extends Depth = 'flat'> = {
+export type Nullable<T extends Tuple, K extends Index = keyof T, depth extends Depth = 'flat'> = {
     1: Cast<ONullable<T, K, depth>, any[]>
     0: TupleOf<ONullable<ObjectOf<T>, K, depth>>
 }[Implements<Keys<T>, K>]

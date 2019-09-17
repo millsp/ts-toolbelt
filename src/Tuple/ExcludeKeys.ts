@@ -1,7 +1,7 @@
 import {ExcludeKeys as OExcludeKeys} from '../Object/ExcludeKeys'
-import {Exclude} from '../Union/Exclude'
 import {Match} from '../Any/_Internal'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Exclude the keys of **`T1`** out of the keys of **`T`**
  * (If `match = 'default'`, no type checks are done)
@@ -13,5 +13,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type ExcludeKeys<T extends any[], T1 extends any[], match extends Match = 'default'> =
+export type ExcludeKeys<T extends Tuple, T1 extends Tuple, match extends Match = 'default'> =
     OExcludeKeys<ObjectOf<T>, ObjectOf<T1>, match>

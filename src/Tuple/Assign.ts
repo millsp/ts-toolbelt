@@ -1,5 +1,6 @@
 import {Assign as OAssign} from '../Object/Assign'
 import {Omit} from './Omit'
+import {Tuple} from './Tuple'
 
 /** Assign a list of **tuple** into **`T`** (last-in overrides)
  * @param T to assign to
@@ -9,5 +10,5 @@ import {Omit} from './Omit'
  * ```ts
  * ```
  */
-export type Assign<T extends any[], Ts extends any[][]> =
+export type Assign<T extends Tuple, Ts extends Tuple[]> =
     Omit<OAssign<T, Ts> & [], keyof any[]>

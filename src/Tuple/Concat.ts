@@ -1,4 +1,5 @@
 import {Reverse} from './Reverse'
+import {Tuple} from './Tuple'
 
 /** Attach **`T1`** at the end of **`T`**
  * @param T to concat with
@@ -8,5 +9,5 @@ import {Reverse} from './Reverse'
  * ```ts
  * ```
  */
-export type Concat<T extends any[], T1 extends any[]> =
+export type Concat<T extends Tuple, T1 extends Tuple> =
     Reverse<Reverse<T>, T1>

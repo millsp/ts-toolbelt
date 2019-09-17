@@ -1,8 +1,8 @@
 import {Pick as OPick} from '../Object/Pick'
 import {TupleOf} from '../Object/TupleOf'
-import {Length} from './Length'
 import {Index} from '../_Internal'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Extract out of **`T`** the entries of key **`K`**
  * @param T to extract from
@@ -12,5 +12,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type Pick<T extends any[], K extends Index> =
+export type Pick<T extends Tuple, K extends Index> =
     TupleOf<OPick<ObjectOf<T>, K>>

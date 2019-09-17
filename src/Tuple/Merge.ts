@@ -6,8 +6,9 @@ import {ObjectOf} from './ObjectOf'
 import {TupleOf} from '../Object/TupleOf'
 import {Length} from './Length'
 import {Kind} from '../Any/Kind'
+import {Tuple} from './Tuple'
 
-type MergeFlat<T extends any[], T1 extends any[]> =
+type MergeFlat<T extends Tuple, T1 extends Tuple> =
     number extends Length<T | T1>
     // if we can't know the size, then get closest type
     ? (T | T1) extends (infer T)[] ? T[] : never
@@ -31,7 +32,7 @@ type MergeDeep<O, O1> =
  * ```ts
  * ```
  */
-export type Merge<T extends any[], T1 extends any[], depth extends Depth = 'flat'> = {
+export type Merge<T extends Tuple, T1 extends Tuple, depth extends Depth = 'flat'> = {
     'flat': MergeFlat<T, T1>
     'deep': MergeDeep<T, T1>
 }[depth]

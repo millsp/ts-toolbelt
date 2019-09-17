@@ -7,8 +7,9 @@ import {Cast} from '../Any/Cast'
 import {Merge} from '../Object/Merge'
 import {Record} from '../Object/Record'
 import {Index} from '../_Internal'
+import {Tuple} from './Tuple'
 
-type _ZipObj<TProp extends Index[], TField extends any[], O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
+type _ZipObj<TProp extends Tuple<Index>, TField extends Tuple, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
     0: _ZipObj<TProp, TField, Merge<O, Record<TProp[Pos<I>], TField[Pos<I>]>>, Next<I>>
     1: O
 }[
@@ -25,7 +26,7 @@ type _ZipObj<TProp extends Index[], TField extends any[], O extends object = {},
  * ```ts
  * ```
  */
-export type ZipObj<TKeys extends Index[], TFields extends any[]> =
+export type ZipObj<TKeys extends Tuple<Index>, TFields extends Tuple> =
     _ZipObj<TKeys, TFields> extends infer X
     ? Cast<X, object>
     : never

@@ -1,4 +1,5 @@
 import {Exclude} from '../Union/Exclude'
+import {Tuple} from './Tuple'
 
 /** Get the longest **tuple** of **`T`** & **`T1`**
  * (**`T`** has priority if both lengths are equal)
@@ -9,7 +10,7 @@ import {Exclude} from '../Union/Exclude'
  * ```ts
  * ```
  */
-export type Longest<T extends any[], T1 extends any[]> =
+export type Longest<T extends Tuple, T1 extends Tuple> =
     [Exclude<keyof T1, keyof T>] extends [never]
     ? T
     : T1

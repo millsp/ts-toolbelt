@@ -7,8 +7,9 @@ import {Number} from '../Number/Number'
 import {Key} from '../Iteration/Key'
 import {Way} from '../_Internal'
 import {Reverse} from './Reverse'
+import {Tuple} from './Tuple'
 
-type _Drop<T extends any[], N extends Number, I extends Iteration = IterationOf<'0'>> = {
+type _Drop<T extends Tuple, N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _Drop<Tail<T>, N, Next<I>>
     1: T
 }[
@@ -26,7 +27,7 @@ type _Drop<T extends any[], N extends Number, I extends Iteration = IterationOf<
  * ```ts
  * ```
  */
-export type Drop<T extends any[], N extends Number, way extends Way = '->'> = {
+export type Drop<T extends Tuple, N extends Number, way extends Way = '->'> = {
     '->': _Drop<T, N>
     '<-': Reverse<Drop<Reverse<T>, N>>
 }[way] extends infer X

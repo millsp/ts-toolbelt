@@ -1,5 +1,6 @@
 import {NumberOf} from '../Number/NumberOf'
 import {Formats} from '../Iteration/_Internal'
+import {Tuple} from './Tuple'
 
 /** Get the length of **`T`**
  * @param T to get length
@@ -9,7 +10,7 @@ import {Formats} from '../Iteration/_Internal'
  * ```ts
  * ```
  */
-export type Length<T extends any[], fmt extends Formats = 'n'> =  {
+export type Length<T extends Tuple, fmt extends Formats = 'n'> =  {
     's': NumberOf<T['length']>
     'n': T['length']
 }[fmt]

@@ -1,5 +1,6 @@
 import {RequiredKeys as ORequiredKeys} from '../Object/RequiredKeys'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get the keys of **`T`** that are readonly
  * @param T
@@ -8,5 +9,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type RequiredKeys<T extends any[]> =
+export type RequiredKeys<T extends Tuple> =
     ORequiredKeys<ObjectOf<T>>

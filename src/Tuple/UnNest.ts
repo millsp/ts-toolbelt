@@ -7,18 +7,19 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
 import {Filter} from './Filter'
+import {Tuple} from './Tuple'
 
-type _UnNestCheap<T extends any[]> =
+type _UnNestCheap<T extends Tuple> =
     T extends Array<infer ST>
     ? ST extends Array<any>
       ? Concat<
             Filter<T, Array<any>>, // join the parent of all arrays  - without its sub-arrays
-            ST                       // to the union of its sub arrays - without its parent-items
+            ST                     // to the union of its sub arrays - without its parent-items
         >
       : never
     : T
 
-type _UnNestExact<T extends any[], TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _UnNestExact<T, Concat<TN, T[Pos<I>]>, Next<I>>
     1: _UnNestExact<T, Append<TN, T[Pos<I>]>, Next<I>>
     2: TN
@@ -30,7 +31,7 @@ type _UnNestExact<T extends any[], TN extends any[] = [], I extends Iteration = 
       : 1                     // element is other -> Append
 ]
 
-export type _UnNest<T extends any[]> =
+export type _UnNest<T extends Tuple> =
     number extends Length<T>
     ? _UnNestCheap<T>
     : _UnNestExact<T>
@@ -42,7 +43,7 @@ export type _UnNest<T extends any[]> =
  * ```ts
  * ```
  */
-export type UnNest<T extends any[]> =
+export type UnNest<T extends Tuple> =
     _UnNest<T> extends infer X
     ? Cast<X, any[]>
     : never

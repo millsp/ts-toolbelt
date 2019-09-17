@@ -1,6 +1,7 @@
 import {Replace as OReplace} from '../Object/Replace'
 import {Match} from '../Any/_Internal'
 import {Cast} from '../Any/Cast'
+import {Tuple} from './Tuple'
 
 /** Update with **`A`** the entries of **`T`** that match **`M`**
  * @param O to update
@@ -12,5 +13,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Replace<T extends any[], M extends any, A extends any, match extends Match = 'default'> =
+export type Replace<T extends Tuple, M extends any, A extends any, match extends Match = 'default'> =
     Cast<OReplace<T, M, A, match>, any[]>

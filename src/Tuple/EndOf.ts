@@ -1,6 +1,7 @@
 import {Length} from './Length'
 import {Formats} from '../Iteration/_Internal'
 import {Tail} from './Tail'
+import {Tuple} from './Tuple'
 
 /** Get the last index of **`T`**
  * @param T to get from
@@ -10,5 +11,5 @@ import {Tail} from './Tail'
  * ```ts
  * ```
  */
-export type EndOf<T extends any[], fmt extends Formats = 'n'> =
+export type EndOf<T extends Tuple, fmt extends Formats = 'n'> =
     Length<Tail<T>, fmt>

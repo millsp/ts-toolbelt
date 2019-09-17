@@ -6,8 +6,9 @@ import {Length} from './Length'
 import {Pos} from '../Iteration/Pos'
 import {Reverse} from './Reverse'
 import {Cast} from '../Any/Cast'
+import {Tuple} from './Tuple'
 
-type _Zip<T extends any[], T1 extends any[], TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+type _Zip<T extends Tuple, T1 extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _Zip<T, T1, Prepend<TN, [T[Pos<I>], T1[Pos<I>]]>, Next<I>>
     1: Reverse<TN>
 }[
@@ -24,7 +25,7 @@ type _Zip<T extends any[], T1 extends any[], TN extends any[] = [], I extends It
  * ```ts
  * ```
  */
-export type Zip<T extends any[], T1 extends any[]> =
+export type Zip<T extends Tuple, T1 extends Tuple> =
     _Zip<T, T1> extends infer X
     ? Cast<X, any[]>
     : never

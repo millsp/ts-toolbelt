@@ -1,5 +1,6 @@
 import {WritableKeys as OWritableKeys} from '../Object/WritableKeys'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get the keys of **`O`** that are writable
  * @param O
@@ -8,5 +9,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type WritableKeys<T extends any[]> =
+export type WritableKeys<T extends Tuple> =
     OWritableKeys<ObjectOf<T>>

@@ -1,5 +1,6 @@
 import {Tail} from './Tail'
 import {Length} from './Length'
+import {Tuple} from './Tuple'
 
 /** Get the last entry of **`T`**
  * @param T to extract from
@@ -8,5 +9,5 @@ import {Length} from './Length'
  * ```ts
  * ```
  */
-export type Last<T extends any[]> =
+export type Last<T extends Tuple> =
     T[Length<Tail<T>, 'n'>]

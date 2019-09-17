@@ -1,9 +1,8 @@
 import {Intersect as OIntersect} from '../Object/Intersect'
 import {Match} from '../Any/_Internal'
 import {TupleOf} from '../Object/TupleOf'
-import {Longest} from './Longest'
-import {Length} from './Length'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get the intersecting entries of **`T`** & **`T1`**
  * (If `match = 'default'`, no type checks are done)
@@ -14,5 +13,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type Intersect<T extends any[], T1 extends any[], match extends Match = 'default'> =
+export type Intersect<T extends Tuple, T1 extends Tuple, match extends Match = 'default'> =
     TupleOf<OIntersect<ObjectOf<T>, ObjectOf<T1>, match>>

@@ -1,5 +1,6 @@
 import {NullableKeys as ONullableKeys} from '../Object/NullableKeys'
 import {ObjectOf} from './ObjectOf'
+import {Tuple} from './Tuple'
 
 /** Get the keys of **`T`** that are nullable
  * @param T
@@ -8,5 +9,5 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type NullableKeys<T extends any[]> =
+export type NullableKeys<T extends Tuple> =
     ONullableKeys<ObjectOf<T>>
