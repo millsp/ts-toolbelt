@@ -23,7 +23,7 @@ type MergeDeep<O, O1> =
 
 /** Complete the fields of **`O`** with the ones of **`O1`**
  * ('deep' option will skip any nullable object to be merged)
- * (only pure)
+ * For more advanced merging capabilities, please see **`MergeUp`**
  * @param O to complete
  * @param O1 to copy from
  * @param depth to do it deeply (?=`'flat'`)
