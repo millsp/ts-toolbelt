@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.12.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.11.0...v3.12.0) (2019-09-17)
+
+
+### Bug Fixes
+
+* shorter-simpler Merge and Merge 'deep' ([833c352](https://github.com/pirix-gh/ts-toolbelt/commit/833c352))
+
+
+### Features
+
+* added Kind ([6d5fa08](https://github.com/pirix-gh/ts-toolbelt/commit/6d5fa08))
+* added Parameters for Class ([1673a9f](https://github.com/pirix-gh/ts-toolbelt/commit/1673a9f))
+
+
+### Others
+
+* cleanup ([1dddb3e](https://github.com/pirix-gh/ts-toolbelt/commit/1dddb3e))
+* comments ([c6a7190](https://github.com/pirix-gh/ts-toolbelt/commit/c6a7190))
+* remove MergeUp ([62c7c09](https://github.com/pirix-gh/ts-toolbelt/commit/62c7c09))
+* remove MergeUp from tests ([2f2ead9](https://github.com/pirix-gh/ts-toolbelt/commit/2f2ead9))
+* remove MergeUp tests ([e044645](https://github.com/pirix-gh/ts-toolbelt/commit/e044645))
+
 ## [3.11.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.10.0...v3.11.0) (2019-09-16)
 
 
