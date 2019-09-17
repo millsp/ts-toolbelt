@@ -35,4 +35,4 @@ export type Invert<O extends Record<keyof O, Index>> =
     { // swaps the key and the value
       [K in keyof O]: Record<O[K], K>
     }[keyof O]
->>
+  >>

@@ -10,7 +10,7 @@ type OptionalFlat<O> = {
 }
 
 type OptionalDeep<O> = {
-  [K in keyof O]?: OptionalDeep<O[K]>
+    [K in keyof O]?: OptionalDeep<O[K]>
 }
 
 type OptionalPart<O extends object, depth extends Depth> = {

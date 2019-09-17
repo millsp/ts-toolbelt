@@ -10,7 +10,7 @@ type RequiredFlat<O> = {
 }
 
 type RequiredDeep<O> = {
-  [K in keyof O]-?: RequiredDeep<O[K]>
+    [K in keyof O]-?: RequiredDeep<O[K]>
 }
 
 type RequiredPart<O extends object, depth extends Depth> = {
