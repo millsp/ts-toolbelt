@@ -849,6 +849,34 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// UNIONIZE
+
+type O_UNIONIZE = {
+    a : 'a'
+    b : 'b'
+    c : never
+    d?: 1
+}
+
+type O1_UNIONIZE = {
+    a : 'b'
+    b?: 'x'
+    c : 42
+    d : {}
+}
+
+type UNIONIZE_O_O1 = {
+    a : 'a' | 'b';
+    b : 'b' | 'x' | undefined;
+    c : 42;
+    d?: {} | 1;
+};
+
+checks([
+    check<O.Unionize<O_UNIONIZE, O1_UNIONIZE>,  UNIONIZE_O_O1,  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // UNIONOF
 
 type UNIONOF_O = {
