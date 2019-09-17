@@ -5,5 +5,6 @@
  * ```ts
  * ```
  */
-export type UnionOf<T extends any[]> =
-    T[number]
+export type UnionOf<T> = T extends readonly any[]
+    ? T[number]
+    : (T extends any[] ? T[number] : T);

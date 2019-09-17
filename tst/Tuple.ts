@@ -515,8 +515,9 @@ checks([
 // UNIONOF
 
 checks([
-    check<T.UnionOf<[1, 2, 3?]>,    1 | 2 | 3 | undefined,      Test.Pass>(),
-    check<T.UnionOf<[]>,            never,                      Test.Pass>(),
+    check<T.UnionOf<[1, 2, 3?]>,             1 | 2 | 3 | undefined,      Test.Pass>(),
+    check<T.UnionOf<readonly [1, 2, 3?]>,    1 | 2 | 3 | undefined,      Test.Pass>(),
+    check<T.UnionOf<[]>,                     never,                      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
