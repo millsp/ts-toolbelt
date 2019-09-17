@@ -379,6 +379,8 @@ readonly f : 0
          k : {a: {b: string, c: 0}}
 };
 
+type t = O.Merge<O, O1, 'deep'>
+
 checks([
     check<O.Merge<O, O1>,           MERGE_O_O1,         Test.Pass>(),
     check<O.Merge<O1, O>,           MERGE_O1_O,         Test.Pass>(),
