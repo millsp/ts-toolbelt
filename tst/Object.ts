@@ -379,57 +379,10 @@ readonly f : 0
          k : {a: {b: string, c: 0}}
 };
 
-type t = O.Merge<O, O1, 'deep'>
-
 checks([
     check<O.Merge<O, O1>,           MERGE_O_O1,         Test.Pass>(),
     check<O.Merge<O1, O>,           MERGE_O1_O,         Test.Pass>(),
     check<O.Merge<O, O1, 'deep'>,   MERGE_O_O1_DEEP,    Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// MERGEUP
-
-type O_MERGEUP = {
-    a?: string
-    c: {
-        a?: string
-        b?: number
-    }
-}
-
-type O1_MERGEUP = {
-    a: object
-    b: number
-    c: {
-        a : object
-        b?: object
-        c : object
-    }
-}
-
-type MERGEUP_O_O1 = {
-    a: string | object
-    b: number
-    c: {
-        a?: string
-        b?: number
-    }
-};
-
-type MERGEUP_O_O1_DEEP = {
-    a: string | object
-    b: number
-    c: {
-        a : object | string
-        b?: object | number
-        c : object
-    }
-};
-
-checks([
-    check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
-    check<O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep'>,     MERGEUP_O_O1_DEEP,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
