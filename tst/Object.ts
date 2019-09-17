@@ -51,6 +51,35 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// COMPULSORY
+
+type COMPULSORY_O = {
+         a: string,
+         b: number
+         c: {a: 'a'} & {b: 'b'}
+         d: 'string0'
+readonly e: 'string1'
+readonly f: 0
+         g: O // recursion
+         h: 1
+         j: 'a'
+         k: {a: {b: string}}
+};
+
+checks([
+    check<O.Compulsory<O>,  COMPULSORY_O,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// COMPULSORYKEYS
+
+type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k';
+
+checks([
+    check<O.CompulsoryKeys<O>,  COMPULSORYKEYS_O,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // DIFF
 
 type DIFF_O_O1_DEFAULT = {
