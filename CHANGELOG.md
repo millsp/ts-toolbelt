@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.13.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.12.0...v3.13.0) (2019-09-17)
+
+
+### Bug Fixes
+
+* added Compulsory to Tuple ([94cd8da](https://github.com/pirix-gh/ts-toolbelt/commit/94cd8da))
+* missing fields for Unionize ([be8bfec](https://github.com/pirix-gh/ts-toolbelt/commit/be8bfec))
+* restored MergeUp ([a05af8f](https://github.com/pirix-gh/ts-toolbelt/commit/a05af8f))
+* typo ([94af1b3](https://github.com/pirix-gh/ts-toolbelt/commit/94af1b3))
+* typo ([e5f048a](https://github.com/pirix-gh/ts-toolbelt/commit/e5f048a))
+* typo ([a1f4e88](https://github.com/pirix-gh/ts-toolbelt/commit/a1f4e88))
+
+
+### Features
+
+* added Compulsory, CompulsoryKeys ([ad1c626](https://github.com/pirix-gh/ts-toolbelt/commit/ad1c626))
+
+
+### Others
+
+* added empty tests ([ef3f0b5](https://github.com/pirix-gh/ts-toolbelt/commit/ef3f0b5))
+* cleanup tests ([d3b0e2a](https://github.com/pirix-gh/ts-toolbelt/commit/d3b0e2a))
+* exports ([1c47284](https://github.com/pirix-gh/ts-toolbelt/commit/1c47284))
+* for CompulsoryKeys ([e9b114d](https://github.com/pirix-gh/ts-toolbelt/commit/e9b114d))
+* for Kind ([744b23f](https://github.com/pirix-gh/ts-toolbelt/commit/744b23f))
+* for Merge ([1589093](https://github.com/pirix-gh/ts-toolbelt/commit/1589093))
+* for MergeUp ([1cb58d7](https://github.com/pirix-gh/ts-toolbelt/commit/1cb58d7))
+* for Unionize ([71e2861](https://github.com/pirix-gh/ts-toolbelt/commit/71e2861))
+
 ## [3.12.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.11.0...v3.12.0) (2019-09-17)
 
 
