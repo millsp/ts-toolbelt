@@ -11,5 +11,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type zUnionize<T extends any[], T1 extends any[], K extends Index = keyof T> =
+export type Unionize<T extends any[], T1 extends any[], K extends Index = keyof T> =
     Cast<OUnionize<T, T1, K>, any[]>
