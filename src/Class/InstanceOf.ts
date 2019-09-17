@@ -1,5 +1,5 @@
 /** Get the instance type of a **`class`** from a class object
- * @param C **`typeof`** **`class`**
+ * @param C **typeof** **`class`**
  * @returns **`class`**
  * @example
  * ```ts

@@ -10,12 +10,21 @@ const {checks, check} = Test
 // ---------------------------------------------------------------------------------------
 // INSTANCEOF
 
-class TestClass {}
+class TestClass {
+    constructor(a: string, b: number) {}
+}
 
 checks([
     check<C.InstanceOf<typeof TestClass>,   TestClass,          Test.Pass>(TestClass),
-    check<C.InstanceOf<typeof TestClass>,   TestClass,          Test.Pass>(new TestClass()),
 ])
+
+// ---------------------------------------------------------------------------------------
+// PARAMETERS
+
+checks([
+    check<C.Parameters<typeof TestClass>,   [string, number],   Test.Pass>(),
+])
+
 
 // ---------------------------------------------------------------------------------------
 // PROMISEOF
