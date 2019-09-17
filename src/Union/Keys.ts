@@ -1,4 +1,4 @@
-/** Get the keys of an **union**
+/** Get the keys of a **union**
  * @param U
  * @returns **`keyof`**
  * @example
