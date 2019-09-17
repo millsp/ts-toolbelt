@@ -1,7 +1,6 @@
 import {SelectKeys} from './SelectKeys'
 import {Match} from '../Any/_Internal'
 import {Pick} from './Pick'
-import {Cast} from '../Any/Cast'
 
 /** Extract the fields of **`O`** that match **`M`**
  * @param O to extract from

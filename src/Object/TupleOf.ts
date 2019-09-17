@@ -6,6 +6,7 @@ import {Next} from '../Iteration/Next'
 import {Append} from '../Tuple/Append'
 import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
+import {Exclude} from '../Union/Exclude'
 
 type PickIfEntry<O extends object, TN extends any[], I extends Iteration> =
     Key<I> extends keyof O

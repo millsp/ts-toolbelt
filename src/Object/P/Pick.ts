@@ -6,7 +6,6 @@ import {Next} from '../../Iteration/Next'
 import {NonNullable} from '../../Union/NonNullable'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../_Internal'
-import {Type} from '../../Any/Type'
 import {Pick as OPick} from '../Pick'
 import {EndOf} from '../../Tuple/EndOf'
 

@@ -4,7 +4,6 @@ import {Depth} from './_Internal'
 import {Index} from '../_Internal'
 import {Keys} from './Keys'
 import {Implements} from '../Any/Implements'
-import {Cast} from '../Any/Cast'
 
 type OptionalFlat<O> = {
     [K in keyof O]?: O[K]

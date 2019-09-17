@@ -1,6 +1,7 @@
 import {At} from './At'
 import {Replace} from '../Union/Replace'
 import {x} from '../Any/x'
+import {Exclude} from '../Union/Exclude'
 
 /** Modify **`O`** with **`OMod`** & the **`x`** placeholder
  * @param O to copy from
