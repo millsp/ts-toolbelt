@@ -96,7 +96,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EITHER
 
-type EITHER_O = {
+type O_EITHER = {
          a : string
          b?: number
 readonly c?: object
@@ -113,7 +113,7 @@ type EITHER_O_AB = {
 };
 
 checks([
-    check<O.Either<EITHER_O, 'a' | 'b'>,    EITHER_O_AB,    Test.Pass>(),
+    check<O.Either<O_EITHER, 'a' | 'b'>,    EITHER_O_AB,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -310,20 +310,20 @@ checks([
 
 const INVERT_SYM = Symbol('')
 
-type INVERT_O = {
+type O_INVERT = {
     A: 'Av',
     B: typeof INVERT_SYM,
     C: 42
 }
 
-type INVERT_O_ = {
+type INVERT_O = {
     Av          : 'A';
     [INVERT_SYM]: 'B';
     42          : 'C';
 };
 
 checks([
-    check<O.Invert<INVERT_O>,   INVERT_O_,  Test.Pass>(),
+    check<O.Invert<O_INVERT>,   INVERT_O,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -606,7 +606,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PATHS
 
-type PATHS_O = {
+type O_PATHS = {
     a: {
         a: boolean
     }
@@ -622,13 +622,13 @@ type Index = (string | number | symbol);
 
 checks([
     check<O.Paths<any>,     Index[],                                                            Test.Pass>(),
-    check<O.Paths<PATHS_O>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,    Test.Pass>(),
+    check<O.Paths<O_PATHS>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // PATHVALID
 
-type PATHVALID_O = {
+type O_PATHVALID = {
     a: {
         a: {}
     }
@@ -642,10 +642,10 @@ type PATHVALID_O = {
 
 checks([
     check<O.PathValid<any,          ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
-    check<O.PathValid<PATHVALID_O,  ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
-    check<O.PathValid<PATHVALID_O,  ['a', 'x']>,        ['a', never],       Test.Pass>(),
-    check<O.PathValid<PATHVALID_O,  ['b', 'a', 'a']>,   ['b', 'a', 'a'],    Test.Pass>(),
-    check<O.PathValid<PATHVALID_O,  ['b', 'b', 0]>,     ['b', 'b', 0],      Test.Pass>(),
+    check<O.PathValid<O_PATHVALID,  ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
+    check<O.PathValid<O_PATHVALID,  ['a', 'x']>,        ['a', never],       Test.Pass>(),
+    check<O.PathValid<O_PATHVALID,  ['b', 'a', 'a']>,   ['b', 'a', 'a'],    Test.Pass>(),
+    check<O.PathValid<O_PATHVALID,  ['b', 'b', 0]>,     ['b', 'b', 0],      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -655,7 +655,7 @@ type PICK_O_DEF = {
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
-}
+};
 
 checks([
     check<O.Pick<O, 'd' | 'e' | 'f'>,   PICK_O_DEF, Test.Pass>(),
@@ -834,7 +834,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // TUPLEOF
 
-type TUPLEOF_O = {
+type O_TUPLEOF = {
     '0': 1
     '2': 3
     '3': never
@@ -842,10 +842,10 @@ type TUPLEOF_O = {
     '6': 6
 }
 
-type TUPLEOF = [1, 3, never, 5, 6];
+type TUPLEOF_O = [1, 3, never, 5, 6];
 
 checks([
-    check<O.TupleOf<TUPLEOF_O>,    TUPLEOF,    Test.Pass>(),
+    check<O.TupleOf<O_TUPLEOF>,    TUPLEOF_O,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -879,32 +879,32 @@ checks([
 // ---------------------------------------------------------------------------------------
 // UNIONOF
 
-type UNIONOF_O = {
+type O_UNIONOF = {
     a: 'a'
     b: 'b'
     c: never
     d: 1
 }
 
-type UNIONOF = 'a' | 'b' | 1;
+type UNIONOF_O = 'a' | 'b' | 1;
 
 checks([
-    check<O.UnionOf<UNIONOF_O>, UNIONOF,    Test.Pass>(),
+    check<O.UnionOf<O_UNIONOF>, UNIONOF_O,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // UPDATE
 
-type UPDATE_O = {
+type O_UPDATE = {
     a?: 'a'
 }
 
-type UPDATE = {
+type UPDATE_O = {
     a?: 'xxxx'
 };
 
 checks([
-    check<O.Update<UPDATE_O, 'a' | 'b', 'xxxx'>,    UPDATE, Test.Pass>(),
+    check<O.Update<O_UPDATE, 'a' | 'b', 'xxxx'>,    UPDATE_O, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -976,7 +976,7 @@ type OP = { // A binary tree
 // ---------------------------------------------------------------------------------------
 // P.MERGE
 
-type PMERGE_OP = {
+type O_PMERGE = {
     a: {
         a: string
         b: {
@@ -1000,13 +1000,13 @@ type PMERGE_OP = {
 };
 
 checks([
-    check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>, PMERGE_OP,  Test.Pass>(),
+    check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>, O_PMERGE,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // P.OMIT
 
-type POMIT_OP = {
+type O_POMIT = {
     a: {
         b: {
             a: 'aba'
@@ -1023,13 +1023,13 @@ type POMIT_OP = {
 };
 
 checks([
-    check<O.P.Omit<OP, ['a' | 'b', 'a']>,   POMIT_OP,   Test.Pass>(),
+    check<O.P.Omit<OP, ['a' | 'b', 'a']>,   O_POMIT,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // P.PICK
 
-type PPICK_OP = {
+type O_PPICK = {
     a: {
         a: string
     }
@@ -1042,13 +1042,13 @@ type PPICK_OP = {
 };
 
 checks([
-    check<O.P.Pick<OP, ['a' | 'b', 'a']>,   PPICK_OP,   Test.Pass>(),
+    check<O.P.Pick<OP, ['a' | 'b', 'a']>,   O_PPICK,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // P.READONLY
 
-type PREADONLY_OP = {
+type O_PREADONLY = {
     a: {
         readonly a: string
         b: {
@@ -1070,13 +1070,13 @@ type PREADONLY_OP = {
 };
 
 checks([
-    check<O.P.Readonly<OP, ['a' | 'b', 'a']>,   PREADONLY_OP,   Test.Pass>(),
+    check<O.P.Readonly<OP, ['a' | 'b', 'a']>,   O_PREADONLY,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // P.UPDATE
 
-type PUPDATE_OP = {
+type O_PUPDATE = {
     a: {
         a: 'x'
         b: {
@@ -1095,5 +1095,5 @@ type PUPDATE_OP = {
 };
 
 checks([
-    check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,    PUPDATE_OP,     Test.Pass>(),
+    check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,    O_PUPDATE,     Test.Pass>(),
 ])

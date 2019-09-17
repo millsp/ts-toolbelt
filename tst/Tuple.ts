@@ -87,7 +87,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EITHER
 
-type EITHER_T = [
+type T_EITHER = [
     0,
     1,
     2
@@ -96,7 +96,7 @@ type EITHER_T = [
 type EITHER_T_01 = [0, undefined, 2] | [undefined, 1, 2];
 
 checks([
-    check<T.Either<EITHER_T, '0' | '1'>,    EITHER_T_01,    Test.Pass>(),
+    check<T.Either<T_EITHER, '0' | '1'>,    EITHER_T_01,    Test.Pass>(),
 ])
 
 // -------------------------------------------------------------------------------------
@@ -170,16 +170,16 @@ checks([
 // ---------------------------------------------------------------------------------------
 // GROUP
 
-type GROUP_T = [1, 2, 3, 4, 5, 6, 7, 8]
+type T_GROUP = [1, 2, 3, 4, 5, 6, 7, 8]
 
 type GROUP_T_1 = [[1], [2], [3], [4], [5], [6], [7], [8]]
 type GROUP_T_2 = [[1, 2], [3, 4], [5, 6], [7, 8]]
 type GROUP_T_3 = [[1, 2, 3], [4, 5, 6], [7, 8, undefined]];
 
 checks([
-    check<T.Group<GROUP_T, '1'>,    GROUP_T_1,  Test.Pass>(),
-    check<T.Group<GROUP_T, '2'>,    GROUP_T_2,  Test.Pass>(),
-    check<T.Group<GROUP_T, '3'>,    GROUP_T_3,  Test.Pass>(),
+    check<T.Group<T_GROUP, '1'>,    GROUP_T_1,  Test.Pass>(),
+    check<T.Group<T_GROUP, '2'>,    GROUP_T_2,  Test.Pass>(),
+    check<T.Group<T_GROUP, '3'>,    GROUP_T_3,  Test.Pass>(),
     check<T.Group<[], '3'>,         [],         Test.Pass>(),
 ])
 
