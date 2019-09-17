@@ -1,6 +1,6 @@
 import {Index} from '../_Internal'
-import {At} from './At'
-import {Pick} from './Pick'
+import {Unionize as OUnionize} from '../Object/Unionize'
+import {Cast} from '../Any/Cast'
 
 /** Make the fields of **`T`** union the ones of **`T1`**
  * @param T to union from
@@ -11,6 +11,5 @@ import {Pick} from './Pick'
  * ```ts
  * ```
  */
-export type Unionize<T extends any[], T1 extends any[], K extends Index = keyof T> = Pick<{
-    [P in keyof T]: P extends K ? T[P] | At<T1, P> : never
-}, K> // Pick makes sure we don't have excess `never`
+export type zUnionize<T extends any[], T1 extends any[], K extends Index = keyof T> =
+    Cast<OUnionize<T, T1, K>, any[]>
