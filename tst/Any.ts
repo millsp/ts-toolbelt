@@ -113,17 +113,29 @@ checks([
     check<A.Is<string, string | number, '<-extends'>,   0 | 1,  Test.Pass>(),
     check<A.Is<string | number, string, '<-extends'>,   1,      Test.Pass>(),
 
-    check<A.Is<string, string | number, 'implements->'>,  1,      Test.Pass>(),
-    check<A.Is<string | number, string, 'implements->'>,  0,      Test.Pass>(),
+    check<A.Is<string, string | number, 'implements->'>,    1,      Test.Pass>(),
+    check<A.Is<string | number, string, 'implements->'>,    0,      Test.Pass>(),
 
-    check<A.Is<string, string | number, '<-implements'>,   0,     Test.Pass>(),
-    check<A.Is<string | number, string, '<-implements'>,   1,     Test.Pass>(),
+    check<A.Is<string, string | number, '<-implements'>,    0,      Test.Pass>(),
+    check<A.Is<string | number, string, '<-implements'>,    1,      Test.Pass>(),
 
     check<A.Is<'xxxx', string, 'equals'>,           0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', 'equals'>,           0,  Test.Pass>(),
 
     check<A.Is<string, string | number, 'equals'>,  0,  Test.Pass>(),
     check<A.Is<string | number, string, 'equals'>,  0,  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// KIND
+
+checks([
+    check<A.Kind<'..'>,         'string',       Test.Pass>(),
+    check<A.Kind<1>,            'number',       Test.Pass>(),
+    check<A.Kind<() => 1>,      'function',     Test.Pass>(),
+    check<A.Kind<[0, 1, 2]>,    'array',        Test.Pass>(),
+    check<A.Kind<{a: 1}>,       'object',       Test.Pass>(),
+    check<A.Kind<true>,         'boolean',      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
