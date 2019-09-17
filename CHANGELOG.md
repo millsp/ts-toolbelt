@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.14.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.13.0...v3.14.0) (2019-09-17)
+
+
+### Features
+
+* can now use Readonly tuples ([c38e077](https://github.com/pirix-gh/ts-toolbelt/commit/c38e077))
+* type for Tuple ([b898dcc](https://github.com/pirix-gh/ts-toolbelt/commit/b898dcc))
+
+
+### Others
+
+* cleanup ([b4d65ae](https://github.com/pirix-gh/ts-toolbelt/commit/b4d65ae))
+* for Keys ([c9a034b](https://github.com/pirix-gh/ts-toolbelt/commit/c9a034b))
+
 ## [3.13.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.12.0...v3.13.0) (2019-09-17)
 
 
