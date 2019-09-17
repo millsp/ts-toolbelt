@@ -394,6 +394,7 @@ type O_MERGEUP = {
         a?: string
         b?: number
     }
+    d: 'hello' | undefined
 }
 
 type O1_MERGEUP = {
@@ -404,6 +405,7 @@ type O1_MERGEUP = {
         b?: object
         c : object
     }
+    d: 'goodbye'
 }
 
 type MERGEUP_O_O1 = {
@@ -413,6 +415,7 @@ type MERGEUP_O_O1 = {
         a?: string
         b?: number
     }
+    d: 'hello' | 'goodbye'
 };
 
 type MERGEUP_O_O1_DEEP = {
@@ -423,6 +426,7 @@ type MERGEUP_O_O1_DEEP = {
         b?: object | number
         c : {} // todo check
     }
+    d: 'hello' | 'goodbye'
 };
 
 checks([
