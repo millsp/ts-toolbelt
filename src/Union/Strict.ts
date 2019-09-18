@@ -15,5 +15,5 @@ type _Strict<U, _U = U> =
  * ```ts
  * ```
  */
-export type Strict<U extends any> =
+export type Strict<U extends object> =
     Compute<_Strict<U>>
