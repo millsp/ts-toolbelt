@@ -21,10 +21,10 @@ type IntersectMatch<O extends object, O1 extends object, match extends Match> = 
  * ```
  */
 export type IntersectKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
-    'default'   : Intersect<keyof O, keyof O1>
-    'implements->': IntersectMatch<O, O1, 'implements->'>
-    'extends->' : IntersectMatch<O, O1, 'extends->'>
-    '<-implements': IntersectMatch<O, O1, '<-implements'>
-    '<-extends' : IntersectMatch<O, O1, '<-extends'>
-    'equals'    : IntersectMatch<O, O1, 'equals'>
+    'default'     : Intersect<keyof O, keyof O1>
+    'implements->': IntersectMatch<O,  O1, 'implements->'>
+    'extends->'   : IntersectMatch<O,  O1, 'extends->'>
+    '<-implements': IntersectMatch<O,  O1, '<-implements'>
+    '<-extends'   : IntersectMatch<O,  O1, '<-extends'>
+    'equals'      : IntersectMatch<O,  O1, 'equals'>
 }[match]
