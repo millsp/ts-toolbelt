@@ -8,5 +8,7 @@ import {Index} from '../_Internal'
  * ```
  */
 export type Keys<O extends object> =
-    keyof O & Index
+    O extends unknown
+    ? keyof O & Index
+    : never
     // Prevents `undefined` to appear in the keys

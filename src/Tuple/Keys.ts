@@ -10,5 +10,7 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Keys<T extends Tuple> =
-    Exclude<keyof T, keyof any[]> & keyof T | number
+    T extends unknown
+    ? Exclude<keyof T, keyof any[]> & Index | number
+    : never
     // We re-include `number`, it is an 'own key'

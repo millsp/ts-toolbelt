@@ -2,6 +2,7 @@ import {Index} from '../_Internal'
 import {Unionize as OUnionize} from '../Object/Unionize'
 import {Cast} from '../Any/Cast'
 import {Tuple} from './Tuple'
+import {Keys} from './Keys'
 
 /** Make the fields of **`T`** union the ones of **`T1`**
  * @param T to union from
@@ -12,5 +13,5 @@ import {Tuple} from './Tuple'
  * ```ts
  * ```
  */
-export type Unionize<T extends Tuple, T1 extends Tuple, K extends Index = keyof T> =
+export type Unionize<T extends Tuple, T1 extends Tuple, K extends Index = Keys<T>> =
     Cast<OUnionize<T, T1, K>, any[]>

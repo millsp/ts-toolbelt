@@ -1,5 +1,6 @@
 import {At} from './At'
 import {Index} from '../_Internal'
+import {Keys} from './Keys'
 
 /** Make the fields of **`O`** union the ones of **`O1`**
  * @param O to union from
@@ -10,6 +11,6 @@ import {Index} from '../_Internal'
  * ```ts
  * ```
  */
-export type Unionize<O extends object, O1 extends object, K extends Index = keyof O> = {
+export type Unionize<O extends object, O1 extends object, K extends Index = Keys<O>> = {
     [P in keyof O]: P extends K ? O[P] | At<O1, P> : O[P]
 }
