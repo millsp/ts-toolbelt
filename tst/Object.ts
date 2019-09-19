@@ -1,6 +1,7 @@
 /* tslint:disable:use-default-type-parameter interface-name */
 
 import {Test, O, A, T} from '../src/index'
+import {Compute} from '../src/Any/Compute'
 
 const {checks, check} = Test
 
@@ -424,6 +425,15 @@ type O_MERGEUP = {
         b?: number
     }
     d: 'hello' | undefined
+    e: number
+    f?: {
+        a?: string
+        b?: number
+    },
+    g?: {
+        a?: string
+        b?: number
+    }
 }
 
 type O1_MERGEUP = {
@@ -435,27 +445,59 @@ type O1_MERGEUP = {
         c : object
     }
     d: 'goodbye'
+    e: string
+    f?: {
+        a : object
+        b?: object
+        c : object
+    },
 }
 
 type MERGEUP_O_O1 = {
-    a: string | object
-    b: number
-    c: {
+    a : string | object
+    b : number
+    c : {
         a?: string
         b?: number
     }
-    d: 'hello' | 'goodbye'
+    d : 'hello' | undefined
+    e : number
+    f?: {
+        a?: string
+        b?: number
+    } | {
+        a : object
+        b?: object
+        c : object
+    },
+    g?: {
+        a?: string
+        b?: number
+    }
 };
 
 type MERGEUP_O_O1_DEEP = {
-    a: string | object
-    b: number
-    c: {
-        a : object | string
-        b?: object | number
-        c : {} // todo check
+    a : string | object
+    b : number
+    c : {
+        a : string | object
+        b?: number | object
+        c : {}
     }
-    d: 'hello' | 'goodbye'
+    d : 'hello' | undefined
+    e : number
+    f?: {
+        a?: string | object;
+        b?: number | object;
+    } | {
+        a: string | object;
+        b?: number | object;
+        c: {}
+    },
+    g?: {
+        a?: string
+        b?: number
+    }
 };
 
 checks([

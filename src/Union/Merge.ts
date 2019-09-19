@@ -15,4 +15,3 @@ export type Merge<U extends object> = Compute<IntersectOf<Overwrite<U, {
                       ? At<U, K>
                       : never
 }>>>
-
