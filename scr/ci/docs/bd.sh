@@ -3,10 +3,10 @@
 npm run build:clean
 
 # clone the previous state of the docs
-git clone --depth=1 --branch=gh-pages https://github.com/pirix-gh/ts-toolbelt.git pirix-gh/ts-toolbelt docs
+git clone --depth=1 --branch=gh-pages https://github.com/pirix-gh/ts-toolbelt.git docs
 
 # we only keep the "x.x.x" history docs
-rm -fr assets modules globals.html index.html
+cd docs; rm -fr assets modules globals.html index.html; cd ..
 
 # build the new docs on top of that one
 npm run build:docs
