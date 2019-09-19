@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.3...v4.0.4) (2019-09-19)
+
+
+### Bug Fixes
+
+* missing keep_history ([2e697b1](https://github.com/pirix-gh/ts-toolbelt/commit/2e697b1))
+
 ### [4.0.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.2...v4.0.3) (2019-09-19)
 
 
