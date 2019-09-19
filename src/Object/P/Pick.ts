@@ -1,4 +1,3 @@
-import {Length} from '../../Tuple/Length'
 import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
@@ -21,6 +20,7 @@ type _Pick<O extends object, Path extends Index[], I extends Iteration = Iterati
   : never
 
 /** Extract out of **`O`** the fields at **`Path`**
+ * (⚠️ this type is expensive)
  * @param O to extract from
  * @param Path to be followed
  * @returns **`object`**

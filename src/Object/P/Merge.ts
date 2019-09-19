@@ -1,5 +1,4 @@
 import {Merge as OMerge} from '../Merge'
-import {Length} from '../../Tuple/Length'
 import {Compute} from '../../Any/Compute'
 import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
@@ -21,6 +20,7 @@ type _Merge<O extends object, Path extends Index[], O1 extends object, depth ext
 }
 
 /** Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**
+ * (⚠️ this type is expensive)
  * @param O to complete
  * @param Path to be followed
  * @param O1 to copy from

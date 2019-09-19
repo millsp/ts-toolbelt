@@ -23,6 +23,7 @@ type _Readonly<O extends object, Path extends Index[], K extends Index, depth ex
 }
 
 /** Make some fields of **`O`** readonly at **`Path`** (deeply or not)
+ * (⚠️ this type is expensive)
  * @param O to make readonly
  * @param Path to be followed
  * @param depth to do it deeply (?=`'flat'`)

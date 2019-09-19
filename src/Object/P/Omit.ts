@@ -1,4 +1,3 @@
-import {Length} from '../../Tuple/Length'
 import {Compute} from '../../Any/Compute'
 import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
@@ -22,6 +21,7 @@ type _Omit<O extends object, Path extends Index[], I extends Iteration = Iterati
 } extends infer X ? Filter<X & {}, Never, '<-extends'> : never // No `never` fields
 
 /** Remove out of **`O`** the fields at **`Path`**
+ * (⚠️ this type is expensive)
  * @param O to remove from
  * @param Path to be followed
  * @returns **`object`**
