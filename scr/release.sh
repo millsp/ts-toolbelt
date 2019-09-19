@@ -12,7 +12,7 @@ if [ "$BRANCH" = "master" ]; then
     npx sort-package-json &&
 
     # Bump the version & changelogs
-    npx standard-version &&
+    # npx standard-version &&
 
     git push origin $BRANCH #--follow-tags
 else
