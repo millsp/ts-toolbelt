@@ -33,7 +33,6 @@ type GapsOf<T1 extends any[], T2 extends any[]> =
     ? Cast<X, any[]>
     : never
 
-
 type Gaps<T extends any[]> = NonNullable<{
     [K in keyof T]?: T[K] | x
 }>
@@ -50,8 +49,8 @@ type Gaps<T extends any[]> = NonNullable<{
  * declare function curry<Fn extends F.Function>(fn: Fn): F.Curry<Fn>
  * ```
  */
-export type Curry<F extends Function> =
-    <T extends any[]>(...args: Cast<Cast<T, Gaps<Parameters<F>>>, any[]>) =>
+export type Curry<F extends (...args: any[]) => any> =
+    <T extends any[]>(...args: Cast<T, Gaps<Parameters<F>>>) =>
         GapsOf<T, Parameters<F>> extends infer G
         ? Length<Cast<G, any[]>> extends infer L
           ? L extends 0 ? Return<F> : L extends 1
