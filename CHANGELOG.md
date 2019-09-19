@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.0...v4.0.1) (2019-09-19)
+
+
+### Bug Fixes
+
+* missing cast on O/NonNullable ([8610d9b](https://github.com/pirix-gh/ts-toolbelt/commit/8610d9b))
+
+
+### Others
+
+* update for v4.0 [skip ci] ([e2e18ca](https://github.com/pirix-gh/ts-toolbelt/commit/e2e18ca))
+
 ## [4.0.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.14.0...v4.0.0) (2019-09-19)
 
 
