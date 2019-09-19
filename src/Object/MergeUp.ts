@@ -12,7 +12,7 @@ import {Merge} from './Merge'
 import {OptionalKeys} from './OptionalKeys'
 import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
-import {True} from '../Boolean/_api'
+import {True} from '../Boolean/Boolean'
 
 type MergeUpFlat<O extends object, O1 extends object> =
     Merge<UMerge<O | Pick<O1, OptionalKeys<O>>>, O1>

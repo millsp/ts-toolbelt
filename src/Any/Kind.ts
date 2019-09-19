@@ -1,5 +1,5 @@
 import {Extends} from './Extends'
-import {True} from '../Boolean/_api'
+import {True} from '../Boolean/Boolean'
 
 /** Get the literal kind of a type
  * @param A
