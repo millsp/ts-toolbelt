@@ -65,6 +65,22 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// MERGE
+
+type U_MERGE = {a: string, e: 22} | {b?: number, c: 42} | {b?: string, c?: 48, d: 21, e: 23}
+type MERGE_U = {
+    a: string
+    b?: string | number
+    c: 42 | 48
+    d: 21
+    e: 22 | 23
+};
+
+checks([
+    check<U.Merge<U_MERGE>,     MERGE_U,    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // NONNULLABLE
 
 checks([
