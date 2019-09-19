@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.14.0...v4.0.0) (2019-09-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* 
+
+### Bug Fixes
+
+* accuracy of MergeUp ([97c1ceb](https://github.com/pirix-gh/ts-toolbelt/commit/97c1ceb))
+* complaint Cast ([6fc5636](https://github.com/pirix-gh/ts-toolbelt/commit/6fc5636))
+* remove extra number check ([705847f](https://github.com/pirix-gh/ts-toolbelt/commit/705847f))
+* restrict Strict to objects ([35b8669](https://github.com/pirix-gh/ts-toolbelt/commit/35b8669))
+* stricter Kind ([d26d95e](https://github.com/pirix-gh/ts-toolbelt/commit/d26d95e))
+
+
+### Features
+
+* added Merge for object unions ([7e636ad](https://github.com/pirix-gh/ts-toolbelt/commit/7e636ad))
+* added Union/Merge ([e08a32b](https://github.com/pirix-gh/ts-toolbelt/commit/e08a32b))
+* full distributive types ([62463b6](https://github.com/pirix-gh/ts-toolbelt/commit/62463b6))
+
+
+### Others
+
+* cleanup ([244d42e](https://github.com/pirix-gh/ts-toolbelt/commit/244d42e))
+* cleanup ([8889318](https://github.com/pirix-gh/ts-toolbelt/commit/8889318))
+* cleanup ([58dd27c](https://github.com/pirix-gh/ts-toolbelt/commit/58dd27c))
+* cleanup ([d17ff1b](https://github.com/pirix-gh/ts-toolbelt/commit/d17ff1b))
+* expensive types ([465225e](https://github.com/pirix-gh/ts-toolbelt/commit/465225e))
+* for Union/Merge ([6599de5](https://github.com/pirix-gh/ts-toolbelt/commit/6599de5))
+
 ## [3.14.0](https://github.com/pirix-gh/ts-toolbelt/compare/v3.13.0...v3.14.0) (2019-09-17)
 
 
