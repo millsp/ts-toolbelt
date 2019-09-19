@@ -73,6 +73,7 @@ jobs:
         skip_cleanup: true
         github_token: $GH_TOKEN
         local_dir: "docs"
+        keep_history: true
         on:
           all_branches: true
       before_deploy:
