@@ -146,7 +146,7 @@ The project is organized around TypeScript's main concepts:
 
 |              |                    |              |                |                 |              |
 |--------------|--------------------|--------------|----------------|-----------------|--------------|
-| **A**(ny)    | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber   |
+| **A**ny      | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber   |
 | **O**bject   | **O**bject.**P**   | **S**tring   | **T**uple      | **U**nion       | Test         |
 
 > **`TIP`** match the type kind you need to operate on with the above categories
@@ -238,8 +238,7 @@ Contributions are what make the open source community such an amazing place to l
 You can either request a new feature or a bug fix then fund it.
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
-  <img
-  src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
+  <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
 </a>
 <br>
 <br>
@@ -285,18 +284,16 @@ If you wrote tests & would like your project to be tested too, please open an is
 
 ## 🔧 Compatibility
 
-The project is maintained to adapt to the constant
-[changes of TypeScript](https://github.com/Microsoft/TypeScript/wiki/Roadmap):
+The project is maintained to adapt to the constant [changes of TypeScript](https://github.com/Microsoft/TypeScript/wiki/Roadmap):
 
 | ts-toolbelt | typescript |
 |-------------|------------|
 | 1.x.x       | ~3.5.x     |
 | 2.x.x       | ^3.5.x     |
 | 3.x.x       | ^3.5.x     |
+| 4.x.x       | ^3.5.x     |
 
-Major version numbers will upgrade whenever TypeScript had breaking changes (it
-happened that TS had breaking changes on minor versions). Otherwise, the release
-versions will naturally follow the semantic versioning.
+Major version numbers will upgrade whenever TypeScript had breaking changes (it happened that TS had breaking changes on minor versions). Otherwise, the release versions will naturally follow the semantic versioning.
 
 ## 🔮 What's next
 
