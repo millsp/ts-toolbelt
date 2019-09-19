@@ -2,8 +2,6 @@ import {At} from '../Object/At'
 import {Overwrite} from '../Object/Overwrite'
 import {Compute} from '../Any/Compute'
 import {IntersectOf} from './IntersectOf'
-import {NullableKeys} from '../Object/NullableKeys'
-import {Pick} from '../Object/Pick'
 
 /** Merge a **union** of **`object`**s into a single one
  * @param U to merge
