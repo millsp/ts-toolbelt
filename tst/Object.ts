@@ -482,23 +482,22 @@ type MERGEUP_O_O1_DEEP = {
     c : {
         a : string | object
         b?: number | object
-        c : {}
+        c : object
     }
     d : 'hello' | undefined
     e : number
     f?: {
-        a?: string | object;
-        b?: number | object;
-    } | {
         a: string | object;
         b?: number | object;
-        c: {}
+        c: object
     },
     g?: {
         a?: string
         b?: number
     }
 };
+
+type t = O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep'>
 
 checks([
     check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
