@@ -3,8 +3,9 @@ import {Overwrite} from '../Object/Overwrite'
 import {Compute} from '../Any/Compute'
 import {IntersectOf} from './IntersectOf'
 import {Strict} from './Strict'
+import {Keys} from './Keys'
 
-export type _Merge<U extends object> =IntersectOf<Overwrite<U, {
+export type _Merge<U extends object> = IntersectOf<Overwrite<U, {
     [K in keyof U]-?: U extends unknown
                       ? At<U, K>
                       : never
