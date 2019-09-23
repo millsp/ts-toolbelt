@@ -9,22 +9,25 @@ import {Merge as UMerge} from '../Union/Merge'
 import {Merge} from './Merge'
 import {OptionalKeys} from './OptionalKeys'
 import {Optional} from './Optional'
+import {Index} from '../_Internal'
 
-type MergeUpFlat<O extends object, O1 extends object> =
+type MergeUpFlat<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>> =
     // we do a union merge of optional fields and shared
-    Merge<UMerge<O | Pick<O1, OptionalKeys<O>>>, O1>
+    Merge<UMerge<O | Pick<O1, OOK>>, O1>
 
-type MergeUpDeep<O extends object, O1 extends object> = Compute<Overwrite<MergeUpFlat<O, O1>, {
+type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>> = Overwrite<MergeUpFlat<O, O1>, {
       [K in SelectKeys<O, object>]: Kind<NonNullable<At<O, K> & At<O1, K>>> extends 'object'
                                     ? MergeUpDeep< // the above makes sure it's only objects
-                                        K extends OptionalKeys<O> // if O[K] is set optional
+                                        K extends OOK // if O[K] is set optional
                                         ? Optional<At<O, K> & {}> // maker it's children opt
                                         : At<O, K> & {},            // we proceed
                                         NonNullable<At<O1, K>> & {} // w/ merging
                                       >
                                     : At<O, K> // nothing happened
   }
->>
+> extends infer X
+? X & {}
+: never
 
 /** Accurately complete the fields of **`O`** with the ones of **`O1`**.
  * This is a version of `Merge` that handles optional fields. It understands
