@@ -108,7 +108,6 @@
         "prefer-object-spread"         : ["error"],
         "quotes"                       : ["error", "single"],
         "semi"                         : ["error", "never"],
-        "spaced-comment"               : ["error"],
         "no-trailing-spaces"           : ["error"]
     }
 }
