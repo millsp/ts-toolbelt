@@ -64,6 +64,7 @@ jobs:
       before_deploy:
         - if ! npm run ci:branch:bd; then travis_terminate 1; fi
       after_deploy:
+        - if ! TEST_SCRIPT_HERE; then travis_terminate 1; fi
         - if ! npm run ci:branch:ad; then travis_terminate 1; fi
 
     - stage: deploy:docs #deploys doc to gh-pages branch
