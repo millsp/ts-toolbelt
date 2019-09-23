@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.11](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.5...v4.0.11) (2019-09-23)
+
+
+### Bug Fixes
+
+* **ci:** preserve doc history ([bdb181c](https://github.com/pirix-gh/ts-toolbelt/commit/bdb181c))
+*  broken types on generics with key distribution in Keys, fixes [#50](https://github.com/pirix-gh/ts-toolbelt/issues/50) ([2c84e2c](https://github.com/pirix-gh/ts-toolbelt/commit/2c84e2c))
+* bump version ([81edfb1](https://github.com/pirix-gh/ts-toolbelt/commit/81edfb1))
+* change priority ([44ecbca](https://github.com/pirix-gh/ts-toolbelt/commit/44ecbca))
+* cleaner merging ([165f1b2](https://github.com/pirix-gh/ts-toolbelt/commit/165f1b2))
+* typo ([35509da](https://github.com/pirix-gh/ts-toolbelt/commit/35509da))
+
+
+### Others
+
+* add docs to gitignore ([840704e](https://github.com/pirix-gh/ts-toolbelt/commit/840704e))
+* cleanup ([4f557aa](https://github.com/pirix-gh/ts-toolbelt/commit/4f557aa))
+* disable for ci tests ([3629815](https://github.com/pirix-gh/ts-toolbelt/commit/3629815))
+* eslint remove comment indent ([7691486](https://github.com/pirix-gh/ts-toolbelt/commit/7691486))
+* force CI to fail if failed deploy ([ef532d2](https://github.com/pirix-gh/ts-toolbelt/commit/ef532d2))
+* re-enable standard-version ([c694c78](https://github.com/pirix-gh/ts-toolbelt/commit/c694c78))
+* tesing doc history ([db55dae](https://github.com/pirix-gh/ts-toolbelt/commit/db55dae))
+* tesing doc history ([ab1ec56](https://github.com/pirix-gh/ts-toolbelt/commit/ab1ec56))
+
 ### [4.0.5](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.4...v4.0.5) (2019-09-19)
 
 
