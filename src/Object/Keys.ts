@@ -1,4 +1,5 @@
 import {Index} from '../_Internal'
+import {Keys as UKeys} from '../Union/Keys'
 
 /** Get the keys of an **`object`**
  * @param O
@@ -8,7 +9,6 @@ import {Index} from '../_Internal'
  * ```
  */
 export type Keys<O extends object> =
-    O extends unknown
-    ? keyof O & Index
-    : never
+    (UKeys<O> | keyof O) & Index
     // Prevents `undefined` to appear in the keys
+    // `| keyof O` fixes #50, broken by distribution

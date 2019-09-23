@@ -1,6 +1,7 @@
 import {Index} from '../_Internal'
 import {Exclude} from '../Union/Exclude'
 import {Tuple} from './Tuple'
+import {Keys as UKeys} from '../Union/Keys'
 
 /** Get the keys of a **tuple**
  * @param T
@@ -10,7 +11,6 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Keys<T extends Tuple> =
-    T extends unknown
-    ? Exclude<keyof T, keyof any[]> & Index | number
-    : never
-    // We re-include `number`, it is an 'own key'
+    Exclude<(UKeys<T> | keyof T), keyof any[]> & Index | number
+    // We re-include `number`, it is a "own key"
+    // `| keyof O` fixes #50, broken by distribution
