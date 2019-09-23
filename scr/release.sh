@@ -14,7 +14,7 @@ if [ "$BRANCH" = "master" ]; then
     # Bump the version & changelogs
     npx standard-version &&
 
-    git push origin $BRANCH #--follow-tags
+    git push origin $BRANCH --follow-tags
 else
     git push origin $BRANCH
 fi;
