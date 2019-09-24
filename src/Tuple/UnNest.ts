@@ -30,7 +30,7 @@ type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = 
       : 1                              // element is other -> Append
 ]
 
-export type _UnNest<T extends Tuple> =
+type _UnNest<T extends Tuple> =
     number extends Length<T>
     ? _UnNestCheap<T>
     : _UnNestExact<T>

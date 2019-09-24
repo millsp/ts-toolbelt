@@ -10,10 +10,10 @@ import {At} from '../Object/At'
  * ```
  */
 export type Kind<A extends any> =
-    Extends<A, Function> extends True ? 'function': // the order  // to
-    Extends<A, any[]> extends True    ? 'array'   : // of this is // untangle
-    Extends<A, object> extends True   ? 'object'  : // important  // object types
-    Extends<A, string> extends True   ? 'string'  :
-    Extends<A, number> extends True   ? 'number'  :
-    Extends<A, boolean> extends True  ? 'boolean' :
+    Extends<A, Function> extends True       ? 'function' :   // the order  // to
+    Extends<A, readonly any[]> extends True ? 'array'    :   // of this is // untangle
+    Extends<A, object> extends True         ? 'object'   :   // important  // object types
+    Extends<A, string> extends True         ? 'string'   :
+    Extends<A, number> extends True         ? 'number'   :
+    Extends<A, boolean> extends True        ? 'boolean'  :
     'unknown'
