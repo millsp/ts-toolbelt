@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.12...v4.1.0) (2019-09-24)
+
+
+### Bug Fixes
+
+* crash typedoc ([fc22674](https://github.com/pirix-gh/ts-toolbelt/commit/fc22674))
+
+
+### Features
+
+* added undefined handling for MergeUp ([410d4c4](https://github.com/pirix-gh/ts-toolbelt/commit/410d4c4))
+
 ### [4.0.12](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.11...v4.0.12) (2019-09-23)
 
 
