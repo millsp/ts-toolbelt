@@ -1,38 +1,35 @@
 import {At} from './At'
 import {Depth} from './_Internal'
 import {Kind} from '../Any/Kind'
-import {Pick} from './Pick'
-import {Compute} from '../Any/Compute'
-import {Overwrite} from './Overwrite'
-import {SelectKeys} from './SelectKeys'
-import {Merge as UMerge} from '../Union/Merge'
-import {Merge} from './Merge'
 import {OptionalKeys} from './OptionalKeys'
-import {Optional} from './Optional'
 import {Index} from '../_Internal'
+import {Optional} from './Optional'
+import {NullableKeys} from './NullableKeys'
+import {Select} from '../Union/_api'
 
-type MergeUpFlat<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>> =
-    // we do a union merge of optional fields and shared
-    Merge<UMerge<O | Pick<O1, OOK>>, O1>
+type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
+    K extends OOK                                   // if K is a `OptionalKey` of `O`
+    ? NonNullable<At<O, K>> | At<O1, K>             // complete `O[K]` with `O1[K]`
+    : At<O, K> extends never ? At<O1, K> : At<O, K> // or patch `O[K]` with `O1[K]`
 
-type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>> = Overwrite<MergeUpFlat<O, O1>, {
-      [K in SelectKeys<O, object>]: Kind<NonNullable<At<O, K> & At<O1, K>>> extends 'object'
-                                    ? MergeUpDeep< // the above makes sure it's only objects
-                                        K extends OOK // if O[K] is set optional
-                                        ? Optional<At<O, K> & {}> // maker it's children opt
-                                        : At<O, K> & {},            // we proceed
-                                        NonNullable<At<O1, K>> & {} // w/ merging
-                                      >
-                                    : At<O, K> // nothing happened
-  }
-> extends infer X
-? X & {}
-: never
+type MergeUpFlat<O extends object, O1 extends object> = {
+    [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OptionalKeys<O>>
+}
+
+type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>, NO1K extends Index = NullableKeys<O1>> = {
+    [K in keyof (O & O1)]:  Kind<NonNullable<At<O, K> & At<O1, K>>> extends 'object'
+                            ? MergeUpDeep< // the above makes sure it's only objects
+                              // then if parent is `Nullable`, make children optional
+                              K extends NOK  ? Optional<At<O, K> & {}>  : At<O, K> & {},
+                              K extends NO1K ? Optional<At<O1, K> & {}> : At<O1, K> & {}
+                              // and if not optional, we re-add eventual `undefined | null`
+                            > | (K extends OOK ? never : Select<At<O, K>, undefined | null>)
+                            : MergeUpProp<O, O1, K, OOK>
+} & {}
 
 /** Accurately complete the fields of **`O`** with the ones of **`O1`**.
  * This is a version of `Merge` that handles optional fields. It understands
  * that merged optional fields are no longer optional (have been completed).
- * (⚠️ this type is expensive)
  * @param O to complete
  * @param O1 to copy from
  * @param depth to do it deeply (?=`'flat'`)

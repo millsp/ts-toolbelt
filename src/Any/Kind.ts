@@ -17,5 +17,3 @@ export type Kind<A extends any> =
     Extends<A, number> extends True   ? 'number'  :
     Extends<A, boolean> extends True  ? 'boolean' :
     'unknown'
-
-type t = Kind<{} | (() => {})>

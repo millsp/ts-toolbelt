@@ -434,10 +434,16 @@ type O_MERGEUP = {
         a?: string
         b?: number
     }
+    h: {
+        a: number
+    } | undefined
+    i: {
+        a: string
+    } | undefined
 }
 
 type O1_MERGEUP = {
-    a: object
+    a: object | undefined
     b: number
     c: {
         a : object
@@ -450,11 +456,17 @@ type O1_MERGEUP = {
         a : object
         b?: object
         c : object
-    },
+    }
+    h: {
+        a: string
+    }
+    i: {
+        a: number
+    } | undefined
 }
 
 type MERGEUP_O_O1 = {
-    a : string | object
+    a : string | object | undefined
     b : number
     c : {
         a?: string
@@ -474,10 +486,16 @@ type MERGEUP_O_O1 = {
         a?: string
         b?: number
     }
+    h: {
+        a: number
+    } | undefined
+    i: {
+        a: string
+      } | undefined
 };
 
 type MERGEUP_O_O1_DEEP = {
-    a : string | object
+    a : string | object | undefined
     b : number
     c : {
         a : string | object
@@ -487,14 +505,20 @@ type MERGEUP_O_O1_DEEP = {
     d : 'hello' | undefined
     e : number
     f?: {
-        a: string | object;
+        a?: string | object;
         b?: number | object;
-        c: object
+        c?: object
     },
     g?: {
         a?: string
         b?: number
     }
+    h: {
+        a: string | number
+    } | undefined
+    i: {
+        a?: string | number | undefined
+    } | undefined
 };
 
 type t = O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep'>
