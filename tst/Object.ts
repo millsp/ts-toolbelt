@@ -997,8 +997,13 @@ type UPDATE_O = {
     a?: 'xxxx'
 };
 
+type UPDATE_O_X = {
+    a?: 'a'
+};
+
 checks([
-    check<O.Update<O_UPDATE, 'a' | 'b', 'xxxx'>,    UPDATE_O, Test.Pass>(),
+    check<O.Update<O_UPDATE, 'a' | 'b', 'xxxx'>,    UPDATE_O,       Test.Pass>(),
+    check<O.Update<O_UPDATE, 'a' | 'b', A.x>,       UPDATE_O_X,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
