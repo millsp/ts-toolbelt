@@ -6,29 +6,28 @@ import {Iteration} from '../Iteration/Iteration'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
-import {Filter} from './Filter'
 import {Tuple} from './Tuple'
+import {UnionOf} from './UnionOf'
 
 type _UnNestCheap<T extends Tuple> =
-    T extends Array<infer ST>
-    ? ST extends Array<any>
-      ? Concat<
-            Filter<T, Array<any>>, // join the parent of all arrays  - without its sub-arrays
-            ST                     // to the union of its sub arrays - without its parent-items
-        >
-      : never
-    : T
+   (UnionOf<T> extends infer UT     // make `T` a union
+    ? UT extends unknown            // for each in union
+        ? UT extends readonly any[] // if its an array
+        ? UnionOf<UT>               // make it a union
+        : UT                        // or leave as it is
+        : never
+    : never)[]
 
 type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _UnNestExact<T, Concat<TN, T[Pos<I>]>, Next<I>>
     1: _UnNestExact<T, Append<TN, T[Pos<I>]>, Next<I>>
     2: TN
 }[
-    Pos<I> extends Length<T>  // its the end
+    Pos<I> extends Length<T>           // its the end
     ? 2
-    : T[Pos<I>] extends any[] // element is tuple -> concat
+    : T[Pos<I>] extends readonly any[] // element is tuple -> concat
       ? 0
-      : 1                     // element is other -> Append
+      : 1                              // element is other -> Append
 ]
 
 export type _UnNest<T extends Tuple> =
