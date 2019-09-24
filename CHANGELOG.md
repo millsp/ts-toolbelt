@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.1.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.1.0...v4.1.1) (2019-09-24)
+
+
+### Bug Fixes
+
+* readonly arrays and UnNest ([c54e23c](https://github.com/pirix-gh/ts-toolbelt/commit/c54e23c))
+
 ## [4.1.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.0.12...v4.1.0) (2019-09-24)
 
 
