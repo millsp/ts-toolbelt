@@ -40,6 +40,9 @@
   <a href="#">
     <img src="https://img.shields.io/npm/l/ts-toolbelt.svg">
   </a>
+  <a href="https://greenkeeper.io/" target="_blank">
+    <img src="https://badges.greenkeeper.io/pirix-gh/ts-toolbelt.svg">
+  </a>
 </p>
 <p align="center">
   <a href="https://conventionalcommits.org" target="_blank">
@@ -55,8 +58,6 @@
 
 
 ## Table of Contents
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/pirix-gh/ts-toolbelt.svg)](https://greenkeeper.io/)
 
 * [📜 About](#-about)
 * [🍩 Features](#-features)
