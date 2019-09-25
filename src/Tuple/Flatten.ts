@@ -1,7 +1,7 @@
 import {Tuple} from './Tuple'
 import {UnNest} from './UnNest'
-import {True} from '../Boolean/_api'
-import {Includes} from '../Object/_api'
+import {True} from '../Boolean/Boolean'
+import {Includes} from '../Object/Includes'
 import {Cast} from '../Any/Cast'
 
 type _Flatten<T extends Tuple> = {

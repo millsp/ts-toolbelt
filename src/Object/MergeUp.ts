@@ -5,7 +5,7 @@ import {OptionalKeys} from './OptionalKeys'
 import {Index} from '../_Internal'
 import {Optional} from './Optional'
 import {NullableKeys} from './NullableKeys'
-import {Select} from '../Union/_api'
+import {Select} from '../Union/Select'
 
 type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
     K extends OOK                                   // if K is a `OptionalKey` of `O`
