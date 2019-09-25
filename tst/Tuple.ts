@@ -184,7 +184,9 @@ type T_FLATTEN = [1, 12, [2, [3, [4, [5, [6, [7, [8, [9, 92]]]]]]]]]
 type FLATTEN_T = [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, 92];
 
 checks([
-    check<T.Flatten<T_FLATTEN>,     FLATTEN_T,  Test.Pass>(),
+    check<T.Flatten<T_FLATTEN>,             FLATTEN_T,              Test.Pass>(),
+    check<T.Flatten<[1, 2, 42]>,            [1, 2, 42],             Test.Pass>(),
+    check<T.Flatten<readonly [1, 2, 42]>,   readonly [1, 2, 42],    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
