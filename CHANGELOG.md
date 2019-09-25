@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.4.6](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.5...v4.4.6) (2019-09-25)
+
+
+### Bug Fixes
+
+* delay on CI deploy ([04f3df8](https://github.com/pirix-gh/ts-toolbelt/commit/04f3df8))
+
 ### [4.4.5](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.4...v4.4.5) (2019-09-25)
 
 ### [4.4.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.3...v4.4.4) (2019-09-25)
