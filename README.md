@@ -56,6 +56,8 @@
 
 ## Table of Contents
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pirix-gh/ts-toolbelt.svg)](https://greenkeeper.io/)
+
 * [📜 About](#-about)
 * [🍩 Features](#-features)
 * [🏁 Getting started](#-getting-started)
