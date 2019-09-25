@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.4.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.3...v4.4.4) (2019-09-25)
+
+
+### Bug Fixes
+
+* broken Flatten with readonly ([b893b83](https://github.com/pirix-gh/ts-toolbelt/commit/b893b83))
+
 ### [4.4.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.2...v4.4.3) (2019-09-25)
 
 
