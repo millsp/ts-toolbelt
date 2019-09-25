@@ -2,7 +2,7 @@ import {Index} from '../_Internal'
 
 type _Pick<O extends object, K extends keyof O> = {
     [P in K]: O[P]
-}
+} & {}
 
 /** Extract out of **`O`** the fields of key **`K`**
  * @param O to extract from
