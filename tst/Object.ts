@@ -1,7 +1,7 @@
 /* tslint:disable:use-default-type-parameter interface-name */
 
 import {Test, O, A, T} from '../src/index'
-import {Compute} from '../src/Any/Compute'
+import {False} from '../src/Boolean/Boolean'
 
 const {checks, check} = Test
 
@@ -132,7 +132,7 @@ type O_EITHER = {
 readonly c?: object
 }
 
-type EITHER_O_AB = {
+type EITHER_O_AB_TRUE = {
     a: string;
     b?: undefined;
     readonly c?: object;
@@ -140,10 +140,19 @@ type EITHER_O_AB = {
     a?: undefined;
     b?: number;
     readonly c?: object;
+}
+
+type EITHER_O_AB_FALSE = {
+    a: string;
+    readonly c?: object;
+} | {
+    b?: number;
+    readonly c?: object;
 };
 
 checks([
-    check<O.Either<O_EITHER, 'a' | 'b'>,    EITHER_O_AB,    Test.Pass>(),
+    check<O.Either<O_EITHER, 'a' | 'b'>,            EITHER_O_AB_TRUE,       Test.Pass>(),
+    check<O.Either<O_EITHER, 'a' | 'b', False>,     EITHER_O_AB_FALSE,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
