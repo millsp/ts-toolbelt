@@ -11,4 +11,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Overwrite<T extends Tuple, T1 extends object> =
-    Cast<OOverwrite<T, T1>, any[]>
+    Cast<OOverwrite<T, T1>, Tuple>

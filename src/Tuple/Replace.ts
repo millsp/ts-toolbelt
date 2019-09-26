@@ -14,4 +14,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Replace<T extends Tuple, M extends any, A extends any, match extends Match = 'default'> =
-    Cast<OReplace<T, M, A, match>, any[]>
+    Cast<OReplace<T, M, A, match>, Tuple>

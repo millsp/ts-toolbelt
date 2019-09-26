@@ -10,7 +10,7 @@ type _Group<T extends Tuple, N extends Number, TN extends Tuple = []> = {
     0: _Group<Drop<T, N>, N, Prepend<TN, Take<T, N>>>
     1: Reverse<TN>
 }[
-    T extends []
+    T extends Tuple<never>
     ? 1
     : 0
 ]
@@ -25,5 +25,5 @@ type _Group<T extends Tuple, N extends Number, TN extends Tuple = []> = {
  */
 export type Group<T extends Tuple, N extends Number> =
     _Group<T, N> extends infer X
-    ? Cast<X, any[]>
+    ? Cast<X, Tuple>
     : never

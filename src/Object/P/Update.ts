@@ -6,8 +6,9 @@ import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {EndOf} from '../../Tuple/EndOf'
+import {Tuple} from '../../Tuple/Tuple'
 
-type _Update<O extends object, Path extends Index[], A, I extends Iteration = IterationOf<'0'>> = {
+type _Update<O extends object, Path extends Tuple<Index>, A, I extends Iteration = IterationOf<'0'>> = {
   [K in keyof O]: Compute<
                   K extends Path[Pos<I>]                   // If K is part of Path
                   ? Pos<I> extends EndOf<Path>             // & if it's the target

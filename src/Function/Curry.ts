@@ -13,13 +13,14 @@ import {Iteration} from '../Iteration/Iteration'
 import {Key} from '../Iteration/Key'
 import {NonNullable} from '../Tuple/NonNullable'
 import {x} from '../Any/x'
+import {Tuple} from '../Tuple/Tuple'
 
-type GapOf<T1 extends any[], T2 extends any[], TN extends any[], I extends Iteration = IterationOf<'0'>> =
+type GapOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple, I extends Iteration = IterationOf<'0'>> =
     T1[Pos<I>] extends x
     ? Append<TN, T2[Pos<I>]>
     : TN
 
-type _GapsOf<T1 extends any[], T2 extends any[], TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+type _GapsOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _GapsOf<T1, T2, GapOf<T1, T2, TN, I>, Next<I>>
     1: Concat<TN, Drop<T2, Key<I>>>
 }[
@@ -28,12 +29,12 @@ type _GapsOf<T1 extends any[], T2 extends any[], TN extends any[] = [], I extend
     : 0
 ]
 
-type GapsOf<T1 extends any[], T2 extends any[]> =
+type GapsOf<T1 extends Tuple, T2 extends Tuple> =
     _GapsOf<T1, T2> extends infer X
-    ? Cast<X, any[]>
+    ? Cast<X, Tuple>
     : never
 
-type Gaps<T extends any[]> = NonNullable<{
+type Gaps<T extends Tuple> = NonNullable<{
     [K in keyof T]?: T[K] | x
 }>
 
@@ -50,11 +51,11 @@ type Gaps<T extends any[]> = NonNullable<{
  * ```
  */
 export type Curry<F extends (...args: any[]) => any> =
-    <T extends any[]>(...args: Cast<T, Gaps<Parameters<F>>>) =>
+    <T extends Tuple>(...args: Cast<T, Gaps<Parameters<F>>>) =>
         GapsOf<T, Parameters<F>> extends infer G
-        ? Length<Cast<G, any[]>> extends infer L
+        ? Length<Cast<G, Tuple>> extends infer L
           ? L extends 0 ? Return<F> : L extends 1
-            ? (...args: Cast<G, any[]>)       => Return<F>
-            : Curry<(...args: Cast<G, any[]>) => Return<F>>
+            ? (...args: Cast<G, Tuple>)       => Return<F>
+            : Curry<(...args: Cast<G, Tuple>) => Return<F>>
         : never
     : never

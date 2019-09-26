@@ -8,8 +8,9 @@ import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {EndOf} from '../../Tuple/EndOf'
 import {Depth} from '../_Internal'
+import {Tuple} from '../../Tuple/Tuple'
 
-type _Merge<O extends object, Path extends Index[], O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
+type _Merge<O extends object, Path extends Tuple<Index>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
   [K in keyof O]: Compute<
                   K extends Path[Pos<I>]                          // If K is part of Path
                   ? Pos<I> extends EndOf<Path>                    // & if it's the target

@@ -16,10 +16,10 @@ type MergeDeep<O, O1> =
 
 // If we wanted to dive in the tuples as well
 // Kind<(O | O1)> extends 'array'
-// ? TMerge<Cast<O, any[]>, Cast<O1, any[]>> extends infer M
+// ? TMerge<Cast<O, Tuple>, Cast<O1, Tuple>> extends infer M
 //   ? {[K in keyof M]: MergeDeep<M[K], At<O1 & {}, K>>}
 //   : never // this is a trick to force ts to do it deeply
-// : O       // in versions <= 3.7 no-recursive-conditional
+// : O       // in versions <= 3.8 no-recursive-conditional
 
 /** Complete the fields of **`O`** with the ones of **`O1`**
  * ('deep' option will skip any nullable object to be merged)

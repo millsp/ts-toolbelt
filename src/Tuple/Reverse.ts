@@ -29,5 +29,5 @@ export type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = 
  */
 export type Reverse<T extends Tuple, TO extends Tuple = []> =
     _Reverse<T, TO> extends infer X
-    ? Cast<X, any[]>
+    ? Cast<X, Tuple>
     : never

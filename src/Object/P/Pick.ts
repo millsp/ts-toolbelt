@@ -7,8 +7,9 @@ import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Pick as OPick} from '../Pick'
 import {EndOf} from '../../Tuple/EndOf'
+import {Tuple} from '../../Tuple/Tuple'
 
-type _Pick<O extends object, Path extends Index[], I extends Iteration = IterationOf<'0'>> =
+type _Pick<O extends object, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
   OPick<O, Path[Pos<I>]> extends infer Picked                      // Pick the first Path
   ? {
       [K in keyof Picked]: NonNullable<Picked[K]> extends object   // > If it's an object

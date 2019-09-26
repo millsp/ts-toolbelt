@@ -8,10 +8,11 @@ import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Type} from '../../Any/Type'
 import {EndOf} from '../../Tuple/EndOf'
+import {Tuple} from '../../Tuple/Tuple'
 
 type Never = Type<{}, 'never'>
 
-type _Omit<O extends object, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
+type _Omit<O extends object, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
     [K in keyof O]: Compute<
                     K extends Path[Pos<I>]              // If K is part of Path
                     ? Pos<I> extends EndOf<Path>        // & if it's the target

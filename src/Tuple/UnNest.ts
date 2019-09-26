@@ -44,5 +44,5 @@ type _UnNest<T extends Tuple> =
  */
 export type UnNest<T extends Tuple> =
     _UnNest<T> extends infer X
-    ? Cast<X, any[]>
+    ? Cast<X, Tuple>
     : never

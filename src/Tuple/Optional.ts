@@ -12,4 +12,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Optional<T extends Tuple, depth extends Depth = 'flat'> =
-    Cast<OOptional<T, keyof T, depth>, any[]>
+    Cast<OOptional<T, keyof T, depth>, Tuple>

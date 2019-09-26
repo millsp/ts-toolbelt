@@ -7,8 +7,9 @@ import {At} from './At'
 import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Index} from '../Any/Index'
+import {Tuple} from '../Tuple/Tuple'
 
-type _Path<O, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
+type _Path<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
     0: _Path<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
 }[
@@ -25,7 +26,7 @@ type _Path<O, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
  * ```ts
  * ```
  */
-export type Path<O extends object, Path extends Index[]> =
+export type Path<O extends object, Path extends Tuple<Index>> =
     _Path<O, Path> extends infer X
     ? Cast<X, any>
     : never

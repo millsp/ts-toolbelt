@@ -13,8 +13,9 @@ import {Mode} from './_Internal'
 import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
+import {Tuple} from '../Tuple/Tuple'
 
-type ComposeFnSync<Fns extends Function[], K extends keyof Fns> =
+type ComposeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
     ? Fns[K] // If mapped type reached the end
     : Function<[ // handling unknown generics, waiting for proposal
@@ -24,7 +25,7 @@ type ComposeFnSync<Fns extends Function[], K extends keyof Fns> =
     ], Return<Fns[Pos<IterationOf<K & string>>]>
     >
 
-type ComposeFnAsync<Fns extends Function[], K extends keyof Fns> =
+type ComposeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
     ? PromiseOf<Fns[K]> // If mapped type reached the end
     : Function<[ // handling unknown generics, waiting for proposal
@@ -41,7 +42,7 @@ type ComposeFnAsync<Fns extends Function[], K extends keyof Fns> =
  * ```ts
  * ```
  */
-export type Composer<Fns extends Function[], mode extends Mode = 'sync'> = {
+export type Composer<Fns extends Tuple<Function>, mode extends Mode = 'sync'> = {
     'sync' : {[K in keyof Fns]: ComposeFnSync<Fns, K>},
     'async': {[K in keyof Fns]: ComposeFnAsync<Fns, K>}
 }[mode]
@@ -72,7 +73,7 @@ export type Composer<Fns extends Function[], mode extends Mode = 'sync'> = {
  *
  * await compose(c, b, a)(42)
  */
-export type Compose<Fns extends Function[], mode extends Mode = 'sync'> = {
+export type Compose<Fns extends Tuple<Function>, mode extends Mode = 'sync'> = {
     'sync' : (...args: Parameters<Last<Fns>>) => Return<Head<Fns>>
     'async': (...args: Parameters<Last<Fns>>) => Promise<PromiseOf<Return<Head<Fns>>>>
 }[mode]

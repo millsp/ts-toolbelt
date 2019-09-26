@@ -14,4 +14,4 @@ import {Keys} from './Keys'
  * ```
  */
 export type Unionize<T extends Tuple, T1 extends Tuple, K extends Index = Keys<T>> =
-    Cast<OUnionize<T, T1, K>, any[]>
+    Cast<OUnionize<T, T1, K>, Tuple>

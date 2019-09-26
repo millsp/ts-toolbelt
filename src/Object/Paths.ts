@@ -7,8 +7,9 @@ import {Concat} from '../Tuple/Concat'
 import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
+import {Tuple} from '../Tuple/Tuple'
 
-type _Paths<O, Paths extends Index[] = []> = {
+type _Paths<O, Paths extends Tuple<Index> = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]
     // It dives deep, and as it dives, it adds the paths to `Paths`
     1: NonNullable<Optional<Reverse<Paths>>> // make optional
@@ -33,5 +34,5 @@ type _Paths<O, Paths extends Index[] = []> = {
  */
 export type Paths<O extends object> =
     _Paths<O> extends infer X
-    ? Cast<X, Index[]>
+    ? Cast<X, Tuple<Index>>
     : never

@@ -1,4 +1,5 @@
 import {_Function} from './_Internal'
+import {Tuple} from '../Tuple/Tuple'
 
 /** Alias to create a **`Function`**
  * @param P parameters
@@ -12,5 +13,5 @@ import {_Function} from './_Internal'
  * /// (args_0: string, args_1: number) => boolean
  * ```
  */
-export type Function<P extends any[] = any, R extends any = any> =
+export type Function<P extends Tuple = any, R extends any = any> =
     ((...args: P) => R) & _Function

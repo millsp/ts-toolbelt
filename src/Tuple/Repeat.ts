@@ -27,5 +27,5 @@ type _Repeat<N extends Number, A, T extends Tuple = [], I extends Iteration = It
  */
 export type Repeat<A extends any, N extends Number, T extends Tuple = []> =
     _Repeat<N, A, T> extends infer X
-    ? Cast<X, any[]>
+    ? Cast<X, Tuple>
     : never

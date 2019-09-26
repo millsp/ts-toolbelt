@@ -12,4 +12,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Writable<T extends Tuple, depth extends Depth = 'flat'> =
-    Cast<OWritable<T, keyof T, depth>, any[]>
+    Cast<OWritable<T, keyof T, depth>, Tuple>

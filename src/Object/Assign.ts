@@ -5,8 +5,9 @@ import {Pos} from '../Iteration/Pos'
 import {Next} from '../Iteration/Next'
 import {Length} from '../Tuple/Length'
 import {Cast} from '../Any/Cast'
+import {Tuple} from '../Tuple/Tuple'
 
-type _Assign<O extends object, Os extends object[], I extends Iteration = IterationOf<'0'>> = {
+type _Assign<O extends object, Os extends Tuple<object>, I extends Iteration = IterationOf<'0'>> = {
     0: _Assign<Merge<Os[Pos<I>], O>, Os, Next<I>>
     1: O
 }[
@@ -23,7 +24,7 @@ type _Assign<O extends object, Os extends object[], I extends Iteration = Iterat
  * ```ts
  * ```
  */
-export type Assign<O extends object, Os extends object[]> =
+export type Assign<O extends object, Os extends Tuple<object>> =
     _Assign<O, Os> extends infer X
     ? Cast<X, object>
     : never

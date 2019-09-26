@@ -2,4 +2,4 @@
  * @param A its type
  * @returns **`any[]`**
  */
-export type Tuple<A = any> = Array<A> | ReadonlyArray<A>
+export type Tuple<A = any> = ReadonlyArray<A>

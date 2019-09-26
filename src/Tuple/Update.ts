@@ -14,4 +14,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Update<T extends Tuple, K extends Index, A extends any> =
-    Cast<OUpdate<T, K, A>, any[]>
+    Cast<OUpdate<T, K, A>, Tuple>

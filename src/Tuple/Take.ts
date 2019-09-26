@@ -32,5 +32,5 @@ export type Take<T extends Tuple, N extends Number, way extends Way = '->'> = {
     '->': Reverse<_Take<T, N>>
     '<-': _Take<Reverse<T>, N>
 }[way] extends infer X
-? Cast<X, any[]>
+? Cast<X, Tuple>
 : never

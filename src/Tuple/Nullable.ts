@@ -18,6 +18,6 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Nullable<T extends Tuple, K extends Index = Keys<T>, depth extends Depth = 'flat'> = {
-    1: Cast<ONullable<T, Index, depth>, any[]>
+    1: Cast<ONullable<T, Index, depth>, Tuple>
     0: TupleOf<ONullable<ObjectOf<T>, K, depth>>
 }[Implements<Keys<T>, K>]

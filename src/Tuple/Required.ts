@@ -12,4 +12,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Required<T extends Tuple, depth extends Depth = 'flat'> =
-    Cast<ORequired<T, keyof T, depth>, any[]>
+    Cast<ORequired<T, keyof T, depth>, Tuple>

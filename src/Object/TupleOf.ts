@@ -7,13 +7,14 @@ import {Append} from '../Tuple/Append'
 import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
 import {Exclude} from '../Union/Exclude'
+import {Tuple} from '../Tuple/Tuple'
 
-type PickIfEntry<O extends object, TN extends any[], I extends Iteration> =
+type PickIfEntry<O extends object, TN extends Tuple, I extends Iteration> =
     Key<I> extends keyof O
     ? Append<TN, O[Cast<Key<I>, keyof O>]>
     : TN
 
-type __TupleOf<O extends object, K, TN extends any[] = [], I extends Iteration = IterationOf<'0'>> = {
+type __TupleOf<O extends object, K, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: __TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
     1: TN
 }[
@@ -24,7 +25,7 @@ type __TupleOf<O extends object, K, TN extends any[] = [], I extends Iteration =
 
 type _TupleOf<O extends object> =
     __TupleOf<O, keyof O> extends infer X
-    ? Cast<X, any[]>
+    ? Cast<X, Tuple>
     : never
 
 /** Transform an **`object`** into a **tuple**

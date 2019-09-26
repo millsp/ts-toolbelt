@@ -12,8 +12,9 @@ import {Path as PPath} from './_Internal'
 import {Prepend} from '../../Tuple/Prepend'
 import {Index} from '../../Any/Index'
 import {EndOf} from '../../Tuple/EndOf'
+import {Tuple} from '../../Tuple/Tuple'
 
-type _Readonly<O extends object, Path extends Index[], K extends Index, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
+type _Readonly<O extends object, Path extends Tuple<Index>, K extends Index, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
   [P in keyof O]: Compute<
                   P extends Path[Pos<I>]                            // If K is part of Path
                   ? Pos<I> extends EndOf<Path>                      // & if it's the target

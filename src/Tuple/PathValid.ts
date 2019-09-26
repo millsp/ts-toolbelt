@@ -11,5 +11,5 @@ import {Tuple} from './Tuple'
  * ```ts
  * ```
  */
-export type PathValid<T extends Tuple, Path extends Index[]> =
+export type PathValid<T extends Tuple, Path extends Tuple<Index>> =
     OPathValid<ObjectOf<T>, Path>

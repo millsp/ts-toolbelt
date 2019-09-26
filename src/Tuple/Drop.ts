@@ -31,5 +31,5 @@ export type Drop<T extends Tuple, N extends Number, way extends Way = '->'> = {
     '->': _Drop<T, N>
     '<-': Reverse<Drop<Reverse<T>, N>>
 }[way] extends infer X
-? Cast<X, any[]>
+? Cast<X, Tuple>
 : never

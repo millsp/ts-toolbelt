@@ -550,8 +550,8 @@ checks([
 // Tuple
 
 checks([
-    check<T.Tuple<string>,  string[] | readonly string[],   Test.Pass>(),
-    check<T.Tuple<never>,   never[] | readonly never[],     Test.Pass>(),
+    check<T.Tuple<string>,  readonly string[],   Test.Pass>(),
+    check<T.Tuple<never>,   readonly never[],    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -27,5 +27,5 @@ type _Zip<T extends Tuple, T1 extends Tuple, TN extends Tuple = [], I extends It
  */
 export type Zip<T extends Tuple, T1 extends Tuple> =
     _Zip<T, T1> extends infer X
-    ? Cast<X, any[]>
+    ? Cast<X, Tuple>
     : never

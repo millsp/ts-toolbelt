@@ -14,5 +14,5 @@ import {Tuple} from './Tuple'
  * ```ts
  * ```
  */
-export type HasPath<T extends Tuple, Path extends Index[], M extends any = any, match extends Match = 'default'> =
+export type HasPath<T extends Tuple, Path extends Tuple<Index>, M extends any = any, match extends Match = 'default'> =
     OHasPath<ObjectOf<T>, Path, M, match>
