@@ -1,6 +1,6 @@
 import {Match} from '../Any/_Internal'
 import {Has as OHas} from '../Object/Has'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {ObjectOf} from './ObjectOf'
 import {Tuple} from './Tuple'
 

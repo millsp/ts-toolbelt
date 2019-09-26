@@ -1,6 +1,6 @@
 import {Pick} from './Pick'
 import {Exclude} from '../Union/Exclude'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 /** Remove out of **`O`** the fields of key **`K`**
  * @param O to remove from

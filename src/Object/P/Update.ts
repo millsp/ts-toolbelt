@@ -4,7 +4,7 @@ import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
-import {Index} from '../../_Internal'
+import {Index} from '../../Any/Index'
 import {EndOf} from '../../Tuple/EndOf'
 
 type _Update<O extends object, Path extends Index[], A, I extends Iteration = IterationOf<'0'>> = {

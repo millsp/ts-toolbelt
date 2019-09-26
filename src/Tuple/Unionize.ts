@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Unionize as OUnionize} from '../Object/Unionize'
 import {Cast} from '../Any/Cast'
 import {Tuple} from './Tuple'

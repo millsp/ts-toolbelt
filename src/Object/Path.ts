@@ -6,7 +6,7 @@ import {Length} from '../Tuple/Length'
 import {At} from './At'
 import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 type _Path<O, Path extends Index[], I extends Iteration = IterationOf<'0'>> = {
     0: _Path<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>

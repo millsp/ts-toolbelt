@@ -1,5 +1,5 @@
 import {At} from './At'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Keys} from './Keys'
 
 /** Make the fields of **`O`** union the ones of **`O1`**

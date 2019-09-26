@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {x} from '../Any/x'
 import {Replace} from '../Union/Replace'
 

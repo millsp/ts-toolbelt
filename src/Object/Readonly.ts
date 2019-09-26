@@ -1,7 +1,7 @@
 import {Merge} from './Merge'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 

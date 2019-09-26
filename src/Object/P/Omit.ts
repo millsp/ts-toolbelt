@@ -5,7 +5,7 @@ import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Filter} from '../Filter'
 import {Path as PPath} from './_Internal'
-import {Index} from '../../_Internal'
+import {Index} from '../../Any/Index'
 import {Type} from '../../Any/Type'
 import {EndOf} from '../../Tuple/EndOf'
 

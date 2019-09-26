@@ -1,5 +1,5 @@
 import {At as OAt} from '../Object/At'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Tuple} from './Tuple'
 
 /** Get in **`T`** the type of an entry of key **`K`**

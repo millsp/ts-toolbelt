@@ -2,7 +2,7 @@ import {Merge} from './Merge'
 import {Nullable as UNullable} from '../Union/Nullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 

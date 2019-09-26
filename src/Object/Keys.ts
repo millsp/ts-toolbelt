@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Keys as UKeys} from '../Union/Keys'
 
 /** Get the keys of an **`object`**

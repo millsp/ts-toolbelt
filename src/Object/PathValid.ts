@@ -10,7 +10,7 @@ import {Update} from '../Tuple/Update'
 import {KeySet} from '../Tuple/KeySet'
 import {Key} from '../Iteration/Key'
 import {Prev} from '../Iteration/Prev'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Extends} from '../Any/Extends'
 
 /** Replaces invalid parts of a path with `never`

@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Either as OEither} from '../Object/Either'
 import {ObjectOf} from './ObjectOf'
 import {TupleOf} from '../Object/TupleOf'

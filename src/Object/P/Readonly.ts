@@ -10,7 +10,7 @@ import {Pop} from '../../Tuple/Pop'
 import {Depth} from '../_Internal'
 import {Path as PPath} from './_Internal'
 import {Prepend} from '../../Tuple/Prepend'
-import {Index} from '../../_Internal'
+import {Index} from '../../Any/Index'
 import {EndOf} from '../../Tuple/EndOf'
 
 type _Readonly<O extends object, Path extends Index[], K extends Index, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {

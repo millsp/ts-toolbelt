@@ -4,7 +4,7 @@ import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {NonNullable} from '../../Union/NonNullable'
 import {Path as PPath} from './_Internal'
-import {Index} from '../../_Internal'
+import {Index} from '../../Any/Index'
 import {Pick as OPick} from '../Pick'
 import {EndOf} from '../../Tuple/EndOf'
 

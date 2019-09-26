@@ -1,5 +1,5 @@
 import {Modx} from './_Internal'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 /** Create an object filled with **`A`** for the fields **`K`**
  * @param K to choose fields

@@ -1,6 +1,6 @@
 import {Pick as OPick} from '../Object/Pick'
 import {TupleOf} from '../Object/TupleOf'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {ObjectOf} from './ObjectOf'
 import {Tuple} from './Tuple'
 

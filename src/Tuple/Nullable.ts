@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Cast} from '../Any/Cast'
 import {Implements} from '../Any/Implements'
 import {Depth} from '../Object/_Internal'

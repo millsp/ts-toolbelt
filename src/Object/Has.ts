@@ -1,7 +1,7 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 /** Check whether **`O`** has a field of key **`K`** that matches **`M`**
  * @param O to be inspected

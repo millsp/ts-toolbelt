@@ -1,7 +1,7 @@
 import {Omit as OOmit} from '../Object/Omit'
 import {TupleOf} from '../Object/TupleOf'
 import {ObjectOf} from './ObjectOf'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Tuple} from './Tuple'
 
 /** Remove out of **`T`** the entries of key **`K`**

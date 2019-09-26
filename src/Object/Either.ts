@@ -1,6 +1,6 @@
 import {Omit} from './Omit'
 import {Pick} from './Pick'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Strict} from '../Union/Strict'
 import {Boolean, True} from '../Boolean/Boolean'
 import {Compute} from '../Any/Compute'

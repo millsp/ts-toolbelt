@@ -1,6 +1,6 @@
 import {Update as OUpdate} from '../Object/Update'
 import {Cast} from '../Any/Cast'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Tuple} from './Tuple'
 
 /** Update in **`T`** the entries of key **`K`** with **`A`**.

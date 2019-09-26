@@ -6,7 +6,7 @@ import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {Merge} from '../Object/Merge'
 import {Record} from '../Object/Record'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Tuple} from './Tuple'
 
 type _ZipObj<TProp extends Tuple<Index>, TField extends Tuple, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {

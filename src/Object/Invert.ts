@@ -1,5 +1,5 @@
 import {Record} from './Record'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {IntersectOf} from '../Union/IntersectOf'
 import {Compute} from '../Any/Compute'
 

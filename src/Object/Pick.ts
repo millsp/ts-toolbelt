@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 type _Pick<O extends object, K extends keyof O> = {
     [P in K]: O[P]

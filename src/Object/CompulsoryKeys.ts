@@ -1,5 +1,5 @@
 import {FilterKeys} from './FilterKeys'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 /** Get the keys of **`O`** that are compulsory
  * @param O

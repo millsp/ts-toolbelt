@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 /** Get in **`O`** the type of a field of key **`K`**
  * @param O to extract from

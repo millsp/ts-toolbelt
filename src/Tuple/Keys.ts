@@ -1,4 +1,4 @@
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 import {Exclude} from '../Union/Exclude'
 import {Tuple} from './Tuple'
 import {Keys as UKeys} from '../Union/Keys'

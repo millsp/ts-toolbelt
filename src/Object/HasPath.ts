@@ -1,7 +1,7 @@
 import {Match} from '../Any/_Internal'
 import {Path as OPath} from './Path'
 import {Is} from '../Any/Is'
-import {Index} from '../_Internal'
+import {Index} from '../Any/Index'
 
 /** Check whether **`O`** has nested properties that match **`M`**
  * @param O to be inspected
