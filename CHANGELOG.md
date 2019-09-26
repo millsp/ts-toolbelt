@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.5.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.7...v4.5.0) (2019-09-26)
+
+
+### Features
+
+* added AssignUp ([381de4d](https://github.com/pirix-gh/ts-toolbelt/commit/381de4d))
+* added Index ([ab5447d](https://github.com/pirix-gh/ts-toolbelt/commit/ab5447d))
+
+
+### Others
+
+* cleanup ([9c199ec](https://github.com/pirix-gh/ts-toolbelt/commit/9c199ec))
+* moved Way ([01520ec](https://github.com/pirix-gh/ts-toolbelt/commit/01520ec))
+
 ### [4.4.7](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.6...v4.4.7) (2019-09-25)
 
 ### [4.4.6](https://github.com/pirix-gh/ts-toolbelt/compare/v4.4.5...v4.4.6) (2019-09-25)
