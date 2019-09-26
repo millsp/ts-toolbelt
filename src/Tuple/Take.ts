@@ -7,7 +7,7 @@ import {Cast} from '../Any/Cast'
 import {Reverse} from './Reverse'
 import {Prepend} from './Prepend'
 import {Key} from '../Iteration/Key'
-import {Way} from '../_Internal'
+import {Way} from '../Iteration/_Internal'
 import {Tuple} from './Tuple'
 
 type _Take<T extends Tuple, N extends Number, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {

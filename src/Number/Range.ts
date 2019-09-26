@@ -6,7 +6,7 @@ import {Next} from '../Iteration/Next'
 import {Number} from './Number'
 import {Cast} from '../Any/Cast'
 import {Formats} from '../Iteration/_Internal'
-import {Way} from '../_Internal'
+import {Way} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 
 type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends any[] = []> = {

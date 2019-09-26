@@ -5,7 +5,7 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Number} from '../Number/Number'
 import {Key} from '../Iteration/Key'
-import {Way} from '../_Internal'
+import {Way} from '../Iteration/_Internal'
 import {Reverse} from './Reverse'
 import {Tuple} from './Tuple'
 

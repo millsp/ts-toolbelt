@@ -4,6 +4,10 @@
  */
 export type Formats = 'n' | 's'
 
+/** Describes how to perform iterations
+ */
+export type Way = '->' | '<-'
+
 // ---------------------------------------------------------------------------------------
 
 /** Generate the **`IterationOf`** type
