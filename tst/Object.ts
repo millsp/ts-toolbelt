@@ -38,8 +38,25 @@ readonly f : 0
 // ---------------------------------------------------------------------------------------
 // ASSIGN
 
+type O_ASSIGN  = {readonly a: 1}
+type Os_ASSIGN = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
+
+type ASSIGN_O_Os = {a: 3, readonly b: 1, c?: 1};
+
 checks([
-    check<O.Assign<{readonly a: 1}, [{a: 2, readonly b: 1}, {a: 3, c?: 1}]>,    {a: 3, readonly b: 1, c?: 1},   Test.Pass>(),
+    check<O.Assign<O_ASSIGN, Os_ASSIGN>,    ASSIGN_O_Os,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// ASSIGNUP
+
+type O_ASSIGNUP  = {readonly a: 1, c: 2}
+type Os_ASSIGNUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
+
+type ASSIGNUP_O_Os = {readonly a: 3, readonly b: 1, c: 1 | 2};
+
+checks([
+    check<O.AssignUp<O_ASSIGNUP, Os_ASSIGNUP>,    ASSIGNUP_O_Os,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

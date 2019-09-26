@@ -2,7 +2,7 @@ import {Assign as OAssign} from '../Object/Assign'
 import {Omit} from './Omit'
 import {Tuple} from './Tuple'
 
-/** Assign a list of **tuple** into **`T`** (last-in overrides)
+/** Assign a list of **tuple** into **`T`** with `Merge` (last-in overrides)
  * @param T to assign to
  * @param Ts to assign
  * @returns **`object`**

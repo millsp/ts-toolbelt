@@ -1,4 +1,5 @@
 export {Assign} from './Assign'
+export {AssignUp} from './AssignUp'
 export {At} from './At'
 export {Compulsory} from './Compulsory'
 export {CompulsoryKeys} from './CompulsoryKeys'
