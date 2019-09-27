@@ -28,8 +28,8 @@ type NullablePart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type Nullable<O extends object, K extends Index = Keys<O>, depth extends Depth = 'flat'> = {
+export type Nullable<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
     1: NullablePart<O, depth>
     0: Merge<NullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<keyof O, K>]

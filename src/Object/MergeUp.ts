@@ -6,6 +6,7 @@ import {Index} from '../Any/Index'
 import {Optional} from './Optional'
 import {NullableKeys} from './NullableKeys'
 import {Select} from '../Union/Select'
+import {NonNullable} from '../Union/NonNullable'
 
 type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
     K extends OOK                                   // if K is a `OptionalKey` of `O`
@@ -20,8 +21,8 @@ type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = Option
     [K in keyof (O & O1)]:  Kind<NonNullable<At<O, K> & At<O1, K>>> extends 'object'
                             ? MergeUpDeep< // the above makes sure it's only objects
                               // then if parent is `Nullable`, make children optional
-                              K extends NOK  ? Optional<At<O, K> & {}>  : At<O, K> & {},
-                              K extends NO1K ? Optional<At<O1, K> & {}> : At<O1, K> & {}
+                              K extends NOK  ? Optional<NonNullable<At<O, K>> & {}>  : At<O, K> & {},
+                              K extends NO1K ? Optional<NonNullable<At<O1, K>> & {}> : At<O1, K> & {}
                               // and if not optional, we re-add eventual `undefined | null`
                             > | (K extends OOK ? never : Select<At<O, K>, undefined | null>)
                             : MergeUpProp<O, O1, K, OOK>

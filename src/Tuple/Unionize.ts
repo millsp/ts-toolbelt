@@ -13,5 +13,5 @@ import {Keys} from './Keys'
  * ```ts
  * ```
  */
-export type Unionize<T extends Tuple, T1 extends Tuple, K extends Index = Keys<T>> =
+export type Unionize<T extends Tuple, T1 extends Tuple, K extends Index = keyof T> =
     Cast<OUnionize<T, T1, K>, Tuple>

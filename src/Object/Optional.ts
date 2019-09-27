@@ -27,8 +27,8 @@ type OptionalPart<O extends object, depth extends Depth> = {
  * ```ts
  * ```
  */
-export type Optional<O extends object, K extends Index = Keys<O>, depth extends Depth = 'flat'> = {
+export type Optional<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
     1: OptionalPart<O, depth>
     0: Merge<OptionalPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<keyof O, K>]
