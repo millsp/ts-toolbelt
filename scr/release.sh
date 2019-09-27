@@ -14,7 +14,11 @@ npx standard-version &&
 
 # Publish the current branch origin
 if [ "$BRANCH" = "master" ]; then
-    git push origin $BRANCH --follow-tags
+    if [ "$1" = "--no-tags" ]; then
+        git push origin $BRANCH
+    else
+        git push origin $BRANCH --follow-tags
+    fi;
 else
     git push origin $BRANCH
 fi;

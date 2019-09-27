@@ -11,6 +11,9 @@ git:
 install:
 - npm install --only=dev
 
+env:
+  - DEPLOY=true
+
 stages:
   - test
   - deploy:master
@@ -37,7 +40,7 @@ jobs:
         - if ! npm run ci:test:ad; then travis_terminate 1; fi
 
     - stage: deploy:master
-      if: tag IS blank AND branch = master AND fork = false
+      if: tag IS blank AND branch = master AND fork = false AND env(DEPLOY) = true
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -52,7 +55,7 @@ jobs:
         - if ! npm run ci:master:ad; then travis_terminate 1; fi
   
     - stage: deploy:branch
-      if: tag IS blank AND branch != master AND fork = false
+      if: tag IS blank AND branch != master AND fork = false AND env(DEPLOY) = true
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -67,7 +70,7 @@ jobs:
         - if ! npm run ci:branch:ad; then travis_terminate 1; fi
 
     - stage: deploy:docs #deploys doc to gh-pages branch
-      if: tag IS blank AND branch = master AND fork = false
+      if: tag IS blank AND branch = master AND fork = false AND env(DEPLOY) = true
       deploy:
         provider: pages
         skip_cleanup: true
