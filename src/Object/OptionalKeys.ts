@@ -9,5 +9,5 @@ import {Pick} from './Pick'
  * ```
  */
 export type OptionalKeys<O extends object> = {
-    [K in keyof O]-?: {} extends Pick<O, K> ? K : never
+    [K in Keys<O>]: {} extends Pick<O, K> ? K : never
 }[Keys<O>]

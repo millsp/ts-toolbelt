@@ -9,6 +9,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type ObjectOf<T extends Tuple> =
-    T extends unknown // distribute
-    ? OOmit<T, keyof any[]>
-    : never
+    OOmit<T, keyof any[]>

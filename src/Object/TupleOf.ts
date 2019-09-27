@@ -23,11 +23,6 @@ type __TupleOf<O extends object, K, TN extends Tuple = [], I extends Iteration =
     : 0
 ]
 
-type _TupleOf<O extends object> =
-    __TupleOf<O, keyof O> extends infer X
-    ? Cast<X, Tuple>
-    : never
-
 /** Transform an **`object`** into a **tuple**
  * (It will only pick numeric literal indexes)
  * @param O to transform
@@ -38,6 +33,6 @@ type _TupleOf<O extends object> =
  * ```
  */
 export type TupleOf<O extends object> =
-    O extends unknown // distribute
-    ? _TupleOf<O>
+    __TupleOf<O, keyof O> extends infer X
+    ? Cast<X, Tuple>
     : never
