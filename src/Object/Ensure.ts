@@ -9,6 +9,7 @@ import {Omit} from './Omit'
  * ```ts
  */
 export type Ensure<O extends object> =
-    O extends Tuple
-    ? Omit<O, keyof any[]>
+    // we detect if it has been mixed with array
+    keyof Tuple extends (keyof O & keyof Tuple)
+    ? Omit<O, keyof any[]> // remove array traces
     : O
