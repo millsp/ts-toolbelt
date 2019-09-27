@@ -15,13 +15,12 @@ import {EndOf} from '../../Tuple/EndOf'
 import {Tuple} from '../../Tuple/Tuple'
 
 type _Readonly<O extends object, Path extends Tuple<Index>, K extends Index, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
-  [P in keyof O]: Compute<
-                  P extends Path[Pos<I>]                            // If K is part of Path
+  [P in keyof O]: P extends Path[Pos<I>]                            // If K is part of Path
                   ? Pos<I> extends EndOf<Path>                      // & if it's the target
                     ? OReadonly<O[P] & {}, K, depth> // immutable   // Update - target
                     : _Readonly<O[P] & {}, Path, K, depth, Next<I>> // Or continue diving
-                  : O[P]> // don't update                           // Not part of path - x
-}
+                  : O[P] // don't update                           // Not part of path - x
+} & {}
 
 /** Make some fields of **`O`** readonly at **`Path`** (deeply or not)
  * (⚠️ this type is expensive)

@@ -16,4 +16,4 @@ export type Replace<O extends object, M extends any, A extends any, match extend
         1: A
         0: O[K]
     }[Is<M, O[K], match>]
-}
+} & {}

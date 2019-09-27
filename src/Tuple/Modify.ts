@@ -14,4 +14,4 @@ import {Tuple} from './Tuple'
  */
 export type Modify<T extends Tuple, TMod extends Tuple> = {
     [K in keyof TMod]: Replace<TMod[K], x, Exclude<At<T, K>, undefined>>
-}
+} & {}

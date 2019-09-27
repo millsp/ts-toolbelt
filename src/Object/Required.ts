@@ -7,11 +7,11 @@ import {Keys} from './Keys'
 
 type RequiredFlat<O> = {
     [K in keyof O]-?: O[K]
-}
+} & {}
 
 type RequiredDeep<O> = {
     [K in keyof O]-?: RequiredDeep<O[K]>
-}
+} & {}
 
 type RequiredPart<O extends object, depth extends Depth> = {
     'flat': RequiredFlat<O>,

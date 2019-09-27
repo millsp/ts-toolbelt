@@ -7,11 +7,11 @@ import {Implements} from '../Any/Implements'
 
 type OptionalFlat<O> = {
     [K in keyof O]?: O[K]
-}
+} & {}
 
 type OptionalDeep<O> = {
     [K in keyof O]?: OptionalDeep<O[K]>
-}
+} & {}
 
 type OptionalPart<O extends object, depth extends Depth> = {
     'flat': OptionalFlat<O>,

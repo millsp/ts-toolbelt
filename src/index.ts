@@ -43,3 +43,7 @@ export {
     U,
     Union,
 }
+
+// NOTES
+
+// search for `= {\n[ ]+?\[(.*?\n)*?}` and add `{}` for better computation

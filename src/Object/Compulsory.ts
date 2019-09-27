@@ -8,11 +8,11 @@ import {NonNullable} from '../Union/NonNullable'
 
 type CompulsoryFlat<O> = {
     [K in keyof O]-?: NonNullable<O[K]>
-}
+} & {}
 
 type CompulsoryDeep<O> = {
     [K in keyof O]-?: CompulsoryDeep<NonNullable<O[K]>>
-}
+} & {}
 
 type CompulsoryPart<O extends object, depth extends Depth> = {
     'flat': CompulsoryFlat<O>,

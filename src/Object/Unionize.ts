@@ -13,4 +13,4 @@ import {Keys} from './Keys'
  */
 export type Unionize<O extends object, O1 extends object, K extends Index = keyof O> = {
     [P in keyof O]: P extends K ? O[P] | At<O1, P> : O[P]
-}
+} & {}

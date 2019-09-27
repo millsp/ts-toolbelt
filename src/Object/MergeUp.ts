@@ -15,7 +15,7 @@ type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK exten
 
 type MergeUpFlat<O extends object, O1 extends object> = {
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OptionalKeys<O>>
-}
+} & {}
 
 type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>, NO1K extends Index = NullableKeys<O1>> = {
     [K in keyof (O & O1)]:  Kind<NonNullable<At<O, K> & At<O1, K>>> extends 'object'

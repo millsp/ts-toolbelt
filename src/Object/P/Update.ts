@@ -9,13 +9,12 @@ import {EndOf} from '../../Tuple/EndOf'
 import {Tuple} from '../../Tuple/Tuple'
 
 type _Update<O extends object, Path extends Tuple<Index>, A, I extends Iteration = IterationOf<'0'>> = {
-  [K in keyof O]: Compute<
-                  K extends Path[Pos<I>]                   // If K is part of Path
+  [K in keyof O]: K extends Path[Pos<I>]                   // If K is part of Path
                   ? Pos<I> extends EndOf<Path>             // & if it's the target
                     ? A // update it                       // Update - target
                     : _Update<O[K] & {}, Path, A, Next<I>> // Or continue diving
-                  : O[K]> // don't update                  // Not part of path - x
-}
+                  : O[K] // don't update                  // Not part of path - x
+} & {}
 
 /** Update in **`O`** the fields at **`Path`** with **`A`**
  * (⚠️ this type is expensive)

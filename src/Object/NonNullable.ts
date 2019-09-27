@@ -8,11 +8,11 @@ import {Keys} from './Keys'
 
 type NonNullableFlat<O> = {
     [K in keyof O]: UNonNullable<O[K]>
-}
+} & {}
 
 type NonNullableDeep<O> = {
     [K in keyof O]: NonNullableDeep<UNonNullable<O[K]>>
-}
+} & {}
 
 type NonNullablePart<O extends object, depth extends Depth> = {
     'flat': NonNullableFlat<O>,
