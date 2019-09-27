@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.6.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.5.4...v4.6.0) (2019-09-27)
+
+
+### Features
+
+* better computation ([9e60b18](https://github.com/pirix-gh/ts-toolbelt/commit/9e60b18))
+
 ### [4.5.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.5.3...v4.5.4) (2019-09-27)
 
 
