@@ -8,7 +8,7 @@ type _Flatten<T extends Tuple> = {
     0: _Flatten<UnNest<T>>
     1: T
 }[
-    Includes<T, readonly any[], 'implements->'> extends True
+    Includes<T, Tuple, 'implements->'> extends True
     ? 0
     : 1
 ]
