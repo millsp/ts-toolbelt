@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.5.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.5.3...v4.5.4) (2019-09-27)
+
+
+### Others
+
+* cleanup Keys in favor of keyof ([2f38ea4](https://github.com/pirix-gh/ts-toolbelt/commit/2f38ea4))
+* type distribution cleanup ([8fa8dc0](https://github.com/pirix-gh/ts-toolbelt/commit/8fa8dc0))
+
 ### [4.5.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.5.2...v4.5.3) (2019-09-27)
 
 
