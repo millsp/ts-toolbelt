@@ -179,7 +179,9 @@ If you're interested to **learn** how the internals work, [this tutorial](https:
 
 #### [Archives ⤢](https://github.com/pirix-gh/ts-toolbelt/tree/gh-pages)
 
-Here you can find the documentation for each specific version.
+Access older docs at https://pirix-gh.github.io/ts-toolbelt/version/
+
+> Example: https://pirix-gh.github.io/ts-toolbelt/4.2.1/
 
 ## [🧠 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
 
