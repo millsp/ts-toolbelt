@@ -1,5 +1,6 @@
 import {Omit} from './Omit'
 import {At} from './At'
+import {Exclude} from '../Union/Exclude'
 import {Numbers} from '../Number/_Internal'
 
 /** Ensure that **`O`** is a proper **`object`**, even is it has been mixed up.
