@@ -1,7 +1,7 @@
 import {Function} from './Function'
 import {Parameters} from './Parameters'
 import {Formats} from '../Iteration/_Internal'
-import {Length} from '../Tuple/Length'
+import {Length as TLength} from '../Tuple/Length'
 
 /** Extract arguments' length from a **`Function`**
  * @param F to extract from
@@ -21,4 +21,4 @@ import {Length} from '../Tuple/Length'
  * ```
  */
 export type Length<Fn extends Function, fmt extends Formats = 'n'> =
-    Length<Parameters<Fn>, fmt>
+    TLength<Parameters<Fn>, fmt>
