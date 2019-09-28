@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.2](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.1...v4.7.2) (2019-09-28)
+
+
+### Bug Fixes
+
+* output of Ensure ([ae3b20b](https://github.com/pirix-gh/ts-toolbelt/commit/ae3b20b))
+
 ### [4.7.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.0...v4.7.1) (2019-09-27)
 
 
