@@ -10,9 +10,9 @@ import {NonNullable} from '../Union/NonNullable'
 import {Tuple} from '../Tuple/Tuple'
 
 type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
-    K extends OOK                                   // if K is a `OptionalKey` of `O`
-    ? NonNullable<At<O, K>> | At<O1, K>             // complete `O[K]` with `O1[K]`
-    : At<O, K> extends never ? At<O1, K> : At<O, K> // or patch `O[K]` with `O1[K]`
+    K extends OOK                                       // if K is a `OptionalKey` of `O`
+    ? NonNullable<At<O, K>> | At<O1, K>                 // complete `O[K]` with `O1[K]`
+    : [At<O, K>] extends [never] ? At<O1, K> : At<O, K> // or patch `O[K]` with `O1[K]`
 
 type MergeUpFlat<O extends object, O1 extends object> = {
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OptionalKeys<O>>
