@@ -277,7 +277,7 @@ checks([
 ])
 ```
 
-> Place it in a file that won't be executed, it's just for TypeScript to test types
+> **`TIP`** Place it in a file that won't be executed, it's just for TypeScript to test types
 
 #### Continuous Integration
 
