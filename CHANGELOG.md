@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.2...v4.7.3) (2019-09-28)
+
+
+### Bug Fixes
+
+* enclose never ([95e707a](https://github.com/pirix-gh/ts-toolbelt/commit/95e707a))
+* missing import ([3665eb4](https://github.com/pirix-gh/ts-toolbelt/commit/3665eb4))
+* typo ([137229b](https://github.com/pirix-gh/ts-toolbelt/commit/137229b))
+
 ### [4.7.2](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.1...v4.7.2) (2019-09-28)
 
 
