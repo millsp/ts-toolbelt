@@ -49,7 +49,13 @@
 
 <p align="center">
   <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.png" width="250px">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.png" height="60px">
+  </a>
+  <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="60px">
+  </a>
+  <a href="https://patreon.com/pirix" target="_blank">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.png" height="60px">
   </a>
 </p>
 
@@ -183,13 +189,13 @@ Access older docs at https://pirix-gh.github.io/ts-toolbelt/version/
 
 > **`EXAMPLE`** https://pirix-gh.github.io/ts-toolbelt/4.2.1/
 
-## [🧠 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
+## [🧠 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc+label%3Awiki)
 
 In this wiki, you'll find some extra resources for your learning & understanding.
 
 It is incremental and it will be completed on demand, you can ask for this below.
 
-#### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
+#### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc+label%3Awiki)
 
 Are you missing something? Participate to the open-wiki by posting your questions [right here](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
 
@@ -244,8 +250,8 @@ Contributions are what make the open source community such an amazing place to l
 
 You can either request a new feature or a bug fix then fund it.
 
-<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt">
-  <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt-logo.svg?sanitize=true">
+<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
+  <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="60px">
 </a>
 <br>
 <br>
