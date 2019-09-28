@@ -54,7 +54,6 @@ checks([
 
 declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
 
-// tslint:disable-next-line
 const __ = {} as A.x
 
 const toCurry = (name: string, age: number, single: true, ...nicknames: string[]) => true

@@ -7,6 +7,7 @@ import {Optional} from './Optional'
 import {NullableKeys} from './NullableKeys'
 import {Select} from '../Union/Select'
 import {NonNullable} from '../Union/NonNullable'
+import {Tuple} from '../Tuple/Tuple'
 
 type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
     K extends OOK                                   // if K is a `OptionalKey` of `O`
@@ -40,6 +41,8 @@ type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = Option
  * ```
  */
 export type MergeUp<O extends object, O1 extends object, depth extends Depth = 'flat'> = {
-    'flat': MergeUpFlat<O, O1>
-    'deep': MergeUpDeep<O, O1>
+    'flat': MergeUpFlat<(O extends Tuple ? Optional<O, keyof any[]> : O), O1>
+    'deep': MergeUpDeep<(O extends Tuple ? Optional<O, keyof any[]> : O), O1>
+    // between parenthesis helps with edge-case of tuple/array merging
+    // because even if merge is successful, length stays incorrect
 }[depth]

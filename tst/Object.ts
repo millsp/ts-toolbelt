@@ -176,14 +176,19 @@ checks([
 // ENSURE
 
 checks([
-    check<O.Ensure<{a: string}>,    {a: string},            Test.Pass>(),
-    check<O.Ensure<[1, 2, 3]>,      {0: 1, 1: 2, 2: 3},     Test.Pass>(),
+    check<O.Ensure<{a: string}>,                {a: string},            Test.Pass>(),
+    check<O.Ensure<{a: string} & number[]>,     {a: string} & number[], Test.Pass>(),
+    check<O.Ensure<[1, 2, 3]>,                  {0: 1, 1: 2, 2: 3},     Test.Pass>(),
+    check<O.Ensure<[1, 2, 3] & []>,             {0: 1, 1: 2, 2: 3},     Test.Pass>(),
+    check<O.Ensure<O.MergeUp<[1, 2], {a: 3}>>,  {0: 1, 1: 2, a: 3},     Test.Pass>(),
+    check<O.Ensure<O.MergeUp<number[], []>>,    number[],               Test.Pass>(),
+    check<O.Ensure<O.MergeUp<string[], [1]>>,   Array<1 | string>,      Test.Pass>(),
+    check<O.Ensure<O.MergeUp<[1], string[]>>,   Array<1 | string>,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // EXCLUDE
 
-// tslint:disable-next-line
 type EXCLUDE_O_O1_DEFAULT = {}
 
 type EXCLUDE_O_O1_EQUALS = {
