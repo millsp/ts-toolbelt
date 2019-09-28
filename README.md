@@ -100,7 +100,7 @@ Here's some of the most useful features:
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/demo.gif" id="demo">
 <p align="center">
 
-> If you don't find the type you are looking for, you are welcome to open a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
+> **`TIP`** If you don't find the type you are looking for, you are welcome to open a [feature request](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md)!
 
 ## 🏁 Getting Started
 
@@ -181,7 +181,7 @@ If you're interested to **learn** how the internals work, [this tutorial](https:
 
 Access older docs at https://pirix-gh.github.io/ts-toolbelt/version/
 
-> Example: https://pirix-gh.github.io/ts-toolbelt/4.2.1/
+> **`EXAMPLE`** https://pirix-gh.github.io/ts-toolbelt/4.2.1/
 
 ## [🧠 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc)
 
