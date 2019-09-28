@@ -49,7 +49,7 @@
 
 <p align="center">
   <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" target="_blank">
-    Get Professional Support
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.png" width="250px">
   </a>
 </p>
 
