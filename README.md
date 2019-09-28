@@ -48,14 +48,14 @@
 </p>
 
 <p align="center">
+  <a href="https://patreon.com/pirix" target="_blank">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.png" height="25px">
+  </a>
   <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" target="_blank">
     <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.png" height="25px">
   </a>
   <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
     <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
-  </a>
-  <a href="https://patreon.com/pirix" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.png" height="25px">
   </a>
 </p>
 
