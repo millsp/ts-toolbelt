@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.8](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.7...v4.7.8) (2019-09-28)
+
+
+### Others
+
+* tidelift logo ([149922e](https://github.com/pirix-gh/ts-toolbelt/commit/149922e))
+
 ### [4.7.7](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.6...v4.7.7) (2019-09-28)
 
 
