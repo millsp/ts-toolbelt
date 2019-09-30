@@ -239,7 +239,7 @@ Contributions are what make the open source community such an amazing place to l
 7. Push your changes
 
    ```sh
-   git push origin pr/CoolFeature
+   npm run release -- --no-tags
    ```
 
 8. Open a pull request

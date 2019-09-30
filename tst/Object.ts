@@ -1180,8 +1180,8 @@ type O_PMERGE_UNIONS = {
 };
 
 checks([
-    check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>, O_PMERGE,  Test.Pass>(),
-    check<O.P.Merge<OP_UNIONS,  ['a' | 'b', 'b'], {x: string}>, O_PMERGE_UNIONS,    Test.Pass>(),
+    check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>,             O_PMERGE,           Test.Pass>(),
+    check<O.P.Merge<OP_UNIONS,  ['a' | 'b', 'b'], {x: string}>,     O_PMERGE_UNIONS,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1220,8 +1220,8 @@ type O_POMIT_UNIONS = {
 };
 
 checks([
-    check<O.P.Omit<OP, ['a' | 'b', 'a']>,   O_POMIT,   Test.Pass>(),
-    check<O.P.Omit<OP_UNIONS,   ['a' | 'b', 'a']>,  O_POMIT_UNIONS, Test.Pass>(),
+    check<O.P.Omit<OP, ['a' | 'b', 'a']>,           O_POMIT,            Test.Pass>(),
+    check<O.P.Omit<OP_UNIONS,   ['a' | 'b', 'a']>,  O_POMIT_UNIONS,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1252,8 +1252,8 @@ type O_PPICK_UNIONS = {
 };
 
 checks([
-    check<O.P.Pick<OP, ['a' | 'b', 'a']>,   O_PPICK,   Test.Pass>(),
-    check<O.P.Pick<OP_UNIONS,   ['a' | 'b', 'a']>,  O_PPICK_UNIONS, Test.Pass>(),
+    check<O.P.Pick<OP, ['a' | 'b', 'a']>,           O_PPICK,            Test.Pass>(),
+    check<O.P.Pick<OP_UNIONS,   ['a' | 'b', 'a']>,  O_PPICK_UNIONS,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1302,8 +1302,8 @@ type O_PREADONLY_UNIONS = {
 };
 
 checks([
-    check<O.P.Readonly<OP, ['a' | 'b', 'a']>,   O_PREADONLY,   Test.Pass>(),
-    check<O.P.Readonly<OP_UNIONS, ['a' | 'b', 'a']>,    O_PREADONLY_UNIONS, Test.Pass>(),
+    check<O.P.Readonly<OP, ['a' | 'b', 'a']>,           O_PREADONLY,            Test.Pass>(),
+    check<O.P.Readonly<OP_UNIONS, ['a' | 'b', 'a']>,    O_PREADONLY_UNIONS,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1346,6 +1346,6 @@ type O_PUPDATE_UNIONS = {
 };
 
 checks([
-    check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,    O_PUPDATE,     Test.Pass>(),
-    check<O.P.Update<OP_UNIONS, ['a' | 'b', 'a'], 'x'>, O_PUPDATE_UNIONS,   Test.Pass>(),
+    check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,            O_PUPDATE,          Test.Pass>(),
+    check<O.P.Update<OP_UNIONS, ['a' | 'b', 'a'], 'x'>,     O_PUPDATE_UNIONS,   Test.Pass>(),
 ])
