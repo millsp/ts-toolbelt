@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.18](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.17...v4.7.18) (2019-09-30)
+
+
+### Bug Fixes
+
+* indent ([eff221b](https://github.com/pirix-gh/ts-toolbelt/commit/eff221b))
+
 ### [4.7.17](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.16...v4.7.17) (2019-09-30)
 
 
