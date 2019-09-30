@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.17](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.16...v4.7.17) (2019-09-30)
+
+
+### Bug Fixes
+
+* **p:** distribute over unions ([aa2bb21](https://github.com/pirix-gh/ts-toolbelt/commit/aa2bb21))
+* **p.pick:** distribute over unions ([0213712](https://github.com/pirix-gh/ts-toolbelt/commit/0213712))
+
+
+### Others
+
+* **p:** add test for distributing over unions ([1c369d2](https://github.com/pirix-gh/ts-toolbelt/commit/1c369d2))
+* **p.pick:** add test for distributing over unions ([f9be819](https://github.com/pirix-gh/ts-toolbelt/commit/f9be819))
+
 ### [4.7.16](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.15...v4.7.16) (2019-09-28)
 
 
