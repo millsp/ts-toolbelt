@@ -5,14 +5,16 @@ import {Depth} from './_Internal'
 import {Kind} from '../Any/Kind'
 
 type MergeFlat<O extends object, O1 extends object> =
+O extends unknown ? O1 extends unknown ? (
     Compute<O & Omit<O1, keyof O>>
+) : never : never
 
-type MergeDeep<O, O1> =
-    Kind<(O | O1)> extends 'object'
+type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
+    (Kind<(O | O1)> extends 'object'
     ? MergeFlat<O & {}, O1 & {}> extends infer M
-      ? {[K in keyof M]: MergeDeep<M[K], At<O1 & {}, K>>}
+      ? {[K in keyof M]: MergeDeep<M[K], At<O1 & {}, K>>} & {}
       : never
-    : O
+    : O)
 
 // If we wanted to dive in the tuples as well
 // Kind<(O | O1)> extends 'array'
@@ -22,8 +24,8 @@ type MergeDeep<O, O1> =
 // : O       // in versions <= 3.8 no-recursive-conditional
 
 /** Complete the fields of **`O`** with the ones of **`O1`**
- * ('deep' option will skip any nullable object to be merged)
- * For more advanced merging capabilities, please see **`MergeUp`**
+ * ('deep' option will skip nullable objects to be merged).
+ * For more advanced merging capabilities, see **`MergeUp`**
  * @param O to complete
  * @param O1 to copy from
  * @param depth to do it deeply (?=`'flat'`)

@@ -16,6 +16,6 @@ import {True, Boolean} from '../Boolean/Boolean'
  * ```
  */
 export type Either<T extends Tuple, K extends Index, strict extends Boolean = True> =
-    OEither<ObjectOf<T>, K, strict> extends infer X
-    ? X extends unknown ? TupleOf<X & {}> : never
+    OEither<ObjectOf<T>, K, strict> extends infer OE
+    ? OE extends unknown ? TupleOf<OE & {}> : never
     : never

@@ -16,7 +16,7 @@ type _UnNestCheap<T extends Tuple> =
         ? UnionOf<UT>               // make it a union
         : UT                        // or leave as it is
         : never
-    : never)[]
+    : never)[]                      // make result array
 
 type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _UnNestExact<T, Concat<TN, T[Pos<I>]>, Next<I>>
