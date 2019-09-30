@@ -1177,8 +1177,28 @@ type O_PPICK = {
     }
 };
 
+type O_PPICK_UNIONS = {
+    a: {
+        b: string,
+        c: number
+    } | {
+        b: number,
+        d: string
+    } | string
+    e: number
+};
+
+type PPICK_UNIONS_O = {
+    a: {
+        b: string
+    } | {
+        b: number
+    } | string
+};
+
 checks([
     check<O.P.Pick<OP, ['a' | 'b', 'a']>,   O_PPICK,   Test.Pass>(),
+    check<O.P.Pick<O_PPICK_UNIONS, ['a', 'b']>, PPICK_UNIONS_O, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
