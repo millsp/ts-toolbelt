@@ -8,18 +8,17 @@ import {EndOf} from '../../Tuple/EndOf'
 import {Tuple} from '../../Tuple/Tuple'
 import {Select} from '../Select'
 
-type _Omit<O extends object, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
-Select<{                                // No `never` fields
-  [K in keyof O]:
-    O[K] extends infer Prop             // Needed for the below to be distributive
-    ? K extends Path[Pos<I>]            // If K is part of Path
-      ? Pos<I> extends EndOf<Path>      // & if it's the target
-        ? never // don't pick           // Update - target
-        : Prop extends object           // If it's an object
-          ? _Omit<Prop, Path, Next<I>>  // Continue diving
-          : Prop // pick it             // Part of path, but not object - x
-      : Prop // pick it                 // Not part of path - x
-    : never
+type _Omit<O extends object, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = Select<{                                // No `never` fields
+    [K in keyof O]:
+      O[K] extends infer Prop             // Needed for the below to be distributive
+      ? K extends Path[Pos<I>]            // If K is part of Path
+        ? Pos<I> extends EndOf<Path>      // & if it's the target
+          ? never // don't pick           // Update - target
+          : Prop extends object           // If it's an object
+            ? _Omit<Prop, Path, Next<I>>  // Continue diving
+            : Prop // pick it             // Part of path, but not object - x
+        : Prop // pick it                 // Not part of path - x
+      : never
 }, any> & {}
 
 /** Remove out of **`O`** the fields at **`Path`**
