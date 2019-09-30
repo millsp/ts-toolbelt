@@ -1109,6 +1109,27 @@ type OP = { // A binary tree
     c?: string
 };
 
+type OP_UNIONS = {
+    a: {
+        a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    } | 'a'
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | 'b'
+    c?: string
+};
+
 // ---------------------------------------------------------------------------------------
 // P.MERGE
 
@@ -1135,8 +1156,32 @@ type O_PMERGE = {
     c?: string
 };
 
+type O_PMERGE_UNIONS = {
+    a: {
+        a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+            x: string
+        }
+    } | 'a'
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }
+        b: {
+            a: 'bba'
+            b: 'bbb'
+            x: string
+        }
+    } | 'b'
+    c?: string
+};
+
 checks([
     check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>, O_PMERGE,  Test.Pass>(),
+    check<O.P.Merge<OP_UNIONS,  ['a' | 'b', 'b'], {x: string}>, O_PMERGE_UNIONS,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1158,8 +1203,25 @@ type O_POMIT = {
     c?: string
 };
 
+type O_POMIT_UNIONS = {
+    a: {
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    } | 'a'
+    b?: {
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | 'b'
+    c?: string
+};
+
 checks([
     check<O.P.Omit<OP, ['a' | 'b', 'a']>,   O_POMIT,   Test.Pass>(),
+    check<O.P.Omit<OP_UNIONS,   ['a' | 'b', 'a']>,  O_POMIT_UNIONS, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1177,8 +1239,21 @@ type O_PPICK = {
     }
 };
 
+type O_PPICK_UNIONS = {
+    a: {
+        a: string
+    } | 'a'
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }
+    } | 'b'
+};
+
 checks([
     check<O.P.Pick<OP, ['a' | 'b', 'a']>,   O_PPICK,   Test.Pass>(),
+    check<O.P.Pick<OP_UNIONS,   ['a' | 'b', 'a']>,  O_PPICK_UNIONS, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1205,8 +1280,30 @@ type O_PREADONLY = {
     c?: string
 };
 
+type O_PREADONLY_UNIONS = {
+    a: {
+        readonly a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    } | 'a'
+    b?: {
+        readonly a: {
+            a: 'baa'
+            b: 'bab'
+        }
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | 'b'
+    c?: string
+};
+
 checks([
     check<O.P.Readonly<OP, ['a' | 'b', 'a']>,   O_PREADONLY,   Test.Pass>(),
+    check<O.P.Readonly<OP_UNIONS, ['a' | 'b', 'a']>,    O_PREADONLY_UNIONS, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1230,6 +1327,25 @@ type O_PUPDATE = {
     c?: string
 };
 
+type O_PUPDATE_UNIONS = {
+    a: {
+        a: 'x'
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }
+    } | 'a'
+    b?: {
+        a: 'x'
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }
+    } | 'b'
+    c?: string
+};
+
 checks([
     check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,    O_PUPDATE,     Test.Pass>(),
+    check<O.P.Update<OP_UNIONS, ['a' | 'b', 'a'], 'x'>, O_PUPDATE_UNIONS,   Test.Pass>(),
 ])

@@ -11,11 +11,16 @@ import {Depth} from '../_Internal'
 import {Tuple} from '../../Tuple/Tuple'
 
 type _Merge<O extends object, Path extends Tuple<Index>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
-  [K in keyof O]: K extends Path[Pos<I>]                          // If K is part of Path
-                  ? Pos<I> extends EndOf<Path>                    // & if it's the target
-                    ? OMerge<O[K] & {}, O1, depth> // merge it    // Update - target
-                    : _Merge<O[K] & {}, Path, O1, depth, Next<I>> // Or continue diving
-                  : O[K]                                          // Not part of path - x
+  [K in keyof O]:
+    O[K] extends infer Prop                        // Needed for the below to be distributive
+    ? K extends Path[Pos<I>]                       // If K is part of Path
+      ? Prop extends object                        // & if it's an object
+        ? Pos<I> extends EndOf<Path>               // & if it's the target
+          ? OMerge<Prop, O1, depth> // merge it    // Update - target
+          : _Merge<Prop, Path, O1, depth, Next<I>> // Or continue diving
+        : Prop                                     // Part of path, but not object - x
+      : Prop                                       // Not part of path - x
+    : never
 } & {}
 
 /** Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**
