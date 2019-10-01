@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 60s # we just wait a little for it to propagate
+sleep 60s # we'll just wait a little for it to get propagated
 
 # we replace the travis branch name with "latest" if "master"
 PKG_VERSTAG=$(echo ${TRAVIS_BRANCH//master/latest})

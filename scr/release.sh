@@ -1,5 +1,7 @@
 #!/bin/bash
 
+RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
+
 # Make sure that we passed all tests
 npm run test &&
 
@@ -14,11 +16,11 @@ npx standard-version &&
 
 # Publish the current branch origin
 if [ "$BRANCH" = "master" ]; then
-    if [ "$1" = "--no-tags" ]; then
+    if [ "$1" = "--no-tags" ]; then             # disable tags
         git push origin $BRANCH
-    else
-        git push origin $BRANCH --follow-tags
+    elif [ "$RELEASE" = "true" ]; then
+        git push origin $BRANCH --follow-tags   # only releases
     fi;
 else
-    git push origin $BRANCH
+    git push origin $BRANCH                     # on branches
 fi;
