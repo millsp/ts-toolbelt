@@ -76,7 +76,7 @@
 
 ## 📜 About
 
-**ts-toolbelt** completes TypeScript with a collection of more than **175** tested types. This makes it the biggest type collection out there.
+**ts-toolbelt** completes TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there.
 
 It's goal is to improve type correctness while adding a whole new set of **features** to TypeScript. It uses the type system itself for TypeScript to compute more complex types. In other words, its API exposes types that trade **CPU & RAM** for higher type safety.
 
@@ -112,10 +112,10 @@ Here's some of the most useful features:
 
 #### Prerequisites
 
-Lowest TypeScript [support](#-compatibility) starts at version 3.5
+Lowest TypeScript [support](#-compatibility) starts at v3.5
 
 ```sh
-npm install typescript@^3.5.0 --save
+npm install typescript@^3.6.0 --save
 ```
 
 For best results, add this to your `tsconfig.json`
@@ -304,7 +304,7 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 | 1.x.x       | ~3.5.x     |
 | 2.x.x       | ^3.5.x     |
 | 3.x.x       | ^3.5.x     |
-| 4.x.x       | ^3.5.x     |
+| 4.x.x       | ^3.6.x     |
 
 Major version numbers will upgrade whenever TypeScript had breaking changes (it happened that TS had breaking changes on minor versions). Otherwise, the release versions will naturally follow the semantic versioning.
 
@@ -320,8 +320,7 @@ Major version numbers will upgrade whenever TypeScript had breaking changes (it 
 
 ## 🙏 Acknowledgements
 
-Many, many thanks to all the
-[contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
+Many, many thanks to all the [contributors](https://github.com/pirix-gh/ts-toolbelt/graphs/contributors) and:
 
 * [André Staltz](https://github.com/staltz)
 * [Joe Calzaretta](https://github.com/jcalz)
