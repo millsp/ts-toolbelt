@@ -4,8 +4,6 @@ import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {Next} from '../Iteration/Next'
 import {Append} from '../Tuple/Append'
-import {Equals} from '../Any/Equals'
-import {True} from '../Boolean/Boolean'
 import {Exclude} from '../Union/Exclude'
 import {Tuple} from '../Tuple/Tuple'
 
@@ -18,7 +16,7 @@ type _TupleOf<O extends object, K, TN extends Tuple = [], I extends Iteration = 
     0: _TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
     1: TN
 }[
-    Equals<K, never> extends True
+    [K] extends [never]
     ? 1
     : 0
 ]
