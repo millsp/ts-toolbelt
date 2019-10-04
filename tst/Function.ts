@@ -106,7 +106,7 @@ const pipedAsync = pipe(
     (name: string, age: number)               => ({name, age}),           // receive parameters
     async <T>(generic: T)                     => generic,                 // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
-    (message: string)                         => false,                     // receive previous return
+    (message: string)                         => false,                   // receive previous return
 )
 
 checks([

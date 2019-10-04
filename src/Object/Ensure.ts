@@ -18,8 +18,8 @@ import {Numbers} from '../Number/_Internal'
  * ```
  */
 export type Ensure<O extends object> =
-    number extends At<O, 'length'>
-    ? [Exclude<keyof O, keyof any[] | Numbers['string']['+' | '0']>] extends [never]
-      ? At<O, number>[]
-      : O
-    : Omit<O, keyof any[]>
+    number extends At<O, 'length'>                                                    // if it's an array
+    ? [Exclude<keyof O, keyof any[] | Numbers['string']['+' | '0']>] extends [never]  //  if it's not mixed
+      ? At<O, number>[]                                                               //    restore it
+      : O                                                                             //    do nothing
+    : Omit<O, keyof any[]>                                                            //
