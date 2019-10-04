@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.7.25](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.24...v4.7.25) (2019-10-04)
+
+
+### Bug Fixes
+
+* overflow on recursive types ([a3351fb](https://github.com/pirix-gh/ts-toolbelt/commit/a3351fb))
+
+
+### Others
+
+* internal comments ([a3e3d38](https://github.com/pirix-gh/ts-toolbelt/commit/a3e3d38))
+
 ### [4.7.24](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.23...v4.7.24) (2019-10-01)
 
 
