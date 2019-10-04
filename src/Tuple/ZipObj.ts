@@ -13,7 +13,7 @@ type _ZipObj<TProp extends Tuple<Index>, TField extends Tuple, O extends object 
     0: _ZipObj<TProp, TField, Merge<O, Record<TProp[Pos<I>], TField[Pos<I>]>>, Next<I>>
     1: O
 }[
-    Pos<I> extends Length<TProp>
+    Length<TProp> extends Pos<I>
     ? 1
     : 0
 ]

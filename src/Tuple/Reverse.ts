@@ -14,7 +14,7 @@ export type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = 
     0: _Reverse<T, Prepend<TO, T[Pos<I>]>, L, Next<I>>
     1: TO
 }[
-    Key<I> extends L
+    L extends Key<I>
     ? 1
     : 0
 ]
