@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.8.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.25...v4.8.0) (2019-10-04)
+
+
+### Features
+
+* **tuple:** added Ensure ([fda189f](https://github.com/pirix-gh/ts-toolbelt/commit/fda189f))
+* **tuple:** added LastIndex ([ed7a733](https://github.com/pirix-gh/ts-toolbelt/commit/ed7a733))
+
 ### [4.7.25](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.24...v4.7.25) (2019-10-04)
 
 
