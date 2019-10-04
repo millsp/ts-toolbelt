@@ -4,7 +4,7 @@ import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
-import {EndOf} from '../../Tuple/EndOf'
+import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 import {Select} from '../Select'
 
@@ -12,7 +12,7 @@ type _Omit<O extends object, Path extends Tuple<Index>, I extends Iteration = It
     [K in keyof O]:
       O[K] extends infer Prop             // Needed for the below to be distributive
       ? K extends Path[Pos<I>]            // If K is part of Path
-        ? Pos<I> extends EndOf<Path>      // & if it's the target
+        ? Pos<I> extends LastIndex<Path>      // & if it's the target
           ? never // don't pick           // Update - target
           : Prop extends object           // If it's an object
             ? _Omit<Prop, Path, Next<I>>  // Continue diving

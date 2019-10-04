@@ -11,5 +11,5 @@ import {Tuple} from './Tuple'
  * ```ts
  * ```
  */
-export type EndOf<T extends Tuple, fmt extends Formats = 'n'> =
+export type LastIndex<T extends Tuple, fmt extends Formats = 'n'> =
     Length<Tail<T>, fmt>

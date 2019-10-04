@@ -22,4 +22,4 @@ export type Ensure<O extends object> =
     ? [Exclude<keyof O, keyof any[] | Numbers['string']['+' | '0']>] extends [never]  //  if it's not mixed
       ? At<O, number>[]                                                               //    restore it
       : O                                                                             //    do nothing
-    : Omit<O, keyof any[]>                                                            //
+    : Omit<O, keyof any[]>                                                            // ensure is object

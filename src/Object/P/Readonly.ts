@@ -11,7 +11,7 @@ import {Depth} from '../_Internal'
 import {Path as PPath} from './_Internal'
 import {Prepend} from '../../Tuple/Prepend'
 import {Index} from '../../Any/Index'
-import {EndOf} from '../../Tuple/EndOf'
+import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 
 type _Readonly<O extends object, Path extends Tuple<Index>, K extends Index, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
@@ -19,7 +19,7 @@ type _Readonly<O extends object, Path extends Tuple<Index>, K extends Index, dep
     O[P] extends infer Prop                          // Needed for the below to be distributive
     ? P extends Path[Pos<I>]                         // If K is part of Path
       ? Prop extends object                          // & prop is object
-        ? Pos<I> extends EndOf<Path>                 // & if it's the target
+        ? Pos<I> extends LastIndex<Path>                 // & if it's the target
           ? OReadonly<Prop, K, depth> // immutable   // Update - target
           : _Readonly<Prop, Path, K, depth, Next<I>> // Or continue diving
         : Prop // don't update                       // Part of path, but not object - x

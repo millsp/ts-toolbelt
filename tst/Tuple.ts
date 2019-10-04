@@ -1,6 +1,6 @@
 /* tslint:disable:use-default-type-parameter interface-name */
 
-import {Test, T, A} from '../src/index'
+import {Test, T, A, O} from '../src/index'
 
 const {checks, check} = Test
 
@@ -114,6 +114,20 @@ type EITHER_T_01 = [0, undefined, 2] | [undefined, 1, 2];
 
 checks([
     check<T.Either<T_EITHER, '0' | '1'>,    EITHER_T_01,    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// ENSURE
+
+checks([
+    check<T.Ensure<{a: string}>,                [],                     Test.Pass>(),
+    check<T.Ensure<{a: string} & number[]>,     {a: string} & number[], Test.Pass>(),
+    check<T.Ensure<[1, 2, 3]>,                  [1, 2, 3],              Test.Pass>(),
+    check<T.Ensure<[1, 2, 3] & []>,             [1, 2, 3],              Test.Pass>(),
+    check<T.Ensure<O.MergeUp<[1, 2], {a: 3}>>,  [1, 2],                 Test.Pass>(),
+    check<T.Ensure<O.MergeUp<number[], []>>,    number[],               Test.Pass>(),
+    check<T.Ensure<O.MergeUp<string[], [1]>>,   Array<1 | string>,      Test.Pass>(),
+    check<T.Ensure<O.MergeUp<[1], string[]>>,   Array<1 | string>,      Test.Pass>(),
 ])
 
 // -------------------------------------------------------------------------------------
@@ -305,6 +319,13 @@ checks([
 
 checks([
     check<T.Last<T>,    'xxxx' | readonly [0, 1, 2?] | undefined,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// LASTINDEX
+
+checks([
+    check<T.LastIndex<[0, 1, 2?]>,  1 | 2,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

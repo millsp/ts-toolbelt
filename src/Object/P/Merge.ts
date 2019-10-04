@@ -6,7 +6,7 @@ import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
-import {EndOf} from '../../Tuple/EndOf'
+import {LastIndex} from '../../Tuple/LastIndex'
 import {Depth} from '../_Internal'
 import {Tuple} from '../../Tuple/Tuple'
 
@@ -15,7 +15,7 @@ type _Merge<O extends object, Path extends Tuple<Index>, O1 extends object, dept
     O[K] extends infer Prop                        // Needed for the below to be distributive
     ? K extends Path[Pos<I>]                       // If K is part of Path
       ? Prop extends object                        // & if it's an object
-        ? Pos<I> extends EndOf<Path>               // & if it's the target
+        ? Pos<I> extends LastIndex<Path>               // & if it's the target
           ? OMerge<Prop, O1, depth> // merge it    // Update - target
           : _Merge<Prop, Path, O1, depth, Next<I>> // Or continue diving
         : Prop                                     // Part of path, but not object - x
