@@ -11,7 +11,7 @@ type _Assign<O extends object, Os extends Tuple<object>, I extends Iteration = I
     0: _Assign<MergeUp<Os[Pos<I>], O>, Os, Next<I>>
     1: O
 }[
-    Length<Os> extends Pos<I>
+    Pos<I> extends Length<Os>
     ? 1
     : 0
 ]

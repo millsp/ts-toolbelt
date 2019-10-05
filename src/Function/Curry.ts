@@ -24,7 +24,7 @@ type _GapsOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple = [], I extend
     0: _GapsOf<T1, T2, GapOf<T1, T2, TN, I>, Next<I>>
     1: Concat<TN, Drop<T2, Key<I>>>
 }[
-    Length<T1> extends Pos<I>
+    Pos<I> extends Length<T1>
     ? 1
     : 0
 ]

@@ -19,7 +19,7 @@ type _Pick<O extends object, Path extends Tuple<Index>, I extends Iteration = It
             : _Pick<Prop, Path, Next<I>>      // 1-0: Continue diving
           : Prop                              // 0: Pick property
         : never
-    }
+    } & {}
   : never
 
 /** Extract out of **`O`** the fields at **`Path`**

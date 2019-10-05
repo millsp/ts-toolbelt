@@ -12,7 +12,7 @@ type _Zip<T extends Tuple, T1 extends Tuple, TN extends Tuple = [], I extends It
     0: _Zip<T, T1, Prepend<TN, [T[Pos<I>], T1[Pos<I>]]>, Next<I>>
     1: Reverse<TN>
 }[
-    Length<T> extends Pos<I>
+    Pos<I> extends Length<T>
     ? 1
     : 0
 ]

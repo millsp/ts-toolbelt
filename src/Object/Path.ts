@@ -14,7 +14,7 @@ O extends unknown ? ({
     0: _Path<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
 }[
-    Length<Path> extends Pos<I>
+    Pos<I> extends Length<Path>
     ? 1 // Stops before going too deep (last key) & check if it has it
     : 0 // Continue iterating and go deeper within the object with `At`
 ]) : never
