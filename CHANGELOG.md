@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.3...v4.8.4) (2019-10-05)
+
+
+### Bug Fixes
+
+* remove distribution on recursive types ([ec8c882](https://github.com/pirix-gh/ts-toolbelt/commit/ec8c882))
+
 ### [4.8.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.2...v4.8.3) (2019-10-05)
 
 
