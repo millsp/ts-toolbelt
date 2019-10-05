@@ -9,8 +9,7 @@ import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
 import {Tuple} from '../Tuple/Tuple'
 
-type _Paths<O, Paths extends Tuple<Index> = []> =
-O extends unknown ? ({
+type _Paths<O, Paths extends Tuple<Index> = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]
     // It dives deep, and as it dives, it adds the paths to `Paths`
     1: NonNullable<Optional<Reverse<Paths>>> // make optional
@@ -23,7 +22,7 @@ O extends unknown ? ({
         ? 1                       // 1: Exit
         : 0                       // 0: Continue
       : 1                         // 1: Exit
-]) : never
+]
 
 /** Get all the possible paths of **`O`**
  * (⚠️ this won't work with circular-refs)

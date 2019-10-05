@@ -22,13 +22,13 @@ O extends object ? O1 extends object ? ({ // forces distribution
 type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>, NO1K extends Index = NullableKeys<O1>> =
 O extends object ? O1 extends object ? ({
     [K in keyof (O & O1)]:  Kind<NonNullable<At<O, K> & At<O1, K>>> extends 'object'
-                                ? MergeUpDeep< // the above makes sure it's only objects
-                                // then if parent is `Nullable`, make children optional
-                                K extends NOK  ? Optional<NonNullable<At<O, K>> & {}>  : At<O, K> & {},
-                                K extends NO1K ? Optional<NonNullable<At<O1, K>> & {}> : At<O1, K> & {}
-                                // and if not optional, we re-add eventual `undefined | null`
-                                > | (K extends OOK ? never : Select<At<O, K>, undefined | null>)
-                                : MergeUpProp<O, O1, K, OOK>
+                            ? MergeUpDeep< // the above makes sure it's only objects
+                            // then if parent is `Nullable`, make children optional
+                            K extends NOK  ? Optional<NonNullable<At<O, K>> & {}>  : At<O, K> & {},
+                            K extends NO1K ? Optional<NonNullable<At<O1, K>> & {}> : At<O1, K> & {}
+                            // and if not optional, we re-add eventual `undefined | null`
+                            > | (K extends OOK ? never : Select<At<O, K>, undefined | null>)
+                            : MergeUpProp<O, O1, K, OOK>
 } & {}) : never : never
 
 /** Accurately complete the fields of **`O`** with the ones of **`O1`**.
