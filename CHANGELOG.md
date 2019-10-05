@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.0...v4.8.1) (2019-10-05)
+
+
+### Bug Fixes
+
+* revert recursion limits ([44e96b6](https://github.com/pirix-gh/ts-toolbelt/commit/44e96b6))
+
 ## [4.8.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.7.25...v4.8.0) (2019-10-04)
 
 
