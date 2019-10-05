@@ -6,12 +6,13 @@ import {Next} from '../Iteration/Next'
 import {Length} from '../Tuple/Length'
 import {Cast} from '../Any/Cast'
 import {Tuple} from '../Tuple/Tuple'
+import {Key} from '../Iteration/Key'
 
 type _Assign<O extends object, Os extends Tuple<object>, I extends Iteration = IterationOf<'0'>> = {
     0: _Assign<MergeUp<Os[Pos<I>], O>, Os, Next<I>>
     1: O
 }[
-    Pos<I> extends Length<Os>
+    Key<I> extends Length<Os, 's'>
     ? 1
     : 0
 ]

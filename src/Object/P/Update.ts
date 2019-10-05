@@ -7,12 +7,13 @@ import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
+import {Key} from '../../Iteration/Key'
 
 type _Update<O extends object, Path extends Tuple<Index>, A, I extends Iteration = IterationOf<'0'>> = {
   [K in keyof O]:
     O[K] extends infer Prop                 // Needed for the below to be distributive
     ? K extends Path[Pos<I>]                // If K is part of Path
-      ? Pos<I> extends LastIndex<Path>          // & if it's the target
+      ? Key<I> extends LastIndex<Path, 's'> // & if it's the target
         ? A // update it                    // Update - target
         : Prop extends object               // If prop is an object
           ? _Update<Prop, Path, A, Next<I>> // Continue diving

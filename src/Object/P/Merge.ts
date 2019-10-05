@@ -9,13 +9,14 @@ import {Index} from '../../Any/Index'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Depth} from '../_Internal'
 import {Tuple} from '../../Tuple/Tuple'
+import {Key} from '../../Iteration/Key'
 
 type _Merge<O extends object, Path extends Tuple<Index>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
   [K in keyof O]:
     O[K] extends infer Prop                        // Needed for the below to be distributive
     ? K extends Path[Pos<I>]                       // If K is part of Path
       ? Prop extends object                        // & if it's an object
-        ? Pos<I> extends LastIndex<Path>               // & if it's the target
+        ? Key<I> extends LastIndex<Path, 's'>      // & if it's the target
           ? OMerge<Prop, O1, depth> // merge it    // Update - target
           : _Merge<Prop, Path, O1, depth, Next<I>> // Or continue diving
         : Prop                                     // Part of path, but not object - x

@@ -8,12 +8,13 @@ import {Merge} from '../Object/Merge'
 import {Record} from '../Object/Record'
 import {Index} from '../Any/Index'
 import {Tuple} from './Tuple'
+import {Key} from '../Iteration/Key'
 
 type _ZipObj<TProp extends Tuple<Index>, TField extends Tuple, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
     0: _ZipObj<TProp, TField, Merge<O, Record<TProp[Pos<I>], TField[Pos<I>]>>, Next<I>>
     1: O
 }[
-    Pos<I> extends Length<TProp>
+    Key<I> extends Length<TProp, 's'>
     ? 1
     : 0
 ]

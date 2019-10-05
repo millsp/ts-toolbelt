@@ -5,7 +5,6 @@ import {Drop} from '../Tuple/Drop'
 import {Length} from '../Tuple/Length'
 import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'
-import {Function} from './Function'
 import {Parameters} from './Parameters'
 import {Return} from './Return'
 import {IterationOf} from '../Iteration/IterationOf'
@@ -24,7 +23,7 @@ type _GapsOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple = [], I extend
     0: _GapsOf<T1, T2, GapOf<T1, T2, TN, I>, Next<I>>
     1: Concat<TN, Drop<T2, Key<I>>>
 }[
-    Pos<I> extends Length<T1>
+    Key<I> extends Length<T1, 's'>
     ? 1
     : 0
 ]

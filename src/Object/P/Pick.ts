@@ -7,17 +7,18 @@ import {Index} from '../../Any/Index'
 import {Pick as OPick} from '../Pick'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
+import {Key} from '../../Iteration/Key'
 
 type _Pick<O extends object, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
   OPick<O, Path[Pos<I>]> extends infer Picked // Pick the first Path
   ? {
       [K in keyof Picked]:
-        Picked[K] extends infer Prop          // Needed for the below to be distributive
-        ? Prop extends object                 // > If it's an object
-          ? Pos<I> extends LastIndex<Path>        // & If it's the target
-            ? Prop                            // 1-1: Pick it
-            : _Pick<Prop, Path, Next<I>>      // 1-0: Continue diving
-          : Prop                              // 0: Pick property
+        Picked[K] extends infer Prop            // Needed for the below to be distributive
+        ? Prop extends object                   // > If it's an object
+          ? Key<I> extends LastIndex<Path, 's'> // & If it's the target
+            ? Prop                              // 1-1: Pick it
+            : _Pick<Prop, Path, Next<I>>        // 1-0: Continue diving
+          : Prop                                // 0: Pick property
         : never
     } & {}
   : never
