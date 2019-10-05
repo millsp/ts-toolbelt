@@ -1,7 +1,5 @@
 #!/bin/bash
 
-RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
-
 # Make sure that we passed all tests
 npm run test &&
 
@@ -13,6 +11,9 @@ npx sort-package-json &&
 
 # Bump the version & changelogs
 npx standard-version &&
+
+# check if we have to do a release
+RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
 
 # Publish the current branch origin
 if [ "$BRANCH" != "master" ] || [ "$1" = "--no-tags" ] || [ "$RELEASE" = "false" ]; then
