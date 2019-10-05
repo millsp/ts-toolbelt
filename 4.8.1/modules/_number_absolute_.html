@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Tuple/EndOf&quot; | ts-toolbelt</title>
+	<title>&quot;Number/Absolute&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -72,10 +72,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_tuple_endof_.html">&quot;Tuple/EndOf&quot;</a>
+					<a href="_number_absolute_.html">&quot;Number/Absolute&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Tuple/EndOf&quot;</h1>
+			<h1>External module &quot;Number/Absolute&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -175,7 +175,7 @@
 			<a href="_iteration__internal_.html">"<wbr>Iteration/_<wbr><wbr>Internal"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_iteration__api_.html">"<wbr>Iteration/_<wbr>api"</a>
-			</li>            <li class=" tsd-kind-external-module">
+			</li>            <li class="current tsd-kind-external-module">
 			<a href="_number_absolute_.html">"<wbr>Number/<wbr>Absolute"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_number_format_.html">"<wbr>Number/<wbr>Format"</a>
@@ -355,8 +355,8 @@
 			<a href="_tuple_drop_.html">"<wbr>Tuple/<wbr>Drop"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_either_.html">"<wbr>Tuple/<wbr>Either"</a>
-			</li>            <li class="current tsd-kind-external-module">
-			<a href="_tuple_endof_.html">"<wbr>Tuple/<wbr>End<wbr>Of"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_ensure_.html">"<wbr>Tuple/<wbr>Ensure"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_exclude_.html">"<wbr>Tuple/<wbr>Exclude"</a>
 			</li>            <li class=" tsd-kind-external-module">
@@ -389,6 +389,8 @@
 			<a href="_tuple_keys_.html">"<wbr>Tuple/<wbr>Keys"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_last_.html">"<wbr>Tuple/<wbr>Last"</a>
+			</li>            <li class=" tsd-kind-external-module">
+			<a href="_tuple_lastindex_.html">"<wbr>Tuple/<wbr>Last<wbr>Index"</a>
 			</li>            <li class=" tsd-kind-external-module">
 			<a href="_tuple_length_.html">"<wbr>Tuple/<wbr>Length"</a>
 			</li>            <li class=" tsd-kind-external-module">
@@ -519,7 +521,8 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_tuple_endof_.html#endof" class="tsd-kind-icon">End<wbr>Of</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_number_absolute_.html#absolute" class="tsd-kind-icon">Absolute</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_number_absolute_.html#_absolute" class="tsd-kind-icon">_<wbr>Absolute</a></li>
 							</ul>
 						</section>
 					</div>
@@ -528,42 +531,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="endof" class="tsd-anchor"></a>
-					<h3>End<wbr>Of</h3>
-					<div class="tsd-signature tsd-kind-icon">EndOf&lt;T, fmt&gt;<span class="tsd-signature-symbol">:</span> <a href="_tuple_length_.html#length" class="tsd-signature-type">Length</a><span class="tsd-signature-symbol">&lt;</span><a href="_tuple_tail_.html#tail" class="tsd-signature-type">Tail</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">fmt</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="absolute" class="tsd-anchor"></a>
+					<h3>Absolute</h3>
+					<div class="tsd-signature tsd-kind-icon">Absolute&lt;N, fmt&gt;<span class="tsd-signature-symbol">:</span> <a href="_boolean_format_.html#format" class="tsd-signature-type">Format</a><span class="tsd-signature-symbol">&lt;</span><a href="_number_absolute_.html#_absolute" class="tsd-signature-type">_Absolute</a><span class="tsd-signature-symbol">&lt;</span><a href="_iteration_iterationof_.html#iterationof" class="tsd-signature-type">IterationOf</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">N</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">fmt</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Get the last index of <strong><code>T</code></strong></p>
+							<p>Get the absolute value of a <strong><code>Number</code></strong></p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">T</span><span class="tsd-signature-symbol">: </span><a href="_tuple_tuple_.html#tuple" class="tsd-signature-type">Tuple</a>                    <div class="tsd-comment">
+							<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_number_number_.html#number" class="tsd-signature-type">Number</a>                    <div class="tsd-comment">
 								<div class="lead">
-									<p>to get from</p>
+									<p>to absolute</p>
 								</div>
 							</div>
 						</li>
 						<li>
 							<span class="name">fmt</span><span class="tsd-signature-symbol">: </span><a href="_boolean__internal_.html#formats" class="tsd-signature-type">Formats</a>                    <div class="tsd-comment">
 								<div class="lead">
-									<p>output (?=<code>&#39;n&#39;</code>)</p>
+									<p>output (?=<code>&#39;s&#39;</code>)</p>
 								</div>
 							</div>
 						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>string</code></strong> or <strong><code>number</code></strong></p>
+						<p><p><strong><code>string | number | boolean</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {N} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = N.Absolute&lt;<span class="hljs-string">'-20'</span>&gt;      <span class="hljs-comment">// '20'</span>
+
+<span class="hljs-keyword">type</span> test1 = N.Absolute&lt;<span class="hljs-string">'-20'</span>, <span class="hljs-string">'s'</span>&gt; <span class="hljs-comment">// '20'</span>
+<span class="hljs-keyword">type</span> test2 = N.Absolute&lt;<span class="hljs-string">'-20'</span>, <span class="hljs-string">'n'</span>&gt; <span class="hljs-comment">//  20</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/0bff755/src/Tuple/EndOf.ts#L14">Tuple/EndOf.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/943e241/src/Number/Absolute.ts#L28">Number/Absolute.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
+					<a name="_absolute" class="tsd-anchor"></a>
+					<h3>_<wbr>Absolute</h3>
+					<div class="tsd-signature tsd-kind-icon">_Absolute&lt;N&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">{ 0: N; 1: { 0: MinusPositive&lt;[&quot;-1&quot;, &quot;1&quot;, &quot;0&quot;, 0, &quot;0&quot;], N&gt;; 1: MinusNegative&lt;[&quot;-1&quot;, &quot;1&quot;, &quot;0&quot;, 0, &quot;0&quot;], N&gt;; }[{ &#x27;-&#x27;: 1; &#x27;+&#x27;: 0; &#x27;0&#x27;: 0; }[N[4]]]; }[{ &#x27;-&#x27;: 1; &#x27;+&#x27;: 0; &#x27;0&#x27;: 0; }[N[4]]]</span></div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">N</span><span class="tsd-signature-symbol">: </span><a href="_iteration_iteration_.html#iteration" class="tsd-signature-type">Iteration</a>                    </li>
+					</ul>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/943e241/src/Number/Absolute.ts#L9">Number/Absolute.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -582,7 +605,10 @@
 				<br>
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_tuple_endof_.html#endof" class="tsd-kind-icon">End<wbr>Of</a>
+						<a href="_number_absolute_.html#absolute" class="tsd-kind-icon">Absolute</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_number_absolute_.html#_absolute" class="tsd-kind-icon">_<wbr>Absolute</a>
 					</li>
 				</ul>
 			</nav>
