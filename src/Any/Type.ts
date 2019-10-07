@@ -6,8 +6,13 @@
  * ```ts
  * import {A} from 'ts-toolbelt'
  *
- * type eur = A.Type<number, 'eur'> // number & {__type: 'eur'}
- * type usd = A.Type<number, 'usd'> // number & {__type: 'eur'}
+ * type EUR = Type<number, 'eur'>
+ * type USD = Type<number, 'usd'>
+ *
+ * let eurWallet = 10 as EUR
+ * let usdWallet = 15 as USD
+ *
+ * eurWallet = usdWallet // error
  * ```
  */
 export type Type<A extends any, Id extends string> =
