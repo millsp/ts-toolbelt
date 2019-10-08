@@ -6,7 +6,7 @@
   <h3 align="center">ts-toolbelt</h3>
 
   <p align="center">
-    👷 All the types you need for TypeScript
+    <b>⚡ TypeScript, unleashed</b>
     <br>
     <a href="https://pirix-gh.github.io/ts-toolbelt/" target="_blank"><strong>Explore the docs »</strong></a>
     <br>
