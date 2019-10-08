@@ -6,7 +6,7 @@
   <h3 align="center">ts-toolbelt</h3>
 
   <p align="center">
-    <b>⚡ TypeScript, unleashed</b>
+    <b>👷 All the types you need for TypeScript</b>
     <br>
     <a href="https://pirix-gh.github.io/ts-toolbelt/" target="_blank"><strong>Explore the docs »</strong></a>
     <br>
@@ -76,9 +76,11 @@
 
 ## 📜 About
 
-**ts-toolbelt** completes TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there.
+**ts-toolbelt** brings **new capabilities** to TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there.
 
 It's goal is to improve type correctness while adding a whole new set of **features** to TypeScript. It uses the type system itself for TypeScript to compute more complex types. In other words, its API exposes types that trade **CPU & RAM** for higher type safety.
+
+**You'll find all the types you can ever need in a single, and well organized place.**
 
 #### Goals
 
