@@ -141,11 +141,11 @@ npm install ts-toolbelt --save
 #### Hello World
 
 ```ts
-import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
-// Wonder what these letters mean? Check the docs below
+import {Object} from 'ts-toolbelt'
+// Check the docs below for more
 
 // Merge two `object` together
-type merge = O.Merge<{name: string}, {age?: number}>
+type merge = Object.MergeUp<{name: string}, {age?: number}>
 ```
 
 ## [📖 Documentation ⤢](https://pirix-gh.github.io/ts-toolbelt/)
