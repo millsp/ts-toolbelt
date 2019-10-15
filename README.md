@@ -76,7 +76,7 @@
 
 ## 📜 About
 
-**ts-toolbelt** brings **new capabilities** to TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there.
+**ts-toolbelt** brings **new capabilities** to TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there. On a higher level, it abstracts the complexity & knowledge you would need to properly type your software - **you can stay focused**.
 
 It's goal is to improve type correctness while adding a whole new set of **features** to TypeScript. It uses the type system itself for TypeScript to compute more complex types. In other words, its API exposes types that trade **CPU & RAM** for higher type safety.
 
@@ -147,6 +147,8 @@ import {Object} from 'ts-toolbelt'
 // Merge two `object` together
 type merge = Object.MergeUp<{name: string}, {age?: number}>
 ```
+
+> **`TIP`** You can also grab the demo [over here](https://gist.github.com/pirix-gh/f7f7d18773f79bf0618fb5cd55bd48f8)
 
 ## [📖 Documentation ⤢](https://pirix-gh.github.io/ts-toolbelt/)
 
