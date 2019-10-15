@@ -117,7 +117,7 @@ Here's some of the most useful features:
 Lowest TypeScript [support](#-compatibility) starts at v3.5
 
 ```sh
-npm install typescript@^3.6.0 --save
+npm install typescript@^3.6.0 --save-dev
 ```
 
 For best results, add this to your `tsconfig.json`
