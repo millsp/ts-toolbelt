@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.14](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.13...v4.8.14) (2019-10-15)
+
+
+### Others
+
+* **o.mergeup:** deleted useless loops (mapped) ([0a80e07](https://github.com/pirix-gh/ts-toolbelt/commit/0a80e07))
+
 ### [4.8.13](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.12...v4.8.13) (2019-10-12)
 
 
