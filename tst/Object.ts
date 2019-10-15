@@ -479,6 +479,11 @@ type O_MERGEUP = {
     i: {
         a: string
     } | undefined
+    j: {
+        a: {
+            b?: {}
+        }
+    }
 }
 
 type O1_MERGEUP = {
@@ -502,6 +507,13 @@ type O1_MERGEUP = {
     i: {
         a: number
     } | undefined
+    j?: {
+        a: {
+            b?: {
+                c: 1
+            }
+        }
+    }
 }
 
 type MERGEUP_O_O1 = {
@@ -530,7 +542,12 @@ type MERGEUP_O_O1 = {
     } | undefined
     i: {
         a: string
-      } | undefined
+    } | undefined
+    j: {
+        a: {
+            b?: {}
+        }
+    }
 };
 
 type MERGEUP_O_O1_DEEP = {
@@ -544,9 +561,9 @@ type MERGEUP_O_O1_DEEP = {
     d : 'hello' | undefined
     e : number
     f?: {
-        a?: string | object;
+        a : string | object;
         b?: number | object;
-        c?: object
+        c : object
     },
     g?: {
         a?: string
@@ -556,8 +573,15 @@ type MERGEUP_O_O1_DEEP = {
         a: string | number
     } | undefined
     i: {
-        a?: string | number | undefined
+        a: string | number
     } | undefined
+    j: {
+        a: {
+            b?: {
+                c: 1
+            }
+        }
+    }
 };
 
 checks([

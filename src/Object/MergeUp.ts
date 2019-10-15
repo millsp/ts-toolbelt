@@ -8,6 +8,8 @@ import {NullableKeys} from './NullableKeys'
 import {Select} from '../Union/Select'
 import {NonNullable} from '../Union/NonNullable'
 import {Tuple} from '../Tuple/Tuple'
+import {And} from '../Boolean/And'
+import {Extends} from '../Any/Extends'
 
 type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
     K extends OOK                                       // if K is a `OptionalKey` of `O`
@@ -19,13 +21,13 @@ O extends object ? O1 extends object ? ({ // forces distribution
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OptionalKeys<O>>
 } & {}) : never : never
 
-type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>, NO1K extends Index = NullableKeys<O1>> =
+type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>> =
 O extends object ? O1 extends object ? ({
-    [K in keyof (O & O1)]:  Kind<NonNullable<At<O, K> & At<O1, K>>> extends 'object'
+    [K in keyof (O & O1)]:  And<Extends<Kind<NonNullable<At<O, K>>>, 'object'>, Extends<Kind<NonNullable<At<O1, K>>>, 'object'>> extends 1
                             ? MergeUpDeep< // the above makes sure it's only objects
-                            // then if parent is `Nullable`, make children optional
-                            K extends NOK  ? Optional<NonNullable<At<O, K>> & {}>  : At<O, K> & {},
-                            K extends NO1K ? Optional<NonNullable<At<O1, K>> & {}> : At<O1, K> & {}
+                            // then if parent is `Nullable`, makes children optional
+                            K extends NOK ? Optional<NonNullable<At<O, K>> & {}> : At<O, K> & {},
+                            At<O1, K> & {} // merge with whatever sits on at `O1[K]`
                             // and if not optional, we re-add eventual `undefined | null`
                             > | (K extends OOK ? never : Select<At<O, K>, undefined | null>)
                             : MergeUpProp<O, O1, K, OOK>
@@ -46,5 +48,5 @@ export type MergeUp<O extends object, O1 extends object, depth extends Depth = '
     'flat': MergeUpFlat<(O extends Tuple ? Optional<O, keyof any[]> : O), O1>
     'deep': MergeUpDeep<(O extends Tuple ? Optional<O, keyof any[]> : O), O1>
     // between parenthesis helps with edge-case of tuple/array merging
-    // because even if merge is successful, length stays incorrect
+    // because even if merge is successful, its length stays incorrect
 }[depth]

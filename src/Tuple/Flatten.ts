@@ -22,5 +22,5 @@ type _Flatten<T extends Tuple> = {
  */
 export type Flatten<T extends Tuple> =
     _Flatten<T> extends infer X
-    ? Cast<X, Tuple<any>> // todo this for all tuple casts
+    ? Cast<X, Tuple<any>>
     : never
