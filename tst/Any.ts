@@ -92,6 +92,35 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// IMPLEMENTS
+
+checks([
+    check<A.Implements<any, any>,              1,           Test.Pass>(),
+    check<A.Implements<[0, 1], any>,           1,           Test.Pass>(),
+    check<A.Implements<any, [0, 1]>,           0,           Test.Pass>(),
+    check<A.Implements<any, [0, 1]>,           0,           Test.Pass>(),
+    check<A.Implements<0, 0>,                  1,           Test.Pass>(),
+    check<A.Implements<0, 1>,                  0,           Test.Pass>(),
+    check<A.Implements<0, number>,             1,           Test.Pass>(),
+    check<A.Implements<any, string>,           0,           Test.Pass>(),
+    check<A.Implements<string, any>,           1,           Test.Pass>(),
+    check<A.Implements<{}, object>,            1,           Test.Pass>(),
+    check<A.Implements<{a: any}, object>,      1,           Test.Pass>(),
+    check<A.Implements<object, {a: any}>,      0,           Test.Pass>(),
+    check<A.Implements<any[], Array<any>>,     1,           Test.Pass>(),
+    check<A.Implements<'a' | 'b', 'b' | 'a'>,  1,           Test.Pass>(),
+    check<A.Implements<'b', 'b' | 'a'>,        1,           Test.Pass>(),
+    check<A.Implements<'b' | 'a', 'b'>,        0,           Test.Pass>(),
+    check<A.Implements<'a', 'a'>,              1,           Test.Pass>(),
+    check<A.Implements<never, never>,          0,           Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// Index
+
+// Cannot be tested
+
+// ---------------------------------------------------------------------------------------
 // IS
 
 checks([
