@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.17](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.16...v4.8.17) (2019-10-17)
+
+
+### Bug Fixes
+
+* **p:** formatting ([897ddd6](https://github.com/pirix-gh/ts-toolbelt/commit/897ddd6))
+
+
+### Others
+
+* **o.p:** simplify all path types to use similar code ([d5b05f0](https://github.com/pirix-gh/ts-toolbelt/commit/d5b05f0))
+
 ### [4.8.16](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.15...v4.8.16) (2019-10-15)
 
 
