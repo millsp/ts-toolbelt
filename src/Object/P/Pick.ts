@@ -9,19 +9,16 @@ import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 import {Key} from '../../Iteration/Key'
 
-type _Pick<O extends object, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
-  OPick<O, Path[Pos<I>]> extends infer Picked // Pick the first Path
-  ? {
-      [K in keyof Picked]:
-        Picked[K] extends infer Prop            // Needed for the below to be distributive
-        ? Prop extends object                   // > If it's an object
-          ? Key<I> extends LastIndex<Path, 's'> // & If it's the target
-            ? Prop                              // 1-1: Pick it
-            : _Pick<Prop, Path, Next<I>>        // 1-0: Continue diving
-          : Prop                                // 0: Pick property
-        : never
-    } & {}
-  : never
+type _Pick<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
+  O extends object                                // If it's an object
+  ? OPick<O, Path[Pos<I>]> extends (infer Picked) // Pick the current index (required for objects with optional keys)
+    ? Key<I> extends LastIndex<Path, 's'>         // If it's the last index
+      ? Picked                                    // Return the picked object
+      : {                                         // Otherwise, continue diving
+          [K in keyof Picked]: _Pick<Picked[K], Path, Next<I>>
+        } & {}
+    : never
+  : O                                             // Not an object - x
 
 /** Extract out of **`O`** the fields at **`Path`**
  * (⚠️ this type is expensive)

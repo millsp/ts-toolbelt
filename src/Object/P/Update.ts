@@ -1,26 +1,25 @@
-import {Compute} from '../../Any/Compute'
 import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
+import {Update as OUpdate} from '../Update'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 import {Key} from '../../Iteration/Key'
 
-type _Update<O extends object, Path extends Tuple<Index>, A, I extends Iteration = IterationOf<'0'>> = {
-  [K in keyof O]:
-    O[K] extends infer Prop                 // Needed for the below to be distributive
-    ? K extends Path[Pos<I>]                // If K is part of Path
-      ? Key<I> extends LastIndex<Path, 's'> // & if it's the target
-        ? A // update it                    // Update - target
-        : Prop extends object               // If prop is an object
-          ? _Update<Prop, Path, A, Next<I>> // Continue diving
-          : Prop // don't update            // Part of path, but not object - x
-      : Prop // don't update                // Not part of path - x
-    : never
-} & {}
+type _Update<O, Path extends Tuple<Index>, A, I extends Iteration = IterationOf<'0'>> =
+  O extends object                            // If it's an object
+  ? Key<I> extends LastIndex<Path, 's'>       // If it's the last index
+    ? OUpdate<O, Path[Pos<I>], A>             // Use standard Update
+    : {
+        [K in keyof O]:
+          K extends Path[Pos<I>]              // If K is part of Path
+            ? _Update<O[K], Path, A, Next<I>> // Continue diving
+            : O[K]                            // Not part of path - x
+      } & {}
+  : O                                         // Not an object - x
 
 /** Update in **`O`** the fields at **`Path`** with **`A`**
  * (⚠️ this type is expensive)
