@@ -11,7 +11,7 @@ import {Key} from '../../Iteration/Key'
 
 type _Pick<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                // If it's an object
-  ? OPick<O, Path[Pos<I>]> extends (infer Picked) // Pick the current index (required for objects with optional keys)
+  ? OPick<O, Path[Pos<I>]> extends infer Picked   // Pick the current index
     ? Key<I> extends LastIndex<Path, 's'>         // If it's the last index
       ? Picked                                    // Return the picked object
       : {                                         // Otherwise, continue diving

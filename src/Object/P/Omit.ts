@@ -7,19 +7,17 @@ import {Index} from '../../Any/Index'
 import {Omit as OOmit} from '../Omit'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
-import {Key} from '../../Iteration/Key'
 
 type _Omit<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
-  O extends object                       // If it's an object
-  ? Key<I> extends LastIndex<Path, 's'>  // If it's the last index
-    ? OOmit<O, Path[Pos<I>]>             // Use standard Omit
+  O extends object                                   // If it's an object
+  ? Pos<I> extends LastIndex<Path>                   // If it's the last index
+    ? OOmit<O, Path[Pos<I>]>                         // Use standard Omit
     : {
-        [K in keyof O]:
-          K extends Path[Pos<I>]         // If K is part of Path
-            ? _Omit<O[K], Path, Next<I>> // Continue diving
-            : O[K]                       // Not part of path - x
+        [K in keyof O]: K extends Path[Pos<I>]       // If K is part of Path
+                        ? _Omit<O[K], Path, Next<I>> // Continue diving
+                        : O[K]                       // Not part of path - x
       } & {}
-  : O                                    // Not an object - x
+  : O                                                // Not an object - x
 
 /** Remove out of **`O`** the fields at **`Path`**
  * (⚠️ this type is expensive)

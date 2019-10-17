@@ -7,20 +7,18 @@ import {Index} from '../../Any/Index'
 import {Readonly as OReadonly} from '../Readonly'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
-import {Key} from '../../Iteration/Key'
 import {Depth} from '../_Internal'
 
 type _Readonly<O, Path extends Tuple<Index>, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
-  O extends object                                  // If it's an object
-  ? Key<I> extends LastIndex<Path, 's'>             // If it's the last index
-    ? OReadonly<O, Path[Pos<I>], depth>             // Use standard ReadOnly
+  O extends object                                              // If it's an object
+  ? Pos<I> extends LastIndex<Path>                              // If it's the last index
+    ? OReadonly<O, Path[Pos<I>], depth>                         // Use standard ReadOnly
     : {
-        [K in keyof O]:
-          K extends Path[Pos<I>]                    // If K is part of Path
-            ? _Readonly<O[K], Path, depth, Next<I>> // Continue diving
-            : O[K]                                  // Not part of path - x
+        [K in keyof O]: K extends Path[Pos<I>]                  // If K is part of Path
+                        ? _Readonly<O[K], Path, depth, Next<I>> // Continue diving
+                        : O[K]                                  // Not part of path - x
       } & {}
-  : O                                               // Not an object - x
+  : O                                                           // Not an object - x
 
 /** Make some fields of **`O`** readonly at **`Path`** (deeply or not)
  * (⚠️ this type is expensive)
