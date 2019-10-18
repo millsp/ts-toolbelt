@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.18](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.17...v4.8.18) (2019-10-18)
+
+
+### Others
+
+* **p.pick:** use Pos ([74f593c](https://github.com/pirix-gh/ts-toolbelt/commit/74f593c))
+
 ### [4.8.17](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.16...v4.8.17) (2019-10-17)
 
 
