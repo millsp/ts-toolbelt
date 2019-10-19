@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.20](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.19...v4.8.20) (2019-10-19)
+
+
+### Others
+
+* add enterprise language ([f31674b](https://github.com/pirix-gh/ts-toolbelt/commit/f31674b))
+* add enterprise language ([#61](https://github.com/pirix-gh/ts-toolbelt/issues/61)) ([5728c5b](https://github.com/pirix-gh/ts-toolbelt/commit/5728c5b))
+* readme ([7d86f1a](https://github.com/pirix-gh/ts-toolbelt/commit/7d86f1a))
+
 ### [4.8.19](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.18...v4.8.19) (2019-10-18)
 
 
