@@ -68,10 +68,10 @@
 * [📖 Documentation](#-documentation-)
 * [🧠 Good to know](#-good-to-know-)
 * [🎁 Contributing](#-contributing)
-* [💼 For enterprise](#-for-enterprise)
-* [👏 Sponsoring issues](#-sponsoring-issues)
 * [💉 Running tests](#-running-tests)
 * [🔧 Compatibility](#-compatibility)
+* [💼 For enterprise](#-for-enterprise)
+* [👏 Sponsoring issues](#-sponsoring-issues)
 * [🔮 What's next](#-whats-next)
 * [🙏 Acknowledgements](#-acknowledgements)
 
@@ -249,24 +249,6 @@ Contributions are what make the open source community such an amazing place to l
 
 8. Open a pull request
 
-## 💼 For enterprise
-
-Available as part of the Tidelift Subscription.
-
-The maintainers of `ts-toolbelt` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
-
-## 👏 Sponsoring issues
-
-**Sponsored issues have higher priority over non-critical issues**.<br>
-
-You can either request a new feature or a bug fix then fund it.
-
-<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
-  <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
-</a>
-<br>
-<br>
-
 **The money will be transparently split with an issue's assignees.**
 
 ## 💉 Running tests
@@ -318,6 +300,24 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 | 4.x.x       | ^3.6.x     |
 
 Major version numbers will upgrade whenever TypeScript had breaking changes (it happened that TS had breaking changes on minor versions). Otherwise, the release versions will naturally follow the semantic versioning.
+
+## 💼 For enterprise
+
+Available as part of the Tidelift Subscription.
+
+The maintainers of `ts-toolbelt` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+
+## 👏 Sponsoring issues
+
+**Sponsored issues have higher priority over non-critical issues**.<br>
+
+You can either request a new feature or a bug fix then fund it.
+
+<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
+  <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
+</a>
+<br>
+<br>
 
 ## 🔮 What's next
 
