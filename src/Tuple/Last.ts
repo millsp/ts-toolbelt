@@ -10,4 +10,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Last<T extends Tuple> =
-    T[Length<Tail<T>, 'n'>]
+    T[Length<Tail<T>>]

@@ -24,11 +24,11 @@ type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = 
     1: _UnNestExact<T, Append<TN, T[Pos<I>]>, Next<I>>
     2: TN
 }[
-    Key<I> extends Length<T, 's'>   // its the end
+    Pos<I> extends Length<T>  // its the end
     ? 2
-    : T[Pos<I>] extends Tuple       // element is tuple -> concat
+    : T[Pos<I>] extends Tuple // element is tuple -> concat
       ? 0
-      : 1                           // element is other -> Append
+      : 1                     // element is other -> Append
 ]
 
 type _UnNest<T extends Tuple> =

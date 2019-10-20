@@ -14,7 +14,7 @@ type _Path<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>>
     0: _Path<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
 }[
-    Key<I> extends Length<Path, 's'>
+    Pos<I> extends Length<Path>
     ? 1 // Stops before going too deep (last key) & check if it has it
     : 0 // Continue iterating and go deeper within the object with `At`
 ]
