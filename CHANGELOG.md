@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.21](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.20...v4.8.21) (2019-10-20)
+
+
+### Others
+
+* removed number to string transform ([17a9dbc](https://github.com/pirix-gh/ts-toolbelt/commit/17a9dbc))
+
 ### [4.8.20](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.19...v4.8.20) (2019-10-19)
 
 
