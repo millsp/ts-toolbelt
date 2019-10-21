@@ -59,7 +59,6 @@
   </a>
 </p>
 
-
 ## Table of Contents
 
 * [📜 About](#-about)
@@ -266,13 +265,13 @@ npm test
 Want to test your own types? Let's get started:
 
 ```ts
-import {A, B, C, F, I, N, O, S, T, U, Test} from 'ts-toolbelt'
+import {Number, Test} from 'ts-toolbelt'
 
 const {checks, check} = Test
 
 checks([
-    check<N.Plus<'1', '30'>, '31', Test.Pass>(),
-    check<N.Plus<'5', '-3'>, '2',  Test.Pass>(),
+    check<Number.Plus<'1', '30'>, '31', Test.Pass>(),
+    check<Number.Plus<'5', '-3'>, '2',  Test.Pass>(),
 ])
 ```
 
@@ -294,10 +293,10 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 
 | ts-toolbelt | typescript |
 |-------------|------------|
-| 1.x.x       | ~3.5.x     |
+| 4.x.x       | ^3.6.x     |
 | 2.x.x       | ^3.5.x     |
 | 3.x.x       | ^3.5.x     |
-| 4.x.x       | ^3.6.x     |
+| 1.x.x       | ~3.5.x     |
 
 Major version numbers will upgrade whenever TypeScript had breaking changes (it happened that TS had breaking changes on minor versions). Otherwise, the release versions will naturally follow the semantic versioning.
 
@@ -317,7 +316,6 @@ You can either request a new feature or a bug fix then fund it.
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
 </a>
 <br>
-<br>
 
 ## 🔮 What's next
 
@@ -326,7 +324,6 @@ You can either request a new feature or a bug fix then fund it.
   # performance is checked manually with 
   npx tsc --noEmit --extendedDiagnostics
   ```
-* Improve with user feedback
 * Need to write the examples
 
 ## 🙏 Acknowledgements
