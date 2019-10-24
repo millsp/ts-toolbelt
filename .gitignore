@@ -1,6 +1,5 @@
 package-lock.json
 node_modules
-.history
 .vscode
 *.tgz
 docs
