@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.23](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.22...v4.8.23) (2019-10-24)
+
+
+### Bug Fixes
+
+* **t.unnest:** displayed computation ([55fcfec](https://github.com/pirix-gh/ts-toolbelt/commit/55fcfec))
+
 ### [4.8.22](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.21...v4.8.22) (2019-10-21)
 
 
