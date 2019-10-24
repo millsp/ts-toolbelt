@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Object/Ensure&quot; | ts-toolbelt</title>
+	<title>&quot;Any/Equals&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -72,10 +72,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_object_ensure_.html">&quot;Object/Ensure&quot;</a>
+					<a href="_any_equals_.html">&quot;Any/Equals&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;Object/Ensure&quot;</h1>
+			<h1>External module &quot;Any/Equals&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -88,7 +88,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_object_ensure_.html#ensure" class="tsd-kind-icon">Ensure</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_any_equals_.html#equals" class="tsd-kind-icon">Equals</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,36 +97,36 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="ensure" class="tsd-anchor"></a>
-					<h3>Ensure</h3>
-					<div class="tsd-signature tsd-kind-icon">Ensure&lt;O&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Ensure&lt;O&gt;</span></div>
+					<a name="equals" class="tsd-anchor"></a>
+					<h3>Equals</h3>
+					<div class="tsd-signature tsd-kind-icon">Equals&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Equals&lt;A1, A2&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Ensure that <strong><code>O</code></strong> is a proper <strong><code>object</code></strong>, even is it has been mixed up.
-								Sometimes, we can end up with mixed up <strong><code>objects</code></strong> that do not make sense
-								visually (or that could at least be simplified for the end user). This will
-							turn anything that is passed to it into a cleaned up <strong><code>object</code></strong>.</p>
+							<p>Check whether <strong><code>A1</code></strong> is equal to <strong><code>A2</code></strong> or not.</p>
 						</div>
-						<p>If <strong><code>O</code></strong> has been mixed up with a <strong>Tuple</strong>, then only its own keys will be
-							kept. However, if it&#39;s only an <strong><code>Array</code></strong> or a mix of it, we restore it. And
-						<strong><code>object</code></strong>s that were mixed with <strong><code>Array</code></strong>s cannot be untangled.</p>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-						<span class="name">O</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>                    </li>
+						<span class="name">A1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
+						<li>
+						<span class="name">A2</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>object</code></strong></p>
+						<p><p><strong><code>Boolean</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {A} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = A.Equals&lt;<span class="hljs-number">42</span> | <span class="hljs-number">0</span>, <span class="hljs-number">42</span> | <span class="hljs-number">0</span>&gt;                    <span class="hljs-comment">// true</span>
+<span class="hljs-keyword">type</span> test1 = A.Equals&lt;{a: <span class="hljs-built_in">string</span>}, {b: <span class="hljs-built_in">string</span>}&gt;          <span class="hljs-comment">// false</span>
+<span class="hljs-keyword">type</span> test3 = A.Equals&lt;{a: <span class="hljs-built_in">string</span>}, {readonly a: <span class="hljs-built_in">string</span>}&gt; <span class="hljs-comment">// false</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/0de1048/src/Object/Ensure.ts#L20">Object/Ensure.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/0182a00/src/Any/Equals.ts#L16">Any/Equals.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,7 +136,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_object_ensure_.html#ensure" class="tsd-kind-icon">Ensure</a>
+						<a href="_any_equals_.html#equals" class="tsd-kind-icon">Equals</a>
 					</li>
 				</ul>
 				<br>
@@ -150,7 +150,7 @@
 								<a href="_any_cast_.html">"<wbr>Any/<wbr>Cast"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_any_compute_.html">"<wbr>Any/<wbr>Compute"</a>
-								</li>                            <li class=" tsd-kind-external-module">
+								</li>                            <li class="current tsd-kind-external-module">
 								<a href="_any_equals_.html">"<wbr>Any/<wbr>Equals"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_any_extends_.html">"<wbr>Any/<wbr>Extends"</a>
@@ -283,6 +283,8 @@
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_object_at_.html">"<wbr>Object/<wbr>At"</a>
 								</li>                            <li class=" tsd-kind-external-module">
+								<a href="_object_clean_.html">"<wbr>Object/<wbr>Clean"</a>
+								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_object_compulsory_.html">"<wbr>Object/<wbr>Compulsory"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_object_compulsorykeys_.html">"<wbr>Object/<wbr>Compulsory<wbr>Keys"</a>
@@ -290,8 +292,6 @@
 								<a href="_object_diff_.html">"<wbr>Object/<wbr>Diff"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_object_either_.html">"<wbr>Object/<wbr>Either"</a>
-								</li>                            <li class="current tsd-kind-external-module">
-								<a href="_object_ensure_.html">"<wbr>Object/<wbr>Ensure"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_object_exclude_.html">"<wbr>Object/<wbr>Exclude"</a>
 								</li>                            <li class=" tsd-kind-external-module">
@@ -407,6 +407,8 @@
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_tuple_at_.html">"<wbr>Tuple/<wbr>At"</a>
 								</li>                            <li class=" tsd-kind-external-module">
+								<a href="_tuple_clean_.html">"<wbr>Tuple/<wbr>Clean"</a>
+								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_tuple_compulsory_.html">"<wbr>Tuple/<wbr>Compulsory"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_tuple_compulsorykeys_.html">"<wbr>Tuple/<wbr>Compulsory<wbr>Keys"</a>
@@ -418,8 +420,6 @@
 								<a href="_tuple_drop_.html">"<wbr>Tuple/<wbr>Drop"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_tuple_either_.html">"<wbr>Tuple/<wbr>Either"</a>
-								</li>                            <li class=" tsd-kind-external-module">
-								<a href="_tuple_ensure_.html">"<wbr>Tuple/<wbr>Ensure"</a>
 								</li>                            <li class=" tsd-kind-external-module">
 								<a href="_tuple_exclude_.html">"<wbr>Tuple/<wbr>Exclude"</a>
 								</li>                            <li class=" tsd-kind-external-module">
