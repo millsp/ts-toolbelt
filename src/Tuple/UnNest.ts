@@ -8,7 +8,6 @@ import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
 import {Tuple} from './Tuple'
 import {UnionOf} from './UnionOf'
-import {Key} from '../Iteration/Key'
 
 type _UnNestCheap<T extends Tuple> =
    (UnionOf<T> extends infer UT     // make `T` a union
@@ -17,7 +16,7 @@ type _UnNestCheap<T extends Tuple> =
         ? UnionOf<UT>               // make it a union
         : UT                        // or leave as it is
         : never
-    : never)[]                      // make result array
+    : never)[] & {}                 // make result array
 
 type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _UnNestExact<T, Concat<TN, T[Pos<I>]>, Next<I>>
