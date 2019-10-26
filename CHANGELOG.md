@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.28](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.27...v4.8.28) (2019-10-26)
+
+
+### Others
+
+* **p/t.pathvalid:** fix return types ([019db9a](https://github.com/pirix-gh/ts-toolbelt/commit/019db9a))
+
 ### [4.8.27](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.24...v4.8.27) (2019-10-26)
 
 
