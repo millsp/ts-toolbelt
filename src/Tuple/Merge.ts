@@ -9,13 +9,11 @@ import {Kind} from '../Any/Kind'
 import {Tuple} from './Tuple'
 
 type MergeFlat<T extends Tuple, T1 extends Tuple> =
-T extends unknown ? T1 extends unknown ? (
     number extends Length<T | T1>
     // if we can't know the size, then get closest type
     ? (T | T1) extends (infer T)[] ? T[] : never
     // if it's a tuple then we proceed with the merging
     : TupleOf<OMerge<ObjectOf<T>, Omit<ObjectOf<T1>, keyof T>>>
-) : never : never
 
 type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
     Kind<(O | O1)> extends 'array'
