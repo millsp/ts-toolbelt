@@ -1,6 +1,5 @@
 import {PathValid as OPathValid} from '../Object/PathValid'
 import {Index} from '../Any/Index'
-import {ObjectOf} from './ObjectOf'
 import {Tuple} from './Tuple'
 
 /** Replaces invalid parts of a path with `never`
@@ -25,9 +24,9 @@ import {Tuple} from './Tuple'
  *     return valueAt as any
  * }
  *
- * const test0 = getAt([[[1]]] as const, ['0', '0'] as const) // [1]
- * const test1 = getAt([[[1]]] as const, ['1'] as const)      // error, never
+ * const test0 = getAt([[[1]]] as const, [0, 0] as const) // [1]
+ * const test1 = getAt([[[1]]] as const, [1] as const)    // error
  * ```
  */
 export type PathValid<T extends Tuple, Path extends Tuple<Index>> =
-    OPathValid<ObjectOf<T>, Path>
+    OPathValid<T, Path>

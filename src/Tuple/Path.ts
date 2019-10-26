@@ -12,4 +12,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Path<T extends Tuple, Path extends Tuple<Index>> =
-    OPath<ObjectOf<T>, Path>
+    OPath<T, Path>
