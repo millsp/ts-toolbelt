@@ -25,7 +25,7 @@ type _PathValid<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<
 /** Replaces invalid parts of a path with `never`
  * @param O to be inspected
  * @param Path to be validated
- * @returns **`string[]`**
+ * @returns **`Index[]`**
  * @example
  * ```ts
  * import {A, T, O} from 'ts-toolbelt'

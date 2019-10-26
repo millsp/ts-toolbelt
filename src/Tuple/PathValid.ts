@@ -6,7 +6,7 @@ import {Tuple} from './Tuple'
 /** Replaces invalid parts of a path with `never`
  * @param T to be inspected
  * @param Path to be validated
- * @returns **`string[]`**
+ * @returns **`Index[]`**
  * @example
  * ```ts
  * import {A, T, O} from 'ts-toolbelt'
