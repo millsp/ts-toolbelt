@@ -17,12 +17,12 @@ type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK exten
     : [At<O, K>] extends [never] ? At<O1, K> : At<O, K> // or patch `O[K]` with `O1[K]`
 
 type MergeUpFlat<O extends object, O1 extends object> =
-O extends object ? O1 extends object ? ({ // forces distribution
+O extends unknown ? O1 extends unknown ? ({ // forces distribution
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OptionalKeys<O>>
 } & {}) : never : never
 
 type MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>> =
-O extends object ? O1 extends object ? ({
+O extends unknown ? O1 extends unknown ? ({
     [K in keyof (O & O1)]:  And<Extends<Kind<NonNullable<At<O, K>>>, 'object'>, Extends<Kind<NonNullable<At<O1, K>>>, 'object'>> extends 1
                             ? MergeUpDeep< // the above makes sure it's only objects
                             // then if parent is `Nullable`, makes children optional
@@ -36,6 +36,7 @@ O extends object ? O1 extends object ? ({
 /** Accurately complete the fields of **`O`** with the ones of **`O1`**.
  * This is a version of `Merge` that handles optional fields. It understands
  * that merged optional fields are no longer optional (have been completed).
+ * It is able to deal with the merging of **`Union`s** of **`object`**s.
  * @param O to complete
  * @param O1 to copy from
  * @param depth to do it deeply (?=`'flat'`)
