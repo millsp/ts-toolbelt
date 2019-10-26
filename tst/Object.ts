@@ -781,6 +781,31 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// PATHUP
+
+type O_PATHUP = {
+    b: {
+        c: {
+            d: 'bcd'
+        }
+        b: 'bb'
+    }
+} | {
+    a: {
+        b: boolean | {
+            c: 'abc'
+        }
+    }
+};
+
+checks([
+    check<O.PathUp<O_PATHUP, ['b', 'c', 'x']>,      never,                          Test.Pass>(),
+    check<O.PathUp<O_PATHUP, ['b', 'c', 'd']>,      'bcd',                          Test.Pass>(),
+    check<O.PathUp<O_PATHUP, ['a', 'b', 'c']>,      'abc',                          Test.Pass>(),
+    check<O.PathUp<O_PATHUP, ['a' | 'b', 'b']>,     boolean | 'bb' | {c: 'abc'},    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // PATHVALID
 
 type O_PATHVALID = {

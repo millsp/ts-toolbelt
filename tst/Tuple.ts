@@ -441,6 +441,11 @@ checks([
 // No test needed (same as O.Paths)
 
 // ---------------------------------------------------------------------------------------
+// PATHUP
+
+// No test needed (same as O.PathUp)
+
+// ---------------------------------------------------------------------------------------
 // PATHVALID
 
 // No test needed (same as O.PathValid)

@@ -10,8 +10,8 @@ import {Index} from '../Any/Index'
 import {Tuple} from '../Tuple/Tuple'
 
 type _PathUp<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
-    0: At<O & {}, Path[Pos<I>]> extends infer OK
-       ? OK extends unknown
+    0: O extends unknown
+       ? At<O & {}, Path[Pos<I>]> extends infer OK
          ? _PathUp<UNonNullable<OK>, Path, Next<I>>
          : never
        : never
