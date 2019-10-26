@@ -8,7 +8,6 @@ import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Index} from '../Any/Index'
 import {Tuple} from '../Tuple/Tuple'
-import {Key} from '../Iteration/Key'
 
 type _Path<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
     0: _Path<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
@@ -20,6 +19,7 @@ type _Path<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>>
 ]
 
 /** Get in **`O`** the type of nested properties
+ * For more advanced capabilities, see **`PathUp`**
  * @param O to be inspected
  * @param Path to be followed
  * @returns **`any`**
