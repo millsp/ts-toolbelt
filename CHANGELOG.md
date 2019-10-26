@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.9.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.29...v4.9.0) (2019-10-26)
+
+
+### Bug Fixes
+
+* **merge:** stop distribution ([fc6b6b6](https://github.com/pirix-gh/ts-toolbelt/commit/fc6b6b6))
+* **mergeup:** show distribution with unknown ([b734b7d](https://github.com/pirix-gh/ts-toolbelt/commit/b734b7d))
+
+
+### Features
+
+* **pathup:** better path ([5f7918a](https://github.com/pirix-gh/ts-toolbelt/commit/5f7918a))
+
+
+### Others
+
+* **o.assingup:** cleanup ([c921298](https://github.com/pirix-gh/ts-toolbelt/commit/c921298))
+* **path:** cleanup ([66b8173](https://github.com/pirix-gh/ts-toolbelt/commit/66b8173))
+* **pathup:** added missing tests ([a6917c0](https://github.com/pirix-gh/ts-toolbelt/commit/a6917c0))
+
 ### [4.8.29](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.28...v4.8.29) (2019-10-26)
 
 
