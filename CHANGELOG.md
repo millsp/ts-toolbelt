@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.8.29](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.28...v4.8.29) (2019-10-26)
+
+
+### Bug Fixes
+
+* **t.pathvalid/path:** `objectof` breaks numeric keys and is not needed ([3a34473](https://github.com/pirix-gh/ts-toolbelt/commit/3a34473))
+
 ### [4.8.28](https://github.com/pirix-gh/ts-toolbelt/compare/v4.8.27...v4.8.28) (2019-10-26)
 
 
