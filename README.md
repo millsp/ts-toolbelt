@@ -248,8 +248,6 @@ Contributions are what make the open source community such an amazing place to l
 
 8. Open a pull request
 
-**The money will be transparently split with an issue's assignees.**
-
 ## 💉 Running tests
 
 #### For this project
@@ -308,9 +306,11 @@ The maintainers of `ts-toolbelt` and thousands of other packages are working wit
 
 ## 👏 Sponsoring issues
 
-**Sponsored issues have higher priority over non-critical issues**.<br>
+**Sponsored issues have higher priority over non-critical issues**.
 
-You can either request a new feature or a bug fix then fund it.
+You can either request a new feature or a bug fix, and then fund it.
+
+**The money will be transparently split with an issue's assignees.**
 
 <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
