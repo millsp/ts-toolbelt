@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.9.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.1...v4.9.3) (2019-10-27)
+
+
+### Bug Fixes
+
+* using AMD types ([76e82a5](https://github.com/pirix-gh/ts-toolbelt/commit/76e82a5))
+
+
+### Others
+
+* **release:** 4.9.2 ([384a1d7](https://github.com/pirix-gh/ts-toolbelt/commit/384a1d7))
+
 ### [4.9.2](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.1...v4.9.2) (2019-10-27)
 
 
