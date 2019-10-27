@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "4.9.4",
+  "version": "4.9.5",
   "description": "👷 All the types you need for TypeScript",
   "keywords": [
     "safe",
@@ -22,7 +22,8 @@
   "files": [
     "out"
   ],
-  "main": "out/index.ts",
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
   "scripts": {
     "build:clean": "bash scr/build/clean.sh",
     "build:code": "bash scr/build/code.sh",
