@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.9.8](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.7...v4.9.8) (2019-10-27)
+
+
+### Bug Fixes
+
+* missing types for node ([2786ca6](https://github.com/pirix-gh/ts-toolbelt/commit/2786ca6))
+
 ### [4.9.7](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.6...v4.9.7) (2019-10-27)
 
 
