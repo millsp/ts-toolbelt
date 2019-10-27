@@ -179,7 +179,7 @@ There are many ways to import the types into your project:
 
 * Portable
   ```ts
-  import tb from 'ts-toolbelt'
+  import * as tb from 'ts-toolbelt'
   ```
 
 #### Internal Docs

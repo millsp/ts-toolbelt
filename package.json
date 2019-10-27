@@ -22,8 +22,7 @@
   "files": [
     "out"
   ],
-  "main": "out/index.js",
-  "types": "out/types/src/index.d.ts",
+  "main": "out/index.ts",
   "scripts": {
     "build:clean": "bash scr/build/clean.sh",
     "build:code": "bash scr/build/code.sh",
