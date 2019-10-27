@@ -11,4 +11,5 @@ echo "
 import './bundle'
 
 export {Test, A, Any, B, Boolean, C, Class, F, Function, I, Iteration, N, Number, O, Object, S, String, T, Tuple, U, Union} from 'index'
-" > out/index.ts
+" > out/index.d.ts && touch out/index.js
+
