@@ -37,7 +37,7 @@ const replaceInFile = (
     const streamFD = fs.createReadStream(filePath)
 
     rl.createInterface(streamFD).
-    on('line', (line) => {
+    on('line', (line: string) => {
         if (line.match(match)) {
             line = updateMatchTo(line, match, to)
 
@@ -84,7 +84,7 @@ const replaceInDir = (
     replc  : string,
     include: string[],
     exclude: string[],
-) => fs.readdir(path, 'utf8', (error, docs) => {
+) => fs.readdir(path, 'utf8', (error: Error, docs: string[]) => {
     if (error)
         console.error(error)
     else {
