@@ -80,9 +80,7 @@
       //    "traceResolution": false, /* Enable tracing of the name resolution process. */
       //    "typeRoots": [], /* List of folders to include type definitions from. */
       //    "tsBuildInfoFile": ".tsbuildinfo" /* Specify what file to store incremental build information in. */
-      "types": [
-        "node"
-      ], /* Type declaration files to be included in compilation. */
+      "types": [], /* Type declaration files to be included in compilation. */
       "watch": false /* Watch input files. */
 
       /* Deprecated Options */
