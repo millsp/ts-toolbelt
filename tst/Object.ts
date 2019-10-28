@@ -183,7 +183,6 @@ checks([
     check<O.Ensure<O.MergeUp<[1, 2], {a: 3}>>,  {0: 1, 1: 2, a: 3},     Test.Pass>(),
     check<O.Ensure<O.MergeUp<number[], []>>,    number[],               Test.Pass>(),
     check<O.Ensure<O.MergeUp<string[], [1]>>,   Array<1 | string>,      Test.Pass>(),
-    // check<O.Ensure<O.MergeUp<[1], string[]>>,   Array<1 | string>,      Test.Pass>(), // todo broken by OptionalKeys
 ])
 
 // ---------------------------------------------------------------------------------------
