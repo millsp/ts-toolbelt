@@ -1,6 +1,5 @@
-import {Keys} from './Keys'
 import {Equals} from '../Any/Equals'
-import {True} from '../Boolean/Boolean'
+import {Index} from '../Any/Index'
 
 // Credit https://stackoverflow.com/a/52473108/3570903
 
@@ -16,4 +15,5 @@ export type ReadonlyKeys<O extends object> = {
         1: never
         0: K
     }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}>]
-}[Keys<O>]
+    // for each key, pick only and compare to see if it is
+}[keyof O] & Index

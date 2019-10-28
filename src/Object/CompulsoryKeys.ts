@@ -1,4 +1,3 @@
-import {FilterKeys} from './FilterKeys'
 import {Index} from '../Any/Index'
 
 /** Get the keys of **`O`** that are compulsory
@@ -8,7 +7,8 @@ import {Index} from '../Any/Index'
  * ```ts
  * ```
  */
-export type CompulsoryKeys<O extends object> =
-    FilterKeys<O, undefined, '<-extends'> &
-    FilterKeys<O, null, '<-extends'> &
-    Index
+export type CompulsoryKeys<O extends object> = {
+    [K in keyof O]: O[K] & (undefined | null) extends never
+                    ? K
+                    : never
+}[keyof O] & Index

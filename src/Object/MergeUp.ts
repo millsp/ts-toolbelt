@@ -16,7 +16,7 @@ type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK exten
     ? NonNullable<At<O, K>> | At<O1, K>                 // complete `O[K]` with `O1[K]`
     : [At<O, K>] extends [never] ? At<O1, K> : At<O, K> // or patch `O[K]` with `O1[K]`
 
-type MergeUpFlat<O extends object, O1 extends object> =
+export type MergeUpFlat<O extends object, O1 extends object> =
 O extends unknown ? O1 extends unknown ? ({ // forces distribution
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OptionalKeys<O>>
 } & {}) : never : never

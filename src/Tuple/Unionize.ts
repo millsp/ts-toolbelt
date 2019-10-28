@@ -2,7 +2,6 @@ import {Index} from '../Any/Index'
 import {Unionize as OUnionize} from '../Object/Unionize'
 import {Cast} from '../Any/Cast'
 import {Tuple} from './Tuple'
-import {Keys} from './Keys'
 
 /** Make the fields of **`T`** union the ones of **`T1`**
  * @param T to union from

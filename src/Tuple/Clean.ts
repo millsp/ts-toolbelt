@@ -20,6 +20,3 @@ export type Clean<T extends object> =
       ? At<T, number>[]                                                               //    restore it
       : T                                                                             //    do nothing
     : Omit<T & [], keyof any[]>                                                       // ensure is object
-
-
-type t = Clean<string[] & [1]>

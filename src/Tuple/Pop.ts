@@ -1,10 +1,8 @@
 import {Omit} from './Omit'
-import {Key} from '../Iteration/Key'
-import {Length} from './Length'
-import {IterationOf} from '../Iteration/IterationOf'
-import {Prev} from '../Iteration/Prev'
-import {Max} from '../Number/Max'
 import {Tuple} from './Tuple'
+import {LastIndex} from './LastIndex'
+import {Required} from '../Object/Required'
+import {Cast} from '../Any/Cast'
 
 export type Pop<T extends Tuple> =
-    Omit<T, Key<Prev<IterationOf<Max<Length<T, 's'>>>>>>
+    Omit<T, LastIndex<Cast<Required<T>, Tuple>, 's'>>

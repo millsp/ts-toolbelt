@@ -1,5 +1,5 @@
-import {Keys} from './Keys'
-import {Pick} from './Pick'
+import {NonNullableKeys} from './NonNullableKeys'
+import {NonNullable} from './NonNullable'
 
 /** Get the keys of **`O`** that are required
  * @param O
@@ -8,6 +8,6 @@ import {Pick} from './Pick'
  * ```ts
  * ```
  */
-export type RequiredKeys<O extends object> = {
-    [K in keyof O]-?: {} extends Pick<O, K> ? never : K
-}[Keys<O>]
+export type RequiredKeys<O extends object> =
+    NonNullableKeys<NonNullable<O>>
+    // required keys never are nullable

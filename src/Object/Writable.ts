@@ -2,7 +2,6 @@ import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Merge} from './Merge'
 import {Index} from '../Any/Index'
-import {Keys} from './Keys'
 import {Implements} from '../Any/Implements'
 
 type WritableFlat<O> = {

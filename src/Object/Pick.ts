@@ -13,6 +13,4 @@ type _Pick<O extends object, K extends keyof O> = {
  * ```
  */
 export type Pick<O extends object, K extends Index> =
-    O extends unknown
-    ? _Pick<O, K & keyof O>
-    : never
+    _Pick<O, K & keyof O>

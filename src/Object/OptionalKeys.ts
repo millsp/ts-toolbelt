@@ -1,5 +1,5 @@
-import {Keys} from './Keys'
-import {Pick} from './Pick'
+import {NonNullable} from './NonNullable'
+import {NullableKeys} from './NullableKeys'
 
 /** Get the keys of **`O`** that are optional
  * @param O
@@ -8,6 +8,6 @@ import {Pick} from './Pick'
  * ```ts
  * ```
  */
-export type OptionalKeys<O extends object> = {
-    [K in Keys<O>]: {} extends Pick<O, K> ? K : never
-}[Keys<O>]
+export type OptionalKeys<O extends object> =
+    NullableKeys<NonNullable<O>>
+    // optional keys always are nullable

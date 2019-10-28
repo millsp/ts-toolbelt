@@ -1,5 +1,4 @@
-import {FilterKeys} from './FilterKeys'
-import {Filter} from './Filter'
+import {Index} from '../Any/Index'
 
 /** Get the keys of **`O`** that are non-nullable
  * @param O
@@ -8,6 +7,8 @@ import {Filter} from './Filter'
  * ```ts
  * ```
  */
-export type NonNullableKeys<O extends object> =
-    FilterKeys<O, undefined, '<-extends'>
-    & FilterKeys<O, null, '<-extends'>
+export type NonNullableKeys<O extends object> = {
+    [K in keyof O]: O[K] & (undefined | null) extends never
+                    ? K
+                    : never
+}[keyof O] & Index

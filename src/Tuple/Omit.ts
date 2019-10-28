@@ -13,4 +13,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Omit<T extends Tuple, K extends Index> =
-    TupleOf<OOmit<ObjectOf<T>, K>>
+    TupleOf<OOmit<T, K | keyof any[]>>

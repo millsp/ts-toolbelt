@@ -1,6 +1,6 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
-import {Keys} from './Keys'
+import {Index} from '../Any/_api'
 
 /** Filter out the keys of **`O`** which fields match **`M`**
  * @param O to remove from
@@ -12,9 +12,9 @@ import {Keys} from './Keys'
  * ```
  */
 export type FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
-    [K in Keys<O>]: {
+    [K in keyof O]: {
         1: never
         0: K
     }[Is<O[K], M, match>]
-}[Keys<O>]
+}[keyof O] & Index
 

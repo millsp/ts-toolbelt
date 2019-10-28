@@ -12,4 +12,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Readonly<T extends Tuple, depth extends Depth = 'flat'> =
-    Cast<OReadonly<T, keyof T, depth>, ReadonlyArray<any>>
+    Cast<OReadonly<T, keyof T, depth>, Tuple>

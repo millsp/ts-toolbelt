@@ -16,5 +16,4 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type Diff<T extends Tuple, T1 extends Tuple, match extends Match = 'default'> =
-    TupleOf<(ODiff<ObjectOf<T>, ObjectOf<T1>, match>) extends infer X ? X & {} : never>
-    // !\  allowed bypassing excessive instantiation (because of too many nested types)
+    TupleOf<ODiff<ObjectOf<T>, ObjectOf<T1>, match>>

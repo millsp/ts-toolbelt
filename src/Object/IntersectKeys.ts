@@ -1,15 +1,15 @@
-import {Keys} from './Keys'
 import {Intersect} from '../Union/Intersect'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
+import {Index} from '../Any/Index'
 
 type IntersectMatch<O extends object, O1 extends object, match extends Match> = {
-    [K in Keys<O>]: {
+    [K in keyof O]: {
         1: K
         0: never
     }[Is<O[K], At<O1, K>, match>]
-}[Keys<O>]
+}[keyof O] & Index
 
 /** Get the intersecting keys of **`O`** & **`O1`**
  * (If `match = 'default'`, no type checks are done)
