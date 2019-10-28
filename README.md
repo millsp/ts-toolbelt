@@ -333,6 +333,7 @@ Many, many thanks to all the [contributors](https://github.com/pirix-gh/ts-toolb
 * [André Staltz](https://github.com/staltz)
 * [Joe Calzaretta](https://github.com/jcalz)
 * [Matt McCutchen](https://github.com/mattmccutchen)
+* [Monroe Ekilah](https://github.com/ekilah)
 * [Regev Brody](https://github.com/regevbr)
 * [Titian C.-Dragomir](https://github.com/dragomirtitian)
 
