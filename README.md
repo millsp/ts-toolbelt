@@ -80,17 +80,17 @@
 
 Its goal is to improve type correctness while adding a whole new set of **features** to TypeScript. It uses the type system itself for TypeScript to compute more complex types. In other words, its API exposes types that trade **CPU & RAM** for higher type safety.
 
-You'll find all the types you can ever need in this single and **well organized** place.
+You'll find all the types you can ever need in this single and **well organized** package.
 
 #### Goals
 
 * Answer the question to **"How do I do this in TypeScript?"**
-* Software that's more type-safe, **flexible** & more **robust**
-* Bring a whole new set of extra **features** to TypeScript
-* Types can be **combined** together to create new ones!
-* This package aims to be the home of all **utility types**
+* Provide a lodash-like **programmatic API** for the type system
+* Software that is more **type-safe**, **flexible**, and **robust**
 * Computed types are always **readable**, like if you typed it
 * High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +50MB)
+* Bring a whole new set of extra **features** to TypeScript
+* This package aims to be the home of all **utility types**
 
 ## 🍩 Features
 
@@ -102,7 +102,7 @@ Here's some of the most useful features:
 * [Change a type at any depth!](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html#update)
 * [Concat two tuples together](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html#concat)
 * [Get the last item of a tuple](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_last_.html#last)
-* ... and so much more
+* ... **and so much more**
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/demo.gif" id="demo" width="750px">
@@ -179,7 +179,7 @@ There are many ways to import the types into your project:
 
 * Portable
   ```ts
-  import * as tb from 'ts-toolbelt'
+  import tb from 'ts-toolbelt'
   ```
 
 #### Internal Docs
