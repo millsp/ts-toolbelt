@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/pirix-gh/ts-toolbelt">
-    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300">
+    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300" alt="Logo">
   </a>
 
   <h3 align="center">ts-toolbelt</h3>
@@ -8,16 +8,18 @@
   <p align="center">
     <b>🔩 TypeScript SuperPowers</b>
     <br>
-    <a href="https://pirix-gh.github.io/ts-toolbelt/" target="_blank"><strong>Explore the docs »</strong></a>
+    <a href="https://pirix-gh.github.io/ts-toolbelt/" target="_blank">
+      <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/docs.png" height="25px" alt="Documentation">
+    </a>
     <br>
     <br>
     <a href="#demo">🎮 View Demo</a>
     ·
-    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---bug-report.md">🐞 Report Bug</a>
+    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---bug-report.md" alt="Bug Report">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md">🍩 Request Feature</a>
+    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---feature-request.md" alt="Request Feature">🍩 Request Feature</a>
     ·
-    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md">🤔  Ask Questions</a>
+    <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md" alt="Ask Questions">🤔 Ask Questions</a>
   </p>
 </p>
 
@@ -52,13 +54,13 @@
 
 <p align="center">
   <a href="https://patreon.com/pirix" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.png" height="25px">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.png" height="25px" alt="Support Me">
   </a>
   <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.png" height="25px">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.png" height="25px" alt="Join Tidelift">
   </a>
   <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px" alt="Fund an Issue">
   </a>
 </p>
 
