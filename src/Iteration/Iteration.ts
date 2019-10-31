@@ -7,7 +7,7 @@ import {IterationMap} from './IterationOf'
  * * `[3]`: Current **`number`**
  * * `[4]`: Sign (- / 0 / +)
  */
-export type Iteration =[
+export type Iteration = [
     keyof IterationMap,
     keyof IterationMap,
     string,

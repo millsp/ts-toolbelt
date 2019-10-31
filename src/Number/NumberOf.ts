@@ -62,5 +62,5 @@ export type NumberOf<N extends number> =
     N extends keyof NumberToIterationMap
     ? Key<NumberToIterationMap[N]>
     : N extends Numbers['number']['-'] // expensive with negative numbers
-      ? Key<IterationMap[SelectKeys<IterationMap, [any, any, any, N, any]>]>
-    : string // out of range
+      ? Key<IterationMap[SelectKeys<IterationMap, [any, any, any, N, any]>] & keyof IterationMap>
+      : string // out of range

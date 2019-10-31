@@ -199,9 +199,9 @@ Access older docs at https://pirix-gh.github.io/ts-toolbelt/version/
 
 ## [🧠 Good to Know ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc+label%3Awiki)
 
-In this wiki, you'll find some extra resources for your learning & understanding.
+In this wiki, you will find some extra resources for your learning, and understanding.
 
-Are you missing something? Participate to the open-wiki by [posting your questions](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
+**Are you missing something?** Participate to the open-wiki by [posting your questions](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
 
 ## [🗞️ Announcements ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=is%3Aissue+is%3Aopen+label%3Aannouncement+sort%3Acreated-desc)
 
@@ -295,7 +295,7 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 
 | ts-toolbelt | typescript |
 |-------------|------------|
-| 4.x.x       | ^3.6.x     |
+| 4.x.x       | ^3.5.x     |
 | 2.x.x       | ^3.5.x     |
 | 3.x.x       | ^3.5.x     |
 | 1.x.x       | ~3.5.x     |
