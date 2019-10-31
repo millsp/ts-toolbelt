@@ -69,7 +69,7 @@
 * [🏁 Getting started](#-getting-started)
 * [📖 Documentation](#-documentation-)
 * [🧠 Good to know](#-good-to-know-)
-* [📣 Announcements](#️-announcements-)
+* [📣 Announcements](#-announcements-)
 * [🎁 Contributing](#-contributing)
 * [💉 Running tests](#-running-tests)
 * [🔧 Compatibility](#-compatibility)
