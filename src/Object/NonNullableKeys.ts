@@ -8,7 +8,7 @@ import {Index} from '../Any/Index'
  * ```
  */
 export type NonNullableKeys<O extends object> = {
-    [K in keyof O]: O[K] & (undefined | null) extends never
+    [K in keyof O]: [O[K] & (undefined | null)] extends [never]
                     ? K
                     : never
 }[keyof O] & Index

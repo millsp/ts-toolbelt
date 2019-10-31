@@ -47,3 +47,6 @@ export {
 // NOTES
 
 // search for `= \{\n?[ ]*?\[(.*?\n)*?\}` and add `& {}` for better computation
+
+// do not forget to NOT do `X extends never` => do `[X] extends [never]`
+// if the goal is to explicitly match `never` & not distribute the type

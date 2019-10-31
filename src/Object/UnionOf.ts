@@ -8,4 +8,4 @@ import {Keys} from './Keys'
  * ```
  */
 export type UnionOf<O extends object> =
-    O[Keys<O>]
+    O[keyof O]

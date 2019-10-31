@@ -1,14 +1,13 @@
 import {Tuple} from './Tuple'
 import {UnNest} from './UnNest'
-import {True} from '../Boolean/Boolean'
-import {Includes} from '../Object/Includes'
 import {Cast} from '../Any/Cast'
+import {Equals} from '../Any/Equals'
 
-type _Flatten<T extends Tuple> = {
-    0: _Flatten<UnNest<T>>
+type _Flatten<T extends Tuple, TO extends Tuple = []> = {
+    0: _Flatten<UnNest<T>, T>
     1: T
 }[
-    Includes<T, Tuple, 'implements->'> extends True
+    Equals<T, TO> extends 0
     ? 0
     : 1
 ]
@@ -22,5 +21,5 @@ type _Flatten<T extends Tuple> = {
  */
 export type Flatten<T extends Tuple> =
     _Flatten<T> extends infer X
-    ? Cast<X, Tuple<any>>
+    ? Cast<X, Tuple>
     : never
