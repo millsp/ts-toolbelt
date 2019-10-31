@@ -43,10 +43,10 @@
 </p>
 <p align="center">
   <a href="https://conventionalcommits.org" target="_blank">
-    <img src="https://img.shields.io/badge/Conventional Commits-1.0.0-yellow.svg">
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg">
   </a>
   <a href="https://github.com/pirix-gh/ts-toolbelt/blob/master/CODE_OF_CONDUCT.md" target="_blank">
-    <img src="https://img.shields.io/badge/Code of Conduct-Contributor Covenant-green.svg">
+    <img src="https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-green.svg">
   </a>
 </p>
 
@@ -69,6 +69,7 @@
 * [🏁 Getting started](#-getting-started)
 * [📖 Documentation](#-documentation-)
 * [🧠 Good to know](#-good-to-know-)
+* [🗞️ Announcements](#-announcements-)
 * [🎁 Contributing](#-contributing)
 * [💉 Running tests](#-running-tests)
 * [🔧 Compatibility](#-compatibility)
@@ -200,11 +201,11 @@ Access older docs at https://pirix-gh.github.io/ts-toolbelt/version/
 
 In this wiki, you'll find some extra resources for your learning & understanding.
 
-It is incremental and it will be completed on demand, you can ask for this below.
+Are you missing something? Participate to the open-wiki by [posting your questions](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
 
-#### [Questions ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc+label%3Awiki)
+## [🗞️ Announcements ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=is%3Aissue+is%3Aopen+label%3Aannouncement+sort%3Acreated-desc)
 
-Are you missing something? Participate to the open-wiki by posting your questions [right here](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
+Stay up to date with the latest announcements with this regular digest of important changes.
 
 ## 🎁 Contributing
 
