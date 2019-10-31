@@ -6,10 +6,10 @@
   <h3 align="center">ts-toolbelt</h3>
 
   <p align="center">
-    <b>🔩 TypeScript SuperPowers</b>
+    <b>🔩 Get the most out of TypeScript</b>
     <br>
     <br>
-    <a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Docs</a>
+    <a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Read Docs</a>
     ·
     <a href="#demo">🎮 View Demo</a>
     ·
@@ -80,7 +80,7 @@
 
 ## 📜 About
 
-**ts-toolbelt** brings **new capabilities** to TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there. On a higher level, it abstracts the complexity & knowledge you would need to properly type your software - **you can stay focused**.
+**ts-toolbelt** brings **new capabilities** to TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there. With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
 
 Its goal is to improve type correctness while adding a whole new set of **features** to TypeScript. It uses the type system itself for TypeScript to compute more complex types. In other words, its API exposes types that trade **CPU & RAM** for higher type safety.
 
