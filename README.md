@@ -43,7 +43,10 @@
 </p>
 <p align="center">
   <a href="https://conventionalcommits.org" target="_blank">
-    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg">
+    <img src="https://img.shields.io/badge/Conventional Commits-1.0.0-yellow.svg">
+  </a>
+  <a href="https://github.com/pirix-gh/ts-toolbelt/blob/master/CODE_OF_CONDUCT.md" target="_blank">
+    <img src="https://img.shields.io/badge/Code of Conduct-Contributor Covenant-green.svg">
   </a>
 </p>
 
