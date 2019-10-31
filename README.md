@@ -69,7 +69,7 @@
 * [🏁 Getting started](#-getting-started)
 * [📖 Documentation](#-documentation-)
 * [🧠 Good to know](#-good-to-know-)
-* [🗞️ Announcements](#-announcements-)
+* [📣 Announcements](#️-announcements-)
 * [🎁 Contributing](#-contributing)
 * [💉 Running tests](#-running-tests)
 * [🔧 Compatibility](#-compatibility)
@@ -203,7 +203,7 @@ In this wiki, you will find some extra resources for your learning, and understa
 
 **Are you missing something?** Participate to the open-wiki by [posting your questions](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
 
-## [🗞️ Announcements ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=is%3Aissue+is%3Aopen+label%3Aannouncement+sort%3Acreated-desc)
+## [📣 Announcements ⤢](https://github.com/pirix-gh/ts-toolbelt/issues?q=is%3Aissue+is%3Aopen+label%3Aannouncement+sort%3Acreated-desc)
 
 Stay up to date with the latest announcements with this regular digest of important changes.
 
