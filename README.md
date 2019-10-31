@@ -10,7 +10,7 @@
     <br>
     <br>
     <a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Docs</a>
-    .
+    ·
     <a href="#demo">🎮 View Demo</a>
     ·
     <a href="https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---bug-report.md" alt="Bug Report">🐞 Report Bug</a>
