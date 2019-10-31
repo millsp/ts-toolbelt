@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.9.21](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.20...v4.9.21) (2019-10-31)
+
+
+### Others
+
+* removal of forgotten `Keys` ([349cc0c](https://github.com/pirix-gh/ts-toolbelt/commit/349cc0c2dd5290d83fee7c031670609ce043fd0f))
+
 ### [4.9.20](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.19...v4.9.20) (2019-10-31)
 
 
