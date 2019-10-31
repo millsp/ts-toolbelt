@@ -6,7 +6,7 @@
   <h3 align="center">ts-toolbelt</h3>
 
   <p align="center">
-    <b>🔩 All the types you need for TypeScript</b>
+    <b>🔩 TypeScript SuperPowers</b>
     <br>
     <a href="https://pirix-gh.github.io/ts-toolbelt/" target="_blank"><strong>Explore the docs »</strong></a>
     <br>
@@ -337,6 +337,7 @@ Many, many thanks to all the [contributors](https://github.com/pirix-gh/ts-toolb
 * [Joe Calzaretta](https://github.com/jcalz)
 * [Matt McCutchen](https://github.com/mattmccutchen)
 * [Monroe Ekilah](https://github.com/ekilah)
+* [Nathan S.-Sanders](https://github.com/sandersn)
 * [Regev Brody](https://github.com/regevbr)
 * [Titian C.-Dragomir](https://github.com/dragomirtitian)
 
