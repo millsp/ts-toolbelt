@@ -59,6 +59,6 @@
     "ts-node": "^8.3.0",
     "tslib": "^1.10.0",
     "typedoc": "^0.15.0",
-    "typescript": "^3.8.0-dev.20191101"
+    "typescript": "next"
   }
 }
