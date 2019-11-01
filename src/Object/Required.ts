@@ -4,14 +4,23 @@ import {Depth} from './_Internal'
 import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 
+/**
+ * @internal
+ */
 type RequiredFlat<O> = {
     [K in keyof O]-?: O[K]
 } & {}
 
+/**
+ * @internal
+ */
 type RequiredDeep<O> = {
     [K in keyof O]-?: RequiredDeep<O[K]>
 } & {}
 
+/**
+ * @internal
+ */
 type RequiredPart<O extends object, depth extends Depth> = {
     'flat': RequiredFlat<O>,
     'deep': RequiredDeep<O>,

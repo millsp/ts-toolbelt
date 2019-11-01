@@ -7,8 +7,10 @@ import {Index} from '../../Any/Index'
 import {Pick as OPick} from '../Pick'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
-import {Key} from '../../Iteration/Key'
 
+/**
+ * @internal
+ */
 type _Pick<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                // If it's an object
   ? OPick<O, Path[Pos<I>]> extends infer Picked   // Pick the current index

@@ -7,11 +7,17 @@ import {Append} from '../Tuple/Append'
 import {Exclude} from '../Union/Exclude'
 import {Tuple} from '../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type PickIfEntry<O extends object, TN extends Tuple, I extends Iteration> =
     Key<I> extends keyof O
     ? Append<TN, O[Cast<Key<I>, keyof O>]>
     : TN
 
+/**
+ * @internal
+ */
 type _TupleOf<O extends object, K, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
     1: TN

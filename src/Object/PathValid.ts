@@ -13,6 +13,9 @@ import {Prev} from '../Iteration/Prev'
 import {Index} from '../Any/Index'
 import {Tuple} from '../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type _PathValid<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, Length<Path, 's'>>, never>

@@ -4,14 +4,23 @@ import {Depth} from './_Internal'
 import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 
+/**
+ * @internal
+ */
 type ReadonlyFlat<O> = {
     +readonly [K in keyof O]: O[K]
 }
 
+/**
+ * @internal
+ */
 type ReadonlyDeep<O> = {
     +readonly [K in keyof O]: ReadonlyDeep<O[K]>
 }
 
+/**
+ * @internal
+ */
 type ReadonlyPart<O extends object, depth extends Depth> = {
     'flat': ReadonlyFlat<O>,
     'deep': ReadonlyDeep<O>,

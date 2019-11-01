@@ -10,7 +10,10 @@ import {Key} from '../Iteration/Key'
 import {Number} from '../Number/Number'
 import {Tuple} from './Tuple'
 
-export type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
+/**
+ * @internal
+ */
+type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
     0: _Reverse<T, Prepend<TO, T[Pos<I>]>, L, Next<I>>
     1: TO
 }[

@@ -4,14 +4,23 @@ import {Merge} from './Merge'
 import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 
+/**
+ * @internal
+ */
 type WritableFlat<O> = {
     -readonly [K in keyof O]: O[K]
 }
 
+/**
+ * @internal
+ */
 type WritableDeep<O> = {
     -readonly [K in keyof O]: WritableDeep<O[K]>
 }
 
+/**
+ * @internal
+ */
 type WritablePart<O extends object, depth extends Depth> = {
     'flat': WritableFlat<O>,
     'deep': WritableDeep<O>,

@@ -5,14 +5,23 @@ import {Strict} from '../Union/Strict'
 import {Boolean, True} from '../Boolean/Boolean'
 import {Compute} from '../Any/Compute'
 
+/**
+ * @internal
+ */
 type _Either<O extends object, K extends Index> =
     Omit<O, K> & {           // Merge all but K
         [P in K]: Pick<O, P> // With K possibilities
     }[K]
 
+/**
+ * @internal
+ */
 type EitherStrict<O extends object, K extends Index> =
     Strict<_Either<O, K>> & {}
 
+/**
+ * @internal
+ */
 type EitherLoose<O extends object, K extends Index> =
     Compute<_Either<O, K>> & {}
 

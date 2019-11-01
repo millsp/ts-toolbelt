@@ -9,6 +9,9 @@ import {Way} from '../Iteration/_Internal'
 import {Reverse} from './Reverse'
 import {Tuple} from './Tuple'
 
+/**
+ * @internal
+ */
 type _Drop<T extends Tuple, N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _Drop<Tail<T>, N, Next<I>>
     1: T

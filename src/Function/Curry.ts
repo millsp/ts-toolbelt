@@ -14,11 +14,17 @@ import {NonNullable} from '../Tuple/NonNullable'
 import {x} from '../Any/x'
 import {Tuple} from '../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type GapOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple, I extends Iteration = IterationOf<'0'>> =
     T1[Pos<I>] extends x
     ? Append<TN, T2[Pos<I>]>
     : TN
 
+/**
+ * @internal
+ */
 type _GapsOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _GapsOf<T1, T2, GapOf<T1, T2, TN, I>, Next<I>>
     1: Concat<TN, Drop<T2, Key<I>>>
@@ -28,11 +34,17 @@ type _GapsOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple = [], I extend
     : 0
 ]
 
+/**
+ * @internal
+ */
 type GapsOf<T1 extends Tuple, T2 extends Tuple> =
     _GapsOf<T1, T2> extends infer X
     ? Cast<X, Tuple>
     : never
 
+/**
+ * @internal
+ */
 type Gaps<T extends Tuple> = NonNullable<{
     [K in keyof T]?: T[K] | x
 }>

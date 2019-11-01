@@ -3,6 +3,9 @@ import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
 import {True, False} from '../Boolean/Boolean'
 
+/**
+ * @internal
+ */
 export type _IsNegative<N extends Iteration> = {
     '-': True
     '+': False

@@ -8,6 +8,9 @@ import {Update as OUpdate} from '../Update'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type _Update<O, Path extends Tuple<Index>, A, I extends Iteration = IterationOf<'0'>> =
   O extends object                                        // If it's an object
   ? Pos<I> extends LastIndex<Path>                        // If it's the last index

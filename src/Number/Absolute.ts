@@ -6,6 +6,9 @@ import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 
+/**
+ * @internal
+ */
 export type _Absolute<N extends Iteration> = {
     0: N
     1: _Negate<N>

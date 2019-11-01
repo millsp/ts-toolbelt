@@ -9,6 +9,9 @@ import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
 import {Tuple} from '../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type _Paths<O, Paths extends Tuple<Index> = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]
     // It dives deep, and as it dives, it adds the paths to `Paths`

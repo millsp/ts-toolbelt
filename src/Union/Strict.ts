@@ -3,6 +3,9 @@ import {Keys} from './Keys'
 import {Optional} from '../Object/Optional'
 import {Record} from '../Object/Record'
 
+/**
+ * @internal
+ */
 type _Strict<U, _U = U> =
     U extends unknown
     ? U & Optional<Record<Exclude<Keys<_U>, keyof U>, never>>

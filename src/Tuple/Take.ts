@@ -10,6 +10,9 @@ import {Key} from '../Iteration/Key'
 import {Way} from '../Iteration/_Internal'
 import {Tuple} from './Tuple'
 
+/**
+ * @internal
+ */
 type _Take<T extends Tuple, N extends Number, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _Take<T, N, Prepend<TN, T[Pos<I>]>, Next<I>>
     1: TN

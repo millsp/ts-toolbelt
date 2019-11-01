@@ -15,6 +15,9 @@ import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 import {Tuple} from '../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type ComposeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
     ? Fns[K] // If mapped type reached the end
@@ -25,6 +28,9 @@ type ComposeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     ], Return<Fns[Pos<IterationOf<K & string>>]>
     >
 
+/**
+ * @internal
+ */
 type ComposeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
     ? PromiseOf<Fns[K]> // If mapped type reached the end

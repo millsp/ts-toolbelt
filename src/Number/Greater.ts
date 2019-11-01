@@ -4,6 +4,9 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
 
+/**
+ * @internal
+ */
 export type _Greater<N1 extends Iteration, N2 extends Iteration> =
     _IsPositive<_Minus<N1, N2>>
 

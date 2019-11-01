@@ -5,14 +5,23 @@ import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 import {NonNullable} from '../Union/NonNullable'
 
+/**
+ * @internal
+ */
 type CompulsoryFlat<O> = {
     [K in keyof O]-?: NonNullable<O[K]>
 } & {}
 
+/**
+ * @internal
+ */
 type CompulsoryDeep<O> = {
     [K in keyof O]-?: CompulsoryDeep<NonNullable<O[K]>>
 } & {}
 
+/**
+ * @internal
+ */
 type CompulsoryPart<O extends object, depth extends Depth> = {
     'flat': CompulsoryFlat<O>,
     'deep': CompulsoryDeep<O>,

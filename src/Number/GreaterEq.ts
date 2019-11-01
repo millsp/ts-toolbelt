@@ -5,6 +5,9 @@ import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
 import {Or} from '../Boolean/Or'
 
+/**
+ * @internal
+ */
 export type _GreaterEq<N1 extends Iteration, N2 extends Iteration> =
     Or<Equals<N1, N2>, _Greater<N1, N2>>
 

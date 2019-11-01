@@ -6,6 +6,9 @@ import {Prepend} from './Prepend'
 import {Reverse} from './Reverse'
 import {Tuple} from './Tuple'
 
+/**
+ * @internal
+ */
 type _Group<T extends Tuple, N extends Number, TN extends Tuple = []> = {
     0: _Group<Drop<T, N>, N, Prepend<TN, Take<T, N>>>
     1: Reverse<TN>

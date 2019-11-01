@@ -11,6 +11,9 @@ import {Tuple} from '../Tuple/Tuple'
 import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
 
+/**
+ * @internal
+ */
 type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
     K extends OOK                       // if K is a `OptionalKey` of `O`
     ? NonNullable<At<O, K>> | At<O1, K> // complete `O[K]` with `O1[K]`
@@ -18,10 +21,16 @@ type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK exten
       ? At<O1, K>
       : At<O, K>
 
+/**
+ * @internal
+ */
 type _MergeUpFlat<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>> = {
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OOK>
 } & {}
 
+/**
+ * @internal
+ */
 type MergeUpFlat<O extends object, O1 extends object> =
 O extends unknown ? O1 extends unknown ?
     _MergeUpFlat<((O | O1) extends Tuple ? Optional<O, keyof any[]> : O), O1>
@@ -30,6 +39,9 @@ O extends unknown ? O1 extends unknown ?
     // so this only applies if both of them are `Array` kinds `(O | O1)`
 : never : never
 
+/**
+ * @internal
+ */
 type _MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>> = {
     [K in keyof (O & O1)]:  And<Extends<Kind<NonNullable<At<O, K>>>, 'object'>, Extends<Kind<NonNullable<At<O1, K>>>, 'object'>> extends 1
                             ? MergeUpDeep< // the above makes sure it's only objects
@@ -41,7 +53,9 @@ type _MergeUpDeep<O extends object, O1 extends object, OOK extends Index = Optio
                             : MergeUpProp<O, O1, K, OOK>
 } & {}
 
-
+/**
+ * @internal
+ */
 type MergeUpDeep<O extends object, O1 extends object> =
 O extends unknown ? O1 extends unknown ?
     _MergeUpDeep<((O | O1) extends Tuple ? Optional<O, keyof any[]> : O), O1>

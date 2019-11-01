@@ -9,6 +9,9 @@ import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 import {Depth} from '../_Internal'
 
+/**
+ * @internal
+ */
 type _Readonly<O, Path extends Tuple<Index>, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                                              // If it's an object
   ? Pos<I> extends LastIndex<Path>                              // If it's the last index

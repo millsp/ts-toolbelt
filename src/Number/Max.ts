@@ -14,6 +14,9 @@ import {Extends} from '../Any/Extends'
 import {Or} from '../Boolean/Or'
 import {True} from '../Boolean/Boolean'
 
+/**
+ * @internal
+ */
 type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
     1: Prev<I>
@@ -26,11 +29,17 @@ type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
       : 0
 ]
 
+/**
+ * @internal
+ */
 type MaxPositive<N extends Number> =
     _MaxPositive<N> extends infer X
     ? Cast<X, Iteration>
     : never
 
+/**
+ * @internal
+ */
 type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
     1: I
@@ -38,11 +47,17 @@ type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     Or<Extends<Key<I>, N>, Extends<string, Key<I>>> // stops as soon as it finds
 ]
 
+/**
+ * @internal
+ */
 type MaxNegative<N extends Number> =
     _MaxNegative<N> extends infer X
     ? Cast<X, Iteration>
     : never
 
+/**
+ * @internal
+ */
 export type _Max<N extends Iteration> =
     _IsNegative<N> extends True // breaks distribution
     ? MaxNegative<Key<N>>

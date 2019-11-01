@@ -3,6 +3,9 @@ import {SelectKeys} from '../Object/SelectKeys'
 import {Numbers} from './_Internal'
 import {Key} from '../Iteration/Key'
 
+/**
+ * @internal
+ */
 type NumberToIterationMap = {
     0 : ['-1', '1', '0', 0, '0']
     1 : ['0', '2', '1', 1, '+'],

@@ -4,14 +4,23 @@ import {Depth} from './_Internal'
 import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 
+/**
+ * @internal
+ */
 type OptionalFlat<O> = {
     [K in keyof O]?: O[K]
 } & {}
 
+/**
+ * @internal
+ */
 type OptionalDeep<O> = {
     [K in keyof O]?: OptionalDeep<O[K]>
 } & {}
 
+/**
+ * @internal
+ */
 type OptionalPart<O extends object, depth extends Depth> = {
     'flat': OptionalFlat<O>,
     'deep': OptionalDeep<O>,

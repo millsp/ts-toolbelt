@@ -12,6 +12,9 @@ import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 import {Tuple} from '../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type PipeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     K extends '0'
     ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
@@ -22,6 +25,9 @@ type PipeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     ], Return<Fns[Pos<IterationOf<K & string>>]>
     >
 
+/**
+ * @internal
+ */
 type PipeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
     K extends '0'
     ? PromiseOf<Fns[K]> // If first item, do nothing to it. Otherwise, pipe them:

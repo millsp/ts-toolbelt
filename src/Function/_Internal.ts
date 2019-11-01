@@ -4,4 +4,7 @@
  */
 export type Mode = 'sync' | 'async'
 
+/**
+ * @internal
+ */
 export type _Function = Function

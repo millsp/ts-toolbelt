@@ -8,6 +8,9 @@ import {Omit as OOmit} from '../Omit'
 import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 
+/**
+ * @internal
+ */
 type _Omit<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                   // If it's an object
   ? Pos<I> extends LastIndex<Path>                   // If it's the last index
