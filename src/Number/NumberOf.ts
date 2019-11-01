@@ -4,7 +4,7 @@ import {Numbers} from './_Internal'
 import {Key} from '../Iteration/Key'
 
 /**
- * @internal
+ * @hidden
  */
 type NumberToIterationMap = {
     0 : ['-1', '1', '0', 0, '0']

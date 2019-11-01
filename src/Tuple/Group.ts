@@ -7,7 +7,7 @@ import {Reverse} from './Reverse'
 import {Tuple} from './Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Group<T extends Tuple, N extends Number, TN extends Tuple = []> = {
     0: _Group<Drop<T, N>, N, Prepend<TN, Take<T, N>>>

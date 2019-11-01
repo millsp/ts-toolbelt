@@ -8,7 +8,7 @@ import {Key} from '../Iteration/Key'
 import {Tuple} from './Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Repeat<N extends Number, A, T extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _Repeat<N, A, Prepend<T, A>, Next<I>>

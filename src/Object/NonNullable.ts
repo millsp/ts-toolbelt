@@ -6,21 +6,21 @@ import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 
 /**
- * @internal
+ * @hidden
  */
 type NonNullableFlat<O> = {
     [K in keyof O]: UNonNullable<O[K]>
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type NonNullableDeep<O> = {
     [K in keyof O]: NonNullableDeep<UNonNullable<O[K]>>
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type NonNullablePart<O extends object, depth extends Depth> = {
     'flat': NonNullableFlat<O>,

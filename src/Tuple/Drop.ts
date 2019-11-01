@@ -10,7 +10,7 @@ import {Reverse} from './Reverse'
 import {Tuple} from './Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Drop<T extends Tuple, N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _Drop<Tail<T>, N, Next<I>>

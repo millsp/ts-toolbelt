@@ -1,7 +1,7 @@
 import {Index} from '../../Any/Index'
 
 /**
- * @internal
+ * @hidden
  */
 export type Path = [Index, ...Index[]]
 

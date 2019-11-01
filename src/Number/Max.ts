@@ -15,7 +15,7 @@ import {Or} from '../Boolean/Or'
 import {True} from '../Boolean/Boolean'
 
 /**
- * @internal
+ * @hidden
  */
 type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
@@ -30,7 +30,7 @@ type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type MaxPositive<N extends Number> =
     _MaxPositive<N> extends infer X
@@ -38,7 +38,7 @@ type MaxPositive<N extends Number> =
     : never
 
 /**
- * @internal
+ * @hidden
  */
 type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
@@ -48,7 +48,7 @@ type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type MaxNegative<N extends Number> =
     _MaxNegative<N> extends infer X
@@ -56,7 +56,7 @@ type MaxNegative<N extends Number> =
     : never
 
 /**
- * @internal
+ * @hidden
  */
 export type _Max<N extends Iteration> =
     _IsNegative<N> extends True // breaks distribution

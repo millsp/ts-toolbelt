@@ -5,7 +5,7 @@ import {IntersectOf} from './IntersectOf'
 import {Strict} from './Strict'
 
 /**
- * @internal
+ * @hidden
  */
 type _Merge<U extends object> = IntersectOf<Overwrite<U, {
     [K in keyof U]-?: U extends unknown

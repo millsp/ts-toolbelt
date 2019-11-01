@@ -1,7 +1,7 @@
 import {Index} from '../Any/Index'
 
 /**
- * @internal
+ * @hidden
  */
 type _Pick<O extends object, K extends keyof O> = {
     [P in K]: O[P]

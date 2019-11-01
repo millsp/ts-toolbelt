@@ -5,13 +5,13 @@ import {Depth} from './_Internal'
 import {Kind} from '../Any/Kind'
 
 /**
- * @internal
+ * @hidden
  */
 type MergeFlat<O extends object, O1 extends object> =
     Compute<O & Omit<O1, keyof O>>
 
 /**
- * @internal
+ * @hidden
  */
 type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
     (Kind<(O | O1)> extends 'object'

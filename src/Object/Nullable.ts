@@ -7,21 +7,21 @@ import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 
 /**
- * @internal
+ * @hidden
  */
 type NullableFlat<O> = {
     [K in keyof O]: UNullable<O[K]>
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type NullableDeep<O> = {
     [K in keyof O]: NullableDeep<UNullable<O[K]>>
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type NullablePart<O extends object, depth extends Depth> = {
     'flat': NullableFlat<O>,

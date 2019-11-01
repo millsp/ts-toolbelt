@@ -10,7 +10,7 @@ import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 
 /**
- * @internal
+ * @hidden
  */
 type _PlusPositive<N1 extends Iteration, N2 extends Iteration> = {
     0: _PlusPositive<Next<N1>, Prev<N2>> // N1 = -/+, N2 = +
@@ -25,7 +25,7 @@ type _PlusPositive<N1 extends Iteration, N2 extends Iteration> = {
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type PlusPositive<N1 extends Iteration, N2 extends Iteration> =
     _PlusPositive<N1, N2> extends infer X
@@ -33,7 +33,7 @@ type PlusPositive<N1 extends Iteration, N2 extends Iteration> =
     : never
 
 /**
- * @internal
+ * @hidden
  */
 type _PlusNegative<N1 extends Iteration, N2 extends Iteration> = {
     0: _PlusNegative<Prev<N1>, Next<N2>> // N1 = -/+, N2 = -
@@ -48,7 +48,7 @@ type _PlusNegative<N1 extends Iteration, N2 extends Iteration> = {
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type PlusNegative<N1 extends Iteration, N2 extends Iteration> =
     _PlusNegative<N1, N2> extends infer X
@@ -56,7 +56,7 @@ type PlusNegative<N1 extends Iteration, N2 extends Iteration> =
     : never
 
 /**
- * @internal
+ * @hidden
  */
 export type _Plus<N1 extends Iteration, N2 extends Iteration> = {
     0: PlusPositive<N1, N2>

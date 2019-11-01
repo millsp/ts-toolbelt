@@ -7,7 +7,7 @@ import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 
 /**
- * @internal
+ * @hidden
  */
 export type _Absolute<N extends Iteration> = {
     0: N

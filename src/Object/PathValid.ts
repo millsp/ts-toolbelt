@@ -14,7 +14,7 @@ import {Index} from '../Any/Index'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _PathValid<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>

@@ -5,7 +5,7 @@ import {At} from './At'
 import {Index} from '../Any/Index'
 
 /**
- * @internal
+ * @hidden
  */
 type ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
     [K in keyof O]: {

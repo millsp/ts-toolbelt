@@ -10,7 +10,7 @@ import {Index} from '../Any/Index'
 import {Tuple} from './Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _ZipObj<TProp extends Tuple<Index>, TField extends Tuple, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
     0: _ZipObj<TProp, TField, Merge<O, Record<TProp[Pos<I>], TField[Pos<I>]>>, Next<I>>

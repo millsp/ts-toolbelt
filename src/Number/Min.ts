@@ -15,7 +15,7 @@ import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 
 /**
- * @internal
+ * @hidden
  */
 type _MinPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MinPositive<N, Next<I>> // Find smallest +
@@ -25,7 +25,7 @@ type _MinPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type MinPositive<N extends Number> =
     _MinPositive<N> extends infer X
@@ -33,7 +33,7 @@ type MinPositive<N extends Number> =
     : never
 
 /**
- * @internal
+ * @hidden
  */
 type _MinNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MinNegative<Exclude<N, Key<I>>, Prev<I>> // Find smallest -
@@ -48,7 +48,7 @@ type _MinNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type MinNegative<N extends Number> =
     _MinNegative<N> extends infer X
@@ -56,7 +56,7 @@ type MinNegative<N extends Number> =
     : never
 
 /**
- * @internal
+ * @hidden
  */
 export type _Min<N extends Iteration> =
     _IsPositive<N> extends True // breaks distribution

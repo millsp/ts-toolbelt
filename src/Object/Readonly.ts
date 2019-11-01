@@ -5,21 +5,21 @@ import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 
 /**
- * @internal
+ * @hidden
  */
 type ReadonlyFlat<O> = {
     +readonly [K in keyof O]: O[K]
 }
 
 /**
- * @internal
+ * @hidden
  */
 type ReadonlyDeep<O> = {
     +readonly [K in keyof O]: ReadonlyDeep<O[K]>
 }
 
 /**
- * @internal
+ * @hidden
  */
 type ReadonlyPart<O extends object, depth extends Depth> = {
     'flat': ReadonlyFlat<O>,

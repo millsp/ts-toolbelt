@@ -5,21 +5,21 @@ import {Index} from '../Any/Index'
 import {Implements} from '../Any/Implements'
 
 /**
- * @internal
+ * @hidden
  */
 type OptionalFlat<O> = {
     [K in keyof O]?: O[K]
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type OptionalDeep<O> = {
     [K in keyof O]?: OptionalDeep<O[K]>
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type OptionalPart<O extends object, depth extends Depth> = {
     'flat': OptionalFlat<O>,

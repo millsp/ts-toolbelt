@@ -8,7 +8,7 @@ import {Cast} from '../Any/Cast'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Assign<O extends object, Os extends Tuple<object>, I extends Iteration = IterationOf<'0'>> = {
     0: _Assign<Merge<Os[Pos<I>], O>, Os, Next<I>>

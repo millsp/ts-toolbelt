@@ -10,7 +10,7 @@ import {Tuple} from '../../Tuple/Tuple'
 import {Depth} from '../_Internal'
 
 /**
- * @internal
+ * @hidden
  */
 type _Merge<O, Path extends Tuple<Index>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                                               // If it's an object

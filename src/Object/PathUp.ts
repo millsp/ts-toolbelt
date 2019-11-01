@@ -10,7 +10,7 @@ import {Index} from '../Any/Index'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _PathUp<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
     0: O extends unknown

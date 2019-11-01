@@ -5,6 +5,6 @@
 export type Mode = 'sync' | 'async'
 
 /**
- * @internal
+ * @hidden
  */
 export type _Function = Function

@@ -4,7 +4,7 @@ import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
 
 /**
- * @internal
+ * @hidden
  */
 export type _Lower<N1 extends Iteration, N2 extends Iteration> =
     _Greater<N2, N1>

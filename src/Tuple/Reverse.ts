@@ -11,7 +11,7 @@ import {Number} from '../Number/Number'
 import {Tuple} from './Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
     0: _Reverse<T, Prepend<TO, T[Pos<I>]>, L, Next<I>>

@@ -10,7 +10,7 @@ import {True} from '../Boolean/Boolean'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Paths<O, Paths extends Tuple<Index> = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]

@@ -6,7 +6,7 @@ import {Boolean, True} from '../Boolean/Boolean'
 import {Compute} from '../Any/Compute'
 
 /**
- * @internal
+ * @hidden
  */
 type _Either<O extends object, K extends Index> =
     Omit<O, K> & {           // Merge all but K
@@ -14,13 +14,13 @@ type _Either<O extends object, K extends Index> =
     }[K]
 
 /**
- * @internal
+ * @hidden
  */
 type EitherStrict<O extends object, K extends Index> =
     Strict<_Either<O, K>> & {}
 
 /**
- * @internal
+ * @hidden
  */
 type EitherLoose<O extends object, K extends Index> =
     Compute<_Either<O, K>> & {}

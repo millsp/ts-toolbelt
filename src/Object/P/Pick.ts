@@ -9,7 +9,7 @@ import {LastIndex} from '../../Tuple/LastIndex'
 import {Tuple} from '../../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Pick<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                // If it's an object

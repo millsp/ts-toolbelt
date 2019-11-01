@@ -9,7 +9,7 @@ import {Cast} from '../Any/Cast'
 import {Tuple} from './Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type _Zip<T extends Tuple, T1 extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _Zip<T, T1, Prepend<TN, [T[Pos<I>], T1[Pos<I>]]>, Next<I>>

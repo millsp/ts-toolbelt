@@ -4,7 +4,7 @@ import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
 
 /**
- * @internal
+ * @hidden
  */
 type _Flatten<T extends Tuple, TO extends Tuple = []> = {
     0: _Flatten<UnNest<T>, T>

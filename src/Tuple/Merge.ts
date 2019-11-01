@@ -9,7 +9,7 @@ import {Kind} from '../Any/Kind'
 import {Tuple} from './Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type MergeFlat<T extends Tuple, T1 extends Tuple> =
     number extends Length<T | T1>
@@ -19,7 +19,7 @@ type MergeFlat<T extends Tuple, T1 extends Tuple> =
     : TupleOf<OMerge<ObjectOf<T>, Omit<ObjectOf<T1>, keyof T>>>
 
 /**
- * @internal
+ * @hidden
  */
 type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
     Kind<(O | O1)> extends 'array'

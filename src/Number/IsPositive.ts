@@ -5,7 +5,7 @@ import {Number} from './Number'
 import {True, False} from '../Boolean/Boolean'
 
 /**
- * @internal
+ * @hidden
  */
 export type _IsPositive<N extends Iteration> = {
     '-': False

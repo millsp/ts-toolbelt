@@ -12,7 +12,7 @@ import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
 
 /**
- * @internal
+ * @hidden
  */
 type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK extends Index> =
     K extends OOK                       // if K is a `OptionalKey` of `O`
@@ -22,14 +22,14 @@ type MergeUpProp<O extends object, O1 extends object, K extends Index, OOK exten
       : At<O, K>
 
 /**
- * @internal
+ * @hidden
  */
 type _MergeUpFlat<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>> = {
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, OOK>
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type MergeUpFlat<O extends object, O1 extends object> =
 O extends unknown ? O1 extends unknown ?
@@ -40,7 +40,7 @@ O extends unknown ? O1 extends unknown ?
 : never : never
 
 /**
- * @internal
+ * @hidden
  */
 type _MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>> = {
     [K in keyof (O & O1)]:  And<Extends<Kind<NonNullable<At<O, K>>>, 'object'>, Extends<Kind<NonNullable<At<O1, K>>>, 'object'>> extends 1
@@ -54,7 +54,7 @@ type _MergeUpDeep<O extends object, O1 extends object, OOK extends Index = Optio
 } & {}
 
 /**
- * @internal
+ * @hidden
  */
 type MergeUpDeep<O extends object, O1 extends object> =
 O extends unknown ? O1 extends unknown ?

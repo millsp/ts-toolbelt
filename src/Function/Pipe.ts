@@ -13,7 +13,7 @@ import {Extends} from '../Any/Extends'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type PipeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     K extends '0'
@@ -26,7 +26,7 @@ type PipeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     >
 
 /**
- * @internal
+ * @hidden
  */
 type PipeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
     K extends '0'

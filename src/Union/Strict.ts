@@ -4,7 +4,7 @@ import {Optional} from '../Object/Optional'
 import {Record} from '../Object/Record'
 
 /**
- * @internal
+ * @hidden
  */
 type _Strict<U, _U = U> =
     U extends unknown

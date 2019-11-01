@@ -6,7 +6,7 @@ import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 
 /**
- * @internal
+ * @hidden
  */
 export type _Negate<N extends Iteration> =
     _Minus<IterationOf<'0'>, N>

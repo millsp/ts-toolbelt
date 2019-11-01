@@ -10,7 +10,7 @@ import {Tuple} from '../../Tuple/Tuple'
 import {Depth} from '../_Internal'
 
 /**
- * @internal
+ * @hidden
  */
 type _Readonly<O, Path extends Tuple<Index>, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                                              // If it's an object

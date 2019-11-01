@@ -8,7 +8,7 @@ import {Exclude} from '../Union/Exclude'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type PickIfEntry<O extends object, TN extends Tuple, I extends Iteration> =
     Key<I> extends keyof O
@@ -16,7 +16,7 @@ type PickIfEntry<O extends object, TN extends Tuple, I extends Iteration> =
     : TN
 
 /**
- * @internal
+ * @hidden
  */
 type _TupleOf<O extends object, K, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _TupleOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>

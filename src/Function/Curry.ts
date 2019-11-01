@@ -15,7 +15,7 @@ import {x} from '../Any/x'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type GapOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple, I extends Iteration = IterationOf<'0'>> =
     T1[Pos<I>] extends x
@@ -23,7 +23,7 @@ type GapOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple, I extends Itera
     : TN
 
 /**
- * @internal
+ * @hidden
  */
 type _GapsOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _GapsOf<T1, T2, GapOf<T1, T2, TN, I>, Next<I>>
@@ -35,7 +35,7 @@ type _GapsOf<T1 extends Tuple, T2 extends Tuple, TN extends Tuple = [], I extend
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type GapsOf<T1 extends Tuple, T2 extends Tuple> =
     _GapsOf<T1, T2> extends infer X
@@ -43,7 +43,7 @@ type GapsOf<T1 extends Tuple, T2 extends Tuple> =
     : never
 
 /**
- * @internal
+ * @hidden
  */
 type Gaps<T extends Tuple> = NonNullable<{
     [K in keyof T]?: T[K] | x

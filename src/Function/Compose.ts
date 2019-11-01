@@ -16,7 +16,7 @@ import {Extends} from '../Any/Extends'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type ComposeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
@@ -29,7 +29,7 @@ type ComposeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
     >
 
 /**
- * @internal
+ * @hidden
  */
 type ComposeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>

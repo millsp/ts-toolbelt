@@ -10,7 +10,7 @@ import {Tuple} from './Tuple'
 import {UnionOf} from './UnionOf'
 
 /**
- * @internal
+ * @hidden
  */
 type _UnNestCheap<T extends Tuple> =
    (UnionOf<T> extends infer UT     // make `T` a union
@@ -22,7 +22,7 @@ type _UnNestCheap<T extends Tuple> =
     : never)[] & {}                 // make result array
 
 /**
- * @internal
+ * @hidden
  */
 type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = IterationOf<'0'>> = {
     0: _UnNestExact<T, Concat<TN, T[Pos<I>]>, Next<I>>
@@ -37,7 +37,7 @@ type _UnNestExact<T extends Tuple, TN extends Tuple = [], I extends Iteration = 
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type _UnNest<T extends Tuple> =
     number extends Length<T>

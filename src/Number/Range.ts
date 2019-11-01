@@ -11,7 +11,7 @@ import {Format} from '../Iteration/Format'
 import {Tuple} from '../Tuple/Tuple'
 
 /**
- * @internal
+ * @hidden
  */
 type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends Tuple = []> = {
     0: RangeForth<Prev<From>, To, fmt, Prepend<T, Format<From, fmt>>>
@@ -23,7 +23,7 @@ type RangeForth<From extends Iteration, To extends Iteration, fmt extends Format
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends Tuple = []> = {
     0: RangeBack<Next<From>, To, fmt, Prepend<T, Format<From, fmt>>>
@@ -35,7 +35,7 @@ type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats
 ]
 
 /**
- * @internal
+ * @hidden
  */
 type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt extends Formats> = {
     '->': RangeForth<To, Prev<From>, fmt> // Reverse logic to work naturally #`Prepend`
