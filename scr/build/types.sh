@@ -1,9 +1,12 @@
 #!/bin/bash
 
-npx tsc --emitDeclarationOnly &&
+mkdir -p out
 
-(
-    rm -fr out/types/scr
-    rm -fr out/types/tst
-    rm out/tsconfig.tsbuildinfo
-)
+npx tsc ./src/index.ts --declaration --emitDeclarationOnly --out out/index.js --module amd &&
+
+echo "
+declare module 'ts-toolbelt' {
+    import main = require('index');
+    export = main;
+}
+" >> out/index.d.ts
