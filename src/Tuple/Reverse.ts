@@ -5,19 +5,17 @@ import {Length} from './Length'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
-import {Max} from '../Number/Max'
-import {Key} from '../Iteration/Key'
-import {Number} from '../Number/Number'
 import {Tuple} from './Tuple'
+import {Overwrite} from './Overwrite'
 
 /**
  * @hidden
  */
-type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = Max<Length<T, 's'>>, I extends Iteration = IterationOf<'0'>> = {
-    0: _Reverse<T, Prepend<TO, T[Pos<I>]>, L, Next<I>>
+type _Reverse<T extends Tuple, TO extends Tuple, I extends Iteration = IterationOf<'0'>> = {
+    0: _Reverse<T, Prepend<TO, T[Pos<I>]>, Next<I>>
     1: TO
 }[
-    L extends Key<I>
+    Pos<I> extends Length<T>
     ? 1
     : 0
 ]
@@ -31,6 +29,8 @@ type _Reverse<T extends Tuple, TO extends Tuple = [], L extends Number = Max<Len
  * ```
  */
 export type Reverse<T extends Tuple, TO extends Tuple = []> =
-    _Reverse<T, TO> extends infer X
+    _Reverse<Overwrite<Required<T>, T>, TO> extends infer X
+    // `T` is `Required` so that we can preserve its length
+    // Then `Overwrite` with itself to preserve `undefined`
     ? Cast<X, Tuple>
     : never
