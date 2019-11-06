@@ -4,6 +4,7 @@ import * as B from './Boolean/_api'
 import * as C from './Class/_api'
 import * as F from './Function/_api'
 import * as I from './Iteration/_api'
+import * as M from './Misc/_api'
 import * as N from './Number/_api'
 import * as O from './Object/_api'
 import * as S from './String/_api'
@@ -14,6 +15,7 @@ import * as Boolean from './Boolean/_api'
 import * as Class from './Class/_api'
 import * as Function from './Function/_api'
 import * as Iteration from './Iteration/_api'
+import * as Misc from './Misc/_api'
 import * as Number from './Number/_api'
 import * as Object from './Object/_api'
 import * as String from './String/_api'
@@ -32,6 +34,8 @@ export {
     Function,
     I,
     Iteration,
+    M,
+    Misc,
     N,
     Number,
     O,
