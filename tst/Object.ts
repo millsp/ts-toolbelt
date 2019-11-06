@@ -1,4 +1,4 @@
-/* tslint:disable:use-default-type-parameter interface-name */
+/* tslint:disable */
 
 import {Test, O, A, T} from '../src/index'
 import {False} from '../src/Boolean/Boolean'

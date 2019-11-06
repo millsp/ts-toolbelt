@@ -2,7 +2,7 @@ import {False, True} from '../Boolean/Boolean'
 import {Extends} from './Extends'
 
 /** Check whether **`A1`** is part of **`A2`** or not. It works like
- * **`Extends`** but **`Boolean`** results are narrowed to **`False`**.
+ * [[Extends]] but [[Boolean]] results are narrowed to [[False]].
  * @param A1
  * @param A2
  * @returns **`Boolean`**

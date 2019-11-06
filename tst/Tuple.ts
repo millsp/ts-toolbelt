@@ -1,4 +1,4 @@
-/* tslint:disable:use-default-type-parameter interface-name */
+/* tslint:disable */
 
 import {Test, T, A, O} from '../src/index'
 
