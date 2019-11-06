@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.10.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.32...v4.10.0) (2019-11-06)
+
+
+### Features
+
+* **misc:** promisable ([a08168f](https://github.com/pirix-gh/ts-toolbelt/commit/a08168fdcf8a36aa72fb59cf3b1a1bda10424606))
+
+
+### Others
+
+* disable tslint for [#69](https://github.com/pirix-gh/ts-toolbelt/issues/69) ([c58e17f](https://github.com/pirix-gh/ts-toolbelt/commit/c58e17ff8b9b2846b4aefb358676daf88e8a0c81))
+* **misc:** expose types ([cf85c0d](https://github.com/pirix-gh/ts-toolbelt/commit/cf85c0d5db77924821a26d90c7d39eb5e286a59b))
+* **misc:** expose types ([b633735](https://github.com/pirix-gh/ts-toolbelt/commit/b633735e4f3322ec1cf63a4b2ed05bc06f3a449a))
+
 ### [4.9.32](https://github.com/pirix-gh/ts-toolbelt/compare/v4.9.31...v4.9.32) (2019-11-02)
 
 
