@@ -532,19 +532,24 @@ table {
   margin-bottom: 0; }
 
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 40px; }
+  padding: 0 0 0 20px; }
   @media (max-width: 640px) {
     .container {
       padding: 0 20px; } }
 
 .container-main {
-  padding-bottom: 50px; }
+  padding-bottom: 0;
+  position: absolute !important;
+  top: 110px;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .row {
   position: relative;
-  margin: 0 -10px; }
+  margin: 0; }
   .row:after {
     visibility: hidden;
     display: block;
@@ -555,7 +560,7 @@ table {
 .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11 {
   box-sizing: border-box;
   float: left;
-  padding: 0 10px; }
+  padding: 0 20px 0 0; }
 
 .col-1 {
   width: 8.3333333333%; }
@@ -1324,13 +1329,26 @@ pre {
 h2 {
   font-weight: 300; }
 
+.col-menu {
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+  overflow: auto; }
+
+.col-content {
+  height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+  overflow: auto;
+  padding-left: 20px; }
+
 @media (min-width: 901px) and (max-width: 1024px) {
   html.default .col-content {
     width: 72%; }
   html.default .col-menu {
-    width: 28%; }
-  html.default .tsd-navigation {
-    padding-left: 10px; } }
+    width: 28%; } }
 
 @media (max-width: 900px) {
   html.default .col-content {
@@ -1391,13 +1409,14 @@ h2 {
     transform: translate(-25%, 0); }
   html.default.has-menu .col-menu {
     visibility: visible;
-    transform: translate(0, 0); } }
+    transform: translate(0, 0);
+    padding-left: 20px; } }
 
 .tsd-page-title {
-  padding: 70px 0 20px 0;
+  padding: 10px 0 10px 0;
   margin: 0 0 0 0;
   background: #191919;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.35); }
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125); }
   .tsd-page-title h1 {
     margin: 0;
     font-weight: 400; }
@@ -1416,6 +1435,9 @@ h2 {
     display: inline; }
     .tsd-breadcrumb li:after {
       content: ' / '; }
+
+body {
+  overflow: hidden; }
 
 html.minimal .container {
   margin: 0; }
@@ -1522,7 +1544,8 @@ dl.tsd-comment-tags {
     color: #dddddd;
     display: inline-block;
     vertical-align: bottom;
-    white-space: nowrap; }
+    white-space: nowrap;
+    padding: 0 20px 0 0; }
   #tsd-filter input {
     display: none; }
   @media (max-width: 900px) {
@@ -1547,26 +1570,27 @@ dl.tsd-comment-tags {
       display: block;
       padding-right: 20px; } }
 
-footer {
-  margin-top: 50px;
-  padding-bottom: 25px;
-  border-top: 1px solid #2b2b2b;
-  background-color: #191919; }
-  footer.with-border-bottom {
-    border-bottom: 1px solid #2b2b2b; }
-  footer .tsd-legend-group {
-    font-size: 0; }
-  footer .tsd-legend {
-    display: inline-block;
-    width: 25%;
-    padding: 0;
-    font-size: 20px;
-    list-style: none;
-    line-height: 1em;
-    vertical-align: top; }
-    @media (max-width: 900px) {
-      footer .tsd-legend {
-        width: 50%; } }
+footer.with-border-bottom {
+  border-bottom: 1px solid #363636; }
+
+footer .tsd-legend-group {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #141414;
+  border: 4px solid #363636;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-weight: 300; }
+
+footer .tsd-legend {
+  display: inline-block;
+  min-width: 19%;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  list-style: none;
+  line-height: 1em;
+  vertical-align: top; }
 
 .tsd-hierarchy {
   list-style: initial;
@@ -1668,24 +1692,30 @@ footer {
     margin-bottom: 0;
     border-bottom: none; }
 
-.tsd-navigation {
-  padding: 0 0 0 40px; }
-  .tsd-navigation a {
-    display: block;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    color: #dddddd;
-    text-decoration: none;
-    transition: border-left-color 0.1s;
-    height: 20px; }
-    .tsd-navigation a:hover {
-      text-decoration: underline; }
-  .tsd-navigation ul {
-    margin: 0;
-    padding: 0;
-    list-style: none; }
-  .tsd-navigation li {
-    padding: 0; }
+.tsd-navigation a {
+  display: block;
+  color: #dddddd;
+  text-decoration: none;
+  transition: border-left-color 0.1s; }
+  .tsd-navigation a:hover {
+    text-decoration: underline; }
+
+.tsd-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.tsd-navigation > ul {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #141414;
+  border: 4px solid #363636;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-weight: 300; }
+
+.tsd-navigation li {
+  padding: 0; }
 
 .tsd-navigation.primary {
   padding-bottom: 40px; }
@@ -1730,10 +1760,6 @@ footer {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25); }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px; }
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {
@@ -1799,11 +1825,11 @@ footer {
     margin-left: -20px;
     margin-right: -20px;
     padding-left: 20px;
-    border-bottom: 2px solid #2b2b2b;
+    border-bottom: 2px solid #363636;
     padding-bottom: 10px;
     font-weight: 400; }
     .tsd-panel h1 > .name, .tsd-panel h2 > .name, .tsd-panel h3 > .name, .tsd-panel h4 > .name {
-      border: 2px solid #2b2b2b;
+      border: 2px solid #363636;
       border-radius: 4px 4px 0 0;
       padding: 10px 15px 10px 15px;
       border-bottom: 2px solid #191919; }
@@ -1886,7 +1912,7 @@ footer {
       display: none; }
     #tsd-search .results li.current,
     #tsd-search .results li:hover {
-      background-color: #2b2b2b; }
+      background-color: #363636; }
     #tsd-search .results a {
       display: block; }
       #tsd-search .results a:before {
@@ -1895,7 +1921,7 @@ footer {
       color: #dddddd;
       font-weight: normal; }
   #tsd-search.has-focus {
-    background-color: #2b2b2b; }
+    background-color: #363636; }
     #tsd-search.has-focus .field input {
       top: 0;
       opacity: 1; }
@@ -1903,7 +1929,8 @@ footer {
       z-index: 0;
       opacity: 0; }
     #tsd-search.has-focus .results {
-      visibility: visible; }
+      visibility: visible;
+      z-index: 1; }
   #tsd-search.loading .results li.state.loading {
     display: block; }
   #tsd-search.failure .results li.state.failure {
@@ -1915,7 +1942,7 @@ footer {
   text-overflow: ellipsis;
   margin: 0 0 1em 0;
   padding: 10px;
-  border: 1px solid #2b2b2b;
+  border: 1px solid #363636;
   font-family: monospace;
   font-size: 20px; }
   .tsd-signature.tsd-kind-icon {
@@ -1948,7 +1975,7 @@ footer {
 .tsd-signatures {
   padding: 0;
   margin: 0 0 1em 0;
-  border: 1px solid #2b2b2b; }
+  border: 1px solid #363636; }
   .tsd-signatures .tsd-signature {
     margin: 0;
     border-width: 1px 0 0 0;
@@ -1956,7 +1983,7 @@ footer {
     .tsd-signatures .tsd-signature:first-child {
       border-top-width: 0; }
     .tsd-signatures .tsd-signature.current {
-      background-color: #2b2b2b; }
+      background-color: #363636; }
   .tsd-signatures.active > .tsd-signature {
     cursor: pointer; }
   .tsd-panel > .tsd-signatures {
@@ -2022,10 +2049,6 @@ ul.tsd-type-parameters {
     padding: 0; }
 
 .tsd-page-toolbar {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 40px;
   color: #1898e2;
@@ -2072,7 +2095,7 @@ ul.tsd-type-parameters {
     opacity: 0.8; }
   .tsd-widget.active {
     opacity: 1;
-    background-color: #2b2b2b; }
+    background-color: #363636; }
   .tsd-widget.no-caption {
     width: 40px; }
     .tsd-widget.no-caption:before {
@@ -2109,7 +2132,8 @@ ul.tsd-type-parameters {
   .tsd-select.active .tsd-select-list {
     visibility: visible;
     opacity: 1;
-    transition-delay: 0s; }
+    transition-delay: 0s;
+    z-index: 1; }
   .tsd-select .tsd-select-list {
     color: #dddddd;
     position: absolute;
@@ -2130,7 +2154,7 @@ ul.tsd-type-parameters {
       .tsd-select .tsd-select-list li:nth-child(even) {
         background-color: #191919; }
       .tsd-select .tsd-select-list li:hover {
-        background-color: #2b2b2b; }
+        background-color: #363636; }
       .tsd-select .tsd-select-list li.selected:before {
         background-position: -200px 0; }
   @media (max-width: 900px) {
