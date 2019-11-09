@@ -2,6 +2,7 @@ import {Number} from '../Number/Number'
 
 /** Describes a map of number relationships
  * (Generated with "./_Internal/IterationOfGenerator")
+ * @hidden
  */
 export type IterationMap = {
     '-40': ['__', '-39', '-40', -40, '-'],
