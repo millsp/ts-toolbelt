@@ -74,6 +74,38 @@ O extends unknown ? O1 extends unknown ?
  * @returns **`object`**
  * @example
  * ```ts
+ * import {O} from 'ts-toolbelt'
+ *
+ * type O = {
+ *     name?: string
+ *     age? : number
+ *     zip? : string
+ *     pay  : {
+ *         cvv?: number
+ *     }
+ * }
+ *
+ * type O1 = {
+ *     age : number
+ *     zip?: number
+ *     city: string
+ *     pay : {
+ *         cvv : number
+ *         ccn?: string
+ *     }
+ * }
+ *
+ * type test = O.MergeUp<O, O1, 'deep'>
+ * // {
+ * //     name?: string | undefined;
+ * //     age: number;
+ * //     zip?: string | number;
+ * //     pay: {
+ * //         cvv: number;
+ * //         ccn?: string | undefined;
+ * //     };
+ * //     city: string;
+ * // }
  * ```
  */
 export type MergeUp<O extends object, O1 extends object, depth extends Depth = 'flat'> = {
