@@ -1220,7 +1220,10 @@ table {
   display: block;
   position: relative;
   padding-left: 20px;
-  text-indent: -20px; }
+  text-indent: -20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content; }
   .tsd-kind-icon::before {
     font-weight: bold;
     display: inline-block;
@@ -1606,6 +1609,7 @@ footer .tsd-legend {
   margin-bottom: 30px !important; }
 
 .tsd-index-panel ul.tsd-index-list {
+  display: inline;
   -moz-column-count: 3;
   -ms-column-count: 3;
   -o-column-count: 3;
@@ -1770,17 +1774,17 @@ footer .tsd-legend {
 .tsd-navigation.secondary ul {
   transition: opacity 0.2s; }
   .tsd-navigation.secondary ul li li a {
-    margin-left: 30px; }
+    margin-left: 40px; }
   .tsd-navigation.secondary ul li li li a {
-    margin-left: 50px; }
+    margin-left: 80px; }
   .tsd-navigation.secondary ul li li li li a {
-    margin-left: 70px; }
+    margin-left: 120px; }
   .tsd-navigation.secondary ul li li li li li a {
-    margin-left: 90px; }
+    margin-left: 160px; }
   .tsd-navigation.secondary ul li li li li li li a {
-    margin-left: 110px; }
+    margin-left: 200px; }
   .tsd-navigation.secondary ul li li li li li li li a {
-    margin-left: 130px; }
+    margin-left: 240px; }
 
 .tsd-navigation.secondary li.focus > a,
 .tsd-navigation.secondary ul.current li.focus > a {
@@ -1944,7 +1948,8 @@ footer .tsd-legend {
   padding: 10px;
   border: 1px solid #363636;
   font-family: monospace;
-  font-size: 20px; }
+  font-size: 20px;
+  width: inherit; }
   .tsd-signature.tsd-kind-icon {
     padding-left: 30px; }
     .tsd-signature.tsd-kind-icon:before {
