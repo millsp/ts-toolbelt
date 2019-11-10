@@ -77,9 +77,13 @@
 
 ## 📜 About
 
-**ts-toolbelt** brings **new capabilities** to TypeScript with a collection of more than **200** tested types. This makes it the largest, and most reliable type collection out there. With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
+**ts-toolbelt** is a **type library** that provides simple ways to update, change, and compute **TypeScript types**.
 
-Its goal is to improve type correctness while adding a whole new set of **features** to TypeScript. It uses the type system itself for TypeScript to compute more complex types. In other words, its API exposes types that trade **CPU & RAM** for higher type safety.
+With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
+
+This brings **new capabilities** to TypeScript with **+200** tested types. This makes it the largest, and most reliable type collection out there.
+
+It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
 
 You'll find all the types you can ever need in this single and **well organized** package.
 
