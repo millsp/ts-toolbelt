@@ -82,7 +82,6 @@
 With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
 
 This brings **new capabilities** to TypeScript with **+200** tested types. This makes it the largest, and most reliable type collection out there.
-
 It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
 
 You'll find all the types you can ever need in this single and **well organized** package.
