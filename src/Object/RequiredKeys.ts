@@ -1,5 +1,6 @@
 import {NonNullableKeys} from './NonNullableKeys'
 import {NonNullable} from './NonNullable'
+import {Index} from '../Any/Index'
 
 /** Get the keys of **`O`** that are required
  * @param O
@@ -9,5 +10,5 @@ import {NonNullable} from './NonNullable'
  * ```
  */
 export type RequiredKeys<O extends object> =
-    NonNullableKeys<NonNullable<O>>
+    NonNullableKeys<NonNullable<O>> & keyof O & Index
     // required keys never are nullable

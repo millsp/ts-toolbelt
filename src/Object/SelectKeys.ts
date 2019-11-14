@@ -18,4 +18,4 @@ export type SelectKeys<O extends object, M extends any, match extends Match = 'd
         1: K
         0: never
     }[Is<O[K], M, match>]
-}[keyof O] & Index
+}[keyof O] & keyof O & Index

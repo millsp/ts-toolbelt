@@ -16,5 +16,5 @@ export type FilterKeys<O extends object, M extends any, match extends Match = 'd
         1: never
         0: K
     }[Is<O[K], M, match>]
-}[keyof O] & Index
+}[keyof O] & keyof O & Index
 

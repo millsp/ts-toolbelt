@@ -12,7 +12,7 @@ type IntersectMatch<O extends object, O1 extends object, match extends Match> = 
         1: K
         0: never
     }[Is<O[K], At<O1, K>, match>]
-}[keyof O] & Index
+}[keyof O] & keyof O & Index
 
 /** Get the intersecting keys of **`O`** & **`O1`**
  * (If `match = 'default'`, no type checks are done)

@@ -16,4 +16,4 @@ export type ReadonlyKeys<O extends object> = {
         0: K
     }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}>]
     // for each key, pick only and compare to see if it is
-}[keyof O] & Index
+}[keyof O] & keyof O & Index

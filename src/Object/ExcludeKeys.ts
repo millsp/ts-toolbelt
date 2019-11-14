@@ -12,7 +12,7 @@ type ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
         1: never
         0: K
     }[Is<O[K], At<O1, K>, match>]
-}[keyof O] & Index
+}[keyof O] & keyof O & Index
 
 /** Exclude the keys of **`O1`** out of the keys of **`O`**
  * (If `match = 'default'`, no type checks are done)
