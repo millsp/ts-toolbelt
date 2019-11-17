@@ -81,7 +81,7 @@
 
 With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
 
-This brings **new capabilities** to TypeScript thanks to **+200** tested types. This makes it the largest, and most reliable type collection out there.
+It brings **new capabilities** to TypeScript thanks to **+200** tested types. This makes it the largest, and most reliable type collection out there.
 It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
 
 You'll find all the types you can ever need in this single and **well organized** package.
@@ -90,11 +90,12 @@ You'll find all the types you can ever need in this single and **well organized*
 
 * Answer the question to **"How do I do this in TypeScript?"**
 * Provide a lodash-like **programmatic API** for the type system
-* Software that is more **type-safe**, **flexible**, and **robust**
 * Computed types are always **readable**, like if you typed it
-* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +50MB)
+* Promote type **reusability** within the codebase & external deps
+* Software that is more **type-safe**, **flexible**, and **robust**
 * Bring a whole new set of extra **features** to TypeScript
 * This package aims to be the home of all **utility types**
+* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +50MB)
 
 ## 🍩 Features
 
