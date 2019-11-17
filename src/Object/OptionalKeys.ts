@@ -1,6 +1,5 @@
 import {NonNullable} from './NonNullable'
 import {NullableKeys} from './NullableKeys'
-import {Compute} from '../Any/Compute'
 import {Index} from '../Any/Index'
 
 /** Get the keys of **`O`** that are optional

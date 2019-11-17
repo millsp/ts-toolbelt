@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npm run build:types
+npx tsc --noEmit
