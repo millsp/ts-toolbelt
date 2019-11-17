@@ -193,6 +193,6 @@ checks([
     check<N.NumberOf<10>,       '10',       Test.Pass>(),
     check<N.NumberOf<100>,      string,     Test.Pass>(),
     check<N.NumberOf<number>,   string,     Test.Pass>(),
-    check<N.NumberOf<any>,      any,        Test.Pass>(),
+    check<N.NumberOf<any>,      string,     Test.Pass>(),
     check<N.NumberOf<never>,    never,      Test.Pass>(),
 ])
