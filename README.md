@@ -91,7 +91,7 @@ You'll find all the types you can ever need in this single and **well organized*
 * Answer the question to **"How do I do this in TypeScript?"**
 * Provide a lodash-like **programmatic API** for the type system
 * Computed types are always **readable**, like if you typed it
-* Promote type **reusability** within the codebase & external deps
+* Promote type **evolution**, **reusability** within your codebase
 * Software that is more **type-safe**, **flexible**, and **robust**
 * Bring a whole new set of extra **features** to TypeScript
 * This package aims to be the home of all **utility types**
