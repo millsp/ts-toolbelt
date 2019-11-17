@@ -3,6 +3,9 @@
 # Make sure that we passed all tests
 npm run test &&
 
+npm run build:code &&
+npm run build:types &&
+
 # Get the name of the current branch
 BRANCH=`git rev-parse --symbolic-full-name --abbrev-ref HEAD` &&
 
