@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.10.9](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.8...v4.10.9) (2019-11-17)
+
+
+### Others
+
+* readme ([c749e1a](https://github.com/pirix-gh/ts-toolbelt/commit/c749e1abd703d5023aeea9bf4381f0bcf02967a8))
+* **number:** fast number to string ([161f247](https://github.com/pirix-gh/ts-toolbelt/commit/161f247a11ca5c8c9f11e8b2fea76d6277655c73))
+* fix tests allowing broken types ([c70f49f](https://github.com/pirix-gh/ts-toolbelt/commit/c70f49f708c213cc5e9641312ef328279a47a289))
+
 ### [4.10.8](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.7...v4.10.8) (2019-11-14)
 
 
