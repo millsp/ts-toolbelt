@@ -77,7 +77,7 @@
 
 ## 📜 About
 
-**ts-toolbelt** is a **type library** that provides simple ways to update, change, and compute **TypeScript types**.
+**ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types.
 
 With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
 
@@ -90,8 +90,8 @@ You'll find all the types you can ever need in this single and **well organized*
 
 * Answer the question to **"How do I do this in TypeScript?"**
 * Provide a lodash-like **programmatic API** for the type system
+* Promote type **evolution** & **reusability** within your codebase
 * Computed types are always **readable**, like if you typed it
-* Promote type **evolution**, **reusability** within your codebase
 * Software that is more **type-safe**, **flexible**, and **robust**
 * Bring a whole new set of extra **features** to TypeScript
 * This package aims to be the home of all **utility types**
