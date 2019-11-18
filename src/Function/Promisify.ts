@@ -2,10 +2,9 @@ import {Function} from './Function'
 import {Parameters} from './Parameters'
 import {Return} from './Return'
 
-/** Creates a promisified version of a **Function**
- * types that TS haven't resolved).
+/** Creates a promisified version of a **`Function`** **`F`**
  * @param F to promisify
- * @returns promisified F
+ * @returns async F
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'
