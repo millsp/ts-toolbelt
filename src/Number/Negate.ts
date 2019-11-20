@@ -11,7 +11,7 @@ import {Format} from '../Iteration/Format'
 export type _Negate<N extends Iteration> =
     _Minus<IterationOf<'0'>, N>
 
-/** Negate a **`Number`**
+/** Negate a [[Number]]
  * @param N to negate
  * @param fmt output (?=`'s'`)
  * @returns **`string | number | boolean`**

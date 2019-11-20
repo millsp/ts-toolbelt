@@ -1,7 +1,7 @@
 import {Exclude} from '../Union/Exclude'
 import {Tuple} from './Tuple'
 
-/** Get the longest **tuple** of **`T`** & **`T1`**
+/** Get the longest [[Tuple]] of **`T`** & **`T1`**
  * (**`T`** has priority if both lengths are equal)
  * @param T to compare length
  * @param T1 to compare length

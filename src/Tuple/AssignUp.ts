@@ -4,7 +4,7 @@ import {Tuple} from './Tuple'
 import {ObjectOf} from './ObjectOf'
 import {Cast} from '../Any/Cast'
 
-/** Assign a list of **tuple** into **`T`** with **`MergeUp`** (last-in combines or overrides)
+/** Assign a list of [[Tuple]] into **`T`** with [[MergeUp]] (last-in combines or overrides)
  * @param T to assign to
  * @param Ts to assign
  * @returns **`object`**

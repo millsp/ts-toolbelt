@@ -1,8 +1,8 @@
 // import {Curry} from './Curry'
 
-// /** Undoes the work that was done by **`Curry`**
+// /** Undoes the work that was done by [[Curry]]
 //  * @param F to uncurry
-//  * @returns **`Function`**
+//  * @returns [[Function]]
 //  * @example
 //  */
 // export type UnCurry<F extends Curry<any>> =

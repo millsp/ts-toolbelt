@@ -41,7 +41,7 @@ type ComposeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
     ], Return<Fns[Pos<IterationOf<K & string>>]>
     >
 
-/** Compute what the input of **`Compose`** should be
+/** Compute what the input of [[Compose]] should be
  * @param Fns to compose
  * @param mode sync/async (?=`'sync'`)
  * @example
@@ -53,9 +53,9 @@ export type Composer<Fns extends Tuple<Function>, mode extends Mode = 'sync'> = 
     'async': {[K in keyof Fns]: ComposeFnAsync<Fns, K>}
 }[mode]
 
-/** Compose **`Function`**s together
+/** Compose [[Function]]s together
  * @param Fns to compose
- * @returns **`Function`**
+ * @returns [[Function]]
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'

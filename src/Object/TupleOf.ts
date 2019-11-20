@@ -27,7 +27,7 @@ type _TupleOf<O extends object, K, TN extends Tuple = [], I extends Iteration = 
     : 0
 ]
 
-/** Transform an **`object`** into a **tuple**
+/** Transform an **`object`** into a [[Tuple]]
  * (It will only pick numeric literal indexes)
  * @param O to transform
  * @param LastK last index to pick

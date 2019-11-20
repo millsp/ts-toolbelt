@@ -7,7 +7,7 @@ import {Tuple} from './Tuple'
  * @param T to be inspected
  * @param M to check entry type
  * @param match to change precision (?=`'default'`)
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * ```

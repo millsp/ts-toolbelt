@@ -19,7 +19,7 @@ type _Assign<O extends object, Os extends Tuple<object>, I extends Iteration = I
     : 0
 ]
 
-/** Assign a list of **`object`** into **`O`** with **`MergeUp`** (last-in combines or overrides)
+/** Assign a list of **`object`** into **`O`** with [[MergeUp]] (last-in combines or overrides)
  * @param O to assign to
  * @param Os to assign
  * @returns **`object`**

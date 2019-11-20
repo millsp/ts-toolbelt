@@ -11,9 +11,9 @@ type _Strict<U, _U = U> =
     ? U & Optional<Record<Exclude<Keys<_U>, keyof U>, never>>
     : never
 
-/** Make a **union** not allow excess properties (https://github.com/Microsoft/TypeScript/issues/20863)
+/** Make a [[Union]] not allow excess properties (https://github.com/Microsoft/TypeScript/issues/20863)
  * @param U to make strict
- * @returns **union**
+ * @returns [[Union]]
  * @example
  * ```ts
  * ```

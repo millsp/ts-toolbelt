@@ -1,6 +1,6 @@
 /** Add **`undefined`** to **`U`**
  * @param U to make nullable
- * @returns **union**
+ * @returns [[Union]]
  * @example
  * ```ts
  * ```

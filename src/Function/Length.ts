@@ -3,7 +3,7 @@ import {Parameters} from './Parameters'
 import {Formats} from '../Iteration/_Internal'
 import {Length as TLength} from '../Tuple/Length'
 
-/** Extract arguments' length from a **`Function`**
+/** Extract arguments' length from a [[Function]]
  * @param F to extract from
  * @param fmt output (?=`'n'`)
  * @returns **`string`** or **`number`**

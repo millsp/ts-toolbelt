@@ -1,6 +1,6 @@
 import {Keys} from './Keys'
 
-/** Transform an **`object`** into an **union**
+/** Transform an **`object`** into an [[Union]]
  * @param O to transform
  * @returns **`any`**
  * @example

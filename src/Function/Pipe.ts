@@ -38,7 +38,7 @@ type PipeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
     ], Return<Fns[Pos<IterationOf<K & string>>]>
     >
 
-/** Compute what the input of **`Pipe`** should be
+/** Compute what the input of [[Pipe]] should be
  * @param Fns to pipe
  * @param mode sync/async (?=`'sync'`)
  * @example
@@ -50,10 +50,10 @@ export type Piper<Fns extends Tuple<Function>, mode extends Mode = 'sync'> = {
     'async': {[K in keyof Fns]: PipeFnAsync<Fns, K>}
 }[mode]
 
-/** Pipe **`Function`**s together
+/** Pipe [[Function]]s together
  * @param Fns to pipe
  * @param mode sync/async (?=`'sync'`)
- * @returns **`Function`**
+ * @returns [[Function]]
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'

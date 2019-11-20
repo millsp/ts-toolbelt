@@ -89,10 +89,10 @@ export type IterationMap = {
     '__' : ['__', '__', string, number, '-' | '0' | '+']
 }
 
-/** Transform a number into an **`Iteration`**
- * (to use **`Prev`**, **`Next`**, & **`Pos`**)
+/** Transform a number into an [[Iteration]]
+ * (to use [[Prev]], [[Next]], & [[Pos]])
  * @param N to transform
- * @returns **`Iteration`**
+ * @returns [[Iteration]]
  * @example
  * ```ts
  * import {I} from 'ts-toolbelt'

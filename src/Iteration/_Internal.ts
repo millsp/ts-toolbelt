@@ -10,7 +10,7 @@ export type Way = '->' | '<-'
 
 // ---------------------------------------------------------------------------------------
 
-/** Generate the **`IterationOf`** type
+/** Generate the [[IterationOf]] type
  * @param min -40
  * @param max +40
  */

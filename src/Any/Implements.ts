@@ -5,7 +5,7 @@ import {Extends} from './Extends'
  * [[Extends]] but [[Boolean]] results are narrowed to [[False]].
  * @param A1
  * @param A2
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * type test0 = A.Implements<'a' | 'b', 'b'> // False

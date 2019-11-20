@@ -63,7 +63,7 @@ export type _Plus<N1 extends Iteration, N2 extends Iteration> = {
     1: PlusNegative<N1, N2>
 }[_IsNegative<N2>]
 
-/** Add a **`Number`** to another one
+/** Add a [[Number]] to another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
  * @param fmt output (?=`'s'`)

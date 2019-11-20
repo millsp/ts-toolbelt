@@ -1,7 +1,7 @@
 import {Iteration} from './Iteration'
 import {Formats} from './_Internal'
 
-/** Is **`Key`** and **`Pos`** in a single type
+/** Is [[Key]] and [[Pos]] in a single type
  * @param I to query
  * @param fmt output
  * @returns **`string | number`**

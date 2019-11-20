@@ -21,7 +21,7 @@ type _ZipObj<TProp extends Tuple<Index>, TField extends Tuple, O extends object 
     : 0
 ]
 
-/** Create an **`object`** from **tuple**s of keys & fields
+/** Create an **`object`** from [[Tuple]]s of keys & fields
  * @param TProps its keys
  * @param TFields its fields
  * @returns **`object`**

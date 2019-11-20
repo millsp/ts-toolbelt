@@ -1,6 +1,6 @@
 import {Tuple} from './Tuple'
 
-/** Transform a **tuple** into an **union**
+/** Transform a [[Tuple]] into an [[Union]]
  * @param T to transform
  * @returns **`any`**
  * @example

@@ -1,8 +1,8 @@
 import {False, True} from './Boolean'
 
-/** Transform a **`boolean`** into a **`Boolean`**
+/** Transform a **`boolean`** into a [[Boolean]]
  * @param B to transform
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * type test0 = B.BooleanOf<true>  // 1

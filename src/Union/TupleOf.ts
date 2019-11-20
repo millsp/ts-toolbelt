@@ -15,7 +15,7 @@ type _TupleOf<U, TN extends Tuple = [], LastU = Last<U>> = {
     : 0
 ]
 
-/** Transform a **union** into a **tuple**
+/** Transform a [[Union]] into a [[Tuple]]
  * (⚠️ it might not preserve order)
  * @param U to transform
  * @returns **`any[]`**

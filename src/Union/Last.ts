@@ -1,6 +1,6 @@
 import {IntersectOf} from './IntersectOf'
 
-/** Get the last item within an **union**
+/** Get the last item within an [[Union]]
  * (⚠️ it might not preserve order)
  * @param U
  * @returns **any**

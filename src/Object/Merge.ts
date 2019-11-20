@@ -29,7 +29,7 @@ type MergeDeep<O, O1> = // we do not distribute this one => recursive distribute
 
 /** Complete the fields of **`O`** with the ones of **`O1`**
  * ('deep' option will skip nullable objects to be merged).
- * For more advanced capabilities, see **`MergeUp`**.
+ * For more advanced capabilities, see [[MergeUp]].
  * @param O to complete
  * @param O1 to copy from
  * @param depth to do it deeply (?=`'flat'`)

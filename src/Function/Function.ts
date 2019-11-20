@@ -1,10 +1,10 @@
 import {_Function} from './_Internal'
 import {Tuple} from '../Tuple/Tuple'
 
-/** Alias to create a **`Function`**
+/** Alias to create a [[Function]]
  * @param P parameters
  * @param R return type
- * @returns **`Function`**
+ * @returns [[Function]]
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'

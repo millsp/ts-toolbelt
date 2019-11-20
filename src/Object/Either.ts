@@ -25,12 +25,12 @@ type EitherStrict<O extends object, K extends Index> =
 type EitherLoose<O extends object, K extends Index> =
     Compute<_Either<O, K>> & {}
 
-/** Split **`O`** into a **union** with **`K`** keys in such a way that none of
+/** Split **`O`** into a [[Union]] with **`K`** keys in such a way that none of
  * the keys are ever present with one another within the different unions.
  * @param O to split
  * @param K to split with
  * @param strict to force excess property checks (?=`True`) https://github.com/microsoft/TypeScript/issues/20863
- * @returns **`object`** **union**
+ * @returns **`object`** [[Union]]
  * @example
  * ```ts
  * ```

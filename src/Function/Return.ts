@@ -1,6 +1,6 @@
 import {Function} from './Function'
 
-/** Extract the return type of a **`Function`**
+/** Extract the return type of a [[Function]]
  * @param F to extract from
  * @returns **`any`**
  * @example

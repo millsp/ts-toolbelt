@@ -8,7 +8,7 @@ import {Index} from '../Any/Index'
  * @param K to choose field
  * @param M to check field type (?=`any`)
  * @param match to change precision (?=`'default'`)
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * ```

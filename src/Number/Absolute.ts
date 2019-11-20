@@ -14,7 +14,7 @@ export type _Absolute<N extends Iteration> = {
     1: _Negate<N>
 }[_IsNegative<N>]
 
-/** Get the absolute value of a **`Number`**
+/** Get the absolute value of a [[Number]]
  * @param N to absolute
  * @param fmt output (?=`'s'`)
  * @returns **`string | number | boolean`**

@@ -1,6 +1,6 @@
 import {Function} from './Function'
 
-/** Extract parameters from a **`Function`**
+/** Extract parameters from a [[Function]]
  * @param F to extract from
  * @returns **`any[]`**
  * @example

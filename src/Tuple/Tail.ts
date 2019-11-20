@@ -1,6 +1,6 @@
 import {Tuple} from './Tuple'
 
-/** Remove the first item out of a **tuple**
+/** Remove the first item out of a [[Tuple]]
  * @param T
  * @returns **`any[]`**
  * @example

@@ -1,7 +1,7 @@
 /** Remove **`M`** out of **`U`**
  * @param U to remove from
  * @param M to remove out
- * @returns **union**
+ * @returns [[Union]]
  * @example
  * ```ts
  * ```

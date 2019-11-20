@@ -6,7 +6,7 @@ import {False, True} from '../Boolean/Boolean'
  * @param O to be inspected
  * @param M to check field type
  * @param match to change precision (?=`'default'`)
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * ```

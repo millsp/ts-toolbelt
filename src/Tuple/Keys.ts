@@ -2,7 +2,7 @@ import {Index} from '../Any/Index'
 import {Exclude} from '../Union/Exclude'
 import {Tuple} from './Tuple'
 
-/** Get the keys of a **tuple**
+/** Get the keys of a [[Tuple]]
  * @param T
  * @returns **`keyof`**
  * @example

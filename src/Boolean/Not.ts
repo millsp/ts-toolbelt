@@ -2,7 +2,7 @@ import {Boolean, False, True} from './Boolean'
 
 /** Logical **`!`** operator (behaves like the JS one)
  * @param B to negate
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * import {B} from 'ts-toolbelt'

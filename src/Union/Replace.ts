@@ -2,7 +2,7 @@
  * @param U to update
  * @param M to select
  * @param A to update with
- * @returns **union**
+ * @returns [[Union]]
  * @example
  * ```ts
  * ```

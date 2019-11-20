@@ -4,7 +4,7 @@ import {x} from '../Any/x'
 import {Exclude} from '../Union/Exclude'
 import {Tuple} from './Tuple'
 
-/** Modify **`T`** with **`TMod`** & the **`x`** placeholder
+/** Modify **`T`** with **`TMod`** & the [[x]] placeholder
  * @param T to copy from
  * @param TMod to copy to
  * @returns **`any[]`**

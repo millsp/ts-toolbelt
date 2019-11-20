@@ -18,7 +18,7 @@ type _Group<T extends Tuple, N extends Number, TN extends Tuple = []> = {
     : 0
 ]
 
-/** Split **`T`** into sub-**tuple**s every **`N`**
+/** Split **`T`** into sub-[[Tuple]]s every **`N`**
  * @param T to group
  * @param N to split at
  * @returns **`any[]`**

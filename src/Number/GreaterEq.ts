@@ -11,10 +11,10 @@ import {Or} from '../Boolean/Or'
 export type _GreaterEq<N1 extends Iteration, N2 extends Iteration> =
     Or<Equals<N1, N2>, _Greater<N1, N2>>
 
-/** Check if a **`Number`** is greater or equal to another one
+/** Check if a [[Number]] is greater or equal to another one
  * @param N1 to compare
  * @param N2 to compare to
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

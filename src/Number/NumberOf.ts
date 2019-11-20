@@ -12,7 +12,7 @@ export type _NumberOf<N extends number> = {
                                : never
 }[keyof IterationMap] // union of matched numbers
 
-/** Transform a **`number`** into a **`Number`**
+/** Transform a **`number`** into a [[Number]]
  * @param N to stringify
  * @returns **`string`**
  * @example

@@ -1,7 +1,7 @@
 import {Omit as OOmit} from '../Object/Omit'
 import {Tuple} from './Tuple'
 
-/** Transform a **tuple** into an **`object`**
+/** Transform a [[Tuple]] into an **`object`**
  * @param T to transform
  * @returns **`object`**
  * @example

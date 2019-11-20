@@ -9,7 +9,7 @@ import {Tuple} from '../Tuple/Tuple'
  * @param Path to be followed
  * @param M to check field type (?=`any`)
  * @param match to change precision (?=`'default'`)
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * ```

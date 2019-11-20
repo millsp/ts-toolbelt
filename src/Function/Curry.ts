@@ -49,9 +49,9 @@ type Gaps<T extends Tuple> = NonNullable<{
     [K in keyof T]?: T[K] | x
 }>
 
-/** Curry a **`Function`**
+/** Curry a [[Function]]
  * @param F to curry
- * @returns **`Function`**
+ * @returns [[Function]]
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'

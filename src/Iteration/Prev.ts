@@ -3,7 +3,7 @@ import {Iteration} from './Iteration'
 
 /** Move **`I`**'s position backwards
  * @param I to move
- * @returns **`Iteration`**
+ * @returns [[Iteration]]
  * @example
  * ```ts
  * import {I} from 'ts-toolbelt'

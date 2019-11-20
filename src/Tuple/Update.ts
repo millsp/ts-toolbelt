@@ -4,7 +4,7 @@ import {Index} from '../Any/Index'
 import {Tuple} from './Tuple'
 
 /** Update in **`T`** the entries of key **`K`** with **`A`**.
- * Use the **`x`** placeholder to get the current field type.
+ * Use the [[x]] placeholder to get the current field type.
  * @param T to update
  * @param K to chose fields
  * @param A to update with

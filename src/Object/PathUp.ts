@@ -26,7 +26,7 @@ type _PathUp<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'
 ]
 
 /** Get in **`O`** the type of nested properties.
- * It is able to deal with nested **`Union`**s.
+ * It is able to deal with nested [[Union]]s.
  * @param O to be inspected
  * @param Path to be followed
  * @returns **`any`**

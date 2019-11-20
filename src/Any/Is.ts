@@ -8,7 +8,7 @@ import {Implements} from './Implements'
  * @param A to be compared
  * @param A1 to compare to
  * @param match to change precision (?=`'default'`)
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'

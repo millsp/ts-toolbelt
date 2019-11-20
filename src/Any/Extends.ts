@@ -1,10 +1,10 @@
 import {False, True} from '../Boolean/Boolean'
 
 /** Check whether **`A1`** is part of **`A2`** or not. The difference with
- * `extends` is that it forces a **`Boolean`** return.
+ * `extends` is that it forces a [[Boolean]] return.
  * @param A1
  * @param A2
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'

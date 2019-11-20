@@ -4,7 +4,7 @@ import {Match} from '../Any/_Internal'
 import {ObjectOf} from './ObjectOf'
 import {Tuple} from './Tuple'
 
-/** Get a **tuple** that is the difference between **`T`** & **`T1`**
+/** Get a [[Tuple]] that is the difference between **`T`** & **`T1`**
  * (**`T`**'s differences have priority over **`T1`**'s if entries overlap)
  * (If `match = 'default'`, no type checks are done)
  * @param T to check differences with

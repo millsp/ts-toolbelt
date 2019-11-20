@@ -20,7 +20,7 @@ type _Reverse<T extends Tuple, TO extends Tuple, I extends Iteration = Iteration
     : 0
 ]
 
-/** Turn a **tuple** the other way around
+/** Turn a [[Tuple]] the other way around
  * @param T to reverse
  * @param TO to append to (?=[])
  * @returns **`any[]`**

@@ -12,9 +12,9 @@ export type _IsNegative<N extends Iteration> = {
     '0': False
 }[N[4]]
 
-/** Check whether a **`Number`** is negative or not
+/** Check whether a [[Number]] is negative or not
  * @param N to check
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

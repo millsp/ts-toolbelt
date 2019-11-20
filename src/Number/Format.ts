@@ -5,7 +5,7 @@ import {Not} from '../Boolean/Not'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
 
-/** Change the format of a **`Number`**
+/** Change the format of a [[Number]]
  * @param B to transform
  * @returns **`string | number | boolean`**
  * @example

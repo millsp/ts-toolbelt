@@ -10,10 +10,10 @@ import {Number} from './Number'
 export type _Greater<N1 extends Iteration, N2 extends Iteration> =
     _IsPositive<_Minus<N1, N2>>
 
-/** Check if a **`Number`** is bigger than another one
+/** Check if a [[Number]] is bigger than another one
  * @param N1 to compare
  * @param N2 to compare to
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

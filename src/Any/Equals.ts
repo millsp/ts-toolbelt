@@ -3,7 +3,7 @@ import {True, False} from '../Boolean/Boolean'
 /** Check whether **`A1`** is equal to **`A2`** or not.
  * @param A1
  * @param A2
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'

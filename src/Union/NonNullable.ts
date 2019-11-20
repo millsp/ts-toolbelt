@@ -2,7 +2,7 @@ import {Exclude} from './Exclude'
 
 /** Remove **`undefined`** & **`null`** out of **`U`**
  * @param U to make non-nullable
- * @returns **union**
+ * @returns [[Union]]
  * @example
  * ```ts
  * ```

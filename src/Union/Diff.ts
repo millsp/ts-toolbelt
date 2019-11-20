@@ -1,9 +1,9 @@
 import {Exclude} from './Exclude'
 
-/** Get an **union** that is the difference between **`U1`** & **`U2`**
+/** Get an [[Union]] that is the difference between **`U1`** & **`U2`**
  * @param U1 to check differences with
  * @param U2 to check differences against
- * @returns **union**
+ * @returns [[Union]]
  * @example
  * ```ts
  * ```

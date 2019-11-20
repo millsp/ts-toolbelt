@@ -3,7 +3,7 @@ import {x} from '../Any/x'
 import {Replace} from '../Union/Replace'
 
 /** Update in **`O`** the fields of key **`K`** with **`A`**.
- * Use the **`x`** placeholder to get the current field type.
+ * Use the [[x]] placeholder to get the current field type.
  * @param O to update
  * @param K to chose fields
  * @param A to update with

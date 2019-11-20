@@ -1,6 +1,6 @@
 // Credit https://stackoverflow.com/a/50375286/3570903
 
-/** Transform a **union** to an **intersection**
+/** Transform a [[Union]] to an **intersection**
  * @param U to transform
  * @returns **intersection**
  * @example

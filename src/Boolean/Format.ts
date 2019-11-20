@@ -1,7 +1,7 @@
 import {Boolean} from './Boolean'
 import {Formats} from './_Internal'
 
-/** Change the format of a **Boolean**
+/** Change the format of a [[Boolean]]
  * @param B to transform
  * @returns **`string | number | boolean`**
  * @example

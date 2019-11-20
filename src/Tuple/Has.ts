@@ -9,7 +9,7 @@ import {Tuple} from './Tuple'
  * @param K to choose entry
  * @param M to check entry type (?=`any`)
  * @param match to change precision (?=`'default'`)
- * @returns **`Boolean`**
+ * @returns [[Boolean]]
  * @example
  * ```ts
  * ```

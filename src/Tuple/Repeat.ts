@@ -19,7 +19,7 @@ type _Repeat<N extends Number, A, T extends Tuple = [], I extends Iteration = It
     : 0
 ]
 
-/** Fill a **tuple** with **`N`** times **`A`**
+/** Fill a [[Tuple]] with **`N`** times **`A`**
  * @param A to fill with
  * @param N to repeat it
  * @param T to be filled (?=[])
