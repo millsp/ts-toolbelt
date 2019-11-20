@@ -86,7 +86,7 @@ It uses the type system itself for TypeScript to compute complex types. So its A
 
 You'll find all the types you can ever need in this single and **well organized** package.
 
-#### Goals
+### Goals
 
 * Answer the question to **"How do I do this in TypeScript?"**
 * Provide a lodash-like **programmatic API** for the type system
@@ -139,7 +139,7 @@ Here's some of the most useful features:
 
 ## 🏁 Getting Started
 
-#### Prerequisites
+### Prerequisites
 
 Lowest TypeScript [support](#-compatibility) starts at v3.5
 
@@ -159,13 +159,13 @@ For best results, add this to your `tsconfig.json`
 }
 ```
 
-#### Installation
+### Installation
 
 ```sh
 npm install ts-toolbelt --save
 ```
 
-#### Hello World
+### Hello World
 
 ```ts
 import {Object} from 'ts-toolbelt'
@@ -197,7 +197,7 @@ The project is organized around TypeScript's main concepts:
 
 **The documentation is complete but needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
 
-#### Imports
+### Imports
 
 There are many ways to import the types into your project:
 
@@ -216,12 +216,12 @@ There are many ways to import the types into your project:
   import tb from 'ts-toolbelt'
   ```
 
-#### Internal Docs
+### Internal Docs
 
 If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get you on track to start writing your own types.
 
 
-#### [Archives ⤢](https://github.com/pirix-gh/ts-toolbelt/tree/gh-pages)
+### [Archives ⤢](https://github.com/pirix-gh/ts-toolbelt/tree/gh-pages)
 
 Access older docs at https://pirix-gh.github.io/ts-toolbelt/version/
 
@@ -241,17 +241,17 @@ Stay up to date with the latest announcements with this regular digest of import
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. There are many ways to contribute to the project:
 
-#### Community
+### Community
 
 * [Help the community with answers on Gitter](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 * [Reporting bugs or requesting new features](https://github.com/pirix-gh/ts-toolbelt/issues/new/choose)
 
-#### Codebase
+### Codebase
 
 * Improving existing documentation 
 * Adding new types to the collection
 
-#### Pull Requests
+### Pull Requests
 
 1. [Read the tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
 
@@ -284,7 +284,7 @@ Contributions are what make the open source community such an amazing place to l
 
 ## 💉 Running tests
 
-#### For this project
+### For this project
 
 To run the `lint` & `type` tests, simply run:
 
@@ -292,7 +292,7 @@ To run the `lint` & `type` tests, simply run:
 npm test
 ```
 
-#### For your project
+### For your project
 
 Want to test your own types? Let's get started:
 
@@ -309,7 +309,7 @@ checks([
 
 > **`TIP`** Place it in a file that won't be executed, it's just for TypeScript to test types
 
-#### Continuous Integration
+### Continuous Integration
 
 The releases are done with Travis CI in stages & whenever a branch or PR is pushed:
 
