@@ -162,11 +162,11 @@ type optional = Object.Optional<{id: number, name: string}, 'name'}>
 
 #### Where to Start
 
-Here's some of the most useful utilities you can page through:
+You can [**level-up, and re-code this library from scratch**](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab).
 
 <details>
 <summary>
-Expand List
+<b>Or page through the list of our most useful utilities</b>
 </summary>
 
 | Object                                                                                          | Tuple                                                                                 |
@@ -183,11 +183,9 @@ Expand List
 | [Object/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)            |                                                                                       |
 | [Object/Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)        |                                                                                       |                                                                                  |
 
-> **`TIP`** Another utility worth mentioning? [Add another entry](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
+> **`TIP`** [Add something to this list](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
 
 </details>
-
-**If you feel adventurous, learn [how to re-code this library from scratch](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) to improve your skills.**
 
 ## [📖 Documentation ⤢](https://pirix-gh.github.io/ts-toolbelt/)
 
