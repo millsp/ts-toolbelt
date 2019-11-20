@@ -168,6 +168,7 @@ You can [**level-up, and re-code this library from scratch**](https://medium.com
 <summary>
 <b>Or page through the list of our most useful utilities</b>
 </summary>
+<br>
 
 | Object                                                                                          | Tuple                                                                                 |
 |-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
@@ -196,7 +197,7 @@ The project is organized around TypeScript's main concepts:
 | **A**ny      | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber   |
 | **O**bject   | **O**bject.**P**   | **S**tring   | **T**uple      | **U**nion       | Test         |
 
-> **`TIP`** match the type kind you need to operate on with the above categories
+> **`TIP`** match the type you need to work with with the above
 
 **The documentation is complete but needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
 
