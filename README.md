@@ -164,7 +164,12 @@ type optional = Object.Optional<{id: number, name: string}, 'name'}>
 
 Here's some of the most useful utilities you can page through:
 
-|                                                                                                 |                                                                                       |
+<details>
+<summary>
+Expand List
+</summary>
+
+| Object                                                                                          | Tuple                                                                                 |
 |-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | [Object/Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)            | [Tuple/Append](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_append_.html)    |
 | [Object/MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)          | [Tuple/Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_drop_.html)        |
@@ -176,9 +181,13 @@ Here's some of the most useful utilities you can page through:
 | [Object/Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)        |                                                                                       |
 | [Object/Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)            |                                                                                       |
 | [Object/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)            |                                                                                       |
-| [Object/Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)        | [add another entry](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)    |                                                                                  |
+| [Object/Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)        |                                                                                       |                                                                                  |
 
-If you feel adventurous, learn [how to re-code this library from scratch](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) to improve your skills.
+> **`TIP`** Another utility worth mentioning? [Add another entry](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
+
+</details>
+
+**If you feel adventurous, learn [how to re-code this library from scratch](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) to improve your skills.**
 
 ## [📖 Documentation ⤢](https://pirix-gh.github.io/ts-toolbelt/)
 
