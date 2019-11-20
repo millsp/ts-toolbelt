@@ -151,9 +151,34 @@ import {Object} from 'ts-toolbelt'
 
 // Merge two `object` together
 type merge = Object.MergeUp<{name: string}, {age?: number}>
+// {name: string, age?: number}
+
+// Make a field of an `object` optional
+type optional = Object.Optional<{id: number, name: string}, 'name'}>
+// {id: number, name?: string}
 ```
 
 > **`TIP`** You can also grab the demo [over here](https://gist.github.com/pirix-gh/f7f7d18773f79bf0618fb5cd55bd48f8)
+
+#### Where to Start
+
+Here's some of the most useful utilities you can page through:
+
+|                                                                                                 |                                                                                       |
+|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| [Object/Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)            | [Tuple/Append](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_append_.html)    |
+| [Object/MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)          | [Tuple/Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_drop_.html)        |
+| [Object/NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html)  | [Tuple/Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_flatten_.html)  |
+| [Object/Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)        | [Tuple/Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html)    |
+| [Object/Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)        | [Tuple/Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_pop_.html)          |
+| [Object/P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)        | [Tuple/Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_tail_.html)        |
+| [Object/PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)            |                                                                                       |
+| [Object/Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)        |                                                                                       |
+| [Object/Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)            |                                                                                       |
+| [Object/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)            |                                                                                       |
+| [Object/Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)        | [add another entry](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)    |                                                                                  |
+
+If you feel adventurous, learn [how to re-code this library from scratch](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) to improve your skills.
 
 ## [📖 Documentation ⤢](https://pirix-gh.github.io/ts-toolbelt/)
 
