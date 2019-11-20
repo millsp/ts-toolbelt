@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.10.16](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.15...v4.10.16) (2019-11-20)
+
+
+### Others
+
+* readme ([e47ac4a](https://github.com/pirix-gh/ts-toolbelt/commit/e47ac4a2db824fe2d50db25a935a321830f2a2f4))
+
 ### [4.10.15](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.14...v4.10.15) (2019-11-20)
 
 
