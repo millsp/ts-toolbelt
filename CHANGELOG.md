@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.10.21](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.20...v4.10.21) (2019-11-21)
+
+
+### Others
+
+* fix errors ([a08aae3](https://github.com/pirix-gh/ts-toolbelt/commit/a08aae3597f5a9c638d0641a5a0881acbeaaf076))
+* indent ([8506bb3](https://github.com/pirix-gh/ts-toolbelt/commit/8506bb33c8d394a91be79974cdd9a01c69d110fc))
+* readme ([2b2d577](https://github.com/pirix-gh/ts-toolbelt/commit/2b2d577eec0e36c32e80f9ba99f9e7c608dd8ed1))
+* readme ([388ffe5](https://github.com/pirix-gh/ts-toolbelt/commit/388ffe54b8538cd14d317aa359159106afa54db1))
+* **promisify:** update ([8dc2c03](https://github.com/pirix-gh/ts-toolbelt/commit/8dc2c03125f72b2d6c1bd35def860f358a019516))
+
 ### [4.10.20](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.19...v4.10.20) (2019-11-20)
 
 
