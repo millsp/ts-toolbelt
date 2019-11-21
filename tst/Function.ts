@@ -7,13 +7,13 @@ const {checks, check} = Test
 //////////////////////////////////////////////////////////////////////////////////////////
 // FUNCTION //////////////////////////////////////////////////////////////////////////////
 
-const FN = (a: string, b: number, c: object) => true
+const fn = (a: string, b: number, c: object) => true
 
 // ---------------------------------------------------------------------------------------
 // ARROW
 
 checks([
-    check<F.Function<[string, number, object], boolean>,   typeof FN & Function,  Test.Pass>(),
+    check<F.Function<[string, number, object], boolean>,   typeof fn & Function,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -68,14 +68,14 @@ const test01 = curried('Jane', 26, true, __)('JJ', __)('Jini')     // boolean
 // PARAMETERS
 
 checks([
-    check<F.Parameters<typeof FN>,    [string, number, object],   Test.Pass>(),
+    check<F.Parameters<typeof fn>,    [string, number, object],   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // LENGTH
 
 checks([
-    check<F.Length<typeof FN>,                          3,          Test.Pass>(),
+    check<F.Length<typeof fn>,                          3,          Test.Pass>(),
     check<F.Length<(a1: any, a2?: any) => any>,         1 | 2,      Test.Pass>(),
     check<F.Length<(a1: any, a2?: any) => any, 's'>,    '1' | '2',  Test.Pass>(),
 ])
@@ -117,15 +117,15 @@ checks([
 // PROMISIFY
 
 checks([
-    check<F.Promisify<typeof FN>,  (a: string, b: number, c: object) => Promise<boolean>,  Test.Pass>(),
-    check<F.Promisify<(a: string) => Promise<boolean>>,  (a: string) => Promise<boolean>,  Test.Pass>(),
+    check<F.Promisify<(typeof fn)>,                      (a: string, b: number, c: object) => Promise<boolean>,     Test.Pass>(),
+    check<F.Promisify<(a: string) => Promise<boolean>>,  (a: string) => Promise<boolean>,                           Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // RETURN
 
 checks([
-    check<F.Return<typeof FN>,    boolean,    Test.Pass>(),
+    check<F.Return<typeof fn>,    boolean,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
