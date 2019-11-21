@@ -114,6 +114,14 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// PROMISIFY
+
+checks([
+    check<F.Promisify<typeof FN>,  (a: string, b: number, c: object) => Promise<boolean>,  Test.Pass>(),
+    check<F.Promisify<(a: string) => Promise<boolean>>,  (a: string) => Promise<boolean>,  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // RETURN
 
 checks([
