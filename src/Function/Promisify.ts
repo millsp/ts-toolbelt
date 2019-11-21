@@ -12,4 +12,6 @@ import {Return} from './Return'
  * type test0 = F.Promisify<(a: number) => number> // (a: number) => Promise<number>
  * ```
  */
-export type Promisify<F extends Function> = (...args: Parameters<F>) => Promise<Return<F>>
+export type Promisify<F extends Function> = Return<F> extends Promise<any>
+    ? F
+    : (...args: Parameters<F>) => Promise<Return<F>>
