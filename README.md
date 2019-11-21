@@ -120,8 +120,8 @@ Here's some of the most useful features:
 | [Object/NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html)  | [Tuple/Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_flatten_.html)  |
 | [Object/Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)        | [Tuple/Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html)    |
 | [Object/Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)        | [Tuple/Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_pop_.html)          |
-| [Object/P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)        | [Tuple/Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_tail_.html)        |
-| [Object/PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)            |                                                                                       |
+| [Object/P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)        | [Tuple/Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_reverse_.html)  |
+| [Object/PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)            | [Tuple/Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_tail_.html)        |
 | [Object/Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)        |                                                                                       |
 | [Object/Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)            |                                                                                       |
 | [Object/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)            |                                                                                       |
