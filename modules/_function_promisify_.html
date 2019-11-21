@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Tuple/CompulsoryKeys&quot; | ts-toolbelt</title>
+	<title>&quot;Function/Promisify&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_tuple_compulsorykeys_.html">&quot;Tuple/CompulsoryKeys&quot;</a>
+					<a href="_function_promisify_.html">&quot;Function/Promisify&quot;</a>
 				</li>
 			</ul>
 		</div>
@@ -70,7 +70,7 @@
 				<ul>
 					<ul class="before-current">
 						<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-							<a href="_tuple_compulsorykeys_.html#compulsorykeys" class="tsd-kind-icon">Compulsory<wbr>Keys</a>
+							<a href="_function_promisify_.html#promisify" class="tsd-kind-icon">Promisify</a>
 						</li>
 					</ul>
 				</ul>
@@ -145,7 +145,7 @@
 						<a href="_function_parameters_.html">"<wbr>Function/<wbr>Parameters"</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_function_pipe_.html">"<wbr>Function/<wbr>Pipe"</a>
-						</li>                        <li class=" tsd-kind-external-module">
+						</li>                        <li class="current tsd-kind-external-module">
 						<a href="_function_promisify_.html">"<wbr>Function/<wbr>Promisify"</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_function_return_.html">"<wbr>Function/<wbr>Return"</a>
@@ -351,7 +351,7 @@
 						<a href="_tuple_clean_.html">"<wbr>Tuple/<wbr>Clean"</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_tuple_compulsory_.html">"<wbr>Tuple/<wbr>Compulsory"</a>
-						</li>                        <li class="current tsd-kind-external-module">
+						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_tuple_compulsorykeys_.html">"<wbr>Tuple/<wbr>Compulsory<wbr>Keys"</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_tuple_concat_.html">"<wbr>Tuple/<wbr>Concat"</a>
@@ -529,7 +529,7 @@
 							<div class="tsd-navigation secondary">
 								<ul>
 									<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-										<a href="_tuple_compulsorykeys_.html#compulsorykeys" class="tsd-kind-icon">Compulsory<wbr>Keys</a>
+										<a href="_function_promisify_.html#promisify" class="tsd-kind-icon">Promisify</a>
 									</li>
 								</ul>
 							</div>
@@ -540,30 +540,37 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="compulsorykeys" class="tsd-anchor"></a>
-					<h3>Compulsory<wbr>Keys</h3>
-					<div class="tsd-signature tsd-kind-icon">CompulsoryKeys&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">OCompulsory</span><span class="tsd-signature-symbol">&lt;</span><a href="_tuple_objectof_.html#objectof" class="tsd-signature-type">ObjectOf</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="promisify" class="tsd-anchor"></a>
+					<h3>Promisify</h3>
+					<div class="tsd-signature tsd-kind-icon">Promisify&lt;F&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promisify&lt;F&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Get the keys of <strong><code>T</code></strong> that are compulsory</p>
+							<p>Creates a promisified version of a <strong><code>Function</code></strong> <strong><code>F</code></strong></p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-						<span class="name">T</span><span class="tsd-signature-symbol">: </span><a href="_tuple_tuple_.html#tuple" class="tsd-signature-type">Tuple</a>                    </li>
+							<span class="name">F</span><span class="tsd-signature-symbol">: </span><a href="_function_function_.html#function" class="tsd-signature-type">Function</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to promisify</p>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>keyof</code></strong></p>
+						<p><p>async F</p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"></code></pre>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">import</span> {F} <span class="hljs-keyword">from</span> <span class="hljs-string">'ts-toolbelt'</span>
+
+<span class="hljs-keyword">type</span> test0 = F.Promisify&lt;<span class="hljs-function">(<span class="hljs-params">a: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">number</span>&gt; <span class="hljs-comment">// (a: number) =&gt; Promise&lt;number&gt;</span></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/bbc6d11/src/Tuple/CompulsoryKeys.ts#L12">Tuple/CompulsoryKeys.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/bbc6d11/src/Function/Promisify.ts#L15">Function/Promisify.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
