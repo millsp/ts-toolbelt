@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.21...v5.0.0) (2019-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **json:** using 3.7 recursive types
+
+### Features
+
+* **json:**  types for JSON ([5fcc425](https://github.com/pirix-gh/ts-toolbelt/commit/5fcc425f63a8d419e02422cc01c9e8ef95080805))
+
 ### [4.10.21](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.20...v4.10.21) (2019-11-21)
 
 
