@@ -113,19 +113,20 @@ Here's some of the most useful features:
 </summary>
 <br>
 
-| Object                                                                                          | Tuple                                                                                 | Function                                                                                      |
-|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Object/Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)            | [Tuple/Append](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_append_.html)    | [Function/NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)    |
-| [Object/MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)          | [Tuple/Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_drop_.html)        | [Function/Promisify](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisify_.html)    |
-| [Object/NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html)  | [Tuple/Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_flatten_.html)  |                                                                                               |
-| [Object/Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)        | [Tuple/Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html)    |                                                                                               |
-| [Object/Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)        | [Tuple/Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_pop_.html)          |                                                                                               |
-| [Object/P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)        | [Tuple/Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_reverse_.html)  |                                                                                               |
-| [Object/PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)            | [Tuple/Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_tail_.html)        |                                                                                               |
-| [Object/Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)        |                                                                                       |                                                                                               |
-| [Object/Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)            |                                                                                       |                                                                                               |
-| [Object/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)            |                                                                                       |                                                                                               |
-| [Object/Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)        |                                                                                       |                                                                                               |
+| Object                                                                                          | Tuple                                                                                 | Function                                                                                      | Misc                                                                                          |
+|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| [Object/Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)          | [Tuple/Append](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_append_.html)    | [Function/NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)    | [Misc/JSON](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_json_.html)                  |
+| [Object/Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)            | [Tuple/Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_drop_.html)        | [Function/Promisify](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisify_.html)    | [Misc/Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisable_.html)      |
+| [Object/MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)          | [Tuple/Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_flatten_.html)  |                                                                                               |                                                                                               |
+| [Object/NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html)  | [Tuple/Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html)    |                                                                                               |                                                                                               |
+| [Object/Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)        | [Tuple/Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_pop_.html)          |                                                                                               |                                                                                               |
+| [Object/Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)        | [Tuple/Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_reverse_.html)  |                                                                                               |                                                                                               |
+| [Object/P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)        | [Tuple/Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_tail_.html)        |                                                                                               |                                                                                               |
+| [Object/PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)            |                                                                                       |                                                                                               |                                                                                               |
+| [Object/Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)        |                                                                                       |                                                                                               |                                                                                               |
+| [Object/Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)            |                                                                                       |                                                                                               |                                                                                               |
+| [Object/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)            |                                                                                       |                                                                                               |                                                                                               |
+| [Object/Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)        |                                                                                       |                                                                                               |                                                                                               |
 
 > **`TIP`** [Add something to this list](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
 
@@ -144,7 +145,7 @@ Here's some of the most useful features:
 Lowest TypeScript [support](#-compatibility) starts at v3.5
 
 ```sh
-npm install typescript@^3.6.0 --save-dev
+npm install typescript@^3.7.0 --save-dev
 ```
 
 For best results, add this to your `tsconfig.json`
@@ -325,12 +326,13 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 
 | ts-toolbelt | typescript |
 |-------------|------------|
+| 5.x.x       | ^3.7.x     |
 | 4.x.x       | ^3.5.x     |
 | 2.x.x       | ^3.5.x     |
 | 3.x.x       | ^3.5.x     |
 | 1.x.x       | ~3.5.x     |
 
-Major version numbers will upgrade whenever TypeScript had breaking changes (it happened that TS had breaking changes on minor versions). Otherwise, the release versions will naturally follow the semantic versioning.
+Major version numbers will upgrade whenever TypeScript had breaking changes or new features. Otherwise, the release versions will naturally follow the semantic versioning.
 
 ## 💼 For enterprise
 

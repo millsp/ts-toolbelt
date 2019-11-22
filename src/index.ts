@@ -54,3 +54,25 @@ export {
 
 // do not forget to NOT do `X extends never` => do `[X] extends [never]`
 // if the goal is to explicitly match `never` & not distribute the type
+
+// we can now use recursive interfaces/class to express n--level nesting
+// https://github.com/microsoft/TypeScript/pull/33050 = infinite recurse
+//
+// EXAMPLES
+//
+// 1.
+// type Json = string | number | boolean | null | Json[] | { [key: string]: Json }
+//
+// 2.
+// interface Box<T> {
+//     value: T;
+// }
+//
+// type Foo<T> = Box<number | Foo>
+//
+// 3.
+// type ValueOrArray<T> = T | Array<ValueOrArray<T>>;
+//
+// 4.
+// type ValueOrArray<T> = [ValueOrArray<T>]
+//
