@@ -24,7 +24,7 @@ type _Drop<T extends Tuple, N extends Number, I extends Iteration = IterationOf<
 /** Remove **`N`** entries out of **`T`**
  * @param T to remove from
  * @param N to remove out
- * @param way to remove from end (?='->')
+ * @param way removing direction (?='->')
  * @returns **`any[]`**
  * @example
  * ```ts
