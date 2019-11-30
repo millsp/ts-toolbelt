@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.0...v4.12.1) (2019-11-30)
+
+
+### Bug Fixes
+
+* **m.json:** working JSON types + tests ([7917679](https://github.com/pirix-gh/ts-toolbelt/commit/7917679be161ab11e532695b998b514de422d246))
+
 ## [4.12.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.11.0...v4.12.0) (2019-11-30)
 
 
