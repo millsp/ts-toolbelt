@@ -1,6 +1,6 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
-import {Index} from '../Any/_api'
+import {Index} from '../Any/Index'
 
 /** Filter out the keys of **`O`** which fields match **`M`**
  * @param O to remove from

@@ -8,14 +8,14 @@ import {NonNullable} from '../Union/NonNullable'
 import {Tuple} from '../Tuple/Tuple'
 import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
-import {True, Boolean} from '../Boolean/Boolean'
+import {True, Boolean, False} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
 
 /**
  * @hidden
  */
 type MergeUpProp<O extends object, O1 extends object, K extends Index, IsOptional extends Boolean> =
-    IsOptional extends 1                // If `K` is marked as optional
+    IsOptional extends True             // If `K` is marked as optional
     ? NonNullable<At<O, K>> | At<O1, K> // complete `O[K]` with `O1[K]`
     : [At<O, K>] extends [never]        // or patch `O[K]` with `O1[K]`
       ? At<O1, K>                       // can patch with `O1[K]`
@@ -51,7 +51,7 @@ type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends 
                                 At<O,  K> & {}, // merge O[K]
                                 At<O1, K> & {}, // with O1[K]
                                 // mark the descendants as children of an optional
-                                K extends 1 ? K : K extends OptionalKeys<O> ? 1 : 0
+                                K extends True ? K : K extends OptionalKeys<O> ? True : False
                             >
                             : MergeUpProp< // otherwise, we treat them as fields
                                 O, O1, K,

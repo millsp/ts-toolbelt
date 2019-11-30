@@ -2,6 +2,7 @@ import {Tuple} from './Tuple'
 import {UnNest} from './UnNest'
 import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
+import {False} from '../Boolean/Boolean'
 
 /**
  * @hidden
@@ -10,7 +11,7 @@ type _Flatten<T extends Tuple, TO extends Tuple = []> = {
     0: _Flatten<UnNest<T>, T>
     1: T
 }[
-    Equals<T, TO> extends 0
+    Equals<T, TO> extends False
     ? 0
     : 1
 ]
