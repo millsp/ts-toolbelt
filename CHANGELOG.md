@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.2](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.1...v4.12.2) (2019-11-30)
+
+
+### Bug Fixes
+
+* **deep:** over-computation on deep types & recursive mapped types ([1b1ac71](https://github.com/pirix-gh/ts-toolbelt/commit/1b1ac71c337619b5a7e75cf8dca2612fdc0e41ff))
+
 ### [4.12.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.0...v4.12.1) (2019-11-30)
 
 
