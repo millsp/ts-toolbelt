@@ -31,7 +31,16 @@ checks([
 
 checks([
     check<U.Has<1 | 2 | 3, string>,     0,      Test.Pass>(),
-    check<U.Has<1 | 2 | 3, 1>,          1,       Test.Pass>(),
+    check<U.Has<1 | 2 | 3, 1>,          1,      Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// HASALL
+
+checks([
+    check<U.HasAll<1 | 2 | 3, string>,     0,      Test.Pass>(),
+    check<U.HasAll<1 | 2 | 3, 1>,          1,      Test.Pass>(),
+    check<U.HasAll<1 | 2 | 3, 1 | 4>,      0,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
