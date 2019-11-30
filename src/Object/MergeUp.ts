@@ -43,8 +43,7 @@ O extends unknown ? O1 extends unknown ?
 /**
  * @hidden
  */
-type _MergeUpDeep<O extends object, O1 extends object, NOK extends Index = NullableKeys<O>> =
-O extends unknown ? O1 extends unknown ? ({
+type _MergeUpDeep<O extends object, O1 extends object, NOK extends Index = NullableKeys<O>> = {
     [K in keyof (O & O1)]:  And<Extends<Kind<NonNullable<At<O, K>>>, 'object'>, Extends<Kind<NonNullable<At<O1, K>>>, 'object'>> extends True
                             ? MergeUpDeep< // the above makes sure it's only objects
                             // then if parent is `Nullable`, makes children optional
@@ -53,7 +52,7 @@ O extends unknown ? O1 extends unknown ? ({
                             // and if not optional, we re-add eventual `undefined | null`
                             > | (K extends NOK ? Select<At<O, K>, undefined | null> : never)
                             : MergeUpProp<O, O1, K, NOK>
-}) : never : never
+}
 
 /**
  * @hidden
