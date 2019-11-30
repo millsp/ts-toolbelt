@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.11.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.21...v4.11.0) (2019-11-30)
+
+
+### Features
+
+* **u.hasall:** check if union contained within union ([81ccfd5](https://github.com/pirix-gh/ts-toolbelt/commit/81ccfd5f43fcb531afb5ce452bf685f09a1794bb))
+
+
+### Bug Fixes
+
+* **o.clean:** swallowed keys named like array keys ([a8f190c](https://github.com/pirix-gh/ts-toolbelt/commit/a8f190c29de034b2def7d6f8949730bc5e36519d))
+
+
+### Others
+
+* readme ([c401613](https://github.com/pirix-gh/ts-toolbelt/commit/c40161395d0d94a85055a155e9e07ae7ef2fac32))
+
 ### [4.10.21](https://github.com/pirix-gh/ts-toolbelt/compare/v4.10.20...v4.10.21) (2019-11-21)
 
 
