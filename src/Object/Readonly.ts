@@ -9,7 +9,7 @@ import {Implements} from '../Any/Implements'
  */
 type ReadonlyFlat<O> = {
     +readonly [K in keyof O]: O[K]
-}
+} & {}
 
 /**
  * @hidden

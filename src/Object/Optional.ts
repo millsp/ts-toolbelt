@@ -16,7 +16,7 @@ type OptionalFlat<O> = {
  */
 type OptionalDeep<O> = {
     [K in keyof O]?: OptionalDeep<O[K]>
-} & {}
+}
 
 /**
  * @hidden

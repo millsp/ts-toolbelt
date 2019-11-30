@@ -17,7 +17,7 @@ type NonNullableFlat<O> = {
  */
 type NonNullableDeep<O> = {
     [K in keyof O]: NonNullableDeep<UNonNullable<O[K]>>
-} & {}
+}
 
 /**
  * @hidden

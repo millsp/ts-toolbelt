@@ -51,6 +51,9 @@ export {
 // NOTES
 
 // search for `= \{\n?[ ]*?\[(.*?\n)*?\}` and add `& {}` for better computation
+// ! we can only do this if the mapped type is not intended to go deep (recurse)
+// ! because `& {}` forces computation, if we do it deeply => resolves to `any`
+// ! this happens only when a type is nested within itself => infinite recursion
 
 // do not forget to NOT do `X extends never` => do `[X] extends [never]`
 // if the goal is to explicitly match `never` & not distribute the type

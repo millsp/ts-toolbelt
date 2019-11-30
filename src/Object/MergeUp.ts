@@ -51,7 +51,7 @@ type _MergeUpDeep<O extends object, O1 extends object, OOK extends Index = Optio
                             // and if not optional, we re-add eventual `undefined | null`
                             > | (K extends OOK ? never : Select<At<O, K>, undefined | null>)
                             : MergeUpProp<O, O1, K, OOK>
-} & {}
+}
 
 /**
  * @hidden

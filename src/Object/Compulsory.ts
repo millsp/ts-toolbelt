@@ -17,7 +17,7 @@ type CompulsoryFlat<O> = {
  */
 type CompulsoryDeep<O> = {
     [K in keyof O]-?: CompulsoryDeep<NonNullable<O[K]>>
-} & {}
+}
 
 /**
  * @hidden
