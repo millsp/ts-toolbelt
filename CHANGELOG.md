@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.3...v4.12.4) (2019-11-30)
+
+
+### Bug Fixes
+
+* **o.mergeup:** overcomputation recursive ([4fbf5d2](https://github.com/pirix-gh/ts-toolbelt/commit/4fbf5d2ea5b2c62d32e99ae66c85317833098ed2))
+
 ### [4.12.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.2...v4.12.3) (2019-11-30)
 
 
