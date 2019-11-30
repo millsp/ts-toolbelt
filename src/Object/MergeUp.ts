@@ -10,6 +10,7 @@ import {NonNullable} from '../Union/NonNullable'
 import {Tuple} from '../Tuple/Tuple'
 import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
+import {True} from '../Boolean/Boolean'
 
 /**
  * @hidden
@@ -42,16 +43,17 @@ O extends unknown ? O1 extends unknown ?
 /**
  * @hidden
  */
-type _MergeUpDeep<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>, NOK extends Index = NullableKeys<O>> = {
-    [K in keyof (O & O1)]:  And<Extends<Kind<NonNullable<At<O, K>>>, 'object'>, Extends<Kind<NonNullable<At<O1, K>>>, 'object'>> extends 1
+type _MergeUpDeep<O extends object, O1 extends object, NOK extends Index = NullableKeys<O>> =
+O extends unknown ? O1 extends unknown ? ({
+    [K in keyof (O & O1)]:  And<Extends<Kind<NonNullable<At<O, K>>>, 'object'>, Extends<Kind<NonNullable<At<O1, K>>>, 'object'>> extends True
                             ? MergeUpDeep< // the above makes sure it's only objects
                             // then if parent is `Nullable`, makes children optional
                             K extends NOK ? Optional<NonNullable<At<O, K>> & {}> : At<O, K> & {},
                             At<O1, K> & {} // merge with whatever sits on at `O1[K]`
                             // and if not optional, we re-add eventual `undefined | null`
-                            > | (K extends OOK ? never : Select<At<O, K>, undefined | null>)
-                            : MergeUpProp<O, O1, K, OOK>
-}
+                            > | (K extends NOK ? Select<At<O, K>, undefined | null> : never)
+                            : MergeUpProp<O, O1, K, NOK>
+}) : never : never
 
 /**
  * @hidden

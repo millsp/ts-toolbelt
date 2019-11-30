@@ -15,9 +15,9 @@ type RequiredFlat<O> = {
 /**
  * @hidden
  */
-type RequiredDeep<O> = Compute<{
+type RequiredDeep<O> = {
     [K in keyof O]-?: RequiredDeep<O[K]>
-}>
+}
 
 /**
  * @hidden

@@ -3,6 +3,7 @@ import {At} from './At'
 import {Exclude} from '../Union/Exclude'
 import {Numbers} from '../Number/_Internal'
 import {HasAll} from '../Union/HasAll'
+import {True} from '../Boolean/Boolean'
 
 /** Ensure that **`O`** is a proper **`object`**, even is it has been mixed up.
  * Sometimes, we can end up with mixed up **`objects`** that do not make sense
@@ -20,6 +21,6 @@ export type Clean<O extends object> =
     ? [Exclude<keyof O, keyof any[] | Numbers['string']['+' | '0']>] extends [never]  //  if it's not mixed
       ? At<O, number>[]                                                               //    restore it
       : O                                                                             //    do nothing
-    : HasAll<keyof O, keyof any[]> extends 1                                          // if `O` is really an array
+    : HasAll<keyof O, keyof any[]> extends True                                       // if `O` is really an array
       ? Omit<O, keyof any[]>                                                          // (^it checks all its keys)
       : O

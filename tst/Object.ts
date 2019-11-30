@@ -558,7 +558,7 @@ type MERGEUP_O_O1_DEEP = {
         b?: number | object
         c : object
     }
-    d : 'hello' | undefined
+    d : 'hello' | 'goodbye'
     e : number
     f?: {
         a : string | object;
