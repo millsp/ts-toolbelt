@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.2...v4.12.3) (2019-11-30)
+
+
+### Bug Fixes
+
+* **o.mergeup:** unsound computation ([49c4ce4](https://github.com/pirix-gh/ts-toolbelt/commit/49c4ce4aacbd582d30c77a3b03341411289a30c7))
+
 ### [4.12.2](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.1...v4.12.2) (2019-11-30)
 
 
