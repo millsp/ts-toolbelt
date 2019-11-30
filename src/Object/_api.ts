@@ -1,3 +1,6 @@
+import * as P from './P/_api'
+
+export {P}
 export {Assign} from './Assign'
 export {AssignUp} from './AssignUp'
 export {At} from './At'
@@ -48,8 +51,3 @@ export {UnionOf} from './UnionOf'
 export {Update} from './Update'
 export {Writable} from './Writable'
 export {WritableKeys} from './WritableKeys'
-
-import * as P from './P/_api'
-export {
-    P,
-}
