@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.5](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.4...v4.12.5) (2019-11-30)
+
+
+### Others
+
+* cleanup ([fcdca7a](https://github.com/pirix-gh/ts-toolbelt/commit/fcdca7a46ff8c8e77690a8d1cbeee53ec852f12a))
+* **o.mergeup:** lighter computation ([6856251](https://github.com/pirix-gh/ts-toolbelt/commit/6856251e8089b0fc61995accb937174f63b5c3d6))
+
 ### [4.12.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.3...v4.12.4) (2019-11-30)
 
 
