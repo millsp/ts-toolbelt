@@ -117,17 +117,9 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// ENSURE
+// CLEAN
 
-checks([
-    check<T.Ensure<{a: string}>,                [],                     Test.Pass>(),
-    check<T.Ensure<{a: string} & number[]>,     {a: string} & number[], Test.Pass>(),
-    check<T.Ensure<[1, 2, 3]>,                  [1, 2, 3],              Test.Pass>(),
-    check<T.Ensure<[1, 2, 3] & []>,             [1, 2, 3],              Test.Pass>(),
-    check<T.Ensure<O.MergeUp<[1, 2], {a: 3}>>,  [1, 2],                 Test.Pass>(),
-    check<T.Ensure<O.MergeUp<number[], []>>,    number[],               Test.Pass>(),
-    check<T.Ensure<O.MergeUp<string[], [1]>>,   Array<1 | string>,      Test.Pass>(),
-])
+// No test needed (same as O.Clean)
 
 // -------------------------------------------------------------------------------------
 // EXCLUDE

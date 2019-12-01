@@ -178,8 +178,8 @@ checks([
 checks([
     check<O.Clean<{a: string}>,                {a: string},            Test.Pass>(),
     check<O.Clean<{a: string} & number[]>,     {a: string} & number[], Test.Pass>(),
-    check<O.Clean<[1, 2, 3]>,                  {0: 1, 1: 2, 2: 3},     Test.Pass>(),
-    check<O.Clean<[1, 2, 3] & []>,             {0: 1, 1: 2, 2: 3},     Test.Pass>(),
+    check<O.Clean<[1, 2, 3]>,                  [1, 2, 3],              Test.Pass>(),
+    check<O.Clean<[1, 2, 3] & []>,             [1, 2, 3] & [],         Test.Pass>(),
     check<O.Clean<O.MergeUp<[1, 2], {a: 3}>>,  {0: 1, 1: 2, a: 3},     Test.Pass>(),
     check<O.Clean<O.MergeUp<number[], []>>,    number[],               Test.Pass>(),
     check<O.Clean<O.MergeUp<string[], [1]>>,   Array<1 | string>,      Test.Pass>(),
