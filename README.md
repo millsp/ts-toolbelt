@@ -77,7 +77,11 @@
 
 ## 📜 About
 
+<h3 align="center">❝squash your bugs before they even exist❞</h3>
+
 **ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types.
+
+**If one of your goals is to prevent bugs by focusing on your types, this library is made for you!**
 
 With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
 
@@ -111,8 +115,6 @@ Here's some of the most useful features:
 <summary>
 <b>Expand to See More</b>
 </summary>
-<br>
-
 | Object                                                                                          | List                                                                                  | Function                                                                                      | Misc                                                                                          |
 |-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)                 | [Append](https://pirix-gh.github.io/ts-toolbelt/modules/_list_append_.html)           | [NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)             | [Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisable_.html)           |
@@ -129,7 +131,6 @@ Here's some of the most useful features:
 | [Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)               |                                                                                       |                                                                                               |                                                                                               |
 
 > **`TIP`** [Add something to this list](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
-
 </details>
 
 <p align="center">
@@ -204,7 +205,7 @@ There are many ways to import the types into your project:
 
 * Explicit
   ```ts
-  import {Any, Boolean, Class, Function, Iteration, Number, Object, String, List, Union} from 'ts-toolbelt'
+  import {Any, Boolean, Class, Function, Iteration, List, Number, Object, String, Union} from 'ts-toolbelt'
   ```
 
 * Compact
