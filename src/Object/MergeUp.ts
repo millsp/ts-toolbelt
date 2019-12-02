@@ -30,9 +30,11 @@ type _MergeUpFlat<O extends object, O1 extends object, OOK extends Index = Optio
  * @hidden
  */
 type MergeUpFlat<O extends object, O1 extends object> =
-O extends unknown ? O1 extends unknown ?
-    _MergeUpFlat<O, O1>
-: never : never
+    O extends unknown
+    ? O1 extends unknown
+      ? _MergeUpFlat<O, O1>
+      : never
+    : never
 
 /**
  * @hidden
@@ -61,9 +63,11 @@ type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends 
  * @hidden
  */
 type MergeUpDeep<O extends object, O1 extends object> =
-O extends unknown ? O1 extends unknown ?
-    _MergeUpDeep<O, O1>
-: never : never
+    O extends unknown
+    ? O1 extends unknown
+      ? _MergeUpDeep<O, O1>
+      : never
+    : never
 
 /** Accurately complete the fields of **`O`** with the ones of **`O1`**.
  * This is a version of `Merge` that handles optional fields. It understands

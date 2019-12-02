@@ -13,13 +13,14 @@ import {UnionOf} from './UnionOf'
  * @hidden
  */
 type _UnNestCheap<T extends Tuple> =
-   (UnionOf<T> extends infer UT     // make `T` a union
+    (UnionOf<T> extends infer UT    // make `T` a union
     ? UT extends unknown            // for each in union
         ? UT extends Tuple          // if its an array
-        ? UnionOf<UT>               // make it a union
-        : UT                        // or leave as it is
+          ? UnionOf<UT>             // make it a union
+          : UT                      // or leave as it is
         : never
-    : never)[] & {}                 // make result array
+    : never
+    )[] & {}                        // make result array
 
 /**
  * @hidden
