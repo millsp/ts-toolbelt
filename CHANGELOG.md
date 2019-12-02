@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.8](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.7...v4.12.8) (2019-12-02)
+
+
+### Bug Fixes
+
+* **t.objectof:** type distribution ([765e94a](https://github.com/pirix-gh/ts-toolbelt/commit/765e94ac8345f3aa8d8888dd2c2b61fd4934a5bb))
+
+
+### Others
+
+* reformat type distribution ([c825580](https://github.com/pirix-gh/ts-toolbelt/commit/c8255801e853212f669fa40326ff018b2c09fb4a))
+
 ### [4.12.7](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.6...v4.12.7) (2019-12-02)
 
 
