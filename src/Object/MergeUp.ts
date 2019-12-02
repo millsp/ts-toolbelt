@@ -3,9 +3,7 @@ import {Depth} from './_Internal'
 import {Kind} from '../Any/Kind'
 import {OptionalKeys} from './OptionalKeys'
 import {Index} from '../Any/Index'
-import {Optional} from './Optional'
 import {NonNullable} from '../Union/NonNullable'
-import {Tuple} from '../Tuple/Tuple'
 import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
 import {True, Boolean, False} from '../Boolean/Boolean'
@@ -33,10 +31,7 @@ type _MergeUpFlat<O extends object, O1 extends object, OOK extends Index = Optio
  */
 type MergeUpFlat<O extends object, O1 extends object> =
 O extends unknown ? O1 extends unknown ?
-    _MergeUpFlat<((O | O1) extends Tuple ? Optional<O, keyof any[]> : O), O1>
-    // between parenthesis helps with edge-case of tuple/array merging
-    // because even if merge is successful, its length stays incorrect
-    // so this only applies if both of them are `Array` kinds `(O | O1)`
+    _MergeUpFlat<O, O1>
 : never : never
 
 /**
@@ -67,10 +62,7 @@ type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends 
  */
 type MergeUpDeep<O extends object, O1 extends object> =
 O extends unknown ? O1 extends unknown ?
-    _MergeUpDeep<((O | O1) extends Tuple ? Optional<O, keyof any[]> : O), O1>
-    // between parenthesis helps with edge-case of tuple/array merging
-    // because even if merge is successful, its length stays incorrect
-    // so this only applies if both of them are `Array` kinds `(O | O1)`
+    _MergeUpDeep<O, O1>
 : never : never
 
 /** Accurately complete the fields of **`O`** with the ones of **`O1`**.

@@ -9,4 +9,6 @@ import {Tuple} from './Tuple'
  * ```
  */
 export type ObjectOf<T extends Tuple> =
-    OOmit<T, keyof any[]>
+    number extends T['length']
+    ? OOmit<T, Exclude<keyof any[], number>> // preserves arrays
+    : OOmit<T, keyof any[]>                  // transforms tuples
