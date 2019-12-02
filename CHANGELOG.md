@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.9](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.8...v4.12.9) (2019-12-02)
+
+
+### Bug Fixes
+
+* typo ([fbfe638](https://github.com/pirix-gh/ts-toolbelt/commit/fbfe6387c37d723c08a25a24b5f1d618ba591a60))
+* **l.objectof:** improved type preservation ([cd690f7](https://github.com/pirix-gh/ts-toolbelt/commit/cd690f7a0270f7fc5632091aa6b1a8c320294fa3))
+
+
+### Others
+
+* move Clean ([f15add7](https://github.com/pirix-gh/ts-toolbelt/commit/f15add7e93b38f36d37487307bfa5b8bbf977484))
+* rename Tuple to List ([2d15763](https://github.com/pirix-gh/ts-toolbelt/commit/2d157633be86b19aa9e5a0b48896cdcd8e9c3fb8))
+
 ### [4.12.8](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.7...v4.12.8) (2019-12-02)
 
 
