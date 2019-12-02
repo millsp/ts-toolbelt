@@ -77,7 +77,7 @@
 
 ## 📜 About
 
-<h3 align="center">❝squash your bugs before they even exist❞</h3>
+<h3 align="center">❝squash your bugs before they even exist❞</h3><br>
 
 **ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types.
 
@@ -115,6 +115,7 @@ Here's some of the most useful features:
 <summary>
 <b>Expand to See More</b>
 </summary>
+
 | Object                                                                                          | List                                                                                  | Function                                                                                      | Misc                                                                                          |
 |-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | [Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)                 | [Append](https://pirix-gh.github.io/ts-toolbelt/modules/_list_append_.html)           | [NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)             | [Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisable_.html)           |
