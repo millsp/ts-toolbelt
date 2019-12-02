@@ -390,8 +390,9 @@ checks([
 // OBJECTOF
 
 checks([
-    check<T.ObjectOf<[0, 1, 2]>,    {0: 0, 1: 1, 2: 2},     Test.Pass>(),
-    check<T.ObjectOf<[0, 1, 2?]>,   {0: 0, 1: 1, 2?: 2},    Test.Pass>(),
+    check<T.ObjectOf<[0, 1, 2]>,            {0: 0, 1: 1, 2: 2},     Test.Pass>(),
+    check<T.ObjectOf<[0, 1, 2?]>,           {0: 0, 1: 1, 2?: 2},    Test.Pass>(),
+    check<T.ObjectOf<([1] | {a: 1}) & []>,  {0: 1} | {a: 1},        Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
