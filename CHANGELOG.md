@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.10](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.9...v4.12.10) (2019-12-02)
+
+
+### Bug Fixes
+
+* **deploy:** restore Ensure ([d020658](https://github.com/pirix-gh/ts-toolbelt/commit/d020658461fad4fb8e355c997506383e3fef715f))
+
 ### [4.12.9](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.8...v4.12.9) (2019-12-02)
 
 
