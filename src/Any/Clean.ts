@@ -3,7 +3,7 @@ import {Pick} from '../Object/Pick'
 import {At} from '../Object/At'
 import {Exclude} from '../Union/Exclude'
 import {Numbers} from '../Number/_Internal'
-import {TupleOf} from '../Object/TupleOf'
+import {ListOf} from '../Object/ListOf'
 import {True} from '../Boolean/Boolean'
 import {HasAll} from '../Union/HasAll'
 
@@ -29,6 +29,6 @@ export type Clean<A extends any> =
           : A                                                  //       it's a tuple
         : number extends At<A, 'length'>                       //   otherwise, it's mixed with
           ? Omit<A, ArrayProps> & At<A, number>[]              //     untangle array
-          : Omit<A, ArrayProps> & TupleOf<Pick<A, ArrayEntry>> //     untangle tuple
+          : Omit<A, ArrayProps> & ListOf<Pick<A, ArrayEntry>> //     untangle tuple
       : A                                                      // it has not been mixed
     : A

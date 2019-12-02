@@ -1,6 +1,6 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
-import {Prepend} from '../Tuple/Prepend'
+import {Prepend} from '../List/Prepend'
 import {Prev} from '../Iteration/Prev'
 import {Next} from '../Iteration/Next'
 import {Number} from './Number'
@@ -8,12 +8,12 @@ import {Cast} from '../Any/Cast'
 import {Formats} from '../Iteration/_Internal'
 import {Way} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
-import {Tuple} from '../Tuple/Tuple'
+import {List} from '../List/List'
 
 /**
  * @hidden
  */
-type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends Tuple = []> = {
+type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends List = []> = {
     0: RangeForth<Prev<From>, To, fmt, Prepend<T, Format<From, fmt>>>
     1: T
 }[
@@ -25,7 +25,7 @@ type RangeForth<From extends Iteration, To extends Iteration, fmt extends Format
 /**
  * @hidden
  */
-type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends Tuple = []> = {
+type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends List = []> = {
     0: RangeBack<Next<From>, To, fmt, Prepend<T, Format<From, fmt>>>
     1: T
 }[

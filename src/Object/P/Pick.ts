@@ -5,13 +5,13 @@ import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Pick as OPick} from '../Pick'
-import {LastIndex} from '../../Tuple/LastIndex'
-import {Tuple} from '../../Tuple/Tuple'
+import {LastIndex} from '../../List/LastIndex'
+import {List} from '../../List/List'
 
 /**
  * @hidden
  */
-type _Pick<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
+type _Pick<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                // If it's an object
   ? OPick<O, Path[Pos<I>]> extends infer Picked   // Pick the current index
     ? Pos<I> extends LastIndex<Path>              // If it's the last index

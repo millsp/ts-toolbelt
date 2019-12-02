@@ -5,13 +5,13 @@ import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Update as OUpdate} from '../Update'
-import {LastIndex} from '../../Tuple/LastIndex'
-import {Tuple} from '../../Tuple/Tuple'
+import {LastIndex} from '../../List/LastIndex'
+import {List} from '../../List/List'
 
 /**
  * @hidden
  */
-type _Update<O, Path extends Tuple<Index>, A, I extends Iteration = IterationOf<'0'>> =
+type _Update<O, Path extends List<Index>, A, I extends Iteration = IterationOf<'0'>> =
   O extends object                                        // If it's an object
   ? Pos<I> extends LastIndex<Path>                        // If it's the last index
     ? OUpdate<O, Path[Pos<I>], A>                         // Use standard Update

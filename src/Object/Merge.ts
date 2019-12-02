@@ -22,7 +22,7 @@ type MergeDeep<O, O1> = // we do not distribute this one => recursive distribute
 
 // If we wanted to dive in the tuples as well
 // Kind<(O | O1)> extends 'array'
-// ? TMerge<Cast<O, Tuple>, Cast<O1, Tuple>> extends infer M
+// ? TMerge<Cast<O, List>, Cast<O1, List>> extends infer M
 //   ? {[K in keyof M]: MergeDeep<M[K], At<O1 & {}, K>>}
 //   : never // this is a trick to force ts to do it deeply
 // : O       // in versions <= 3.8 no-recursive-conditional

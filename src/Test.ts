@@ -1,4 +1,4 @@
-import {Repeat} from './Tuple/Repeat'
+import {Repeat} from './List/Repeat'
 import {Equals} from './Any/Equals'
 import {Compute} from './Any/Compute'
 import {True, False, Boolean} from './Boolean/Boolean'

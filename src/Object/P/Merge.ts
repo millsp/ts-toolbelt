@@ -5,14 +5,14 @@ import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Merge as OMerge} from '../Merge'
-import {Length} from '../../Tuple/Length'
-import {Tuple} from '../../Tuple/Tuple'
+import {Length} from '../../List/Length'
+import {List} from '../../List/List'
 import {Depth} from '../_Internal'
 
 /**
  * @hidden
  */
-type _Merge<O, Path extends Tuple<Index>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
+type _Merge<O, Path extends List<Index>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                                               // If it's an object
   ? Pos<I> extends Length<Path>                                  // If we've reached the end
     ? OMerge<O, O1, depth>                                       // Use standard Merge

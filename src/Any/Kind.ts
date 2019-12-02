@@ -1,6 +1,6 @@
 import {Extends} from './Extends'
 import {True} from '../Boolean/Boolean'
-import {Tuple} from '../Tuple/Tuple'
+import {List} from '../List/List'
 
 /** Get the literal kind of a type
  * @param A
@@ -11,7 +11,7 @@ import {Tuple} from '../Tuple/Tuple'
  */
 export type Kind<A extends any> =
     Extends<A, Function> extends True  ? 'function': // the order  // to
-    Extends<A, Tuple> extends True     ? 'array'   : // of this is // untangle
+    Extends<A, List> extends True     ? 'array'   : // of this is // untangle
     Extends<A, object> extends True    ? 'object'  : // important  // object types
     Extends<A, string> extends True    ? 'string'  :
     Extends<A, number> extends True    ? 'number'  :

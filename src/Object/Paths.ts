@@ -1,18 +1,18 @@
-import {Prepend} from '../Tuple/Prepend'
-import {Reverse} from '../Tuple/Reverse'
-import {Optional} from '../Tuple/Optional'
+import {Prepend} from '../List/Prepend'
+import {Reverse} from '../List/Reverse'
+import {Optional} from '../List/Optional'
 import {Index} from '../Any/Index'
-import {NonNullable} from '../Tuple/NonNullable'
-import {Concat} from '../Tuple/Concat'
+import {NonNullable} from '../List/NonNullable'
+import {Concat} from '../List/Concat'
 import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
-import {Tuple} from '../Tuple/Tuple'
+import {List} from '../List/List'
 
 /**
  * @hidden
  */
-type _Paths<O, Paths extends Tuple<Index> = []> = {
+type _Paths<O, Paths extends List<Index> = []> = {
     0: {[K in keyof O]: _Paths<O[K], Prepend<Paths, K>>}[keyof O]
     // It dives deep, and as it dives, it adds the paths to `Paths`
     1: NonNullable<Optional<Reverse<Paths>>> // make optional
@@ -37,5 +37,5 @@ type _Paths<O, Paths extends Tuple<Index> = []> = {
  */
 export type Paths<O extends object> =
     _Paths<O> extends infer X
-    ? Cast<X, Tuple<Index>>
+    ? Cast<X, List<Index>>
     : never

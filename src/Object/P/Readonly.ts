@@ -5,14 +5,14 @@ import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Readonly as OReadonly} from '../Readonly'
-import {LastIndex} from '../../Tuple/LastIndex'
-import {Tuple} from '../../Tuple/Tuple'
+import {LastIndex} from '../../List/LastIndex'
+import {List} from '../../List/List'
 import {Depth} from '../_Internal'
 
 /**
  * @hidden
  */
-type _Readonly<O, Path extends Tuple<Index>, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
+type _Readonly<O, Path extends List<Index>, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                                              // If it's an object
   ? Pos<I> extends LastIndex<Path>                              // If it's the last index
     ? OReadonly<O, Path[Pos<I>], depth>                         // Use standard ReadOnly

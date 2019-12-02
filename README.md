@@ -105,28 +105,28 @@ Here's some of the most useful features:
 * [Update the field of a type](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html#update)
 * [Make some fields optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html#optional)
 * [Change a type at any depth!](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html#update)
-* [Concat two tuples together](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html#concat)
-* [Get the last item of a tuple](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_last_.html#last)
+* [Concat two lists together](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html#concat)
+* [Get the last item of a list](https://pirix-gh.github.io/ts-toolbelt/modules/_list_last_.html#last)
 <details>
 <summary>
 <b>Expand to See More</b>
 </summary>
 <br>
 
-| Object                                                                                          | Tuple                                                                                 | Function                                                                                      | Misc                                                                                          |
+| Object                                                                                          | List                                                                                  | Function                                                                                      | Misc                                                                                          |
 |-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Object/Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)          | [Tuple/Append](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_append_.html)    | [Function/NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)    | [Misc/Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisable_.html)      |
-| [Object/Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)            | [Tuple/Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_drop_.html)        | [Function/Promisify](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisify_.html)    |                                                                                               |
-| [Object/MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)          | [Tuple/Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_flatten_.html)  |                                                                                               |                                                                                               |
-| [Object/NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html)  | [Tuple/Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_concat_.html)    |                                                                                               |                                                                                               |
-| [Object/Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)        | [Tuple/Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_pop_.html)          |                                                                                               |                                                                                               |
-| [Object/Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)        | [Tuple/Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_reverse_.html)  |                                                                                               |                                                                                               |
-| [Object/P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)        | [Tuple/Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_tuple_tail_.html)        |                                                                                               |                                                                                               |
-| [Object/PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)            |                                                                                       |                                                                                               |                                                                                               |
-| [Object/Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)        |                                                                                       |                                                                                               |                                                                                               |
-| [Object/Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)            |                                                                                       |                                                                                               |                                                                                               |
-| [Object/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)            |                                                                                       |                                                                                               |                                                                                               |
-| [Object/Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)        |                                                                                       |                                                                                               |                                                                                               |
+| [Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)                 | [Append](https://pirix-gh.github.io/ts-toolbelt/modules/_list_append_.html)           | [NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)             | [Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisable_.html)           |
+| [Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)                   | [Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_drop_.html)               | [Promisify](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisify_.html)             |                                                                                               |
+| [MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)                 | [Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_list_flatten_.html)         |                                                                                               |                                                                                               |
+| [NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html)         | [Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html)           |                                                                                               |                                                                                               |
+| [Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)               | [Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_pop_.html)                 |                                                                                               |                                                                                               |
+| [Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)               | [Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_list_reverse_.html)         |                                                                                               |                                                                                               |
+| [P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)               | [Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_list_tail_.html)               |                                                                                               |                                                                                               |
+| [PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)                   |                                                                                       |                                                                                               |                                                                                               |
+| [Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)               |                                                                                       |                                                                                               |                                                                                               |
+| [Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)                   |                                                                                       |                                                                                               |                                                                                               |
+| [Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)                   |                                                                                       |                                                                                               |                                                                                               |
+| [Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)               |                                                                                       |                                                                                               |                                                                                               |
 
 > **`TIP`** [Add something to this list](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
 
@@ -189,10 +189,10 @@ You can [**level-up, and re-code this library from scratch**](https://medium.com
 
 The project is organized around TypeScript's main concepts:
 
-|              |                    |              |                |                 |              |
-|--------------|--------------------|--------------|----------------|-----------------|--------------|
-| **A**ny      | **B**oolean        | **C**lass    | **F**unction   | **I**teration   | **N**umber   |
-| **O**bject   | **O**bject.**P**   | **S**tring   | **T**uple      | **U**nion       | Test         |
+|            |             |                  |              |               |          |
+|------------|-------------|------------------|--------------|---------------|----------|
+| **A**ny    | **B**oolean | **C**lass        | **F**unction | **I**teration | **L**ist |
+| **N**umber | **O**bject  | **O**bject.**P** | **S**tring   | **U**nion     | Test     |
 
 > **`TIP`** match the type you need to work with with the above
 
@@ -204,7 +204,7 @@ There are many ways to import the types into your project:
 
 * Explicit
   ```ts
-  import {Any, Boolean, Class, Function, Iteration, Number, Object, String, Tuple, Union} from 'ts-toolbelt'
+  import {Any, Boolean, Class, Function, Iteration, Number, Object, String, List, Union} from 'ts-toolbelt'
   ```
 
 * Compact

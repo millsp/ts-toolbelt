@@ -1,7 +1,7 @@
 import {Function} from './Function'
 import {Parameters} from './Parameters'
 import {Formats} from '../Iteration/_Internal'
-import {Length as TLength} from '../Tuple/Length'
+import {Length as TLength} from '../List/Length'
 
 /** Extract arguments' length from a [[Function]]
  * @param F to extract from

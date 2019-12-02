@@ -2,21 +2,21 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
-import {Length} from '../Tuple/Length'
+import {Length} from '../List/Length'
 import {At} from './At'
 import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
-import {Update} from '../Tuple/Update'
-import {KeySet} from '../Tuple/KeySet'
+import {Update} from '../List/Update'
+import {KeySet} from '../List/KeySet'
 import {Key} from '../Iteration/Key'
 import {Prev} from '../Iteration/Prev'
 import {Index} from '../Any/Index'
-import {Tuple} from '../Tuple/Tuple'
+import {List} from '../List/List'
 
 /**
  * @hidden
  */
-type _PathValid<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> = {
+type _PathValid<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, Length<Path, 's'>>, never>
 }[
@@ -37,7 +37,7 @@ type _PathValid<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<
  * // `A.Cast<P, O.PathValid<O, P>>` makes sure `path` is valid
  * const getAt = <
  * O extends object,
- * P extends T.Tuple<A.Index>
+ * P extends L.List<A.Index>
  * >(o: O, path: A.Cast<P, O.PathValid<O, P>>): O.Path<O, P> => {
  *     let valueAt = o
  *
@@ -52,7 +52,7 @@ type _PathValid<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<
  * const test2 = getAt({a: {b: {c: 1}}},          ['x'] as const)      // error
  * ```
  */
-export type PathValid<O extends object, Path extends Tuple<Index>> =
+export type PathValid<O extends object, Path extends List<Index>> =
     _PathValid<O, Path> extends infer X
-    ? Cast<X, Tuple<Index>>
+    ? Cast<X, List<Index>>
     : never

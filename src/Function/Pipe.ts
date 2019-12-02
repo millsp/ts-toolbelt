@@ -2,20 +2,20 @@ import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Head} from '../Tuple/Head'
-import {Last} from '../Tuple/Last'
+import {Head} from '../List/Head'
+import {Last} from '../List/Last'
 import {Return} from './Return'
 import {Parameters} from './Parameters'
 import {Mode} from './_Internal'
 import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
-import {Tuple} from '../Tuple/Tuple'
+import {List} from '../List/List'
 
 /**
  * @hidden
  */
-type PipeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
+type PipeFnSync<Fns extends List<Function>, K extends keyof Fns> =
     K extends '0'
     ? Fns[K] // If first item, do nothing to it. Otherwise, pipe them:
     : Function<[ // handling unknown generics, waiting for proposal
@@ -28,7 +28,7 @@ type PipeFnSync<Fns extends Tuple<Function>, K extends keyof Fns> =
 /**
  * @hidden
  */
-type PipeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
+type PipeFnAsync<Fns extends List<Function>, K extends keyof Fns> =
     K extends '0'
     ? PromiseOf<Fns[K]> // If first item, do nothing to it. Otherwise, pipe them:
     : Function<[ // handling unknown generics, waiting for proposal
@@ -45,7 +45,7 @@ type PipeFnAsync<Fns extends Tuple<Function>, K extends keyof Fns> =
  * ```ts
  * ```
  */
-export type Piper<Fns extends Tuple<Function>, mode extends Mode = 'sync'> = {
+export type Piper<Fns extends List<Function>, mode extends Mode = 'sync'> = {
     'sync' : {[K in keyof Fns]: PipeFnSync<Fns, K>}
     'async': {[K in keyof Fns]: PipeFnAsync<Fns, K>}
 }[mode]
@@ -78,7 +78,7 @@ export type Piper<Fns extends Tuple<Function>, mode extends Mode = 'sync'> = {
  * await pipe(a, b, c)(42)
  * ```
  */
-export type Pipe<Fns extends Tuple<Function>, mode extends Mode = 'sync'> = {
+export type Pipe<Fns extends List<Function>, mode extends Mode = 'sync'> = {
     'sync' : (...args: Parameters<Head<Fns>>) => Return<Last<Fns>>
     'async': (...args: Parameters<Head<Fns>>) => Promise<PromiseOf<Return<Last<Fns>>>>
 }[mode]

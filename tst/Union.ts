@@ -133,8 +133,8 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// TUPLEOF
+// LISTOF
 
 checks([
-    // check<U.TupleOf<1 | 2 | 3>,     [1, 2, 3],    Test.Pass>(), // order not guaranteed
+    // check<U.ListOf<1 | 2 | 3>,     [1, 2, 3],    Test.Pass>(), // order not guaranteed
 ])

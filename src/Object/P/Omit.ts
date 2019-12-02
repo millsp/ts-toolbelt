@@ -5,13 +5,13 @@ import {Next} from '../../Iteration/Next'
 import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Omit as OOmit} from '../Omit'
-import {LastIndex} from '../../Tuple/LastIndex'
-import {Tuple} from '../../Tuple/Tuple'
+import {LastIndex} from '../../List/LastIndex'
+import {List} from '../../List/List'
 
 /**
  * @hidden
  */
-type _Omit<O, Path extends Tuple<Index>, I extends Iteration = IterationOf<'0'>> =
+type _Omit<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                   // If it's an object
   ? Pos<I> extends LastIndex<Path>                   // If it's the last index
     ? OOmit<O, Path[Pos<I>]>                         // Use standard Omit

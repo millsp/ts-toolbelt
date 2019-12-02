@@ -10,7 +10,7 @@ export type _ObjectOf<T extends object> =
       : OOmit<T, keyof any[]>                   // transforms tuples
     : T
 
-/** Transform a [[Tuple]] or an `Array` into an **`object`**
+/** Transform a [[List]] or an `Array` into an **`object`**
  * @param T to transform
  * @returns **`object`**
  * @example

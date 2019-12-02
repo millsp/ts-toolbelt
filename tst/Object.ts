@@ -173,20 +173,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// CLEAN
-
-checks([
-    check<O.Clean<{a: string}>,                {a: string},            Test.Pass>(),
-    check<O.Clean<{a: string} & number[]>,     {a: string} & number[], Test.Pass>(),
-    check<O.Clean<[1, 2, 3]>,                  [1, 2, 3],              Test.Pass>(),
-    check<O.Clean<[1, 2, 3] & []>,             [1, 2, 3] & [],         Test.Pass>(),
-    check<O.Clean<O.MergeUp<[1, 2], {a: 3}>>,  {0: 1, 1: 2, a: 3},     Test.Pass>(),
-    check<O.Clean<O.MergeUp<number[], []>>,    number[],               Test.Pass>(),
-    check<O.Clean<O.MergeUp<string[], [1]>>,   Array<1 | string>,      Test.Pass>(),
-    check<O.Clean<{length: 0}>,                {length: 0},            Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // EXCLUDE
 
 type EXCLUDE_O_O1_DEFAULT = {}
@@ -1016,9 +1002,9 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// TUPLEOF
+// LISTOF
 
-type O_TUPLEOF = {
+type O_LISTOF = {
     '0': 1
     '2': 3
     '3': never
@@ -1026,10 +1012,10 @@ type O_TUPLEOF = {
     '6': 6
 }
 
-type TUPLEOF_O = [1, 3, never, 5, 6];
+type LISTOF_O = [1, 3, never, 5, 6];
 
 checks([
-    check<O.TupleOf<O_TUPLEOF>,    TUPLEOF_O,    Test.Pass>(),
+    check<O.ListOf<O_LISTOF>,    LISTOF_O,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
