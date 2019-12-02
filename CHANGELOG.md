@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.7](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.6...v4.12.7) (2019-12-02)
+
+
+### Others
+
+* **o.mergeup:** give up tuple handling ([5214d04](https://github.com/pirix-gh/ts-toolbelt/commit/5214d04152413cda69dd5fc25ff12e4c42775f3f))
+
 ### [4.12.6](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.5...v4.12.6) (2019-12-01)
 
 
