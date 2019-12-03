@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.12](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.11...v4.12.12) (2019-12-03)
+
+
+### Bug Fixes
+
+* **a.clean:** error on mapped types [#74](https://github.com/pirix-gh/ts-toolbelt/issues/74) ([d7d5055](https://github.com/pirix-gh/ts-toolbelt/commit/d7d505507b0ab65b5d7e77da20ab285ea7e1446b))
+
+
+### Others
+
+* **a.clean:** update ([5598b7c](https://github.com/pirix-gh/ts-toolbelt/commit/5598b7ce73f40106a653e0b1ea1e03a78bb1497a))
+
 ### [4.12.11](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.10...v4.12.11) (2019-12-02)
 
 
