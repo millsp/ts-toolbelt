@@ -40,7 +40,7 @@ checks([
 // Cannot be tested
 
 // ---------------------------------------------------------------------------------------
-// CONTAINS
+// IMPLEMENTS
 
 checks([
     check<A.Implements<any, any>,              1,     Test.Pass>(),

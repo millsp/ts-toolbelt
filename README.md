@@ -3,7 +3,7 @@
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300" alt="Logo">
   </a>
   <h1 align="center">ts-toolbelt</h1>
-  <h3 align="center">🔩 Get the most out of TypeScript</h3>
+  <h3 align="center">Get the most out of TypeScript</h3>
   <br>
   <p align="center">
     <a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Read Docs</a>
@@ -77,11 +77,9 @@
 
 ## 📜 About
 
-<h3 align="center">❝squash your bugs before they even exist❞</h3><br>
+<h4 align="center"><i>If your goal is to avoid bugs by writing quality types, this library is made for you.</i></h4><br>
 
 **ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types.
-
-**If one of your goals is to prevent bugs by focusing on your types, this library is made for you!**
 
 With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
 
