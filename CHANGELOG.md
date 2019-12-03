@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.12.13](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.12...v4.12.13) (2019-12-03)
+
+
+### Others
+
+* cleanup ([cabcf91](https://github.com/pirix-gh/ts-toolbelt/commit/cabcf917a1558e3ef595a443a4e57735d6b18a63))
+
 ### [4.12.12](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.11...v4.12.12) (2019-12-03)
 
 
