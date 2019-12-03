@@ -31,6 +31,7 @@ checks([
     check<A.Clean<O.MergeUp<number[], []>>,    number[],               Test.Pass>(),
     check<A.Clean<O.MergeUp<string[], [1]>>,   Array<1 | string>,      Test.Pass>(),
     check<A.Clean<{length: 0}>,                {length: 0},            Test.Pass>(),
+    check<A.Clean<{[k: string]: string}>,      {[k: string]: string},  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
