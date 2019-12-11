@@ -3,7 +3,7 @@ import {Head} from '../../../List/Head'
 import {Return} from '../../Return'
 import {Last} from '../../../List/Last'
 
-export type PipeSync = {
+export type PipeMultiSync = {
     <
         P extends any[],
         R0,

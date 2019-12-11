@@ -1,8 +1,8 @@
 import {Mode, Input} from './_Internal'
-import {PipeSync as PipeSyncBasic} from './Pipe/Multi/Sync'
-import {PipeAsync as PipeAsyncBasic} from './Pipe/Multi/Async'
-import {PipeSync as PipeSyncList} from './Pipe/List/Sync'
-import {PipeAsync as PipeAsyncList} from './Pipe/List/Async'
+import {PipeMultiSync} from './Pipe/Multi/Sync'
+import {PipeMultiAsync} from './Pipe/Multi/Async'
+import {PipeListSync} from './Pipe/List/Sync'
+import {PipeListAsync} from './Pipe/List/Async'
 import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
@@ -117,11 +117,11 @@ export type Piped<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  */
 export type Pipe<mode extends Mode = 'sync', input extends Input = 'multi'> = IntersectOf<{
     'sync' : {
-        'multi': PipeSyncBasic
-        'list' : PipeSyncList
+        'multi': PipeMultiSync
+        'list' : PipeListSync
     }
     'async': {
-        'multi': PipeAsyncBasic
-        'list' : PipeAsyncList
+        'multi': PipeMultiAsync
+        'list' : PipeListAsync
     }
 }[mode][input]> // `IntersectOf` in case of unions

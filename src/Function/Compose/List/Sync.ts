@@ -3,7 +3,7 @@ import {Return} from '../../Return'
 import {Last} from '../../../List/Last'
 import {Head} from '../../../List/Head'
 
-export type ComposeSync = {
+export type ComposeListSync = {
     <
         P extends any[],
         R0,

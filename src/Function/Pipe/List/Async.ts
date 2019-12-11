@@ -4,7 +4,7 @@ import {Head} from '../../../List/Head'
 import {Return} from '../../Return'
 import {Last} from '../../../List/Last'
 
-export type PipeAsync = {
+export type PipeListAsync = {
     <
         P extends any[],
         R0,

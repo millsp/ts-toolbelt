@@ -1,8 +1,8 @@
 import {Mode, Input} from './_Internal'
-import {ComposeSync as ComposeSyncBasic} from './Compose/Multi/Sync'
-import {ComposeAsync as ComposeAsyncBasic} from './Compose/Multi/Async'
-import {ComposeSync as ComposeSyncList} from './Compose/List/Sync'
-import {ComposeAsync as ComposeAsyncList} from './Compose/List/Async'
+import {ComposeMultiSync} from './Compose/Multi/Sync'
+import {ComposeMultiAsync} from './Compose/Multi/Async'
+import {ComposeListSync} from './Compose/List/Sync'
+import {ComposeListAsync} from './Compose/List/Async'
 import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
@@ -117,11 +117,11 @@ export type Composed<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  */
 export type Compose<mode extends Mode = 'sync', input extends Input = 'multi'> = IntersectOf<{
     'sync' : {
-        'multi': ComposeSyncBasic
-        'list' : ComposeSyncList
+        'multi': ComposeMultiSync
+        'list' : ComposeListSync
     }
     'async': {
-        'multi': ComposeAsyncBasic
-        'list' : ComposeAsyncList
+        'multi': ComposeMultiAsync
+        'list' : ComposeListAsync
     }
 }[mode][input]> // `IntersectOf` in case of unions

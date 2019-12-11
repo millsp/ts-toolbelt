@@ -4,7 +4,7 @@ import {Last} from '../../../List/Last'
 import {Return} from '../../Return'
 import {Head} from '../../../List/Head'
 
-export type ComposeAsync = {
+export type ComposeMultiAsync = {
     <
         P extends any[],
         R0,
