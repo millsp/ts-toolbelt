@@ -1,12 +1,14 @@
+import {Mode} from './_Internal'
+import {PipeSync} from './Pipe/Sync'
+import {PipeAsync} from './Pipe/Async'
 import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
-import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Head} from '../List/Head'
 import {Last} from '../List/Last'
+import {Prev} from '../Iteration/Prev'
+import {Head} from '../List/Head'
 import {Return} from './Return'
 import {Parameters} from './Parameters'
-import {Mode} from './_Internal'
 import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
@@ -60,7 +62,7 @@ export type Piper<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  *
  * /// If you are looking for creating types for `pipe`
  * /// `Piper` will check for input & `Piped` the output
- * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
+ * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Piped<Fns>
  *
  * const a = (a1: number) => `${a1}`
  * const b = (b1: string) => [b1]
@@ -69,7 +71,7 @@ export type Piper<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  * pipe(a, b, c)(42)
  *
  * /// And if you are looking for an async `pipe` type
- * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Pipe<Fns, 'async'>
+ * declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Piped<Fns, 'async'>
  *
  * const a = async (a1: number) => `${a1}`
  * const b = async (b1: string) => [b1]
@@ -78,7 +80,38 @@ export type Piper<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  * await pipe(a, b, c)(42)
  * ```
  */
-export type Pipe<Fns extends List<Function>, mode extends Mode = 'sync'> = {
+export type Piped<Fns extends List<Function>, mode extends Mode = 'sync'> = {
     'sync' : (...args: Parameters<Head<Fns>>) => Return<Last<Fns>>
     'async': (...args: Parameters<Head<Fns>>) => Promise<PromiseOf<Return<Last<Fns>>>>
+}[mode]
+
+/** Pipe [[Function]]s together
+ * @param mode sync/async (?=`'sync'`)
+ * @returns [[Function]]
+ * @example
+ * ```ts
+ * import {F} from 'ts-toolbelt'
+ *
+ * /// If you are looking for creating types for `pipe`:
+ * declare const pipe: F.Pipe
+ *
+ * const a = (a1: number) => `${a1}`
+ * const b = (b1: string) => [b1]
+ * const c = (c1: string[]) => [c1]
+ *
+ * pipe(a, b, c)(42)
+ *
+ * /// And if you are looking for an async `pipe` type:
+ * declare const pipe: F.Pipe
+ *
+ * const a = async (a1: number) => `${a1}`
+ * const b = async (b1: string) => [b1]
+ * const c = async (c1: string[]) => [c1]
+ *
+ * await pipe(a, b, c)(42)
+ * ```
+ */
+export type Pipe<mode extends Mode = 'sync'> = {
+    'sync' : PipeSync
+    'async': PipeAsync
 }[mode]

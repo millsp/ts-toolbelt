@@ -1,3 +1,6 @@
+import {Mode} from './_Internal'
+import {ComposeSync} from './Compose/Sync'
+import {ComposeAsync} from './Compose/Async'
 import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
@@ -9,7 +12,6 @@ import {Next} from '../Iteration/Next'
 import {Head} from '../List/Head'
 import {Return} from './Return'
 import {Parameters} from './Parameters'
-import {Mode} from './_Internal'
 import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
@@ -61,8 +63,38 @@ export type Composer<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  * import {F} from 'ts-toolbelt'
  *
  * /// If you are looking for creating types for `compose`
+ * /// `Composer` will check for input & `Composed` the output
+ * declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Composed<Fns>
+ *
+ * const a = (a1: number) => `${a1}`
+ * const c = (c1: string[]) => [c1]
+ * const b = (b1: string) => [b1]
+ *
+ * compose(c, b, a)(42)
+ *
+ * /// And if you are looking for an async `compose` type
+ * declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns, 'async'>): F.Composed<Fns, 'async'>
+ *
+ * const a = async (a1: number) => `${a1}`
+ * const b = async (b1: string) => [b1]
+ * const c = async (c1: string[]) => [c1]
+ *
+ * await compose(c, b, a)(42)
+ */
+export type Composed<Fns extends List<Function>, mode extends Mode = 'sync'> = {
+    'sync' : (...args: Parameters<Last<Fns>>) => Return<Head<Fns>>
+    'async': (...args: Parameters<Last<Fns>>) => Promise<PromiseOf<Return<Head<Fns>>>>
+}[mode]
+
+/** Compose [[Function]]s together
+ * @param mode sync/async (?=`'sync'`)
+ * @example
+ * ```ts
+ * import {F} from 'ts-toolbelt'
+ *
+ * /// If you are looking for creating types for `compose`
  * /// `Composer` will check for input & `Compose` the output
- * declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>
+ * declare const compose: F.Compose
  *
  * const a = (a1: number) => `${a1}`
  * const c = (c1: string[]) => [c1]
@@ -71,7 +103,7 @@ export type Composer<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  * compose(c, b, a)(42)
  *
  * /// And if you are looking for an async `pipe` type
- * declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns, 'async'>): F.Composer<Fns, 'async'>
+ * declare const compose: F.Compose
  *
  * const a = async (a1: number) => `${a1}`
  * const b = async (b1: string) => [b1]
@@ -79,7 +111,7 @@ export type Composer<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  *
  * await compose(c, b, a)(42)
  */
-export type Compose<Fns extends List<Function>, mode extends Mode = 'sync'> = {
-    'sync' : (...args: Parameters<Last<Fns>>) => Return<Head<Fns>>
-    'async': (...args: Parameters<Last<Fns>>) => Promise<PromiseOf<Return<Head<Fns>>>>
+export type Compose<mode extends Mode = 'sync'> = {
+    'sync' : ComposeSync
+    'async': ComposeAsync
 }[mode]

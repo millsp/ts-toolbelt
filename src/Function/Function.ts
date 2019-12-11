@@ -13,5 +13,6 @@ import {List} from '../List/List'
  * /// (args_0: string, args_1: number) => boolean
  * ```
  */
-export type Function<P extends List = any, R extends any = any> =
-    ((...args: P) => R) & _Function
+export interface Function<P extends List = any, R extends any = any> {
+    (...args: P): R
+}

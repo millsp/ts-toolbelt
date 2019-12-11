@@ -13,7 +13,7 @@ const fn = (a: string, b: number, c: object) => true
 // ARROW
 
 checks([
-    check<F.Function<[string, number, object], boolean>,   typeof fn & Function,  Test.Pass>(),
+    check<F.Function<[string, number, object], boolean>,    typeof fn,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -21,31 +21,49 @@ checks([
 
 // sync ----------------------------------------------------------------------------------
 
-declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Compose<Fns>
+declare function compozeSync<Fns extends F.Function[]>(...args: F.Composer<Fns>): F.Composed<Fns>
+declare const composeSync: F.Compose<'sync'>
 
-const composedSync = compose(
+const compozedSync = compozeSync(
     (message: string)                   => false,                   // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     <T>(generic: T)                     => generic,                 // receive previous return
     (name: string, age: number)         => ({name, age}),           // receive parameters
 )
 
+const composedSync = composeSync(
+    (message: string)                   => false,                   // receive previous return
+    (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    <T>(generic: T)                     => generic,                 // receive previous return
+    (name: string, age: number)         => ({name, age}),            // receive parameters
+)
+
 checks([
-    check<(typeof composedSync),    (name: string, age: number) => boolean,  Test.Pass>(),
+    check<(typeof compozedSync),    (name: string, age: number) => boolean,     Test.Pass>(),
+    check<(typeof composedSync),    (name: string, age: number) => boolean,     Test.Pass>(),
 ])
 
 // async ---------------------------------------------------------------------------------
 
-declare function compose<Fns extends F.Function[]>(...args: F.Composer<Fns, 'async'>): F.Compose<Fns, 'async'>
+declare function compozeAsync<Fns extends F.Function[]>(...args: F.Composer<Fns, 'async'>): F.Composed<Fns, 'async'>
+declare const composeAsync: F.Compose<'async'>
 
-const composedAsync = compose(
+const compozedAsync = compozeAsync(
     (message: string)                         => false,                   // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     async <T>(generic: T)                     => generic,                 // receive previous return
     async (name: string, age: number)         => ({name, age}),           // receive parameters
 )
 
+const composedAsync = composeAsync(
+    (message: string)                         => false,                   // receive previous return
+    async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    async <T>(generic: T)                     => generic,                 // receive previous return
+    async (name: string, age: number)           => ({name, age}),           // receive parameters
+)
+
 checks([
+    check<(typeof compozedAsync),   (name: string, age: number) => Promise<boolean>,    Test.Pass>(),
     check<(typeof composedAsync),   (name: string, age: number) => Promise<boolean>,    Test.Pass>(),
 ])
 
@@ -63,6 +81,10 @@ const t = curried()
 
 const test00 = curried(__, 26)(__, true, 'JJ', __)('Jane', 'Jini') // boolean
 const test01 = curried('Jane', 26, true, __)('JJ', __)('Jini')     // boolean
+
+type t = typeof test01
+
+
 
 // ---------------------------------------------------------------------------------------
 // PARAMETERS
@@ -85,24 +107,41 @@ checks([
 
 // sync ----------------------------------------------------------------------------------
 
-declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Pipe<Fns>
+declare function pypeSync<Fns extends F.Function[]>(...args: F.Piper<Fns>): F.Piped<Fns>
+declare const pipeSync: F.Pipe<'sync'>
 
-const pipedSync = pipe(
+const pypedSync = pypeSync(
     (name: string, age: number)         => ({name, age}),           // receive parameters
     <T>(generic: T)                     => generic,                 // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     (message: string)                   => false,                   // receive previous return
 )
 
+const pipedSync = pipeSync(
+    (name: string, age: number)           => ({name, age}),           // receive parameters
+    <T>(generic: T)                     => generic,                 // receive previous return
+    (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    (message: string)                   => false,                   // receive previous return
+)
+
 checks([
+    check<(typeof pypedSync),   (name: string, age: number) => boolean,  Test.Pass>(),
     check<(typeof pipedSync),   (name: string, age: number) => boolean,  Test.Pass>(),
 ])
 
 // async ---------------------------------------------------------------------------------
 
-declare function pipe<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Pipe<Fns, 'async'>
+declare function pypeAsync<Fns extends F.Function[]>(...args: F.Piper<Fns, 'async'>): F.Piped<Fns, 'async'>
+declare const pipeAsync: F.Pipe<'async'>
 
-const pipedAsync = pipe(
+const pypedAsync = pypeAsync(
+    (name: string, age: number)               => ({name, age}),           // receive parameters
+    async <T>(generic: T)                     => generic,                 // receive previous return
+    async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    (message: string)                         => false,                   // receive previous return
+)
+
+const pipedAsync = pipeAsync(
     (name: string, age: number)               => ({name, age}),           // receive parameters
     async <T>(generic: T)                     => generic,                 // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
@@ -110,6 +149,7 @@ const pipedAsync = pipe(
 )
 
 checks([
+    check<(typeof pypedAsync),   (name: string, age: number) => Promise<boolean>,   Test.Pass>(),
     check<(typeof pipedAsync),   (name: string, age: number) => Promise<boolean>,   Test.Pass>(),
 ])
 
