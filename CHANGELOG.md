@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.13.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.0...v4.13.1) (2019-12-11)
+
+
+### Others
+
+* better types for pipe/compose ([405fa8e](https://github.com/pirix-gh/ts-toolbelt/commit/405fa8eef2086b2ba70bb5820223b6de390d411d))
+* cleanup ([58dc4af](https://github.com/pirix-gh/ts-toolbelt/commit/58dc4afd328a4f1d489785c0b4d5dae27ff1b799))
+* cleanup ([e319f6c](https://github.com/pirix-gh/ts-toolbelt/commit/e319f6c3c2c727e58162bdd4fb5da804c469f227))
+* cleanup ([1432f07](https://github.com/pirix-gh/ts-toolbelt/commit/1432f075ccee735a88c2a98c385095d24e8b09c9))
+
 ## [4.13.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.13...v4.13.0) (2019-12-11)
 
 
