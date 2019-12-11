@@ -5,14 +5,14 @@ import {Return} from '../Return'
 import {Head} from '../../List/Head'
 
 export type ComposeAsync = {
-    <R>(): R
+    <R>(): Promise<PromiseOf<R>>
 
     <
         P extends any[],
         R0,
     >(
         fn0: Function<P,               R0>,
-    ): Function<P,                     R0>
+    ): Function<P,   Promise<PromiseOf<R0>>>
 
     <
         P extends any[],
@@ -21,7 +21,7 @@ export type ComposeAsync = {
     >(
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R1>
+    ): Function<P,   Promise<PromiseOf<R1>>>
 
     <
         P extends any[],
@@ -32,7 +32,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R2>
+    ): Function<P,   Promise<PromiseOf<R2>>>
 
     <
         P extends any[],
@@ -45,7 +45,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R3>
+    ): Function<P,   Promise<PromiseOf<R3>>>
 
     <
         P extends any[],
@@ -60,7 +60,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R4>
+    ): Function<P,   Promise<PromiseOf<R4>>>
 
     <
         P extends any[],
@@ -77,7 +77,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R5>
+    ): Function<P,   Promise<PromiseOf<R5>>>
 
     <
         P extends any[],
@@ -96,7 +96,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R6>
+    ): Function<P,   Promise<PromiseOf<R6>>>
 
     <
         P extends any[],
@@ -117,7 +117,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R7>
+    ): Function<P,   Promise<PromiseOf<R7>>>
 
     <
         P extends any[],
@@ -140,7 +140,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R8>
+    ): Function<P,   Promise<PromiseOf<R8>>>
 
     <
         P extends any[],
@@ -165,7 +165,7 @@ export type ComposeAsync = {
         fn2: Function<[PromiseOf<R1>], R2>,
         fn1: Function<[PromiseOf<R0>], R1>,
         fn0: Function<P,               R0>,
-    ): Function<P,                     R9>
+    ): Function<P,   Promise<PromiseOf<R9>>>
 
     <
         Fns extends Function[],

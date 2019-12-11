@@ -59,7 +59,7 @@ const composedAsync = composeAsync(
     (message: string)                         => false,                   // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     async <T>(generic: T)                     => generic,                 // receive previous return
-    async (name: string, age: number)           => ({name, age}),           // receive parameters
+    async (name: string, age: number)         => ({name, age}),           // receive parameters
 )
 
 checks([
