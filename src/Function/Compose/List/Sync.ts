@@ -6,26 +6,26 @@ import {Head} from '../../../List/Head'
 
 export type ComposeListSync = {
     <
-        P extends any[],
         R0,
+        P extends any[],
     >(fns: [
         Function<P,    R0>,
     ]): Function<P,    R0>
 
     <
-        P extends any[],
         R0,
         R1,
+        P extends any[],
     >(fns: [
         Function<[R0], R1>,
         Function<P,    R0>,
     ]): Function<P,    R1>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
+        P extends any[],
     >(fns: [
         Function<[R1], R2>,
         Function<[R0], R1>,
@@ -33,11 +33,11 @@ export type ComposeListSync = {
     ]): Function<P,    R2>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
         R3,
+        P extends any[],
     >(fns: [
         Function<[R2], R3>,
         Function<[R1], R2>,
@@ -46,12 +46,12 @@ export type ComposeListSync = {
     ]): Function<P,    R3>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
         R3,
         R4,
+        P extends any[],
     >(fns: [
         Function<[R3], R4>,
         Function<[R2], R3>,
@@ -61,13 +61,13 @@ export type ComposeListSync = {
     ]): Function<P,    R4>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
         R3,
         R4,
         R5,
+        P extends any[],
     >(fns: [
         Function<[R4], R5>,
         Function<[R3], R4>,
@@ -78,7 +78,6 @@ export type ComposeListSync = {
     ]): Function<P,    R5>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -86,6 +85,7 @@ export type ComposeListSync = {
         R4,
         R5,
         R6,
+        P extends any[],
     >(fns: [
         Function<[R5], R6>,
         Function<[R4], R5>,
@@ -97,7 +97,6 @@ export type ComposeListSync = {
     ]): Function<P,    R6>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -106,6 +105,7 @@ export type ComposeListSync = {
         R5,
         R6,
         R7,
+        P extends any[],
     >(fns: [
         Function<[R6], R7>,
         Function<[R5], R6>,
@@ -118,7 +118,6 @@ export type ComposeListSync = {
     ]): Function<P,    R7>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -128,6 +127,7 @@ export type ComposeListSync = {
         R6,
         R7,
         R8,
+        P extends any[],
     >(fns: [
         Function<[R7], R8>,
         Function<[R6], R7>,
@@ -141,7 +141,6 @@ export type ComposeListSync = {
     ]): Function<P,    R8>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -152,6 +151,7 @@ export type ComposeListSync = {
         R7,
         R8,
         R9,
+        P extends any[],
     >(fns: [
         Function<[R8], R9>,
         Function<[R7], R8>,

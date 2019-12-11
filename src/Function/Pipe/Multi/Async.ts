@@ -7,26 +7,26 @@ import {Last} from '../../../List/Last'
 
 export type PipeMultiAsync = {
     <
-        P extends any[],
         R0,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
     ]): Function<P,   Promise<PromiseOf<R0>>>
 
     <
-        P extends any[],
         R0,
         R1,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
     ]): Function<P,   Promise<PromiseOf<R1>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
@@ -34,11 +34,11 @@ export type PipeMultiAsync = {
     ]): Function<P,   Promise<PromiseOf<R2>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
         R3,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
@@ -47,12 +47,12 @@ export type PipeMultiAsync = {
     ]): Function<P,   Promise<PromiseOf<R3>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
         R3,
         R4,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
@@ -62,13 +62,13 @@ export type PipeMultiAsync = {
     ]): Function<P,   Promise<PromiseOf<R4>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
         R3,
         R4,
         R5,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
@@ -79,7 +79,6 @@ export type PipeMultiAsync = {
     ]): Function<P,   Promise<PromiseOf<R5>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -87,6 +86,7 @@ export type PipeMultiAsync = {
         R4,
         R5,
         R6,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
@@ -98,7 +98,6 @@ export type PipeMultiAsync = {
     ]): Function<P,   Promise<PromiseOf<R6>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -107,6 +106,7 @@ export type PipeMultiAsync = {
         R5,
         R6,
         R7,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
@@ -119,7 +119,6 @@ export type PipeMultiAsync = {
     ]): Function<P,   Promise<PromiseOf<R7>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -129,6 +128,7 @@ export type PipeMultiAsync = {
         R6,
         R7,
         R8,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
@@ -142,7 +142,6 @@ export type PipeMultiAsync = {
     ]): Function<P,   Promise<PromiseOf<R8>>>
 
     <
-        P extends any[],
         R0,
         R1,
         R2,
@@ -153,6 +152,7 @@ export type PipeMultiAsync = {
         R7,
         R8,
         R9,
+        P extends any[],
     >(...fns: [
         Function<P,                     R0>,
         Function<[PromiseOf<R0>],       R1>,
