@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Misc/Promisable&quot; | ts-toolbelt</title>
+	<title>&quot;List/CompulsoryKeys&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_misc_promisable_.html">&quot;Misc/Promisable&quot;</a>
+					<a href="_list_compulsorykeys_.html">&quot;List/CompulsoryKeys&quot;</a>
 				</li>
 			</ul>
 		</div>
@@ -70,7 +70,7 @@
 				<ul>
 					<ul class="before-current">
 						<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-							<a href="_misc_promisable_.html#promisable" class="tsd-kind-icon">Promisable</a>
+							<a href="_list_compulsorykeys_.html#compulsorykeys" class="tsd-kind-icon">Compulsory<wbr>Keys</a>
 						</li>
 					</ul>
 				</ul>
@@ -97,6 +97,8 @@
 						<a href="_any_is_.html">&quot;<wbr>Any/<wbr>Is&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_any_kind_.html">&quot;<wbr>Any/<wbr>Kind&quot;</a>
+						</li>                        <li class=" tsd-kind-external-module">
+						<a href="_any_promisable_.html">&quot;<wbr>Any/<wbr>Promisable&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_any_try_.html">&quot;<wbr>Any/<wbr>Try&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
@@ -201,7 +203,7 @@
 						<a href="_list_at_.html">&quot;<wbr>List/<wbr>At&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_list_compulsory_.html">&quot;<wbr>List/<wbr>Compulsory&quot;</a>
-						</li>                        <li class=" tsd-kind-external-module">
+						</li>                        <li class="current tsd-kind-external-module">
 						<a href="_list_compulsorykeys_.html">&quot;<wbr>List/<wbr>Compulsory<wbr>Keys&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_list_concat_.html">&quot;<wbr>List/<wbr>Concat&quot;</a>
@@ -339,8 +341,6 @@
 						<a href="_misc_json_value_.html">&quot;<wbr>Misc/JSON/<wbr>Value&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_misc_json__api_.html">&quot;<wbr>Misc/JSON/_<wbr>api&quot;</a>
-						</li>                        <li class="current tsd-kind-external-module">
-						<a href="_misc_promisable_.html">&quot;<wbr>Misc/<wbr>Promisable&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
 						<a href="_misc__api_.html">&quot;<wbr>Misc/_<wbr>api&quot;</a>
 						</li>                        <li class=" tsd-kind-external-module">
@@ -559,7 +559,7 @@
 							<div class="tsd-navigation secondary">
 								<ul>
 									<li class="tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
-										<a href="_misc_promisable_.html#promisable" class="tsd-kind-icon">Promisable</a>
+										<a href="_list_compulsorykeys_.html#compulsorykeys" class="tsd-kind-icon">Compulsory<wbr>Keys</a>
 									</li>
 								</ul>
 							</div>
@@ -570,35 +570,30 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter tsd-descriptions">
-					<a name="promisable" class="tsd-anchor"></a>
-					<h3>Promisable</h3>
-					<div class="tsd-signature tsd-kind-icon">Promisable&lt;A&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">A</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">A</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="compulsorykeys" class="tsd-anchor"></a>
+					<h3>Compulsory<wbr>Keys</h3>
+					<div class="tsd-signature tsd-kind-icon">CompulsoryKeys&lt;T&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">OCompulsory</span><span class="tsd-signature-symbol">&lt;</span><a href="_list_objectof_.html#objectof" class="tsd-signature-type">ObjectOf</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>A way to say that you can handle <strong><code>Promises</code></strong> and non-<strong><code>Promises</code></strong>. This
-							is often the case if you&#39;re a heavy user of <code>await</code> and <code>async</code>.</p>
+							<p>Get the keys of <strong><code>T</code></strong> that are compulsory</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-							<span class="name">A</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    <div class="tsd-comment">
-								<div class="lead">
-									<p><strong><code>A</code></strong> A type</p>
-								</div>
-							</div>
-						</li>
+						<span class="name">T</span><span class="tsd-signature-symbol">: </span><a href="_list_list_.html#list" class="tsd-signature-type">List</a>                    </li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><strong><code>A | Promise&lt;A&gt;</code></strong></p>
+						<p><p><strong><code>keyof</code></strong></p>
 						</p>
 						<h4>example</h4>
-						<p></p>
+						<p><pre><code class="language-ts"></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/becbcde/src/Misc/Promisable.ts#L7">src/Misc/Promisable.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/4d8e9e9/src/List/CompulsoryKeys.ts#L12">src/List/CompulsoryKeys.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
