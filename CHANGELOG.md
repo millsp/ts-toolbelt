@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.13.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.13...v4.13.0) (2019-12-11)
+
+
+### Features
+
+* **u.omit/pick:** pick or omit on unions ([d90faa1](https://github.com/pirix-gh/ts-toolbelt/commit/d90faa17f5005e0492babe00c0de69621b72e909))
+
+
+### Bug Fixes
+
+* **f.pipe/compose:** wrongs async types ([52ef6fd](https://github.com/pirix-gh/ts-toolbelt/commit/52ef6fd51312158dc38d008400689bb9d206f0ec))
+
+
+### Others
+
+* better types for pipe/compose ([97d4782](https://github.com/pirix-gh/ts-toolbelt/commit/97d47821cc02565b6a8e5ae3a9d76c6170422c6b))
+* rename to Omit ([5a46b9a](https://github.com/pirix-gh/ts-toolbelt/commit/5a46b9a22e7fc0c56488938ab9259c9e3af6fd0a))
+
 ### [4.12.13](https://github.com/pirix-gh/ts-toolbelt/compare/v4.12.12...v4.12.13) (2019-12-03)
 
 
