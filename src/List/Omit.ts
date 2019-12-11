@@ -1,6 +1,5 @@
 import {Omit as OOmit} from '../Object/Omit'
 import {ListOf} from '../Object/ListOf'
-import {ObjectOf} from './ObjectOf'
 import {Index} from '../Any/Index'
 import {List} from './List'
 
