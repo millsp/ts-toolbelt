@@ -9,7 +9,7 @@ import {True, Boolean} from '../Boolean/Boolean'
  * the keys are ever present with one another within the different unions.
  * @param T to split
  * @param K to split with
- * @param strict to force excess property checks (?=`True`) https://github.com/microsoft/TypeScript/issues/20863
+ * @param strict (?=`True`) to force excess property checks https://github.com/microsoft/TypeScript/issues/20863
  * @returns [[Union]]
  * @example
  * ```ts

@@ -6,7 +6,7 @@ import {List} from './List'
 /** Make the fields of **`T`** union the ones of **`T1`**
  * @param T to union from
  * @param T1 to union with
- * @param depth to do it deeply (?=`'flat'`)
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
  * @example
  * ```ts

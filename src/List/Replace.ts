@@ -7,7 +7,7 @@ import {List} from './List'
  * @param O to update
  * @param M to select fields
  * @param A to update with
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`any[]`**
  * @example
  * ```ts

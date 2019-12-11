@@ -5,7 +5,7 @@ import {List} from './List'
 
 /** Make **`T`** readonly (deeply or not)
  * @param T to make readonly
- * @param depth to do it deeply (?=`'flat'`)
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
  * @example
  * ```ts

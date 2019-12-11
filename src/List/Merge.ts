@@ -32,7 +32,7 @@ type MergeDeep<O, O1> = // we do not distribute this one => recursive distribute
  * ('deep' option will skip any nullable object to be merged)
  * @param O to complete
  * @param O1 to copy from
- * @param depth to do it deeply (?=`'flat'`)
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

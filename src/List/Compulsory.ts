@@ -5,7 +5,7 @@ import {List} from './List'
 
 /** Make **`T`** compulsory (deeply or not)
  * @param T to make compulsory
- * @param depth to do it deeply (?=`'flat'`)
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
  * @example
  * ```ts

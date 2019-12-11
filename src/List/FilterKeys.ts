@@ -6,7 +6,7 @@ import {List} from './List'
 /** Filter out the keys of **`T`** which entries match **`M`**
  * @param T to remove from
  * @param M to select entries
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`keyof`**
  * @example
  * ```ts

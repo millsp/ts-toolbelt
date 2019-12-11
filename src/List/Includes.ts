@@ -6,7 +6,7 @@ import {List} from './List'
 /** Check whether **`T`** has entries that match **`M`**
  * @param T to be inspected
  * @param M to check entry type
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns [[Boolean]]
  * @example
  * ```ts

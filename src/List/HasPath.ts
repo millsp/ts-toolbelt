@@ -7,8 +7,8 @@ import {List} from './List'
 /** Check whether **`T`** has nested entries that match **`M`**
  * @param T to be inspected
  * @param Path to be followed
- * @param M to check entry type (?=`any`)
- * @param match to change precision (?=`'default'`)
+ * @param M (?=`any`) to check entry type
+ * @param match (?=`'default'`) to change precision
  * @returns [[Boolean]]
  * @example
  * ```ts

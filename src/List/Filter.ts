@@ -7,7 +7,7 @@ import {List} from './List'
 /** Filter out of **`T`** the entries that match **`M`**
  * @param T to remove from
  * @param M to select entries
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`any[]`**
  * @example
  * ```ts

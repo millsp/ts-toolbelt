@@ -9,8 +9,8 @@ import {List} from './List'
 
 /** Make some entries of **`T`** nullable (deeply or not)
  * @param T to make nullable
- * @param K to choose entries (?=`keyof O`)
- * @param depth to do it deeply (?=`'flat'`)
+ * @param K (?=`keyof O`) to choose entries
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
  * @example
  * ```ts

@@ -22,7 +22,7 @@ type _Repeat<N extends Number, A, T extends List = [], I extends Iteration = Ite
 /** Fill a [[List]] with **`N`** times **`A`**
  * @param A to fill with
  * @param N to repeat it
- * @param T to be filled (?=`[]`)
+ * @param T (?=`[]`) to be filled
  * @returns **`any[]`**
  * @example
  * ```ts

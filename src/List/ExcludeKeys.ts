@@ -7,7 +7,7 @@ import {List} from './List'
  * (If `match = 'default'`, no type checks are done)
  * @param T to remove the keys from
  * @param T1 to remove the keys out
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`keyof`**
  * @example
  * ```ts

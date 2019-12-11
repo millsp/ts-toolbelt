@@ -10,8 +10,8 @@ import {List} from './List'
 
 /** Make some entries of **`T`** not nullable (deeply or not)
  * @param T to make non nullable
- * @param K to choose fields (?=`keyof O`)
- * @param depth to do it deeply (?=`'flat'`)
+ * @param K (?=`keyof O`) to choose fields
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
  * @example
  * ```ts

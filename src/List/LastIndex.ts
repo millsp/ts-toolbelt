@@ -5,7 +5,7 @@ import {List} from './List'
 
 /** Get the last index of **`T`**
  * @param T to get from
- * @param fmt output (?=`'n'`)
+ * @param fmt (?=`'n'`) output
  * @returns **`string`** or **`number`**
  * @example
  * ```ts
