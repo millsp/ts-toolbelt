@@ -1,6 +1,8 @@
-import {Mode} from './_Internal'
-import {ComposeSync} from './Compose/Sync'
-import {ComposeAsync} from './Compose/Async'
+import {Mode, Input} from './_Internal'
+import {ComposeSync as ComposeSyncBasic} from './Compose/Multi/Sync'
+import {ComposeAsync as ComposeAsyncBasic} from './Compose/Multi/Async'
+import {ComposeSync as ComposeSyncList} from './Compose/List/Sync'
+import {ComposeAsync as ComposeAsyncList} from './Compose/List/Async'
 import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
@@ -16,6 +18,7 @@ import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 import {List} from '../List/List'
+import {IntersectOf} from '../Union/IntersectOf'
 
 /**
  * @hidden
@@ -87,7 +90,8 @@ export type Composed<Fns extends List<Function>, mode extends Mode = 'sync'> = {
 }[mode]
 
 /** Compose [[Function]]s together
- * @param mode sync/async (?=`'sync'`)
+ * @param mode  (?=`'sync'`)    sync/async (this depends on your implementation)
+ * @param input (?=`'multi'`)   whether you want it to take a list or parameters
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'
@@ -102,8 +106,8 @@ export type Composed<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  *
  * compose(c, b, a)(42)
  *
- * /// And if you are looking for an async `pipe` type
- * declare const compose: F.Compose
+ * /// And if you are looking for an async `compose` type
+ * declare const compose: F.Compose<'async'>
  *
  * const a = async (a1: number) => `${a1}`
  * const b = async (b1: string) => [b1]
@@ -111,7 +115,13 @@ export type Composed<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  *
  * await compose(c, b, a)(42)
  */
-export type Compose<mode extends Mode = 'sync'> = {
-    'sync' : ComposeSync
-    'async': ComposeAsync
-}[mode]
+export type Compose<mode extends Mode = 'sync', input extends Input = 'multi'> = IntersectOf<{
+    'sync' : {
+        'multi': ComposeSyncBasic
+        'list' : ComposeSyncList
+    }
+    'async': {
+        'multi': ComposeAsyncBasic
+        'list' : ComposeAsyncList
+    }
+}[mode][input]> // `IntersectOf` in case of unions

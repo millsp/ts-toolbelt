@@ -1,6 +1,8 @@
-import {Mode} from './_Internal'
-import {PipeSync} from './Pipe/Sync'
-import {PipeAsync} from './Pipe/Async'
+import {Mode, Input} from './_Internal'
+import {PipeSync as PipeSyncBasic} from './Pipe/Multi/Sync'
+import {PipeAsync as PipeAsyncBasic} from './Pipe/Multi/Async'
+import {PipeSync as PipeSyncList} from './Pipe/List/Sync'
+import {PipeAsync as PipeAsyncList} from './Pipe/List/Async'
 import {Function} from './Function'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
@@ -13,6 +15,7 @@ import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 import {List} from '../List/List'
+import {IntersectOf} from '../Union/_api'
 
 /**
  * @hidden
@@ -86,7 +89,8 @@ export type Piped<Fns extends List<Function>, mode extends Mode = 'sync'> = {
 }[mode]
 
 /** Pipe [[Function]]s together
- * @param mode sync/async (?=`'sync'`)
+ * @param mode (?=`'sync'`) sync/async (this depends on your implementation)
+ * @param input (?=`'multi'`) whether you want to take a list or multiple parameters
  * @returns [[Function]]
  * @example
  * ```ts
@@ -102,7 +106,7 @@ export type Piped<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  * pipe(a, b, c)(42)
  *
  * /// And if you are looking for an async `pipe` type:
- * declare const pipe: F.Pipe
+ * declare const pipe: F.Pipe<'async'>
  *
  * const a = async (a1: number) => `${a1}`
  * const b = async (b1: string) => [b1]
@@ -111,7 +115,13 @@ export type Piped<Fns extends List<Function>, mode extends Mode = 'sync'> = {
  * await pipe(a, b, c)(42)
  * ```
  */
-export type Pipe<mode extends Mode = 'sync'> = {
-    'sync' : PipeSync
-    'async': PipeAsync
-}[mode]
+export type Pipe<mode extends Mode = 'sync', input extends Input = 'multi'> = IntersectOf<{
+    'sync' : {
+        'multi': PipeSyncBasic
+        'list' : PipeSyncList
+    }
+    'async': {
+        'multi': PipeAsyncBasic
+        'list' : PipeAsyncList
+    }
+}[mode][input]> // `IntersectOf` in case of unions
