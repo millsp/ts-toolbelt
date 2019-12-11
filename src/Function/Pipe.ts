@@ -15,7 +15,7 @@ import {PromiseOf} from '../Class/PromiseOf'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 import {List} from '../List/List'
-import {IntersectOf} from '../Union/_api'
+import {IntersectOf} from '../Union/IntersectOf'
 
 /**
  * @hidden

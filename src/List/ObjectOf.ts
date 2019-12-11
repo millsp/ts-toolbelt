@@ -1,5 +1,5 @@
 import {Omit as OOmit} from '../Object/Omit'
-import {HasAll} from '../Union/_api'
+import {HasAll} from '../Union/HasAll'
 import {True} from '../Boolean/Boolean'
 import {Cast} from '../Any/Cast'
 
