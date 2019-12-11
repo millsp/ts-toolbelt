@@ -1,4 +1,5 @@
 export {Diff} from './Diff'
+export {DistributiveOmit} from './DistributiveOmit'
 export {Exclude} from './Exclude'
 export {Filter} from './Filter'
 export {Has} from './Has'
