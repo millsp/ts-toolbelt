@@ -17,4 +17,7 @@ export {Replace} from './Replace'
 export {Select} from './Select'
 export {Strict} from './Strict'
 export {ListOf} from './ListOf'
+
+// LEGACY
+
 export {ListOf as TupleOf} from './ListOf'

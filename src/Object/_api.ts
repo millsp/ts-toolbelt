@@ -44,7 +44,6 @@ export {RequiredKeys} from './RequiredKeys'
 export {Select} from './Select'
 export {SelectKeys} from './SelectKeys'
 export {ListOf} from './ListOf'
-export {ListOf as TupleOf} from './ListOf'
 export {Unionize} from './Unionize'
 export {UnionOf} from './UnionOf'
 export {Update} from './Update'
@@ -54,3 +53,4 @@ export {WritableKeys} from './WritableKeys'
 // LEGACY
 
 export {Clean as Ensure} from '../Any/Clean'
+export {ListOf as TupleOf} from './ListOf'

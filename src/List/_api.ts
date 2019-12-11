@@ -58,7 +58,6 @@ export {SelectKeys} from './SelectKeys'
 export {Tail} from './Tail'
 export {Take} from './Take'
 export {List} from './List'
-export {List as Tuple} from './List'
 export {Unionize} from './Unionize'
 export {UnionOf} from './UnionOf'
 export {UnNest} from './UnNest'
@@ -67,3 +66,7 @@ export {Writable} from './Writable'
 export {WritableKeys} from './WritableKeys'
 export {Zip} from './Zip'
 export {ZipObj} from './ZipObj'
+
+// LEGACY
+
+export {List as Tuple} from './List'
