@@ -1,3 +1,5 @@
+/** @ignore *//** */
+
 import * as JSON from './JSON/_api'
 
 export {JSON}

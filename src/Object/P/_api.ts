@@ -1,3 +1,5 @@
+/** @ignore *//** */
+
 export {Merge} from './Merge'
 export {Omit} from './Omit'
 export {Pick} from './Pick'

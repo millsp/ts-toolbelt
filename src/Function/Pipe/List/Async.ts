@@ -1,3 +1,4 @@
+/** @ignore *//** */
 import {Function} from '../../Function'
 import {PromiseOf} from '../../../Class/PromiseOf'
 import {Head} from '../../../List/Head'

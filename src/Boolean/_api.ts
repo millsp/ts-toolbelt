@@ -1,3 +1,5 @@
+/** @ignore *//** */
+
 export {And} from './And'
 export {True, False, Boolean} from './Boolean'
 export {BooleanOf} from './BooleanOf'

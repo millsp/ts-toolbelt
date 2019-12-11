@@ -1,3 +1,5 @@
+/** @ignore *//** */
+
 export {Compose, Composed, Composer} from './Compose'
 export {Curry} from './Curry'
 export {Function} from './Function'

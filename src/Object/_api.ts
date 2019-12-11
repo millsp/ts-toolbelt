@@ -1,3 +1,5 @@
+/** @ignore *//** */
+
 import * as P from './P/_api'
 
 export {P}
