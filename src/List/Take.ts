@@ -25,7 +25,7 @@ type _Take<T extends List, N extends Number, TN extends List = [], I extends Ite
 /** Extract **`N`** entries out of **`T`**
  * @param T to extract from
  * @param N to extract out
- * @param way to extract from end (?='->')
+ * @param way (?=`'->'`) to extract from end
  * @returns **`any[]`**
  * @example
  * ```ts
