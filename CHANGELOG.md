@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.13.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.3...v4.13.4) (2019-12-11)
+
+
+### Others
+
+* **f.pipe, f.compose:** move P as last typeparam ([9c86f43](https://github.com/pirix-gh/ts-toolbelt/commit/9c86f435175ed15c94c1538a043210ddf5085097))
+
 ### [4.13.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.2...v4.13.3) (2019-12-11)
 
 
