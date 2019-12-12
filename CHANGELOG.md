@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.13.5](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.4...v4.13.5) (2019-12-12)
+
+
+### Bug Fixes
+
+* **curry:** unary cannot be curried related to [#43](https://github.com/pirix-gh/ts-toolbelt/issues/43) ([e226931](https://github.com/pirix-gh/ts-toolbelt/commit/e226931cfddc90e046c2f7dc3ef88a39a981acc5))
+
 ### [4.13.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.3...v4.13.4) (2019-12-11)
 
 
