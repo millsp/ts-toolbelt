@@ -13,6 +13,7 @@ import {Key} from '../Iteration/Key'
 import {NonNullable} from '../List/NonNullable'
 import {x} from '../Any/x'
 import {List} from '../List/List'
+import {Function} from './Function'
 
 /**
  * @hidden
@@ -61,12 +62,14 @@ type Gaps<T extends List> = NonNullable<{
  * declare function curry<Fn extends F.Function>(fn: Fn): F.Curry<Fn>
  * ```
  */
-export type Curry<F extends (...args: any[]) => any> =
+export type Curry<F extends Function> =
     <T extends List>(...args: Cast<T, Gaps<Parameters<F>>>) =>
         GapsOf<T, Parameters<F>> extends infer G
         ? Length<Cast<G, List>> extends infer L
           ? L extends 0 ? Return<F> : L extends 1
-            ? (...args: Cast<G, List>)       => Return<F>
+            // it means that it can continue being curried & can be called as terminating function
+            ? Curry<(...args: Cast<G, List>) => Return<F>> & ((...args: Cast<G, List>) => Return<F>)
+            // so it allows to continue currying (useless) & call the function (the last parameter)
             : Curry<(...args: Cast<G, List>) => Return<F>>
         : never
     : never
