@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.13.6](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.5...v4.13.6) (2019-12-16)
+
+
+### Bug Fixes
+
+* **a.x:** string edge cases for curry ([19420b4](https://github.com/pirix-gh/ts-toolbelt/commit/19420b41410442c391cd8577e1fdab81a4db2767))
+
 ### [4.13.5](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.4...v4.13.5) (2019-12-12)
 
 
