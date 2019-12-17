@@ -1072,10 +1072,12 @@ type O_UPDATE = {
 
 type UPDATE_O = {
     a?: 'xxxx'
+    b : 'xxxx'
 };
 
 type UPDATE_O_X = {
     a?: 'a'
+    b : never
 };
 
 checks([
