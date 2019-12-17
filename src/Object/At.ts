@@ -1,19 +1,16 @@
 import {Index} from '../Any/Index'
 import {Boolean, True} from '../Boolean/Boolean'
+import {Equals} from '../Any/_api'
 
-/**
- * @hidden
- */
 type AtStrict<O extends object, K extends Index> =
     K extends keyof O
     ? O[K]
     : never
 
-/**
- * @hidden
- */
 type AtLoose<O extends object, K extends Index> =
-    O[K & keyof O]
+    Equals<K, any> extends 1
+    ? O[keyof O]
+    : O[K & keyof O]
 
 /** Get in **`O`** the type of a field of key **`K`**
  * @param O to extract from
