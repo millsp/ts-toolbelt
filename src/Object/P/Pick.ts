@@ -2,7 +2,6 @@ import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
-import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Pick as OPick} from '../Pick'
 import {LastIndex} from '../../List/LastIndex'
@@ -31,5 +30,5 @@ type _Pick<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> 
  * ```ts
  * ```
  */
-export type Pick<O extends object, Path extends PPath> =
+export type Pick<O extends object, Path extends List<Index>> =
     _Pick<O, Path>

@@ -2,7 +2,6 @@ import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
-import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Update as OUpdate} from '../Update'
 import {LastIndex} from '../../List/LastIndex'
@@ -32,5 +31,5 @@ type _Update<O, Path extends List<Index>, A, I extends Iteration = IterationOf<'
  * ```ts
  * ```
  */
-export type Update<O extends object, Path extends PPath, A extends any> =
+export type Update<O extends object, Path extends List<Index>, A extends any> =
     _Update<O, Path, A>

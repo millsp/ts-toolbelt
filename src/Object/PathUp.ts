@@ -13,8 +13,8 @@ import {List} from '../List/List'
  * @hidden
  */
 type _PathUp<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> = {
-    0: O extends unknown
-       ? At<O & {}, Path[Pos<I>], 0> extends infer OK
+    0: O extends object
+       ? At<O, Path[Pos<I>], 0> extends infer OK
          ? _PathUp<UNonNullable<OK>, Path, Next<I>>
          : never
        : never

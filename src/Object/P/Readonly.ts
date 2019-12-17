@@ -2,7 +2,6 @@ import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
-import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Readonly as OReadonly} from '../Readonly'
 import {LastIndex} from '../../List/LastIndex'
@@ -32,5 +31,5 @@ type _Readonly<O, Path extends List<Index>, depth extends Depth, I extends Itera
  * ```ts
  * ```
  */
-export type Readonly<O extends object, Path extends PPath, depth extends Depth = 'flat'> =
+export type Readonly<O extends object, Path extends List<Index>, depth extends Depth = 'flat'> =
     _Readonly<O, Path, depth>

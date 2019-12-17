@@ -2,7 +2,6 @@ import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
-import {Path as PPath} from './_Internal'
 import {Index} from '../../Any/Index'
 import {Merge as OMerge} from '../Merge'
 import {Length} from '../../List/Length'
@@ -33,5 +32,5 @@ type _Merge<O, Path extends List<Index>, O1 extends object, depth extends Depth,
  * ```ts
  * ```
  */
-export type Merge<O extends object, Path extends PPath, O1 extends object, depth extends Depth = 'flat'> =
+export type Merge<O extends object, Path extends List<Index>, O1 extends object, depth extends Depth = 'flat'> =
    _Merge<O, Path, O1, depth>
