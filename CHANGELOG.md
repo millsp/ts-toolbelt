@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.14.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.2...v4.14.3) (2019-12-17)
+
+
+### Bug Fixes
+
+* **update:** can now add fields ([687dd4f](https://github.com/pirix-gh/ts-toolbelt/commit/687dd4ffd925441125e114192f745caf8b4d0803))
+
 ### [4.14.2](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.1...v4.14.2) (2019-12-17)
 
 
