@@ -39,7 +39,7 @@ type MergeUpFlat<O extends object, O1 extends object> =
 /**
  * @hidden
  */
-type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = 0> = {
+type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = False> = {
     [K in keyof (O & O1)]:  And< // we first make sure that both are objects
                                 Extends<Kind<NonNullable<At<O, K>>>, 'object'>,
                                 Extends<Kind<NonNullable<At<O1, K>>>, 'object'>
@@ -75,8 +75,7 @@ type MergeUpDeep<O extends object, O1 extends object> =
  * It is able to deal with the merging of **`Union`s** of **`object`**s.
  * @param O to complete
  * @param O1 to copy from
- * @param depth to do it deeply (?=`'flat'`)
- * @returns **`object`**
+ * @param (?=`'flat'`) depth to do it deeply * @returns **`object`**
  * @example
  * ```ts
  * import {O} from 'ts-toolbelt'

@@ -4,8 +4,7 @@ import {Index} from '../Any/Index'
 /** Make the fields of **`O`** union the ones of **`O1`**
  * @param O to union from
  * @param O1 to union with
- * @param K to chose fields (?=`keyof O`)
- * @returns **`object`**
+ * @param (?=`keyof O`) K to chose fields * @returns **`object`**
  * @example
  * ```ts
  * ```

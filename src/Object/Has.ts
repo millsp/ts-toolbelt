@@ -6,8 +6,8 @@ import {Index} from '../Any/Index'
 /** Check whether **`O`** has a field of key **`K`** that matches **`M`**
  * @param O to be inspected
  * @param K to choose field
- * @param M to check field type (?=`any`)
- * @param match to change precision (?=`'default'`)
+ * @param M (?=`any`) to check field type
+ * @param match (?=`'default'`) to change precision
  * @returns [[Boolean]]
  * @example
  * ```ts

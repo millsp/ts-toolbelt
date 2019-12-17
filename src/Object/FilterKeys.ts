@@ -5,7 +5,7 @@ import {Index} from '../Any/Index'
 /** Filter out the keys of **`O`** which fields match **`M`**
  * @param O to remove from
  * @param M to select fields
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`keyof`**
  * @example
  * ```ts

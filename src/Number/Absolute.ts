@@ -16,7 +16,7 @@ export type _Absolute<N extends Iteration> = {
 
 /** Get the absolute value of a [[Number]]
  * @param N to absolute
- * @param fmt output (?=`'s'`)
+ * @param fmt (?=`'s'`) output
  * @returns **`string | number | boolean`**
  * @example
  * ```ts

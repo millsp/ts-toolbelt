@@ -5,7 +5,7 @@ import {False, True} from '../Boolean/Boolean'
 /** Check whether **`O`** has fields that match **`M`**
  * @param O to be inspected
  * @param M to check field type
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns [[Boolean]]
  * @example
  * ```ts

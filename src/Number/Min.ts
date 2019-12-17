@@ -66,7 +66,7 @@ export type _Min<N extends Iteration> =
 
 /** Get the smallest [[Number]] within an [[Union]]
  * @param N [[Union]]
- * @param fmt output (?=`'s'`)
+ * @param fmt (?=`'s'`) output
  * @returns **`string | number | boolean`**
  * @example
  * ```ts

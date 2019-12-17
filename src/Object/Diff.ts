@@ -7,7 +7,7 @@ import {Match} from '../Any/_Internal'
  * (If `match = 'default'`, no type checks are done)
  * @param O to check differences with
  * @param O1 to check differences against
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`object`**
  * @example
  * ```ts

@@ -48,8 +48,7 @@ type ComposeFnAsync<Fns extends List<Function>, K extends keyof Fns> =
 
 /** Compute what the input of [[Compose]] should be
  * @param Fns to compose
- * @param mode sync/async (?=`'sync'`)
- * @example
+ * @param (?=`'sync'`) mode sync/async * @example
  * ```ts
  * ```
  */

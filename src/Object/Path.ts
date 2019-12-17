@@ -34,3 +34,5 @@ export type Path<O extends object, Path extends List<Index>> =
     _Path<O, Path> extends infer X
     ? Cast<X, any>
     : never
+
+type t = At<{a: 1}, string>

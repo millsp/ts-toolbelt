@@ -18,7 +18,7 @@ type ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
  * (If `match = 'default'`, no type checks are done)
  * @param O to remove the keys from
  * @param O1 to remove the keys out
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`keyof`**
  * @example
  * ```ts

@@ -45,8 +45,8 @@ type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt e
 /** Create a range of **number**s
  * @param From to start with
  * @param To to end with
- * @param way to reverse it (?=`'->'`)
- * @param fmt output (?=`'s'`)
+ * @param way (?=`'->'`) to reverse it
+ * @param fmt (?=`'s'`) output
  * @returns **`string[] | number[] | boolean[]`**
  * @example
  * ```ts

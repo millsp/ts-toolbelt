@@ -66,7 +66,7 @@ export type _Max<N extends Iteration> =
 
 /** Get the biggest [[Number]] within an [[Union]]
  * @param N [[Union]]
- * @param fmt output (?=`'s'`)
+ * @param fmt (?=`'s'`) output
  * @returns **`string | number | boolean`**
  * @example
  * ```ts

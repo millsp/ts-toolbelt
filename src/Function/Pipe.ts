@@ -45,8 +45,7 @@ type PipeFnAsync<Fns extends List<Function>, K extends keyof Fns> =
 
 /** Compute what the input of [[Pipe]] should be
  * @param Fns to pipe
- * @param mode sync/async (?=`'sync'`)
- * @example
+ * @param (?=`'sync'`) mode sync/async * @example
  * ```ts
  * ```
  */
@@ -57,8 +56,7 @@ export type Piper<Fns extends List<Function>, mode extends Mode = 'sync'> = {
 
 /** Pipe [[Function]]s together
  * @param Fns to pipe
- * @param mode sync/async (?=`'sync'`)
- * @returns [[Function]]
+ * @param (?=`'sync'`) mode sync/async * @returns [[Function]]
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'

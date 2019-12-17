@@ -4,7 +4,7 @@ import {Index} from '../Any/Index'
 /** Create an object filled with **`A`** for the fields **`K`**
  * @param K to choose fields
  * @param A to fill fields with
- * @param modx to set modifiers (?=['!', 'W'])
+ * @param modx (?=`['!', 'W']`) to set modifiers
  * @returns **`object`**
  * @example
  * ```ts

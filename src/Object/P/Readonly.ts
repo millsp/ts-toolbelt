@@ -27,8 +27,7 @@ type _Readonly<O, Path extends List<Index>, depth extends Depth, I extends Itera
  * (⚠️ this type is expensive)
  * @param O to make readonly
  * @param Path to be followed
- * @param depth to do it deeply (?=`'flat'`)
- * @returns **`object`**
+ * @param (?=`'flat'`) depth to do it deeply * @returns **`object`**
  * @example
  * ```ts
  * ```

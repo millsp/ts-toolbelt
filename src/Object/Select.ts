@@ -5,7 +5,7 @@ import {Pick} from './Pick'
 /** Extract the fields of **`O`** that match **`M`**
  * @param O to extract from
  * @param M to select fields
- * @param match to change precision (?=`'default'`)
+ * @param match (?=`'default'`) to change precision
  * @returns **`object`**
  * @example
  * ```ts
