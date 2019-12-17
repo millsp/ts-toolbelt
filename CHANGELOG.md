@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.14.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.6...v4.14.0) (2019-12-17)
+
+
+### Features
+
+* **o.at:** optional loose mode ([bcd18a6](https://github.com/pirix-gh/ts-toolbelt/commit/bcd18a6fe7e6ae8954fa7d8b3ff8eacd9926b598))
+
+
+### Bug Fixes
+
+* **at:** allow to use any ([8e74f3d](https://github.com/pirix-gh/ts-toolbelt/commit/8e74f3dc5055a4bdea1efa1485f36cc6e08eb494))
+
+
+### Others
+
+* integrate loose `At` with other utilities ([ac93d75](https://github.com/pirix-gh/ts-toolbelt/commit/ac93d75b1dbc7cc2f619c01e1fd7eea8be719ec6))
+* moved optional params to lhs ([784ae65](https://github.com/pirix-gh/ts-toolbelt/commit/784ae65087c4c5297f8d693ec01a6732007e9a91))
+
 ### [4.13.6](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.5...v4.13.6) (2019-12-16)
 
 
