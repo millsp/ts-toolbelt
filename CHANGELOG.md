@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.14.2](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.1...v4.14.2) (2019-12-17)
+
+
+### Bug Fixes
+
+* **path:** remove legacy paths ([07dee0a](https://github.com/pirix-gh/ts-toolbelt/commit/07dee0abda11c64d04a177f1a8e726edd4873321))
+
 ### [4.14.1](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.0...v4.14.1) (2019-12-17)
 
 ## [4.14.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.13.6...v4.14.0) (2019-12-17)
