@@ -13,7 +13,7 @@ import {List} from '../List/List'
  * @hidden
  */
 type _Path<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> = {
-    0: _Path<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
+    0: _Path<UNonNullable<At<O & {}, Path[Pos<I>], 0>>, Path, Next<I>>
     1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
 }[
     Pos<I> extends Length<Path>
@@ -34,5 +34,3 @@ export type Path<O extends object, Path extends List<Index>> =
     _Path<O, Path> extends infer X
     ? Cast<X, any>
     : never
-
-type t = At<{a: 1}, string>

@@ -1,11 +1,17 @@
 import {Index} from '../Any/Index'
 import {Boolean, True} from '../Boolean/Boolean'
 
+/**
+ * @hidden
+ */
 type AtStrict<O extends object, K extends Index> =
     K extends keyof O
     ? O[K]
     : never
 
+/**
+ * @hidden
+ */
 type AtLoose<O extends object, K extends Index> =
     O[K & keyof O]
 
