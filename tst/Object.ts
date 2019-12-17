@@ -63,9 +63,10 @@ checks([
 // AT
 
 checks([
-    check<O.At<O, 'a'>, string,                 Test.Pass>(),
-    check<O.At<O, 'c'>, {a: 'a'} & {b: 'b'},    Test.Pass>(),
-    check<O.At<O, 'g'>, O,                      Test.Pass>(),
+    check<O.At<O, 'a'>,                     string,                 Test.Pass>(),
+    check<O.At<O, 'c'>,                     {a: 'a'} & {b: 'b'},    Test.Pass>(),
+    check<O.At<O, 'g'>,                     O,                      Test.Pass>(),
+    check<O.At<{a: 1, b: 2}, string, 0>,    1 | 2,                  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
