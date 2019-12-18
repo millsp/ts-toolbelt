@@ -1,6 +1,7 @@
 import {Index} from '../Any/Index'
 
 /** Get the keys of **`O`** that are nullable
+ * (⚠️ needs `--strictNullChecks` enabled)
  * @param O
  * @returns **`keyof`**
  * @example

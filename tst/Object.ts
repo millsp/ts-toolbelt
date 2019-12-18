@@ -411,7 +411,7 @@ type MERGE_O1_O = {
          a : string | number
          b : object
          c : {a: 'a'} & {b: 'b'}
-         d?: undefined
+         d?: never
 readonly e?: 'string1'
 readonly f : 0
          g : O1

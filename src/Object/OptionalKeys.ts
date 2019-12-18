@@ -9,6 +9,6 @@ import {Index} from '../Any/Index'
  * ```ts
  * ```
  */
-export type OptionalKeys<O extends object> =
-    NullableKeys<NonNullable<O>> & keyof O & Index
-    // optional keys always are nullable
+export type OptionalKeys<O extends object> = {
+    [K in keyof O]-?: {} extends Pick<O, K> ? K : never
+}[keyof O] & keyof O & Index

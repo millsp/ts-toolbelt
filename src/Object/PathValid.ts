@@ -2,7 +2,6 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
-import {Length} from '../List/Length'
 import {At} from './At'
 import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
@@ -13,6 +12,9 @@ import {Prev} from '../Iteration/Prev'
 import {Index} from '../Any/Index'
 import {List} from '../List/List'
 import {LastIndex} from '../List/LastIndex'
+import {Equals} from '../Any/_api'
+import {Length} from '../List/_api'
+import {Or} from '../Boolean/Or'
 
 /**
  * @hidden
@@ -20,14 +22,14 @@ import {LastIndex} from '../List/LastIndex'
 type _PathValid<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<Key<Prev<I>>, LastIndex<Path, 's'>>, never>
+    2: Update<Path, KeySet<Key<I>, LastIndex<Path, 's'>>, never>
 }[
     [O] extends [never]
     ? 1
-    : 0
+    : Pos<I> extends Length<Path>
+      ? 2
+      : 0
 ]
-
-type t = _PathValid<{a: {b: {c: 1}}}, ['a', 'x']>
-
 
 /** Replaces invalid parts of a path with `never`
  * @param O to be inspected

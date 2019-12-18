@@ -68,10 +68,10 @@
       //    "skipLibCheck": false, /* Skip type checking of declaration files. */
       "sourceMap": true, /* Generates corresponding '.map' file. */
       //    "sourceRoot": "./", /* Specify the location where debugger should locate TypeScript files instead of source locations. */
-      "strict": true, /* Enable all strict type-checking options. */
+      "strict": false, /* Enable all strict type-checking options. */
       //    "strictBindCallApply": true, /* Enable strict type checks for the bind, call, and apply methods on function objects. */
       //    "strictFunctionTypes": true, /* Enable strict checking of function types. */
-      //    "strictNullChecks": true, /* Enable strict null checks. */
+      "strictNullChecks": true, /* Enable strict null checks. */
       //    "strictPropertyInitialization": true, /* Enable strict checking of property initialization in classes. */
       "stripInternal": true, /* Do not emit declarations for code that has an '@internal' annotation. */
       //    "suppressExcessPropertyErrors": false, /* Suppress excess property checks for object literals. */

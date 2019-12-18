@@ -149,7 +149,7 @@ checks([
 // STRICT
 
 checks([
-    check<U.Strict<{a: 0} | {b: 0}>,    {a: 0, b?: undefined} | {a?: undefined, b: 0},  Test.Pass>(),
+    check<U.Strict<{a: 0} | {b: 0}>,    {a: 0, b?: never} | {a?: never, b: 0},  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

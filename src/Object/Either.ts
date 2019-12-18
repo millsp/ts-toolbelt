@@ -9,21 +9,21 @@ import {Compute} from '../Any/Compute'
  * @hidden
  */
 type _Either<O extends object, K extends Index> =
-    Omit<O, K> & {           // Merge all but K
+    Omit<O, K> & ({          // Merge all but K
         [P in K]: Pick<O, P> // With K possibilities
-    }[K]
+    }[K])
 
 /**
  * @hidden
  */
 type EitherStrict<O extends object, K extends Index> =
-    Strict<_Either<O, K>> & {}
+    Strict<_Either<O, K>>
 
 /**
  * @hidden
  */
 type EitherLoose<O extends object, K extends Index> =
-    Compute<_Either<O, K>> & {}
+    Compute<_Either<O, K>>
 
 /** Split **`O`** into a [[Union]] with **`K`** keys in such a way that none of
  * the keys are ever present with one another within the different unions.

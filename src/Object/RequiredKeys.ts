@@ -9,6 +9,7 @@ import {Index} from '../Any/Index'
  * ```ts
  * ```
  */
-export type RequiredKeys<O extends object> =
-    NonNullableKeys<NonNullable<O>> & keyof O & Index
-    // required keys never are nullable
+export type RequiredKeys<O extends object> = {
+    [K in keyof O]-?: {} extends Pick<O, K> ? never : K
+}[keyof O] & keyof O & Index
+
