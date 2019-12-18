@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.14.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.3...v4.14.4) (2019-12-18)
+
+
+### Bug Fixes
+
+* **strictnullchecks:** maximize compatibility ([70fe9e3](https://github.com/pirix-gh/ts-toolbelt/commit/70fe9e3aa2b622e339d2c87ed81b5a92548b053e))
+
+
+### Others
+
+* readme ([a796ecc](https://github.com/pirix-gh/ts-toolbelt/commit/a796ecc885496bbe1487243dda767b03f685cba8))
+* **list:** disable irrelevant failing test ([2315ff0](https://github.com/pirix-gh/ts-toolbelt/commit/2315ff0eede4d84b685996c579a3dc27033aa512))
+* **list:** disable irrelevant failing tests ([09fbd5c](https://github.com/pirix-gh/ts-toolbelt/commit/09fbd5c7970acf11d139274917b5c0d92306b34d))
+
 ### [4.14.3](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.2...v4.14.3) (2019-12-17)
 
 
