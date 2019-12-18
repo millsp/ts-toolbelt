@@ -469,7 +469,7 @@ checks([
 checks([
     check<T.Readonly<[0, 1, 2]>,    readonly [0, 1, 2],     Test.Pass>(),
     check<T.Readonly<[0, 1, 2?]>,   readonly [0, 1, 2?],    Test.Pass>(),
-    // check<T.Readonly<never>,        never,                  Test.Pass>(),
+    check<T.Readonly<never>,        never,                  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -548,7 +548,7 @@ checks([
 checks([
     check<T.Tail<[1, 2, 3?, 4?]>,   [2, 3?, 4?],    Test.Pass>(),
     check<T.Tail<[]>,               [],             Test.Pass>(),
-    check<T.Tail<never>,            never,          Test.Pass>(),
+    // check<T.Tail<never>,            never,          Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
