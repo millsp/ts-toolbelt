@@ -151,10 +151,12 @@ npm install typescript@^3.6.0 --save-dev
 For best results, add this to your `tsconfig.json`
 
 ```ts
-// Optional, recommended
 {
   "compilerOptions": {
-    // ...
+    // highly recommended (required by few utilities)
+    "strictNullChecks": true
+
+    // this is optional, but enable whenever possible
     "strict": true
   }
 }
