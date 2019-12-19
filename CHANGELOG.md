@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.14.5](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.4...v4.14.5) (2019-12-19)
+
+
+### Bug Fixes
+
+* **l.at:** missing strict option ([b00ec1c](https://github.com/pirix-gh/ts-toolbelt/commit/b00ec1cfe5423ec49751b6c7cd7dcaad4c0faca6))
+* **l.update:** only existing keys can be updated ([9cd8643](https://github.com/pirix-gh/ts-toolbelt/commit/9cd8643ef2b15038f9b5f7cb5d0a5b75f8970d8d))
+
 ### [4.14.4](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.3...v4.14.4) (2019-12-18)
 
 
