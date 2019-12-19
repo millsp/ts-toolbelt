@@ -103,12 +103,12 @@ You'll find all the types you can ever need in this single and **well organized*
 
 Here's some of the most useful features:
 
-* [Merge two types together](https://pirix-gh.github.io/ts-toolbelt/modules/_object_merge_.html#merge)
-* [Update the field of a type](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html#update)
-* [Make some fields optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html#optional)
-* [Change a type at any depth!](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html#update)
-* [Concat two lists together](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html#concat)
-* [Get the last item of a list](https://pirix-gh.github.io/ts-toolbelt/modules/_list_last_.html#last)
+* [Merge two types together](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)
+* [Update the field of a type](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)
+* [Make some fields optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)
+* [Change a type at any depth!](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)
+* [Concat two lists together](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html)
+* [Get the last item of a list](https://pirix-gh.github.io/ts-toolbelt/modules/_list_last_.html)
 <details>
 <summary>
 <b>Expand to See More</b>
@@ -154,10 +154,10 @@ For best results, add this to your `tsconfig.json`
 {
   "compilerOptions": {
     // highly recommended (required by few utilities)
-    "strictNullChecks": true
+    "strictNullChecks": true,
 
     // this is optional, but enable whenever possible
-    "strict": true
+    "strict": true,
   }
 }
 ```
@@ -196,7 +196,7 @@ The project is organized around TypeScript's main concepts:
 | **A**ny    | **B**oolean | **C**lass        | **F**unction | **I**teration | **L**ist |
 | **N**umber | **O**bject  | **O**bject.**P** | **S**tring   | **U**nion     | Test     |
 
-> **`TIP`** match the type you need to work with with the above
+> **`TIP`** how to choose categories? match your type with the above categories
 
 **The documentation is complete but needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
 
