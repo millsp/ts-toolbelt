@@ -1,9 +1,7 @@
-import {Update as OUpdate} from '../Object/Update'
-import {Cast} from '../Any/Cast'
 import {Index} from '../Any/Index'
 import {List} from './List'
-import {ListOf} from '../Object/ListOf'
-import {ObjectOf} from './ObjectOf'
+import {Replace} from '../Union/Replace'
+import {x} from '../Any/x'
 
 /** Update in **`T`** the entries of key **`K`** with **`A`**.
  * Use the [[x]] placeholder to get the current field type.
@@ -15,5 +13,9 @@ import {ObjectOf} from './ObjectOf'
  * ```ts
  * ```
  */
-export type Update<T extends List, K extends Index, A extends any> =
-    ListOf<OUpdate<ObjectOf<T>, K, A>>
+export type Update<T extends List, K extends Index, A extends any> = {
+    [P in keyof T]: P extends K
+                    ? Replace<A, x, T[P]>
+                    : T[P]
+} & {}
+
