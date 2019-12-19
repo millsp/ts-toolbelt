@@ -54,18 +54,39 @@ export {
     Union,
 }
 
-// NOTES
+// ///////////////////////////////////////////////////////////////////////////////////////
+// NOTES /////////////////////////////////////////////////////////////////////////////////
 
+// ///////////////////////////////////////////////////////////////////////////////////////
+// RULES /////////////////////////////////////////////////////////////////////////////////
+
+// I regularly check that the project is respecting the following rules
+
+// ---------------------------------------------------------------------------------------
 // 1. Better computations
+//
 // search for `= \{\n?[ ]*?\[(.*?\n)*?\}` and add `& {}` for better computation
 // ! we can only do this if the mapped type is not intended to go deep (recurse)
 // ! because `& {}` forces computation, if we do it deeply => resolves to `any`
 // ! this happens only when a type is nested within itself => infinite recursion
 
+// ---------------------------------------------------------------------------------------
 // 2. Avoid fall-through `never`
+//
 // do not forget to NOT do `X extends never` => do `[X] extends [never]`
 // if the goal is to explicitly match `never` & not distribute the type
 
+// ---------------------------------------------------------------------------------------
 // 3. Ensure type distribution
+//
+// There are two families of types that do not distribute well (at all)
+// - types that make use of `keyof`. `keyof` is a distribution breaker
+// - recursive iteration types, the ones that are of the `Concat` form
+//
+// But simple mapped types distribute well over union, and preserve them
+//
+// So search for types using `keyof` and make sure they are distributed
+// Likewise, do the same for recursive types. Look for `extends infer X`
 
-// todo
+// ///////////////////////////////////////////////////////////////////////////////////////
+// TODO //////////////////////////////////////////////////////////////////////////////////
