@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.14.6](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.5...v4.14.6) (2019-12-19)
+
+
+### Bug Fixes
+
+* **a.omit, a.pick:** accept any input ([7facdde](https://github.com/pirix-gh/ts-toolbelt/commit/7facdded3f78db091b741edc7eb3c8c5fbe60b22))
+* **o.update:** handle wide keys properly ([057d53e](https://github.com/pirix-gh/ts-toolbelt/commit/057d53ed9ffc4c5f2b946a065924d1e47192167f))
+
+
+### Others
+
+*  make pick & omit distributive by default ([51b5175](https://github.com/pirix-gh/ts-toolbelt/commit/51b5175f9e074dea63fe45e5a7edb9f29c9fca0d))
+* add missing data type for class ([2536b57](https://github.com/pirix-gh/ts-toolbelt/commit/2536b57d74f31bbabae4ea6e1dd53bfa6267b3b8))
+* added Union to parameters ([47f07ce](https://github.com/pirix-gh/ts-toolbelt/commit/47f07ced2f82b61a98516c5c250d5b1b007e8540))
+* cleanup ([c5e57e5](https://github.com/pirix-gh/ts-toolbelt/commit/c5e57e51e29eda9ade1b287b45763ba64a63a7b9))
+* move pick & omit out of `Union` to `Any` ([dc03a3c](https://github.com/pirix-gh/ts-toolbelt/commit/dc03a3c998bab61fb55fc4437cf3bec7f3169187))
+* optimize ([8df2416](https://github.com/pirix-gh/ts-toolbelt/commit/8df24162fe9ca1e2379b20a92a3bd7634fea299e))
+* optimize ([2b00712](https://github.com/pirix-gh/ts-toolbelt/commit/2b0071216dee992972103b69e52b57eb237a8532))
+* readme ([5718ee0](https://github.com/pirix-gh/ts-toolbelt/commit/5718ee02f76307464002e249cb575370555f8596))
+* uniform data types ([ef203c6](https://github.com/pirix-gh/ts-toolbelt/commit/ef203c6dd0d59542bc5c58ca1fca34ae9e9c868c))
+* update notes ([67e0d03](https://github.com/pirix-gh/ts-toolbelt/commit/67e0d03047a72d6d7b13c58f1cba1eaadafc58ae))
+* update notes ([1c87e5c](https://github.com/pirix-gh/ts-toolbelt/commit/1c87e5c0c0249dc6690b33ac624e95c822c338a9))
+* **list:** finish renaming tuple to list ([070e0a2](https://github.com/pirix-gh/ts-toolbelt/commit/070e0a2c247b98b5facb0fec3bbb76f21ce417a0))
+
 ### [4.14.5](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.4...v4.14.5) (2019-12-19)
 
 
