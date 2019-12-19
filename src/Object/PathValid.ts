@@ -12,7 +12,7 @@ import {Prev} from '../Iteration/Prev'
 import {Index} from '../Any/Index'
 import {List} from '../List/List'
 import {LastIndex} from '../List/LastIndex'
-import {Length} from '../List/_api'
+import {Length} from '../List/Length'
 
 /**
  * @hidden

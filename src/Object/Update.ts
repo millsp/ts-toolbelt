@@ -2,7 +2,7 @@ import {Index} from '../Any/Index'
 import {x} from '../Any/x'
 import {Replace} from '../Union/Replace'
 import {Merge} from './Merge'
-import {Exclude} from '../Union/_api'
+import {Exclude} from '../Union/Exclude'
 
 /** Update in **`O`** the fields of key **`K`** with **`A`**.
  * Use the [[x]] placeholder to get the current field type.

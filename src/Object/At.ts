@@ -1,6 +1,6 @@
 import {Index} from '../Any/Index'
 import {Boolean, True} from '../Boolean/Boolean'
-import {Equals} from '../Any/_api'
+import {Equals} from '../Any/Equals'
 
 type AtStrict<O extends object, K extends Index> =
     K extends keyof O
