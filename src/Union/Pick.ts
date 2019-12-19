@@ -1,7 +1,7 @@
 import {Pick as OPick} from '../Object/Pick'
 import {Pick as LPick} from '../List/Pick'
 import {Index} from '../Any/Index'
-import {Kind} from '../Any/Kind'
+import {List} from '../List/List'
 
 /** Extract out from each member of union **`U`** the fields of key **`K`**
  * @param U to remove from
@@ -17,7 +17,7 @@ import {Kind} from '../Any/Kind'
  */
 export type Pick<U extends object, K extends Index> =
     U extends unknown
-    ? Kind<U> extends 'array'
-      ? LPick<U & [], K>
+    ? U extends List
+      ? LPick<U, K>
       : OPick<U, K>
     : never
