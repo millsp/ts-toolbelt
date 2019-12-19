@@ -11,4 +11,6 @@ import {Index} from '../Any/Index'
  * ```
  */
 export type Omit<O extends object, K extends Index> =
-    Pick<O, Exclude<keyof O, K>>
+    O extends unknown
+    ? Pick<O, Exclude<keyof O, K>>
+    : never
