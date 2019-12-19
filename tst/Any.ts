@@ -186,8 +186,8 @@ checks([
 // ---------------------------------------------------------------------------------------
 // OMIT
 
-type U_OMIT    = {t: 'a'; o: string} | {t: 'b'; o: number} | [1, 2]
-type OMIT_U_O0 = {t: 'a'} | {t: 'b'} | [2];
+type U_OMIT    = {t: 'a'; o: string} | {t: 'b'; o: number} | [1, 2] | 42
+type OMIT_U_O0 = {t: 'a'} | {t: 'b'} | [2] | 42;
 
 checks([
     check<A.Omit<U_OMIT, 'o' | '0'>,    OMIT_U_O0,  Test.Pass>(),
@@ -196,8 +196,8 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PICK
 
-type U_PICK    = {t: 'a'; o: string} | {t: 'b'; o: number} | [1, 2]
-type PICK_U_t1 = {t: 'a'} | {t: 'b'} | [2];
+type U_PICK    = {t: 'a'; o: string} | {t: 'b'; o: number} | [1, 2] | 42
+type PICK_U_t1 = {t: 'a'} | {t: 'b'} | [2] | 42;
 
 checks([
     check<A.Pick<U_PICK, 't' | '1'>,    PICK_U_t1,  Test.Pass>(),
