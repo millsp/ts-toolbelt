@@ -80,13 +80,14 @@ export {
 // 3. Ensure type distribution
 //
 // There are two families of types that do not distribute well (at all)
-// - types that make use of `keyof`. `keyof` is a distribution breaker
-// - recursive iteration types, the ones that are of the `Concat` form
+// - types that make use of `keyof`. `keyof` is a distribution breaker. search for `(?<!in) keyof`
+// - recursive iteration types, the ones that are of the `Concat` form. search for `extends infer X`
 //
-// But simple mapped types distribute well over union, and preserve them
-//
-// So search for types using `keyof` and make sure they are distributed
-// Likewise, do the same for recursive types. Look for `extends infer X`
+// But simple mapped types distribute well over unions and preserve them
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
+
+// try to distribute types as much as possible => distribute entry only
+// - write tests for the concerned types
+// - check that the performance is good
