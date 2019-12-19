@@ -161,6 +161,25 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// NUMBER
+
+// Cannot be tested
+
+// ---------------------------------------------------------------------------------------
+// NUMBEROF
+
+checks([
+    check<N.NumberOf<9>,        '9',        Test.Pass>(),
+    check<N.NumberOf<21>,       '21',       Test.Pass>(),
+    check<N.NumberOf<-10>,      '-10',      Test.Pass>(),
+    check<N.NumberOf<10>,       '10',       Test.Pass>(),
+    check<N.NumberOf<100>,      string,     Test.Pass>(),
+    check<N.NumberOf<number>,   string,     Test.Pass>(),
+    check<N.NumberOf<any>,      string,     Test.Pass>(),
+    check<N.NumberOf<never>,    never,      Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // PLUS
 
 checks([
@@ -181,18 +200,4 @@ checks([
     check<N.Range<'-3', '5', '->'>, ['-3', '-2', '-1', '0', '1', '2', '3', '4', '5'],   Test.Pass>(),
     check<N.Range<'-3', '5', '<-'>, ['5', '4', '3', '2', '1', '0', '-1', '-2', '-3'],   Test.Pass>(),
     check<N.Range<'0', '0', '->'>,  ['0'],                                              Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// NUMBEROF
-
-checks([
-    check<N.NumberOf<9>,        '9',        Test.Pass>(),
-    check<N.NumberOf<21>,       '21',       Test.Pass>(),
-    check<N.NumberOf<-10>,      '-10',      Test.Pass>(),
-    check<N.NumberOf<10>,       '10',       Test.Pass>(),
-    check<N.NumberOf<100>,      string,     Test.Pass>(),
-    check<N.NumberOf<number>,   string,     Test.Pass>(),
-    check<N.NumberOf<any>,      string,     Test.Pass>(),
-    check<N.NumberOf<never>,    never,      Test.Pass>(),
 ])
