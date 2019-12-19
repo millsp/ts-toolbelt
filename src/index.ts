@@ -56,14 +56,16 @@ export {
 
 // NOTES
 
+// 1. Better computations
 // search for `= \{\n?[ ]*?\[(.*?\n)*?\}` and add `& {}` for better computation
 // ! we can only do this if the mapped type is not intended to go deep (recurse)
 // ! because `& {}` forces computation, if we do it deeply => resolves to `any`
 // ! this happens only when a type is nested within itself => infinite recursion
 
+// 2. Avoid fall-through `never`
 // do not forget to NOT do `X extends never` => do `[X] extends [never]`
 // if the goal is to explicitly match `never` & not distribute the type
 
+// 3. Ensure type distribution
+
 // todo
-// - rename L1 extends List to L extends List
-// - move omit out of union & add option instead + see if can be generalized
