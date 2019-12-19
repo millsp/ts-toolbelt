@@ -35,8 +35,8 @@ import {Exclude} from '../Union/_api'
  * ```
  */
 export type Update<O extends object, K extends Index, A extends any> =
-    Merge<Record<Exclude<K, keyof O>, Exclude<A, x>>, { // add eventual missing keys
+    Merge<{
         [P in keyof O]: P extends K                     // proceed with the known keys
                         ? Replace<A, x, O[P]>
                         : O[P]
-    } & {}>
+    } & {}, Record<Exclude<K, keyof O>, Exclude<A, x>>> // add eventual missing keys
