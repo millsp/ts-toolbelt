@@ -1,5 +1,6 @@
 import {Exclude} from './Exclude'
 import {Last} from './Last'
+import {Union} from './Union'
 
 /** Remove an item out of **`U`**
  * (⚠️ it might not preserve order)
@@ -9,5 +10,5 @@ import {Last} from './Last'
  * ```ts
  * ```
  */
-export type Pop<U extends any> =
+export type Pop<U extends Union> =
     Exclude<U, Last<U>>

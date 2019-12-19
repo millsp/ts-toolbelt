@@ -1,3 +1,5 @@
+import {Union} from './Union'
+
 /** Get the keys of a [[Union]]
  * @param U
  * @returns **`keyof`**
@@ -5,7 +7,7 @@
  * ```ts
  * ```
  */
-export type Keys<U extends any> =
+export type Keys<U extends Union> =
     U extends unknown
     ? keyof U
     : never

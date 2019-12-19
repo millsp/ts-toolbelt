@@ -2,6 +2,7 @@ import {Last} from './Last'
 import {Prepend} from '../List/Prepend'
 import {Exclude} from './Exclude'
 import {List} from '../List/List'
+import {Union} from './Union'
 
 /**
  * @hidden
@@ -23,7 +24,7 @@ type _ListOf<U, LN extends List = [], LastU = Last<U>> = {
  * ```ts
  * ```
  */
-export type ListOf<U extends any> =
+export type ListOf<U extends Union> =
     _ListOf<U> extends infer X
     ? X
     : never

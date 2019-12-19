@@ -1,4 +1,5 @@
 import {Exclude} from './Exclude'
+import {Union} from './Union'
 
 /** Remove **`undefined`** & **`null`** out of **`U`**
  * @param U to make non-nullable
@@ -7,5 +8,5 @@ import {Exclude} from './Exclude'
  * ```ts
  * ```
  */
-export type NonNullable<U extends any> =
+export type NonNullable<U extends Union> =
     Exclude<U, undefined | null>

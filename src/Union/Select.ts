@@ -1,3 +1,5 @@
+import {Union} from './Union'
+
 /** Extract the part of **`U`** that matches **`M`**
  * @param U to extract from
  * @param M to select with
@@ -6,7 +8,7 @@
  * ```ts
  * ```
  */
-export type Select<U extends any, M extends any> =
+export type Select<U extends Union, M extends any> =
     U extends M
     ? U
     : never

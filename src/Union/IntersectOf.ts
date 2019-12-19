@@ -1,3 +1,5 @@
+import {Union} from './Union'
+
 // Credit https://stackoverflow.com/a/50375286/3570903
 
 /** Transform a [[Union]] to an **intersection**
@@ -7,7 +9,7 @@
  * ```ts
  * ```
  */
-export type IntersectOf<U extends any> =
+export type IntersectOf<U extends Union> =
     (U extends unknown? (k: U) => void : never) extends ((k: infer I) => void)
     ? I
     : never

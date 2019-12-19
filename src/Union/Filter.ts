@@ -1,4 +1,5 @@
 import {Exclude} from './Exclude'
+import {Union} from './Union'
 
 /** Remove **`M`** out of **`U`**
  * @param U to remove from
@@ -8,5 +9,5 @@ import {Exclude} from './Exclude'
  * ```ts
  * ```
  */
-export type Filter<U extends any, M extends any> =
+export type Filter<U extends Union, M extends Union> =
     Exclude<U, M>
