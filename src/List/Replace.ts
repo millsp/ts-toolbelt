@@ -3,7 +3,7 @@ import {Match} from '../Any/_Internal'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
 
-/** Update with **`A`** the entries of **`T`** that match **`M`**
+/** Update with **`A`** the entries of **`L`** that match **`M`**
  * @param O to update
  * @param M to select fields
  * @param A to update with
@@ -13,5 +13,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type Replace<T extends List, M extends any, A extends any, match extends Match = 'default'> =
-    Cast<OReplace<T, M, A, match>, List>
+export type Replace<L extends List, M extends any, A extends any, match extends Match = 'default'> =
+    Cast<OReplace<L, M, A, match>, List>

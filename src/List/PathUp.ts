@@ -4,7 +4,7 @@ import {Index} from '../Any/Index'
 
 /** Get in **`O`** the type of nested properties.
  * It is able to deal with nested [[Union]]s.
- * @param T to be inspected
+ * @param L to be inspected
  * @param Path to be followed
  * @returns **`any`**
  * @example

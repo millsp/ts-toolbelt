@@ -9,5 +9,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type WritableKeys<T extends List> =
-    OWritableKeys<ObjectOf<T>>
+export type WritableKeys<L extends List> =
+    OWritableKeys<ObjectOf<L>>

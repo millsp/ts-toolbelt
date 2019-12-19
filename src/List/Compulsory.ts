@@ -3,13 +3,13 @@ import {Compulsory as OCompulsory} from '../Object/Compulsory'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
 
-/** Make **`T`** compulsory (deeply or not)
- * @param T to make compulsory
+/** Make **`L`** compulsory (deeply or not)
+ * @param L to make compulsory
  * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
  * @example
  * ```ts
  * ```
  */
-export type Compulsory<T extends List, depth extends Depth = 'flat'> =
-    Cast<OCompulsory<T, keyof T, depth>, List>
+export type Compulsory<L extends List, depth extends Depth = 'flat'> =
+    Cast<OCompulsory<L, keyof L, depth>, List>

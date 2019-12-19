@@ -12,9 +12,7 @@ import {Prev} from '../Iteration/Prev'
 import {Index} from '../Any/Index'
 import {List} from '../List/List'
 import {LastIndex} from '../List/LastIndex'
-import {Equals} from '../Any/_api'
 import {Length} from '../List/_api'
-import {Or} from '../Boolean/Or'
 
 /**
  * @hidden
@@ -37,7 +35,7 @@ type _PathValid<O, Path extends List<Index>, I extends Iteration = IterationOf<'
  * @returns **`Index[]`**
  * @example
  * ```ts
- * import {A, T, O} from 'ts-toolbelt'
+ * import {A, L, O} from 'ts-toolbelt'
  *
  * // Get a property in an object `o` at any depth with `path`
  * // `A.Cast<P, O.PathValid<O, P>>` makes sure `path` is valid

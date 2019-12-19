@@ -13,9 +13,9 @@ import {List} from '../List/List'
 /**
  * @hidden
  */
-type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends List = []> = {
-    0: RangeForth<Prev<From>, To, fmt, Prepend<T, Format<From, fmt>>>
-    1: T
+type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', L extends List = []> = {
+    0: RangeForth<Prev<From>, To, fmt, Prepend<L, Format<From, fmt>>>
+    1: L
 }[
     From extends To
     ? 1
@@ -25,9 +25,9 @@ type RangeForth<From extends Iteration, To extends Iteration, fmt extends Format
 /**
  * @hidden
  */
-type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', T extends List = []> = {
-    0: RangeBack<Next<From>, To, fmt, Prepend<T, Format<From, fmt>>>
-    1: T
+type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', L extends List = []> = {
+    0: RangeBack<Next<From>, To, fmt, Prepend<L, Format<From, fmt>>>
+    1: L
 }[
     From extends To
     ? 1

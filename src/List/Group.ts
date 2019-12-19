@@ -9,24 +9,24 @@ import {List} from './List'
 /**
  * @hidden
  */
-type _Group<T extends List, N extends Number, TN extends List = []> = {
-    0: _Group<Drop<T, N>, N, Prepend<TN, Take<T, N>>>
-    1: Reverse<TN>
+type _Group<L extends List, N extends Number, LN extends List = []> = {
+    0: _Group<Drop<L, N>, N, Prepend<LN, Take<L, N>>>
+    1: Reverse<LN>
 }[
-    T extends List<never>
+    L extends List<never>
     ? 1
     : 0
 ]
 
-/** Split **`T`** into sub-[[List]]s every **`N`**
- * @param T to group
+/** Split **`L`** into sub-[[List]]s every **`N`**
+ * @param L to group
  * @param N to split at
  * @returns **`any[]`**
  * @example
  * ```ts
  * ```
  */
-export type Group<T extends List, N extends Number> =
-    _Group<T, N> extends infer X
+export type Group<L extends List, N extends Number> =
+    _Group<L, N> extends infer X
     ? Cast<X, List>
     : never

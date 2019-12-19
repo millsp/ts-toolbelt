@@ -3,13 +3,13 @@ import {Writable as OWritable} from '../Object/Writable'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
 
-/** Make **`T`** writable (deeply or not)
- * @param T to make writable
+/** Make **`L`** writable (deeply or not)
+ * @param L to make writable
  * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
  * @example
  * ```ts
  * ```
  */
-export type Writable<T extends List, depth extends Depth = 'flat'> =
-    Cast<OWritable<T, keyof T, depth>, List>
+export type Writable<L extends List, depth extends Depth = 'flat'> =
+    Cast<OWritable<L, keyof L, depth>, List>

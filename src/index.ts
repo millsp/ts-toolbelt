@@ -64,10 +64,6 @@ export {
 // do not forget to NOT do `X extends never` => do `[X] extends [never]`
 // if the goal is to explicitly match `never` & not distribute the type
 
-type Test0 = {
-    hello: string;
-    world?: string;
-}
-
-type OptionalKeys = O.OptionalKeys<Test0> // world
-type RequiredKeys = O.RequiredKeys<Test0> // hello
+// todo
+// - rename L1 extends List to L extends List
+// - move omit out of union & add option instead + see if can be generalized

@@ -11,12 +11,12 @@ import {List} from './List'
 /**
  * @hidden
  */
-type MergeFlat<T extends List, T1 extends List> =
-    number extends Length<T | T1>
+type MergeFlat<L extends List, L1 extends List> =
+    number extends Length<L | L1>
     // if we can't know the size, then get closest type
-    ? (T | T1) extends (infer T)[] ? T[] : never
+    ? (L | L1) extends (infer L)[] ? L[] : never
     // if it's a tuple then we proceed with the merging
-    : ListOf<OMerge<ObjectOf<T>, Omit<ObjectOf<T1>, keyof T>>>
+    : ListOf<OMerge<ObjectOf<L>, Omit<ObjectOf<L1>, keyof L>>>
 
 /**
  * @hidden
@@ -38,7 +38,7 @@ type MergeDeep<O, O1> = // we do not distribute this one => recursive distribute
  * ```ts
  * ```
  */
-export type Merge<T extends List, T1 extends List, depth extends Depth = 'flat'> = {
-    'flat': MergeFlat<T, T1>
-    'deep': MergeDeep<T, T1>
+export type Merge<L extends List, L1 extends List, depth extends Depth = 'flat'> = {
+    'flat': MergeFlat<L, L1>
+    'deep': MergeDeep<L, L1>
 }[depth]

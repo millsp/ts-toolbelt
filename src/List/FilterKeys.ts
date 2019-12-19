@@ -3,8 +3,8 @@ import {Match} from '../Any/_Internal'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
-/** Filter out the keys of **`T`** which entries match **`M`**
- * @param T to remove from
+/** Filter out the keys of **`L`** which entries match **`M`**
+ * @param L to remove from
  * @param M to select entries
  * @param match (?=`'default'`) to change precision
  * @returns **`keyof`**
@@ -12,5 +12,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type FilterKeys<T extends List, M extends any, match extends Match = 'default'> =
-    OFilterKeys<ObjectOf<T>, M, match>
+export type FilterKeys<L extends List, M extends any, match extends Match = 'default'> =
+    OFilterKeys<ObjectOf<L>, M, match>

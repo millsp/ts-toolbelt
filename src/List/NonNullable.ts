@@ -8,8 +8,8 @@ import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 import {List} from './List'
 
-/** Make some entries of **`T`** not nullable (deeply or not)
- * @param T to make non nullable
+/** Make some entries of **`L`** not nullable (deeply or not)
+ * @param L to make non nullable
  * @param K (?=`keyof O`) to choose fields
  * @param depth (?=`'flat'`) to do it deeply
  * @returns **`any[]`**
@@ -17,7 +17,7 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type NonNullable<T extends List, K extends Index = keyof T, depth extends Depth = 'flat'> = {
-    1: Cast<ONonNullable<T, keyof T, depth>, List>
-    0: ListOf<ONonNullable<ObjectOf<T>, K, depth>>
-}[Implements<keyof T, K>]
+export type NonNullable<L extends List, K extends Index = keyof L, depth extends Depth = 'flat'> = {
+    1: Cast<ONonNullable<L, keyof L, depth>, List>
+    0: ListOf<ONonNullable<ObjectOf<L>, K, depth>>
+}[Implements<keyof L, K>]

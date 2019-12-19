@@ -12,27 +12,27 @@ import {UnionOf} from './UnionOf'
 /**
  * @hidden
  */
-type _UnNestCheap<T extends List> =
-    (UnionOf<T> extends infer UT    // make `T` a union
-    ? UT extends unknown            // for each in union
-        ? UT extends List          // if its an array
-          ? UnionOf<UT>             // make it a union
-          : UT                      // or leave as it is
-        : never
+type _UnNestCheap<L extends List> =
+    (UnionOf<L> extends infer UL    // make `L` a union
+    ? UL extends unknown            // for each in union
+      ? UL extends List             // if its an array
+        ? UnionOf<UL>               // make it a union
+        : UL                        // or leave as it is
+      : never
     : never
     )[] & {}                        // make result array
 
 /**
  * @hidden
  */
-type _UnNestExact<T extends List, TN extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _UnNestExact<T, Concat<TN, T[Pos<I>]>, Next<I>>
-    1: _UnNestExact<T, Append<TN, T[Pos<I>]>, Next<I>>
-    2: TN
+type _UnNestExact<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _UnNestExact<L, Concat<LN, L[Pos<I>]>, Next<I>>
+    1: _UnNestExact<L, Append<LN, L[Pos<I>]>, Next<I>>
+    2: LN
 }[
-    Pos<I> extends Length<T>  // its the end
+    Pos<I> extends Length<L>  // its the end
     ? 2
-    : T[Pos<I>] extends List // element is tuple -> concat
+    : L[Pos<I>] extends List // element is tuple -> concat
       ? 0
       : 1                    // element is other -> Append
 ]
@@ -40,19 +40,19 @@ type _UnNestExact<T extends List, TN extends List = [], I extends Iteration = It
 /**
  * @hidden
  */
-type _UnNest<T extends List> =
-    number extends Length<T>
-    ? _UnNestCheap<T>
-    : _UnNestExact<T>
+type _UnNest<L extends List> =
+    number extends Length<L>
+    ? _UnNestCheap<L>
+    : _UnNestExact<L>
 
-/** Remove a dimension of **`T`**
- * @param T to un-nest
+/** Remove a dimension of **`L`**
+ * @param L to un-nest
  * @returns **`any[]`**
  * @example
  * ```ts
  * ```
  */
-export type UnNest<T extends List> =
-    _UnNest<T> extends infer X
+export type UnNest<L extends List> =
+    _UnNest<L> extends infer X
     ? Cast<X, List>
     : never

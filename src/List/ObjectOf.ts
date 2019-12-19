@@ -3,21 +3,21 @@ import {HasAll} from '../Union/HasAll'
 import {True} from '../Boolean/Boolean'
 import {Cast} from '../Any/Cast'
 
-export type _ObjectOf<T extends object> =
-    HasAll<keyof T, keyof any[]> extends True   // check that is is an array
-    ? number extends (Cast<T, any[]>)['length'] // ^^^ handles mixed up objs
-      ? OOmit<T, Exclude<keyof any[], number>>  // preserves arrays
-      : OOmit<T, keyof any[]>                   // transforms tuples
-    : T
+export type _ObjectOf<L extends object> =
+    HasAll<keyof L, keyof any[]> extends True   // check that is is an array
+    ? number extends (Cast<L, any[]>)['length'] // ^^^ handles mixed up objs
+      ? OOmit<L, Exclude<keyof any[], number>>  // preserves arrays
+      : OOmit<L, keyof any[]>                   // transforms tuples
+    : L
 
 /** Transform a [[List]] or an `Array` into an **`object`**
- * @param T to transform
+ * @param L to transform
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type ObjectOf<T extends object> =
-    T extends unknown
-    ? _ObjectOf<T>
+export type ObjectOf<L extends object> =
+    L extends unknown
+    ? _ObjectOf<L>
     : never

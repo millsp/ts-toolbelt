@@ -12,24 +12,24 @@ import {List} from './List'
 /**
  * @hidden
  */
-type _ZipObj<TProp extends List<Index>, TField extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
-    0: _ZipObj<TProp, TField, Merge<O, Record<TProp[Pos<I>], TField[Pos<I>]>>, Next<I>>
+type _ZipObj<LKeys extends List<Index>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
+    0: _ZipObj<LKeys, LFields, Merge<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
     1: O
 }[
-    Pos<I> extends Length<TProp>
+    Pos<I> extends Length<LKeys>
     ? 1
     : 0
 ]
 
 /** Create an **`object`** from [[List]]s of keys & fields
- * @param TProps its keys
- * @param TFields its fields
+ * @param LKeys its keys
+ * @param LFields its fields
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type ZipObj<TKeys extends List<Index>, TFields extends List> =
-    _ZipObj<TKeys, TFields> extends infer X
+export type ZipObj<LKeys extends List<Index>, LFields extends List> =
+    _ZipObj<LKeys, LFields> extends infer X
     ? Cast<X, object>
     : never

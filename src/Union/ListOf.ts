@@ -6,9 +6,9 @@ import {List} from '../List/List'
 /**
  * @hidden
  */
-type _ListOf<U, TN extends List = [], LastU = Last<U>> = {
-    0: _ListOf<Exclude<U, LastU>, Prepend<TN, LastU>>
-    1: TN
+type _ListOf<U, LN extends List = [], LastU = Last<U>> = {
+    0: _ListOf<Exclude<U, LastU>, Prepend<LN, LastU>>
+    1: LN
 }[
     [U] extends [never]
     ? 1

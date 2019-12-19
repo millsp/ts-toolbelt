@@ -3,14 +3,14 @@ import {IntersectKeys as OIntersectKeys} from '../Object/IntersectKeys'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
-/** Get the intersecting entries of **`T`** & **`T1`**
+/** Get the intersecting entries of **`L`** & **`L1`**
  * (If `match = 'default'`, no type checks are done)
- * @param T to check similarities with
- * @param T1 to check similarities against
+ * @param L to check similarities with
+ * @param L1 to check similarities against
  * @returns **`keyof`**
  * @example
  * ```ts
  * ```
  */
-export type IntersectKeys<T extends List, T1 extends List, match extends Match = 'default'> =
-    OIntersectKeys<ObjectOf<T>, T1, match>
+export type IntersectKeys<L extends List, L1 extends List, match extends Match = 'default'> =
+    OIntersectKeys<ObjectOf<L>, L1, match>

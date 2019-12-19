@@ -2,12 +2,12 @@ import {NonNullableKeys as ONonNullableKeys} from '../Object/NonNullableKeys'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
-/** Get the keys of **`T`** that are non-nullable
- * @param T
+/** Get the keys of **`L`** that are non-nullable
+ * @param L
  * @returns **`keyof`**
  * @example
  * ```ts
  * ```
  */
-export type NonNullableKeys<T extends List> =
-    ONonNullableKeys<ObjectOf<T>>
+export type NonNullableKeys<L extends List> =
+    ONonNullableKeys<ObjectOf<L>>

@@ -7,23 +7,23 @@ import {False} from '../Boolean/Boolean'
 /**
  * @hidden
  */
-type _Flatten<T extends List, TO extends List = []> = {
-    0: _Flatten<UnNest<T>, T>
-    1: T
+type _Flatten<L extends List, LO extends List = []> = {
+    0: _Flatten<UnNest<L>, L>
+    1: L
 }[
-    Equals<T, TO> extends False
+    Equals<L, LO> extends False
     ? 0
     : 1
 ]
 
-/** Remove all dimensions of **`T`** (10 max)
- * @param T to un-nest
+/** Remove all dimensions of **`L`** (10 max)
+ * @param L to un-nest
  * @returns **`any[]`**
  * @example
  * ```ts
  * ```
  */
-export type Flatten<T extends List> =
-    _Flatten<T> extends infer X
+export type Flatten<L extends List> =
+    _Flatten<L> extends infer X
     ? Cast<X, List>
     : never

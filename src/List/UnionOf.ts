@@ -1,11 +1,11 @@
 import {List} from './List'
 
 /** Transform a [[List]] into an [[Union]]
- * @param T to transform
+ * @param L to transform
  * @returns **`any`**
  * @example
  * ```ts
  * ```
  */
-export type UnionOf<T extends List> =
-    T[number]
+export type UnionOf<L extends List> =
+    L[number]

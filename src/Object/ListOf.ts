@@ -10,17 +10,17 @@ import {List} from '../List/List'
 /**
  * @hidden
  */
-type PickIfEntry<O extends object, TN extends List, I extends Iteration> =
+type PickIfEntry<O extends object, LN extends List, I extends Iteration> =
     Key<I> extends keyof O
-    ? Append<TN, O[Cast<Key<I>, keyof O>]>
-    : TN
+    ? Append<LN, O[Cast<Key<I>, keyof O>]>
+    : LN
 
 /**
  * @hidden
  */
-type _ListOf<O extends object, K, TN extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _ListOf<O, Exclude<K, Key<I>>, PickIfEntry<O, TN, I>, Next<I>>
-    1: TN
+type _ListOf<O extends object, K, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _ListOf<O, Exclude<K, Key<I>>, PickIfEntry<O, LN, I>, Next<I>>
+    1: LN
 }[
     [K] extends [never]
     ? 1

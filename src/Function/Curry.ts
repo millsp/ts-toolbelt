@@ -18,19 +18,19 @@ import {Function} from './Function'
 /**
  * @hidden
  */
-type GapOf<T1 extends List, T2 extends List, TN extends List, I extends Iteration = IterationOf<'0'>> =
-    T1[Pos<I>] extends x
-    ? Append<TN, T2[Pos<I>]>
-    : TN
+type GapOf<L1 extends List, L2 extends List, LN extends List, I extends Iteration = IterationOf<'0'>> =
+    L1[Pos<I>] extends x
+    ? Append<LN, L2[Pos<I>]>
+    : LN
 
 /**
  * @hidden
  */
-type _GapsOf<T1 extends List, T2 extends List, TN extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _GapsOf<T1, T2, GapOf<T1, T2, TN, I>, Next<I>>
-    1: Concat<TN, Drop<T2, Key<I>>>
+type _GapsOf<L1 extends List, L2 extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _GapsOf<L1, L2, GapOf<L1, L2, LN, I>, Next<I>>
+    1: Concat<LN, Drop<L2, Key<I>>>
 }[
-    Pos<I> extends Length<T1>
+    Pos<I> extends Length<L1>
     ? 1
     : 0
 ]
@@ -38,16 +38,16 @@ type _GapsOf<T1 extends List, T2 extends List, TN extends List = [], I extends I
 /**
  * @hidden
  */
-type GapsOf<T1 extends List, T2 extends List> =
-    _GapsOf<T1, T2> extends infer X
+type GapsOf<L1 extends List, L2 extends List> =
+    _GapsOf<L1, L2> extends infer X
     ? Cast<X, List>
     : never
 
 /**
  * @hidden
  */
-type Gaps<T extends List> = NonNullable<{
-    [K in keyof T]?: T[K] | x
+type Gaps<L extends List> = NonNullable<{
+    [K in keyof L]?: L[K] | x
 }>
 
 /** Curry a [[Function]]
@@ -63,8 +63,8 @@ type Gaps<T extends List> = NonNullable<{
  * ```
  */
 export type Curry<F extends Function> =
-    <T extends List>(...args: Cast<T, Gaps<Parameters<F>>>) =>
-        GapsOf<T, Parameters<F>> extends infer G
+    <L extends List>(...args: Cast<L, Gaps<Parameters<F>>>) =>
+        GapsOf<L, Parameters<F>> extends infer G
         ? Length<Cast<G, List>> extends infer L
           ? L extends 0 ? Return<F> : L extends 1
             // it means that it can continue being curried & can be called as terminating function

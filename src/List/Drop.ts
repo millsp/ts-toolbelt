@@ -12,17 +12,17 @@ import {List} from './List'
 /**
  * @hidden
  */
-type _Drop<T extends List, N extends Number, I extends Iteration = IterationOf<'0'>> = {
-    0: _Drop<Tail<T>, N, Next<I>>
-    1: T
+type _Drop<L extends List, N extends Number, I extends Iteration = IterationOf<'0'>> = {
+    0: _Drop<Tail<L>, N, Next<I>>
+    1: L
 }[
     N extends Key<I>
     ? 1
     : 0
 ]
 
-/** Remove **`N`** entries out of **`T`**
- * @param T to remove from
+/** Remove **`N`** entries out of **`L`**
+ * @param L to remove from
  * @param N to remove out
  * @param way (?=`'->'`) to remove from end
  * @returns **`any[]`**
@@ -30,9 +30,9 @@ type _Drop<T extends List, N extends Number, I extends Iteration = IterationOf<'
  * ```ts
  * ```
  */
-export type Drop<T extends List, N extends Number, way extends Way = '->'> = {
-    '->': _Drop<T, N>
-    '<-': Reverse<Drop<Reverse<T>, N>>
+export type Drop<L extends List, N extends Number, way extends Way = '->'> = {
+    '->': _Drop<L, N>
+    '<-': Reverse<Drop<Reverse<L>, N>>
 }[way] extends infer X
 ? Cast<X, List>
 : never

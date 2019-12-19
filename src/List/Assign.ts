@@ -4,15 +4,15 @@ import {List} from './List'
 import {ObjectOf} from './ObjectOf'
 import {Cast} from '../Any/Cast'
 
-/** Assign a list of [[List]] into **`T`** with `Merge` (last-in overrides)
- * @param T to assign to
- * @param Ts to assign
+/** Assign a list of [[List]] into **`L`** with `Merge` (last-in overrides)
+ * @param L to assign to
+ * @param Ls to assign
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Assign<T extends List, Ts extends List[]> =
-    Omit<OAssign<T, {[K in keyof Ts]: ObjectOf<Cast<Ts[K], List>>}> & [], keyof any[]>
+export type Assign<L extends List, Ls extends List[]> =
+    Omit<OAssign<L, {[K in keyof Ls]: ObjectOf<Cast<Ls[K], List>>}> & [], keyof any[]>
     // in the mapped type above, we make sure tuples are not left with array properties
     // ! leaving array properties and using `Object` utilities is known to cause bugs

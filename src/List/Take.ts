@@ -13,17 +13,17 @@ import {List} from './List'
 /**
  * @hidden
  */
-type _Take<T extends List, N extends Number, TN extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _Take<T, N, Prepend<TN, T[Pos<I>]>, Next<I>>
-    1: TN
+type _Take<L extends List, N extends Number, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _Take<L, N, Prepend<LN, L[Pos<I>]>, Next<I>>
+    1: LN
 }[
     N extends Key<I>
     ? 1
     : 0
 ]
 
-/** Extract **`N`** entries out of **`T`**
- * @param T to extract from
+/** Extract **`N`** entries out of **`L`**
+ * @param L to extract from
  * @param N to extract out
  * @param way (?=`'->'`) to extract from end
  * @returns **`any[]`**
@@ -31,9 +31,9 @@ type _Take<T extends List, N extends Number, TN extends List = [], I extends Ite
  * ```ts
  * ```
  */
-export type Take<T extends List, N extends Number, way extends Way = '->'> = {
-    '->': Reverse<_Take<T, N>>
-    '<-': _Take<Reverse<T>, N>
+export type Take<L extends List, N extends Number, way extends Way = '->'> = {
+    '->': Reverse<_Take<L, N>>
+    '<-': _Take<Reverse<L>, N>
 }[way] extends infer X
 ? Cast<X, List>
 : never

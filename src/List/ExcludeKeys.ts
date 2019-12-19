@@ -3,15 +3,15 @@ import {Match} from '../Any/_Internal'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
-/** Exclude the keys of **`T1`** out of the keys of **`T`**
+/** Exclude the keys of **`L1`** out of the keys of **`L`**
  * (If `match = 'default'`, no type checks are done)
- * @param T to remove the keys from
- * @param T1 to remove the keys out
+ * @param L to remove the keys from
+ * @param L1 to remove the keys out
  * @param match (?=`'default'`) to change precision
  * @returns **`keyof`**
  * @example
  * ```ts
  * ```
  */
-export type ExcludeKeys<T extends List, T1 extends List, match extends Match = 'default'> =
-    OExcludeKeys<ObjectOf<T>, ObjectOf<T1>, match>
+export type ExcludeKeys<L extends List, L1 extends List, match extends Match = 'default'> =
+    OExcludeKeys<ObjectOf<L>, ObjectOf<L1>, match>

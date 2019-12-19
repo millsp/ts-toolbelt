@@ -15,6 +15,6 @@ import {Function} from './Function'
  * ```
  */
 export type Parameters<F extends Function> =
-    F extends ((...args: infer T) => any)
-    ? T
+    F extends ((...args: infer L) => any)
+    ? L
     : never

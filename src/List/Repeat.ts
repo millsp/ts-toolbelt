@@ -10,9 +10,9 @@ import {List} from './List'
 /**
  * @hidden
  */
-type _Repeat<N extends Number, A, T extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _Repeat<N, A, Prepend<T, A>, Next<I>>
-    1: T
+type _Repeat<N extends Number, A, L extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _Repeat<N, A, Prepend<L, A>, Next<I>>
+    1: L
 }[
     N extends Key<I>
     ? 1
@@ -22,13 +22,13 @@ type _Repeat<N extends Number, A, T extends List = [], I extends Iteration = Ite
 /** Fill a [[List]] with **`N`** times **`A`**
  * @param A to fill with
  * @param N to repeat it
- * @param T (?=`[]`) to be filled
+ * @param L (?=`[]`) to be filled
  * @returns **`any[]`**
  * @example
  * ```ts
  * ```
  */
-export type Repeat<A extends any, N extends Number, T extends List = []> =
-    _Repeat<N, A, T> extends infer X
+export type Repeat<A extends any, N extends Number, L extends List = []> =
+    _Repeat<N, A, L> extends infer X
     ? Cast<X, List>
     : never
