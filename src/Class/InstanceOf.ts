@@ -1,3 +1,5 @@
+import {Class} from './Class'
+
 /** Get the instance type of a **`class`** from a class object
  * @param C **typeof** **`class`**
  * @returns **`class`**
@@ -15,5 +17,5 @@
  * let b = create(B) // B
  * ```
  */
-export type InstanceOf<C extends new (...args: any[]) => any> =
+export type InstanceOf<C extends Class> =
     InstanceType<C>
