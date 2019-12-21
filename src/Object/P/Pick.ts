@@ -22,7 +22,6 @@ type _Pick<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> 
   : O                                             // Not an object - x
 
 /** Extract out of **`O`** the fields at **`Path`**
- * (⚠️ this type is expensive)
  * @param O to extract from
  * @param Path to be followed
  * @returns **`object`**

@@ -23,7 +23,6 @@ type _Merge<O, Path extends List<Index>, O1 extends object, depth extends Depth,
   : O                                                            // Not an object - x
 
 /** Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**
- * (⚠️ this type is expensive)
  * @param O to complete
  * @param Path to be followed
  * @param O1 to copy from

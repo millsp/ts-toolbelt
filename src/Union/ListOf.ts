@@ -3,6 +3,7 @@ import {Prepend} from '../List/Prepend'
 import {Exclude} from './Exclude'
 import {List} from '../List/List'
 import {Union} from './Union'
+import {Cast} from '../Any/Cast'
 
 /**
  * @hidden
@@ -26,5 +27,5 @@ type _ListOf<U, LN extends List = [], LastU = Last<U>> = {
  */
 export type ListOf<U extends Union> =
     _ListOf<U> extends infer X
-    ? X
+    ? Cast<X, List>
     : never

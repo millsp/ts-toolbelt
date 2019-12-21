@@ -22,7 +22,6 @@ type _Omit<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> 
   : O                                                // Not an object - x
 
 /** Remove out of **`O`** the fields at **`Path`**
- * (⚠️ this type is expensive)
  * @param O to remove from
  * @param Path to be followed
  * @returns **`object`**
