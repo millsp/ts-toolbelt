@@ -9,14 +9,14 @@ import {Keys} from './Keys'
 /**
  * @hidden
  */
-type CompulsoryFlat<O> = {
+export type CompulsoryFlat<O> = {
     [K in keyof O]-?: NonNullable<O[K]>
 } & {}
 
 /**
  * @hidden
  */
-type CompulsoryDeep<O> = {
+export type CompulsoryDeep<O> = {
     [K in keyof O]-?: CompulsoryDeep<NonNullable<O[K]>>
 }
 

@@ -9,14 +9,14 @@ import {Keys} from './Keys'
 /**
  * @hidden
  */
-type NonNullableFlat<O> = {
+export type NonNullableFlat<O> = {
     [K in keyof O]: UNonNullable<O[K]>
 } & {}
 
 /**
  * @hidden
  */
-type NonNullableDeep<O> = {
+export type NonNullableDeep<O> = {
     [K in keyof O]: NonNullableDeep<UNonNullable<O[K]>>
 }
 

@@ -8,14 +8,14 @@ import {Keys} from './Keys'
 /**
  * @hidden
  */
-type OptionalFlat<O> = {
+export type OptionalFlat<O> = {
     [K in keyof O]?: O[K]
 } & {}
 
 /**
  * @hidden
  */
-type OptionalDeep<O> = {
+export type OptionalDeep<O> = {
     [K in keyof O]?: OptionalDeep<O[K]>
 }
 

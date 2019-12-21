@@ -8,14 +8,14 @@ import {Keys} from '../Union/Keys'
 /**
  * @hidden
  */
-type ReadonlyFlat<O> = {
+export type ReadonlyFlat<O> = {
     +readonly [K in keyof O]: O[K]
 } & {}
 
 /**
  * @hidden
  */
-type ReadonlyDeep<O> = {
+export type ReadonlyDeep<O> = {
     +readonly [K in keyof O]: ReadonlyDeep<O[K]>
 }
 

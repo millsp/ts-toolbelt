@@ -8,14 +8,14 @@ import {Keys} from './Keys'
 /**
  * @hidden
  */
-type RequiredFlat<O> = {
+export type RequiredFlat<O> = {
     [K in keyof O]-?: O[K]
 } & {}
 
 /**
  * @hidden
  */
-type RequiredDeep<O> = {
+export type RequiredDeep<O> = {
     [K in keyof O]-?: RequiredDeep<O[K]>
 }
 

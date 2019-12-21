@@ -8,14 +8,14 @@ import {Keys} from './Keys'
 /**
  * @hidden
  */
-type WritableFlat<O> = {
+export type WritableFlat<O> = {
     -readonly [K in keyof O]: O[K]
 }
 
 /**
  * @hidden
  */
-type WritableDeep<O> = {
+export type WritableDeep<O> = {
     -readonly [K in keyof O]: WritableDeep<O[K]>
 }
 

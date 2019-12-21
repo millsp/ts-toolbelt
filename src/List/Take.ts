@@ -2,15 +2,12 @@ import {Number} from '../Number/Number'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Pos} from '../Iteration/Pos'
-import {Next} from '../Iteration/Next'
 import {Prepend} from './Prepend'
 import {Way} from '../Iteration/_Internal'
 import {List} from './List'
 import {Prev} from '../Iteration/Prev'
 import {Cast} from '../Any/Cast'
 import {Length} from './Length'
-import {Required} from './Required'
-import {Reverse} from './Reverse'
 import {Naked} from './_Internal'
 
 /**
@@ -46,7 +43,6 @@ type _Take<L extends List, N extends Iteration, way extends Way> = {
     '->': TakeForth<L, N> // Reverse logic to work naturally #`Prepend`
     '<-': TakeBack<L, N>  // Reverse logic to work naturally #`Prepend`
 }[way]
-
 
 /** Extract **`N`** entries out of **`L`**
  * @param L to extract from
