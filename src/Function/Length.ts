@@ -5,7 +5,8 @@ import {Length as LLength} from '../List/Length'
 
 /** Extract arguments' length from a [[Function]]
  * @param F to extract from
- * @param (?=`'n'`) fmt output * @returns **`string`** or **`number`**
+ * @param (?=`'n'`) fmt output
+ * @returns **`string`** or **`number`**
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'

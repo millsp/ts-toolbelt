@@ -28,7 +28,8 @@ type WritablePart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** writable (deeply or not)
  * @param O to make writable
- * @param (?=`keyof O`) K to choose fields * @param (?=`'flat'`) depth to do it deeply * @returns **`object`**
+ * @param (?=`keyof O`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
+ * @returns **`object`**
  * @example
  * ```ts
  * ```

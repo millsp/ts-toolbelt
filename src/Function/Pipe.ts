@@ -56,7 +56,8 @@ export type Piper<Fns extends List<Function>, mode extends Mode = 'sync'> = {
 
 /** Pipe [[Function]]s together
  * @param Fns to pipe
- * @param (?=`'sync'`) mode sync/async * @returns [[Function]]
+ * @param (?=`'sync'`) mode sync/async
+ * @returns [[Function]]
  * @example
  * ```ts
  * import {F} from 'ts-toolbelt'

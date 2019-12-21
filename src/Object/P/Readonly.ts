@@ -25,7 +25,8 @@ type _Readonly<O, Path extends List<Index>, depth extends Depth, I extends Itera
 /** Make some fields of **`O`** readonly at **`Path`** (deeply or not)
  * @param O to make readonly
  * @param Path to be followed
- * @param (?=`'flat'`) depth to do it deeply * @returns **`object`**
+ * @param (?=`'flat'`) depth to do it deeply
+ * @returns **`object`**
  * @example
  * ```ts
  * ```
