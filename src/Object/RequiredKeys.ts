@@ -1,15 +1,13 @@
-import {NonNullableKeys} from './NonNullableKeys'
-import {NonNullable} from './NonNullable'
-import {Index} from '../Any/Index'
+import {Keys} from '../Union/Keys'
 
 /** Get the keys of **`O`** that are required
  * @param O
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```
  */
 export type RequiredKeys<O extends object> = {
     [K in keyof O]-?: {} extends Pick<O, K> ? never : K
-}[keyof O] & keyof O & Index
+}[Keys<O>] & Keys<O>
 

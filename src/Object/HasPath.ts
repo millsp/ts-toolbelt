@@ -1,7 +1,7 @@
 import {Match} from '../Any/_Internal'
 import {Path as OPath} from './Path'
 import {Is} from '../Any/Is'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {List} from '../List/List'
 
 /** Check whether **`O`** has nested properties that match **`M`**
@@ -14,5 +14,5 @@ import {List} from '../List/List'
  * ```ts
  * ```
  */
-export type HasPath<O extends object, Path extends List<Index>, M extends any = any, match extends Match = 'default'> =
+export type HasPath<O extends object, Path extends List<Key>, M extends any = any, match extends Match = 'default'> =
     Is<OPath<O, Path>, M, match>

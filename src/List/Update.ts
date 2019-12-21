@@ -1,4 +1,4 @@
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {List} from './List'
 import {Replace} from '../Union/Replace'
 import {x} from '../Any/x'
@@ -13,7 +13,7 @@ import {x} from '../Any/x'
  * ```ts
  * ```
  */
-export type Update<L extends List, K extends Index, A extends any> = {
+export type Update<L extends List, K extends Key, A extends any> = {
     [P in keyof L]: P extends K
                     ? Replace<A, x, L[P]>
                     : L[P]

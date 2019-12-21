@@ -6,13 +6,13 @@ import {Length} from '../List/Length'
 import {At} from './At'
 import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {List} from '../List/List'
 
 /**
  * @hidden
  */
-type _Path<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> = {
+type _Path<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> = {
     0: _Path<UNonNullable<At<O & {}, Path[Pos<I>], 0>>, Path, Next<I>>
     1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
 }[
@@ -30,7 +30,7 @@ type _Path<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> 
  * ```ts
  * ```
  */
-export type Path<O extends object, Path extends List<Index>> =
+export type Path<O extends object, Path extends List<Key>> =
     _Path<O, Path> extends infer X
     ? Cast<X, any>
     : never

@@ -3,12 +3,13 @@ import {At} from './At'
 import {Compute} from '../Any/Compute'
 import {Depth} from './_Internal'
 import {Kind} from '../Any/Kind'
+import {Keys} from './Keys'
 
 /**
  * @hidden
  */
 type MergeFlat<O extends object, O1 extends object> =
-    Compute<O & Omit<O1, keyof O>>
+    Compute<O & Omit<O1, Keys<O>>>
 
 /**
  * @hidden

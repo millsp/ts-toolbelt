@@ -4,7 +4,7 @@ import {List} from './List'
 
 /** Get the keys of **`L`** that are readonly
  * @param L
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```

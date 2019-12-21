@@ -12,4 +12,4 @@ import {List} from './List'
  * ```
  */
 export type Compulsory<L extends List, depth extends Depth = 'flat'> =
-    Cast<OCompulsory<L, keyof L, depth>, List>
+    Cast<OCompulsory<L, any, depth>, List>

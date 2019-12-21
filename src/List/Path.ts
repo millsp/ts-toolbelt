@@ -1,5 +1,5 @@
 import {Path as OPath} from '../Object/Path'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {List} from './List'
 
 /** Get in **`L`** the type of nested properties
@@ -10,5 +10,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type Path<L extends List, Path extends List<Index>> =
+export type Path<L extends List, Path extends List<Key>> =
     OPath<L, Path>

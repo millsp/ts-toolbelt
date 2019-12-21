@@ -1,6 +1,6 @@
 import {Omit} from './Omit'
 import {Pick} from './Pick'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Strict} from '../Union/Strict'
 import {Boolean, True} from '../Boolean/Boolean'
 import {Compute} from '../Any/Compute'
@@ -8,7 +8,7 @@ import {Compute} from '../Any/Compute'
 /**
  * @hidden
  */
-type _Either<O extends object, K extends Index> =
+type _Either<O extends object, K extends Key> =
     Omit<O, K> & ({          // Merge all but K
         [P in K]: Pick<O, P> // With K possibilities
     }[K])
@@ -16,13 +16,13 @@ type _Either<O extends object, K extends Index> =
 /**
  * @hidden
  */
-type EitherStrict<O extends object, K extends Index> =
+type EitherStrict<O extends object, K extends Key> =
     Strict<_Either<O, K>>
 
 /**
  * @hidden
  */
-type EitherLoose<O extends object, K extends Index> =
+type EitherLoose<O extends object, K extends Key> =
     Compute<_Either<O, K>>
 
 /** Split **`O`** into a [[Union]] with **`K`** keys in such a way that none of
@@ -35,7 +35,7 @@ type EitherLoose<O extends object, K extends Index> =
  * ```ts
  * ```
  */
-export type Either<O extends object, K extends Index, strict extends Boolean = True> = {
+export type Either<O extends object, K extends Key, strict extends Boolean = True> = {
     1: EitherStrict<O, K>
     0: EitherLoose<O, K>
 }[strict]

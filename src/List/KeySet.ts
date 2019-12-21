@@ -5,7 +5,7 @@ import {UnionOf} from './UnionOf'
 /** Create a set of keys
  * @param From to start with
  * @param To to end with
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```

@@ -1,12 +1,12 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
-import {Index} from '../Any/Index'
+import {Keys} from '../Union/Keys'
 
 /** Filter out the keys of **`O`** which fields match **`M`**
  * @param O to remove from
  * @param M to select fields
  * @param match (?=`'default'`) to change precision
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```
@@ -16,5 +16,5 @@ export type FilterKeys<O extends object, M extends any, match extends Match = 'd
         1: never
         0: K
     }[Is<O[K], M, match>]
-}[keyof O] & keyof O & Index
+}[Keys<O>] & Keys<O>
 

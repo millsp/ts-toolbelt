@@ -12,4 +12,4 @@ import {List} from './List'
  * ```
  */
 export type Writable<L extends List, depth extends Depth = 'flat'> =
-    Cast<OWritable<L, keyof L, depth>, List>
+    Cast<OWritable<L, any, depth>, List>

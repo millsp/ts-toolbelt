@@ -2,8 +2,9 @@ import {Merge} from './Merge'
 import {Nullable as UNullable} from '../Union/Nullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Implements} from '../Any/Implements'
+import {Keys} from './Keys'
 
 /**
  * @hidden
@@ -29,14 +30,14 @@ type NullablePart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** nullable (deeply or not)
  * @param O to make nullable
- * @param (?=`keyof O`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
+ * @param (?=`any`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Nullable<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
+export type Nullable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: NullablePart<O, depth>
     0: Merge<NullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<keyof O, K>]
+}[Implements<Keys<O>, K>]

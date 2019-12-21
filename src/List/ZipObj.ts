@@ -6,13 +6,13 @@ import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {Merge} from '../Object/Merge'
 import {Record} from '../Object/Record'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {List} from './List'
 
 /**
  * @hidden
  */
-type _ZipObj<LKeys extends List<Index>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
+type _ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
     0: _ZipObj<LKeys, LFields, Merge<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
     1: O
 }[
@@ -29,7 +29,7 @@ type _ZipObj<LKeys extends List<Index>, LFields extends List, O extends object =
  * ```ts
  * ```
  */
-export type ZipObj<LKeys extends List<Index>, LFields extends List> =
+export type ZipObj<LKeys extends List<Key>, LFields extends List> =
     _ZipObj<LKeys, LFields> extends infer X
     ? Cast<X, object>
     : never

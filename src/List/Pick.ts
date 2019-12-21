@@ -1,6 +1,6 @@
 import {Pick as OPick} from '../Object/Pick'
 import {ListOf} from '../Object/ListOf'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
@@ -12,5 +12,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type Pick<L extends List, K extends Index> =
+export type Pick<L extends List, K extends Key> =
     ListOf<OPick<ObjectOf<L>, K>>

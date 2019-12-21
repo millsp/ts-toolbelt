@@ -1,4 +1,5 @@
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
+import {Keys} from './Keys'
 
 /**
  * @hidden
@@ -15,7 +16,7 @@ type _Pick<O extends object, K extends keyof O> = {
  * ```ts
  * ```
  */
-export type Pick<O extends object, K extends Index> =
+export type Pick<O extends object, K extends Key> =
     O extends unknown
-    ? _Pick<O, K & keyof O>
+    ? _Pick<O, K & Keys<O>>
     : never

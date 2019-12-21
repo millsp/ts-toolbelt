@@ -7,9 +7,9 @@ import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Update} from '../List/Update'
 import {KeySet} from '../List/KeySet'
-import {Key} from '../Iteration/Key'
+import {Key as IKey} from '../Iteration/Key'
 import {Prev} from '../Iteration/Prev'
-import {Index} from '../Any/Index'
+import {Key as AKey} from '../Any/Key'
 import {List} from '../List/List'
 import {LastIndex} from '../List/LastIndex'
 import {Length} from '../List/Length'
@@ -17,10 +17,10 @@ import {Length} from '../List/Length'
 /**
  * @hidden
  */
-type _PathValid<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> = {
+type _PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0'>> = {
     0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
-    1: Update<Path, KeySet<Key<Prev<I>>, LastIndex<Path, 's'>>, never>
-    2: Update<Path, KeySet<Key<I>, LastIndex<Path, 's'>>, never>
+    1: Update<Path, KeySet<IKey<Prev<I>>, LastIndex<Path, 's'>>, never>
+    2: Update<Path, KeySet<IKey<I>, LastIndex<Path, 's'>>, never>
 }[
     [O] extends [never]
     ? 1
@@ -56,7 +56,7 @@ type _PathValid<O, Path extends List<Index>, I extends Iteration = IterationOf<'
  * const test2 = getAt({a: {b: {c: 1}}},          ['x'] as const)      // error
  * ```
  */
-export type PathValid<O extends object, Path extends List<Index>> =
+export type PathValid<O extends object, Path extends List<AKey>> =
     _PathValid<O, Path> extends infer X
-    ? Cast<X, List<Index>>
+    ? Cast<X, List<AKey>>
     : never

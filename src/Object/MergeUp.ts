@@ -2,7 +2,7 @@ import {At} from './At'
 import {Depth} from './_Internal'
 import {Kind} from '../Any/Kind'
 import {OptionalKeys} from './OptionalKeys'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {NonNullable} from '../Union/NonNullable'
 import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
@@ -12,7 +12,7 @@ import {Or} from '../Boolean/Or'
 /**
  * @hidden
  */
-type MergeUpProp<O extends object, O1 extends object, K extends Index, IsOptional extends Boolean> =
+type MergeUpProp<O extends object, O1 extends object, K extends Key, IsOptional extends Boolean> =
     IsOptional extends True             // If `K` is marked as optional
     ? NonNullable<At<O, K>> | At<O1, K> // complete `O[K]` with `O1[K]`
     : [At<O, K>] extends [never]        // or patch `O[K]` with `O1[K]`
@@ -22,7 +22,7 @@ type MergeUpProp<O extends object, O1 extends object, K extends Index, IsOptiona
 /**
  * @hidden
  */
-type _MergeUpFlat<O extends object, O1 extends object, OOK extends Index = OptionalKeys<O>> = {
+type _MergeUpFlat<O extends object, O1 extends object, OOK extends Key = OptionalKeys<O>> = {
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, Extends<K, OOK>>
 } & {}
 

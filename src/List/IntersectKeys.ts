@@ -7,7 +7,7 @@ import {List} from './List'
  * (If `match = 'default'`, no type checks are done)
  * @param L to check similarities with
  * @param L1 to check similarities against
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```

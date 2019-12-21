@@ -8,6 +8,7 @@ import {Cast} from '../Any/Cast'
 import {List} from './List'
 import {Overwrite} from './Overwrite'
 import {Required} from './Required'
+import {Naked} from './_Internal'
 
 /**
  * @hidden
@@ -30,8 +31,6 @@ type _Reverse<L extends List, LO extends List, I extends Iteration = IterationOf
  * ```
  */
 export type Reverse<L extends List, LO extends List = []> =
-    _Reverse<Overwrite<Required<L>, L>, LO> extends infer X
-    // `L` is `Required` so that we can preserve its length
-    // Then `Overwrite` with itself to preserve `undefined`
+    _Reverse<Naked<L>, LO> extends infer X
     ? Cast<X, List>
     : never

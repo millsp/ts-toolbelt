@@ -1,6 +1,6 @@
 import {Match} from '../Any/_Internal'
 import {Has as OHas} from '../Object/Has'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
@@ -14,5 +14,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type Has<L extends List, K extends Index, M extends any = any, match extends Match = 'default'> =
+export type Has<L extends List, K extends Key, M extends any = any, match extends Match = 'default'> =
     OHas<ObjectOf<L>, K, M, match>

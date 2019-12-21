@@ -1,20 +1,24 @@
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Boolean, True} from '../Boolean/Boolean'
 import {Equals} from '../Any/Equals'
 
-type AtStrict<O extends object, K extends Index> =
+type AtStrict<O extends object, K extends Key> =
     K extends keyof O
     ? O[K]
     : never
 
-type AtLoose<O extends object, K extends Index> =
+type AtLoose<O extends object, K extends Key> =
     Equals<K, any> extends 1
-    ? O[keyof O]
-    : O[K & keyof O]
+    ? O extends unknown
+      ? O[keyof O]
+      : never
+    : O extends unknown
+      ? O[K & keyof O]
+      : never
 
 /** Get in **`O`** the type of a field of key **`K`**
  * @param O to extract from
- * @param K **`keyof`** to extract at
+ * @param K [[Key]] to extract at
  * @param strict (?=`True`) `False` enables using keys `string | number | symbol`
  * @returns **`any`**
  * @example
@@ -33,7 +37,7 @@ type AtLoose<O extends object, K extends Index> =
  * type test0 = O.At<User, 'id'> // number
  * ```
  */
-export type At<O extends object, K extends Index, strict extends Boolean = True> = {
+export type At<O extends object, K extends Key, strict extends Boolean = True> = {
     1: AtStrict<O, K>
     0: AtLoose<O, K>
 }[strict]

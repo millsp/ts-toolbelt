@@ -1,4 +1,4 @@
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Either as OEither} from '../Object/Either'
 import {ObjectOf} from './ObjectOf'
 import {ListOf} from '../Object/ListOf'
@@ -15,7 +15,7 @@ import {True, Boolean} from '../Boolean/Boolean'
  * ```ts
  * ```
  */
-export type Either<L extends List, K extends Index, strict extends Boolean = True> =
+export type Either<L extends List, K extends Key, strict extends Boolean = True> =
     OEither<ObjectOf<L>, K, strict> extends infer OE
     ? OE extends unknown
       ? ListOf<OE & {}>

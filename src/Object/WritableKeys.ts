@@ -1,12 +1,11 @@
 import {Equals} from '../Any/Equals'
-import {Keys} from './Keys'
-import {Index} from '../Any/Index'
+import {Keys} from '../Union/Keys'
 
 // Credit https://stackoverflow.com/a/52473108/3570903
 
 /** Get the keys of **`O`** that are writable
  * @param O
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```
@@ -16,4 +15,4 @@ export type WritableKeys<O extends object> = {
         1: K
         0: never
     }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}>]
-}[keyof O] & keyof O & Index
+}[Keys<O>] & Keys<O>

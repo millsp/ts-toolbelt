@@ -12,4 +12,4 @@ import {List} from './List'
  * ```
  */
 export type Required<L extends List, depth extends Depth = 'flat'> =
-    Cast<ORequired<L, keyof L, depth>, List>
+    Cast<ORequired<L, any, depth>, List>

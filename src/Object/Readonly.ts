@@ -1,8 +1,9 @@
 import {Merge} from './Merge'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Implements} from '../Any/Implements'
+import {Keys} from '../Union/Keys'
 
 /**
  * @hidden
@@ -28,14 +29,14 @@ type ReadonlyPart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** readonly (deeply or not)
  * @param O to make readonly
- * @param (?=`keyof O`) K to choose fields * @param (?=`'default'`) depth to do it deeply
+ * @param (?=`any`) K to choose fields * @param (?=`'default'`) depth to do it deeply
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Readonly<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
+export type Readonly<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: ReadonlyPart<O, depth>
     0: Merge<ReadonlyPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<keyof O, K>]
+}[Implements<Keys<O>, K>]

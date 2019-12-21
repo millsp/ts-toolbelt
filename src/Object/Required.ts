@@ -1,9 +1,9 @@
 import {Merge} from './Merge'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Implements} from '../Any/Implements'
-import {Compute} from '../Any/Compute'
+import {Keys} from './Keys'
 
 /**
  * @hidden
@@ -29,14 +29,14 @@ type RequiredPart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** required (deeply or not)
  * @param O to make required
- * @param (?=`keyof O`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
+ * @param (?=`any`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Required<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
+export type Required<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: RequiredPart<O, depth>
     0: Merge<RequiredPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<keyof O, K>]
+}[Implements<Keys<O>, K>]

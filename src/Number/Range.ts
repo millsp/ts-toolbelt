@@ -46,7 +46,7 @@ type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt e
  * @param From to start with
  * @param To to end with
  * @param way (?=`'->'`) to reverse it
- * @param fmt (?=`'s'`) output
+ * @param fmt (?=`'s'`) output format
  * @returns **`string[] | number[] | boolean[]`**
  * @example
  * ```ts

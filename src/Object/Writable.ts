@@ -1,8 +1,9 @@
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Merge} from './Merge'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Implements} from '../Any/Implements'
+import {Keys} from './Keys'
 
 /**
  * @hidden
@@ -28,14 +29,14 @@ type WritablePart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** writable (deeply or not)
  * @param O to make writable
- * @param (?=`keyof O`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
+ * @param (?=`any`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Writable<O extends object, K extends Index = keyof O, depth extends Depth = 'flat'> = {
+export type Writable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: WritablePart<O, depth>
     0: Merge<WritablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<keyof O, K>]
+}[Implements<Keys<O>, K>]

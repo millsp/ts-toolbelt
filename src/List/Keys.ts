@@ -1,15 +1,15 @@
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {Exclude} from '../Union/Exclude'
 import {List} from './List'
+import {Keys as UKeys} from '../Union/Keys'
 
 /** Get the keys of a [[List]]
  * @param L
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```
  */
 export type Keys<L extends List> =
-    Exclude<keyof L, keyof any[]> & Index | number
-    // We re-include `number`, it is a "own key"
-    // `| keyof O` fixes #50, broken by distribution
+    Exclude<UKeys<L>, keyof any[]> | number
+    // re-include `number`, it's a "own key"

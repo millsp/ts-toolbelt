@@ -1,11 +1,11 @@
-import {Index} from '../Any/Index'
+import {Keys as UKeys} from '../Union/Keys'
 
 /** Get the keys of an **`object`**
  * @param O
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```
  */
 export type Keys<O extends object> =
-    keyof O & Index // Prevents `undefined` to appear in the keys
+    UKeys<O>

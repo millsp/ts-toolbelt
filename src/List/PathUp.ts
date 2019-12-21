@@ -1,6 +1,6 @@
 import {PathUp as OPathUp} from '../Object/PathUp'
 import {List} from './List'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 
 /** Get in **`O`** the type of nested properties.
  * It is able to deal with nested [[Union]]s.
@@ -11,5 +11,5 @@ import {Index} from '../Any/Index'
  * ```ts
  * ```
  */
-export type PathUp<O extends List, Path extends List<Index>> =
+export type PathUp<O extends List, Path extends List<Key>> =
     OPathUp<O, Path>

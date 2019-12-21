@@ -12,4 +12,4 @@ import {List} from './List'
  * ```
  */
 export type Readonly<L extends List, depth extends Depth = 'flat'> =
-    Cast<OReadonly<L, keyof L, depth>, List>
+    Cast<OReadonly<L, any, depth>, List>

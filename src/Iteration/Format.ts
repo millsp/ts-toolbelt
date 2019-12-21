@@ -3,7 +3,7 @@ import {Formats} from './_Internal'
 
 /** Is [[Key]] and [[Pos]] in a single type
  * @param I to query
- * @param fmt output
+ * @param fmt output format
  * @returns **`string | number`**
  * @example
  * ```ts

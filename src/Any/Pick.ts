@@ -1,6 +1,6 @@
 import {Pick as OPick} from '../Object/Pick'
 import {Pick as LPick} from '../List/Pick'
-import {Index} from '../Any/Index'
+import {Key} from './Key'
 import {List} from '../List/List'
 import {Union} from '../Union/Union'
 
@@ -16,7 +16,7 @@ import {Union} from '../Union/Union'
  * type test0 = U.Pick<O, 'type' | '1'> // {type: 'foo'} | {type: 'bar'} | [1]
  * ```
  */
-export type Pick<U extends Union, K extends Index> =
+export type Pick<U extends Union, K extends Key> =
     U extends object
     ? U extends List
       ? LPick<U, K>

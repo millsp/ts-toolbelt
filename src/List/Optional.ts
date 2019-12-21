@@ -12,4 +12,4 @@ import {List} from './List'
  * ```
  */
 export type Optional<L extends List, depth extends Depth = 'flat'> =
-    Cast<OOptional<L, keyof L, depth>, List>
+    Cast<OOptional<L, any, depth>, List>

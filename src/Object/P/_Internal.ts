@@ -1,4 +1,4 @@
-import {Index} from '../../Any/Index'
+import {Key} from '../../Any/Key'
 
 /**
  * to reach a  property we use `Pos<I> extends LastIndex<Path>`

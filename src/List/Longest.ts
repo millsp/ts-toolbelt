@@ -1,5 +1,6 @@
 import {Exclude} from '../Union/Exclude'
 import {List} from './List'
+import {Keys} from '../Union/Keys'
 
 /** Get the longest [[List]] of **`L`** & **`L1`**
  * (**`L`** has priority if both lengths are equal)
@@ -11,6 +12,6 @@ import {List} from './List'
  * ```
  */
 export type Longest<L extends List, L1 extends List> =
-    [Exclude<keyof L1, keyof L>] extends [never]
+    [Exclude<Keys<L1>, Keys<L>>] extends [never]
     ? L
     : L1

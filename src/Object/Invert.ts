@@ -1,5 +1,5 @@
 import {Record} from './Record'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {IntersectOf} from '../Union/IntersectOf'
 import {Compute} from '../Any/Compute'
 
@@ -30,7 +30,7 @@ import {Compute} from '../Any/Compute'
  * type test1 = O.Invert<O>
  * ```
  */
-export type Invert<O extends Record<keyof O, Index>> =
+export type Invert<O extends Record<keyof O, Key>> =
   Compute<IntersectOf<
     { // swaps the key and the value
       [K in keyof O]: Record<O[K], K>

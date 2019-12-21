@@ -2,7 +2,7 @@ import {IterationOf} from '../../Iteration/IterationOf'
 import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
-import {Index} from '../../Any/Index'
+import {Key} from '../../Any/Key'
 import {Pick as OPick} from '../Pick'
 import {LastIndex} from '../../List/LastIndex'
 import {List} from '../../List/List'
@@ -10,7 +10,7 @@ import {List} from '../../List/List'
 /**
  * @hidden
  */
-type _Pick<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> =
+type _Pick<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                // If it's an object
   ? OPick<O, Path[Pos<I>]> extends infer Picked   // Pick the current index
     ? Pos<I> extends LastIndex<Path>              // If it's the last index
@@ -29,5 +29,5 @@ type _Pick<O, Path extends List<Index>, I extends Iteration = IterationOf<'0'>> 
  * ```ts
  * ```
  */
-export type Pick<O extends object, Path extends List<Index>> =
+export type Pick<O extends object, Path extends List<Key>> =
     _Pick<O, Path>

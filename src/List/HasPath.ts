@@ -1,6 +1,6 @@
 import {HasPath as OHasPath} from '../Object/HasPath'
 import {Match} from '../Any/_Internal'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
@@ -14,5 +14,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type HasPath<L extends List, Path extends List<Index>, M extends any = any, match extends Match = 'default'> =
+export type HasPath<L extends List, Path extends List<Key>, M extends any = any, match extends Match = 'default'> =
     OHasPath<ObjectOf<L>, Path, M, match>

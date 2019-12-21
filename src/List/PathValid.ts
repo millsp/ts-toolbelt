@@ -1,5 +1,5 @@
 import {PathValid as OPathValid} from '../Object/PathValid'
-import {Index} from '../Any/Index'
+import {Key} from '../Any/Key'
 import {List} from './List'
 
 /** Replaces invalid parts of a path with `never`
@@ -28,5 +28,5 @@ import {List} from './List'
  * const test1 = getAt([[[1]]] as const, [1] as const)    // error
  * ```
  */
-export type PathValid<L extends List, Path extends List<Index>> =
+export type PathValid<L extends List, Path extends List<Key>> =
     OPathValid<L, Path>

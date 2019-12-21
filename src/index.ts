@@ -80,7 +80,7 @@ export {
 // 3. Ensure type distribution
 //
 // There are two families of types that do not distribute well (at all)
-// - types that make use of `keyof`. `keyof` is a distribution breaker. search for `(?<!in) keyof`
+// - types that make use of `keyof`. `keyof` is a distribution breaker. search for `(?<! in) keyof (?!any)`
 // - recursive iteration types, the ones that are of the `Concat` form. search for `extends infer X`
 //
 // But simple mapped types distribute well over unions and preserve them

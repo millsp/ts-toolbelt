@@ -8,7 +8,7 @@ import {List} from './List'
  * @param L to remove the keys from
  * @param L1 to remove the keys out
  * @param match (?=`'default'`) to change precision
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```

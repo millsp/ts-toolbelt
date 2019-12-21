@@ -4,7 +4,7 @@ import {List} from './List'
 
 /** Get the keys of **`O`** that are writable
  * @param O
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```

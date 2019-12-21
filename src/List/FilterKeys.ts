@@ -7,7 +7,7 @@ import {List} from './List'
  * @param L to remove from
  * @param M to select entries
  * @param match (?=`'default'`) to change precision
- * @returns **`keyof`**
+ * @returns [[Key]]
  * @example
  * ```ts
  * ```

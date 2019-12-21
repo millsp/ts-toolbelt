@@ -1,4 +1,5 @@
 import {Keys} from './Keys'
+import {At} from './At'
 
 /** Transform an **`object`** into an [[Union]]
  * @param O to transform
@@ -8,4 +9,4 @@ import {Keys} from './Keys'
  * ```
  */
 export type UnionOf<O extends object> =
-    O[keyof O]
+    At<O, Keys<O>>

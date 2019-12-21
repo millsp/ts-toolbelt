@@ -66,7 +66,7 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
 /** Subtract a [[Number]] from another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
- * @param fmt (?=`'s'`) output
+ * @param fmt (?=`'s'`) output format
  * @returns **`string | number | boolean`**
  * @example
  * ```ts

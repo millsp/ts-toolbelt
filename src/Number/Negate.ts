@@ -13,7 +13,7 @@ export type _Negate<N extends Iteration> =
 
 /** Negate a [[Number]]
  * @param N to negate
- * @param fmt (?=`'s'`) output
+ * @param fmt (?=`'s'`) output format
  * @returns **`string | number | boolean`**
  * @example
  * ```ts
