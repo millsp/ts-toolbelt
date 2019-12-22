@@ -30,9 +30,9 @@ type _MergeUpFlat<O extends object, O1 extends object, OOK extends Key = Optiona
  * @hidden
  */
 export type MergeUpFlat<O extends object, O1 extends object> =
-    O extends unknown
-    ? O1 extends unknown
-      ? _MergeUpFlat<O, O1>
+    O extends unknown       // we distribute because
+    ? O1 extends unknown    // doing `O & O1` breaks
+      ? _MergeUpFlat<O, O1> // the mapped type distrib
       : never
     : never
 

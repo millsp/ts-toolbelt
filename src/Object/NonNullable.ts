@@ -31,7 +31,8 @@ type NonNullablePart<O extends object, depth extends Depth> = {
 /** Make some fields of **`O`** not nullable (deeply or not)
  * (Optional fields will be left untouched & **`undefined`**)
  * @param O to make non nullable
- * @param (?=`any`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
+ * @param (?=`any`) K to choose fields
+ * @param (?=`'flat'`) depth to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

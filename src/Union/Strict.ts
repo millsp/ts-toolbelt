@@ -8,7 +8,7 @@ import {Record} from '../Object/Record'
  */
 type _Strict<U, _U = U> =
     U extends unknown
-    ? U & OptionalFlat<Record<Exclude<Keys<_U>, Keys<U>>, never>>
+    ? U & OptionalFlat<Record<Exclude<Keys<_U>, keyof U>, never>>
     : never
 
 /** Make a [[Union]] not allow excess properties (https://github.com/Microsoft/TypeScript/issues/20863)

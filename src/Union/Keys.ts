@@ -9,6 +9,8 @@ import {Key} from '../Any/Key'
  * ```
  */
 export type Keys<U extends Union> =
-    (U extends unknown
-    ? keyof U
-    : never) & Key
+    (
+        U extends unknown
+        ? keyof U
+        : never
+    ) & Key

@@ -31,13 +31,14 @@ type CompulsoryPart<O extends object, depth extends Depth> = {
 /** Make some fields of **`O`** compulsory (deeply or not)
  * (it's like [[Required]] & [[NonNullable]] at once).
  * @param O to make compulsory
- * @param (?=`keyof O`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
+ * @param (?=`any`) K to choose fields
+ * @param (?=`'flat'`) depth to do it deeply
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Compulsory<O extends object, K extends Key = Keys<O>, depth extends Depth = 'flat'> = {
+export type Compulsory<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: CompulsoryPart<O, depth>
     0: MergeFlat<CompulsoryPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O

@@ -29,7 +29,8 @@ type RequiredPart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** required (deeply or not)
  * @param O to make required
- * @param (?=`any`) K to choose fields * @param (?=`'flat'`) depth to do it deeply
+ * @param (?=`any`) K to choose fields
+ * @param (?=`'flat'`) depth to do it deeply
  * @returns **`object`**
  * @example
  * ```ts
