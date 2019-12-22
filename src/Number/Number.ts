@@ -1,5 +1,5 @@
-/** Describes what a [[Number]] is
- * @extends
+/** A [[Number]]
+ * @example
  * ```ts
  * type number0 = '-42`
  * type number1 = '420'

@@ -1,4 +1,4 @@
-/** A [[String]] is a sequence of characters
+/** A [[String]]
  * @example
  * ```ts
  * type string0 = "hello"

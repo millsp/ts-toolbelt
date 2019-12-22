@@ -1,4 +1,4 @@
-/** An [[Object]] is a map of values
+/** An [[Object]]
  * @example
  * ```ts
  * type object0 = {a: "hello"}

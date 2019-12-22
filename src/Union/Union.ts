@@ -1,4 +1,4 @@
-/** A [[Union]] is a non-ordered set of possible values
+/** A [[Union]]
  * @example
  * ```ts
  * type union0 = 1 | 2 | 3

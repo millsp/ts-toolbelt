@@ -4,7 +4,7 @@
  * @example
  * ```ts
  * type list0 = [1, 2, 3]
- * type list1 = ['a', 42]
+ * type list1 = number[]
  * ```
  */
 export type List<A = any> = ReadonlyArray<A>

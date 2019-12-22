@@ -1,6 +1,6 @@
 import {IterationMap} from './IterationOf'
 
-/** Describes a valid entry of **`IterationMap`**
+/** An entry of **`IterationMap`**
  * * `[0]`: Prev (<-)
  * * `[1]`: Next (->)
  * * `[2]`: Current **`string`**
