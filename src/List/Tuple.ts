@@ -1,15 +1,17 @@
-/** A [[Tuple]]
+import {NonNullable} from '../Object/NonNullable'
+
+/** A [[Tuple]] (supported)
  * @param A its type
- * @returns **`any[]`**
+ * @returns **`A[]`**
  * @example
  * ```ts
- * type list0 = [1, 2, 3]
- * type list1 = number[]
+ * type tuple0 = [1, 20, 42]
+ * type tuple1 = ['at', 420]
  * ```
  */
-export type Tuple = [
-    any?, any?, any?, any?, any?, any?, any?, any?, any?, any?,
-    any?, any?, any?, any?, any?, any?, any?, any?, any?, any?,
-    any?, any?, any?, any?, any?, any?, any?, any?, any?, any?,
-    any?, any?, any?, any?, any?, any?, any?, any?, any?, any?,
-]
+export type Tuple<A = any> = NonNullable<[
+    A?, A?, A?, A?, A?, A?, A?, A?, A?, A?,
+    A?, A?, A?, A?, A?, A?, A?, A?, A?, A?,
+    A?, A?, A?, A?, A?, A?, A?, A?, A?, A?,
+    A?, A?, A?, A?, A?, A?, A?, A?, A?, A?,
+]>
