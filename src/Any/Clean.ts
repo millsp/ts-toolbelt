@@ -7,7 +7,14 @@ import {ListOf} from '../Object/ListOf'
 import {True} from '../Boolean/Boolean'
 import {HasAll} from '../Union/HasAll'
 
+/**
+ * @hidden
+ */
 type ArrayEntry = Numbers['string']['0' | '+'] // tuple entries become literal if mixed with objects
+
+/**
+ * @hidden
+ */
 type ArrayProps = keyof any[] | ArrayEntry     // so this matches any entry, whether is mixed or not
 
 /** Sometimes, we can end up with mixed up **`objects`** that do not make sense

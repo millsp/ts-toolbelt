@@ -8,6 +8,9 @@ import {Length} from './Length'
 import {Kind} from '../Any/Kind'
 import {List} from './List'
 
+/**
+ * @hidden
+ */
 type _Merge<L extends List, L1 extends List> = ListOf<ObjectOf<{
     [K in keyof (L & L1)]: [At<L, K>] extends [never]
                            ? At<L1, K>
