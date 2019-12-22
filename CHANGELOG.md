@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.6...v5.0.0) (2019-12-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **api:** 
+
+### Features
+
+* **l.shortest:** find shortest list ([abafc34](https://github.com/pirix-gh/ts-toolbelt/commit/abafc34ae8fae5b7ba6897990a96533d0831e044))
+* **o.p.update:** use abritrary paths (creates on the fly) ([1904812](https://github.com/pirix-gh/ts-toolbelt/commit/190481231abf7a348fae989dba2a361d3df3e39e))
+* **recursives:** allowing distribution ([bd1c891](https://github.com/pirix-gh/ts-toolbelt/commit/bd1c8914265d2206998348537dedbf9147fb1c50))
+* mapped types now all distribute ([680efd9](https://github.com/pirix-gh/ts-toolbelt/commit/680efd988ef837d8d39fda09251a2a9eee2f3b08))
+
+
+### Bug Fixes
+
+* **distribution:** keys types can now distribute ([617f19a](https://github.com/pirix-gh/ts-toolbelt/commit/617f19ad1a33ce1c6e0b736c6f4e526e1fe017cc))
+* **distributivity:** little mistakes ([73b8948](https://github.com/pirix-gh/ts-toolbelt/commit/73b8948ea1d49e05ae8c63b17926eda4cb04e9bb))
+* wrong export ([434f0c6](https://github.com/pirix-gh/ts-toolbelt/commit/434f0c62c8031e45fe12c89af200f425203a6d04))
+
+
+### Others
+
+* update readme ([178dd48](https://github.com/pirix-gh/ts-toolbelt/commit/178dd48f7f3f1eb9e666dfb83d598500d8149bd5))
+* **api:** delete legacy api ([ac39bc1](https://github.com/pirix-gh/ts-toolbelt/commit/ac39bc1c25308bed2eb577a4f0ee194f80eb2a64))
+* **list:** added suported tuple types ([2954a09](https://github.com/pirix-gh/ts-toolbelt/commit/2954a0955ce9af6acb345ed1e8328e145ad30475))
+* cleanup ([0d17972](https://github.com/pirix-gh/ts-toolbelt/commit/0d17972698887aa3d74aa9e15d71d6c7d6440b2e))
+* **recursives:** cleanup & optimize - phase 1 ([4242a13](https://github.com/pirix-gh/ts-toolbelt/commit/4242a1300e031b5bb60062ef342057ca94da2ccf))
+* cleanup ([2d1580d](https://github.com/pirix-gh/ts-toolbelt/commit/2d1580da61369576158c5f0972d0c2a7ff10175e))
+* cleanup ([a83b90e](https://github.com/pirix-gh/ts-toolbelt/commit/a83b90ecd781f350510cc59b342b0c3e70d6ecf6))
+* cleanup ([dfb2506](https://github.com/pirix-gh/ts-toolbelt/commit/dfb25067cfb5bb69b0d5102d1b2293154b9ffb19))
+* cleanup ([78660f2](https://github.com/pirix-gh/ts-toolbelt/commit/78660f24c2ed7ac8080a77af6b3850a921ee1a07))
+* cleanup ([9fbf2ab](https://github.com/pirix-gh/ts-toolbelt/commit/9fbf2ab952c86579f43b5024862658cb708d2b41))
+* fix misformatted [@return](https://github.com/return) tags ([30e191a](https://github.com/pirix-gh/ts-toolbelt/commit/30e191a72fc39b436c5dc89aa59cc82606ec4cdf))
+* more optimizations ([32c27fc](https://github.com/pirix-gh/ts-toolbelt/commit/32c27fc096b09f3d91120b822c9d3481074789cc))
+* prepare for more optimizations ([1ed033d](https://github.com/pirix-gh/ts-toolbelt/commit/1ed033dfafeced0bcbdc87af37530c6e43c2ce43))
+* update notes ([400fde1](https://github.com/pirix-gh/ts-toolbelt/commit/400fde1fb9476e7fbb03ddda061e83de21461d02))
+* update notes ([f9f3c73](https://github.com/pirix-gh/ts-toolbelt/commit/f9f3c73c806303b167618954b6cf39f18bd10126))
+
 ### [4.14.6](https://github.com/pirix-gh/ts-toolbelt/compare/v4.14.5...v4.14.6) (2019-12-19)
 
 
