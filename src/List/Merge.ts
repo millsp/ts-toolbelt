@@ -30,7 +30,7 @@ export type MergeFlat<L extends List, L1 extends List> =
 /**
  * @hidden
  */
-export type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
+export type MergeDeep<O, O1> =
     Kind<(O | O1)> extends 'array'
     ? MergeFlat<O & [], O1 & []> extends infer M
       ? {[K in keyof M]: MergeDeep<M[K], At<O1 & [], K>>} & {}

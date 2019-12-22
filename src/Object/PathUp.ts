@@ -14,7 +14,7 @@ import {List} from '../List/List'
  */
 type _PathUp<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> = {
     0: O extends object
-       ? At<O, Path[Pos<I>], 0> extends infer OK
+       ? At<O, Path[Pos<I>]> extends infer OK
          ? _PathUp<UNonNullable<OK>, Path, Next<I>>
          : never
        : never

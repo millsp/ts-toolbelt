@@ -86,6 +86,7 @@ export {
 //
 // => `keyof` statements are ok and can be used if they're distributed. search for `extends unknown ?`
 // => Remember that simple mapped types distribute well over unions and preserve them
+// => It can be wise to check both `At` and `<type>[...]` calls work with distributivity
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////

@@ -41,7 +41,7 @@ export type MergeUpFlat<O extends object, O1 extends object> =
  */
 type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = False> = {
     [K in keyof (O & O1)]:  And< // we first make sure that both are objects
-                                Extends<Kind<NonNullable<At<O, K>>>, 'object'>,
+                                Extends<Kind<NonNullable<At<O,  K>>>, 'object'>,
                                 Extends<Kind<NonNullable<At<O1, K>>>, 'object'>
                             > extends True
                             ? _MergeUpDeep< // if it is the case, recurse deeper
