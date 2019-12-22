@@ -1,5 +1,5 @@
 import {Key} from '../Any/Key'
-import {Boolean, False} from '../Boolean/Boolean'
+import {Boolean} from '../Boolean/Boolean'
 import {Equals} from '../Any/Equals'
 import {Extends} from '../Any/Extends'
 
