@@ -566,7 +566,7 @@ checks([
 checks([
     check<T.Take<[1, 2, 3?, 4?], '2', '->'>,    [1, 2],                             Test.Pass>(),
     check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3 | undefined, 4 | undefined],     Test.Pass>(), // nothing happens
-    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],                         Test.Pass>(), // nothing happens
+    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],                             Test.Pass>(), // nothing happens
 ])
 
 // ---------------------------------------------------------------------------------------

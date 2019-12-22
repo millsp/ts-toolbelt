@@ -7,6 +7,7 @@ import {Pos} from '../Iteration/Pos'
 import {Reverse} from './Reverse'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
+import {Naked} from './_Internal'
 
 /**
  * @hidden
@@ -29,6 +30,6 @@ type _Zip<L extends List, L1 extends List, LN extends List = [], I extends Itera
  * ```
  */
 export type Zip<L extends List, L1 extends List> =
-    _Zip<L, L1> extends infer X
+    _Zip<Naked<L>, Naked<L1>> extends infer X
     ? Cast<X, List>
     : never

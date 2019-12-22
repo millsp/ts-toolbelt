@@ -22,7 +22,7 @@ type _Reverse<L extends List, LO extends List, I extends Iteration = IterationOf
 
 /** Turn a [[List]] the other way around
  * @param L to reverse
- * @param LO (?=`[]`) to append to
+ * @param LO (?=`[]`) to prepend to
  * @returns **`any[]`**
  * @example
  * ```ts

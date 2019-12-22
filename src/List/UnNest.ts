@@ -8,6 +8,7 @@ import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
 import {List} from './List'
 import {UnionOf} from './UnionOf'
+import {Naked} from './_Internal'
 
 /**
  * @hidden
@@ -53,6 +54,6 @@ type _UnNest<L extends List> =
  * ```
  */
 export type UnNest<L extends List> =
-    _UnNest<L> extends infer X
+    _UnNest<Naked<L>> extends infer X
     ? Cast<X, List>
     : never

@@ -7,18 +7,18 @@ import {Way} from '../Iteration/_Internal'
 import {List} from './List'
 import {Prev} from '../Iteration/Prev'
 import {Cast} from '../Any/Cast'
-import {Length} from './Length'
 import {Naked} from './_Internal'
+import {Tail} from './Tail'
 
 /**
  * starts in reverse from `N` till `N` = 0
  * @hidden
  */
 type TakeForth<L extends List, N extends Iteration, I extends Iteration = Prev<N>, LN extends List = []> = {
-    0: TakeForth<L, Prev<N>, Prev<I>, Prepend<LN, L[Pos<I>]>>
+    0: TakeForth<L, N, Prev<I>, Prepend<LN, L[Pos<I>]>>
     1: LN
 }[
-    Pos<N> extends 0
+    -1 extends Pos<I>
     ? 1
     : 0
 ]
@@ -27,11 +27,11 @@ type TakeForth<L extends List, N extends Iteration, I extends Iteration = Prev<N
  * starts in reverse from the end till `N` = 0
  * @hidden
  */
-type TakeBack<L extends List, N extends Iteration, I extends Iteration = Prev<IterationOf<Length<L, 's'>>>, LN extends List = []> = {
-    0: TakeBack<L, Prev<N>, Prev<I>, Prepend<LN, L[Pos<I>]>>
-    1: LN
+type TakeBack<L extends List, N extends Iteration> = {
+    0: TakeBack<Tail<L>, Prev<N>>
+    1: L
 }[
-    Pos<N> extends 0
+    0 extends Pos<N>
     ? 1
     : 0
 ]

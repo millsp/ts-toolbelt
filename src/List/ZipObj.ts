@@ -8,6 +8,7 @@ import {MergeFlat} from '../Object/Merge'
 import {Record} from '../Object/Record'
 import {Key} from '../Any/Key'
 import {List} from './List'
+import {Naked} from './_Internal'
 
 /**
  * @hidden
@@ -30,6 +31,6 @@ type _ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {
  * ```
  */
 export type ZipObj<LKeys extends List<Key>, LFields extends List> =
-    _ZipObj<LKeys, LFields> extends infer X
+    _ZipObj<Naked<LKeys>, Naked<LFields>> extends infer X
     ? Cast<X, object>
     : never

@@ -61,5 +61,5 @@ type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt e
  */
 export type Range<From extends Number, To extends Number, way extends Way = '->', fmt extends Formats = 's'> =
     _Range<IterationOf<From>, IterationOf<To>, way, fmt> extends infer X
-    ? Cast<X, {s: string[], n: number[]}[fmt]>
+    ? Cast<X, (string | number)[]>
     : never

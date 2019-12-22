@@ -5,6 +5,7 @@ import {Cast} from '../Any/Cast'
 import {Prepend} from './Prepend'
 import {Reverse} from './Reverse'
 import {List} from './List'
+import {Naked} from './_Internal'
 
 /**
  * @hidden
@@ -27,6 +28,6 @@ type _Group<L extends List, N extends Number, LN extends List = []> = {
  * ```
  */
 export type Group<L extends List, N extends Number> =
-    _Group<L, N> extends infer X
+    _Group<Naked<L>, N> extends infer X
     ? Cast<X, List>
     : never
