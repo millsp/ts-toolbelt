@@ -6,7 +6,6 @@ import {Next} from '../Iteration/Next'
 import {Length} from '../List/Length'
 import {Cast} from '../Any/Cast'
 import {List} from '../List/List'
-import {O} from '..'
 
 /**
  * @hidden
