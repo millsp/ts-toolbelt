@@ -17,7 +17,7 @@ type _Merge<L extends List, L1 extends List> = ListOf<ObjectOf<{
 /**
  * @hidden
  */
-type MergeFlat<L extends List, L1 extends List> =
+export type MergeFlat<L extends List, L1 extends List> =
     number extends Length<L | L1>
     // if we can't know the size, then get closest type
     ? (L | L1) extends (infer L)[] ? L[] : never
@@ -27,7 +27,7 @@ type MergeFlat<L extends List, L1 extends List> =
 /**
  * @hidden
  */
-type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
+export type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
     Kind<(O | O1)> extends 'array'
     ? MergeFlat<O & [], O1 & []> extends infer M
       ? {[K in keyof M]: MergeDeep<M[K], At<O1 & [], K>>} & {}

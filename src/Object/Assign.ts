@@ -1,6 +1,6 @@
 import {Iteration} from '../Iteration/Iteration'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Merge} from './Merge'
+import {MergeFlat} from './Merge'
 import {Pos} from '../Iteration/Pos'
 import {Next} from '../Iteration/Next'
 import {Length} from '../List/Length'
@@ -11,7 +11,7 @@ import {List} from '../List/List'
  * @hidden
  */
 type _Assign<O extends object, Os extends List<object>, I extends Iteration = IterationOf<'0'>> = {
-    0: _Assign<Merge<Os[Pos<I>], O>, Os, Next<I>>
+    0: _Assign<MergeFlat<Os[Pos<I>], O>, Os, Next<I>>
     1: O
 }[
     Pos<I> extends Length<Os>

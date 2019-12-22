@@ -8,13 +8,13 @@ import {Keys} from './Keys'
 /**
  * @hidden
  */
-type MergeFlat<O extends object, O1 extends object> =
+export type MergeFlat<O extends object, O1 extends object> =
     Compute<O & Omit<O1, Keys<O>>>
 
 /**
  * @hidden
  */
-type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
+export type MergeDeep<O, O1> = // we do not distribute this one => recursive distributed above
     (Kind<(O | O1)> extends 'object'
     ? MergeFlat<O & {}, O1 & {}> extends infer M
       ? {[K in keyof M]: MergeDeep<M[K], At<O1 & {}, K>>} & {}

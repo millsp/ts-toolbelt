@@ -1,6 +1,6 @@
 import {Compute} from '../Any/Compute'
 import {Keys} from './Keys'
-import {Optional} from '../Object/Optional'
+import {OptionalFlat} from '../Object/Optional'
 import {Record} from '../Object/Record'
 
 /**
@@ -8,7 +8,7 @@ import {Record} from '../Object/Record'
  */
 type _Strict<U, _U = U> =
     U extends unknown
-    ? U & Optional<Record<Exclude<Keys<_U>, keyof U>, never>>
+    ? U & OptionalFlat<Record<Exclude<Keys<_U>, Keys<U>>, never>>
     : never
 
 /** Make a [[Union]] not allow excess properties (https://github.com/Microsoft/TypeScript/issues/20863)

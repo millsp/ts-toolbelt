@@ -1,10 +1,9 @@
 import {Key} from '../Any/Key'
 import {x} from '../Any/x'
 import {Replace} from '../Union/Replace'
-import {Merge} from './Merge'
+import {MergeFlat} from './Merge'
 import {Exclude} from '../Union/Exclude'
 import {Keys} from '../Union/Keys'
-import {Overwrite} from './Overwrite'
 
 /** Update in **`O`** the fields of key **`K`** with **`A`**.
  * Use the [[x]] placeholder to get the current field type.
@@ -37,7 +36,7 @@ import {Overwrite} from './Overwrite'
  * ```
  */
 export type Update<O extends object, K extends Key, A extends any> =
-    Merge<{
+    MergeFlat<{
         [P in keyof O]: P extends K                     // proceed with the known keys
                         ? Replace<A, x, O[P]>
                         : O[P]

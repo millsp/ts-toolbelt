@@ -4,7 +4,7 @@ import {Next} from '../Iteration/Next'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
-import {Merge} from '../Object/Merge'
+import {MergeFlat} from '../Object/Merge'
 import {Record} from '../Object/Record'
 import {Key} from '../Any/Key'
 import {List} from './List'
@@ -13,7 +13,7 @@ import {List} from './List'
  * @hidden
  */
 type _ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
-    0: _ZipObj<LKeys, LFields, Merge<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
+    0: _ZipObj<LKeys, LFields, MergeFlat<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
     1: O
 }[
     Pos<I> extends Length<LKeys>

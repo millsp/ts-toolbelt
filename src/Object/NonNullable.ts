@@ -1,4 +1,4 @@
-import {Merge} from './Merge'
+import {MergeFlat} from './Merge'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
@@ -39,6 +39,6 @@ type NonNullablePart<O extends object, depth extends Depth> = {
  */
 export type NonNullable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: NonNullablePart<O, depth>
-    0: Merge<NonNullablePart<Pick<O, K>, depth>, O>
+    0: MergeFlat<NonNullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> non-nullable -> merge it with O
 }[Implements<Keys<O>, K>]

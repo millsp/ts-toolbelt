@@ -29,7 +29,7 @@ type _MergeUpFlat<O extends object, O1 extends object, OOK extends Key = Optiona
 /**
  * @hidden
  */
-type MergeUpFlat<O extends object, O1 extends object> =
+export type MergeUpFlat<O extends object, O1 extends object> =
     O extends unknown
     ? O1 extends unknown
       ? _MergeUpFlat<O, O1>
@@ -62,7 +62,7 @@ type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends 
 /**
  * @hidden
  */
-type MergeUpDeep<O extends object, O1 extends object> =
+export type MergeUpDeep<O extends object, O1 extends object> =
     O extends unknown
     ? O1 extends unknown
       ? _MergeUpDeep<O, O1>

@@ -1,4 +1,4 @@
-import {Merge} from './Merge'
+import {MergeFlat} from './Merge'
 import {Nullable as UNullable} from '../Union/Nullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
@@ -38,6 +38,6 @@ type NullablePart<O extends object, depth extends Depth> = {
  */
 export type Nullable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: NullablePart<O, depth>
-    0: Merge<NullablePart<Pick<O, K>, depth>, O>
+    0: MergeFlat<NullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
 }[Implements<Keys<O>, K>]

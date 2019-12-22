@@ -1,6 +1,6 @@
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {Merge} from './Merge'
+import {MergeFlat} from './Merge'
 import {Key} from '../Any/Key'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
@@ -37,6 +37,6 @@ type WritablePart<O extends object, depth extends Depth> = {
  */
 export type Writable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: WritablePart<O, depth>
-    0: Merge<WritablePart<Pick<O, K>, depth>, O>
+    0: MergeFlat<WritablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
 }[Implements<Keys<O>, K>]

@@ -1,4 +1,4 @@
-import {Merge} from './Merge'
+import {MergeFlat} from './Merge'
 import {Exclude} from './Exclude'
 import {Match} from '../Any/_Internal'
 
@@ -31,4 +31,4 @@ import {Match} from '../Any/_Internal'
  * ```
  */
 export type Diff<O extends object, O1 extends object, match extends Match = 'default'> =
-    Merge<Exclude<O, O1, match>, Exclude<O1, O, match>>
+    MergeFlat<Exclude<O, O1, match>, Exclude<O1, O, match>>
