@@ -35,7 +35,6 @@ export {OptionalKeys} from './OptionalKeys'
 export {Overwrite} from './Overwrite'
 export {Path} from './Path'
 export {Paths} from './Paths'
-export {PathUp} from './PathUp'
 export {PathValid} from './PathValid'
 export {Pick} from './Pick'
 export {Readonly} from './Readonly'
@@ -52,8 +51,3 @@ export {UnionOf} from './UnionOf'
 export {Update} from './Update'
 export {Writable} from './Writable'
 export {WritableKeys} from './WritableKeys'
-
-// LEGACY
-
-export {Clean as Ensure} from '../Any/Clean'
-export {ListOf as TupleOf} from './ListOf'

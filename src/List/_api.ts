@@ -1,4 +1,5 @@
 /** @ignore *//** */
+
 export {Append} from './Append'
 export {Assign} from './Assign'
 export {AssignUp} from './AssignUp'
@@ -41,7 +42,6 @@ export {OptionalKeys} from './OptionalKeys'
 export {Overwrite} from './Overwrite'
 export {Path} from './Path'
 export {Paths} from './Paths'
-export {PathUp} from './PathUp'
 export {PathValid} from './PathValid'
 export {Pick} from './Pick'
 export {Pop} from './Pop'
@@ -68,7 +68,3 @@ export {Writable} from './Writable'
 export {WritableKeys} from './WritableKeys'
 export {Zip} from './Zip'
 export {ZipObj} from './ZipObj'
-
-// LEGACY
-
-export {List as Tuple} from './List'

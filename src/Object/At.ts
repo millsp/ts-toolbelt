@@ -16,9 +16,7 @@ type AtStrict<O extends object, K extends Key> =
  */
 type AtLoose<O extends object, K extends Key> =
     Equals<K, any> extends 1
-    ? O extends unknown
-      ? O[keyof O]
-      : never
+    ? O[never]
     : O extends unknown
       ? Extends<K & keyof O, keyof O> extends 1
         ? O[K & keyof O]
@@ -46,7 +44,7 @@ type AtLoose<O extends object, K extends Key> =
  * type test0 = O.At<User, 'id'> // number
  * ```
  */
-export type At<O extends object, K extends Key, strict extends Boolean = False> = {
+export type At<O extends object, K extends Key, strict extends Boolean = 1> = {
     1: AtStrict<O, K>
     0: AtLoose<O, K>
 }[strict]

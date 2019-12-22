@@ -754,6 +754,28 @@ checks([
     check<O.Path<O, []>,                    O,      Test.Pass>(),
 ])
 
+type O_PATH_U = {
+    b: {
+        c: {
+            d: 'bcd'
+        }
+        b: 'bb'
+    }
+} | {
+    a: {
+        b: boolean | {
+            c: 'abc'
+        }
+    }
+};
+
+checks([
+    check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>,      never,                          Test.Pass>(),
+    check<O.Path<O_PATH_U, ['b', 'c', 'd'], 0>,      'bcd',                          Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a', 'b', 'c'], 0>,      'abc',                          Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a' | 'b', 'b'], 0>,     boolean | 'bb' | {c: 'abc'},    Test.Pass>(),
+])
+
 // ---------------------------------------------------------------------------------------
 // PATHS
 
@@ -774,31 +796,6 @@ type Index = (string | number | symbol);
 checks([
     check<O.Paths<any>,     Index[],                                                            Test.Pass>(),
     check<O.Paths<O_PATHS>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>,    Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// PATHUP
-
-type O_PATHUP = {
-    b: {
-        c: {
-            d: 'bcd'
-        }
-        b: 'bb'
-    }
-} | {
-    a: {
-        b: boolean | {
-            c: 'abc'
-        }
-    }
-};
-
-checks([
-    check<O.PathUp<O_PATHUP, ['b', 'c', 'x']>,      never,                          Test.Pass>(),
-    check<O.PathUp<O_PATHUP, ['b', 'c', 'd']>,      'bcd',                          Test.Pass>(),
-    check<O.PathUp<O_PATHUP, ['a', 'b', 'c']>,      'abc',                          Test.Pass>(),
-    check<O.PathUp<O_PATHUP, ['a' | 'b', 'b']>,     boolean | 'bb' | {c: 'abc'},    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -14,7 +14,3 @@ export {Pick} from './Pick'
 export {Try} from './Try'
 export {Type} from './Type'
 export {x} from './x'
-
-// LEGACY
-
-export {Key as Index} from './Key'
