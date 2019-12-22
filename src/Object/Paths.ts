@@ -6,7 +6,7 @@ import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
 import {True} from '../Boolean/Boolean'
 import {List} from '../List/List'
-import {Append} from '../List/_api'
+import {Append} from '../List/Append'
 
 /**
  * @hidden

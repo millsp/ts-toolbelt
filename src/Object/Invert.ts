@@ -3,6 +3,16 @@ import {Key} from '../Any/Key'
 import {IntersectOf} from '../Union/IntersectOf'
 import {Compute} from '../Any/Compute'
 
+/**
+ * @hidden
+ */
+type _Invert<O extends Record<Key, Key>> =
+  Compute<IntersectOf<
+    { // swaps the key and the value
+      [K in keyof O]: Record<O[K], K>
+    }[keyof O]
+  >>
+
 /** Swaps the keys and values of an **`object`** (if applicable)
  * @param O
  * @returns **`object`**
@@ -30,9 +40,7 @@ import {Compute} from '../Any/Compute'
  * type test1 = O.Invert<O>
  * ```
  */
-export type Invert<O extends Record<keyof O, Key>> =
-  Compute<IntersectOf<
-    { // swaps the key and the value
-      [K in keyof O]: Record<O[K], K>
-    }[keyof O]
-  >>
+export type Invert<O extends Record<Key, Key>> =
+    O extends unknown
+    ? _Invert<O>
+    : never

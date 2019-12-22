@@ -11,4 +11,4 @@ export type Overwrite<O extends object, O1 extends object> = {
     [K in keyof O]: K extends keyof O1
                     ? O1[K]
                     : O[K]
-} & {} // todo needs UAt
+} & {}

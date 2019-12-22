@@ -42,4 +42,4 @@ export type Compulsory<O extends object, K extends Key = any, depth extends Dept
     1: CompulsoryPart<O, depth>
     0: MergeFlat<CompulsoryPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<keyof O, K>]
+}[Implements<Keys<O>, K>]
