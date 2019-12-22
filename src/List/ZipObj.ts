@@ -22,6 +22,14 @@ type _ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {
     : 0
 ]
 
+/**
+ * @hidden
+ */
+export type __ZipObj<LKeys extends List<Key>, LFields extends List> =
+    _ZipObj<Naked<LKeys>, Naked<LFields>> extends infer X
+    ? Cast<X, object>
+    : never
+
 /** Create an **`object`** from [[List]]s of keys & fields
  * @param LKeys its keys
  * @param LFields its fields
@@ -31,6 +39,8 @@ type _ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {
  * ```
  */
 export type ZipObj<LKeys extends List<Key>, LFields extends List> =
-    _ZipObj<Naked<LKeys>, Naked<LFields>> extends infer X
-    ? Cast<X, object>
+    LKeys extends unknown
+    ? LFields extends unknown
+      ? __ZipObj<LKeys, LFields>
+      : never
     : never

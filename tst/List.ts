@@ -593,10 +593,11 @@ checks([
 // ---------------------------------------------------------------------------------------
 // UNNEST
 
+
 checks([
-    check<T.UnNest<[[1], [2],   [3, [4]]]>,     [1, 2, 3, [4]],     Test.Pass>(),
-    check<T.UnNest<number[][] | number[]>,      number[],           Test.Pass>(),
-    check<T.UnNest<any>,                        any[],              Test.Pass>(),
+    check<T.UnNest<[[1], [2],   [3, [4]]]>,     [1, 2, 3, [4]],         Test.Pass>(),
+    check<T.UnNest<number[][][] | number[]>,    number[][] | number[],  Test.Pass>(),
+    check<T.UnNest<any>,                        any[],                  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

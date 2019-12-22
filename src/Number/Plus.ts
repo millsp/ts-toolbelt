@@ -63,6 +63,12 @@ export type _Plus<N1 extends Iteration, N2 extends Iteration> = {
     1: PlusNegative<N1, N2>
 }[_IsNegative<N2>]
 
+/**
+ * @hidden
+ */
+export type __Plus<N1 extends Number, N2 extends Number, fmt extends Formats = 's'> =
+    Format<_Plus<IterationOf<N1>, IterationOf<N2>>, fmt>
+
 /** Add a [[Number]] to another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
@@ -81,4 +87,8 @@ export type _Plus<N1 extends Iteration, N2 extends Iteration> = {
  * ```
  */
 export type Plus<N1 extends Number, N2 extends Number, fmt extends Formats = 's'> =
-    Format<_Plus<IterationOf<N1>, IterationOf<N2>>, fmt>
+    N1 extends unknown
+    ? N2 extends unknown
+    ? __Plus<N1, N2, fmt>
+    : never
+    : never

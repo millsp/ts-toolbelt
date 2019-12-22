@@ -42,6 +42,14 @@ type _Drop<L extends List, N extends Iteration, way extends Way = '->'> = {
     '<-': DropBack<L, N>
 }[way]
 
+/**
+ * @hidden
+ */
+export type __Drop<L extends List, N extends Number, way extends Way = '->'> =
+    _Drop<Naked<L>, IterationOf<N>, way> extends infer X
+    ? Cast<X, List>
+    : never
+
 /** Remove **`N`** entries out of **`L`**
  * @param L to remove from
  * @param N to remove out
@@ -52,6 +60,8 @@ type _Drop<L extends List, N extends Iteration, way extends Way = '->'> = {
  * ```
  */
 export type Drop<L extends List, N extends Number, way extends Way = '->'> =
-    _Drop<Naked<L>, IterationOf<N>, way> extends infer X
-    ? Cast<X, List>
+    L extends unknown
+    ? N extends unknown
+      ? __Drop<L, N, way>
+      : never
     : never

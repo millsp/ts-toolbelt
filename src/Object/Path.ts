@@ -22,6 +22,14 @@ type _Path<O, Path extends List<Key>, strict extends Boolean, I extends Iteratio
     : 0 // Continue iterating and go deeper within the object with `At`
 ]
 
+/**
+ * @hidden
+ */
+export type __Path<O extends object, Path extends List<Key>, strict extends Boolean = True> =
+    _Path<O, Path, strict> extends infer X
+    ? Cast<X, any>
+    : never
+
 /** Get in **`O`** the type of nested properties
  * For more advanced capabilities, see [[PathUp]]
  * @param O to be inspected
@@ -32,6 +40,8 @@ type _Path<O, Path extends List<Key>, strict extends Boolean, I extends Iteratio
  * ```
  */
 export type Path<O extends object, Path extends List<Key>, strict extends Boolean = True> =
-    _Path<O, Path, strict> extends infer X
-    ? Cast<X, any>
+    O extends unknown
+    ? Path extends unknown
+      ? __Path<O, Path, strict>
+      : never
     : never

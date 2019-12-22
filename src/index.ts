@@ -89,8 +89,12 @@ export {
 // => In those cases, we do the distributution manually by inserting `<type> extends unknown ? ... : never`
 // => `keyof` statements are ok and can be used if they're distributed. search for `extends unknown ?`
 // => Remember that simple mapped types distribute well over unions and preserve them (no problem)
+//
+// => For recursive types that re-use each other, we MUST NOT use the distributed version since they all do it
+//    We must import the version of the type that is named `type __<name>`. This is the non-distributed version
+//    (otherwise, we would distribute over something that is already distributed (pointless, it uses resources))
+//
+// => And if you wonder what the `type _<name>` means, it's a "step" in the implementation (bare implementation)
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
-
-// - distribute recursive types

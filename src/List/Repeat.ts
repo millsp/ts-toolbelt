@@ -20,6 +20,14 @@ type _Repeat<N extends Number, A, L extends List = [], I extends Iteration = Ite
     : 0
 ]
 
+/**
+ * @hidden
+ */
+export type __Repeat<A extends any, N extends Number, L extends List = []> =
+    _Repeat<N, A, Naked<L>> extends infer X
+    ? Cast<X, List>
+    : never
+
 /** Fill a [[List]] with **`N`** times **`A`**
  * @param A to fill with
  * @param N to repeat it
@@ -30,6 +38,8 @@ type _Repeat<N extends Number, A, L extends List = [], I extends Iteration = Ite
  * ```
  */
 export type Repeat<A extends any, N extends Number, L extends List = []> =
-    _Repeat<N, A, Naked<L>> extends infer X
-    ? Cast<X, List>
+    N extends unknown
+    ? L extends unknown
+      ? __Repeat<A, N, L>
+      : never
     : never

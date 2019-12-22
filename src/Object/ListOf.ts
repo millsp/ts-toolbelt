@@ -27,16 +27,23 @@ type _ListOf<O extends object, K, LN extends List = [], I extends Iteration = It
     : 0
 ]
 
+/**
+ * @hidden
+ */
+export type __ListOf<O extends object> =
+    _ListOf<O, keyof O> extends infer X
+    ? Cast<X, List>
+    : never
+
 /** Transform an **`object`** into a [[List]]
  * (It will only pick numeric literal indexes)
  * @param O to transform
- * @param LastK last index to pick
  * @returns **`any[]`**
  * @example
  * ```ts
  * ```
  */
 export type ListOf<O extends object> =
-    _ListOf<O, keyof O> extends infer X
-    ? Cast<X, List>
+    O extends unknown
+    ? __ListOf<O>
     : never

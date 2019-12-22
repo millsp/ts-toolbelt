@@ -20,6 +20,14 @@ type _Reverse<L extends List, LO extends List, I extends Iteration = IterationOf
     : 0
 ]
 
+/**
+ * @hidden
+ */
+export type __Reverse<L extends List, LO extends List = []> =
+    _Reverse<Naked<L>, LO> extends infer X
+    ? Cast<X, List>
+    : never
+
 /** Turn a [[List]] the other way around
  * @param L to reverse
  * @param LO (?=`[]`) to prepend to
@@ -29,6 +37,8 @@ type _Reverse<L extends List, LO extends List, I extends Iteration = IterationOf
  * ```
  */
 export type Reverse<L extends List, LO extends List = []> =
-    _Reverse<Naked<L>, LO> extends infer X
-    ? Cast<X, List>
+    L extends unknown
+    ? LO extends unknown
+      ? __Reverse<L, LO>
+      : never
     : never

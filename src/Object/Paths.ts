@@ -26,6 +26,14 @@ type _Paths<O, Paths extends List<Key> = []> = {
       : 1                         // 1: Exit
 ]
 
+/**
+ * @hidden
+ */
+export type __Paths<O extends object> =
+    _Paths<O> extends infer X
+    ? Cast<X, List<Key>>
+    : never
+
 /** Get all the possible paths of **`O`**
  * (⚠️ this won't work with circular-refs)
  * @param O to be inspected
@@ -35,6 +43,6 @@ type _Paths<O, Paths extends List<Key> = []> = {
  * ```
  */
 export type Paths<O extends object> =
-    _Paths<O> extends infer X
-    ? Cast<X, List<Key>>
+    O extends unknown
+    ? __Paths<O>
     : never

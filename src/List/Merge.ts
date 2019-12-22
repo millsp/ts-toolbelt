@@ -11,7 +11,7 @@ import {List} from './List'
 /**
  * @hidden
  */
-type _Merge<L extends List, L1 extends List> = ListOf<ObjectOf<{
+type _MergeFlat<L extends List, L1 extends List> = ListOf<ObjectOf<{
     [K in keyof (L & L1)]: [At<L, K>] extends [never]
                            ? At<L1, K>
                            : At<L, K>
@@ -25,7 +25,7 @@ export type MergeFlat<L extends List, L1 extends List> =
     // if we can't know the size, then get closest type
     ? (L | L1) extends (infer L)[] ? L[] : never
     // if it's a tuple then we proceed with the merging
-    : _Merge<L, L1>
+    : _MergeFlat<L, L1>
 
 /**
  * @hidden

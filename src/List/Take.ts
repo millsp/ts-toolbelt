@@ -44,6 +44,14 @@ type _Take<L extends List, N extends Iteration, way extends Way> = {
     '<-': TakeBack<L, N>  // Reverse logic to work naturally #`Prepend`
 }[way]
 
+/**
+ * @hidden
+ */
+export type __Take<L extends List, N extends Number, way extends Way = '->'> =
+    _Take<Naked<L>, IterationOf<N>, way> extends infer X
+    ? Cast<X, List>
+    : never
+
 /** Extract **`N`** entries out of **`L`**
  * @param L to extract from
  * @param N to extract out
@@ -54,6 +62,8 @@ type _Take<L extends List, N extends Iteration, way extends Way> = {
  * ```
  */
 export type Take<L extends List, N extends Number, way extends Way = '->'> =
-    _Take<Naked<L>, IterationOf<N>, way> extends infer X
-    ? Cast<X, List>
+    L extends unknown
+    ? N extends unknown
+      ? __Take<L, N, way>
+      : never
     : never

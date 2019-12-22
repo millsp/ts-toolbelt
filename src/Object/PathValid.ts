@@ -28,6 +28,13 @@ type _PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0
       ? 2
       : 0
 ]
+/**
+ * @hidden
+ */
+export type __PathValid<O extends object, Path extends List<AKey>> =
+    _PathValid<O, Path> extends infer X
+    ? Cast<X, List<AKey>>
+    : never
 
 /** Replaces invalid parts of a path with `never`
  * @param O to be inspected
@@ -57,6 +64,8 @@ type _PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0
  * ```
  */
 export type PathValid<O extends object, Path extends List<AKey>> =
-    _PathValid<O, Path> extends infer X
-    ? Cast<X, List<AKey>>
+    O extends unknown
+    ? Path extends unknown
+      ? __PathValid<O, Path>
+      : never
     : never

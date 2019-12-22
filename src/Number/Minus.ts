@@ -63,6 +63,12 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
     1: MinusNegative<N1, N2>
 }[_IsNegative<N2>]
 
+/**
+ * @hidden
+ */
+export type __Minus<N1 extends Number, N2 extends Number, fmt extends Formats = 's'> =
+    Format<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
+
 /** Subtract a [[Number]] from another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
@@ -81,4 +87,8 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration> = {
  * ```
  */
 export type Minus<N1 extends Number, N2 extends Number, fmt extends Formats = 's'> =
-    Format<_Minus<IterationOf<N1>, IterationOf<N2>>, fmt>
+    N1 extends unknown
+    ? N2 extends unknown
+      ? __Minus<N1, N2, fmt>
+      : never
+    : never

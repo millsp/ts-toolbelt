@@ -29,3 +29,5 @@ export type ListOf<U extends Union> =
     _ListOf<U> extends infer X
     ? Cast<X, List>
     : never
+
+// ! must not be distributed

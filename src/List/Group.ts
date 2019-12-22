@@ -1,9 +1,9 @@
 import {Number} from '../Number/Number'
-import {Drop} from './Drop'
-import {Take} from './Take'
+import {__Drop} from './Drop'
+import {__Take} from './Take'
 import {Cast} from '../Any/Cast'
 import {Prepend} from './Prepend'
-import {Reverse} from './Reverse'
+import {__Reverse} from './Reverse'
 import {List} from './List'
 import {Naked} from './_Internal'
 
@@ -11,13 +11,21 @@ import {Naked} from './_Internal'
  * @hidden
  */
 type _Group<L extends List, N extends Number, LN extends List = []> = {
-    0: _Group<Drop<L, N>, N, Prepend<LN, Take<L, N>>>
-    1: Reverse<LN>
+    0: _Group<__Drop<L, N>, N, Prepend<LN, __Take<L, N>>>
+    1: __Reverse<LN>
 }[
     L extends List<never>
     ? 1
     : 0
 ]
+
+/**
+ * @hidden
+ */
+export type __Group<L extends List, N extends Number> =
+    _Group<Naked<L>, N> extends infer X
+    ? Cast<X, List>
+    : never
 
 /** Split **`L`** into sub-[[List]]s every **`N`**
  * @param L to group
@@ -28,6 +36,8 @@ type _Group<L extends List, N extends Number, LN extends List = []> = {
  * ```
  */
 export type Group<L extends List, N extends Number> =
-    _Group<Naked<L>, N> extends infer X
-    ? Cast<X, List>
+    L extends unknown
+    ? N extends unknown
+      ? __Group<L, N>
+      : never
     : never

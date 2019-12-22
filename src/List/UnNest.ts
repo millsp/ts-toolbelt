@@ -46,6 +46,14 @@ type _UnNest<L extends List> =
     ? _UnNestCheap<L>
     : _UnNestExact<L>
 
+/**
+ * @hidden
+ */
+export type __UnNest<L extends List> =
+    _UnNest<Naked<L>> extends infer X
+    ? Cast<X, List>
+    : never
+
 /** Remove a dimension of **`L`**
  * @param L to un-nest
  * @returns **`any[]`**
@@ -54,6 +62,6 @@ type _UnNest<L extends List> =
  * ```
  */
 export type UnNest<L extends List> =
-    _UnNest<Naked<L>> extends infer X
-    ? Cast<X, List>
+    L extends unknown
+    ? __UnNest<L>
     : never

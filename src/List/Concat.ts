@@ -1,4 +1,4 @@
-import {Reverse} from './Reverse'
+import {__Reverse} from './Reverse'
 import {List} from './List'
 
 /** Attach **`L1`** at the end of **`L`**
@@ -10,4 +10,4 @@ import {List} from './List'
  * ```
  */
 export type Concat<L extends List, L1 extends List> =
-    Reverse<Reverse<L>, L1>
+    __Reverse<__Reverse<L>, L1>

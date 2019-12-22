@@ -42,6 +42,14 @@ type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt e
     '<-': RangeBack<From, Next<To>, fmt>  // Works in reverse mode (default) #`Prepend`
 }[way]
 
+/**
+ * @hidden
+ */
+export type __Range<From extends Number, To extends Number, way extends Way = '->', fmt extends Formats = 's'> =
+    _Range<IterationOf<From>, IterationOf<To>, way, fmt> extends infer X
+    ? Cast<X, (string | number)[]>
+    : never
+
 /** Create a range of **number**s
  * @param From to start with
  * @param To to end with
@@ -60,6 +68,8 @@ type _Range<From extends Iteration, To extends Iteration, way extends Way, fmt e
  * ```
  */
 export type Range<From extends Number, To extends Number, way extends Way = '->', fmt extends Formats = 's'> =
-    _Range<IterationOf<From>, IterationOf<To>, way, fmt> extends infer X
-    ? Cast<X, (string | number)[]>
+    From extends unknown
+    ? To extends unknown
+      ? __Range<From, To, way, fmt>
+      : never
     : never
