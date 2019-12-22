@@ -82,15 +82,15 @@ export {
 // There are three families of types that do not distribute well (at all)
 // - types that make use of `keyof`. `keyof` is a distribution breaker. search for `(?<! in )keyof(?! any)`
 // - recursive iteration types, the ones that are of the `Concat` form. search for `extends infer X`
+//   (this happens because this is an unsupported feature, it's neither `extends` nor a mapped type)
+//   (it has the effect of not distributing/aggregate unions with `At`/`[]`, we must do it manually)
 // - types that are used to compute keys that match certain conditions. search for `}[Keys<` | `}[keyof`
 //
+// => In those cases, we do the distributution manually by inserting `<type> extends unknown ? ... : never`
 // => `keyof` statements are ok and can be used if they're distributed. search for `extends unknown ?`
-// => Remember that simple mapped types distribute well over unions and preserve them
-// => It can be wise to check both `At` and `<type>[...]` calls work with distributivity
+// => Remember that simple mapped types distribute well over unions and preserve them (no problem)
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
 
-// try to distribute types as much as possible => distribute entry only
-// - write tests for the concerned types
-// - check that the performance is good
+// - distribute recursive types
