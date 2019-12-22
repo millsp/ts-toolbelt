@@ -543,6 +543,15 @@ checks([
 // No test needed (same as O.SelectKeys)
 
 // ---------------------------------------------------------------------------------------
+// SHORTEST
+
+checks([
+    check<T.Shortest<T, T1>,        T,      Test.Pass>(),
+    check<T.Shortest<T1, T>,        T,      Test.Pass>(),
+    check<T.Shortest<[0], [1]>,     [0],    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // TAIL
 
 checks([
