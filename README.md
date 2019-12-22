@@ -253,6 +253,7 @@ Contributions are what make the open source community such an amazing place to l
 
 * Improving existing documentation 
 * Adding new types to the collection
+* [Getting involved with things to do](#-whats-next)
 
 ### Pull Requests
 
