@@ -1,6 +1,16 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
-import {Keys} from '../Union/Keys'
+import {Key} from '../Any/Key'
+
+/**
+ * @hidden
+ */
+type _FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
+    [K in keyof O]: {
+        1: never
+        0: K
+    }[Is<O[K], M, match>]
+}[keyof O]
 
 /** Filter out the keys of **`O`** which fields match **`M`**
  * @param O to remove from
@@ -11,10 +21,9 @@ import {Keys} from '../Union/Keys'
  * ```ts
  * ```
  */
-export type FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
-    [K in keyof O]: {
-        1: never
-        0: K
-    }[Is<O[K], M, match>]
-}[Keys<O>] & Keys<O>
-
+export type FilterKeys<O extends object, M extends any, match extends Match = 'default'> =
+    (
+        O extends unknown
+        ? _FilterKeys<O, M, match>
+        : never
+    ) & Key

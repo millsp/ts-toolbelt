@@ -1,4 +1,13 @@
-import {Keys} from '../Union/Keys'
+import {Key} from '../Any/Key'
+
+/**
+ * @hidden
+ */
+type _CompulsoryKeys<O extends object> = {
+    [K in keyof O]: [O[K] & (undefined | null)] extends [never]
+                    ? K
+                    : never
+}[keyof O]
 
 /** Get the keys of **`O`** that are compulsory
  * (⚠️ needs `--strictNullChecks` enabled)
@@ -8,8 +17,9 @@ import {Keys} from '../Union/Keys'
  * ```ts
  * ```
  */
-export type CompulsoryKeys<O extends object> = {
-    [K in keyof O]: [O[K] & (undefined | null)] extends [never]
-                    ? K
-                    : never
-}[Keys<O>] & Keys<O>
+export type CompulsoryKeys<O extends object> =
+    (
+        O extends unknown
+        ? _CompulsoryKeys<O>
+        : never
+    ) & Key

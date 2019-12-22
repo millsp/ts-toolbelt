@@ -1,4 +1,13 @@
-import {Keys} from '../Union/Keys'
+import {Key} from '../Any/Key'
+
+/**
+ * @hidden
+ */
+type _NullableKeys<O extends object> = {
+    [K in keyof O]: [O[K] & (undefined | null)] extends [never]
+                    ? never
+                    : K
+}[keyof O]
 
 /** Get the keys of **`O`** that are nullable
  * (⚠️ needs `--strictNullChecks` enabled)
@@ -8,8 +17,9 @@ import {Keys} from '../Union/Keys'
  * ```ts
  * ```
  */
-export type NullableKeys<O extends object> = {
-    [K in keyof O]: [O[K] & (undefined | null)] extends [never]
-                    ? never
-                    : K
-}[Keys<O>] & Keys<O>
+export type NullableKeys<O extends object> =
+    (
+        O extends unknown
+        ? _NullableKeys<O>
+        : never
+    ) & Key

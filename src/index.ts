@@ -82,7 +82,7 @@ export {
 // There are three families of types that do not distribute well (at all)
 // - types that make use of `keyof`. `keyof` is a distribution breaker. search for `(?<! in) keyof (?!any)`
 // - recursive iteration types, the ones that are of the `Concat` form. search for `extends infer X`
-// - types that are used to compute keys that match certain conditions. search for `}[Keys<`
+// - types that are used to compute keys that match certain conditions. search for `}[Keys<` | `}[keyof`
 //
 // => `keyof` statements are ok and can be used if they're distributed. search for `extends unknown ?`
 // => Remember that simple mapped types distribute well over unions and preserve them

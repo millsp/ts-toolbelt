@@ -2,18 +2,28 @@ import {Exclude} from '../Union/Exclude'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
-import {Key} from '../Any/Key'
 import {Keys} from '../Union/Keys'
+import {Key} from '../Any/Key'
 
 /**
  * @hidden
  */
-type ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
+type _ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
     [K in keyof O]: {
         1: never
         0: K
     }[Is<O[K], At<O1, K>, match>]
-}[Keys<O>] & Keys<O>
+}[keyof O]
+
+/**
+ * @hidden
+ */
+type ExcludeMatch<O extends object, O1 extends object, match extends Match> =
+    (
+        O extends unknown
+        ? _ExcludeMatch<O, O1, match>
+        : never
+    ) & Key
 
 /** Exclude the keys of **`O1`** out of the keys of **`O`**
  * (If `match = 'default'`, no type checks are done)

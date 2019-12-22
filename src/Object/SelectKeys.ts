@@ -1,6 +1,16 @@
 import {Match} from '../Any/_Internal'
-import {Keys} from '../Union/Keys'
 import {Is} from '../Any/Is'
+import {Key} from '../Any/Key'
+
+/**
+ * @hidden
+ */
+type _SelectKeys<O extends object, M extends any, match extends Match = 'default'> = {
+    [K in keyof O]: {
+        1: K
+        0: never
+    }[Is<O[K], M, match>]
+}[keyof O]
 
 /** Get the keys of **`O`** which fields match **`M`**
  * @param O to extract from
@@ -11,9 +21,9 @@ import {Is} from '../Any/Is'
  * ```ts
  * ```
  */
-export type SelectKeys<O extends object, M extends any, match extends Match = 'default'> = {
-    [K in keyof O]: {
-        1: K
-        0: never
-    }[Is<O[K], M, match>]
-}[Keys<O>] & Keys<O>
+export type SelectKeys<O extends object, M extends any, match extends Match = 'default'> =
+    (
+        O extends unknown
+        ? _SelectKeys<O, M, match>
+        : never
+    ) & Key

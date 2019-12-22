@@ -1,4 +1,13 @@
-import {Keys} from '../Union/Keys'
+import {Key} from '../Any/Key'
+
+/**
+ * @hidden
+ */
+type _NonNullableKeys<O extends object> = {
+    [K in keyof O]: [O[K] & (undefined | null)] extends [never]
+                    ? K
+                    : never
+}[keyof O]
 
 /** Get the keys of **`O`** that are non-nullable
  * (⚠️ needs `--strictNullChecks` enabled)
@@ -8,8 +17,9 @@ import {Keys} from '../Union/Keys'
  * ```ts
  * ```
  */
-export type NonNullableKeys<O extends object> = {
-    [K in keyof O]: [O[K] & (undefined | null)] extends [never]
-                    ? K
-                    : never
-}[Keys<O>] & Keys<O>
+export type NonNullableKeys<O extends object> =
+    (
+        O extends unknown
+        ? _NonNullableKeys<O>
+        : never
+    ) & Key

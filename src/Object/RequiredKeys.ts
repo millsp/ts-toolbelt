@@ -1,4 +1,11 @@
-import {Keys} from '../Union/Keys'
+import {Key} from '../Any/Key'
+
+/**
+ * @hidden
+ */
+type _RequiredKeys<O extends object> = {
+    [K in keyof O]-?: {} extends Pick<O, K> ? never : K
+}[keyof O]
 
 /** Get the keys of **`O`** that are required
  * @param O
@@ -7,7 +14,9 @@ import {Keys} from '../Union/Keys'
  * ```ts
  * ```
  */
-export type RequiredKeys<O extends object> = {
-    [K in keyof O]-?: {} extends Pick<O, K> ? never : K
-}[Keys<O>] & Keys<O>
-
+export type RequiredKeys<O extends object> =
+    (
+        O extends unknown
+        ? _RequiredKeys<O>
+        : never
+    ) & Key

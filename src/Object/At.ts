@@ -13,7 +13,9 @@ type AtLoose<O extends object, K extends Key> =
       ? O[keyof O]
       : never
     : O extends unknown
-      ? O[K & keyof O]
+      ? Equals<K & keyof O, never> extends 1
+        ? never
+        : O[K & keyof O]
       : never
 
 /** Get in **`O`** the type of a field of key **`K`**
@@ -40,4 +42,4 @@ type AtLoose<O extends object, K extends Key> =
 export type At<O extends object, K extends Key, strict extends Boolean = True> = {
     1: AtStrict<O, K>
     0: AtLoose<O, K>
-}[strict]
+}[0]

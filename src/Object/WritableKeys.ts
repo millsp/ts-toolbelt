@@ -1,7 +1,17 @@
 import {Equals} from '../Any/Equals'
-import {Keys} from '../Union/Keys'
+import {Key} from '../Any/Key'
 
 // Credit https://stackoverflow.com/a/52473108/3570903
+
+/**
+ * @hidden
+ */
+type _WritableKeys<O extends object> = {
+    [K in keyof O]-?: {
+        1: K
+        0: never
+    }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}>]
+}[keyof O]
 
 /** Get the keys of **`O`** that are writable
  * @param O
@@ -10,9 +20,9 @@ import {Keys} from '../Union/Keys'
  * ```ts
  * ```
  */
-export type WritableKeys<O extends object> = {
-    [K in keyof O]-?: {
-        1: K
-        0: never
-    }[Equals<{-readonly [Q in K]: O[K]}, {[Q in K]: O[K]}>]
-}[Keys<O>] & Keys<O>
+export type WritableKeys<O extends object> =
+    (
+        O extends unknown
+        ? _WritableKeys<O>
+        : never
+    ) & Key
