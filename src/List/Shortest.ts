@@ -1,6 +1,6 @@
 import {Exclude} from '../Union/Exclude'
 import {List} from './List'
-import {Keys} from '../Union/Keys'
+import {Keys} from './Keys'
 
 /** Get the shortest [[List]] of **`L`** & **`L1`**
  * (**`L`** has priority if both lengths are equal)

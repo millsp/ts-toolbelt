@@ -2,7 +2,7 @@ import {Exclude} from '../Union/Exclude'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
-import {Keys} from '../Union/Keys'
+import {Keys} from './Keys'
 import {Key} from '../Any/Key'
 
 /**
