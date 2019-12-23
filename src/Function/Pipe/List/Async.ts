@@ -5,6 +5,9 @@ import {Head} from '../../../List/Head'
 import {Return} from '../../Return'
 import {Last} from '../../../List/Last'
 
+/**
+ * @hidden
+ */
 export type PipeListAsync = {
     <
         R0,

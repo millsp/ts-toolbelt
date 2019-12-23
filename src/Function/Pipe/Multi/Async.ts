@@ -1,10 +1,14 @@
 /** @ignore *//** */
+
 import {Function} from '../../Function'
 import {PromiseOf} from '../../../Class/PromiseOf'
 import {Head} from '../../../List/Head'
 import {Return} from '../../Return'
 import {Last} from '../../../List/Last'
 
+/**
+ * @hidden
+ */
 export type PipeMultiAsync = {
     <
         R0,

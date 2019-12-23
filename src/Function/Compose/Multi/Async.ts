@@ -1,10 +1,14 @@
 /** @ignore *//** */
+
 import {Function} from '../../Function'
 import {PromiseOf} from '../../../Class/PromiseOf'
 import {Last} from '../../../List/Last'
 import {Return} from '../../Return'
 import {Head} from '../../../List/Head'
 
+/**
+ * @hidden
+ */
 export type ComposeMultiAsync = {
     <
         R0,
