@@ -10,7 +10,3 @@ export type Mode = 'sync' | 'async'
  */
 export type Input = 'multi' | 'list'
 
-/**
- * @hidden
- */
-export type _Function = Function

@@ -1,4 +1,3 @@
-import {_Function} from './_Internal'
 import {List} from '../List/List'
 
 /** Alias to create a [[Function]]
