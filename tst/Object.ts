@@ -1385,19 +1385,29 @@ type O_PUPDATE_UNIONS = {
             a: 'aba'
             b: 'abb'
         }
-    } | 'a'
+    } | {
+        a: 'x'
+    }
     b?: {
         a: 'x'
         b: {
             a: 'bba'
             b: 'bbb'
         }
-    } | 'b'
+    } | {
+        a: 'x'
+    }
     c?: string
 };
 
 type O_PUPDATE_VPATH = {
-    a: 'a' | {
+    a: {
+        a: {
+            a: {
+                a: 'x'
+            }
+        }
+    } | {
         a: {
             a: {
                 a: 'x'
@@ -1408,7 +1418,13 @@ type O_PUPDATE_VPATH = {
             b: 'abb'
         };
     }
-    b?: 'b' | {
+    b?: {
+        a: {
+            a: {
+                a: 'x'
+            }
+        }
+    } | {
         a: {
             a: {
                 a: 'x'

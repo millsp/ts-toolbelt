@@ -20,7 +20,7 @@ type _RecordReqR<Path extends List<Key>, A, I extends Iteration = IterationOf<'0
 /**
  * @hidden
  */
-type _RecordReqW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
+export type _RecordReqW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
   {
     [Key in Path[Pos<I>]]: Pos<I> extends LastIndex<Path>
                            ? A
