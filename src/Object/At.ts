@@ -26,7 +26,7 @@ type AtLoose<O extends object, K extends Key> =
 /** Get in **`O`** the type of a field of key **`K`**
  * @param O to extract from
  * @param K [[Key]] to extract at
- * @param strict (?=`False`) `True` will male it act like `keyof`
+ * @param strict (?=`0`) `1` will male it act like `keyof`
  * @returns **`any`**
  * @example
  * ```ts

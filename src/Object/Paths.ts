@@ -1,23 +1,22 @@
 import {OptionalFlat} from '../Object/Optional'
 import {Key} from '../Any/Key'
 import {NonNullableFlat} from '../Object/NonNullable'
-import {Concat} from '../List/Concat'
+import {_Concat} from '../List/Concat'
 import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
-import {True} from '../Boolean/Boolean'
 import {List} from '../List/List'
-import {Append} from '../List/Append'
+import {_Append} from '../List/Append'
 
 /**
  * @hidden
  */
-type _Paths<O, Paths extends List<Key> = []> = {
-    0: {[K in keyof O]: _Paths<O[K], Append<Paths, K>>}[keyof O]
+type __Paths<O, Paths extends List<Key> = []> = {
+    0: {[K in keyof O]: __Paths<O[K], _Append<Paths, K>>}[keyof O]
     // It dives deep, and as it dives, it adds the paths to `Paths`
     1: NonNullableFlat<OptionalFlat<Paths>>
-    2: NonNullableFlat<OptionalFlat<Concat<Paths, Key[]>>>
+    2: NonNullableFlat<OptionalFlat<_Concat<Paths, Key[]>>>
 }[
-    Equals<O, any> extends True   // Handle infinite recursion
+    Equals<O, any> extends 1      // Handle infinite recursion
     ? 2                           // 1: Exit adding infinite Path
     : O extends object            // 0: > If object
       ? [keyof O] extends [never] // & If recursion has finished
@@ -29,8 +28,8 @@ type _Paths<O, Paths extends List<Key> = []> = {
 /**
  * @hidden
  */
-export type __Paths<O extends object> =
-    _Paths<O> extends infer X
+export type _Paths<O extends object> =
+    __Paths<O> extends infer X
     ? Cast<X, List<Key>>
     : never
 
@@ -44,5 +43,5 @@ export type __Paths<O extends object> =
  */
 export type Paths<O extends object> =
     O extends unknown
-    ? __Paths<O>
+    ? _Paths<O>
     : never

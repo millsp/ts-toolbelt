@@ -1,5 +1,4 @@
 import {Intersect} from './Intersect'
-import {True, False} from '../Boolean/Boolean'
 import {Union} from './Union'
 
 /** Check whether **`U`** contains **`A`**
@@ -13,5 +12,5 @@ import {Union} from './Union'
  */
 export type Has<U extends Union, A extends Union> =
     [Intersect<U, A>] extends [never]
-    ? False
-    : True
+    ? 0
+    : 1

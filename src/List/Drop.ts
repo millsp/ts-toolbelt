@@ -37,7 +37,7 @@ type DropBack<L extends List, N extends Iteration, I extends Iteration = Prev<N>
 /**
  * @hidden
  */
-type _Drop<L extends List, N extends Iteration, way extends Way = '->'> = {
+type __Drop<L extends List, N extends Iteration, way extends Way = '->'> = {
     '->': DropForth<L, N>
     '<-': DropBack<L, N>
 }[way]
@@ -45,8 +45,8 @@ type _Drop<L extends List, N extends Iteration, way extends Way = '->'> = {
 /**
  * @hidden
  */
-export type __Drop<L extends List, N extends Number, way extends Way = '->'> =
-    _Drop<Naked<L>, IterationOf<N>, way> extends infer X
+export type _Drop<L extends List, N extends Number, way extends Way = '->'> =
+    __Drop<Naked<L>, IterationOf<N>, way> extends infer X
     ? Cast<X, List>
     : never
 
@@ -62,6 +62,6 @@ export type __Drop<L extends List, N extends Number, way extends Way = '->'> =
 export type Drop<L extends List, N extends Number, way extends Way = '->'> =
     L extends unknown
     ? N extends unknown
-      ? __Drop<L, N, way>
+      ? _Drop<L, N, way>
       : never
     : never

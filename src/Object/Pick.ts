@@ -1,5 +1,4 @@
 import {Key} from '../Any/Key'
-import {Keys} from './Keys'
 
 /**
  * @hidden

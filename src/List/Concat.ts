@@ -1,5 +1,11 @@
-import {__Reverse} from './Reverse'
+import {_Reverse} from './Reverse'
 import {List} from './List'
+
+/**
+ * @hidden
+ */
+export type _Concat<L extends List, L1 extends List> =
+    _Reverse<_Reverse<L>, L1>
 
 /** Attach **`L1`** at the end of **`L`**
  * @param L to concat with
@@ -10,4 +16,8 @@ import {List} from './List'
  * ```
  */
 export type Concat<L extends List, L1 extends List> =
-    __Reverse<__Reverse<L>, L1>
+    L extends unknown
+    ? L1 extends L1
+      ? _Concat<L, L1>
+      : never
+    : never

@@ -6,14 +6,14 @@ import {Key} from '../Any/Key'
 import {NonNullable} from '../Union/NonNullable'
 import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
-import {True, Boolean, False} from '../Boolean/Boolean'
+import {Boolean} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
 
 /**
  * @hidden
  */
 type MergeUpProp<O extends object, O1 extends object, K extends Key, IsOptional extends Boolean> =
-    IsOptional extends True             // If `K` is marked as optional
+    IsOptional extends 1                // If `K` is marked as optional
     ? NonNullable<At<O, K>> | At<O1, K> // complete `O[K]` with `O1[K]`
     : [At<O, K>] extends [never]        // or patch `O[K]` with `O1[K]`
       ? At<O1, K>                       // can patch with `O1[K]`
@@ -39,16 +39,16 @@ export type MergeUpFlat<O extends object, O1 extends object> =
 /**
  * @hidden
  */
-type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = False> = {
+type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = 0> = {
     [K in keyof (O & O1)]:  And< // we first make sure that both are objects
                                 Extends<Kind<NonNullable<At<O,  K>>>, 'object'>,
                                 Extends<Kind<NonNullable<At<O1, K>>>, 'object'>
-                            > extends True
+                            > extends 1
                             ? _MergeUpDeep< // if it is the case, recurse deeper
                                 At<O,  K> & {}, // merge O[K]
                                 At<O1, K> & {}, // with O1[K]
                                 // mark the descendants as children of an optional
-                                K extends True ? K : K extends OptionalKeys<O> ? True : False
+                                K extends 1 ? K : K extends OptionalKeys<O> ? 1 : 0
                             >
                             : MergeUpProp< // otherwise, we treat them as fields
                                 O, O1, K,

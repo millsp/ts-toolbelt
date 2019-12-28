@@ -11,8 +11,8 @@ import {Naked} from './_Internal'
 /**
  * @hidden
  */
-type _Repeat<N extends Number, A, L extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _Repeat<N, A, Prepend<L, A>, Next<I>>
+type __Repeat<N extends Number, A, L extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: __Repeat<N, A, Prepend<L, A>, Next<I>>
     1: L
 }[
     N extends Key<I>
@@ -23,8 +23,8 @@ type _Repeat<N extends Number, A, L extends List = [], I extends Iteration = Ite
 /**
  * @hidden
  */
-export type __Repeat<A extends any, N extends Number, L extends List = []> =
-    _Repeat<N, A, Naked<L>> extends infer X
+export type _Repeat<A extends any, N extends Number, L extends List = []> =
+    __Repeat<N, A, Naked<L>> extends infer X
     ? Cast<X, List>
     : never
 
@@ -40,6 +40,6 @@ export type __Repeat<A extends any, N extends Number, L extends List = []> =
 export type Repeat<A extends any, N extends Number, L extends List = []> =
     N extends unknown
     ? L extends unknown
-      ? __Repeat<A, N, L>
+      ? _Repeat<A, N, L>
       : never
     : never

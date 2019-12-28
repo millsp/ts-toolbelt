@@ -1,7 +1,7 @@
 import {Pos} from '../Iteration/Pos'
-import {Append} from '../List/Append'
-import {Concat} from '../List/Concat'
-import {Drop} from '../List/Drop'
+import {_Append} from '../List/Append'
+import {_Concat} from '../List/Concat'
+import {_Drop} from '../List/Drop'
 import {Length} from '../List/Length'
 import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'
@@ -20,7 +20,7 @@ import {Function} from './Function'
  */
 type GapOf<L1 extends List, L2 extends List, LN extends List, I extends Iteration = IterationOf<'0'>> =
     L1[Pos<I>] extends x
-    ? Append<LN, L2[Pos<I>]>
+    ? _Append<LN, L2[Pos<I>]>
     : LN
 
 /**
@@ -28,7 +28,7 @@ type GapOf<L1 extends List, L2 extends List, LN extends List, I extends Iteratio
  */
 type _GapsOf<L1 extends List, L2 extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: _GapsOf<L1, L2, GapOf<L1, L2, LN, I>, Next<I>>
-    1: Concat<LN, Drop<L2, Key<I>>>
+    1: _Concat<LN, _Drop<L2, Key<I>>>
 }[
     Pos<I> extends Length<L1>
     ? 1

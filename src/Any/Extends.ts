@@ -1,5 +1,3 @@
-import {False, True} from '../Boolean/Boolean'
-
 /** Check whether **`A1`** is part of **`A2`** or not. The difference with
  * `extends` is that it forces a [[Boolean]] return.
  * @param A1
@@ -21,10 +19,10 @@ import {False, True} from '../Boolean/Boolean'
  */
 export type Extends<A1 extends any, A2 extends any> =
     [A1] extends [never]
-    ? False // anything `never` is false
+    ? 0 // anything `never` is false
     : A1 extends A2
-      ? True
-      : False
+      ? 1
+      : 0
 
 // Comes from the fact that `never` is a fall-through type that we want to
-// narrow down to `false`. So it means that `Extends<never, any>` is false
+// narrow down to `0`. So it means that `Extends<never, any>` is false

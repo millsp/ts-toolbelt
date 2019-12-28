@@ -17,8 +17,8 @@ import {Length} from '../List/Length'
 /**
  * @hidden
  */
-type _PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0'>> = {
-    0: _PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
+type __PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0'>> = {
+    0: __PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: Update<Path, KeySet<IKey<Prev<I>>, LastIndex<Path, 's'>>, never>
     2: Update<Path, KeySet<IKey<I>, LastIndex<Path, 's'>>, never>
 }[
@@ -31,8 +31,8 @@ type _PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0
 /**
  * @hidden
  */
-export type __PathValid<O extends object, Path extends List<AKey>> =
-    _PathValid<O, Path> extends infer X
+export type _PathValid<O extends object, Path extends List<AKey>> =
+    __PathValid<O, Path> extends infer X
     ? Cast<X, List<AKey>>
     : never
 
@@ -66,6 +66,6 @@ export type __PathValid<O extends object, Path extends List<AKey>> =
 export type PathValid<O extends object, Path extends List<AKey>> =
     O extends unknown
     ? Path extends unknown
-      ? __PathValid<O, Path>
+      ? _PathValid<O, Path>
       : never
     : never

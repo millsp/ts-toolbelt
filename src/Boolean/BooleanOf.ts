@@ -1,5 +1,3 @@
-import {False, True} from './Boolean'
-
 /** Transform a **`boolean`** into a [[Boolean]]
  * @param B to transform
  * @returns [[Boolean]]
@@ -11,5 +9,5 @@ import {False, True} from './Boolean'
  */
 export type BooleanOf<B extends boolean> =
     B extends true
-    ? True
-    : False
+    ? 1
+    : 0

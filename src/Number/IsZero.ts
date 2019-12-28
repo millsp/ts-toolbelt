@@ -1,15 +1,14 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
-import {True, False} from '../Boolean/Boolean'
 
 /**
  * @hidden
  */
 export type _IsZero<N extends Iteration> = {
-    '-': False
-    '+': False
-    '0': True
+    '-': 0
+    '+': 0
+    '0': 1
 }[N[4]]
 
 /** Check whether a [[Number]] is null or not

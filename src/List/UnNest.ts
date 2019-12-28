@@ -1,5 +1,5 @@
-import {Concat} from './Concat'
-import {Append} from './Append'
+import {_Concat} from './Concat'
+import {_Append} from './Append'
 import {Cast} from '../Any/Cast'
 import {Length} from './Length'
 import {Iteration} from '../Iteration/Iteration'
@@ -13,7 +13,7 @@ import {Naked} from './_Internal'
 /**
  * @hidden
  */
-type _UnNestCheap<L extends List> =
+type UnNestCheap<L extends List> =
     (UnionOf<L> extends infer UL    // make `L` a union
     ? UL extends unknown            // for each in union
       ? UL extends List             // if its an array
@@ -26,31 +26,36 @@ type _UnNestCheap<L extends List> =
 /**
  * @hidden
  */
-type _UnNestExact<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: _UnNestExact<L, Concat<LN, L[Pos<I>]>, Next<I>>
-    1: _UnNestExact<L, Append<LN, L[Pos<I>]>, Next<I>>
-    2: LN
+type Flatter<L extends List, LN extends List, I extends Iteration> =
+    L[Pos<I>] extends List
+    ? _Concat<LN, L[Pos<I>]> // if it's a  list
+    : _Append<LN, L[Pos<I>]> // if it's an item
+
+/**
+ * @hidden
+ */
+type UnNestExact<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: UnNestExact<L, Flatter<L, LN, I>, Next<I>>
+    1: LN
 }[
-    Pos<I> extends Length<L>  // its the end
-    ? 2
-    : L[Pos<I>] extends List // element is tuple -> concat
-      ? 0
-      : 1                    // element is other -> Append
+    Pos<I> extends Length<L>
+    ? 1
+    : 0
 ]
 
 /**
  * @hidden
  */
-type _UnNest<L extends List> =
+type __UnNest<L extends List> =
     number extends Length<L>
-    ? _UnNestCheap<L>
-    : _UnNestExact<L>
+    ? UnNestCheap<L>
+    : UnNestExact<L>
 
 /**
  * @hidden
  */
-export type __UnNest<L extends List> =
-    _UnNest<Naked<L>> extends infer X
+export type _UnNest<L extends List> =
+    __UnNest<Naked<L>> extends infer X
     ? Cast<X, List>
     : never
 
@@ -63,5 +68,5 @@ export type __UnNest<L extends List> =
  */
 export type UnNest<L extends List> =
     L extends unknown
-    ? __UnNest<L>
+    ? _UnNest<L>
     : never

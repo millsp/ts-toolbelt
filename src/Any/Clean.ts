@@ -3,8 +3,7 @@ import {Pick} from '../Object/Pick'
 import {At} from '../Object/At'
 import {Exclude} from '../Union/Exclude'
 import {Numbers} from '../Number/_Internal'
-import {ListOf} from '../Object/ListOf'
-import {True} from '../Boolean/Boolean'
+import {_ListOf} from '../Object/ListOf'
 import {HasAll} from '../Union/HasAll'
 
 /**
@@ -29,7 +28,7 @@ type ArrayProps = keyof any[] | ArrayEntry     // so this matches any entry, whe
  */
 export type Clean<A extends any> =
     A extends object
-    ? HasAll<keyof A, keyof any[]> extends True                 // if it is mixed with, or is an array
+    ? HasAll<keyof A, keyof any[]> extends 1                    // if it is mixed with, or is an array
       ? [Exclude<keyof A, ArrayProps>] extends [never]          //   if it is an array, or a tuple
         ? number extends At<A, 'length'>                        //     if it is an array
           ? At<A, number>[]                                     //       reform array
@@ -37,7 +36,7 @@ export type Clean<A extends any> =
         : number extends At<A, 'length'>                        //   else, if it's mixed with
           ? Omit<A, ArrayProps> & At<A, number>[]               //     untangle array
           : At<A, 'length'> extends number                      //   else, if it's a mixed tuple
-            ? Omit<A, ArrayProps> & ListOf<Pick<A, ArrayEntry>> //     untangle tuple
+            ? Omit<A, ArrayProps> & _ListOf<Pick<A, ArrayEntry>> //     untangle tuple
             : A                                                 //     cannot clean it
       : A                                                       // it has not been mixed
     : A

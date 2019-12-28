@@ -10,8 +10,8 @@ import {List} from '../List/List'
 /**
  * @hidden
  */
-type _Assign<O extends object, Os extends List<object>, I extends Iteration = IterationOf<'0'>> = {
-    0: _Assign<MergeFlat<Os[Pos<I>], O>, Os, Next<I>>
+type __Assign<O extends object, Os extends List<object>, I extends Iteration = IterationOf<'0'>> = {
+    0: __Assign<MergeFlat<Os[Pos<I>], O>, Os, Next<I>>
     1: O
 }[
     Pos<I> extends Length<Os>
@@ -22,8 +22,8 @@ type _Assign<O extends object, Os extends List<object>, I extends Iteration = It
 /**
  * @hidden
  */
-export type __Assign<O extends object, Os extends List<object>> =
-    _Assign<O, Os> extends infer X
+export type _Assign<O extends object, Os extends List<object>> =
+    __Assign<O, Os> extends infer X
     ? Cast<X, object>
     : never
 
@@ -38,6 +38,6 @@ export type __Assign<O extends object, Os extends List<object>> =
 export type Assign<O extends object, Os extends List<object>> =
     O extends unknown
     ? Os extends unknown
-      ? __Assign<O, Os>
+      ? _Assign<O, Os>
       : never
     : never

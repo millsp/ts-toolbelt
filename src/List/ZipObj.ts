@@ -13,8 +13,8 @@ import {Naked} from './_Internal'
 /**
  * @hidden
  */
-type _ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
-    0: _ZipObj<LKeys, LFields, MergeFlat<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
+type __ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
+    0: __ZipObj<LKeys, LFields, MergeFlat<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
     1: O
 }[
     Pos<I> extends Length<LKeys>
@@ -25,8 +25,8 @@ type _ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {
 /**
  * @hidden
  */
-export type __ZipObj<LKeys extends List<Key>, LFields extends List> =
-    _ZipObj<Naked<LKeys>, Naked<LFields>> extends infer X
+export type _ZipObj<LKeys extends List<Key>, LFields extends List> =
+    __ZipObj<Naked<LKeys>, Naked<LFields>> extends infer X
     ? Cast<X, object>
     : never
 
@@ -41,6 +41,6 @@ export type __ZipObj<LKeys extends List<Key>, LFields extends List> =
 export type ZipObj<LKeys extends List<Key>, LFields extends List> =
     LKeys extends unknown
     ? LFields extends unknown
-      ? __ZipObj<LKeys, LFields>
+      ? _ZipObj<LKeys, LFields>
       : never
     : never

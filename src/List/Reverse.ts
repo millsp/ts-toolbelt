@@ -11,8 +11,8 @@ import {Naked} from './_Internal'
 /**
  * @hidden
  */
-type _Reverse<L extends List, LO extends List, I extends Iteration = IterationOf<'0'>> = {
-    0: _Reverse<L, Prepend<LO, L[Pos<I>]>, Next<I>>
+type __Reverse<L extends List, LO extends List, I extends Iteration = IterationOf<'0'>> = {
+    0: __Reverse<L, Prepend<LO, L[Pos<I>]>, Next<I>>
     1: LO
 }[
     Pos<I> extends Length<L>
@@ -23,8 +23,8 @@ type _Reverse<L extends List, LO extends List, I extends Iteration = IterationOf
 /**
  * @hidden
  */
-export type __Reverse<L extends List, LO extends List = []> =
-    _Reverse<Naked<L>, LO> extends infer X
+export type _Reverse<L extends List, LO extends List = []> =
+    __Reverse<Naked<L>, LO> extends infer X
     ? Cast<X, List>
     : never
 
@@ -39,6 +39,6 @@ export type __Reverse<L extends List, LO extends List = []> =
 export type Reverse<L extends List, LO extends List = []> =
     L extends unknown
     ? LO extends unknown
-      ? __Reverse<L, LO>
+      ? _Reverse<L, LO>
       : never
     : never

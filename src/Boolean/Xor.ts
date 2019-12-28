@@ -1,4 +1,4 @@
-import {Boolean, False, True} from './Boolean'
+import {Boolean} from './Boolean'
 
 /** Logical **`^`** operator (behaves like the JS one)
  * @param B1 Left-hand side
@@ -15,11 +15,11 @@ import {Boolean, False, True} from './Boolean'
  */
 export type Xor<B1 extends Boolean, B2 extends Boolean> = {
     0: {
-        0: False
-        1: True
+        0: 0
+        1: 1
     }
     1: {
-        0: True
-        1: False
+        0: 1
+        1: 0
     }
 }[B1][B2]

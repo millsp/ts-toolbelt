@@ -1,5 +1,4 @@
 import {Extends} from './Extends'
-import {True} from '../Boolean/Boolean'
 import {List} from '../List/List'
 
 /** Get the literal kind of a type
@@ -10,10 +9,10 @@ import {List} from '../List/List'
  * ```
  */
 export type Kind<A extends any> =
-    Extends<A, Function> extends True ? 'function' : // the order  // to
-    Extends<A, List>     extends True ? 'array'    : // of this is // untangle
-    Extends<A, object>   extends True ? 'object'   : // important  // object types
-    Extends<A, string>   extends True ? 'string'   :
-    Extends<A, number>   extends True ? 'number'   :
-    Extends<A, boolean>  extends True ? 'boolean'  :
+    Extends<A, Function> extends 1 ? 'function' : // the order  // to
+    Extends<A, List>     extends 1 ? 'array'    : // of this is // untangle
+    Extends<A, object>   extends 1 ? 'object'   : // important  // object types
+    Extends<A, string>   extends 1 ? 'string'   :
+    Extends<A, number>   extends 1 ? 'number'   :
+    Extends<A, boolean>  extends 1 ? 'boolean'  :
     'unknown'

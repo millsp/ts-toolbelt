@@ -12,7 +12,6 @@ import {Cast} from '../Any/Cast'
 import {Format} from '../Iteration/Format'
 import {Extends} from '../Any/Extends'
 import {Or} from '../Boolean/Or'
-import {True} from '../Boolean/Boolean'
 
 /**
  * @hidden
@@ -59,7 +58,7 @@ type MaxNegative<N extends Number> =
  * @hidden
  */
 export type _Max<N extends Iteration> =
-    _IsNegative<N> extends True // breaks distribution
+    _IsNegative<N> extends 1 // breaks distribution
     ? MaxNegative<Key<N>>
     : MaxPositive<Exclude<Key<N>, Numbers['string']['-']>>
     // Exclude (-) numbers, MinPositive only works with (+)

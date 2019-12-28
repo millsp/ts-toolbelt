@@ -10,7 +10,6 @@ import {Prev} from '../Iteration/Prev'
 import {_IsPositive} from './IsPositive'
 import {Exclude} from '../Union/Exclude'
 import {Format} from '../Iteration/Format'
-import {True} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 
@@ -59,7 +58,7 @@ type MinNegative<N extends Number> =
  * @hidden
  */
 export type _Min<N extends Iteration> =
-    _IsPositive<N> extends True // breaks distribution
+    _IsPositive<N> extends 1 // breaks distribution
     ? MinPositive<Key<N>>
     : MinNegative<Exclude<Key<N>, Numbers['string']['+']>>
     // Exclude (+) numbers, MinNegative only works with (-)

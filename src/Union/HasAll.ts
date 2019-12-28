@@ -1,4 +1,3 @@
-import {True, False} from '../Boolean/Boolean'
 import {Union} from './Union'
 
 /** Check whether **`U`** contains the whole union **`U1`**
@@ -11,5 +10,5 @@ import {Union} from './Union'
  */
 export type HasAll<U extends Union, U1 extends Union> =
     [Exclude<U1, U & U1>] extends [never]
-    ? True
-    : False
+    ? 1
+    : 0

@@ -1,15 +1,14 @@
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
-import {True, False} from '../Boolean/Boolean'
 
 /**
  * @hidden
  */
 export type _IsNegative<N extends Iteration> = {
-    '-': True
-    '+': False
-    '0': False
+    '-': 1
+    '+': 0
+    '0': 0
 }[N[4]]
 
 /** Check whether a [[Number]] is negative or not
