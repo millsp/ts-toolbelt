@@ -19,9 +19,7 @@ import {Extends} from '../Any/Extends'
 type _MinPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MinPositive<N, Next<I>> // Find smallest +
     1: I
-}[
-    Or<Extends<Key<I>, N>, Extends<string, Key<I>>> // stops as soon as it finds
-]
+}[Or<Extends<Key<I>, N>, Extends<string, Key<I>>>] // stops as soon as it finds
 
 /**
  * @hidden

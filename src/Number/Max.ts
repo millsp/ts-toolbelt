@@ -42,9 +42,7 @@ type MaxPositive<N extends Number> =
 type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
     1: I
-}[
-    Or<Extends<Key<I>, N>, Extends<string, Key<I>>> // stops as soon as it finds
-]
+}[Or<Extends<Key<I>, N>, Extends<string, Key<I>>>] // stops as soon as it finds
 
 /**
  * @hidden

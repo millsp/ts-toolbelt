@@ -9,6 +9,7 @@ import {Record} from '../Object/Record'
 import {Key} from '../Any/Key'
 import {List} from './List'
 import {Naked} from './_Internal'
+import {Extends} from '../Any/Extends'
 
 /**
  * @hidden
@@ -16,11 +17,7 @@ import {Naked} from './_Internal'
 type __ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
     0: __ZipObj<LKeys, LFields, MergeFlat<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
     1: O
-}[
-    Pos<I> extends Length<LKeys>
-    ? 1
-    : 0
-]
+}[Extends<Pos<I>, Length<LKeys>>]
 
 /**
  * @hidden

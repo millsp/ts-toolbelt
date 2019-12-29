@@ -7,6 +7,7 @@ import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
 import {Naked} from './_Internal'
+import {Extends} from '../Any/Extends'
 
 /**
  * @hidden
@@ -14,11 +15,7 @@ import {Naked} from './_Internal'
 type __Reverse<L extends List, LO extends List, I extends Iteration = IterationOf<'0'>> = {
     0: __Reverse<L, Prepend<LO, L[Pos<I>]>, Next<I>>
     1: LO
-}[
-    Pos<I> extends Length<L>
-    ? 1
-    : 0
-]
+}[Extends<Pos<I>, Length<L>>]
 
 /**
  * @hidden

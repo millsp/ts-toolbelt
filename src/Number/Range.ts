@@ -9,6 +9,7 @@ import {Formats} from '../Iteration/_Internal'
 import {Way} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 import {List} from '../List/List'
+import {Extends} from '../Any/Extends'
 
 /**
  * @hidden
@@ -16,11 +17,7 @@ import {List} from '../List/List'
 type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', L extends List = []> = {
     0: RangeForth<Prev<From>, To, fmt, Prepend<L, Format<From, fmt>>>
     1: L
-}[
-    From extends To
-    ? 1
-    : 0
-]
+}[Extends<From, To>]
 
 /**
  * @hidden
@@ -28,11 +25,7 @@ type RangeForth<From extends Iteration, To extends Iteration, fmt extends Format
 type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', L extends List = []> = {
     0: RangeBack<Next<From>, To, fmt, Prepend<L, Format<From, fmt>>>
     1: L
-}[
-    From extends To
-    ? 1
-    : 0
-]
+}[Extends<From, To>]
 
 /**
  * @hidden

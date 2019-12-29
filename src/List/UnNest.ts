@@ -9,6 +9,7 @@ import {Pos} from '../Iteration/Pos'
 import {List} from './List'
 import {UnionOf} from './UnionOf'
 import {Naked} from './_Internal'
+import {Extends} from '../Any/_api'
 
 /**
  * @hidden
@@ -37,11 +38,7 @@ type Flatter<L extends List, LN extends List, I extends Iteration> =
 type UnNestExact<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: UnNestExact<L, Flatter<L, LN, I>, Next<I>>
     1: LN
-}[
-    Pos<I> extends Length<L>
-    ? 1
-    : 0
-]
+}[Extends<Pos<I>, Length<L>>]
 
 /**
  * @hidden

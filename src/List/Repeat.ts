@@ -7,6 +7,7 @@ import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {List} from './List'
 import {Naked} from './_Internal'
+import {Extends} from '../Any/_api'
 
 /**
  * @hidden
@@ -14,11 +15,7 @@ import {Naked} from './_Internal'
 type __Repeat<N extends Number, A, L extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: __Repeat<N, A, Prepend<L, A>, Next<I>>
     1: L
-}[
-    N extends Key<I>
-    ? 1
-    : 0
-]
+}[Extends<N, Key<I>>]
 
 /**
  * @hidden

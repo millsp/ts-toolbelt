@@ -6,6 +6,7 @@ import {Next} from '../Iteration/Next'
 import {_Append} from '../List/Append'
 import {Exclude} from '../Union/Exclude'
 import {List} from '../List/List'
+import {Extends} from '../Any/Extends'
 
 /**
  * @hidden
@@ -21,11 +22,7 @@ type PickIfEntry<O extends object, LN extends List, I extends Iteration> =
 type __ListOf<O extends object, K, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: __ListOf<O, Exclude<K, Key<I>>, PickIfEntry<O, LN, I>, Next<I>>
     1: LN
-}[
-    [K] extends [never]
-    ? 1
-    : 0
-]
+}[Extends<[K], [never]>]
 
 /**
  * @hidden

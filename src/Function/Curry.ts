@@ -14,6 +14,7 @@ import {NonNullable} from '../List/NonNullable'
 import {x} from '../Any/x'
 import {List} from '../List/List'
 import {Function} from './Function'
+import {Extends} from '../Any/Extends'
 
 /**
  * @hidden
@@ -29,11 +30,7 @@ type GapOf<L1 extends List, L2 extends List, LN extends List, I extends Iteratio
 type _GapsOf<L1 extends List, L2 extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: _GapsOf<L1, L2, GapOf<L1, L2, LN, I>, Next<I>>
     1: _Concat<LN, _Drop<L2, Key<I>>>
-}[
-    Pos<I> extends Length<L1>
-    ? 1
-    : 0
-]
+}[Extends<Pos<I>, Length<L1>>]
 
 /**
  * @hidden

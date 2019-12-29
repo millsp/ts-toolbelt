@@ -6,6 +6,7 @@ import {Next} from '../Iteration/Next'
 import {Length} from '../List/Length'
 import {Cast} from '../Any/Cast'
 import {List} from '../List/List'
+import {Extends} from '../Any/Extends'
 
 /**
  * @hidden
@@ -13,11 +14,7 @@ import {List} from '../List/List'
 type __Assign<O extends object, Os extends List<object>, I extends Iteration = IterationOf<'0'>> = {
     0: __Assign<MergeFlat<Os[Pos<I>], O>, Os, Next<I>>
     1: O
-}[
-    Pos<I> extends Length<Os>
-    ? 1
-    : 0
-]
+}[Extends<Pos<I>, Length<Os>>]
 
 /**
  * @hidden

@@ -9,6 +9,7 @@ import {Pos} from '../Iteration/Pos'
 import {Prev} from '../Iteration/Prev'
 import {Prepend} from './Prepend'
 import {Naked} from './_Internal'
+import {Extends} from '../Any/_api'
 
 /**
  * @hidden
@@ -16,11 +17,7 @@ import {Naked} from './_Internal'
 type DropForth<L extends List, N extends Iteration> = {
     0: DropForth<Tail<L>, Prev<N>>
     1: L
-}[
-    0 extends Pos<N>
-    ? 1
-    : 0
-]
+}[Extends<0, Pos<N>>]
 
 /**
  * @hidden
@@ -28,11 +25,7 @@ type DropForth<L extends List, N extends Iteration> = {
 type DropBack<L extends List, N extends Iteration, I extends Iteration = Prev<N>, LN extends List = []> = {
     0: DropBack<L, N, Prev<I>, Prepend<LN, L[Pos<I>]>>
     1: LN
-}[
-    -1 extends Pos<I>
-    ? 1
-    : 0
-]
+}[Extends<-1, Pos<I>>]
 
 /**
  * @hidden
