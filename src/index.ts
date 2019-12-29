@@ -97,11 +97,11 @@ export {
 // ---------------------------------------------------------------------------------------
 // 4. Naming
 //
-// => If you wonder what the `type _<name>` means, it's a "step" in the implementation (it's bare implementation)
+// => If you wonder what the `type _<name>` means, it's a "step" in the implementation (a bare implementation)
 //    (Usually, the first step `_` takes care of parameters. But you can also find 2 steps `__` (eg. recursive))
 // -> Perf tip: When building utilities, always check if a type has an exported `_` version & decide if needed
 // -> Remember:
-//              - ALL `_` EXPORTED types are/must be NON-distributed types
+//              - ALL EXPORTED `_` types are/must be NON-distributed types
 //              - ALL `_` types are parameter processors, they handle params
 //              - ALL `_` types are the first step in a type's implementation
 //              - ALL `_` types are useful to save processing/performance cost
