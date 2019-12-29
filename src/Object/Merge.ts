@@ -25,7 +25,7 @@ export type MergeDeep<O, O1> =
  * For more advanced capabilities, see [[MergeUp]].
  * @param O to complete
  * @param O1 to copy from
- * @param (?=`'flat'`) depth to do it deeply
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

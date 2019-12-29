@@ -45,7 +45,8 @@ type PipeFnAsync<Fns extends List<Function>, K extends keyof Fns> =
 
 /** Compute what the input of [[Pipe]] should be
  * @param Fns to pipe
- * @param (?=`'sync'`) mode sync/async * @example
+ * @param mode (?=`'sync'`) sync/async
+ * @example
  * ```ts
  * ```
  */
@@ -56,7 +57,7 @@ export type Piper<Fns extends List<Function>, mode extends Mode = 'sync'> = {
 
 /** Pipe [[Function]]s together
  * @param Fns to pipe
- * @param (?=`'sync'`) mode sync/async
+ * @param mode (?=`'sync'`) sync/async
  * @returns [[Function]]
  * @example
  * ```ts

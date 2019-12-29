@@ -26,7 +26,7 @@ type _Merge<O, Path extends List<Key>, O1 extends object, depth extends Depth, I
  * @param O to complete
  * @param Path to be followed
  * @param O1 to copy from
- * @param (?=`'flat'`) depth to do it deeply
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

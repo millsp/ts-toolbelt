@@ -29,8 +29,8 @@ type OptionalPart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** optional (deeply or not)
  * @param O to make optional
- * @param (?=`any`) K to choose fields
- * @param (?=`'default'`) depth to do it deeply
+ * @param K (?=`any`) to choose fields
+ * @param depth (?=`'default'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

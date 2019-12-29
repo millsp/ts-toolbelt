@@ -5,7 +5,7 @@ import {Length as LLength} from '../List/Length'
 
 /** Extract arguments' length from a [[Function]]
  * @param F to extract from
- * @param (?=`'n'`) fmt output
+ * @param fmt (?=`'n'`) output
  * @returns **`string`** or **`number`**
  * @example
  * ```ts

@@ -30,8 +30,8 @@ type NullablePart<O extends object, depth extends Depth> = {
 
 /** Make some fields of **`O`** nullable (deeply or not)
  * @param O to make nullable
- * @param (?=`any`) K to choose fields
- * @param (?=`'flat'`) depth to do it deeply
+ * @param K (?=`any`) to choose fields
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

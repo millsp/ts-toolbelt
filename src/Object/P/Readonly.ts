@@ -25,7 +25,7 @@ type _Readonly<O, Path extends List<Key>, depth extends Depth, I extends Iterati
 /** Make some fields of **`O`** readonly at **`Path`** (deeply or not)
  * @param O to make readonly
  * @param Path to be followed
- * @param (?=`'flat'`) depth to do it deeply
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

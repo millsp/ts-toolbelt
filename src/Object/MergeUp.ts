@@ -75,7 +75,7 @@ type MergeUpDeep<O extends object, O1 extends object> =
  * It is able to deal with the merging of **`Union`s** of **`object`**s.
  * @param O to complete
  * @param O1 to copy from
- * @param (?=`'flat'`) depth to do it deeply
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts

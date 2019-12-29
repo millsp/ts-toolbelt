@@ -31,8 +31,8 @@ type CompulsoryPart<O extends object, depth extends Depth> = {
 /** Make some fields of **`O`** compulsory (deeply or not)
  * (it's like [[Required]] & [[NonNullable]] at once).
  * @param O to make compulsory
- * @param (?=`any`) K to choose fields
- * @param (?=`'flat'`) depth to do it deeply
+ * @param K (?=`any`) to choose fields
+ * @param depth (?=`'flat'`) to do it deeply
  * @returns **`object`**
  * @example
  * ```ts
