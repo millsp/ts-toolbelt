@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.3...v6.0.4) (2019-12-29)
+
+
+### Bug Fixes
+
+* **l.update:** allow to update non-existing fields ([22e6568](https://github.com/pirix-gh/ts-toolbelt/commit/22e6568d22b01df8122459af854b3196078b8911))
+* **list, keys:** list util now handle number keys ([4642629](https://github.com/pirix-gh/ts-toolbelt/commit/4642629346abab764ac61f613276e29cb4c7c6a2))
+* **o.either:** fix distribution ([ae1ab94](https://github.com/pirix-gh/ts-toolbelt/commit/ae1ab940d1e9c02e60bb3f53b7f77990796a71ba))
+
+
+### Others
+
+* **a.numberof:** add internal feature ([ebcd34b](https://github.com/pirix-gh/ts-toolbelt/commit/ebcd34bf1290e3a397c20bee2729e8c7f3a8b15e))
+
 ### [6.0.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.2...v6.0.3) (2019-12-29)
 
 
