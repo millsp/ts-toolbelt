@@ -106,6 +106,16 @@ export {
 //              - ALL `_` types are the first step in a type's implementation
 //              - ALL `_` types are useful to save processing/performance cost
 //              - NOT ALL `_` types serve the same purpose
+//
+
+// ---------------------------------------------------------------------------------------
+// 4. Performance
+//
+// => Types must always be written to be as lightweight as possible
+// -> Sometimes it involves losing the comfort of using other types
+//
+// => Distributed types MUST USE NON-distributed types as much as possible
+// -> This will avoid `<type> extends unknown`-hell loops (& re-loops)
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
