@@ -1,5 +1,3 @@
-import {Omit} from '../Object/Omit'
-import {Merge as OMerge} from '../Object/Merge'
 import {At} from '../Object/At'
 import {Depth} from '../Object/_Internal'
 import {ObjectOf} from './ObjectOf'

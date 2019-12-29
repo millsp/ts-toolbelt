@@ -3,7 +3,7 @@ import {Key} from '../Any/Key'
 /**
  * @hidden
  */
-type _NonNullableKeys<O extends object> = {
+export type _NonNullableKeys<O extends object> = {
     [K in keyof O]: [O[K] & (undefined | null)] extends [never]
                     ? K
                     : never

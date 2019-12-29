@@ -6,7 +6,7 @@ import {Compute} from '../Any/Compute'
 /**
  * @hidden
  */
-type _Invert<O extends Record<Key, Key>> =
+export type _Invert<O extends Record<Key, Key>> =
   Compute<IntersectOf<
     { // swaps the key and the value
       [K in keyof O]: Record<O[K], K>

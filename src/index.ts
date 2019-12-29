@@ -87,14 +87,25 @@ export {
 // - types that are used to compute keys that match certain conditions. search for `}[Keys<` | `}[keyof`
 //
 // => In those cases, we do the distributution manually by inserting `<type> extends unknown ? ... : never`
-// => `keyof` statements are ok and can be used if they're distributed. search for `extends unknown ?`
-// => Remember that simple mapped types distribute well over unions and preserve them (no problem)
+// -> `keyof` statements are ok and can be used if they're distributed. search for `extends unknown ?`
+// -> Remember that simple mapped types distribute well over unions and preserve them (no problem)
 //
 // => For recursive types that re-use each other, we MUST NOT use the distributed version since they all do it
-//    We must import the version of the type that is named `type __<name>`. This is the non-distributed version
+//    We must import the version of the type that is named `type _<name>`. This is the non-distributed version
 //    (otherwise, we would distribute over something that is already distributed (pointless, it uses resources))
+
+// ---------------------------------------------------------------------------------------
+// 4. Naming
 //
-// => And if you wonder what the `type _<name>` means, it's a "step" in the implementation (bare implementation)
+// => If you wonder what the `type _<name>` means, it's a "step" in the implementation (it's bare implementation)
+//    (Usually, the first step `_` takes care of parameters. But you can also find 2 steps `__` (eg. recursive))
+// -> Perf tip: When building utilities, always check if a type has an exported `_` version & decide if needed
+// -> Remember:
+//              - ALL `_` EXPORTED types are/must be NON-distributed types
+//              - ALL `_` types are parameter processors, they handle params
+//              - ALL `_` types are the first step in a type's implementation
+//              - ALL `_` types are useful to save processing/performance cost
+//              - NOT ALL `_` types serve the same purpose
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////

@@ -20,9 +20,9 @@ type _Update<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'
         [K in keyof O]: K extends Path[Pos<I>]                       // ?> for the keys `K` that are in the path
                         ? O[K] extends infer OK                      //    > we make that property distributable
                           ? Has<OK, object> extends 1                //      ?> if that union has at least an object
-                            ? OK extends object                      //        > we distribute over objects
-                              ? _Update<OK, Path, A, Next<I>>        //          ?> it is an object, continue diving
-                              : OK                                   //          !> otherwise, we leave the property as is
+                            ? OK extends object                      //         > we distribute over objects
+                              ? _Update<OK, Path, A, Next<I>>        //           ?> it is an object, continue diving
+                              : OK                                   //           !> otherwise, we leave the property as is
                             : _Update<{}, Path, A, Next<I>>          //      !> if union had no object, we can only replace it
                           : never
                         : O[K]                                       // !> `K` is not part of path, do nothing

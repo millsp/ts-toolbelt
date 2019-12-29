@@ -8,7 +8,7 @@ import {Key} from '../Any/Key'
 /**
  * @hidden
  */
-type _IntersectMatch<O extends object, O1 extends object, match extends Match> = {
+export type _IntersectMatch<O extends object, O1 extends object, match extends Match> = {
     [K in keyof O]: {
         1: K
         0: never

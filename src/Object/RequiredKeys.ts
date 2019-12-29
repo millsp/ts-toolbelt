@@ -3,7 +3,7 @@ import {Key} from '../Any/Key'
 /**
  * @hidden
  */
-type _RequiredKeys<O extends object> = {
+export type _RequiredKeys<O extends object> = {
     [K in keyof O]-?: {} extends Pick<O, K> ? never : K
 }[keyof O]
 

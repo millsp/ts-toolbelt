@@ -5,7 +5,7 @@ import {Key} from '../Any/Key'
 /**
  * @hidden
  */
-type _FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
+export type _FilterKeys<O extends object, M extends any, match extends Match = 'default'> = {
     [K in keyof O]: {
         1: never
         0: K

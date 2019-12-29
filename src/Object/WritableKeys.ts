@@ -6,7 +6,7 @@ import {Key} from '../Any/Key'
 /**
  * @hidden
  */
-type _WritableKeys<O extends object> = {
+export type _WritableKeys<O extends object> = {
     [K in keyof O]-?: {
         1: K
         0: never

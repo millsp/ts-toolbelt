@@ -22,14 +22,14 @@ type MergeUpProp<O extends object, O1 extends object, K extends Key, IsOptional 
 /**
  * @hidden
  */
-type _MergeUpFlat<O extends object, O1 extends object, OOK extends Key = OptionalKeys<O>> = {
+export type _MergeUpFlat<O extends object, O1 extends object, OOK extends Key = OptionalKeys<O>> = {
     [K in keyof (O & O1)]: MergeUpProp<O, O1, K, Extends<K, OOK>>
 } & {}
 
 /**
  * @hidden
  */
-export type MergeUpFlat<O extends object, O1 extends object> =
+type MergeUpFlat<O extends object, O1 extends object> =
     O extends unknown       // we distribute because
     ? O1 extends unknown    // doing `O & O1` breaks
       ? _MergeUpFlat<O, O1> // the mapped type distrib
@@ -39,7 +39,7 @@ export type MergeUpFlat<O extends object, O1 extends object> =
 /**
  * @hidden
  */
-type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = 0> = {
+export type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = 0> = {
     [K in keyof (O & O1)]:  And< // we first make sure that both are objects
                                 Extends<Kind<NonNullable<At<O,  K>>>, 'object'>,
                                 Extends<Kind<NonNullable<At<O1, K>>>, 'object'>
@@ -62,7 +62,7 @@ type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends 
 /**
  * @hidden
  */
-export type MergeUpDeep<O extends object, O1 extends object> =
+type MergeUpDeep<O extends object, O1 extends object> =
     O extends unknown
     ? O1 extends unknown
       ? _MergeUpDeep<O, O1>
