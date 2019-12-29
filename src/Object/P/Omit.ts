@@ -3,7 +3,7 @@ import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Key} from '../../Any/Key'
-import {Omit as OOmit} from '../Omit'
+import {_Omit as _OOmit} from '../Omit'
 import {LastIndex} from '../../List/LastIndex'
 import {List} from '../../List/List'
 
@@ -13,7 +13,7 @@ import {List} from '../../List/List'
 type _Omit<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                   // If it's an object
   ? Pos<I> extends LastIndex<Path>                   // If it's the last index
-    ? OOmit<O, Path[Pos<I>]>                         // Use standard Omit
+    ? _OOmit<O, Path[Pos<I>]>                         // Use standard Omit
     : {
         [K in keyof O]: K extends Path[Pos<I>]       // If K is part of Path
                         ? _Omit<O[K], Path, Next<I>> // Continue diving

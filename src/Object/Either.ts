@@ -1,5 +1,5 @@
 import {Omit} from './Omit'
-import {Pick} from './Pick'
+import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
 import {Strict} from '../Union/Strict'
 import {Boolean} from '../Boolean/Boolean'
@@ -9,8 +9,8 @@ import {Compute} from '../Any/Compute'
  * @hidden
  */
 type _Either<O extends object, K extends Key> =
-    Omit<O, K> & ({          // Merge all but K
-        [P in K]: Pick<O, P> // With K possibilities
+    Omit<O, K> & ({           // Merge all but K
+        [P in K]: _Pick<O, P> // With K possibilities
     }[K])
 
 /**
