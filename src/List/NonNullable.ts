@@ -7,6 +7,7 @@ import {ObjectOf} from './ObjectOf'
 import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 import {List} from './List'
+import {NumberOf} from '../Any/_Internal'
 
 /** Make some entries of **`L`** not nullable (deeply or not)
  * @param L to make non nullable
@@ -19,5 +20,5 @@ import {List} from './List'
  */
 export type NonNullable<L extends List, K extends Key = any, depth extends Depth = 'flat'> = {
     1: Cast<ONonNullable<L, any, depth>, List>
-    0: ListOf<ONonNullable<ObjectOf<L>, K, depth>>
+    0: ListOf<ONonNullable<ObjectOf<L>, NumberOf<K>, depth>>
 }[Implements<Keys<L>, K>]

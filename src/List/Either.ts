@@ -4,6 +4,7 @@ import {ObjectOf} from './ObjectOf'
 import {_ListOf} from '../Object/ListOf'
 import {List} from './List'
 import {Boolean} from '../Boolean/Boolean'
+import {NumberOf} from '../Any/_Internal'
 
 /** Split **`L`** into a [[Union]] with **`K`** keys in such a way that none of
  * the keys are ever present with one another within the different unions.
@@ -16,7 +17,7 @@ import {Boolean} from '../Boolean/Boolean'
  * ```
  */
 export type Either<L extends List, K extends Key, strict extends Boolean = 1> =
-    OEither<ObjectOf<L>, K, strict> extends infer OE
+    OEither<ObjectOf<L>, NumberOf<K>, strict> extends infer OE
     ? OE extends unknown
       ? _ListOf<OE & {}>
       : never

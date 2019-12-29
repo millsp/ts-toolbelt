@@ -116,7 +116,25 @@ export {
 // -> Sometimes it involves losing the comfort of using other types
 //
 // => Distributed types MUST USE NON-distributed types as much as possible
-// -> This will avoid `<type> extends unknown`-hell loops (& re-loops)
+// -> This will avoid `<type> extends unknown`-hell loops (and re-looping)
+
+// ---------------------------------------------------------------------------------------
+// 5. Keys & Tuples
+//
+// => It is very common that we use `ObjectOf` to make a tuple an `object`
+// -> We do this so that we can use tuples with the `Object` type utilities
+// -> Using `Object` utilities directly with a tuple is known to cause bugs
+//
+// => One of the features of this lib is to be able to pass `Key`s to utils
+// -> But on tuples that get manipulated (eg. with `ObjectOf`) we just can't
+// -> In fact, tuple utilities were not always able to handle `number` keys
+// -> This is a side effect of altering/transforming the original tuple type
+// -> Altered tuples can only be interacted with if we pass `string` keys
+//    (In essence, this would fail `Pick<ObjectOf<[1]>, 0>`)
+// => So what we do is to check for all utilities located in folder `src/List`
+// -> We look for ones that have any kind of `Key` parameter `K extends Key`
+// -> We use `NumberOf` on those `K`s to make them `Number`s (ie. `string`s)
+//    (Yes, `NumberOf` yields a `string` bcs numbers are handled as strings)
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
