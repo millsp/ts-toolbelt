@@ -1,4 +1,5 @@
 
+/** @ignore *//** */
 
 import {Function} from '../../Function'
 import {Return} from '../../Return'

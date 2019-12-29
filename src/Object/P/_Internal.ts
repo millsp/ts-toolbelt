@@ -1,4 +1,4 @@
-import {Key} from '../../Any/Key'
+/** @ignore *//** */
 
 /**
  * to reach a  property we use `Pos<I> extends LastIndex<Path>`
