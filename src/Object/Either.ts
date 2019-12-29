@@ -1,4 +1,4 @@
-import {Omit} from './Omit'
+import {_Omit} from './Omit'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
 import {Strict} from '../Union/Strict'
@@ -8,8 +8,8 @@ import {Compute} from '../Any/Compute'
 /**
  * @hidden
  */
-type _Either<O extends object, K extends Key> =
-    Omit<O, K> & ({           // Merge all but K
+type __Either<O extends object, K extends Key> =
+    _Omit<O, K> & ({           // Merge all but K
         [P in K]: _Pick<O, P> // With K possibilities
     }[K])
 
@@ -17,13 +17,21 @@ type _Either<O extends object, K extends Key> =
  * @hidden
  */
 type EitherStrict<O extends object, K extends Key> =
-    Strict<_Either<O, K>>
+    Strict<__Either<O, K>>
 
 /**
  * @hidden
  */
 type EitherLoose<O extends object, K extends Key> =
-    Compute<_Either<O, K>>
+    Compute<__Either<O, K>>
+
+/**
+ * @hidden
+ */
+export type _Either<O extends object, K extends Key, strict extends Boolean> = {
+    1: EitherStrict<O, K>
+    0: EitherLoose<O, K>
+}[strict]
 
 /** Split **`O`** into a [[Union]] with **`K`** keys in such a way that none of
  * the keys are ever present with one another within the different unions.
@@ -35,7 +43,7 @@ type EitherLoose<O extends object, K extends Key> =
  * ```ts
  * ```
  */
-export type Either<O extends object, K extends Key, strict extends Boolean = 1> = {
-    1: EitherStrict<O, K>
-    0: EitherLoose<O, K>
-}[strict]
+export type Either<O extends object, K extends Key, strict extends Boolean = 1> =
+    O extends unknown
+    ? _Either<O, K, strict>
+    : never

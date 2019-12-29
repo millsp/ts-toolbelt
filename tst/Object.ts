@@ -1,7 +1,6 @@
 /* tslint:disable */
 
 import {Test, O, A, T} from '../src/index'
-import {False} from '../src/Boolean/Boolean'
 
 const {checks, check} = Test
 
@@ -148,6 +147,9 @@ type O_EITHER = {
          a : string
          b?: number
 readonly c?: object
+} | {
+    a: 'a',
+    b: 'b'
 }
 
 type EITHER_O_AB_TRUE = {
@@ -158,6 +160,12 @@ type EITHER_O_AB_TRUE = {
     a?: undefined;
     b?: number;
     readonly c?: object;
+} | {
+    a: 'a'
+    b?: undefined
+} | {
+    b: 'b'
+    a?: undefined
 }
 
 type EITHER_O_AB_FALSE = {
@@ -166,11 +174,15 @@ type EITHER_O_AB_FALSE = {
 } | {
     b?: number;
     readonly c?: object;
+} | {
+    a: 'a'
+} | {
+    b: 'b'
 };
 
 checks([
-    check<O.Either<O_EITHER, 'a' | 'b'>,            EITHER_O_AB_TRUE,       Test.Pass>(),
-    check<O.Either<O_EITHER, 'a' | 'b', False>,     EITHER_O_AB_FALSE,      Test.Pass>(),
+    check<O.Either<O_EITHER, 'a' | 'b'>,        EITHER_O_AB_TRUE,       Test.Pass>(),
+    check<O.Either<O_EITHER, 'a' | 'b', 0>,     EITHER_O_AB_FALSE,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -2,7 +2,6 @@ import {List} from './List'
 import {_UnNest} from './UnNest'
 import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
-import {False} from '../Boolean/Boolean'
 import {Naked} from './_Internal'
 
 /**
