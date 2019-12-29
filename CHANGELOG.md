@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.1...v6.0.2) (2019-12-29)
+
+
+### Bug Fixes
+
+* excessive dristribution ([b81a65f](https://github.com/pirix-gh/ts-toolbelt/commit/b81a65fc82f372e436207cc75f7e629db7d91b07))
+
+
+### Others
+
+* cleanup ([7b7dbc9](https://github.com/pirix-gh/ts-toolbelt/commit/7b7dbc90f34ca9d91ab0cc2ce3d400b6eda82700))
+* cleanup ([30fe596](https://github.com/pirix-gh/ts-toolbelt/commit/30fe59626cb300049ad2b5ccba3c4e42972123d9))
+* cleanup ([5b24ab6](https://github.com/pirix-gh/ts-toolbelt/commit/5b24ab6bba0268f4c9dbfbe7b548084fa1f280d8))
+* complete missing docs ([d86c7b1](https://github.com/pirix-gh/ts-toolbelt/commit/d86c7b1d8ca0a2659543ea5da1e05d48a670655f))
+* distribution ([7fa1a0f](https://github.com/pirix-gh/ts-toolbelt/commit/7fa1a0f5f19bb72173c8723bb60b33dcd3ace61a))
+* distribution optimization ([1165f2c](https://github.com/pirix-gh/ts-toolbelt/commit/1165f2c37e01d2f6426bc7ac5bdbbf2a059cd6ba))
+* export non-distrib types ([f58f8b1](https://github.com/pirix-gh/ts-toolbelt/commit/f58f8b183df3ebf6f9394cabd473cfb5a1fb5d9a))
+* remove unsused alias ([acf83d1](https://github.com/pirix-gh/ts-toolbelt/commit/acf83d110de855b2e1601800099f8752955d1f96))
+* simplify indexed conditions ([3af8f83](https://github.com/pirix-gh/ts-toolbelt/commit/3af8f836301e954f52bcfe2e23156970d20b39ed))
+* update notes ([ead64c3](https://github.com/pirix-gh/ts-toolbelt/commit/ead64c33ea1756047f30532f3a345746cb5bb9b7))
+* update notes ([dad7925](https://github.com/pirix-gh/ts-toolbelt/commit/dad79253b0061ab5c4ef8ece79a4fb18f5b1fd47))
+
 ### [6.0.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.0...v6.0.1) (2019-12-22)
 
 
