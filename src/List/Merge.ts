@@ -9,11 +9,16 @@ import {List} from './List'
 /**
  * @hidden
  */
-type _MergeFlat<L extends List, L1 extends List> = ListOf<ObjectOf<{
+type MergeFlatTuple<L extends List, L1 extends List> = ListOf<ObjectOf<{
     [K in keyof (L & L1)]: [At<L, K>] extends [never]
                            ? At<L1, K>
                            : At<L, K>
 }>>
+
+type MergeFlatArray<L extends List, L1 extends List> =
+    (L | L1) extends (infer L)[]
+    ? L[]
+    : never
 
 /**
  * @hidden
@@ -21,9 +26,9 @@ type _MergeFlat<L extends List, L1 extends List> = ListOf<ObjectOf<{
 export type MergeFlat<L extends List, L1 extends List> =
     number extends Length<L | L1>
     // if we can't know the size, then get closest type
-    ? (L | L1) extends (infer L)[] ? L[] : never
+    ? MergeFlatArray<L, L1>
     // if it's a tuple then we proceed with the merging
-    : _MergeFlat<L, L1>
+    : MergeFlatTuple<L, L1>
 
 /**
  * @hidden
