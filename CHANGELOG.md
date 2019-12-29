@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.2...v6.0.3) (2019-12-29)
+
+
+### Others
+
+* fix default param problem ([25cabf8](https://github.com/pirix-gh/ts-toolbelt/commit/25cabf83364dfb7acd9e2a4a49d95d60c2371659))
+* readme ([5c8cf07](https://github.com/pirix-gh/ts-toolbelt/commit/5c8cf074681b6db2307298b2d7bd2c32a738f76c))
+
 ### [6.0.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.1...v6.0.2) (2019-12-29)
 
 
