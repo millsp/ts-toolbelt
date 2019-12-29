@@ -11,5 +11,7 @@ import {Key} from '../Any/Key'
  * ```
  */
 export type Unionize<O extends object, O1 extends object, K extends Key = any> = {
-    [P in keyof O]: P extends K ? O[P] | At<O1, P> : O[P]
+    [P in keyof O]: P extends K
+                    ? O[P] | At<O1, P>
+                    : O[P]
 } & {}

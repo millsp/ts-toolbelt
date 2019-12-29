@@ -1,6 +1,16 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 
+/**
+ * @hidden
+ */
+export type _Replace<O extends object, M extends any, A extends any, match extends Match = 'default'> = {
+    [K in keyof O]: {
+        1: A
+        0: O[K]
+    }[Is<M, O[K], match>]
+} & {}
+
 /** Update with **`A`** the fields of **`O`** that match **`M`**
  * @param O to update
  * @param M to select fields
@@ -11,9 +21,7 @@ import {Is} from '../Any/Is'
  * ```ts
  * ```
  */
-export type Replace<O extends object, M extends any, A extends any, match extends Match = 'default'> = {
-    [K in keyof O]: {
-        1: A
-        0: O[K]
-    }[Is<M, O[K], match>]
-} & {}
+export type Replace<O extends object, M extends any, A extends any, match extends Match = 'default'> =
+    O extends unknown
+    ? _Replace<O, M, A, match>
+    : never

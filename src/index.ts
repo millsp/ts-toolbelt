@@ -85,6 +85,7 @@ export {
 //   (this happens because this is an unsupported feature, it's neither `extends` nor a mapped type)
 //   (it has the effect of not distributing/aggregate unions with `At`/`[]`, we must do it manually)
 // - types that are used to compute keys that match certain conditions. search for `}[Keys<` | `}[keyof`
+// - anything that's indexed has a chance of not distributing properly. search for `}[`
 //
 // => In those cases, we do the distributution manually by inserting `<type> extends unknown ? ... : never`
 // -> `keyof` statements are ok and can be used if they're distributed. search for `extends unknown ?`
