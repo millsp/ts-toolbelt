@@ -211,7 +211,7 @@ There are many ways to import the types into your project:
 
 * Compact
   ```ts
-  import {A, B, C, F, I, N, O, S, T, U} from 'ts-toolbelt'
+  import {A, B, C, F, I, N, O, S, L, U} from 'ts-toolbelt'
   ```
 
 * Portable
@@ -329,6 +329,7 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 
 | ts-toolbelt | typescript |
 |-------------|------------|
+| 6.x.x       | ^3.7.x     |
 | 4.x.x       | ^3.5.x     |
 | 2.x.x       | ^3.5.x     |
 | 3.x.x       | ^3.5.x     |
