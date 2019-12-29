@@ -1,5 +1,5 @@
-import {Omit as OOmit} from '../Object/Omit'
-import {Omit as LOmit} from '../List/Omit'
+import {_Omit as _OOmit} from '../Object/Omit'
+import {_Omit as _LOmit} from '../List/Omit'
 import {Key} from './Key'
 import {List} from '../List/List'
 import {Union} from '../Union/Union'
@@ -19,6 +19,6 @@ import {Union} from '../Union/Union'
 export type Omit<U extends Union, K extends Key> =
     U extends object
     ? U extends List
-      ? LOmit<U, K>
-      : OOmit<U, K>
+      ? _LOmit<U, K>
+      : _OOmit<U, K>
     : U

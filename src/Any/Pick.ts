@@ -1,5 +1,5 @@
-import {Pick as OPick} from '../Object/Pick'
-import {Pick as LPick} from '../List/Pick'
+import {_Pick as _OPick} from '../Object/Pick'
+import {_Pick as _LPick} from '../List/Pick'
 import {Key} from './Key'
 import {List} from '../List/List'
 import {Union} from '../Union/Union'
@@ -19,6 +19,6 @@ import {Union} from '../Union/Union'
 export type Pick<U extends Union, K extends Key> =
     U extends object
     ? U extends List
-      ? LPick<U, K>
-      : OPick<U, K>
+      ? _LPick<U, K>
+      : _OPick<U, K>
     : U

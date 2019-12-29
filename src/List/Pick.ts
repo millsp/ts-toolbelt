@@ -1,8 +1,14 @@
-import {Pick as OPick} from '../Object/Pick'
-import {ListOf} from '../Object/ListOf'
+import {_Pick as _OPick} from '../Object/Pick'
+import {_ListOf} from '../Object/ListOf'
 import {Key} from '../Any/Key'
-import {ObjectOf} from './ObjectOf'
+import {_ObjectOf} from './ObjectOf'
 import {List} from './List'
+
+/**
+ * @hidden
+ */
+export type _Pick<L extends List, K extends Key> =
+    _ListOf<_OPick<_ObjectOf<L>, K>>
 
 /** Extract out of **`L`** the entries of key **`K`**
  * @param L to extract from
@@ -13,4 +19,6 @@ import {List} from './List'
  * ```
  */
 export type Pick<L extends List, K extends Key> =
-    ListOf<OPick<ObjectOf<L>, K>>
+    L extends unknown
+    ? _Pick<L, K>
+    : never

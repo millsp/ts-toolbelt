@@ -1,7 +1,13 @@
-import {Omit} from './Omit'
+import {_Omit} from './Omit'
 import {List} from './List'
 import {LastIndex} from './LastIndex'
-import {Required} from './Required'
+import {Naked} from './_Internal'
+
+/**
+ * @hidden
+ */
+export type _Pop<L extends List> =
+    _Omit<L, LastIndex<Naked<L>, 's'>>
 
 /** Remove the last element out of **`L`**
  * @param L to remove from
@@ -11,4 +17,6 @@ import {Required} from './Required'
  * ```
  */
 export type Pop<L extends List> =
-    Omit<L, LastIndex<Required<L>, 's'>>
+    L extends unknown
+    ? _Pop<L>
+    : never
