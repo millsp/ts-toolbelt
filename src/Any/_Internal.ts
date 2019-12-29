@@ -1,3 +1,5 @@
+import {_NumberOf} from '../Number/NumberOf'
+
 /** Describes the match strategy when matching types
  * * `default`   : `extends->`
  * * `contains->`: X contains Y
@@ -12,3 +14,11 @@ export type Match = | 'default'
                     | 'extends->'
                     | '<-extends'
                     | 'equals'
+
+/**
+ * @hidden
+ */
+export type NumberOf<N extends any> =
+    N extends number
+    ? _NumberOf<N>
+    : N

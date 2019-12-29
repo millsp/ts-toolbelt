@@ -15,4 +15,3 @@ import {Key} from '../Any/Key'
  */
 export type Has<O extends object, K extends Key, M extends any = any, match extends Match = 'default'> =
     Is<At<O, K>, M, match>
-
