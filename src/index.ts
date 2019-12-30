@@ -107,7 +107,6 @@ export {
 //              - ALL `_` types are the first step in a type's implementation
 //              - ALL `_` types are useful to save processing/performance cost
 //              - NOT ALL `_` types serve the same purpose
-//
 
 // ---------------------------------------------------------------------------------------
 // 4. Performance

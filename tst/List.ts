@@ -604,6 +604,7 @@ checks([
 // UPDATE
 
 checks([
+    check<T.Update<[], '1', 2>,     [undefined, 2],         Test.Pass>(),
     check<T.Update<[1], '2', 2>,    [1, undefined, 2],      Test.Pass>(),
     check<T.Update<[1?], 0,  2>,    [2],                    Test.Pass>(),
 ])

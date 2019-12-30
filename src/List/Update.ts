@@ -4,7 +4,7 @@ import {Key} from '../Any/Key'
 import {List} from './List'
 import {Replace} from '../Union/Replace'
 import {x} from '../Any/x'
-import {Greater} from '../Number/_api'
+import {GreaterEq} from '../Number/_api'
 import {Length} from './Length'
 import {Overwrite} from './Overwrite'
 import {_Repeat} from './Repeat'
@@ -25,7 +25,7 @@ export type UpdateField<L extends List, K extends string, A extends any> = {
  * @hidden
  */
 type __Update<L extends List, K extends string, A extends any> =
-    Greater<K, Length<L, 's'>> extends 1
+    GreaterEq<K, Length<L, 's'>> extends 1
     ? UpdateField<Overwrite<_Repeat<undefined, IKey<Next<IterationOf<K>>>>, L>, K, A>
     : UpdateField<L, K, A>
 
@@ -33,7 +33,9 @@ type __Update<L extends List, K extends string, A extends any> =
  * @hidden
  */
 export type _Update<L extends List, K extends Key, A extends any> =
-    __Update<Naked<L>, NumberOf<K> & string, A>
+    number extends Length<L>
+    ? (L[number] | A)[]
+    : __Update<Naked<L>, NumberOf<K> & string, A>
 
 /** Update in **`L`** the entries of key **`K`** with **`A`**.
  * Use the [[x]] placeholder to get the current field type.
@@ -51,3 +53,5 @@ export type Update<L extends List, K extends Key, A extends any> =
       ? _Update<L, K, A>
       : never
     : never
+
+type t = Update<number[], 5, '42'>
