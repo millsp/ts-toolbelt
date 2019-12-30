@@ -1193,6 +1193,48 @@ type OP_UNIONS = {
     c?: string
 };
 
+type OP_ARRAYS = {
+    a: {
+        a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }[]
+    }[][]
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }[]
+    }[]
+    c?: string
+};
+
+type OP_ARRAYS_UNIONS = {
+    a: {
+        a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }[]
+    }[][] | 'a'[]
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }[]
+    }[] | 'b'[][]
+    c?: string
+};
+
 // ---------------------------------------------------------------------------------------
 // P.MERGE
 
@@ -1242,9 +1284,57 @@ type O_PMERGE_UNIONS = {
     c?: string
 };
 
+type O_PMERGE_ARRAYS = {
+    a: {
+        a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+            x: string
+        }[]
+    }[][]
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+        b: {
+            a: 'bba'
+            b: 'bbb'
+            x: string
+        }[]
+    }[]
+    c?: string
+};
+
+type O_PMERGE_ARRAYS_UNIONS = {
+    a: {
+        a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+            x: string
+        }[]
+    }[][] | 'a'[]
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+        b: {
+            a: 'bba'
+            b: 'bbb'
+            x: string
+        }[]
+    }[] | 'b'[][]
+    c?: string
+};
+
 checks([
-    check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>,             O_PMERGE,           Test.Pass>(),
-    check<O.P.Merge<OP_UNIONS,  ['a' | 'b', 'b'], {x: string}>,     O_PMERGE_UNIONS,    Test.Pass>(),
+    check<O.P.Merge<OP,                 ['a' | 'b', 'b'], {x: string}>,                 O_PMERGE,                   Test.Pass>(),
+    check<O.P.Merge<OP_UNIONS,          ['a' | 'b', 'b'], {x: string}>,                 O_PMERGE_UNIONS,            Test.Pass>(),
+    check<O.P.Merge<OP_ARRAYS,          ['a' | 'b', 'b'], {x: string}, 'flat', 1>,      O_PMERGE_ARRAYS,            Test.Pass>(),
+    check<O.P.Merge<OP_ARRAYS_UNIONS,   ['a' | 'b', 'b'], {x: string}, 'flat', 1>,      O_PMERGE_ARRAYS_UNIONS,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1282,9 +1372,43 @@ type O_POMIT_UNIONS = {
     c?: string
 };
 
+type O_POMIT_ARRAYS = {
+    a: {
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }[]
+    }[][]
+    b?: {
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }[]
+    }[]
+    c?: string
+};
+
+type O_POMIT_ARRAYS_UNIONS = {
+    a: {
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }[]
+    }[][] | 'a'[]
+    b?: {
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }[]
+    }[] | 'b'[][]
+    c?: string
+};
+
 checks([
-    check<O.P.Omit<OP, ['a' | 'b', 'a']>,           O_POMIT,            Test.Pass>(),
-    check<O.P.Omit<OP_UNIONS,   ['a' | 'b', 'a']>,  O_POMIT_UNIONS,     Test.Pass>(),
+    check<O.P.Omit<OP,                  ['a' | 'b', 'a']>,      O_POMIT,                Test.Pass>(),
+    check<O.P.Omit<OP_UNIONS,           ['a' | 'b', 'a']>,      O_POMIT_UNIONS,         Test.Pass>(),
+    check<O.P.Omit<OP_ARRAYS,           ['a' | 'b', 'a'], 1>,   O_POMIT_ARRAYS,         Test.Pass>(),
+    check<O.P.Omit<OP_ARRAYS_UNIONS,    ['a' | 'b', 'a'], 1>,   O_POMIT_ARRAYS_UNIONS,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1314,9 +1438,37 @@ type O_PPICK_UNIONS = {
     } | 'b'
 };
 
+type O_PPICK_ARRAYS = {
+    a: {
+        a: string
+    }[][]
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+    }[]
+};
+
+type t = O.P.Pick<OP_ARRAYS,   ['a' | 'b', 'a'], 1>
+
+type O_PPICK_ARRAYS_UNIONS = {
+    a: {
+        a: string
+    }[][] | 'a'[]
+    b?: {
+        a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+    }[] | 'b'[][]
+};
+
 checks([
-    check<O.P.Pick<OP, ['a' | 'b', 'a']>,           O_PPICK,            Test.Pass>(),
-    check<O.P.Pick<OP_UNIONS,   ['a' | 'b', 'a']>,  O_PPICK_UNIONS,     Test.Pass>(),
+    check<O.P.Pick<OP,                  ['a' | 'b', 'a']>,      O_PPICK,                Test.Pass>(),
+    check<O.P.Pick<OP_UNIONS,           ['a' | 'b', 'a']>,      O_PPICK_UNIONS,         Test.Pass>(),
+    check<O.P.Pick<OP_ARRAYS,           ['a' | 'b', 'a'], 1>,   O_PPICK_ARRAYS,         Test.Pass>(),
+    check<O.P.Pick<OP_ARRAYS_UNIONS,    ['a' | 'b', 'a'], 1>,   O_PPICK_ARRAYS_UNIONS,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1364,9 +1516,53 @@ type O_PREADONLY_UNIONS = {
     c?: string
 };
 
+type O_PREADONLY_ARRAYS = {
+    a: {
+        readonly a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }[]
+    }[][]
+    b?: {
+        readonly a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }[]
+    }[]
+    c?: string
+};
+
+type O_PREADONLY_ARRAYS_UNIONS = {
+    a: {
+        readonly a: string
+        b: {
+            a: 'aba'
+            b: 'abb'
+        }[]
+    }[][] | 'a'[]
+    b?: {
+        readonly a: {
+            a: 'baa'
+            b: 'bab'
+        }[]
+        b: {
+            a: 'bba'
+            b: 'bbb'
+        }[]
+    }[] | 'b'[][]
+    c?: string
+};
+
 checks([
-    check<O.P.Readonly<OP, ['a' | 'b', 'a']>,           O_PREADONLY,            Test.Pass>(),
-    check<O.P.Readonly<OP_UNIONS, ['a' | 'b', 'a']>,    O_PREADONLY_UNIONS,     Test.Pass>(),
+    check<O.P.Readonly<OP,                  ['a' | 'b', 'a']>,              O_PREADONLY,                Test.Pass>(),
+    check<O.P.Readonly<OP_UNIONS,           ['a' | 'b', 'a']>,              O_PREADONLY_UNIONS,         Test.Pass>(),
+    check<O.P.Readonly<OP_ARRAYS,           ['a' | 'b', 'a'], 'flat', 1>,   O_PREADONLY_ARRAYS,         Test.Pass>(),
+    check<O.P.Readonly<OP_ARRAYS_UNIONS,    ['a' | 'b', 'a'], 'flat', 1>,   O_PREADONLY_ARRAYS_UNIONS,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1430,9 +1626,9 @@ type O_PUPDATE_VPATH = {
 };
 
 checks([
-    check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,                            O_PUPDATE,          Test.Pass>(),
-    check<O.P.Update<OP_UNIONS, ['a' | 'b', 'a'], 'x'>,                     O_PUPDATE_UNIONS,   Test.Pass>(),
-    check<O.P.Update<OP_UNIONS, ['a' | 'b' | 'c', 'a', 'a', 'a'], 'x'>,     O_PUPDATE_VPATH,    Test.Pass>(),
+    check<O.P.Update<OP,            ['a' | 'b', 'a'], 'x'>,                     O_PUPDATE,          Test.Pass>(),
+    check<O.P.Update<OP_UNIONS,     ['a' | 'b', 'a'], 'x'>,                     O_PUPDATE_UNIONS,   Test.Pass>(),
+    check<O.P.Update<OP_UNIONS,     ['a' | 'b' | 'c', 'a', 'a', 'a'], 'x'>,     O_PUPDATE_VPATH,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1483,8 +1679,8 @@ type RECORD_ABCD_STRING_REQW = {
 };
 
 checks([
-    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'R']>,  RECORD_ABCD_STRING_OPTR,   Test.Pass>(),
-    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'W']>,  RECORD_ABCD_STRING_OPTW,   Test.Pass>(),
-    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['!', 'R']>,  RECORD_ABCD_STRING_REQR,   Test.Pass>(),
-    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['!', 'W']>,  RECORD_ABCD_STRING_REQW,   Test.Pass>(),
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'R']>,    RECORD_ABCD_STRING_OPTR,    Test.Pass>(),
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'W']>,    RECORD_ABCD_STRING_OPTW,    Test.Pass>(),
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['!', 'R']>,    RECORD_ABCD_STRING_REQR,    Test.Pass>(),
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['!', 'W']>,    RECORD_ABCD_STRING_REQW,    Test.Pass>(),
 ])

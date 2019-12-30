@@ -15,6 +15,9 @@ type MergeFlatTuple<L extends List, L1 extends List> = ListOf<ObjectOf<{
                            : At<L, K>
 }>>
 
+/**
+ * @hidden
+ */
 type MergeFlatArray<L extends List, L1 extends List> =
     (L | L1) extends (infer L)[]
     ? L[]
