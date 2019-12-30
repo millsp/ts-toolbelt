@@ -10,7 +10,7 @@ import {List} from './List'
  * @param L to check differences with
  * @param L1 to check differences against
  * @param match (?=`'default'`) to change precision
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

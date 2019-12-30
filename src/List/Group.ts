@@ -30,7 +30,7 @@ export type _Group<L extends List, N extends Number> =
 /** Split **`L`** into sub-[[List]]s every **`N`**
  * @param L to group
  * @param N to split at
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

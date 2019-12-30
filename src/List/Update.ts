@@ -42,7 +42,7 @@ export type _Update<L extends List, K extends Key, A extends any> =
  * @param L to update
  * @param K to chose fields
  * @param A to update with
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

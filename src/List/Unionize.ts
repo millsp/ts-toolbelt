@@ -8,7 +8,7 @@ import {NumberOf} from '../Any/_Internal'
  * @param L to union from
  * @param L1 to union with
  * @param K (?=`any`) to do choose fields
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

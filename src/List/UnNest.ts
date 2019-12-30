@@ -58,7 +58,7 @@ export type _UnNest<L extends List> =
 
 /** Remove a dimension of **`L`**
  * @param L to un-nest
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

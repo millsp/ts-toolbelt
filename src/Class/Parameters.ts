@@ -2,7 +2,7 @@ import {Class} from './Class'
 
 /** Get the parameters of a class constructor
  * @param C **typeof** **`class`**
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

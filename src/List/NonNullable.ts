@@ -13,7 +13,7 @@ import {NumberOf} from '../Any/_Internal'
  * @param L to make non nullable
  * @param K (?=`any`) to choose fields
  * @param depth (?=`'flat'`) to do it deeply
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

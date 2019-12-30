@@ -28,7 +28,7 @@ export type _Reverse<L extends List, LO extends List = []> =
 /** Turn a [[List]] the other way around
  * @param L to reverse
  * @param LO (?=`[]`) to prepend to
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

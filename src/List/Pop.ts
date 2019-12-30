@@ -11,7 +11,7 @@ export type _Pop<L extends List> =
 
 /** Remove the last element out of **`L`**
  * @param L to remove from
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

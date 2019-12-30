@@ -17,7 +17,7 @@ type _ListOf<U, LN extends List = [], LastU = Last<U>> = {
 /** Transform a [[Union]] into a [[List]]
  * (⚠️ it might not preserve order)
  * @param U to transform
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

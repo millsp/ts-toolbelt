@@ -29,7 +29,7 @@ export type _Repeat<A extends any, N extends Number, L extends List = []> =
  * @param A to fill with
  * @param N to repeat it
  * @param L (?=`[]`) to be filled
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

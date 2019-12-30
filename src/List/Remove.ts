@@ -7,7 +7,7 @@ import {List} from './List'
  * @param L to remove from
  * @param From to start with
  * @param To to end with
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

@@ -14,7 +14,7 @@ export type _Pick<L extends List, K extends Key> =
 /** Extract out of **`L`** the entries of key **`K`**
  * @param L to extract from
  * @param K to chose entries
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

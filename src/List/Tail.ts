@@ -2,7 +2,7 @@ import {List} from './List'
 
 /** Remove the first item out of a [[List]]
  * @param L
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

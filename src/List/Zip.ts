@@ -29,7 +29,7 @@ export type _Zip<L extends List, L1 extends List> =
 /** Pair up the entries of **`L`** with **`L1`**
  * @param L to pair up
  * @param L1 to pair up with
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

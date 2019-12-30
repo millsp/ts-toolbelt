@@ -10,7 +10,7 @@ export type _Append<L extends List, A extends any> =
 /** Add an element **`A`** at the end of **`L`**
  * @param L to append to
  * @param A to be added to
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

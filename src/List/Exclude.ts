@@ -9,7 +9,7 @@ import {List} from './List'
  * @param L to remove from
  * @param L1 to remove out
  * @param match (?=`'default'`) to change precision
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

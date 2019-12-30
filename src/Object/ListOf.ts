@@ -35,7 +35,7 @@ export type _ListOf<O extends object> =
 /** Transform an [[Object]] into a [[List]]
  * (It will only pick numeric literal indexes)
  * @param O to transform
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

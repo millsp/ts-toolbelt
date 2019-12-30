@@ -26,7 +26,7 @@ export type _Flatten<L extends List> =
 
 /** Remove all dimensions of **`L`** (10 max)
  * @param L to un-nest
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

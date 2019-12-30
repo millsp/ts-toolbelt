@@ -8,7 +8,7 @@ import {List} from './List'
  * @param L to extract from
  * @param M to select entries
  * @param match (?=`'default'`) to change precision
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

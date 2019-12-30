@@ -49,7 +49,7 @@ export type _Take<L extends List, N extends Number, way extends Way = '->'> =
  * @param L to extract from
  * @param N to extract out
  * @param way (?=`'->'`) to extract from end
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

@@ -14,7 +14,7 @@ export type _Omit<L extends List, K extends Key> =
 /** Remove out of **`L`** the entries of key **`K`**
  * @param L to remove from
  * @param K to chose entries
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

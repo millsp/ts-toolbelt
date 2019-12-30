@@ -10,7 +10,7 @@ export type _Concat<L extends List, L1 extends List> =
 /** Attach **`L1`** at the end of **`L`**
  * @param L to concat with
  * @param L1 to be attached
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

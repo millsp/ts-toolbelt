@@ -6,7 +6,7 @@ import {List} from './List'
 /** Make **`L`** required (deeply or not)
  * @param L to make required
  * @param depth (?=`'flat'`) to do it deeply
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```

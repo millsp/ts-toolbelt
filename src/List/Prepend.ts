@@ -3,7 +3,7 @@ import {List} from './List'
 /** Add an element **`A`** at the beginning of **`L`**
  * @param L to append to
  * @param A to be added to
- * @returns **`any[]`**
+ * @returns [[List]]
  * @example
  * ```ts
  * ```
