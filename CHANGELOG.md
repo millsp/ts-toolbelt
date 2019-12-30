@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.4...v7.0.0) (2019-12-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **distribution:** This will affect users using O.P.Update to modify paths
+which contain more than one value.
+
+### Features
+
+* added Primitive ([c85c4db](https://github.com/pirix-gh/ts-toolbelt/commit/c85c4db2962e0fa4e19c564a1c4306e3ce1bb529))
+* **o.p:** add O.P.Record ([4335679](https://github.com/pirix-gh/ts-toolbelt/commit/4335679a976977ef8b036a062dd2df0fcd73b344))
+
+
+### Bug Fixes
+
+* **distribution:** fix O.P.Update distribution ([1ccf432](https://github.com/pirix-gh/ts-toolbelt/commit/1ccf432b9635a77c350e48520b4e20d53f12e625))
+* **l.update:** not working on empty lists ([fd16879](https://github.com/pirix-gh/ts-toolbelt/commit/fd168796f5ddd6b019f14c1cccf2e00526668719))
+
+
+### Others
+
+* added diagnostics for tests ([0e1d6fa](https://github.com/pirix-gh/ts-toolbelt/commit/0e1d6fa3f9acffeaa9542b19c0013af3586c215b))
+* ramda wip ([e745031](https://github.com/pirix-gh/ts-toolbelt/commit/e74503174d65cae6208d7cec606e68cea0fa059e))
+
 ### [6.0.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.3...v6.0.4) (2019-12-29)
 
 
