@@ -1,7 +1,7 @@
 import {Keys} from './Keys'
 import {At} from './At'
 
-/** Transform an **`object`** into an [[Union]]
+/** Transform an [[Object]] into an [[Union]]
  * @param O to transform
  * @returns **`any`**
  * @example

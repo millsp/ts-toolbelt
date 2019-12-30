@@ -7,7 +7,7 @@ import {Pick} from './Pick'
  * @param O to remove from
  * @param O1 to remove out
  * @param match (?=`'default'`) to change precision
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

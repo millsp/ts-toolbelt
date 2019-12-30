@@ -5,7 +5,7 @@ import {Key} from '../Any/Key'
  * @param O to union from
  * @param O1 to union with
  * @param K (?=`any`) to chose fields
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

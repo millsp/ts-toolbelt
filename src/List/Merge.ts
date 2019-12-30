@@ -48,7 +48,7 @@ export type MergeDeep<O, O1> =
  * @param O to complete
  * @param O1 to copy from
  * @param depth (?=`'flat'`) to do it deeply
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

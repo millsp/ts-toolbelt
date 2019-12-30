@@ -2,7 +2,7 @@
  * (only the existing fields will be updated)
  * @param O to update
  * @param O1 to update with
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

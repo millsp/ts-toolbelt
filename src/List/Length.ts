@@ -5,7 +5,7 @@ import {List} from './List'
 /** Get the length of **`L`**
  * @param L to get length
  * @param fmt (?=`'n'`) output format
- * @returns **`string`** or **`number`**
+ * @returns [[String]] or **`number`**
  * @example
  * ```ts
  * ```

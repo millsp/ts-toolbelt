@@ -12,9 +12,9 @@ export type _ObjectOf<L extends object> =
       : _Omit<L, keyof any[]>                  // transforms tuples
     : L
 
-/** Transform a [[List]] or an `Array` into an **`object`**
+/** Transform a [[List]] or an `Array` into an [[Object]]
  * @param L to transform
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

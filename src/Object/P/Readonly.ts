@@ -47,7 +47,7 @@ type ReadonlyArrays<O, Path extends List<Key>, depth extends Depth, I extends It
  * @param Path to be followed
  * @param depth (?=`'flat'`) to do it deeply
  * @param list (?=`0`) `1` to work within object lists
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

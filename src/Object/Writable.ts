@@ -31,7 +31,7 @@ type WritablePart<O extends object, depth extends Depth> = {
  * @param O to make writable
  * @param K (?=`any`) to choose fields
  * @param depth (?=`'flat'`) to do it deeply
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

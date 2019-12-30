@@ -45,7 +45,7 @@ type PickList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>>
  * @param O to extract from
  * @param Path to be followed
  * @param list (?=`0`) `1` to work within object lists
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

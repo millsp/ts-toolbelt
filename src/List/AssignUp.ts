@@ -6,7 +6,7 @@ import {ListOf} from '../Object/ListOf'
 /** Assign a list of [[List]] into **`L`** with [[MergeUp]] (last-in combines or overrides)
  * @param L to assign to
  * @param Ls to assign
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

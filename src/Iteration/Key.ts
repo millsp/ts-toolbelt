@@ -3,7 +3,7 @@ import {Format} from './Format'
 
 /** Get the position of **`I`** (**string**)
  * @param I to query
- * @returns **`string`**
+ * @returns [[String]]
  * @example
  * ```ts
  * import {I} from 'ts-toolbelt'

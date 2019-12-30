@@ -31,7 +31,7 @@ type ReadonlyPart<O extends object, depth extends Depth> = {
  * @param O to make readonly
  * @param K (?=`any`) to choose fields
  * @param depth (?=`'default'`) to do it deeply
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

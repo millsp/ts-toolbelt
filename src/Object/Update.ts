@@ -10,7 +10,7 @@ import {Keys} from './Keys'
  * @param O to update
  * @param K to chose fields
  * @param A to update with
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * import {A, O} from 'ts-toolbelt'

@@ -14,7 +14,7 @@ export type _NumberOf<N extends number> = {
 
 /** Transform a **`number`** into a [[Number]]
  * @param N to stringify
- * @returns **`string`**
+ * @returns [[String]]
  * @example
  * ```ts
  * import {N} from 'ts-toolbelt'

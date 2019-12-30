@@ -32,7 +32,7 @@ export type _ListOf<O extends object> =
     ? Cast<X, List>
     : never
 
-/** Transform an **`object`** into a [[List]]
+/** Transform an [[Object]] into a [[List]]
  * (It will only pick numeric literal indexes)
  * @param O to transform
  * @returns **`any[]`**

@@ -51,7 +51,7 @@ type _Update<O extends object, Path extends List<Key>, A, I extends Iteration = 
  * @param O to update
  * @param Path to be followed
  * @param A to update with
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

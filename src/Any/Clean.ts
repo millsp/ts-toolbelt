@@ -18,10 +18,10 @@ type ArrayProps = keyof any[] | ArrayEntry     // so this matches any entry, whe
 
 /** Sometimes, we can end up with mixed up **`objects`** that do not make sense
  * visually (or that could at least be simplified for the end user). This will
- * turn anything that is passed to it into a cleaned up **`object`**.
+ * turn anything that is passed to it into a cleaned up [[Object]].
  *
  * @param O
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

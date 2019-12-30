@@ -6,7 +6,7 @@ import {Pick} from './Pick'
  * (If `match = 'default'`, no type checks are done)
  * @param O to check similarities with
  * @param O1 to check similarities against
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

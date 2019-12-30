@@ -38,7 +38,7 @@ export type _Either<O extends object, K extends Key, strict extends Boolean> = {
  * @param O to split
  * @param K to split with
  * @param strict (?=`1`) to force excess property checks https://github.com/microsoft/TypeScript/issues/20863
- * @returns **`object`** [[Union]]
+ * @returns [[Object]] [[Union]]
  * @example
  * ```ts
  * ```

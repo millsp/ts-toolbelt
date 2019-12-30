@@ -5,7 +5,7 @@ import {Key} from '../Any/Key'
  * @param K to choose fields
  * @param A to fill fields with
  * @param modx (?=`['!', 'W']`) to set modifiers
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

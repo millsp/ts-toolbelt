@@ -13,9 +13,9 @@ type _Merge<U extends object> = IntersectOf<Overwrite<U, {
                       : never
 }>>
 
-/** Merge a [[Union]] of **`object`**s into a single one
+/** Merge a [[Union]] of [[Object]]s into a single one
  * @param U to merge
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

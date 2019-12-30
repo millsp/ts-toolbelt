@@ -33,7 +33,7 @@ type CompulsoryPart<O extends object, depth extends Depth> = {
  * @param O to make compulsory
  * @param K (?=`any`) to choose fields
  * @param depth (?=`'flat'`) to do it deeply
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

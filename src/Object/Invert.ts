@@ -13,9 +13,9 @@ export type _Invert<O extends Record<Key, Key>> =
     }[keyof O]
   >>
 
-/** Swaps the keys and values of an **`object`** (if applicable)
+/** Swaps the keys and values of an [[Object]] (if applicable)
  * @param O
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * import {O} from 'ts-toolbelt'

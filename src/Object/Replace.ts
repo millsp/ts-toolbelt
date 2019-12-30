@@ -16,7 +16,7 @@ export type _Replace<O extends object, M extends any, A extends any, match exten
  * @param M to select fields
  * @param A to update with
  * @param match (?=`'default'`) to change precision
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

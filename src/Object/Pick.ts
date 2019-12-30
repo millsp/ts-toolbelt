@@ -16,7 +16,7 @@ export type _Pick<O extends object, K extends Key> =
 /** Extract out of **`O`** the fields of key **`K`**
  * @param O to extract from
  * @param K to chose fields
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

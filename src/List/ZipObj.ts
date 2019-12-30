@@ -27,10 +27,10 @@ export type _ZipObj<LKeys extends List<Key>, LFields extends List> =
     ? Cast<X, object>
     : never
 
-/** Create an **`object`** from [[List]]s of keys & fields
+/** Create an [[Object]] from [[List]]s of keys & fields
  * @param LKeys its keys
  * @param LFields its fields
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

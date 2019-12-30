@@ -33,7 +33,7 @@ type _Update<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'
  * @param O to update
  * @param Path to be followed
  * @param A to update with
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

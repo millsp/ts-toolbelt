@@ -51,7 +51,7 @@ type _Record_OW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'
  * @param Path to choose fields
  * @param A to fill fields with
  * @param modx (?=`['!', 'W']`) to set modifiers
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

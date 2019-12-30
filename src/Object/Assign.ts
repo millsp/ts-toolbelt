@@ -24,10 +24,10 @@ export type _Assign<O extends object, Os extends List<object>> =
     ? Cast<X, object>
     : never
 
-/** Assign a list of **`object`** into **`O`** with [[Merge]] (last-in overrides)
+/** Assign a list of [[Object]] into **`O`** with [[Merge]] (last-in overrides)
  * @param O to assign to
  * @param Os to assign
- * @returns **`object`**
+ * @returns [[Object]]
  * @example
  * ```ts
  * ```

@@ -1,6 +1,6 @@
 import {Keys as UKeys} from '../Union/Keys'
 
-/** Get the keys of an **`object`**
+/** Get the keys of an [[Object]]
  * @param O
  * @returns [[Key]]
  * @example
