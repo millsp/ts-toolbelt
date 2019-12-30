@@ -25,18 +25,18 @@ type OmitObject<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'
 /**
  * @hidden
  */
-type OmitArrays<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
+type OmitList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
   O extends object                  // Same as above, but
   ? O extends (infer A)[]           // If O is an array
     ? {
-        1: OmitArrays<A, Path, I>[] // Dive into the array (TS <3.7)
+        1: OmitList<A, Path, I>[] // Dive into the array (TS <3.7)
         0: never
       }[O extends List ? 1 : 0]
     : Pos<I> extends LastIndex<Path>
       ? _OOmit<O, Path[Pos<I>]>
       : {
           [K in keyof O]: K extends Path[Pos<I>]
-                          ? OmitArrays<O[K], Path, Next<I>>
+                          ? OmitList<O[K], Path, Next<I>>
                           : O[K]
         } & {}
   : O
@@ -44,12 +44,13 @@ type OmitArrays<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'
 /** Remove out of **`O`** the fields at **`Path`**
  * @param O to remove from
  * @param Path to be followed
+ * @param list (?=`0`) `1` to work within object lists
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Omit<O extends object, Path extends List<Key>, array extends Boolean = False> = {
+export type Omit<O extends object, Path extends List<Key>, list extends Boolean = 0> = {
   0: OmitObject<O, Path>
-  1: OmitArrays<O, Path>
-}[array]
+  1: OmitList<O, Path>
+}[list]

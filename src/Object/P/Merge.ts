@@ -26,18 +26,18 @@ type MergeObject<O, Path extends List<Key>, O1 extends object, depth extends Dep
 /**
  * @hidden
  */
-type MergeArrays<O, Path extends List<Key>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
+type MergeList<O, Path extends List<Key>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                              // Same as above, but
   ? O extends (infer A)[]                       // If O is an array
     ? {
-        1: MergeArrays<A, Path, O1, depth, I>[] // Dive into the array (TS <3.7)
+        1: MergeList<A, Path, O1, depth, I>[] // Dive into the array (TS <3.7)
         0: never
-      }[O extends any[] ? 1 : 0]
+      }[O extends List ? 1 : 0]
     : Pos<I> extends Length<Path>
       ? OMerge<O, O1, depth>
       : {
           [K in keyof O]: K extends Path[Pos<I>]
-                          ? MergeArrays<O[K], Path, O1, depth, Next<I>>
+                          ? MergeList<O[K], Path, O1, depth, Next<I>>
                           : O[K]
         } & {}
     : O
@@ -47,12 +47,13 @@ type MergeArrays<O, Path extends List<Key>, O1 extends object, depth extends Dep
  * @param Path to be followed
  * @param O1 to copy from
  * @param depth (?=`'flat'`) to do it deeply
+ * @param list (?=`0`) `1` to work within object lists
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Merge<O extends object, Path extends List<Key>, O1 extends object, depth extends Depth = 'flat', array extends Boolean = 0> = {
+export type Merge<O extends object, Path extends List<Key>, O1 extends object, depth extends Depth = 'flat', list extends Boolean = 0> = {
   0: MergeObject<O, Path, O1, depth>
-  1: MergeArrays<O, Path, O1, depth>
-}[array]
+  1: MergeList<O, Path, O1, depth>
+}[list]

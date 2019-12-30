@@ -32,7 +32,7 @@ type ReadonlyArrays<O, Path extends List<Key>, depth extends Depth, I extends It
     ? {
         1: ReadonlyArrays<A, Path, depth, I>[] // Dive into the array (TS <3.7)
         0: never
-      }[O extends any[] ? 1 : 0]
+      }[O extends List ? 1 : 0]
     : Pos<I> extends LastIndex<Path>
       ? OReadonly<O, Path[Pos<I>], depth>
       : {
@@ -46,13 +46,14 @@ type ReadonlyArrays<O, Path extends List<Key>, depth extends Depth, I extends It
  * @param O to make readonly
  * @param Path to be followed
  * @param depth (?=`'flat'`) to do it deeply
+ * @param list (?=`0`) `1` to work within object lists
  * @returns **`object`**
  * @example
  * ```ts
  * ```
  */
-export type Readonly<O extends object, Path extends List<Key>, depth extends Depth = 'flat', array extends Boolean = 0> = {
+export type Readonly<O extends object, Path extends List<Key>, depth extends Depth = 'flat', list extends Boolean = 0> = {
   0: ReadonlyObject<O, Path, depth>
   1: ReadonlyArrays<O, Path, depth>
-}[array]
+}[list]
 
