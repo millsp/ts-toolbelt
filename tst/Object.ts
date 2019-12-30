@@ -1391,30 +1391,26 @@ type O_PUPDATE = {
 };
 
 type O_PUPDATE_UNIONS = {
-    a: {
+    a: 'a' | {
         a: 'x'
         b: {
             a: 'aba'
             b: 'abb'
         }
-    } | 'a'
-    b?: {
+    },
+    b?: 'b' | {
         a: 'x'
         b: {
             a: 'bba'
             b: 'bbb'
         }
-    } | 'b'
+    },
     c?: string
 };
 
 type O_PUPDATE_VPATH = {
     a: 'a' | {
-        a: {
-            a: {
-                a: 'x'
-            }
-        }
+        a: string
         b: {
             a: 'aba'
             b: 'abb'
@@ -1422,9 +1418,7 @@ type O_PUPDATE_VPATH = {
     }
     b?: 'b' | {
         a: {
-            a: {
-                a: 'x'
-            }
+            a: 'baa'
             b: 'bab'
         }
         b: {
@@ -1432,17 +1426,65 @@ type O_PUPDATE_VPATH = {
             b: 'bbb'
         };
     }
-    c?: {
-        a: {
-            a: {
-                a: 'x'
-            };
-        };
-    }
+    c?: string
 };
 
 checks([
     check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>,                            O_PUPDATE,          Test.Pass>(),
     check<O.P.Update<OP_UNIONS, ['a' | 'b', 'a'], 'x'>,                     O_PUPDATE_UNIONS,   Test.Pass>(),
-    check< O.P.Update<OP_UNIONS, ['a' | 'b' | 'c', 'a', 'a', 'a'], 'x'>,    O_PUPDATE_VPATH,    Test.Pass>(),
+    check<O.P.Update<OP_UNIONS, ['a' | 'b' | 'c', 'a', 'a', 'a'], 'x'>,     O_PUPDATE_VPATH,    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// P.RECORD
+
+type RECORD_ABCD_STRING_OPTR = {
+    readonly a?: {
+        readonly b?: {
+            readonly d?: string
+        }
+        readonly c?: {
+            readonly d?: string
+        }
+    }
+}
+
+type RECORD_ABCD_STRING_OPTW = {
+    a?: {
+        b?: {
+            d?: string
+        }
+        c?: {
+            d?: string
+        }
+    }
+}
+
+type RECORD_ABCD_STRING_REQR = {
+    readonly a: {
+        readonly b: {
+            readonly d: string
+        }
+        readonly c: {
+            readonly d: string
+        }
+    }
+}
+
+type RECORD_ABCD_STRING_REQW = {
+    a: {
+        b: {
+            d: string
+        }
+        c: {
+            d: string
+        }
+    }
+};
+
+checks([
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'R']>,  RECORD_ABCD_STRING_OPTR,   Test.Pass>(),
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'W']>,  RECORD_ABCD_STRING_OPTW,   Test.Pass>(),
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['!', 'R']>,  RECORD_ABCD_STRING_REQR,   Test.Pass>(),
+    check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['!', 'W']>,  RECORD_ABCD_STRING_REQW,   Test.Pass>(),
 ])
