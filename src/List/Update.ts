@@ -11,6 +11,8 @@ import {_Repeat} from './Repeat'
 import {Next} from '../Iteration/Next'
 import {Naked} from './_Internal'
 import {NumberOf} from '../Any/_Internal'
+import {Extends} from '../Any/Extends'
+import {Or} from '../Boolean/Or'
 
 /**
 @hidden
@@ -24,7 +26,7 @@ export type UpdateField<L extends List, K extends string, A extends any> = {
 /**
 @hidden
 */
-type __Update<L extends List, K extends string, A extends any> =
+type UpdateTuple<L extends List, K extends string, A extends any> =
     GreaterEq<K, Length<L, 's'>> extends 1
     ? UpdateField<Overwrite<_Repeat<undefined, IKey<Next<IterationOf<K>>>>, L>, K, A>
     : UpdateField<L, K, A>
@@ -32,10 +34,16 @@ type __Update<L extends List, K extends string, A extends any> =
 /**
 @hidden
 */
+type UpdateList<L extends List, A extends any> =
+    (L[number] | A)[]
+
+/**
+@hidden
+*/
 export type _Update<L extends List, K extends Key, A extends any> =
-    number extends Length<L>
-    ? (L[number] | A)[]
-    : __Update<Naked<L>, NumberOf<K> & string, A>
+    Or<Extends<number, Length<L>>, Extends<number, K>> extends 1
+    ? UpdateList<L, A>
+    : UpdateTuple<Naked<L>, NumberOf<K> & string, A>
 
 /**
 Update in **`L`** the entries of key **`K`** with **`A`**.
@@ -54,5 +62,3 @@ export type Update<L extends List, K extends Key, A extends any> =
       ? _Update<L, K, A>
       : never
     : never
-
-type t = Update<number[], 5, '42'>
