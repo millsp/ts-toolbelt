@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.1...v6.1.2) (2019-12-30)
+
+
+### Bug Fixes
+
+* **o.p.update:** not creating fields ([1772c9a](https://github.com/pirix-gh/ts-toolbelt/commit/1772c9ace3619a0c3f42b1ae92080188614a5d20))
+
 ### [6.1.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.0...v6.1.1) (2019-12-30)
 
 
