@@ -17,7 +17,7 @@ RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
 
 # Publish the current branch origin
 if [ "$BRANCH" != "master" ] || [ "$1" = "--no-tags" ] || [ "$RELEASE" = "false" ]; then
-    git push origin $BRANCH                 # no a release
+    git push origin $BRANCH                 # not a release
 else
     git push origin $BRANCH --follow-tags   # only releases
 fi;
