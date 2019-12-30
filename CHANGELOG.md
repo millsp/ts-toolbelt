@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.1.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.0.7...v6.1.0) (2019-12-30)
+
+
+### Features
+
+* **o.p:** add support for arrays (excluding Update) ([2395201](https://github.com/pirix-gh/ts-toolbelt/commit/239520137d69ea9f3ac24494d8ee3af9efbcaeb3)), closes [pirix-gh/ts-toolbelt#80](https://github.com/pirix-gh/ts-toolbelt/issues/80)
+
+
+### Others
+
+* change comment format ([eb3cc99](https://github.com/pirix-gh/ts-toolbelt/commit/eb3cc99eacc8139690bdb9e25d7f3392e3f46e83))
+* cleanup ([40a5b29](https://github.com/pirix-gh/ts-toolbelt/commit/40a5b298d3c8eb27955ed1cfcd2b09f992bcd123))
+* cleanup ([bd2b4ea](https://github.com/pirix-gh/ts-toolbelt/commit/bd2b4eaf1f640a4110a1eee2c15eaadb674872a5))
+* cleanup ([84dca82](https://github.com/pirix-gh/ts-toolbelt/commit/84dca828c8f2351da21dc54968a20fe145770db3))
+
 ### [6.0.7](https://github.com/pirix-gh/ts-toolbelt/compare/v7.0.0...v6.0.7) (2019-12-30)
 
 
