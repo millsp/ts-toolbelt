@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npx tsc --noEmit
+npx tsc --noEmit --diagnostics
