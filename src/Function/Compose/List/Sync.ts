@@ -6,7 +6,7 @@ import {Last} from '../../../List/Last'
 import {Head} from '../../../List/Head'
 
 /**
- * @hidden
+@hidden
  */
 export type ComposeListSync = {
     <

@@ -12,8 +12,8 @@ import {Naked} from './_Internal'
 import {Extends} from '../Any/_api'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type UnNestCheap<L extends List> =
     (UnionOf<L> extends infer UL    // make `L` a union
     ? UL extends unknown            // for each in union
@@ -25,44 +25,45 @@ type UnNestCheap<L extends List> =
     )[] & {}                        // make result array
 
 /**
- * @hidden
- */
+@hidden
+*/
 type Flatter<L extends List, LN extends List, I extends Iteration> =
     L[Pos<I>] extends List
     ? _Concat<LN, L[Pos<I>]> // if it's a  list
     : _Append<LN, L[Pos<I>]> // if it's an item
 
 /**
- * @hidden
- */
+@hidden
+*/
 type UnNestExact<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: UnNestExact<L, Flatter<L, LN, I>, Next<I>>
     1: LN
 }[Extends<Pos<I>, Length<L>>]
 
 /**
- * @hidden
- */
+@hidden
+*/
 type __UnNest<L extends List> =
     number extends Length<L>
     ? UnNestCheap<L>
     : UnNestExact<L>
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type _UnNest<L extends List> =
     __UnNest<Naked<L>> extends infer X
     ? Cast<X, List>
     : never
 
-/** Remove a dimension of **`L`**
- * @param L to un-nest
- * @returns [[List]]
- * @example
- * ```ts
- * ```
- */
+/**
+Remove a dimension of **`L`**
+@param L to un-nest
+@returns [[List]]
+@example
+```ts
+```
+*/
 export type UnNest<L extends List> =
     L extends unknown
     ? _UnNest<L>

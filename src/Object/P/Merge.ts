@@ -10,8 +10,8 @@ import {Depth} from '../_Internal'
 import {Boolean} from '../../Boolean/Boolean'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type MergeObject<O, Path extends List<Key>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                                                    // If it's an object
   ? Pos<I> extends Length<Path>                                       // If we've reached the end
@@ -24,8 +24,8 @@ type MergeObject<O, Path extends List<Key>, O1 extends object, depth extends Dep
   : O                                                                 // Not an object - x
 
 /**
- * @hidden
- */
+@hidden
+*/
 type MergeList<O, Path extends List<Key>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                              // Same as above, but
   ? O extends (infer A)[]                       // If O is an array
@@ -42,17 +42,18 @@ type MergeList<O, Path extends List<Key>, O1 extends object, depth extends Depth
         } & {}
     : O
 
-/** Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**
- * @param O to complete
- * @param Path to be followed
- * @param O1 to copy from
- * @param depth (?=`'flat'`) to do it deeply
- * @param list (?=`0`) `1` to work within object lists
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**
+@param O to complete
+@param Path to be followed
+@param O1 to copy from
+@param depth (?=`'flat'`) to do it deeply
+@param list (?=`0`) `1` to work within object lists
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Merge<O extends object, Path extends List<Key>, O1 extends object, depth extends Depth = 'flat', list extends Boolean = 0> = {
   0: MergeObject<O, Path, O1, depth>
   1: MergeList<O, Path, O1, depth>

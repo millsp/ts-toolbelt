@@ -6,36 +6,37 @@ import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type OptionalFlat<O> = {
     [K in keyof O]?: O[K]
 } & {}
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type OptionalDeep<O> = {
     [K in keyof O]?: OptionalDeep<O[K]>
 }
 
 /**
- * @hidden
- */
+@hidden
+*/
 type OptionalPart<O extends object, depth extends Depth> = {
     'flat': OptionalFlat<O>,
     'deep': OptionalDeep<O>,
 }[depth]
 
-/** Make some fields of **`O`** optional (deeply or not)
- * @param O to make optional
- * @param K (?=`any`) to choose fields
- * @param depth (?=`'default'`) to do it deeply
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Make some fields of **`O`** optional (deeply or not)
+@param O to make optional
+@param K (?=`any`) to choose fields
+@param depth (?=`'default'`) to do it deeply
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Optional<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: OptionalPart<O, depth>
     0: MergeFlat<OptionalPart<Pick<O, K>, depth>, O>

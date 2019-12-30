@@ -4,8 +4,8 @@ import {IntersectOf} from '../Union/IntersectOf'
 import {Compute} from '../Any/Compute'
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type _Invert<O extends Record<Key, Key>> =
   Compute<IntersectOf<
     { // swaps the key and the value
@@ -13,33 +13,34 @@ export type _Invert<O extends Record<Key, Key>> =
     }[keyof O]
   >>
 
-/** Swaps the keys and values of an [[Object]] (if applicable)
- * @param O
- * @returns [[Object]]
- * @example
- * ```ts
- * import {O} from 'ts-toolbelt'
- *
- * enum E {
- *     A = 'Av',
- *     B = 'Bv',
- *     C = 'Cv',
- *     D = 'Dv',
- *     X = 1
- * }
- *
- * type O = {
- *     A: 'Av'
- *     B: 'Bv'
- *     C: 'Cv'
- *     D: 'Dv'
- *     X: 1
- * }
- *
- * type test0 = O.Invert<typeof E>
- * type test1 = O.Invert<O>
- * ```
- */
+/**
+Swaps the keys and values of an [[Object]] (if applicable)
+@param O
+@returns [[Object]]
+@example
+```ts
+import {O} from 'ts-toolbelt'
+
+enum E {
+    A = 'Av',
+    B = 'Bv',
+    C = 'Cv',
+    D = 'Dv',
+    X = 1
+}
+
+type O = {
+    A: 'Av'
+    B: 'Bv'
+    C: 'Cv'
+    D: 'Dv'
+    X: 1
+}
+
+type test0 = O.Invert<typeof E>
+type test1 = O.Invert<O>
+```
+*/
 export type Invert<O extends Record<Key, Key>> =
     O extends unknown
     ? _Invert<O>

@@ -7,37 +7,38 @@ import {NonNullable} from '../Union/NonNullable'
 import {Keys} from './Keys'
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type CompulsoryFlat<O> = {
     [K in keyof O]-?: NonNullable<O[K]>
 } & {}
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type CompulsoryDeep<O> = {
     [K in keyof O]-?: CompulsoryDeep<NonNullable<O[K]>>
 }
 
 /**
- * @hidden
- */
+@hidden
+*/
 type CompulsoryPart<O extends object, depth extends Depth> = {
     'flat': CompulsoryFlat<O>,
     'deep': CompulsoryDeep<O>,
 }[depth]
 
-/** Make some fields of **`O`** compulsory (deeply or not)
- * (it's like [[Required]] & [[NonNullable]] at once).
- * @param O to make compulsory
- * @param K (?=`any`) to choose fields
- * @param depth (?=`'flat'`) to do it deeply
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Make some fields of **`O`** compulsory (deeply or not)
+(it's like [[Required]] & [[NonNullable]] at once).
+@param O to make compulsory
+@param K (?=`any`) to choose fields
+@param depth (?=`'flat'`) to do it deeply
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Compulsory<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: CompulsoryPart<O, depth>
     0: MergeFlat<CompulsoryPart<Pick<O, K>, depth>, O>

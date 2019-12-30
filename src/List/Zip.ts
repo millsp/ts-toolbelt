@@ -11,29 +11,30 @@ import {Naked} from './_Internal'
 import {Extends} from '../Any/Extends'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type __Zip<L extends List, L1 extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: __Zip<L, L1, Prepend<LN, [L[Pos<I>], L1[Pos<I>]]>, Next<I>>
     1: _Reverse<LN>
 }[Extends<Pos<I>, Length<L>>]
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type _Zip<L extends List, L1 extends List> =
     __Zip<Naked<L>, Naked<L1>> extends infer X
     ? Cast<X, List>
     : never
 
-/** Pair up the entries of **`L`** with **`L1`**
- * @param L to pair up
- * @param L1 to pair up with
- * @returns [[List]]
- * @example
- * ```ts
- * ```
- */
+/**
+Pair up the entries of **`L`** with **`L1`**
+@param L to pair up
+@param L1 to pair up with
+@returns [[List]]
+@example
+```ts
+```
+*/
 export type Zip<L extends List, L1 extends List> =
     L extends unknown
     ? L1 extends unknown

@@ -7,36 +7,37 @@ import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type NullableFlat<O> = {
     [K in keyof O]: UNullable<O[K]>
 } & {}
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type NullableDeep<O> = {
     [K in keyof O]: NullableDeep<UNullable<O[K]>>
 }
 
 /**
- * @hidden
- */
+@hidden
+*/
 type NullablePart<O extends object, depth extends Depth> = {
     'flat': NullableFlat<O>,
     'deep': NullableDeep<O>,
 }[depth]
 
-/** Make some fields of **`O`** nullable (deeply or not)
- * @param O to make nullable
- * @param K (?=`any`) to choose fields
- * @param depth (?=`'flat'`) to do it deeply
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Make some fields of **`O`** nullable (deeply or not)
+@param O to make nullable
+@param K (?=`any`) to choose fields
+@param depth (?=`'flat'`) to do it deeply
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Nullable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: NullablePart<O, depth>
     0: MergeFlat<NullablePart<Pick<O, K>, depth>, O>

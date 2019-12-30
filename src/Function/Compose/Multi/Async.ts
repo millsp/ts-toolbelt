@@ -7,7 +7,7 @@ import {Return} from '../../Return'
 import {Head} from '../../../List/Head'
 
 /**
- * @hidden
+@hidden
  */
 export type ComposeMultiAsync = {
     <

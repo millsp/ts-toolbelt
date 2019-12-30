@@ -1,14 +1,15 @@
 import {IntersectOf} from './IntersectOf'
 import {Union} from './Union'
 
-/** Get the last item within an [[Union]]
- * (⚠️ it might not preserve order)
- * @param U
- * @returns **any**
- * @example
- * ```ts
- * ```
- */
+/**
+Get the last item within an [[Union]]
+(⚠️ it might not preserve order)
+@param U
+@returns **any**
+@example
+```ts
+```
+*/
 export type Last<U extends Union> =
     IntersectOf<
         U extends unknown   // Distribute U

@@ -1,19 +1,22 @@
-/** Describes compatible type formats
- * * `s`: **`string`**
- * * `n`: **`number`**
- */
+/**
+Describes compatible type formats
+* `s`: **`string`**
+* `n`: **`number`**
+*/
 export type Formats = 'n' | 's'
 
-/** Describes how to perform iterations
- */
+/**
+Describes how to perform iterations
+*/
 export type Way = '->' | '<-'
 
 // ---------------------------------------------------------------------------------------
 
-/** Generate the [[IterationOf]] type
- * @param min -40
- * @param max +40
- */
+/**
+Generate the [[IterationOf]] type
+@param min -40
+@param max +40
+*/
 const IterationOfGenerator = (min: number, max: number) => {
     console.log(`{"${min}": ["__", "${min + 1}", "${min}", ${min}, "-"],`)
 

@@ -9,8 +9,8 @@ import {List} from '../../List/List'
 import {Boolean, False} from '../../Boolean/Boolean'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type OmitObject<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                        // If it's an object
   ? Pos<I> extends LastIndex<Path>                        // If it's the last index
@@ -23,8 +23,8 @@ type OmitObject<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'
   : O                                                     // Not an object - x
 
 /**
- * @hidden
- */
+@hidden
+*/
 type OmitList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
   O extends object                  // Same as above, but
   ? O extends (infer A)[]           // If O is an array
@@ -41,15 +41,16 @@ type OmitList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>>
         } & {}
   : O
 
-/** Remove out of **`O`** the fields at **`Path`**
- * @param O to remove from
- * @param Path to be followed
- * @param list (?=`0`) `1` to work within object lists
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Remove out of **`O`** the fields at **`Path`**
+@param O to remove from
+@param Path to be followed
+@param list (?=`0`) `1` to work within object lists
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Omit<O extends object, Path extends List<Key>, list extends Boolean = 0> = {
   0: OmitObject<O, Path>
   1: OmitList<O, Path>

@@ -12,30 +12,31 @@ import {Boolean} from '../Boolean/Boolean'
 import {Extends} from '../Any/Extends'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type __Path<O, Path extends List<Key>, strict extends Boolean, I extends Iteration = IterationOf<'0'>> = {
     0: __Path<NonNullable<At<O & {}, Path[Pos<I>], strict>>, Path, strict, Next<I>>
     1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
 }[Extends<Pos<I>, Length<Path>>]
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type _Path<O extends object, Path extends List<Key>, strict extends Boolean = 1> =
     __Path<O, Path, strict> extends infer X
     ? Cast<X, any>
     : never
 
-/** Get in **`O`** the type of nested properties
- * For more advanced capabilities, see [[PathUp]]
- * @param O to be inspected
- * @param Path to be followed
- * @returns **`any`**
- * @example
- * ```ts
- * ```
- */
+/**
+Get in **`O`** the type of nested properties
+For more advanced capabilities, see [[PathUp]]
+@param O to be inspected
+@param Path to be followed
+@returns **`any`**
+@example
+```ts
+```
+*/
 export type Path<O extends object, Path extends List<Key>, strict extends Boolean = 1> =
     O extends unknown
     ? Path extends unknown

@@ -6,36 +6,37 @@ import {Implements} from '../Any/Implements'
 import {Keys} from './Keys'
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type WritableFlat<O> = {
     -readonly [K in keyof O]: O[K]
 }
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type WritableDeep<O> = {
     -readonly [K in keyof O]: WritableDeep<O[K]>
 }
 
 /**
- * @hidden
- */
+@hidden
+*/
 type WritablePart<O extends object, depth extends Depth> = {
     'flat': WritableFlat<O>,
     'deep': WritableDeep<O>,
 }[depth]
 
-/** Make some fields of **`O`** writable (deeply or not)
- * @param O to make writable
- * @param K (?=`any`) to choose fields
- * @param depth (?=`'flat'`) to do it deeply
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Make some fields of **`O`** writable (deeply or not)
+@param O to make writable
+@param K (?=`any`) to choose fields
+@param depth (?=`'flat'`) to do it deeply
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Writable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
     1: WritablePart<O, depth>
     0: MergeFlat<WritablePart<Pick<O, K>, depth>, O>

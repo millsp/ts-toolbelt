@@ -6,7 +6,7 @@ import {Return} from '../../Return'
 import {Last} from '../../../List/Last'
 
 /**
- * @hidden
+@hidden
  */
 export type PipeMultiSync = {
     <

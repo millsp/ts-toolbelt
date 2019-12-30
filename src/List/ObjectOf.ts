@@ -3,8 +3,8 @@ import {HasAll} from '../Union/HasAll'
 import {At} from '../Object/At'
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type _ObjectOf<L extends object> =
     HasAll<keyof L, keyof any[]> extends 1     // check that is is an array
     ? [number] extends [At<L, 'length'>]       // ^^^ handles mixed up objs
@@ -12,13 +12,14 @@ export type _ObjectOf<L extends object> =
       : _Omit<L, keyof any[]>                  // transforms tuples
     : L
 
-/** Transform a [[List]] or an `Array` into an [[Object]]
- * @param L to transform
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Transform a [[List]] or an `Array` into an [[Object]]
+@param L to transform
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type ObjectOf<L extends object> =
     L extends unknown
     ? _ObjectOf<L>

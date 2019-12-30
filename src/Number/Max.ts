@@ -14,8 +14,8 @@ import {Extends} from '../Any/Extends'
 import {Or} from '../Boolean/Or'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
     1: Prev<I>
@@ -29,51 +29,52 @@ type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
 ]
 
 /**
- * @hidden
- */
+@hidden
+*/
 type MaxPositive<N extends Number> =
     _MaxPositive<N> extends infer X
     ? Cast<X, Iteration>
     : never
 
 /**
- * @hidden
- */
+@hidden
+*/
 type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
     1: I
 }[Or<Extends<Key<I>, N>, Extends<string, Key<I>>>] // stops as soon as it finds
 
 /**
- * @hidden
- */
+@hidden
+*/
 type MaxNegative<N extends Number> =
     _MaxNegative<N> extends infer X
     ? Cast<X, Iteration>
     : never
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type _Max<N extends Iteration> =
     _IsNegative<N> extends 1 // breaks distribution
     ? MaxNegative<Key<N>>
     : MaxPositive<Exclude<Key<N>, Numbers['string']['-']>>
     // Exclude (-) numbers, MinPositive only works with (+)
 
-/** Get the biggest [[Number]] within an [[Union]]
- * @param N [[Union]]
- * @param fmt (?=`'s'`) output format
- * @returns **`string | number | boolean`**
- * @example
- * ```ts
- * import {N} from 'ts-toolbelt'
- *
- * type test0 = N.Max<'-2' | '10' | '3'>      // '10'
- * type test1 = N.Max<'-2' | '10' | '3', 's'> // '10'
- * type test2 = N.Max<'-2' | '10' | '3', 'n'> //  10
- * type test3 = N.Min<'-2' | '10' | 'oops'>   // string
- * ```
- */
+/**
+Get the biggest [[Number]] within an [[Union]]
+@param N [[Union]]
+@param fmt (?=`'s'`) output format
+@returns **`string | number | boolean`**
+@example
+```ts
+import {N} from 'ts-toolbelt'
+
+type test0 = N.Max<'-2' | '10' | '3'>      // '10'
+type test1 = N.Max<'-2' | '10' | '3', 's'> // '10'
+type test2 = N.Max<'-2' | '10' | '3', 'n'> //  10
+type test3 = N.Min<'-2' | '10' | 'oops'>   // string
+```
+*/
 export type Max<N extends Number, fmt extends Formats = 's'> =
     Format<_Max<IterationOf<N>>, fmt>

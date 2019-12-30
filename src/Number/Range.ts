@@ -12,54 +12,55 @@ import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type RangeForth<From extends Iteration, To extends Iteration, fmt extends Formats = 's', L extends List = []> = {
     0: RangeForth<Prev<From>, To, fmt, Prepend<L, Format<From, fmt>>>
     1: L
 }[Extends<From, To>]
 
 /**
- * @hidden
- */
+@hidden
+*/
 type RangeBack<From extends Iteration, To extends Iteration, fmt extends Formats = 's', L extends List = []> = {
     0: RangeBack<Next<From>, To, fmt, Prepend<L, Format<From, fmt>>>
     1: L
 }[Extends<From, To>]
 
 /**
- * @hidden
- */
+@hidden
+*/
 type __Range<From extends Iteration, To extends Iteration, way extends Way, fmt extends Formats> = {
     '->': RangeForth<To, Prev<From>, fmt> // Reverse logic to work naturally #`Prepend`
     '<-': RangeBack<From, Next<To>, fmt>  // Works in reverse mode (default) #`Prepend`
 }[way]
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type _Range<From extends Number, To extends Number, way extends Way = '->', fmt extends Formats = 's'> =
     __Range<IterationOf<From>, IterationOf<To>, way, fmt> extends infer X
     ? Cast<X, (string | number)[]>
     : never
 
-/** Create a range of **number**s
- * @param From to start with
- * @param To to end with
- * @param way (?=`'->'`) to reverse it
- * @param fmt (?=`'s'`) output format
- * @returns **`string[] | number[] | boolean[]`**
- * @example
- * ```ts
- * import {N} from 'ts-toolbelt'
- *
- * type test0 = N.Range<'-2', '1'>            // ['-2', '-1', '0', '1']
- * type test1 = N.Range<'-2', '1', '->'>      // ['-2', '-1', '0', '1']
- * type test2 = N.Range<'-2', '1', '<-'>      // ['1', '0', '-1', '-2']
- * type test3 = N.Range<'-2', '1', '<-', 's'> // ['1', '0', '-1', '-2']
- * type test4 = N.Range<'-2', '1', '->', 'n'> // [-2 , -1 ,   0 ,   1 ]
- * ```
- */
+/**
+Create a range of **number**s
+@param From to start with
+@param To to end with
+@param way (?=`'->'`) to reverse it
+@param fmt (?=`'s'`) output format
+@returns **`string[] | number[] | boolean[]`**
+@example
+```ts
+import {N} from 'ts-toolbelt'
+
+type test0 = N.Range<'-2', '1'>            // ['-2', '-1', '0', '1']
+type test1 = N.Range<'-2', '1', '->'>      // ['-2', '-1', '0', '1']
+type test2 = N.Range<'-2', '1', '<-'>      // ['1', '0', '-1', '-2']
+type test3 = N.Range<'-2', '1', '<-', 's'> // ['1', '0', '-1', '-2']
+type test4 = N.Range<'-2', '1', '->', 'n'> // [-2 , -1 ,   0 ,   1 ]
+```
+*/
 export type Range<From extends Number, To extends Number, way extends Way = '->', fmt extends Formats = 's'> =
     From extends unknown
     ? To extends unknown

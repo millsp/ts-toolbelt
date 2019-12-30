@@ -27,8 +27,8 @@ type BuildUpdate<O extends object, K extends Key, Path extends List<Key>, A, I e
     : O & Record<Exclude<K, Keys<O>>, []>
 
 /**
- * @hidden
- */
+@hidden
+*/
 type _Update<O extends object, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
     Pos<I> extends LastIndex<Path>                                     // If it's the last index
     ? FinalUpdate<O, Path[Pos<I>], A>                                  // Use standard Update
@@ -46,16 +46,17 @@ type _Update<O extends object, Path extends List<Key>, A, I extends Iteration = 
         } & {}
       : never
 
-/** Update in **`O`** the fields at **`Path`** with **`A`**
- * (⚠️ this type is expensive)
- * @param O to update
- * @param Path to be followed
- * @param A to update with
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Update in **`O`** the fields at **`Path`** with **`A`**
+(⚠️ this type is expensive)
+@param O to update
+@param Path to be followed
+@param A to update with
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Update<O extends object, Path extends List<Key>, A extends any> =
     _Update<O, Path, A>
 

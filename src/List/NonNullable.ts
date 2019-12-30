@@ -9,15 +9,16 @@ import {Keys} from './Keys'
 import {List} from './List'
 import {NumberOf} from '../Any/_Internal'
 
-/** Make some entries of **`L`** not nullable (deeply or not)
- * @param L to make non nullable
- * @param K (?=`any`) to choose fields
- * @param depth (?=`'flat'`) to do it deeply
- * @returns [[List]]
- * @example
- * ```ts
- * ```
- */
+/**
+Make some entries of **`L`** not nullable (deeply or not)
+@param L to make non nullable
+@param K (?=`any`) to choose fields
+@param depth (?=`'flat'`) to do it deeply
+@returns [[List]]
+@example
+```ts
+```
+*/
 export type NonNullable<L extends List, K extends Key = any, depth extends Depth = 'flat'> = {
     1: Cast<ONonNullable<L, any, depth>, List>
     0: ListOf<ONonNullable<ObjectOf<L>, NumberOf<K>, depth>>

@@ -7,8 +7,8 @@ import {Kind} from '../Any/Kind'
 import {List} from './List'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type MergeFlatTuple<L extends List, L1 extends List> = ListOf<ObjectOf<{
     [K in keyof (L & L1)]: [At<L, K>] extends [never]
                            ? At<L1, K>
@@ -16,16 +16,16 @@ type MergeFlatTuple<L extends List, L1 extends List> = ListOf<ObjectOf<{
 }>>
 
 /**
- * @hidden
- */
+@hidden
+*/
 type MergeFlatArray<L extends List, L1 extends List> =
     (L | L1) extends (infer L)[]
     ? L[]
     : never
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type MergeFlat<L extends List, L1 extends List> =
     number extends Length<L | L1>
     // if we can't know the size, then get closest type
@@ -34,8 +34,8 @@ export type MergeFlat<L extends List, L1 extends List> =
     : MergeFlatTuple<L, L1>
 
 /**
- * @hidden
- */
+@hidden
+*/
 export type MergeDeep<O, O1> =
     Kind<(O | O1)> extends 'array'
     ? MergeFlat<O & [], O1 & []> extends infer M
@@ -43,16 +43,17 @@ export type MergeDeep<O, O1> =
       : never
     : O
 
-/** Complete the fields of **`O`** with the ones of **`O1`**
- * ('deep' option will skip any nullable object to be merged)
- * @param O to complete
- * @param O1 to copy from
- * @param depth (?=`'flat'`) to do it deeply
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Complete the fields of **`O`** with the ones of **`O1`**
+('deep' option will skip any nullable object to be merged)
+@param O to complete
+@param O1 to copy from
+@param depth (?=`'flat'`) to do it deeply
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Merge<L extends List, L1 extends List, depth extends Depth = 'flat'> = {
     'flat': MergeFlat<L, L1>
     'deep': MergeDeep<L, L1>

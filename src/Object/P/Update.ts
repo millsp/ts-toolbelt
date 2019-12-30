@@ -11,8 +11,8 @@ import {Record} from '../Record'
 import {Primitive} from '../../Misc/Primitive'
 
 /**
- * @hidden
- */
+@hidden
+*/
 type _Update<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
   O extends object                                                    // If it's an object
   ? Pos<I> extends LastIndex<Path>                                    // If it's the last index
@@ -28,15 +28,16 @@ type _Update<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'
     ? O                      // Keep as-is
     : _Record_RW<Path, A, I> // Otherwise replace with remaining path
 
-/** Update in **`O`** the fields at **`Path`** with **`A`**
- * (⚠️ this type is expensive)
- * @param O to update
- * @param Path to be followed
- * @param A to update with
- * @returns [[Object]]
- * @example
- * ```ts
- * ```
- */
+/**
+Update in **`O`** the fields at **`Path`** with **`A`**
+(⚠️ this type is expensive)
+@param O to update
+@param Path to be followed
+@param A to update with
+@returns [[Object]]
+@example
+```ts
+```
+*/
 export type Update<O extends object, Path extends List<Key>, A extends any> =
     _Update<O, Path, A>
