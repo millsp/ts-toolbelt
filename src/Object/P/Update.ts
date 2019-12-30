@@ -8,7 +8,6 @@ import {LastIndex} from '../../List/LastIndex'
 import {List} from '../../List/List'
 import {_Record_RW} from './Record'
 import {Record} from '../Record'
-import {Primitive} from '../../Misc/Primitive'
 
 /**
 @hidden
@@ -17,16 +16,14 @@ type _Update<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'
   O extends object                                                    // If it's an object
   ? Pos<I> extends LastIndex<Path>                                    // If it's the last index
     ? OUpdate<O, Path[Pos<I>], A>                                     // Use standard Update
-    : (O & Record<Exclude<Path[Pos<I>], keyof O>, 0>) extends infer O // Fill in missing keys with non-object
+    : (O & Record<Exclude<Path[Pos<I>], keyof O>, {}>) extends infer O // Fill in missing keys with non-object
       ? {
           [K in keyof O]: K extends Path[Pos<I>]                      // If K is part of path
                           ? _Update<O[K], Path, A, Next<I>>           // Keep diving
                           : O[K]                                      // Not part of path - x
         } & {}
       : never
-  : O extends Primitive      // O is not an object - if it's a value
-    ? O                      // Keep as-is
-    : _Record_RW<Path, A, I> // Otherwise replace with remaining path
+  : O
 
 /**
 Update in **`O`** the fields at **`Path`** with **`A`**

@@ -1450,8 +1450,6 @@ type O_PPICK_ARRAYS = {
     }[]
 };
 
-type t = O.P.Pick<OP_ARRAYS,   ['a' | 'b', 'a'], 1>
-
 type O_PPICK_ARRAYS_UNIONS = {
     a: {
         a: string
@@ -1626,6 +1624,7 @@ type O_PUPDATE_VPATH = {
 };
 
 checks([
+    check<O.P.Update<{},            ['a', 'b'], 'x'>,                           {a: {b: 'x'}},      Test.Pass>(),
     check<O.P.Update<OP,            ['a' | 'b', 'a'], 'x'>,                     O_PUPDATE,          Test.Pass>(),
     check<O.P.Update<OP_UNIONS,     ['a' | 'b', 'a'], 'x'>,                     O_PUPDATE_UNIONS,   Test.Pass>(),
     check<O.P.Update<OP_UNIONS,     ['a' | 'b' | 'c', 'a', 'a', 'a'], 'x'>,     O_PUPDATE_VPATH,    Test.Pass>(),
