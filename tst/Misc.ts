@@ -27,8 +27,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// PROMISABLE
+// PRIMITIVE
 
-checks([
-    check<M.Promisable<42>,     42 | Promise<42>,       Test.Pass>(),
-])
+// Cannot be tested
