@@ -37,8 +37,8 @@ Make some fields of **`O`** optional (deeply or not)
 ```ts
 ```
 */
-export type Optional<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
+export type Optional<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: OptionalPart<O, depth>
     0: MergeFlat<OptionalPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<Keys<O>, K>] & {}

@@ -38,8 +38,8 @@ Make some fields of **`O`** nullable (deeply or not)
 ```ts
 ```
 */
-export type Nullable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
+export type Nullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: NullablePart<O, depth>
     0: MergeFlat<NullablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<Keys<O>, K>] & {}

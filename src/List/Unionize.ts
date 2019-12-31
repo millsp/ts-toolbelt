@@ -14,5 +14,5 @@ Make the fields of **`L`** union the ones of **`L1`**
 ```ts
 ```
 */
-export type Unionize<L extends List, L1 extends List, K extends Key = any> =
+export type Unionize<L extends List, L1 extends List, K extends Key = Key> =
     Cast<OUnionize<L, L1, NumberOf<K>>, List>

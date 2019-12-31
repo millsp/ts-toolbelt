@@ -37,8 +37,8 @@ Make some fields of **`O`** writable (deeply or not)
 ```ts
 ```
 */
-export type Writable<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
+export type Writable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: WritablePart<O, depth>
     0: MergeFlat<WritablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<Keys<O>, K>] & {}

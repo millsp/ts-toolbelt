@@ -11,7 +11,7 @@ Make the fields of **`O`** union the ones of **`O1`**
 ```ts
 ```
 */
-export type Unionize<O extends object, O1 extends object, K extends Key = any> = {
+export type Unionize<O extends object, O1 extends object, K extends Key = Key> = {
     [P in keyof O]: P extends K
                     ? O[P] | At<O1, P>
                     : O[P]

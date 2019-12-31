@@ -39,8 +39,8 @@ Make some fields of **`O`** compulsory (deeply or not)
 ```ts
 ```
 */
-export type Compulsory<O extends object, K extends Key = any, depth extends Depth = 'flat'> = {
+export type Compulsory<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: CompulsoryPart<O, depth>
     0: MergeFlat<CompulsoryPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>]
+}[Implements<Keys<O>, K>] & {}
