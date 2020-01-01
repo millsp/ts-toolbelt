@@ -1,32 +1,27 @@
 import {Key} from '../Any/Key'
 import {Boolean} from '../Boolean/Boolean'
-import {Equals} from '../Any/Equals'
-import {Extends} from '../Any/Extends'
-import {Primitive} from '../Misc/Primitive'
 
 /**
 @hidden
 */
 type AtStrict<O extends object, K extends Key> =
-    K extends keyof O
-    ? O[K]
-    : never
+    [K & keyof O] extends [never]
+    ? never
+    : O[K & keyof O] // this is so that we can query `string | number`
 
 /**
 @hidden
 */
 type AtLoose<O extends object, K extends Key> =
     O extends unknown
-    ? Extends<K, Primitive> extends 1
-      ? O[K & keyof O]
-      : never
+    ? AtStrict<O, K>
     : never
 
 /**
 Get in **`O`** the type of a field of key **`K`**
 @param O to extract from
-@param K [[Key]] to extract at
-@param strict (?=`0`) `0` to work with unions
+@param K to extract at
+@param strict (?=`1`) `0` to work with unions
 @returns **`any`**
 @example
 ```ts

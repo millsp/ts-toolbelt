@@ -6,8 +6,8 @@ import {Boolean} from '../Boolean/Boolean'
 /**
 Get in **`L`** the type of an entry of key **`K`**
 @param L to extract from
-@param K [[Key]] to extract at
-@param strict (?=`1`) `0` enables using keys `string | number | symbol`
+@param K to extract at
+@param strict (?=`1`) `0` to work with unions
 @returns **`any`**
 @example
 */
