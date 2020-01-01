@@ -4,7 +4,7 @@ import {At} from '../Object/At'
 import {Exclude} from '../Union/Exclude'
 import {Numbers} from '../Number/_Internal'
 import {_ListOf} from '../Object/ListOf'
-import {HasAll} from '../Union/HasAll'
+import {Has} from '../Union/Has'
 
 /**
 @hidden
@@ -29,7 +29,7 @@ turn anything that is passed to it into a cleaned up [[Object]].
 */
 export type Clean<A extends any> =
     A extends object
-    ? HasAll<keyof A, keyof any[]> extends 1                       // if it is mixed with, or is an array
+    ? Has<keyof A, keyof any[]> extends 1                          // if it is mixed with, or is an array
       ? [Exclude<keyof A, ArrayProps>] extends [never]             //   if it is an array, or a tuple
         ? number extends At<A, 'length'>                           //     if it is an array
           ? At<A, number>[]                                        //       reform array

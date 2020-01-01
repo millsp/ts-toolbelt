@@ -1,9 +1,9 @@
-import {Intersect} from './Intersect'
 import {Union} from './Union'
+import {Not} from '../Boolean/Not'
+import {Extends} from '../Any/Extends'
 
 /**
-Check whether **`U`** contains **`A`**
-(**`U`** & **`A`** can be interchanged)
+Check whether **`U`** contains **`U1`**
 @param U to be inspected
 @param A to check within
 @returns [[Boolean]]
@@ -11,7 +11,5 @@ Check whether **`U`** contains **`A`**
 ```ts
 ```
 */
-export type Has<U extends Union, A extends Union> =
-    [Intersect<U, A>] extends [never]
-    ? 0
-    : 1
+export type Has<U extends Union, U1 extends Union> =
+    Not<Extends<Exclude<U1, U>, U1>>
