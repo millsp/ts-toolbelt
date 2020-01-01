@@ -7,7 +7,7 @@ import {At} from '../Object/At'
 */
 export type _ObjectOf<L extends object> =
     Has<keyof L, keyof any[]> extends 1        // check that is is an array
-    ? [number] extends [At<L, 'length'>]       // ^^^ handles mixed up objs
+    ? number extends At<L, 'length'>           // ^^^ handles mixed up objs
       ? _Omit<L, Exclude<keyof any[], number>> // preserves arrays
       : _Omit<L, keyof any[]>                  // transforms tuples
     : L
