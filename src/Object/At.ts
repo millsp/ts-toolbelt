@@ -2,6 +2,7 @@ import {Key} from '../Any/Key'
 import {Boolean} from '../Boolean/Boolean'
 import {Equals} from '../Any/Equals'
 import {Extends} from '../Any/Extends'
+import {Primitive} from '../Misc/Primitive'
 
 /**
 @hidden
@@ -15,13 +16,11 @@ type AtStrict<O extends object, K extends Key> =
 @hidden
 */
 type AtLoose<O extends object, K extends Key> =
-    Equals<K, any> extends 1
-    ? O[never]
-    : O extends unknown
-      ? Extends<K & keyof O, keyof O> extends 1
-        ? O[K & keyof O]
-        : never
+    O extends unknown
+    ? Extends<K, Primitive> extends 1
+      ? O[K & keyof O]
       : never
+    : never
 
 /**
 Get in **`O`** the type of a field of key **`K`**
