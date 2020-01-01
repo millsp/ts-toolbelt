@@ -19,4 +19,6 @@ let b = create(B) // B
 ```
 */
 export type InstanceOf<C extends Class> =
-    InstanceType<C>
+    C extends new (...args: any[]) => infer R
+    ? R
+    : any

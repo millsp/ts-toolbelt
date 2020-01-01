@@ -4,7 +4,7 @@ import {List} from '../List/List'
 /**
 Get the literal kind of a type
 @param A
-@returns **`'string' | 'number' | 'function' | 'array' | 'object' | 'boolean'`**
+@returns **`'string' | 'number' | 'function' | 'array' | 'object' | 'boolean' | 'unknown'`**
 @example
 ```ts
 ```

@@ -2,6 +2,7 @@ import {Depth} from '../Object/_Internal'
 import {Required as ORequired} from '../Object/Required'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
+import {Key} from '../Any/Key'
 
 /**
 Make **`L`** required (deeply or not)
@@ -13,4 +14,4 @@ Make **`L`** required (deeply or not)
 ```
 */
 export type Required<L extends List, depth extends Depth = 'flat'> =
-    Cast<ORequired<L, any, depth>, List>
+    Cast<ORequired<L, Key, depth>, List>

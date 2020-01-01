@@ -3,7 +3,7 @@ import {NonNullable} from '../Object/NonNullable'
 /**
 A [[Tuple]] (supported)
 @param A its type
-@returns **`A[]`**
+@returns [[List]]
 @example
 ```ts
 type tuple0 = [1, 20, 42]

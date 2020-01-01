@@ -12,5 +12,3 @@ Remove **`M`** out of **`U`**
 */
 export type Filter<U extends Union, M extends Union> =
     Exclude<U, M>
-
-type t = Filter<number | string, 1>

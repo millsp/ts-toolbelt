@@ -20,6 +20,6 @@ Make some entries of **`L`** not nullable (deeply or not)
 ```
 */
 export type NonNullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: Cast<ONonNullable<L, any, depth>, List>
+    1: Cast<ONonNullable<L, Key, depth>, List>
     0: ListOf<ONonNullable<ObjectOf<L>, NumberOf<K>, depth>>
 }[Implements<Keys<L>, K>] & {}

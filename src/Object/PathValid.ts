@@ -20,7 +20,7 @@ import {Length} from '../List/Length'
 type __PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0'>> = {
     0: __PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
     1: UpdateField<Path, KeySet<IKey<Prev<I>>, LastIndex<Path, 's'>>, never>
-    2: UpdateField<Path, KeySet<IKey<I>, LastIndex<Path, 's'>>, never>
+    2: UpdateField<Path, KeySet<IKey<I>,       LastIndex<Path, 's'>>, never>
 }[
     [O] extends [never]
     ? 1
