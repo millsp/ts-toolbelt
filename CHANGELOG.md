@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.5...v6.1.6) (2020-01-09)
+
+
+### Others
+
+* pathvalid ([e73dda8](https://github.com/pirix-gh/ts-toolbelt/commit/e73dda838569e3c07c8b14658e30b2a4936c4111))
+* **o.pathvalid:** simpler impl ([811892a](https://github.com/pirix-gh/ts-toolbelt/commit/811892a29ed1c182975224242409889db39b9794))
+
 ### [6.1.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.4...v6.1.5) (2020-01-01)
 
 
