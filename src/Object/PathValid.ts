@@ -6,27 +6,33 @@ import {At} from './At'
 import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {UpdateField} from '../List/Update'
-import {KeySet} from '../List/KeySet'
-import {Key as IKey} from '../Iteration/Key'
-import {Prev} from '../Iteration/Prev'
+import {Key} from '../Iteration/Key'
 import {Key as AKey} from '../Any/Key'
 import {List} from '../List/List'
-import {LastIndex} from '../List/LastIndex'
 import {Length} from '../List/Length'
 
 /**
 @hidden
 */
+type ValidatePath<O, Path extends List<AKey>, I extends Iteration> =
+    UpdateField<
+        Path,
+        Key<I>,
+        [At<O & {}, Path[Pos<I>]>] extends [never]
+        ? never
+        : Path[Pos<I>]
+    >
+
+/**
+@hidden
+*/
 type __PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0'>> = {
-    0: __PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, Path, Next<I>>
-    1: UpdateField<Path, KeySet<IKey<Prev<I>>, LastIndex<Path, 's'>>, never>
-    2: UpdateField<Path, KeySet<IKey<I>,       LastIndex<Path, 's'>>, never>
+    0: __PathValid<UNonNullable<At<O & {}, Path[Pos<I>]>>, ValidatePath<O, Path, I>, Next<I>>
+    1: Path
 }[
-    [O] extends [never]
+    Pos<I> extends Length<Path>
     ? 1
-    : Pos<I> extends Length<Path>
-      ? 2
-      : 0
+    : 0
 ]
 
 /**
