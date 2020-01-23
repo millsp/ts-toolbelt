@@ -38,8 +38,7 @@ For more advanced capabilities, see [[PathUp]]
 ```
 */
 export type Path<O extends object, Path extends List<Key>, strict extends Boolean = 1> =
-    O extends unknown
-    ? Path extends unknown
-      ? _Path<O, Path, strict>
-      : never
+    //! O extends unknown // not needed, this is what strict = 0 does
+    Path extends unknown
+    ? _Path<O, Path, strict>
     : never
