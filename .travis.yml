@@ -27,7 +27,8 @@ jobs:
       script:
         - npm run test 
       deploy:
-        provider: npm
+        - provider: npm
+          edge: true
         email: $NPM_EMAIL
         api_key: $NPM_TOKEN
         skip_cleanup: true
@@ -42,7 +43,8 @@ jobs:
     - stage: deploy:master
       if: tag IS blank AND branch = master AND fork = false AND env(DEPLOY) = true
       deploy:
-        provider: npm
+        - provider: npm
+          edge: true
         email: $NPM_EMAIL
         api_key: $NPM_TOKEN
         tag: latest
@@ -57,7 +59,8 @@ jobs:
     - stage: deploy:branch
       if: tag IS blank AND branch != master AND fork = false AND env(DEPLOY) = true
       deploy:
-        provider: npm
+        - provider: npm
+          edge: true
         email: $NPM_EMAIL
         api_key: $NPM_TOKEN
         tag: $TRAVIS_BRANCH
@@ -72,7 +75,8 @@ jobs:
     - stage: deploy:docs #deploys doc to gh-pages branch
       if: tag IS blank AND branch = master AND fork = false AND env(DEPLOY) = true
       deploy:
-        provider: pages
+        - provider: pages
+          edge: true
         skip_cleanup: true
         github_token: $GH_TOKEN
         local_dir: "docs"
