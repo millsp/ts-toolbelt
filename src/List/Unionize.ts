@@ -1,8 +1,7 @@
 import {Key} from '../Any/Key'
-import {Unionize as OUnionize} from '../Object/Unionize'
-import {Cast} from '../Any/Cast'
 import {List} from './List'
-import {NumberOf} from '../Any/_Internal'
+import {At} from '../Object/At'
+import {Format} from '../String/_api'
 
 /**
 Make the fields of **`L`** union the ones of **`L1`**
@@ -14,5 +13,8 @@ Make the fields of **`L`** union the ones of **`L1`**
 ```ts
 ```
 */
-export type Unionize<L extends List, L1 extends List, K extends Key = Key> =
-    Cast<OUnionize<L, L1, NumberOf<K>>, List>
+export type Unionize<L extends List, L1 extends List, K extends Key = Key> = {
+    [P in keyof L]: P extends K
+                    ? L[P] | At<L1, P extends string ? Format<P, 'n'> : P>
+                    : L[P]
+} & {}

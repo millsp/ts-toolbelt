@@ -580,7 +580,11 @@ checks([
 // ---------------------------------------------------------------------------------------
 // UNIONIZE
 
-// No test needed (same as O.Unionize)
+checks([
+    check<T.Unionize<[2], string[]>,    [2 | string],           Test.Pass>(),
+    check<T.Unionize<string[], [2]>,    Array<string | 2>,      Test.Pass>(),
+    check<T.Unionize<[1], [2, 3]>,      [1 | 2],                Test.Pass>(),
+])
 
 // --------------------------------------------------------------------------------?-------
 // UNIONOF
