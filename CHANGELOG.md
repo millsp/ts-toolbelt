@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.13](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.12...v6.1.13) (2020-01-31)
+
+
+### Bug Fixes
+
+* **l.objectof:** not handling const tuples ([7dd198c](https://github.com/pirix-gh/ts-toolbelt/commit/7dd198c4fa44af8fcfa21f5bb8362f7fc0742e3d))
+
+
+### Others
+
+* cleanup ([f88c256](https://github.com/pirix-gh/ts-toolbelt/commit/f88c2563e8a4cdf80cba440c53bd5af78cf22a26))
+
 ### [6.1.12](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.11...v6.1.12) (2020-01-31)
 
 
