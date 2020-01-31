@@ -9,7 +9,7 @@ import {Pos} from '../Iteration/Pos'
 import {List} from './List'
 import {UnionOf} from './UnionOf'
 import {Naked} from './_Internal'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 /**
 @hidden

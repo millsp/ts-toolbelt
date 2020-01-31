@@ -9,7 +9,7 @@ import {Prev} from '../Iteration/Prev'
 import {Cast} from '../Any/Cast'
 import {Naked} from './_Internal'
 import {Tail} from './Tail'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 /**
 starts in reverse from `N` till `N` = 0

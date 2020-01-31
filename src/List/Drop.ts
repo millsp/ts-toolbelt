@@ -9,7 +9,7 @@ import {Pos} from '../Iteration/Pos'
 import {Prev} from '../Iteration/Prev'
 import {Prepend} from './Prepend'
 import {Naked} from './_Internal'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 /**
 @hidden

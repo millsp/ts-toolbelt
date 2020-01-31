@@ -7,7 +7,7 @@ import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {List} from './List'
 import {Naked} from './_Internal'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 /**
 @hidden
