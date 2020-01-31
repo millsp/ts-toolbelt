@@ -1,92 +1,92 @@
 {
     "compilerOptions": {
-      //    "allowJs": true, /* Allow javascript files to be compiled. */
-      //    "allowSyntheticDefaultImports": true, /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
-      //    "allowUnreachableCode": false, /* Do not report errors on unreachable code. */
-      //    "allowUnusedLabels": false, /* Do not report errors on unused labels. */
-      //    "alwaysStrict": true, /* Parse in strict mode and emit "use strict" for each source file. */
-      //    "baseUrl": "./", /* Base directory to resolve non-absolute module names. */
-      //    "charset": "utf-8", /** The character set of the input files.*/
-      //    "checkJs": true, /* Report errors in .js files. */
-      "composite": true, /* Work with partial tsconfig.json in mono-repos, reference to another ts project. */
+      // "allowJs": true, /* Allow javascript files to be compiled. */
+      // "allowSyntheticDefaultImports": true, /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+      // "allowUnreachableCode": false, /* Do not report errors on unreachable code. */
+      // "allowUnusedLabels": false, /* Do not report errors on unused labels. */
+      // "alwaysStrict": true, /* Parse in strict mode and emit "use strict" for each source file. */
+      // "baseUrl": "./", /* Base directory to resolve non-absolute module names. */
+      // "charset": "utf-8", /** The character set of the input files.*/
+      // "checkJs": true, /* Report errors in .js files. */
+      // "composite": true, /* Work with partial tsconfig.json in mono-repos, reference to another ts project. */
       "declaration": true, /* Generates corresponding '.d.ts' file. */
       "declarationDir": "./out/types", /* Specify output directory for declaration files. */
-      //    "declarationMap": false, /* Generates a sourcemap for each corresponding '.d.ts' file. */
-      //    "diagnostics": true, /* Show diagnostic information. */
+      // "declarationMap": false, /* Generates a sourcemap for each corresponding '.d.ts' file. */
+      // "diagnostics": true, /* Show diagnostic information. */
       "disableSizeLimit": true, /* Disable size limit for JavaScript project. */
       "downlevelIteration": true, /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
-      //    "emitBOM": false, /* Emit a UTF-8 Byte Order Mark (BOM) in the beginning of output files. */
-      //    "emitDeclarationOnly": false, /* Only emit '.d.ts' declaration files. */
-      //    "emitDecoratorMetadata": true, /* Enables experimental support for emitting type metadata for decorators. */
+      // "emitBOM": false, /* Emit a UTF-8 Byte Order Mark (BOM) in the beginning of output files. */
+      // "emitDeclarationOnly": false, /* Only emit '.d.ts' declaration files. */
+      // "emitDecoratorMetadata": true, /* Enables experimental support for emitting type metadata for decorators. */
       "esModuleInterop": true, /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
       "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
       "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
       "importHelpers": true, /* Import emit helpers from 'tslib'. */
-      //    "inlineSourceMap": true, /* Emit a single file with source maps instead of having a separate file. */
-      //    "inlineSources": true, /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
-      //    "isolatedModules": true, /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
-      //    "jsx": "react", /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
-      //    "jsxFactory": "React.createElement", /* Equivalent of Babel's pragma option, Replace the function used when compiling JSX expressions. */
-      //    "keyofStringsOnly": false, /* Resolve 'keyof' to string valued property names only (no numbers or symbols). */
+      // "inlineSourceMap": true, /* Emit a single file with source maps instead of having a separate file. */
+      // "inlineSources": true, /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+      // "isolatedModules": true, /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+      // "jsx": "react", /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+      // "jsxFactory": "React.createElement", /* Equivalent of Babel's pragma option, Replace the function used when compiling JSX expressions. */
+      // "keyofStringsOnly": false, /* Resolve 'keyof' to string valued property names only (no numbers or symbols). */
       "lib": [
         "esnext",
         "es7",
         "dom"
       ], /* Specify library files to be included in the compilation. */
-      //    "listEmittedFiles": false, /* Enable to list all emitted files. */
-      //    "listFiles": false, /* Print names of files part of the compilation. */
-      //    "mapRoot": "./", /* Specify the location where debugger should locate map files instead of generated locations. */
-      //    "maxNodeModuleJsDepth": 0, /* The maximum dependency depth to search under node_modules and load JavaScript files. Only applicable with --allowJs. */
+      // "listEmittedFiles": false, /* Enable to list all emitted files. */
+      // "listFiles": false, /* Print names of files part of the compilation. */
+      // "mapRoot": "./", /* Specify the location where debugger should locate map files instead of generated locations. */
+      // "maxNodeModuleJsDepth": 0, /* The maximum dependency depth to search under node_modules and load JavaScript files. Only applicable with --allowJs. */
       "module": "commonjs", /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
-      //    "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-      //    "newLine": "LF", /* Specifies the end of line sequence to be used when emitting files: 'CRLF' (dos) or 'LF' (unix). */
-      //    "noEmit": true, /* Do not emit outputs. */
-      //    "noEmitHelpers": false, /* Do not generate custom helper functions like __extends in compiled output. */
+      // "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+      // "newLine": "LF", /* Specifies the end of line sequence to be used when emitting files: 'CRLF' (dos) or 'LF' (unix). */
+      // "noEmit": true, /* Do not emit outputs. */
+      // "noEmitHelpers": false, /* Do not generate custom helper functions like __extends in compiled output. */
       "noEmitOnError": true, /* Do not emit outputs if any type checking errors were reported. */
       "noErrorTruncation": true, /* Do not truncate error messages. */
       "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
       "noImplicitAny": true, /* Raise error on expressions and declarations with an implied 'any' type. */
       "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-      //    "noImplicitThis": true, /* Raise error on 'this' expressions with an implied 'any' type. */
-      //    "noImplicitUseStrict": false, /* Do not emit 'use strict' directives in module output. */
-      //    "noLib": false, /* Do not include the default library file (lib.d.ts). */
-      //    "noResolve": false, /* Do not add triple-slash references or module import targets to the list of compiled files. */
-      //    "noStrictGenericChecks": false, /* Disable strict checking of generic signatures in function types. */
-      //    "noUnusedLocals": true, /* Report errors on unused locals. */
-      //    "noUnusedParameters": true, /* Report errors on unused parameters. */
+      // "noImplicitThis": true, /* Raise error on 'this' expressions with an implied 'any' type. */
+      // "noImplicitUseStrict": false, /* Do not emit 'use strict' directives in module output. */
+      // "noLib": false, /* Do not include the default library file (lib.d.ts). */
+      // "noResolve": false, /* Do not add triple-slash references or module import targets to the list of compiled files. */
+      // "noStrictGenericChecks": false, /* Disable strict checking of generic signatures in function types. */
+      // "noUnusedLocals": true, /* Report errors on unused locals. */
+      // "noUnusedParameters": true, /* Report errors on unused parameters. */
       "outDir": "./out", /* Redirect output structure to the directory. */
-      //    "outFile": "./", /* Concatenate and emit output to single file. */
-      //    "paths": {}, /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
-      //    "preserveConstEnums": false, /* Do not erase const enum declarations in generated code. */
-      //    "preserveSymlinks": false, /* Do not resolve the real path of symlinks. */
-      //    "preserveWatchOutput": false, /* Keep outdated console output in watch mode instead of clearing the screen. */
+      // "outFile": "./", /* Concatenate and emit output to single file. */
+      // "paths": {}, /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+      // "preserveConstEnums": false, /* Do not erase const enum declarations in generated code. */
+      // "preserveSymlinks": false, /* Do not resolve the real path of symlinks. */
+      // "preserveWatchOutput": false, /* Keep outdated console output in watch mode instead of clearing the screen. */
       "pretty": true, /* Stylize errors and messages using color and context (experimental). */
       "removeComments": false, /* Do not emit comments to output. */
       "resolveJsonModule": true, /* Include modules imported with '.json' extension. */
       "rootDir": "./", /* Specify the root directory of input files. Use to control the output directory structure with --outDir. Always specify https://github.com/Microsoft/TypeScript/wiki/FAQ#why-does---outdir-moves-output-after-adding-a-new-file */
-      //    "rootDirs": [], /* List of root folders whose combined content represents the structure of the project at runtime. */
-      //    "skipLibCheck": false, /* Skip type checking of declaration files. */
+      // "rootDirs": [], /* List of root folders whose combined content represents the structure of the project at runtime. */
+      // "skipLibCheck": false, /* Skip type checking of declaration files. */
       "sourceMap": true, /* Generates corresponding '.map' file. */
-      //    "sourceRoot": "./", /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+      // "sourceRoot": "./", /* Specify the location where debugger should locate TypeScript files instead of source locations. */
       "strict": false, /* Enable all strict type-checking options. */
-      //    "strictBindCallApply": true, /* Enable strict type checks for the bind, call, and apply methods on function objects. */
-      //    "strictFunctionTypes": true, /* Enable strict checking of function types. */
+      // "strictBindCallApply": true, /* Enable strict type checks for the bind, call, and apply methods on function objects. */
+      // "strictFunctionTypes": true, /* Enable strict checking of function types. */
       "strictNullChecks": true, /* Enable strict null checks. */
-      //    "strictPropertyInitialization": true, /* Enable strict checking of property initialization in classes. */
+      // "strictPropertyInitialization": true, /* Enable strict checking of property initialization in classes. */
       "stripInternal": true, /* Do not emit declarations for code that has an '@internal' annotation. */
-      //    "suppressExcessPropertyErrors": false, /* Suppress excess property checks for object literals. */
+      // "suppressExcessPropertyErrors": false, /* Suppress excess property checks for object literals. */
       "suppressImplicitAnyIndexErrors": true, /* Suppress noImplicitAny errors for indexing objects lacking index signatures. */
       "target": "es5", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
-      //    "traceResolution": false, /* Enable tracing of the name resolution process. */
-      //    "typeRoots": [], /* List of folders to include type definitions from. */
-      //    "tsBuildInfoFile": ".tsbuildinfo" /* Specify what file to store incremental build information in. */
+      // "traceResolution": false, /* Enable tracing of the name resolution process. */
+      // "typeRoots": [], /* List of folders to include type definitions from. */
+      // "tsBuildInfoFile": ".tsbuildinfo" /* Specify what file to store incremental build information in. */
       "types": [], /* Type declaration files to be included in compilation. */
       "watch": false /* Watch input files. */
 
       /* Deprecated Options */
-      //    "skipDefaultLibCheck": false, DEPRECATED. Use skipLibCheck
-      //    "reactNamespace": "", DEPRECATED. Use jsxFactory
-      //    "out": "" DEPRECATED. Use outFile
+      // "skipDefaultLibCheck": false, DEPRECATED. Use skipLibCheck
+      // "reactNamespace": "", DEPRECATED. Use jsxFactory
+      // "out": "" DEPRECATED. Use outFile
     },
     "include": [
       "./src/**/*",
