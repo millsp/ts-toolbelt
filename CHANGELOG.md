@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.12](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.11...v6.1.12) (2020-01-31)
+
+
+### Bug Fixes
+
+* **l.unionize:** was never tested ([f4eb8d3](https://github.com/pirix-gh/ts-toolbelt/commit/f4eb8d31e928f3aedc4914d966d84bd7aa70ad90))
+
+
+### Others
+
+* cleanup ([77ad5f6](https://github.com/pirix-gh/ts-toolbelt/commit/77ad5f6b02c3f6bc51c05524984a0e5dc3df0c37))
+
 ### [6.1.11](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.10...v6.1.11) (2020-01-30)
 
 
