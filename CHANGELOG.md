@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.2.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.13...v6.2.0) (2020-02-13)
+
+
+### Features
+
+* **assign:** deep option ([f19fed0](https://github.com/pirix-gh/ts-toolbelt/commit/f19fed09570b38734ab6e4c6c8a364a1f259a7a3))
+
 ### [6.1.13](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.12...v6.1.13) (2020-01-31)
 
 
