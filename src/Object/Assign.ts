@@ -41,7 +41,7 @@ export type AssignFlat<O extends object, Os extends List<object>> = O extends un
       : never
     : never
 
-export type Assign<O extends object, Os extends List<object>, depth extends Depth> = {
+export type Assign<O extends object, Os extends List<object>, depth extends Depth = 'flat'> = {
   flat: AssignFlat<O, Os>
   deep: AssignDeep<O, Os>
 }[depth]
