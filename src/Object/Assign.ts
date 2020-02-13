@@ -7,6 +7,8 @@ import {Length} from '../List/Length'
 import {Cast} from '../Any/Cast'
 import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
+import {Depth} from './_Internal'
+import {AssignDeep} from './AssignDeep'
 
 /**
 @hidden
@@ -33,9 +35,13 @@ Assign a list of [[Object]] into **`O`** with [[Merge]] (last-in overrides)
 ```ts
 ```
 */
-export type Assign<O extends object, Os extends List<object>> =
-    O extends unknown
+export type AssignFlat<O extends object, Os extends List<object>> = O extends unknown
     ? Os extends unknown
       ? _Assign<O, Os>
       : never
     : never
+
+export type Assign<O extends object, Os extends List<object>, depth extends Depth> = {
+  flat: AssignFlat<O, Os>
+  deep: AssignDeep<O, Os>
+}[depth]
