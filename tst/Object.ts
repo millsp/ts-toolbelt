@@ -69,6 +69,30 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// COMPACT
+
+type O_COMPACT  = {readonly a: 1}
+type Os_COMPACT = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
+
+type COMPACT_O_Os = {readonly a: 1, readonly b: 1, c?: 1};
+
+checks([
+    check<O.Compact<O_COMPACT, Os_COMPACT>,    COMPACT_O_Os,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// COMPACTUP
+
+type O_COMPACTUP  = {readonly a: 1, c?: 2}
+type Os_COMPACTUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
+
+type COMPACTUP_O_Os = {readonly a: 1, readonly b: 1, c?: 1 | 2};
+
+checks([
+    check<O.CompactUp<O_COMPACTUP, Os_COMPACTUP>,   COMPACTUP_O_Os,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // COMPULSORY
 
 type COMPULSORY_O = {

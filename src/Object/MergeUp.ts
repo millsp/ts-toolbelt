@@ -73,7 +73,7 @@ type MergeUpDeep<O extends object, O1 extends object> =
 Accurately complete the fields of **`O`** with the ones of **`O1`**.
 This is a version of `Merge` that handles optional fields. It understands
 that merged optional fields are no longer optional (have been completed).
-It is able to deal with the merging of **`Union`s** of [[Object]]s.
+And it is able to deal with the merging of **`Union`s** of [[Object]]s.
 @param O to complete
 @param O1 to copy from
 @param depth (?=`'flat'`) to do it deeply
