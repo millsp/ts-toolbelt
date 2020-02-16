@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.3.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.2.0...v6.3.0) (2020-02-16)
+
+
+### Features
+
+* **compact:** multiple merging at once ([460d9ea](https://github.com/pirix-gh/ts-toolbelt/commit/460d9eaca50187f194a8174d91044da3357c9ba5))
+
 ## [6.2.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.13...v6.2.0) (2020-02-13)
 
 
