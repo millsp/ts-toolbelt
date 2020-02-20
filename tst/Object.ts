@@ -696,9 +696,9 @@ readonly f : 0
 };
 
 checks([
-    check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                Test.Pass>(),
-    check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,              Test.Pass>(),
-    check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'>, Test.Pass>(),
+    check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                            Test.Pass>(),
+    check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,                          Test.Pass>(),
+    check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'> | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -761,9 +761,9 @@ readonly f : 0
 };
 
 checks([
-    check<O.Optional<O, keyof O, 'flat'>,                   OPTIONAL_O_FLAT,                Test.Pass>(),
-    check<O.Optional<O, 'a', 'flat'>,                       OPTIONAL_O_A_FLAT,              Test.Pass>(),
-    check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'>, Test.Pass>(),
+    check<O.Optional<O, keyof O, 'flat'>,                   OPTIONAL_O_FLAT,                            Test.Pass>(),
+    check<O.Optional<O, 'a', 'flat'>,                       OPTIONAL_O_A_FLAT,                          Test.Pass>(),
+    check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'> | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -784,10 +784,11 @@ checks([
 // PATH
 
 checks([
-    check<O.Path<O, ['g', 'g', 'g']>,       O['g'], Test.Pass>(),
-    check<O.Path<O, ['g', 'g', 'g', 'a']>,  string, Test.Pass>(),
-    check<O.Path<O, ['g', 'x', 'g']>,       never,  Test.Pass>(),
-    check<O.Path<O, []>,                    O,      Test.Pass>(),
+    check<O.Path<O, ['g', 'g', 'g']>,       O['g'],                 Test.Pass>(),
+    check<O.Path<O, ['g', 'g', 'g', 'a']>,  string,                 Test.Pass>(),
+    check<O.Path<O, ['g', 'x', 'g']>,       never,                  Test.Pass>(),
+    check<O.Path<O, []>,                    O,                      Test.Pass>(),
+    check<O.Path<O, ['d']>,                 'string0' | undefined,  Test.Pass>(),
 ])
 
 type O_PATH_U = {
