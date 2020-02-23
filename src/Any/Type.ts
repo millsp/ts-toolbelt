@@ -1,3 +1,5 @@
+const symbol = Symbol('')
+
 /**
 Create your own named sub-type from a type **`A`**
 @param A to be personalized
@@ -17,4 +19,4 @@ eurWallet = usdWallet // error
 ```
 */
 export type Type<A extends any, Id extends string> =
-    A & {__type: Id}
+    A & {[K in typeof symbol]: Id}
