@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.2...v6.3.3) (2020-02-26)
+
+
+### Bug Fixes
+
+* fixes type intersections [#95](https://github.com/pirix-gh/ts-toolbelt/issues/95) [#96](https://github.com/pirix-gh/ts-toolbelt/issues/96) ([aff74d8](https://github.com/pirix-gh/ts-toolbelt/commit/aff74d83310ef01e74045a9fbd575c35366a287a))
+
+
+### Others
+
+* indent ([336cb06](https://github.com/pirix-gh/ts-toolbelt/commit/336cb06a816529c3777d2d61056bf94fed7547f7))
+
 ### [6.3.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.1...v6.3.2) (2020-02-23)
 
 
