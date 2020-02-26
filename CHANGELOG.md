@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.4...v6.3.5) (2020-02-26)
+
+
+### Bug Fixes
+
+* **mergeup:** revert faulty optimization ([336f026](https://github.com/pirix-gh/ts-toolbelt/commit/336f0266d2983ab45d2c802fc850065c84fdfa0d))
+
 ### [6.3.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.3...v6.3.4) (2020-02-26)
 
 
