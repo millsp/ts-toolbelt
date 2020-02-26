@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.3...v6.3.4) (2020-02-26)
+
+
+### Others
+
+* **mergeup:** removed useless mapped loop ([8d72919](https://github.com/pirix-gh/ts-toolbelt/commit/8d729190d8bd7065c0bc9d113350b7522d3bf1bf))
+
 ### [6.3.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.2...v6.3.3) (2020-02-26)
 
 
