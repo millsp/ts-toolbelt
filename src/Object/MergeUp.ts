@@ -1,5 +1,5 @@
 import {At} from './At'
-import {Depth} from './_Internal'
+import {Depth, Empty} from './_Internal'
 import {Kind} from '../Any/Kind'
 import {OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
@@ -8,6 +8,8 @@ import {And} from '../Boolean/And'
 import {Extends} from '../Any/Extends'
 import {Boolean} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
+import {Overwrite} from './Overwrite'
+import {Select} from '../Union/Select'
 
 /**
 @hidden
@@ -23,7 +25,7 @@ type MergeUpProp<O extends object, O1 extends object, K extends Key, IsOptional 
 @hidden
 */
 export type _MergeUpFlat<O extends object, O1 extends object, OOK extends Key = OptionalKeys<O>> = {
-    [K in keyof (O & O1)]: MergeUpProp<O, O1, K, Extends<K, OOK>>
+    [K in keyof (Empty<O> & Empty<O1>)]: MergeUpProp<O, O1, K, Extends<K, OOK>>
 } & {}
 
 /**
@@ -39,33 +41,34 @@ type MergeUpFlat<O extends object, O1 extends object> =
 /**
 @hidden
 */
-export type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = 0> = {
-    [K in keyof (O & O1)]:  And< // we first make sure that both are objects
-                                Extends<Kind<NonNullable<At<O,  K>>>, 'object'>,
-                                Extends<Kind<NonNullable<At<O1, K>>>, 'object'>
-                            > extends 1
-                            ? _MergeUpDeep< // if it is the case, recurse deeper
-                                At<O,  K> & {}, // merge O[K]
-                                At<O1, K> & {}, // with O1[K]
-                                // mark the descendants as children of an optional
-                                K extends 1 ? K : K extends OptionalKeys<O> ? 1 : 0
-                            >
-                            : MergeUpProp< // otherwise, we treat them as fields
-                                O, O1, K,
-                                Or< // if parent, or the field `K` are optional
-                                    IsParentOptional,
-                                    Extends<K, OptionalKeys<O>>
-                                >
-                            >
-}
+export type _MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = 0, OOK extends keyof O = OptionalKeys<O>> = {
+    [K in keyof (Empty<O> & Empty<O1>)]: And< // we first make sure that both are objects
+                                             Extends<Kind<NonNullable<At<O,  K>>>, 'object'>,
+                                             Extends<Kind<NonNullable<At<O1, K>>>, 'object'>
+                                         > extends 1
+                                         ? MergeUpDeep< // if it is the case, recurse deeper
+                                             At<O,  K> & {}, // merge O[K]
+                                             At<O1, K> & {}, // with O1[K]
+                                             // mark the descendants as children of an optional
+                                             K extends OOK ? 1 : 0
+                                             // if `O[K]` has `undefined | null` we re-add it
+                                         > | (Extends<K, OOK> extends 0 ? Select<At<O, K>, undefined | null> : never)
+                                         : MergeUpProp< // otherwise, we treat them as fields
+                                             O, O1, K,
+                                             Or< // if parent, or the field `K` are optional
+                                                 IsParentOptional,
+                                                 Extends<K, OOK>
+                                             >
+                                         >
+} & {}
 
 /**
 @hidden
 */
-type MergeUpDeep<O extends object, O1 extends object> =
+type MergeUpDeep<O extends object, O1 extends object, IsParentOptional extends Boolean = 0> =
     O extends unknown
     ? O1 extends unknown
-      ? _MergeUpDeep<O, O1>
+      ? _MergeUpDeep<O, O1, IsParentOptional>
       : never
     : never
 

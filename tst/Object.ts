@@ -498,6 +498,7 @@ type O_MERGEUP = {
     }
     h: {
         a: number
+        b: number
     } | undefined
     i: {
         a: string
@@ -564,6 +565,7 @@ type MERGEUP_O_O1 = {
     }
     h: {
         a: number
+        b: number
     } | undefined
     i: {
         a: string
@@ -597,6 +599,7 @@ type MERGEUP_O_O1_DEEP = {
     }
     h: {
         a: number
+        b: number
     } | undefined
     i: {
         a: string
@@ -961,7 +964,7 @@ type REPLACE_STRING_NUMBER = {
         a: {
             b: string
         };
-    } | undefined
+    }
 };
 
 checks([
