@@ -7,26 +7,26 @@ import {_ListOf} from '../Object/ListOf'
 import {Has} from '../Union/Has'
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type ArrayEntry = Numbers['string']['0' | '+'] // tuple entries become literal if mixed with objects
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type ArrayProps = keyof any[] | ArrayEntry     // so this matches any entry, whether is mixed or not
 
 /**
-Sometimes, we can end up with mixed up **`objects`** that do not make sense
-visually (or that could at least be simplified for the end user). This will
-turn anything that is passed to it into a cleaned up [[Object]].
-
-@param O
-@returns [[Object]]
-@example
-```ts
-```
-*/
+ * Sometimes, we can end up with mixed up **`objects`** that do not make sense
+ * visually (or that could at least be simplified for the end user). This will
+ * turn anything that is passed to it into a cleaned up [[Object]].
+ *
+ * @param O
+ * @returns [[Object]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type Clean<A extends any> =
     A extends object
     ? Has<keyof A, keyof any[]> extends 1                          // if it is mixed with, or is an array
