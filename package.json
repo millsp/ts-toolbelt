@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "6.1.13",
+  "version": "6.3.6",
   "description": "Get the most out of TypeScript",
   "keywords": [
     "safe",
@@ -19,11 +19,11 @@
     "name": "Pierre-Antoine Mills",
     "url": "https://github.com/pirix-gh"
   },
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
   "files": [
     "out"
   ],
-  "main": "out/index.js",
-  "types": "out/index.d.ts",
   "scripts": {
     "build:clean": "bash scr/build/clean.sh",
     "build:code": "bash scr/build/code.sh",

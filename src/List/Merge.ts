@@ -10,9 +10,9 @@ import {List} from './List'
 @hidden
 */
 type MergeFlatTuple<L extends List, L1 extends List> = ListOf<ObjectOf<{
-    [K in keyof (L & L1)]: [At<L, K>] extends [never]
-                           ? At<L1, K>
-                           : At<L, K>
+    [K in keyof L | keyof L1]: [At<L, K>] extends [never]
+                               ? At<L1, K>
+                               : At<L, K>
 }>>
 
 /**

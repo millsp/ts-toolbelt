@@ -12,8 +12,8 @@ import {Depth} from './_Internal'
 /**
 @hidden
 */
-type __AssignUp<O extends object, Os extends List<object>, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
-    0: __AssignUp<MergeUp<Os[Pos<I>], O, depth>, Os, depth, Next<I>>
+type __CompactUp<O extends object, Os extends List<object>, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
+    0: __CompactUp<MergeUp<O, Os[Pos<I>], depth>, Os, depth, Next<I>>
     1: O
 }[Extends<Pos<I>, Length<Os>>]
 
@@ -21,12 +21,12 @@ type __AssignUp<O extends object, Os extends List<object>, depth extends Depth, 
 @hidden
 */
 export type _AssignUp<O extends object, Os extends List<object>, depth extends Depth> =
-    __AssignUp<O, Os, depth> extends infer X
+    __CompactUp<O, Os, depth> extends infer X
     ? Cast<X, object>
     : never
 
 /**
-Assign a list of [[Object]] into **`O`** with [[MergeUp]] (last-in combines or overrides)
+Merge a list of [[Object]] into **`O`** with [[MergeUp]] (last-in combines or completes)
 @param O to assign to
 @param Os to assign
 @param depth (?=`'flat'`) to do it deeply
@@ -35,7 +35,7 @@ Assign a list of [[Object]] into **`O`** with [[MergeUp]] (last-in combines or o
 ```ts
 ```
 */
-export type AssignUp<O extends object, Os extends List<object>, depth extends Depth = 'flat'> =
+export type CompactUp<O extends object, Os extends List<object>, depth extends Depth = 'flat'> =
     O extends unknown
     ? Os extends unknown
       ? _AssignUp<O, Os, depth>

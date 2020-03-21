@@ -69,6 +69,30 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// COMPACT
+
+type O_COMPACT  = {readonly a: 1}
+type Os_COMPACT = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
+
+type COMPACT_O_Os = {readonly a: 1, readonly b: 1, c?: 1};
+
+checks([
+    check<O.Compact<O_COMPACT, Os_COMPACT>,    COMPACT_O_Os,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// COMPACTUP
+
+type O_COMPACTUP  = {readonly a: 1, c?: 2}
+type Os_COMPACTUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
+
+type COMPACTUP_O_Os = {readonly a: 1, readonly b: 1, c?: 1 | 2};
+
+checks([
+    check<O.CompactUp<O_COMPACTUP, Os_COMPACTUP>,   COMPACTUP_O_Os,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // COMPULSORY
 
 type COMPULSORY_O = {
@@ -474,6 +498,7 @@ type O_MERGEUP = {
     }
     h: {
         a: number
+        b: number
     } | undefined
     i: {
         a: string
@@ -540,6 +565,7 @@ type MERGEUP_O_O1 = {
     }
     h: {
         a: number
+        b: number
     } | undefined
     i: {
         a: string
@@ -573,6 +599,7 @@ type MERGEUP_O_O1_DEEP = {
     }
     h: {
         a: number
+        b: number
     } | undefined
     i: {
         a: string
@@ -672,9 +699,9 @@ readonly f : 0
 };
 
 checks([
-    check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                Test.Pass>(),
-    check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,              Test.Pass>(),
-    check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'>, Test.Pass>(),
+    check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                            Test.Pass>(),
+    check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,                          Test.Pass>(),
+    check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'> | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -737,9 +764,9 @@ readonly f : 0
 };
 
 checks([
-    check<O.Optional<O, keyof O, 'flat'>,                   OPTIONAL_O_FLAT,                Test.Pass>(),
-    check<O.Optional<O, 'a', 'flat'>,                       OPTIONAL_O_A_FLAT,              Test.Pass>(),
-    check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'>, Test.Pass>(),
+    check<O.Optional<O, keyof O, 'flat'>,                   OPTIONAL_O_FLAT,                            Test.Pass>(),
+    check<O.Optional<O, 'a', 'flat'>,                       OPTIONAL_O_A_FLAT,                          Test.Pass>(),
+    check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'> | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -760,10 +787,11 @@ checks([
 // PATH
 
 checks([
-    check<O.Path<O, ['g', 'g', 'g']>,       O['g'], Test.Pass>(),
-    check<O.Path<O, ['g', 'g', 'g', 'a']>,  string, Test.Pass>(),
-    check<O.Path<O, ['g', 'x', 'g']>,       never,  Test.Pass>(),
-    check<O.Path<O, []>,                    O,      Test.Pass>(),
+    check<O.Path<O, ['g', 'g', 'g']>,       O['g'],                 Test.Pass>(),
+    check<O.Path<O, ['g', 'g', 'g', 'a']>,  string,                 Test.Pass>(),
+    check<O.Path<O, ['g', 'x', 'g']>,       never,                  Test.Pass>(),
+    check<O.Path<O, []>,                    O,                      Test.Pass>(),
+    check<O.Path<O, ['d']>,                 'string0' | undefined,  Test.Pass>(),
 ])
 
 type O_PATH_U = {
@@ -936,7 +964,7 @@ type REPLACE_STRING_NUMBER = {
         a: {
             b: string
         };
-    } | undefined
+    }
 };
 
 checks([

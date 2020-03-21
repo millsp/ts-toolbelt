@@ -2,6 +2,72 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.5...v6.3.6) (2020-03-10)
+
+
+### Bug Fixes
+
+* **equals:** fix broken null unions [#97](https://github.com/pirix-gh/ts-toolbelt/issues/97) ([91aef20](https://github.com/pirix-gh/ts-toolbelt/commit/91aef20a67da686fda397051f467b00a43db6591))
+
+### [6.3.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.4...v6.3.5) (2020-02-26)
+
+
+### Bug Fixes
+
+* **mergeup:** revert faulty optimization ([336f026](https://github.com/pirix-gh/ts-toolbelt/commit/336f0266d2983ab45d2c802fc850065c84fdfa0d))
+
+### [6.3.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.3...v6.3.4) (2020-02-26)
+
+
+### Others
+
+* **mergeup:** removed useless mapped loop ([8d72919](https://github.com/pirix-gh/ts-toolbelt/commit/8d729190d8bd7065c0bc9d113350b7522d3bf1bf))
+
+### [6.3.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.2...v6.3.3) (2020-02-26)
+
+
+### Bug Fixes
+
+* fixes type intersections [#95](https://github.com/pirix-gh/ts-toolbelt/issues/95) [#96](https://github.com/pirix-gh/ts-toolbelt/issues/96) ([aff74d8](https://github.com/pirix-gh/ts-toolbelt/commit/aff74d83310ef01e74045a9fbd575c35366a287a))
+
+
+### Others
+
+* indent ([336cb06](https://github.com/pirix-gh/ts-toolbelt/commit/336cb06a816529c3777d2d61056bf94fed7547f7))
+
+### [6.3.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.1...v6.3.2) (2020-02-23)
+
+
+### Others
+
+* **type:** improvements suggested in [#94](https://github.com/pirix-gh/ts-toolbelt/issues/94) ([c1ccf3d](https://github.com/pirix-gh/ts-toolbelt/commit/c1ccf3d4c465e6315e4b536e8c51b46cba7e3d2b))
+
+### [6.3.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.0...v6.3.1) (2020-02-20)
+
+
+### Bug Fixes
+
+* **path:** fixes [#93](https://github.com/pirix-gh/ts-toolbelt/issues/93) ([cdf8069](https://github.com/pirix-gh/ts-toolbelt/commit/cdf8069a1958461bec4dc684b68f789826eb4c37))
+
+
+### Others
+
+* **path:** missing option ([a5dfe12](https://github.com/pirix-gh/ts-toolbelt/commit/a5dfe122803ddf2460cc1d04d19c43415c8c5175))
+
+## [6.3.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.2.0...v6.3.0) (2020-02-16)
+
+
+### Features
+
+* **compact:** multiple merging at once ([460d9ea](https://github.com/pirix-gh/ts-toolbelt/commit/460d9eaca50187f194a8174d91044da3357c9ba5))
+
+## [6.2.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.13...v6.2.0) (2020-02-13)
+
+
+### Features
+
+* **assign:** deep option ([f19fed0](https://github.com/pirix-gh/ts-toolbelt/commit/f19fed09570b38734ab6e4c6c8a364a1f259a7a3))
+
 ### [6.1.13](https://github.com/pirix-gh/ts-toolbelt/compare/v6.1.12...v6.1.13) (2020-01-31)
 
 

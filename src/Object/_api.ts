@@ -6,6 +6,8 @@ export {P}
 export {Assign} from './Assign'
 export {AssignUp} from './AssignUp'
 export {At} from './At'
+export {Compact} from './Compact'
+export {CompactUp} from './CompactUp'
 export {Compulsory} from './Compulsory'
 export {CompulsoryKeys} from './CompulsoryKeys'
 export {Diff} from './Diff'

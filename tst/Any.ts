@@ -66,6 +66,7 @@ checks([
 // EQUALS
 
 checks([
+    check<A.Equals<{}, {} | null>,          0,      Test.Pass>(),
     check<A.Equals<[0, 1], any>,            0,      Test.Pass>(),
     check<A.Equals<any, [0, 1]>,            0,      Test.Pass>(),
     check<A.Equals<any, [0, 1]>,            0,      Test.Pass>(),

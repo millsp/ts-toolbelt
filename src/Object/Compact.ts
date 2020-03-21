@@ -1,6 +1,6 @@
 import {Iteration} from '../Iteration/Iteration'
 import {IterationOf} from '../Iteration/IterationOf'
-import {MergeUp} from './MergeUp'
+import {Merge} from './Merge'
 import {Pos} from '../Iteration/Pos'
 import {Next} from '../Iteration/Next'
 import {Length} from '../List/Length'
@@ -12,21 +12,22 @@ import {Depth} from './_Internal'
 /**
 @hidden
 */
-type __AssignUp<O extends object, Os extends List<object>, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
-    0: __AssignUp<MergeUp<Os[Pos<I>], O, depth>, Os, depth, Next<I>>
+type __Compact<O extends object, Os extends List<object>, depth extends Depth, I extends Iteration = IterationOf<'0'>> = {
+    0: __Compact<Merge<O, Os[Pos<I>], depth>, Os, depth, Next<I>>
     1: O
 }[Extends<Pos<I>, Length<Os>>]
+
 
 /**
 @hidden
 */
-export type _AssignUp<O extends object, Os extends List<object>, depth extends Depth> =
-    __AssignUp<O, Os, depth> extends infer X
+export type _Compact<O extends object, Os extends List<object>, depth extends Depth> =
+    __Compact<O, Os, depth> extends infer X
     ? Cast<X, object>
     : never
 
 /**
-Assign a list of [[Object]] into **`O`** with [[MergeUp]] (last-in combines or overrides)
+Merge a list of [[Object]] into **`O`** with [[Merge]] (last-in completes)
 @param O to assign to
 @param Os to assign
 @param depth (?=`'flat'`) to do it deeply
@@ -35,9 +36,9 @@ Assign a list of [[Object]] into **`O`** with [[MergeUp]] (last-in combines or o
 ```ts
 ```
 */
-export type AssignUp<O extends object, Os extends List<object>, depth extends Depth = 'flat'> =
+export type Compact<O extends object, Os extends List<object>, depth extends Depth = 'flat'> =
     O extends unknown
     ? Os extends unknown
-      ? _AssignUp<O, Os, depth>
+      ? _Compact<O, Os, depth>
       : never
     : never

@@ -14,9 +14,10 @@ import {Extends} from '../Any/Extends'
 /**
 @hidden
 */
-type __Path<O, Path extends List<Key>, strict extends Boolean, I extends Iteration = IterationOf<'0'>> = {
-    0: __Path<NonNullable<At<O & {}, Path[Pos<I>], strict>>, Path, strict, Next<I>>
-    1: O // Use of `NonNullable` otherwise path cannot be followed #`undefined`
+type __Path<O, Path extends List<Key>, strict extends Boolean, OPrev = O,  I extends Iteration = IterationOf<'0'>> = {
+    0: __Path<At<NonNullable<O> & {}, Path[Pos<I>], strict>, Path, strict, O, Next<I>>
+    // Use of `NonNullable` otherwise path cannot be followed #`undefined`
+    1: O
 }[Extends<Pos<I>, Length<Path>>]
 
 /**
@@ -32,6 +33,7 @@ Get in **`O`** the type of nested properties
 For more advanced capabilities, see [[PathUp]]
 @param O to be inspected
 @param Path to be followed
+@param strict (?=`1`) `0` to work with unions
 @returns **`any`**
 @example
 ```ts
