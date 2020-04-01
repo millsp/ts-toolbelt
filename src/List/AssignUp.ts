@@ -15,6 +15,6 @@ Assign a list of [[List]] into **`L`** with [[MergeUp]] (last-in combines or ove
 ```
 */
 export type AssignUp<L extends List, Ls extends List<List>, depth extends Depth = 'flat'> =
-    ListOf<ObjectOf<OAssignUp<L, {[K in keyof Ls]: ObjectOf<Ls[K] & {}>}, depth>>>
+    ListOf<OAssignUp<ObjectOf<L>, {[K in keyof Ls]: ObjectOf<Ls[K] & {}>}, depth>>
     // in the mapped type above, we make sure tuples are not left with array properties
     // ! leaving array properties and using `Object` utilities is known to cause bugs

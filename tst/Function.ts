@@ -74,17 +74,11 @@ declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
 
 const __ = {} as A.x
 
-const toCurry = (name: string, age: number, single: true, ...nicknames: string[]) => true
+const toCurry = (name: string, age: number, single: true, nicknames: string) => true
 const curried = curry(toCurry)
 
-const t = curried()
-
-const test00 = curried(__, 26)(__, true, 'JJ', __)('Jane', 'Jini') // boolean
-const test01 = curried('Jane', 26, true, __)('JJ', __)('Jini')     // boolean
-
-type t = typeof test01
-
-
+const test00: boolean = curried(__, 26)(__, true, 'JJ')('Jane') // boolean
+const test01: boolean = curried('Jane', 26, true, __)('JJ')     // boolean
 
 // ---------------------------------------------------------------------------------------
 // PARAMETERS

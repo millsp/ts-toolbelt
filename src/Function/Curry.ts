@@ -40,7 +40,7 @@ type _GapsOf<L1 extends List, L2 extends List> =
     __GapsOf<L1, L2> extends infer X
     // `_Concat<LN, _Drop<L2, Key<I>>>`. This used to be done in `__GapsOf`
     // we've moved it so that the recursion does not trigger it over & over
-    ? _Concat<Cast<(X & [])[0], List>, _Drop<L2, Key<Cast<(X & [])[1], Iteration>>>>
+    ? _Concat<Cast<Cast<X, List>[0], List>, _Drop<L2, Key<Cast<Cast<X, List>[1], Iteration>>>>
     // this is the ugly equivalent of old `_Concat<LN, _Drop<L2, Key<I>>>`
     : never
 

@@ -15,6 +15,6 @@ Merge a list of [[List]] into **`L`** with `Merge` (last-in completes)
 ```
 */
 export type Compact<L extends List, Ls extends List[], depth extends Depth = 'flat'> =
-    ListOf<ObjectOf<OCompact<L, {[K in keyof Ls]: ObjectOf<Ls[K] & {}>}, depth>>>
+    ListOf<OCompact<ObjectOf<L>, {[K in keyof Ls]: ObjectOf<Ls[K] & {}>}, depth>>
     // in the mapped type above, we make sure tuples are not left with array properties
     // ! leaving array properties and using `Object` utilities is known to cause bugs

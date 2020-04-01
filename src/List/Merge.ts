@@ -5,6 +5,7 @@ import {ListOf} from '../Object/ListOf'
 import {Length} from './Length'
 import {Kind} from '../Any/Kind'
 import {List} from './List'
+import {Cast} from '../Any/Cast'
 
 /**
 @hidden
@@ -38,8 +39,8 @@ export type MergeFlat<L extends List, L1 extends List> =
 */
 export type MergeDeep<O, O1> =
     Kind<(O | O1)> extends 'array'
-    ? MergeFlat<O & [], O1 & []> extends infer M
-      ? {[K in keyof M]: MergeDeep<M[K], At<O1 & [], K>>} & {}
+    ? MergeFlat<Cast<O, List>, Cast<O1, List>> extends infer M
+      ? {[K in keyof M]: MergeDeep<M[K], At<Cast<O1, List>, K>>} & {}
       : never
     : O
 
