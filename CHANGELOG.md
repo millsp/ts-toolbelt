@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.8](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.7...v6.3.8) (2020-04-01)
+
+
+### Bug Fixes
+
+* **ts-3.9:** bugs caught by ts 3.9 ([f853aef](https://github.com/pirix-gh/ts-toolbelt/commit/f853aef6315f5e48397b5b895013ec383251847c))
+
 ### [6.3.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.6...v6.3.7) (2020-04-01)
 
 
