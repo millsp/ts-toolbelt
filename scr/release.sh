@@ -12,11 +12,8 @@ npx sort-package-json &&
 # Bump the version & changelogs
 npx standard-version &&
 
-# check if we have to do a release
-RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
-
 # Publish the current branch origin
-if [ "$BRANCH" != "master" ] || [ "$1" = "--no-tags" ] || [ "$RELEASE" = "false" ]; then
+if [ "$BRANCH" != "master" ] || [ "$1" = "--no-tags" ]; then
     git push origin $BRANCH                 # not a release
 else
     git push origin $BRANCH --follow-tags   # only releases
