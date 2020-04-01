@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.3.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.6...v6.3.7) (2020-04-01)
+
+
+### Bug Fixes
+
+* **release:** bugfixes also are releases ([9881b4a](https://github.com/pirix-gh/ts-toolbelt/commit/9881b4a7ccf850d3ee19f70c3eefbe8dbb0b058a))
+
+
+### Others
+
+* **curry:** reduce memory footprint ([45b7b81](https://github.com/pirix-gh/ts-toolbelt/commit/45b7b819c731d7f836ba00cf527b062b7bd3b054))
+
 ### [6.3.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.5...v6.3.6) (2020-03-10)
 
 
