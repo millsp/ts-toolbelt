@@ -27,22 +27,10 @@ type GapOf<L1 extends List, L2 extends List, LN extends List, I extends Iteratio
 /**
 @hidden
 */
-type __GapsOf<L1 extends List, L2 extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: __GapsOf<L1, L2, GapOf<L1, L2, LN, I>, Next<I>>
-    1: [LN, I] // pack variables not to compute double recursion for each iteration
-               // we continue the next steps in `_GapsOf` (`_Concat<LN, _Drop<L2, Key<I>>>`)
+type _GapsOf<L1 extends List, L2 extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: _GapsOf<L1, L2, GapOf<L1, L2, LN, I>, Next<I>>
+    1: _Concat<LN, _Drop<L2, Key<I>>>
 }[Extends<Pos<I>, Length<L1>>]
-
-/**
-@hidden
-*/
-type _GapsOf<L1 extends List, L2 extends List> =
-    __GapsOf<L1, L2> extends infer X
-    // `_Concat<LN, _Drop<L2, Key<I>>>`. This used to be done in `__GapsOf`
-    // we've moved it so that the recursion does not trigger it over & over
-    ? _Concat<Cast<Cast<X, List>[0], List>, _Drop<L2, Key<Cast<Cast<X, List>[1], Iteration>>>>
-    // this is the ugly equivalent of old `_Concat<LN, _Drop<L2, Key<I>>>`
-    : never
 
 /**
 @hidden
