@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir out
+mkdir -p out
 
 touch out/index.js
