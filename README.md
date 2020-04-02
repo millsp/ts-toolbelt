@@ -183,7 +183,7 @@ type optional = Object.Optional<{id: number, name: string}, 'name'}>
 // {id: number, name?: string}
 ```
 
-> **`TIP`** You can also grab the demo [over here](https://gist.github.com/pirix-gh/f7f7d18773f79bf0618fb5cd55bd48f8)
+> **`TIP`** You can also grab the demo [over here](https://gist.github.com/pirix-gh/f7f7d18773f79bf0618fb5cd55bd48f8).
 
 You can [**level-up, and re-code this library from scratch**](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab).
 
@@ -196,7 +196,7 @@ The project is organized around TypeScript's main concepts:
 | **A**ny    | **B**oolean | **C**lass        | **F**unction | **I**teration | **L**ist |
 | **N**umber | **O**bject  | **O**bject.**P** | **S**tring   | **U**nion     | Test     |
 
-> **`TIP`** how to choose categories? match your type with the above categories
+> **`TIP`** How to choose categories? Match your type with the above categories.
 
 **The documentation is complete but needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
 
@@ -224,7 +224,7 @@ You can also import our non-official API from the community:
   import {Community} from 'ts-toolbelt'
   ```
 
-The community API is for our community to publish useful types that don't see fit in the standard API.
+> **`TIP`** The community API is for our community to publish useful types that don't see fit in the standard API.
 
 ### Internal Docs
 
@@ -317,7 +317,7 @@ checks([
 ])
 ```
 
-> **`TIP`** Place it in a file that won't be executed, it's just for TypeScript to test types
+> **`TIP`** Place it in a file that won't be executed, it's just for TypeScript to test types.
 
 ### Continuous Integration
 
@@ -369,7 +369,8 @@ You can either request a new feature or a bug fix, and then fund it.
   # performance is checked manually with 
   npx tsc --noEmit --extendedDiagnostics
   ```
-* Need to write the examples
+
+* Need to write more examples
 
 ## 🙏 Acknowledgements
 
