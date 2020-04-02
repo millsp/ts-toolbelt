@@ -1,6 +1,7 @@
 import './Any'
 import './Boolean'
 import './Class'
+import './Community'
 import './Function'
 import './Iteration'
 import './Number'

@@ -1,5 +1,3 @@
-/* tslint:disable */
-
 import {Test, M} from '../src/index'
 
 const {checks, check} = Test
