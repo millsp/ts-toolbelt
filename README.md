@@ -211,7 +211,7 @@ There are many ways to import the types into your project:
 
 * Compact
   ```ts
-  import {A, B, C, F, I, N, O, S, L, U} from 'ts-toolbelt'
+  import {A, B, C, F, I, L, N, O, S, U} from 'ts-toolbelt'
   ```
 
 * Portable
@@ -219,10 +219,16 @@ There are many ways to import the types into your project:
   import tb from 'ts-toolbelt'
   ```
 
+You can also import our non-official API from the community:
+  ```ts
+  import {Community} from 'ts-toolbelt'
+  ```
+
+The community API is for our community to publish useful types that don't see fit in the standard API.
+
 ### Internal Docs
 
 If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get you on track to start writing your own types.
-
 
 ### [Archives ⤢](https://github.com/pirix-gh/ts-toolbelt/tree/gh-pages)
 
