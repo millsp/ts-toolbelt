@@ -25,10 +25,10 @@ checks([
 // ITERATIONOF
 
 checks([
-    check<I.IterationOf<'3' | '4'>, ['2', '4', '3', 3, '+'] | ['3', '5', '4', 4, '+'],                      Test.Pass>(),
-    check<I.IterationOf<'3'>,       ['2', '4', '3', 3, '+'],                                                Test.Pass>(),
-    check<I.IterationOf<string>,    [string | number, string | number, string, number, '-' | '0' | '+'],    Test.Pass>(),
-    check<I.IterationOf<'100'>,     [string | number, string | number, string, number, '-' | '0' | '+'],    Test.Pass>(),
+    check<I.IterationOf<'3' | '4'>,     ['2', '4', '3', 3, '+'] | ['3', '5', '4', 4, '+'],      Test.Pass>(),
+    check<I.IterationOf<'3'>,           ['2', '4', '3', 3, '+'],                                Test.Pass>(),
+    check<I.IterationOf<string>,    [string, string, string, number, '-' | '0' | '+'],      Test.Pass>(),
+    check<I.IterationOf<'100'>,     [string, string, string, number, '-' | '0' | '+'],      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

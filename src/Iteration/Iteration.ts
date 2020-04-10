@@ -10,8 +10,8 @@ An entry of **`IterationMap`**
 * `[4]`: Sign (- / 0 / +)
 */
 export type Iteration<IMap extends Map = NumberMap> = [
-    keyof IMap,
-    keyof IMap,
+    string,
+    string,
     string,
     number,
     '-' | '0' | '+'
