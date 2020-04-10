@@ -9,7 +9,7 @@ An entry of **`IterationMap`**
 * `[3]`: Current **`number`**
 * `[4]`: Sign (- / 0 / +)
 */
-export type Iteration<IMap extends Map = NumberMap> = [
+export type Iteration<IMap extends Map = NumberMap> = [ // todo: not used
     string,
     string,
     string,
