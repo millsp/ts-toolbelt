@@ -7,11 +7,11 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-export type _IsZero<N extends Iteration<IMap>, IMap extends Map> = {
+export type _IsZero<N extends Iteration, IMap extends Map> = {
     '-': 0
     '+': 0
     '0': 1
-}[N[4]]
+}[N[6]]
 
 /**
 Check whether a [[Number]] is null or not

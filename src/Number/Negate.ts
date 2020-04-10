@@ -10,8 +10,8 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-export type _Negate<N extends Iteration<IMap>, IMap extends Map> =
-    _Minus<IterationOf<'0', IMap>, N, IMap>
+export type _Negate<N extends Iteration, IMap extends Map> =
+    IterationOf<N[4], IMap>
 
 /**
 Negate a [[Number]]

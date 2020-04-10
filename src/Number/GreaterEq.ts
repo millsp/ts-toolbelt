@@ -10,7 +10,7 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-export type _GreaterEq<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map> =
+export type _GreaterEq<N1 extends Iteration, N2 extends Iteration, IMap extends Map> =
     Or<Equals<N1, N2>, _Greater<N1, N2, IMap>>
 
 /**
@@ -28,4 +28,8 @@ type test2 = N.GreaterEq<'5', '7'> // False
 ```
 */
 export type GreaterEq<N1 extends Number, N2 extends Number, IMap extends Map = NumberMap> =
-    _GreaterEq<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>
+    N1 extends unknown
+    ? N2 extends unknown
+      ? _GreaterEq<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>
+      : never
+    : never

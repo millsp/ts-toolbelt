@@ -17,5 +17,5 @@ type test0 = I.Key<i>         // '20'
 type test1 = I.Key<I.Next<i>> // '21'
 ```
 */
-export type Key<I extends Iteration<IMap>, IMap extends Map = NumberMap> =
+export type Key<I extends Iteration, IMap extends Map = NumberMap> =
     Format<I, 's', IMap>

@@ -19,7 +19,7 @@ type fmtS = I.Fmt<i, 's'> // '20'
 type fmtN = I.Fmt<i, 'n'> //  20
 ```
 */
-export type Format<I extends Iteration<IMap>, fmt extends Formats, IMap extends Map = NumberMap> = {
+export type Format<I extends Iteration, fmt extends Formats, IMap extends Map = NumberMap> = {
     's': I[2]
     'n': I[3]
 }[fmt]

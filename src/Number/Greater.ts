@@ -9,7 +9,7 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-export type _Greater<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map> =
+export type _Greater<N1 extends Iteration, N2 extends Iteration, IMap extends Map> =
     _IsPositive<_Minus<N1, N2, IMap>, IMap>
 
 /**
@@ -27,4 +27,8 @@ type test2 = N.Greater<'5', '7'> // False
 ```
 */
 export type Greater<N1 extends Number, N2 extends Number, IMap extends Map = NumberMap> =
-    _Greater<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>
+    N1 extends unknown
+    ? N2 extends unknown
+      ? _Greater<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>
+      : never
+    : never

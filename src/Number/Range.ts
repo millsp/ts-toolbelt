@@ -16,7 +16,7 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-type RangeForth<From extends Iteration<IMap>, To extends Iteration<IMap>, IMap extends Map, fmt extends Formats, L extends List = []> = {
+type RangeForth<From extends Iteration, To extends Iteration, IMap extends Map, fmt extends Formats, L extends List = []> = {
     0: RangeForth<Prev<From, IMap>, To, IMap, fmt, Prepend<L, Format<From, fmt, IMap>>>
     1: L
 }[Extends<From, To>]
@@ -24,7 +24,7 @@ type RangeForth<From extends Iteration<IMap>, To extends Iteration<IMap>, IMap e
 /**
 @hidden
 */
-type RangeBack<From extends Iteration<IMap>, To extends Iteration<IMap>, IMap extends Map, fmt extends Formats, L extends List = []> = {
+type RangeBack<From extends Iteration, To extends Iteration, IMap extends Map, fmt extends Formats, L extends List = []> = {
     0: RangeBack<Next<From, IMap>, To, IMap, fmt, Prepend<L, Format<From, fmt, IMap>>>
     1: L
 }[Extends<From, To>]
@@ -32,7 +32,7 @@ type RangeBack<From extends Iteration<IMap>, To extends Iteration<IMap>, IMap ex
 /**
 @hidden
 */
-type __Range<From extends Iteration<IMap>, To extends Iteration<IMap>, way extends Way, fmt extends Formats, IMap extends Map> = {
+type __Range<From extends Iteration, To extends Iteration, way extends Way, fmt extends Formats, IMap extends Map> = {
     '->': RangeForth<To, Prev<From, IMap>, IMap, fmt> // Reverse logic to work naturally #`Prepend`
     '<-': RangeBack<From, Next<To, IMap>, IMap, fmt>  // Works in reverse mode (default) #`Prepend`
 }[way]

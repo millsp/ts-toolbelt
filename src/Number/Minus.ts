@@ -14,7 +14,7 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-type _MinusPositive<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map = NumberMap> = {
+type _MinusPositive<N1 extends Iteration, N2 extends Iteration, IMap extends Map = NumberMap> = {
     0: _MinusPositive<Prev<N1, IMap>, Prev<N2, IMap>, IMap> // N1 = -/+, N2 = +
     1: N1
     2: N2
@@ -29,15 +29,15 @@ type _MinusPositive<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap
 /**
 @hidden
 */
-type MinusPositive<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map> =
+type MinusPositive<N1 extends Iteration, N2 extends Iteration, IMap extends Map> =
     _MinusPositive<N1, N2, IMap> extends infer X
-    ? Cast<X, Iteration<IMap>>
+    ? Cast<X, Iteration>
     : never
 
 /**
 @hidden
 */
-type _MinusNegative<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map> = {
+type _MinusNegative<N1 extends Iteration, N2 extends Iteration, IMap extends Map> = {
     0: _MinusNegative<Next<N1, IMap>, Next<N2, IMap>, IMap> // N1 = -/+, N2 = -
     1: N1
     2: N2
@@ -52,15 +52,15 @@ type _MinusNegative<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap
 /**
 @hidden
 */
-type MinusNegative<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map> =
+type MinusNegative<N1 extends Iteration, N2 extends Iteration, IMap extends Map> =
     _MinusNegative<N1, N2, IMap> extends infer X
-    ? Cast<X, Iteration<IMap>>
+    ? Cast<X, Iteration>
     : never
 
 /**
 @hidden
 */
-export type _Minus<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map = NumberMap> = {
+export type _Minus<N1 extends Iteration, N2 extends Iteration, IMap extends Map = NumberMap> = {
     0: MinusPositive<N1, N2, IMap>
     1: MinusNegative<N1, N2, IMap>
 }[_IsNegative<N2, IMap>]

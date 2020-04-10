@@ -1,21 +1,6 @@
 import {Number} from '../Number/Number'
 import {NumberMap} from '../Misc/Iteration/Number'
 import {Map} from '../Misc/Iteration/Map'
-import {Cast} from '../Any/Cast'
-import {Iteration} from './Iteration'
-
-/**
-Describes a map of number relationships
-@hidden
-*/
-export type IterationMaps = Map
-
-/**
-Describes a map for iterating with numbers
-(Generated with "./_Internal/IterationOfGenerator")
-@hidden
-*/
-export type IterationMap = NumberMap
 
 /**
 Transform a number into an [[Iteration]]

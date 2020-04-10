@@ -16,5 +16,5 @@ type test0 = I.Pos<i>         // 20
 type test1 = I.Pos<I.Next<i>> // 21
 ```
 */
-export type Next<I extends Iteration<IMap>, IMap extends Map = NumberMap> =
+export type Next<I extends Iteration, IMap extends Map = NumberMap> =
     IMap[I[1]] // continues iterating

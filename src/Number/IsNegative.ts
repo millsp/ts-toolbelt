@@ -7,11 +7,11 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-export type _IsNegative<N extends Iteration<IMap>, IMap extends Map> = {
+export type _IsNegative<N extends Iteration, IMap extends Map> = {
     '-': 1
     '+': 0
     '0': 0
-}[N[4]]
+}[N[6]]
 
 /**
 Check whether a [[Number]] is negative or not
