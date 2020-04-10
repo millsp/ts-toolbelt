@@ -1,4 +1,6 @@
+import {IterationMaps} from './IterationOf'
 import {Iteration} from './Iteration'
+import {Number as NumberMap} from '../Misc/Iteration/Number'
 import {Format} from './Format'
 
 /**
@@ -15,5 +17,5 @@ type test0 = I.Key<i>         // '20'
 type test1 = I.Key<I.Next<i>> // '21'
 ```
 */
-export type Key<I extends Iteration> =
-    Format<I, 's'>
+export type Key<I extends Iteration<IMap>, IMap extends IterationMaps = NumberMap> =
+    Format<I, 's', IMap>

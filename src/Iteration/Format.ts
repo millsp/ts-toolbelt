@@ -1,4 +1,6 @@
+import {IterationMaps} from './IterationOf'
 import {Iteration} from './Iteration'
+import {Number as NumberMap} from '../Misc/Iteration/Number'
 import {Formats} from './_Internal'
 
 /**
@@ -17,7 +19,7 @@ type fmtS = I.Fmt<i, 's'> // '20'
 type fmtN = I.Fmt<i, 'n'> //  20
 ```
 */
-export type Format<I extends Iteration, fmt extends Formats> = {
+export type Format<I extends Iteration<IMap>, fmt extends Formats, IMap extends IterationMaps = NumberMap> = {
     's': I[2]
     'n': I[3]
 }[fmt]
