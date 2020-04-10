@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.4.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.13...v6.4.0) (2020-04-10)
+
+
+### Features
+
+* **iteration:** allow to take custom maps ([c68c6d8](https://github.com/pirix-gh/ts-toolbelt/commit/c68c6d805c692de124d921df9d3e7f3045edd6cd))
+* **number:** number maps (ie. math for pixels) ([5297410](https://github.com/pirix-gh/ts-toolbelt/commit/5297410af7f52084f56f0da2a1f60d9487c579e5))
+
 ### [6.3.13](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.12...v6.3.13) (2020-04-10)
 
 
