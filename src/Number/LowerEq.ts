@@ -1,5 +1,7 @@
 import {GreaterEq} from './GreaterEq'
 import {Number} from './Number'
+import {NumberMap} from '../Misc/Iteration/Number'
+import {Map} from '../Misc/Iteration/Map'
 
 /**
 Check if a [[Number]] is lower or equal to another one
@@ -15,5 +17,5 @@ type test1 = N.LowerEq<'5', '5'> // True
 type test2 = N.LowerEq<'5', '7'> // True
 ```
 */
-export type LowerEq<N1 extends Number, N2 extends Number> =
-    GreaterEq<N2, N1>
+export type LowerEq<N1 extends Number, N2 extends Number, IMap extends Map = NumberMap> =
+    GreaterEq<N2, N1, IMap>

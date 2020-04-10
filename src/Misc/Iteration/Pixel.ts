@@ -1,9 +1,14 @@
+import {Map} from './Map'
+
 /**
 Describes a map of pixel relationships
-(Generated with "./_Internal/IterationOfGenerator")
-@hidden
 */
-export type Pixel = {
+export interface PixelMap extends Map {
+    'keys': [
+        '-40px' | '-39px' | '-38px' | '-37px' | '-36px' | '-35px' | '-34px' | '-33px' | '-32px' | '-31px' | '-30px' | '-29px' | '-28px' | '-27px' | '-26px' | '-25px' | '-24px' | '-23px' | '-22px' | '-21px' | '-20px' | '-19px' | '-18px' | '-17px' | '-16px' | '-15px' | '-14px' | '-13px' | '-12px' | '-11px' | '-10px' | '-9px' | '-8px' | '-7px' | '-6px' | '-5px' | '-4px' | '-3px' | '-2px' | '-1px',
+        '1px' | '2px' | '3px' | '4px' | '5px' | '6px' | '7px' | '8px' | '9px' | '10px' | '11px' | '12px' | '13px' | '14px' | '15px' | '16px' | '17px' | '18px' | '19px' | '20px' | '21px' | '22px' | '23px' | '24px' | '25px' | '26px' | '27px' | '28px' | '29px' | '30px' | '31px' | '32px' | '33px' | '34px' | '35px' | '36px' | '37px' | '38px' | '39px' | '40px',
+        any, any, any
+    ],
     '-40px': ['__', '-39px', '-40px', -40, '-'],
     '-39px': ['-40px', '-38px', '-39px', -39, '-'],
     '-38px': ['-39px', '-37px', '-38px', -38, '-'],
@@ -44,7 +49,8 @@ export type Pixel = {
     '-3px' : ['-4px', '-2px', '-3px', -3, '-'],
     '-2px' : ['-3px', '-1px', '-2px', -2, '-'],
     '-1px' : ['-2px', '0px', '-1px', -1, '-'],
-    '0px'  : ['-1px', '1px', '0px', 0, '0']
+    '0'    : ['-1px', '1px', '0px', 0, '0'],
+    '0px'  : ['-1px', '1px', '0px', 0, '0'],
     '1px'  : ['0px', '2px', '1px', 1, '+'],
     '2px'  : ['1px', '3px', '2px', 2, '+'],
     '3px'  : ['2px', '4px', '3px', 3, '+'],
@@ -85,5 +91,4 @@ export type Pixel = {
     '38px' : ['37px', '39px', '38px', 38, '+'],
     '39px' : ['38px', '40px', '39px', 39, '+'],
     '40px' : ['39px', '__', '40px', 40, '+'],
-    '__' : ['__', '__', string, number, '-' | '0' | '+']
 }

@@ -1,6 +1,6 @@
-import {IterationMaps} from './IterationOf'
+import {Map} from '../Misc/Iteration/Map'
 import {Iteration} from './Iteration'
-import {Number as NumberMap} from '../Misc/Iteration/Number'
+import {NumberMap} from '../Misc/Iteration/Number'
 import {Format} from './Format'
 
 /**
@@ -17,5 +17,5 @@ type test0 = I.Pos<i>         // 20
 type test1 = I.Pos<I.Next<i>> // 21
 ```
 */
-export type Pos<I extends Iteration<IMap>, IMap extends IterationMaps = NumberMap> =
+export type Pos<I extends Iteration<IMap>, IMap extends Map = NumberMap> =
     Format<I, 'n', IMap>

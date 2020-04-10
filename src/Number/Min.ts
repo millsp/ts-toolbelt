@@ -12,29 +12,31 @@ import {Exclude} from '../Union/Exclude'
 import {Format} from '../Iteration/Format'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
+import {NumberMap} from '../Misc/Iteration/Number'
+import {Map} from '../Misc/Iteration/Map'
 
 /**
 @hidden
 */
-type _MinPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
-    0: _MinPositive<N, Next<I>> // Find smallest +
+type _MinPositive<N extends Number, IMap extends Map, I extends Iteration = IterationOf<'0', IMap>> = {
+    0: _MinPositive<N, IMap, Next<I, IMap>> // Find smallest +
     1: I
-}[Or<Extends<Key<I>, N>, Extends<string, Key<I>>>] // stops as soon as it finds
+}[Or<Extends<Key<I, IMap>, N>, Extends<string, Key<I, IMap>>>] // stops as soon as it finds
 
 /**
 @hidden
 */
-type MinPositive<N extends Number> =
-    _MinPositive<N> extends infer X
-    ? Cast<X, Iteration>
+type MinPositive<N extends Number, IMap extends Map> =
+    _MinPositive<N, IMap> extends infer X
+    ? Cast<X, Iteration<IMap>>
     : never
 
 /**
 @hidden
 */
-type _MinNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
-    0: _MinNegative<Exclude<N, Key<I>>, Prev<I>> // Find smallest -
-    1: Next<I>
+type _MinNegative<N extends Number, IMap extends Map, I extends Iteration = IterationOf<'0', IMap>> = {
+    0: _MinNegative<Exclude<N, Key<I, IMap>>, IMap, Prev<I, IMap>> // Find smallest -
+    1: Next<I, IMap>
     2: string
 }[
     [N] extends [never]
@@ -47,19 +49,18 @@ type _MinNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
 /**
 @hidden
 */
-type MinNegative<N extends Number> =
-    _MinNegative<N> extends infer X
-    ? Cast<X, Iteration>
+type MinNegative<N extends Number, IMap extends Map> =
+    _MinNegative<N, IMap> extends infer X
+    ? Cast<X, Iteration<IMap>>
     : never
 
 /**
 @hidden
 */
-export type _Min<N extends Iteration> =
-    _IsPositive<N> extends 1 // breaks distribution
-    ? MinPositive<Key<N>>
-    : MinNegative<Exclude<Key<N>, Numbers['string']['+']>>
-    // Exclude (+) numbers, MinNegative only works with (-)
+export type _Min<N extends Iteration, IMap extends Map> =
+    _IsPositive<N, IMap> extends 1 // breaks distribution
+    ? MinPositive<Key<N> & Numbers<IMap>['string']['+'], IMap>
+    : MinNegative<Key<N> & Numbers<IMap>['string']['-'], IMap>
 
 /**
 Get the smallest [[Number]] within an [[Union]]
@@ -76,5 +77,5 @@ type test2 = N.Min<'-2' | '10' | '3', 'n'> //  -2
 type test3 = N.Min<'-2' | '10' | 'oops'>   // string
 ```
 */
-export type Min<N extends Number, fmt extends Formats = 's'> =
-    Format<_Min<IterationOf<N>>, fmt>
+export type Min<N extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
+    Format<_Min<IterationOf<N, IMap>, IMap>, fmt, IMap>

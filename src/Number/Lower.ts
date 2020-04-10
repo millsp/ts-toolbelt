@@ -2,12 +2,14 @@ import {_Greater} from './Greater'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
+import {NumberMap} from '../Misc/Iteration/Number'
+import {Map} from '../Misc/Iteration/Map'
 
 /**
 @hidden
 */
-export type _Lower<N1 extends Iteration, N2 extends Iteration> =
-    _Greater<N2, N1>
+export type _Lower<N1 extends Iteration<IMap>, N2 extends Iteration<IMap>, IMap extends Map> =
+    _Greater<N2, N1, IMap>
 
 /**
 Check if a [[Number]] is lower than another one
@@ -23,5 +25,5 @@ type test1 = N.Lower<'5', '5'> // False
 type test2 = N.Lower<'5', '7'> // True
 ```
 */
-export type Lower<N1 extends Number, N2 extends Number> =
-    _Lower<IterationOf<N1>, IterationOf<N2>>
+export type Lower<N1 extends Number, N2 extends Number, IMap extends Map = NumberMap> =
+    _Lower<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>

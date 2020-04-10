@@ -1,5 +1,5 @@
-import {IterationMaps} from './IterationOf'
-import {Number as NumberMap} from '../Misc/Iteration/Number'
+import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Misc/Iteration/Number'
 
 /**
 An entry of **`IterationMap`**
@@ -9,7 +9,7 @@ An entry of **`IterationMap`**
 * `[3]`: Current **`number`**
 * `[4]`: Sign (- / 0 / +)
 */
-export type Iteration<IMap extends IterationMaps = NumberMap> = [
+export type Iteration<IMap extends Map = NumberMap> = [
     keyof IMap,
     keyof IMap,
     string,

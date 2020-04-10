@@ -1,11 +1,17 @@
 import {Number} from '../Number/Number'
-import {Number as NumberMap} from '../Misc/Iteration/Number'
-import {Pixel as PixelMap} from '../Misc/Iteration/Pixel'
-
-export type IterationMaps = NumberMap | PixelMap
+import {NumberMap} from '../Misc/Iteration/Number'
+import {Map} from '../Misc/Iteration/Map'
+import {Cast} from '../Any/Cast'
+import {Iteration} from './Iteration'
 
 /**
 Describes a map of number relationships
+@hidden
+*/
+export type IterationMaps = Map
+
+/**
+Describes a map for iterating with numbers
 (Generated with "./_Internal/IterationOfGenerator")
 @hidden
 */
@@ -29,7 +35,7 @@ type nnext = I.Pos<next>    // +1
 type nprev = I.Pos<prev>    // -1
 ```
 */
-export type IterationOf<N extends Number> =
-    N extends keyof IterationMap
-    ? IterationMap[N]
-    : IterationMap['__']
+export type IterationOf<N extends Number, IMap extends Map = NumberMap> =
+    N extends keyof IMap
+    ? IMap[N]
+    : IMap['__']

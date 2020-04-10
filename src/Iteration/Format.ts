@@ -1,7 +1,7 @@
-import {IterationMaps} from './IterationOf'
 import {Iteration} from './Iteration'
-import {Number as NumberMap} from '../Misc/Iteration/Number'
+import {NumberMap} from '../Misc/Iteration/Number'
 import {Formats} from './_Internal'
+import {Map} from '../Misc/Iteration/Map'
 
 /**
 Is [[Key]] and [[Pos]] in a single type
@@ -19,7 +19,7 @@ type fmtS = I.Fmt<i, 's'> // '20'
 type fmtN = I.Fmt<i, 'n'> //  20
 ```
 */
-export type Format<I extends Iteration<IMap>, fmt extends Formats, IMap extends IterationMaps = NumberMap> = {
+export type Format<I extends Iteration<IMap>, fmt extends Formats, IMap extends Map = NumberMap> = {
     's': I[2]
     'n': I[3]
 }[fmt]
