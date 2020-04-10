@@ -30,4 +30,6 @@ type test2 = N.Absolute<'-20', 'n'> //  20
 ```
 */
 export type Absolute<N extends Number, fmt extends Formats = 's'> =
+    N extends unknown ?
     Format<_Absolute<IterationOf<N>>, fmt>
+    : never

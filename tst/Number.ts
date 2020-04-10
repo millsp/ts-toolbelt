@@ -9,6 +9,7 @@ const {checks, check} = Test
 // ABSOLUTE
 
 checks([
+    check<N.Absolute<'0' | '-1'>,   '0' | '1',  Test.Pass>(),
     check<N.Absolute<'0'>,          '0',        Test.Pass>(),
     check<N.Absolute<'10'>,         '10',       Test.Pass>(),
     check<N.Absolute<'-10'>,        '10',       Test.Pass>(),
@@ -22,6 +23,7 @@ checks([
 // GREATER
 
 checks([
+    check<N.Greater<'0' | '1', '0'>,    0 | 1,      Test.Pass>(),
     check<N.Greater<'9', '10'>,         0,          Test.Pass>(),
     check<N.Greater<'21', '13'>,        1,          Test.Pass>(),
     check<N.Greater<'-10', '10'>,       0,          Test.Pass>(),
@@ -35,6 +37,7 @@ checks([
 // GREATEREQ
 
 checks([
+    check<N.GreaterEq<'0' | '1', '0'>,  0 | 1,      Test.Pass>(),
     check<N.GreaterEq<'9', '10'>,       0,          Test.Pass>(),
     check<N.GreaterEq<'21', '10'>,      1,          Test.Pass>(),
     check<N.GreaterEq<'-10', '10'>,     0,          Test.Pass>(),
@@ -48,45 +51,49 @@ checks([
 // ISNEGATIVE
 
 checks([
-    check<N.IsNegative<'0'>,        0,          Test.Pass>(),
-    check<N.IsNegative<'10'>,       0,          Test.Pass>(),
-    check<N.IsNegative<'-10'>,      1,          Test.Pass>(),
-    check<N.IsNegative<'100'>,      0 | 1,      Test.Pass>(),
-    check<N.IsNegative<string>,     0 | 1,      Test.Pass>(),
-    check<N.IsNegative<any>,        any,        Test.Pass>(),
-    check<N.IsNegative<never>,      never,      Test.Pass>(),
+    check<N.IsNegative<'0' | '-1'>,     0 | 1,      Test.Pass>(),
+    check<N.IsNegative<'0'>,            0,          Test.Pass>(),
+    check<N.IsNegative<'10'>,           0,          Test.Pass>(),
+    check<N.IsNegative<'-10'>,          1,          Test.Pass>(),
+    check<N.IsNegative<'100'>,          0 | 1,      Test.Pass>(),
+    check<N.IsNegative<string>,         0 | 1,      Test.Pass>(),
+    check<N.IsNegative<any>,            any,        Test.Pass>(),
+    check<N.IsNegative<never>,          never,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // ISPOSITIVE
 
 checks([
-    check<N.IsPositive<'0'>,        0,          Test.Pass>(),
-    check<N.IsPositive<'10'>,       1,          Test.Pass>(),
-    check<N.IsPositive<'-10'>,      0,          Test.Pass>(),
-    check<N.IsPositive<'100'>,      0 | 1,      Test.Pass>(),
-    check<N.IsPositive<string>,     0 | 1,      Test.Pass>(),
-    check<N.IsPositive<any>,        any,        Test.Pass>(),
-    check<N.IsPositive<never>,      never,      Test.Pass>(),
+    check<N.IsPositive<'-1' | '1'>,     0 | 1,      Test.Pass>(),
+    check<N.IsPositive<'0'>,            0,          Test.Pass>(),
+    check<N.IsPositive<'10'>,           1,          Test.Pass>(),
+    check<N.IsPositive<'-10'>,          0,          Test.Pass>(),
+    check<N.IsPositive<'100'>,          0 | 1,      Test.Pass>(),
+    check<N.IsPositive<string>,         0 | 1,      Test.Pass>(),
+    check<N.IsPositive<any>,            any,        Test.Pass>(),
+    check<N.IsPositive<never>,          never,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // ISZERO
 
 checks([
-    check<N.IsZero<'0'>,        1,          Test.Pass>(),
-    check<N.IsZero<'10'>,       0,          Test.Pass>(),
-    check<N.IsZero<'-10'>,      0,          Test.Pass>(),
-    check<N.IsZero<'100'>,      0 | 1,      Test.Pass>(),
-    check<N.IsZero<string>,     0 | 1,      Test.Pass>(),
-    check<N.IsZero<any>,        any,        Test.Pass>(),
-    check<N.IsZero<never>,      never,      Test.Pass>(),
+    check<N.IsZero<'0' | '-1'>,     0 | 1,      Test.Pass>(),
+    check<N.IsZero<'0'>,            1,          Test.Pass>(),
+    check<N.IsZero<'10'>,           0,          Test.Pass>(),
+    check<N.IsZero<'-10'>,          0,          Test.Pass>(),
+    check<N.IsZero<'100'>,          0 | 1,      Test.Pass>(),
+    check<N.IsZero<string>,         0 | 1,      Test.Pass>(),
+    check<N.IsZero<any>,            any,        Test.Pass>(),
+    check<N.IsZero<never>,          never,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // LOWER
 
 checks([
+    check<N.Lower<'0' | '1', '0'>,      0 | 1,      Test.Pass>(),
     check<N.Lower<'10', '11'>,          1,          Test.Pass>(),
     check<N.Lower<'21', '20'>,          0,          Test.Pass>(),
     check<N.Lower<'-10', '10'>,         1,          Test.Pass>(),
@@ -100,6 +107,7 @@ checks([
 // LOWEREQ
 
 checks([
+    check<N.LowerEq<'0' | '1', '0'>,    0 | 1,      Test.Pass>(),
     check<N.LowerEq<'9', '10'>,         1,          Test.Pass>(),
     check<N.LowerEq<'21', '10'>,        0,          Test.Pass>(),
     check<N.LowerEq<'-10', '10'>,       1,          Test.Pass>(),
@@ -135,20 +143,22 @@ checks([
 // MINUS
 
 checks([
-    check<N.Minus<'9', '10'>,       '-1',       Test.Pass>(),
-    check<N.Minus<'21', '10'>,      '11',       Test.Pass>(),
-    check<N.Minus<'-10', '10'>,     '-20',      Test.Pass>(),
-    check<N.Minus<'10', '-10'>,     '20',       Test.Pass>(),
-    check<N.Minus<'100', '10'>,     string,     Test.Pass>(),
-    check<N.Minus<string, '10'>,    string,     Test.Pass>(),
-    check<N.Minus<any, '10'>,       any,        Test.Pass>(),
-    check<N.Minus<never, '10'>,     never,      Test.Pass>(),
+    check<N.Minus<'9' | '8', '10' | '9'>,   '-1' | '-2' | '0',  Test.Pass>(),
+    check<N.Minus<'9', '10'>,               '-1',               Test.Pass>(),
+    check<N.Minus<'21', '10'>,              '11',               Test.Pass>(),
+    check<N.Minus<'-10', '10'>,             '-20',              Test.Pass>(),
+    check<N.Minus<'10', '-10'>,             '20',               Test.Pass>(),
+    check<N.Minus<'100', '10'>,             string,             Test.Pass>(),
+    check<N.Minus<string, '10'>,            string,             Test.Pass>(),
+    check<N.Minus<any, '10'>,               any,                Test.Pass>(),
+    check<N.Minus<never, '10'>,             never,              Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // NEGATE
 
 checks([
+    check<N.Negate<'0' | '1'>,  '0' | '-1', Test.Pass>(),
     check<N.Negate<'9'>,        '-9',       Test.Pass>(),
     check<N.Negate<'21'>,       '-21',      Test.Pass>(),
     check<N.Negate<'-10'>,      '10',       Test.Pass>(),
@@ -167,6 +177,7 @@ checks([
 // NUMBEROF
 
 checks([
+    check<N.NumberOf<0 | 1>,    '0' | '1',  Test.Pass>(),
     check<N.NumberOf<9>,        '9',        Test.Pass>(),
     check<N.NumberOf<21>,       '21',       Test.Pass>(),
     check<N.NumberOf<-10>,      '-10',      Test.Pass>(),
@@ -181,14 +192,15 @@ checks([
 // PLUS
 
 checks([
-    check<N.Plus<'9', '10'>,        '19',       Test.Pass>(),
-    check<N.Plus<'21', '10'>,       '31',       Test.Pass>(),
-    check<N.Plus<'-10', '10'>,      '0',        Test.Pass>(),
-    check<N.Plus<'10', '-10'>,      '0',        Test.Pass>(),
-    check<N.Plus<'100', '10'>,      string,     Test.Pass>(),
-    check<N.Plus<string, '10'>,     string,     Test.Pass>(),
-    check<N.Plus<any, '10'>,        any,        Test.Pass>(),
-    check<N.Plus<never, '10'>,      never,      Test.Pass>(),
+    check<N.Plus<'9' | '8', '10' | '9'>,    '17' | '18' | '19',     Test.Pass>(),
+    check<N.Plus<'9', '10'>,                '19',                   Test.Pass>(),
+    check<N.Plus<'21', '10'>,               '31',                   Test.Pass>(),
+    check<N.Plus<'-10', '10'>,              '0',                    Test.Pass>(),
+    check<N.Plus<'10', '-10'>,              '0',                    Test.Pass>(),
+    check<N.Plus<'100', '10'>,              string,                 Test.Pass>(),
+    check<N.Plus<string, '10'>,             string,                 Test.Pass>(),
+    check<N.Plus<any, '10'>,                any,                    Test.Pass>(),
+    check<N.Plus<never, '10'>,              never,                  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

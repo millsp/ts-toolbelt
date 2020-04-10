@@ -28,4 +28,6 @@ type test4 = N.Negate<'-100'>    // string
 ```
 */
 export type Negate<N extends Number, fmt extends Formats = 's'> =
-    Format<_Negate<IterationOf<N>>, fmt>
+    N extends unknown
+    ? Format<_Negate<IterationOf<N>>, fmt>
+    : never
