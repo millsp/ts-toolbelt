@@ -30,7 +30,7 @@ type OptionalPart<O extends object, depth extends Depth> = {
 /**
 Make some fields of **`O`** optional (deeply or not)
 @param O to make optional
-@param K (?=`any`) to choose fields
+@param K (?=`Key`) to choose fields
 @param depth (?=`'default'`) to do it deeply
 @returns [[Object]]
 @example

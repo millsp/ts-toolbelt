@@ -7,7 +7,7 @@ import {Format} from '../String/Format'
 Make the fields of **`L`** union the ones of **`L1`**
 @param L to union from
 @param L1 to union with
-@param K (?=`any`) to do choose fields
+@param K (?=`Key`) to do choose fields
 @returns [[List]]
 @example
 ```ts

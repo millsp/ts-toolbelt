@@ -5,7 +5,7 @@ import {Key} from '../Any/Key'
 Make the fields of **`O`** union the ones of **`O1`**
 @param O to union from
 @param O1 to union with
-@param K (?=`any`) to chose fields
+@param K (?=`Key`) to chose fields
 @returns [[Object]]
 @example
 ```ts
