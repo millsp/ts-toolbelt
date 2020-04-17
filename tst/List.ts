@@ -63,6 +63,32 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// ATLEAST
+
+type T_ATLEAST = [
+    0,
+    1,
+    2
+] | [
+    3,
+    4,
+    5,
+    6
+]
+
+type ATLEAST_T_013 =
+    | [0, 1, 2]
+    | [0, 1 | undefined, 2 | undefined]
+    | [0 | undefined, 1, 2 | undefined]
+    | [3, 4 | undefined, 5 | undefined, 6 | undefined]
+    | [3 | undefined, 4, 5 | undefined, 6 | undefined]
+    | [3 | undefined, 4 | undefined, 5 | undefined, 6];
+
+checks([
+    check<T.AtLeast<T_ATLEAST, '0' | '1' | '3'>,    ATLEAST_T_013,    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // COMPACT
 
 checks([
