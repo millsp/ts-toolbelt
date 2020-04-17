@@ -17,6 +17,7 @@ export type _IsPositive<N extends Iteration, IMap extends Map> = {
 /**
 Check whether a [[Number]] is positive or not
 @param N to check
+@param IMap to operate with another set of numbers
 @returns [[Boolean]]
 @example
 ```ts

@@ -6,6 +6,7 @@ import {Map} from '../Misc/Iteration/Map'
 Transform a number into an [[Iteration]]
 (to use [[Prev]], [[Next]], & [[Pos]])
 @param N to transform
+@param IMap to operate with another set of numbers
 @returns [[Iteration]]
 @example
 ```ts

@@ -6,6 +6,7 @@ import {Format} from './Format'
 /**
 Get the position of **`I`** (**string**)
 @param I to query
+@param IMap to operate with another set of numbers
 @returns [[String]]
 @example
 ```ts

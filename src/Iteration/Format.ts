@@ -7,6 +7,7 @@ import {Map} from '../Misc/Iteration/Map'
 Is [[Key]] and [[Pos]] in a single type
 @param I to query
 @param fmt output format
+@param IMap to operate with another set of numbers
 @returns **`string | number`**
 @example
 ```ts

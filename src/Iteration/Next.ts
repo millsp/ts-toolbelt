@@ -5,6 +5,7 @@ import {NumberMap} from '../Misc/Iteration/Number'
 /**
 Move **`I`**'s position forward
 @param I to move
+@param IMap to operate with another set of numbers
 @returns [[Iteration]]
 @example
 ```ts

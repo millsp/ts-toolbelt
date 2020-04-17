@@ -20,6 +20,7 @@ export type _Absolute<N extends Iteration, IMap extends Map> = {
 Get the absolute value of a [[Number]]
 @param N to absolute
 @param fmt (?=`'s'`) output format
+@param IMap to operate with another set of numbers
 @returns **`string | number | boolean`**
 @example
 ```ts

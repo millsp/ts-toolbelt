@@ -16,6 +16,7 @@ export type _Greater<N1 extends Iteration, N2 extends Iteration, IMap extends Ma
 Check if a [[Number]] is bigger than another one
 @param N1 to compare
 @param N2 to compare to
+@param IMap to operate with another set of numbers
 @returns [[Boolean]]
 @example
 ```ts
