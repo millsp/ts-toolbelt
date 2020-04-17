@@ -3,17 +3,15 @@ import {AtLeast as OAtLeast} from '../Object/AtLeast'
 import {ObjectOf} from './ObjectOf'
 import {_ListOf} from '../Object/ListOf'
 import {List} from './List'
-import {Boolean} from '../Boolean/Boolean'
 import {NumberOf} from '../Any/_Internal'
 import {Keys} from './Keys'
 
 /**
 Split **`L`** into a [[Union]] with **`K`** keys in such a way that none of
-the keys are ever present with one another within the different unions.
-@param L to split
-@param K to split with
-@param strict (?=`1`) to force excess property checks https://github.com/microsoft/TypeScript/issues/20863
-@returns [[Union]]
+Make that at least one of the keys **`K`** are required in **`O`** at a time.
+@param O to make required
+@param K (?=`keyof O`) to choose fields
+@returns [[List]] [[Union]]
 @example
 ```ts
 ```
