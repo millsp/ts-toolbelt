@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.5.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.5.0...v6.5.1) (2020-04-18)
+
+
+### Bug Fixes
+
+* **atleast:** edge case optional union objects ([ae92869](https://github.com/pirix-gh/ts-toolbelt/commit/ae9286971a8cfe32813d2ba37181c3f10f6e756e))
+
 ## [6.5.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.4.2...v6.5.0) (2020-04-17)
 
 
