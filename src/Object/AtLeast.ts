@@ -1,10 +1,19 @@
 import {_Omit} from './Omit'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
-import {Compute} from '../Any/Compute'
-import {OptionalFlat} from './Optional'
 import {Keys} from './Keys'
 import {RequiredFlat} from './Required'
+import {Extends} from '../Any/Extends'
+import {Compute} from '../Any/Compute'
+import {OptionalFlat} from './Optional'
+
+/**
+@hidden
+*/
+type RequiredIfKeys<O extends object, K extends Key> =
+    Extends<keyof O & K, K> extends 1
+    ? RequiredFlat<O>
+    : O
 
 /**
 @hidden
@@ -18,7 +27,7 @@ type __AtLeast<O extends object, K extends Key> =
 @hidden
 */
 type _AtLeast<O extends object, K extends Key> =
-    Compute<__AtLeast<RequiredFlat<O>, K>>
+    Compute<__AtLeast<RequiredIfKeys<O, K>, K>>
 
 /**
 Make that at least one of the keys **`K`** are required in **`O`** at a time.
