@@ -17,4 +17,4 @@
  * ```
  */
 export type Type<A extends any, Id extends string> =
-    A & {[K in symbol]: Id}
+    A & {__type__?: Id}
