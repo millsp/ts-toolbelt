@@ -1,5 +1,3 @@
-const symbol = Symbol('')
-
 /**
  * Create your own named sub-type from a type **`A`**
  * @param A to be personalized
@@ -19,4 +17,4 @@ const symbol = Symbol('')
  * ```
  */
 export type Type<A extends any, Id extends string> =
-    A & {[K in typeof symbol]: Id}
+    A & {[K in symbol]: Id}
