@@ -32,11 +32,9 @@ type UnNestLoose<L extends List> =
 */
 type Flatter<L extends List, LN extends List, I extends Iteration> =
     L[Pos<I>] extends infer LP // handle if undefined
-    ? LP extends unknown
-      ? LP extends List
-        ? _Concat<LN, L[Pos<I>]> // if it's a  list
-        : _Append<LN, L[Pos<I>]> // if it's an item
-      : LP // undefined
+    ? LP extends List
+      ? _Concat<LN, L[Pos<I>]> // if it's a  list
+      : _Append<LN, L[Pos<I>]> // if it's an item
     : never
 
 /**
