@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.6.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.1...v6.6.2) (2020-05-02)
+
+
+### Bug Fixes
+
+* **a.type:** simplify, remove symbol ([bbc62f3](https://github.com/pirix-gh/ts-toolbelt/commit/bbc62f3ee34b72ec7c6229f8fba07a7d420c6e1c))
+
+
+### Others
+
+* **l.unnest:** useless distribution ([cda0554](https://github.com/pirix-gh/ts-toolbelt/commit/cda05548fb74e481135ee47dc198121ad09d2d68))
+* **release:** fix amd and symbol ([666a508](https://github.com/pirix-gh/ts-toolbelt/commit/666a508733516e6328bdb3675daa62231e6285d7))
+
 ### [6.6.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.0...v6.6.1) (2020-05-02)
 
 
