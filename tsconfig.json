@@ -76,7 +76,7 @@
       "stripInternal": true, /* Do not emit declarations for code that has an '@internal' annotation. */
       // "suppressExcessPropertyErrors": false, /* Suppress excess property checks for object literals. */
       "suppressImplicitAnyIndexErrors": true, /* Suppress noImplicitAny errors for indexing objects lacking index signatures. */
-      "target": "es5", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
+      "target": "ES2015", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
       // "traceResolution": false, /* Enable tracing of the name resolution process. */
       // "typeRoots": [], /* List of folders to include type definitions from. */
       // "tsBuildInfoFile": ".tsbuildinfo" /* Specify what file to store incremental build information in. */
