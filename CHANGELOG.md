@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.6.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.0...v6.6.1) (2020-05-02)
+
+
+### Bug Fixes
+
+* error with target and symbol ([cfd4f22](https://github.com/pirix-gh/ts-toolbelt/commit/cfd4f22a417c92b59ac0a1412db01431f587041e))
+
 ## [6.6.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.5.1...v6.6.0) (2020-05-02)
 
 
