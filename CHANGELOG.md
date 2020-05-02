@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.6.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.5.1...v6.6.0) (2020-05-02)
+
+
+### Features
+
+* **l.flatten, l.unnest:** strict and limit options ([bf1b021](https://github.com/pirix-gh/ts-toolbelt/commit/bf1b02181030aa1ab1f3a692605bc046a0b46c83))
+
 ### [6.5.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.5.0...v6.5.1) (2020-04-18)
 
 
