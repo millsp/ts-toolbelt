@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.7.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.0...v6.7.1) (2020-05-08)
+
+
+### Bug Fixes
+
+* **build:** added lib to build types ([5797d70](https://github.com/pirix-gh/ts-toolbelt/commit/5797d7018857f88a12cd90cea490389fd7c806f2))
+
 ## [6.7.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.2...v6.7.0) (2020-05-08)
 
 
