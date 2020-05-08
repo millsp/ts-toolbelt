@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.7.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.2...v6.7.0) (2020-05-08)
+
+
+### Features
+
+* **builtinobject:** types for standard built-in objs ([fc6762c](https://github.com/pirix-gh/ts-toolbelt/commit/fc6762cf47997eb968f49d75d77723d2c6bcdc35))
+
+
+### Bug Fixes
+
+* **compilation:** set esnext ([9deb23b](https://github.com/pirix-gh/ts-toolbelt/commit/9deb23bc2bf8594e006846b4e7bc8947361a8277))
+
+
+### Others
+
+* **cleanup:** remove unused files ([937c269](https://github.com/pirix-gh/ts-toolbelt/commit/937c2690c562df83a469d25241a0185db73d2d43))
+
 ### [6.6.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.1...v6.6.2) (2020-05-02)
 
 
