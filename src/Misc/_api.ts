@@ -5,6 +5,7 @@ import * as Iteration from './Iteration/_api'
 
 export {Iteration}
 export {JSON}
+export {BuiltInObject} from './BuiltInObject'
 export {Primitive} from './Primitive'
 
 // LEGACY

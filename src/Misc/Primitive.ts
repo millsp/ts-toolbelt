@@ -1,3 +1,6 @@
+/**
+ * All primitive types
+ */
 export type Primitive =
     | boolean
     | string

@@ -158,6 +158,11 @@ For best results, add this to your `tsconfig.json`
 
     // this is optional, but enable whenever possible
     "strict": true,
+
+    // this is optional, but enable whenever possible 
+    "lib": [
+        "es2015",
+    ],
   }
 }
 ```
