@@ -29,7 +29,8 @@
       // "jsxFactory": "React.createElement", /* Equivalent of Babel's pragma option, Replace the function used when compiling JSX expressions. */
       // "keyofStringsOnly": false, /* Resolve 'keyof' to string valued property names only (no numbers or symbols). */
       "lib": [
-        "es2015"
+        "esnext",
+        "dom"
       ], /* Specify library files to be included in the compilation. */
       // "listEmittedFiles": false, /* Enable to list all emitted files. */
       // "listFiles": false, /* Print names of files part of the compilation. */
