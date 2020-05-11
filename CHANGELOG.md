@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.7.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.3...v6.7.4) (2020-05-11)
+
+
+### Bug Fixes
+
+* **pipe, compose:** remove unlimited arguments ([95a66b1](https://github.com/pirix-gh/ts-toolbelt/commit/95a66b147c75c7691f55458c6b3980c38832c973))
+
 ### [6.7.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.2...v6.7.3) (2020-05-11)
 
 
