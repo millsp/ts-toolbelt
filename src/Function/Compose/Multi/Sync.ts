@@ -2,9 +2,6 @@
 /** @ignore *//** */
 
 import {Function} from '../../Function'
-import {Return} from '../../Return'
-import {Last} from '../../../List/Last'
-import {Head} from '../../../List/Head'
 
 /**
 @hidden
@@ -169,13 +166,4 @@ export type ComposeMultiSync = {
         Function<[R0], R1>,
         Function<P,    R0>,
     ]): Function<P,    R9>
-
-    <
-        Fns extends Function[],
-    >(
-        ...fns: Fns
-    ): Function<
-        Parameters<Last<Fns>>,
-        Return<Head<Fns>>
-    >
 }

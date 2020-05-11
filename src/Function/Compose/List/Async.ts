@@ -169,13 +169,4 @@ export type ComposeListAsync = {
         Function<[PromiseOf<R0>],       R1>,
         Function<P,                     R0>,
     ]): Function<P,   Promise<PromiseOf<R9>>>
-
-    <
-        Fns extends Function[],
-    >(
-        fns: Fns
-    ): Function<
-        Parameters<Last<Fns>>,
-        Promise<PromiseOf<Return<Head<Fns>>>>
-    >
 }

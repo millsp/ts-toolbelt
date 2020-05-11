@@ -1,9 +1,6 @@
 /** @ignore *//** */
 
 import {Function} from '../../Function'
-import {Head} from '../../../List/Head'
-import {Return} from '../../Return'
-import {Last} from '../../../List/Last'
 
 /**
 @hidden
@@ -168,13 +165,4 @@ export type PipeMultiSync = {
         Function<[R7], R8>,
         Function<[R8], R9>,
     ]): Function<P,    R9>
-
-    <
-        Fns extends Function[],
-    >(
-        ...fns: Fns
-    ): Function<
-        Parameters<Head<Fns>>,
-        Return<Last<Fns>>
-    >
 }
