@@ -124,7 +124,7 @@ Here's some of the most useful features:
 Lowest TypeScript [support](#-compatibility) starts at v3.5
 
 ```sh
-npm install typescript@^3.6.0 --save-dev
+npm install typescript@^3.8.0 --save-dev
 ```
 
 For best results, add this to your `tsconfig.json`
@@ -175,7 +175,7 @@ You can [**level-up, and re-code this library from scratch**](https://medium.com
 
 ### Where to start
 
-To get you started, we recommend that you visit the documentation of the following essential tools. This should give you a good understanding of what this library is about and its capabilities.
+To get you started, we recommend that you visit the documentation of the following essential tools. 
 
 | Object                                                                                  | List                                                                          | Function                                                                                | Any                                                                                | Union                                                                                  |
 |-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -205,6 +205,10 @@ To get you started, we recommend that you visit the documentation of the followi
 
 > **`TIP`** [Add something to this list](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
 
+**The documentation is complete but it needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
+
+### Imports
+
 The project is organized around TypeScript's main concepts:
 
 |            |             |                  |              |               |          |
@@ -212,25 +216,21 @@ The project is organized around TypeScript's main concepts:
 | **A**ny    | **B**oolean | **C**lass        | **F**unction | **I**teration | **L**ist |
 | **N**umber | **O**bject  | **O**bject.**P** | **S**tring   | **U**nion     | Test     |
 
-> **`TIP`** How to choose categories? Match your type with the above categories.
-
-**The documentation is complete but it needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
-
-### Imports
+> **`TIP`** How to choose categories? Match your type with them.
 
 There are many ways to import the types into your project:
 
-* Explicit
+* **Explicit**
   ```ts
   import {Any, Boolean, Class, Function, Iteration, List, Number, Object, String, Union} from 'ts-toolbelt'
   ```
 
-* Compact
+* **Compact**
   ```ts
   import {A, B, C, F, I, L, N, O, S, U} from 'ts-toolbelt'
   ```
 
-* Portable
+* **Portable**
   ```ts
   import tb from 'ts-toolbelt'
   ```
