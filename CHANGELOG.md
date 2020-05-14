@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.7.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.6...v6.7.7) (2020-05-14)
+
+
+### Bug Fixes
+
+* **o.mergeup:** regression intersected types eval to never ([2dc31ae](https://github.com/pirix-gh/ts-toolbelt/commit/2dc31aeed03d1289f52ae50411eecbcdde2d4e4c))
+
 ### [6.7.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.5...v6.7.6) (2020-05-14)
 
 
