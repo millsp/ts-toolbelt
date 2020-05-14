@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.7.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.4...v6.7.5) (2020-05-14)
+
+
+### Bug Fixes
+
+* **a.type:** remove optional ([10550a9](https://github.com/pirix-gh/ts-toolbelt/commit/10550a902281ade3026bd4eb0ea7837fa8202095))
+
 ### [6.7.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.3...v6.7.4) (2020-05-11)
 
 
