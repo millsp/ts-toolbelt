@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.7.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.5...v6.7.6) (2020-05-14)
+
+
+### Bug Fixes
+
+* **o.listof:** handle unlimited objects ([64800df](https://github.com/pirix-gh/ts-toolbelt/commit/64800df2bc572eaf84982bf2c27f808826be8e55))
+* **o.mergeup:** speed improvement, support ramda/lodash, better accuracy ([6499a7d](https://github.com/pirix-gh/ts-toolbelt/commit/6499a7dd147001e7aeaf1ebb9d80755f80892884))
+
+
+### Others
+
+* cleanup ([2808df2](https://github.com/pirix-gh/ts-toolbelt/commit/2808df20d28ebaac1d77429d6fc5980f65aa4d03))
+* **o.mergeup:** cleanup ([78bd623](https://github.com/pirix-gh/ts-toolbelt/commit/78bd6230e2f0252aa4eed2986eaa7be08efd306e))
+* **o.mergeup:** cleanup ([679a8df](https://github.com/pirix-gh/ts-toolbelt/commit/679a8df43f9159ebbb978a64434d9caf81989112))
+
 ### [6.7.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.4...v6.7.5) (2020-05-14)
 
 
