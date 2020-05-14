@@ -10,6 +10,8 @@ import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth} from './_Internal'
+import {O} from '..'
+import {Cast} from '../Any/Cast'
 
 /**
 @hidden
@@ -43,33 +45,39 @@ export type MergeUpFlat<O extends object, O1 extends object, libStyle extends Bo
 /**
 @hidden
 */
-type __MergeUpDeep<O extends object, O1 extends object, libStyle extends Boolean, OOK extends Key = OptionalKeys<O>> = {
-    [K in keyof (O & O1)]: MergeUpDeep<At<O, K>, At<O1, K>, K, OOK, libStyle>
+type ___MergeUpDeep<O extends object, O1 extends object, libStyle extends Boolean, OOK extends Key = OptionalKeys<O>> = {
+    [K in keyof (O & O1)]: _MergeUpDeep<At<O, K>, At<O1, K>, K, OOK, libStyle>
 } & {}
 
 /**
 @hidden
 */
-type _MergeUpDeep<OK, O1K, K extends Key, OOK extends Key, libStyle extends Boolean> =
+type __MergeUpDeep<OK, O1K, K extends Key, OOK extends Key, libStyle extends Boolean> =
     Or<Extends<[OK], [never]>, Extends<[O1K], [never]>> extends 1 // filter fallthrough `never`
     ? MergeUpProp<OK, O1K, K, OOK, libStyle>    // `O | O1`  not object, merge prop
     : OK extends object ? O1K extends object    // if both are of type `object`
-      ? __MergeUpDeep<OK, O1K, libStyle>        // merge if both are `object`
+      ? ___MergeUpDeep<OK, O1K, libStyle>        // merge if both are `object`
       : MergeUpProp<OK, O1K, K, OOK, libStyle>  // `O`  not object, merge prop
       : MergeUpProp<OK, O1K, K, OOK, libStyle>  // `O1` not object, merge prop
 
 /**
 @hidden
 */
-export type MergeUpDeep<O, O1, K extends Key, OOK extends Key, libStyle extends Boolean> =
+type _MergeUpDeep<O, O1, K extends Key, OOK extends Key, libStyle extends Boolean> =
     // when we merge, we systematically remove inconvenient array methods
-    _MergeUpDeep<NoArray<O>, NoArray<O1>, K, OOK, libStyle> extends infer X
+    __MergeUpDeep<NoArray<O>, NoArray<O1>, K, OOK, libStyle> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
         1: X                                                // ramda
         0: Extends<O, List> extends 1 ? ListOf<X & {}> : X  // lodash
     }[libStyle] // for lodash, we preserve (restore) arrays like it does
                 // arrays are broken with `NoArray`, restored by `ListOf`
     : never
+
+/**
+@hidden
+*/
+export type MergeUpDeep<O extends object, O1 extends object, libStyle extends Boolean> =
+    Cast<_MergeUpDeep<O, O1, never, never, libStyle>, object>
 
 /**
 Accurately complete the fields of **`O`** with the ones of **`O1`**.
@@ -119,5 +127,5 @@ type test = O.MergeUp<O, O1, 'deep'>
 */
 export type MergeUp<O extends object, O1 extends object, depth extends Depth = 'flat', style extends Boolean = 1> = {
     'flat': MergeUpFlat<O, O1, style>
-    'deep': MergeUpDeep<O, O1, never, never, style>
+    'deep': MergeUpDeep<O, O1, style>
 }[depth]

@@ -633,10 +633,17 @@ type MERGEUP_O_O1_DEEP = {
     d : 'hello' | undefined
     e : number
     f?: {
-        a : string | object;
-        b?: number | object;
-        c : object
-    }
+        a: string;
+        b?: number | undefined;
+    } | {
+        a: object;
+        b?: object | undefined;
+        c: object;
+    } | {
+        a: string;
+        b?: number | object | undefined;
+        c: object;
+    } | undefined;
     g?: {
         a?: string
         b?: number
@@ -650,13 +657,21 @@ type MERGEUP_O_O1_DEEP = {
     } | undefined
     j: {
         a: {
-            b?: {
+            b?: {} | {
                 c: 1
             }
         }
+    } | {
+        a: {
+            b?: {}
+        }
     },
-    k: {[k: string]: string}
+    k: {} | {[k: string]: string}
 };
+
+type t0 = O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep', 1>
+
+type t = keyof O.Diff<O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep', 1>, MERGEUP_O_O1_DEEP, 'equals'>
 
 checks([
     check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
