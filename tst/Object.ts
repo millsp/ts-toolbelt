@@ -669,10 +669,6 @@ type MERGEUP_O_O1_DEEP = {
     k: {} | {[k: string]: string}
 };
 
-type t0 = O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep', 1>
-
-type t = keyof O.Diff<O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep', 1>, MERGEUP_O_O1_DEEP, 'equals'>
-
 checks([
     check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
     check<O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep'>,     MERGEUP_O_O1_DEEP,  Test.Pass>(),
