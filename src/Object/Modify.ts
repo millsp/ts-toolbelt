@@ -2,6 +2,7 @@ import {At} from './At'
 import {Replace} from '../Union/Replace'
 import {x} from '../Any/x'
 import {Exclude} from '../Union/Exclude'
+import {Nullable} from '../Union/Nullable'
 
 /**
 Modify **`O`** with **`OMod`** & the [[x]] placeholder
@@ -13,5 +14,5 @@ Modify **`O`** with **`OMod`** & the [[x]] placeholder
 ```
 */
 export type Modify<O extends object, OMod extends object> = {
-    [K in keyof OMod]: Replace<OMod[K], x, Exclude<At<O, K>, undefined>>
+    [K in keyof OMod]: Replace<OMod[K], x, Exclude<At<O, K>, Nullable<never>>>
 } & {}

@@ -1,4 +1,3 @@
-import {Exclude} from './Exclude'
 import {Union} from './Union'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'

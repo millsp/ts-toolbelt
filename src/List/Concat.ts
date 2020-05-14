@@ -18,7 +18,7 @@ Attach **`L1`** at the end of **`L`**
 */
 export type Concat<L extends List, L1 extends List> =
     L extends unknown
-    ? L1 extends L1
+    ? L1 extends unknown
       ? _Concat<L, L1>
       : never
     : never

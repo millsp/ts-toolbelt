@@ -46,7 +46,7 @@ export type MergeUpFlat<O extends object, O1 extends object, libStyle extends Bo
 */
 type ___MergeUpDeep<O extends object, O1 extends object, libStyle extends Boolean, OOK extends Key = OptionalKeys<O>> = {
     [K in keyof (O & O1)]: _MergeUpDeep<At<O, K>, At<O1, K>, K, OOK, libStyle>
-} & {}
+}
 
 /**
 @hidden

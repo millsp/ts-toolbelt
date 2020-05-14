@@ -5,7 +5,8 @@ import {List} from './List'
 import {Key} from '../Any/Key'
 
 /**
-Make **`L`** compulsory (deeply or not)
+Make that **`L`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like
+[[Required]] & [[NonNullable]] at once).
 @param L to make compulsory
 @param depth (?=`'flat'`) to do it deeply
 @returns [[List]]

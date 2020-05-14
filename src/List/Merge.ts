@@ -45,10 +45,10 @@ export type MergeDeep<O, O1> =
     : O
 
 /**
-Complete the fields of **`O`** with the ones of **`O1`**
+Complete the fields of **`L`** with the ones of **`L1`**
 ('deep' option will skip any nullable object to be merged)
-@param O to complete
-@param O1 to copy from
+@param L to complete
+@param L1 to copy from
 @param depth (?=`'flat'`) to do it deeply
 @returns [[Object]]
 @example
