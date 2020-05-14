@@ -1,8 +1,10 @@
+import {Key} from './Key'
+
 /**
- * Create your own named sub-type from a type **`A`**
+ * Create your own opaque sub-type from a type **`A`**
  * @param A to be personalized
  * @param Id to name the sub-type
- * @returns A new type **`Type<A, Name>`**
+ * @returns A new type **`Type<A, Id>`**
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'
@@ -16,5 +18,5 @@
  * eurWallet = usdWallet // error
  * ```
  */
-export type Type<A extends any, Id extends string> =
-    A & {__type__?: Id}
+export type Type<A extends any, Id extends Key> =
+    A & {__type__: Id}
