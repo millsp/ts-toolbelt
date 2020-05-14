@@ -10,7 +10,6 @@ import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth} from './_Internal'
-import {O} from '..'
 import {Cast} from '../Any/Cast'
 
 /**
