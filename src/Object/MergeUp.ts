@@ -5,24 +5,23 @@ import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
 import {Boolean} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
-import {Exclude} from '../Union/Exclude'
 import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth, Anyfy} from './_Internal'
-import {Compute} from '../Any/Compute'
+import {NonNullable} from '../Union/NonNullable'
 
 /**
 @hidden
 */
 type MergeUpProp<OK, O1K, K extends Key, OOK extends Key, libStyle extends Boolean> =
-    K extends OOK                               // if prop of `O` is optional
-    ? Exclude<OK, undefined> | O1K              // merge it with prop of `O1`
-    : [OK] extends [never]                      // if it does not exist
-      ? O1K                                     // complete with prop of `O1`
+    K extends OOK                            // if prop of `O` is optional
+    ? NonNullable<OK> | O1K                  // merge it with prop of `O1`
+    : [OK] extends [never]                   // if it does not exist
+      ? O1K                                  // complete with prop of `O1`
       : {
-          1: undefined extends OK ? OK  : OK    // ramda : keep  undefined
-          0: undefined extends OK ? O1K : OK    // lodash: leave undefined
+          1: undefined extends OK ? OK  : OK // ramda : keep  undefined
+          0: undefined extends OK ? O1K : OK // lodash: leave undefined
       }[libStyle]
 
 /**
