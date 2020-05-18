@@ -411,8 +411,8 @@ checks([
 // NULLABLE
 
 checks([
-    check<T.Nullable<[0, 1, 2]>,        [0 | undefined, 1 | undefined, 2 | undefined],  Test.Pass>(),
-    check<T.Nullable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined],                          Test.Pass>(),
+    check<T.Nullable<[0, 1, 2]>,        [0 | undefined | null, 1 | undefined | null, 2 | undefined | null],     Test.Pass>(),
+    check<T.Nullable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined | null],                                           Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -608,6 +608,24 @@ checks([
     check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3 | undefined, 4 | undefined],     Test.Pass>(), // nothing happens
     check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],                             Test.Pass>(), // nothing happens
 ])
+
+// ---------------------------------------------------------------------------------------
+// TUPLE
+
+// Cannot be tested
+
+// ---------------------------------------------------------------------------------------
+// UNDEFINABLE
+
+checks([
+    check<T.Undefinable<[0, 1, 2]>,        [0 | undefined, 1 | undefined, 2 | undefined],  Test.Pass>(),
+    check<T.Undefinable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined],                          Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// UNDEFINABLEKEYS
+
+// No test needed (same as O.UndefinableKeys)
 
 // ---------------------------------------------------------------------------------------
 // LIST

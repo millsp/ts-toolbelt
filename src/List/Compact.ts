@@ -5,7 +5,7 @@ import {ListOf} from '../Object/ListOf'
 import {Depth} from '../Object/_Internal'
 
 /**
-Merge a list of [[List]] into **`L`** with `Merge` (last-in completes)
+Merge a list of [[List]] into **`L`** with [[Merge]] (last-in completes)
 @param L to assign to
 @param Ls to assign
 @param depth (?=`'flat'`) to do it deeply

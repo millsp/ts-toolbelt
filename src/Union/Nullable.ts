@@ -1,7 +1,7 @@
 import {Union} from './Union'
 
 /**
-Add **`undefined`** to **`U`**
+Add **`undefined | null`** to **`U`**
 @param U to make nullable
 @returns [[Union]]
 @example
@@ -9,4 +9,4 @@ Add **`undefined`** to **`U`**
 ```
 */
 export type Nullable<U extends Union> =
-    U | undefined
+    U | undefined | null
