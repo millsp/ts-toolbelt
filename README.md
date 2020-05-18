@@ -3,7 +3,7 @@
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300" alt="Logo">
   </a>
   <h1 align="center">ts-toolbelt</h1>
-  <h3 align="center">👷 Higher Type Safety for TypeScript</h3>
+  <h4 align="center">👷 Higher Type Safety for TypeScript. A collection of useful type utilities.</h4>
   <br>
   <p align="center">
     <a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Read Docs</a>
