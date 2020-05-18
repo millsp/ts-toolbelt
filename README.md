@@ -83,28 +83,25 @@
 
 ## 📜 About
 
-<h4 align="center"><i>If your goal is to avoid bugs by writing quality types, this library is made for you.</i></h4><br>
+<h4 align="center"><i>"Avoid bugs by writing high quality types"</i></h4><br>
 
-**ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types.
+**ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types. It offers unique dynamic features, allowing you to write type-safe software more **easily** and in **less time** than you do today.
 
-With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
-
-It brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest and the most reliable type collection out there.
+Its programmatic API brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest and the most reliable type collection out there.
 It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
-
-You'll find all the types you can ever need in this single and **well organized** package.
 
 ### Goals
 
 * Answer the question to **"How can I do this in TypeScript?"**
-* Provide a lodash-like **programmatic API** for the type system
-* Promote type **evolution** and **reusability** within your codebase
+* Provide a programmatic **standard API** for the type system
+* Promote type **evolution**/**reusability** within your codebase
 * Software that is more **type-safe**, **flexible**, and **robust**
 * Bring a whole new set of extra **features** to TypeScript
-* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +150MB)
-* Computed types are always **readable**, just like if you typed it
 * Extensively tested type utilities for maximum type safety
 * This package aims to be the home of all **utility types**
+* [Answer questions about types and share knowledge](#-good-to-know-)
+
+You'll find all the types you can ever need in this single and **well organized** package.
 
 ## 🍩 Features
 
