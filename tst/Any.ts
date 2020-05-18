@@ -170,6 +170,16 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// ISLITERAL
+
+checks([
+    check<A.IsLiteral<'x', string>,         1,      Test.Pass>(),
+    check<A.IsLiteral<1 | 'x', number>,     0 | 1,  Test.Pass>(),
+    check<A.IsLiteral<number, number>,      0,      Test.Pass>(),
+    check<A.IsLiteral<string, string>,      0,      Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // KIND
 
 checks([
