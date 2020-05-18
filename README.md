@@ -45,6 +45,12 @@
   <a href="https://github.com/pirix-gh/ts-toolbelt/blob/master/CODE_OF_CONDUCT.md" target="_blank">
     <img src="https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-green.svg">
   </a>
+  <a href="https://lgtm.com/projects/g/pirix-gh/ts-toolbelt/context:javascript">
+    <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/pirix-gh/ts-toolbelt.svg?logo=lgtm&logoWidth=-2"/>
+  </a>
+  <a href="https://lgtm.com/projects/g/pirix-gh/ts-toolbelt/alerts/">
+    <img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/pirix-gh/ts-toolbelt.svg?logo=lgtm&logoWidth=-2"/>
+  </a>
 </p>
 
 <p align="center">

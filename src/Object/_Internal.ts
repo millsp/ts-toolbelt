@@ -1,5 +1,3 @@
-import {At} from './At'
-
 /**
 Describes the permissions/modifiers fields can have
 * `R`: readonly

@@ -1,4 +1,4 @@
-import {Test, T, A, O} from '../src/index'
+import {Test, T, A} from '../src/index'
 
 const {checks, check} = Test
 

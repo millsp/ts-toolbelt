@@ -6,7 +6,6 @@ import {Next} from '../Iteration/Next'
 import {_Append} from '../List/Append'
 import {Exclude} from '../Union/Exclude'
 import {List} from '../List/List'
-import {Extends} from '../Any/Extends'
 import {At} from './At'
 
 /**
