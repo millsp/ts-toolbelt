@@ -173,6 +173,8 @@ checks([
 // ISLITERAL
 
 checks([
+    check<A.IsLiteral<1 | 2>,               1,      Test.Pass>(),
+    check<A.IsLiteral<1 | '2'>,             0 | 1,  Test.Pass>(),
     check<A.IsLiteral<'x', string>,         1,      Test.Pass>(),
     check<A.IsLiteral<1 | 'x', number>,     0 | 1,  Test.Pass>(),
     check<A.IsLiteral<number, number>,      0,      Test.Pass>(),

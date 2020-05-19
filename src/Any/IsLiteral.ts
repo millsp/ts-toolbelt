@@ -1,3 +1,7 @@
+import {And} from '../Boolean/And'
+import {Or} from '../Boolean/Or'
+import {Extends} from './Extends'
+
 /**
  * @hidden
  */
@@ -33,12 +37,9 @@ export type Kind = string | number
  *
  * type test0 = A.IsLiteral<1 | 2> // 1
  * type test1 = A.IsLiteral<1 | 2, string> // 0
- * type test0 = A.IsLiteral<1 | '2', string> // 0 | 1
- * type test0 = A.IsLiteral<number> // 0
+ * type test2 = A.IsLiteral<1 | '2', string> // 0 | 1
+ * type test3 = A.IsLiteral<number> // 0
  * ```
  */
-export type IsLiteral<A extends any, kind extends Kind = Kind> = ({
-    [K: string]: IsStringLiteral<A>
-} & {
-    [K: number]: IsNumberLiteral<A>,
-})[kind]
+export type IsLiteral<A extends any, kind extends Kind = Kind> =
+    And<Or<IsStringLiteral<A>, IsNumberLiteral<A>>, Extends<A, kind>>
