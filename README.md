@@ -55,7 +55,7 @@
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/pirix" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/donate.svg" height="20px" alt="Fund an Issue">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/donate.svg" height="20px" alt="Donate">
   </a>
   <a href="https://patreon.com/pirix" target="_blank">
     <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.svg" height="20px" alt="Support Me">
