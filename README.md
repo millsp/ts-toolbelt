@@ -55,16 +55,16 @@
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/pirix" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/donate.svg" height="25px" alt="Fund an Issue">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/donate.svg" height="20px" alt="Fund an Issue">
   </a>
   <a href="https://patreon.com/pirix" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.svg" height="25px" alt="Support Me">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.svg" height="20px" alt="Support Me">
   </a>
   <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.svg" height="25px" alt="Fund an Issue">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.svg" height="20px" alt="Fund an Issue">
   </a>
   <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.svg" height="25px" alt="Join Tidelift">
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.svg" height="20px" alt="Join Tidelift">
   </a>
 </p>
 
