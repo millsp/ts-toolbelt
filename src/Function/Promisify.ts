@@ -1,7 +1,7 @@
 import {Function} from './Function'
 import {Parameters} from './Parameters'
 import {Return} from './Return'
-import {Promise} from '../Class/Promise'
+import {Promise} from '../Any/Promise'
 
 /**
 Creates a promisified version of a **`Function`** **`F`**
@@ -14,6 +14,5 @@ import {F} from 'ts-toolbelt'
 type test0 = F.Promisify<(a: number) => number> // (a: number) => Promise<number>
 ```
 */
-export type Promisify<F extends Function> = Return<F> extends Promise<any>
-    ? F
-    : (...args: Parameters<F>) => Promise<Return<F>>
+export type Promisify<F extends Function> =
+    (...args: Parameters<F>) => Promise<Return<F>>

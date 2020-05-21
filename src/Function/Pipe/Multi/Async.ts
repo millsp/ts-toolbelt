@@ -1,7 +1,7 @@
 /** @ignore *//** */
 
 import {Function} from '../../Function'
-import {PromiseOf} from '../../../Class/PromiseOf'
+import {PromiseOf} from '../../../Any/PromiseOf'
 
 /**
 @hidden

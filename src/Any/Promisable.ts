@@ -1,4 +1,4 @@
-import {Promise} from '../Class/Promise'
+import {Promise} from '../Any/Promise'
 
 /**
  * A way to say that you can handle **`Promises`** and non-**`Promises`**. This
