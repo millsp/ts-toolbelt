@@ -24,3 +24,9 @@ export type NumberOf<N extends any> =
     N extends number
     ? _NumberOf<N, NumberMap>
     : N
+
+/**
+ * @hidden
+ */
+export type _Promise<A extends any> =
+    Promise<A>
