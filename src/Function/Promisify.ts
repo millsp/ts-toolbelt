@@ -1,6 +1,7 @@
 import {Function} from './Function'
 import {Parameters} from './Parameters'
 import {Return} from './Return'
+import {Promise} from '../Class/Promise'
 
 /**
 Creates a promisified version of a **`Function`** **`F`**

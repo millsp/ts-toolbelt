@@ -28,6 +28,13 @@ checks([
     check<C.Parameters<typeof TestClass>,   [string, number],   Test.Pass>(),
 ])
 
+// ---------------------------------------------------------------------------------------
+// PROMISE
+
+checks([
+    check<C.Promise<Promise<1>>,  C.Promise<1>,  Test.Pass>(),
+])
+
 
 // ---------------------------------------------------------------------------------------
 // PROMISEOF
