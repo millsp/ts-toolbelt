@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.9.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.9...v6.9.0) (2020-05-21)
+
+
+### Features
+
+* **a.promise:** a promise type that unwraps ([ba505d4](https://github.com/pirix-gh/ts-toolbelt/commit/ba505d41cb0f53cd0dbc6ae29191b981a7afb0b5))
+
+
+### Bug Fixes
+
+* **a.promisable:** integrate with Promise ([b14c2fc](https://github.com/pirix-gh/ts-toolbelt/commit/b14c2fc8a52f2bab5baafbc5c32dc41ea5407850))
+* **a.promise:** imports ([5054a0b](https://github.com/pirix-gh/ts-toolbelt/commit/5054a0b57e2178092d8c29dd52de55d239ad00a9))
+
+
+### Others
+
+* cleanup ([5802d6d](https://github.com/pirix-gh/ts-toolbelt/commit/5802d6d6ec2101867d06e38e8fcba92488bdc928))
+
 ### [6.8.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.8...v6.8.9) (2020-05-19)
 
 
