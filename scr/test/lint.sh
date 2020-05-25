@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npx eslint 'src/**'
+npx eslint 'src/**' --debug
