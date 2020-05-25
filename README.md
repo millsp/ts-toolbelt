@@ -25,6 +25,7 @@
   <a href="https://www.npmjs.com/package/ts-toolbelt" target="_blank">
     <img src="https://img.shields.io/npm/v/ts-toolbelt.svg">
   </a>
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt.svg?type=shield"/></a>
   <a href="https://travis-ci.org/pirix-gh/ts-toolbelt" target="_blank">
     <img src="https://img.shields.io/travis/pirix-gh/ts-toolbelt.svg">
   </a>
@@ -410,3 +411,7 @@ Many, many thanks to all the [contributors](https://github.com/pirix-gh/ts-toolb
 
 * [`eledoc`](https://github.com/pirix-gh/eledoc) - 🌒 A material dark theme for TypeDoc 
 * [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt?ref=badge_large)
