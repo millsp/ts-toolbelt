@@ -19,51 +19,51 @@
 </p>
 
 <p align="center">
-  <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link" target="_blank">
-    <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
-  </a>
-  <a href="https://www.npmjs.com/package/ts-toolbelt" target="_blank">
+  <a href="https://www.npmjs.com/package/ts-toolbelt" >
     <img src="https://img.shields.io/npm/v/ts-toolbelt.svg">
   </a>
-  <a href="https://travis-ci.org/pirix-gh/ts-toolbelt" target="_blank">
+  <a href="https://travis-ci.org/pirix-gh/ts-toolbelt" >
     <img src="https://img.shields.io/travis/pirix-gh/ts-toolbelt.svg">
   </a>
   <a href="#">
     <img src="https://img.shields.io/npm/dm/ts-toolbelt.svg">
   </a>
-  <a href="http://makeapullrequest.com" target="_blank">
+  <a href="https://lgtm.com/projects/g/pirix-gh/ts-toolbelt/context:javascript">
+    <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/pirix-gh/ts-toolbelt.svg?logo=lgtm&logoWidth=-2"/>
+  </a>
+  <a href="#">
+    <img src="http://isitmaintained.com/badge/resolution/pirix-gh/ts-toolbelt.svg"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link" >
+    <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
+  </a>
+  <a href="http://makeapullrequest.com" >
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
+  </a>
+  <a href="https://conventionalcommits.org" >
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-green.svg">
+  </a>
+  <a href="https://github.com/pirix-gh/ts-toolbelt/blob/master/CODE_OF_CONDUCT.md" >
+    <img src="https://img.shields.io/badge/CoC-Contributor%20Covenant-green.svg">
   </a>
   <a href="#">
     <img src="https://img.shields.io/npm/l/ts-toolbelt.svg">
   </a>
 </p>
-<p align="center">
-  <a href="https://conventionalcommits.org" target="_blank">
-    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg">
-  </a>
-  <a href="https://github.com/pirix-gh/ts-toolbelt/blob/master/CODE_OF_CONDUCT.md" target="_blank">
-    <img src="https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-green.svg">
-  </a>
-  <a href="https://lgtm.com/projects/g/pirix-gh/ts-toolbelt/context:javascript">
-    <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/pirix-gh/ts-toolbelt.svg?logo=lgtm&logoWidth=-2"/>
-  </a>
-  <a href="https://lgtm.com/projects/g/pirix-gh/ts-toolbelt/alerts/">
-    <img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/pirix-gh/ts-toolbelt.svg?logo=lgtm&logoWidth=-2"/>
-  </a>
-</p>
 
 <p align="center">
-  <a href="https://www.buymeacoffee.com/pirix" target="_blank">
+  <a href="https://www.buymeacoffee.com/pirix" >
     <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/donate.svg" height="20px" alt="Donate">
   </a>
-  <a href="https://patreon.com/pirix" target="_blank">
+  <a href="https://patreon.com/pirix" >
     <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.svg" height="20px" alt="Support Me">
   </a>
-  <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
+  <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" >
     <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.svg" height="20px" alt="Fund an Issue">
   </a>
-  <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" target="_blank">
+  <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" >
     <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.svg" height="20px" alt="Join Tidelift">
   </a>
 </p>
@@ -379,7 +379,7 @@ You can either request a new feature or a bug fix, and then fund it.
 
 **The money will be transparently split with an issue's assignees.**
 
-<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
+<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" >
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
 </a>
 <br>
