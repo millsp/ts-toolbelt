@@ -2,7 +2,7 @@
 
 mkdir -p out
 
-npx tsc src/index.ts --declaration --emitDeclarationOnly --module amd --lib esnext,dom --out out/index.js &&
+npx tsc src/index.ts -d --emitDeclarationOnly --module amd --outFile out/index.d.ts &&
 
 echo "
 declare module 'ts-toolbelt' {
