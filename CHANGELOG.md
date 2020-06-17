@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.4...v7.0.0) (2020-06-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **ts 4.0:** 
+
+### Others
+
+* **ts 4.0:** upgrade utilities ([c9515d6](https://github.com/pirix-gh/ts-toolbelt/commit/c9515d6b42b806f1b096aedb54d2d7d429fc92ba))
+
 ### [6.9.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.3...v6.9.4) (2020-05-25)
 
 
