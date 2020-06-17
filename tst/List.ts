@@ -490,8 +490,8 @@ checks([
 // POP
 
 checks([
-    check<T.Pop<[1, 2, 3]>,     [1, 2],                 Test.Pass>(),
-    check<T.Pop<[1, 2?, 3?]>,   [1, 2 | undefined],     Test.Pass>(),
+    check<T.Pop<[1, 2, 3]>,     [1, 2],     Test.Pass>(),
+    check<T.Pop<[1, 2?, 3?]>,   [1, 2?],    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -500,7 +500,7 @@ checks([
 checks([
     check<T.Prepend<[0, 1, 2, 3?], 4>,      [4, 0, 1, 2, 3?],       Test.Pass>(),
     check<T.Prepend<[0, 1, 2, 3], [4, 5?]>, [[4, 5?], 0, 1, 2, 3],  Test.Pass>(),
-    // check<T.Prepend<never, [4, 5]>,         never,                  Test.Pass>(),
+    check<T.Prepend<never, [4, 5]>,         never,                  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

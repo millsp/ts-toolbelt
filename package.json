@@ -59,6 +59,6 @@
     "ts-node": "^8.10.0",
     "tslib": "^2.0.0",
     "typedoc": "^0.17.0",
-    "typescript": "latest"
+    "typescript": "https://typescript.visualstudio.com/cf7ac146-d525-443c-b23c-0d58337efebc/_apis/build/builds/76664/artifacts?artifactName=tgz&fileId=8D3BE903E9CF24E4917DB55EBC42901FA1370E5A647552B239221DB9A3778F0302&fileName=/typescript-4.0.0-insiders.20200616.tgz"
   }
 }
