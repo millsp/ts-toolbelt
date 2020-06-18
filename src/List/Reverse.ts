@@ -34,9 +34,7 @@ Turn a [[List]] the other way around
 ```ts
 ```
 */
-export type Reverse<L extends List, LO extends List = []> =
+export type Reverse<L extends List> =
     L extends unknown
-    ? LO extends unknown
-      ? _Reverse<L, LO>
-      : never
+    ? _Reverse<L>
     : never
