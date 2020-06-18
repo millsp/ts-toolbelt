@@ -1,6 +1,6 @@
 import {Pos} from '../Iteration/Pos'
 import {Append} from '../List/Append'
-import {Concat} from '../List/Concat'
+import {_Concat} from '../List/Concat'
 import {Length} from '../List/Length'
 import {Next} from '../Iteration/Next'
 import {Cast} from '../Any/Cast'
@@ -29,7 +29,7 @@ type GapOf<L1 extends List, L2 extends List, LN extends List, I extends Iteratio
 type _GapsOf<L1 extends List, L2 extends List, LN extends List = [], L2D extends List = L2, I extends Iteration = IterationOf<'0'>> = {
     // L2D is what is left to consume, previously was `Drop` (see git history)
     0: _GapsOf<L1, L2, GapOf<L1, L2, LN, I>, Tail<L2D>, Next<I>>
-    1: Concat<LN, L2D>
+    1: _Concat<LN, L2D>
 }[Extends<Pos<I>, Length<L1>>]
 
 /**

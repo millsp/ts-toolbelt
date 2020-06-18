@@ -33,7 +33,7 @@ const composedSync = composeSync(
     (message: string)                   => false,                   // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     <T>(generic: T)                     => generic,                 // receive previous return
-    (name: string, age: number)         => ({name, age}),            // receive parameters
+    (name: string, age: number)         => ({name, age}),           // receive parameters
 )
 
 checks([
@@ -110,7 +110,7 @@ const pypedSync = pypeSync(
 )
 
 const pipedSync = pipeSync(
-    (name: string, age: number)           => ({name, age}),           // receive parameters
+    (name: string, age: number)           => ({name, age}),         // receive parameters
     <T>(generic: T)                     => generic,                 // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     (message: string)                   => false,                   // receive previous return
