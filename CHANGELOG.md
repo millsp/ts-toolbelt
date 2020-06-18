@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.2](https://github.com/pirix-gh/ts-toolbelt/compare/v7.0.1...v7.0.2) (2020-06-18)
+
+
+### Others
+
+* **curry:** remove drop ([7065af2](https://github.com/pirix-gh/ts-toolbelt/commit/7065af25d397e084571fb7fa114cce333c2a834a))
+
 ### [7.0.1](https://github.com/pirix-gh/ts-toolbelt/compare/v7.0.0...v7.0.1) (2020-06-18)
 
 
