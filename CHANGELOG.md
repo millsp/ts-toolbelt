@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.9.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.8...v6.9.9) (2020-06-18)
+
+
+### Others
+
+* **curry:** use undristributed concat ([1c8ff5c](https://github.com/pirix-gh/ts-toolbelt/commit/1c8ff5cf2feb3ce0b7d0fbfc43be8d20f5b73287))
+
 ### [6.9.8](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.7...v6.9.8) (2020-06-18)
 
 
