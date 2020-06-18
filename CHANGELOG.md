@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.0.1](https://github.com/pirix-gh/ts-toolbelt/compare/v7.0.0...v7.0.1) (2020-06-18)
+
+
+### Bug Fixes
+
+* **misc.builtinobject:** readonly types ([3d6f7ce](https://github.com/pirix-gh/ts-toolbelt/commit/3d6f7cecbd20fc98a575b935d2d02282257d3991))
+
+
+### Others
+
+* remove reverse ([d41b73d](https://github.com/pirix-gh/ts-toolbelt/commit/d41b73d0ab1d865ffdd270af7ee8ef549197d3b0))
+
 ## [7.0.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.4...v7.0.0) (2020-06-17)
 
 
