@@ -31,6 +31,7 @@ type Textual =
  */
 type Arrays =
     | Array<any>
+    | ReadonlyArray<any>
     | Int8Array
     | Uint8Array
     | Uint8ClampedArray
@@ -48,7 +49,9 @@ type Arrays =
  */
 type Maps =
     | Map<any, any>
+    | ReadonlyMap<any, any>
     | Set<any>
+    | ReadonlySet<any>
     | WeakMap<any, any>
     | WeakSet<any>
 
