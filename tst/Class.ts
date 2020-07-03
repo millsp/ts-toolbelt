@@ -1,5 +1,3 @@
-/* tslint:disable */
-
 import {Test, C} from '../src/index'
 
 const {checks, check} = Test
@@ -29,7 +27,6 @@ checks([
 checks([
     check<C.Parameters<typeof TestClass>,   [string, number],   Test.Pass>(),
 ])
-
 
 // ---------------------------------------------------------------------------------------
 // PROMISEOF

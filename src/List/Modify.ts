@@ -1,7 +1,6 @@
 import {At} from './At'
 import {Replace} from '../Union/Replace'
 import {x} from '../Any/x'
-import {Exclude} from '../Union/Exclude'
 import {List} from './List'
 
 /**

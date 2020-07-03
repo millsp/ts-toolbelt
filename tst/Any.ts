@@ -1,5 +1,3 @@
-/* tslint:disable */
-
 import {Test, A, O} from '../src/index'
 
 const {checks, check} = Test
@@ -22,16 +20,15 @@ checks([
 // CLEAN
 
 checks([
-    check<A.Clean<{a: string}>,                     {a: string},                Test.Pass>(),
-    check<A.Clean<{a: string} & number[]>,          {a: string} & number[],     Test.Pass>(),
-    check<A.Clean<[1, 2, 3]>,                       [1, 2, 3],                  Test.Pass>(),
-    check<A.Clean<[1, 2, 3] & []>,                  [1, 2, 3] & [],             Test.Pass>(),
-    check<A.Clean<A.Compute<[1, 2, 3] & {a: 3}>>,   [1, 2, 3] & {a: 3},         Test.Pass>(),
-    check<A.Clean<O.MergeUp<[1, 2], {a: 3}>>,       [1, 2] & {a: 3},            Test.Pass>(),
-    check<A.Clean<O.MergeUp<number[], []>>,         number[],                   Test.Pass>(),
-    check<A.Clean<O.MergeUp<string[], [1]>>,        Array<1 | string>,          Test.Pass>(),
-    check<A.Clean<{length: 0}>,                     {length: 0},                Test.Pass>(),
-    check<A.Clean<{[k: string]: string}>,           {[k: string]: string},      Test.Pass>(),
+    check<A.Clean<{a: string}>,                         {a: string},                Test.Pass>(),
+    check<A.Clean<A.Compute<{a: string} & number[]>>,   {a: string} & number[],     Test.Pass>(),
+    check<A.Clean<[1, 2, 3]>,                           [1, 2, 3],                  Test.Pass>(),
+    check<A.Clean<A.Compute<[1, 2, 3] & {a: 3}>>,       [1, 2, 3] & {a: 3},         Test.Pass>(),
+    check<A.Clean<O.MergeUp<[1, 2], {a: 3}>>,           [1, 2] & {a: 3},            Test.Pass>(),
+    check<A.Clean<O.MergeUp<number[], []>>,             number[],                   Test.Pass>(),
+    check<A.Clean<O.MergeUp<string[], [1]>>,            Array<1 | string>,          Test.Pass>(),
+    check<A.Clean<{length: 0}>,                         {length: 0},                Test.Pass>(),
+    check<A.Clean<{[k: string]: string}>,               {[k: string]: string},      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -173,6 +170,18 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// ISLITERAL
+
+checks([
+    check<A.IsLiteral<1 | 2>,               1,      Test.Pass>(),
+    check<A.IsLiteral<1 | '2'>,             0 | 1,  Test.Pass>(),
+    check<A.IsLiteral<'x', string>,         1,      Test.Pass>(),
+    check<A.IsLiteral<1 | 'x', number>,     0 | 1,  Test.Pass>(),
+    check<A.IsLiteral<number, number>,      0,      Test.Pass>(),
+    check<A.IsLiteral<string, string>,      0,      Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // KIND
 
 checks([
@@ -210,6 +219,14 @@ checks([
 checks([
     check<A.Promisable<42>,     42 | Promise<42>,       Test.Pass>(),
 ])
+
+// ---------------------------------------------------------------------------------------
+// PROMISE
+
+checks([
+    check<A.Promise<Promise<1>>,  A.Promise<1>,  Test.Pass>(),
+])
+
 
 // ---------------------------------------------------------------------------------------
 // TRY

@@ -1,5 +1,3 @@
-/* tslint:disable */
-
 import {Test, U} from '../src/index'
 
 const {checks, check} = Test
@@ -98,7 +96,7 @@ checks([
 // NULLABLE
 
 checks([
-    check<U.Nullable<1 | 2>,    1 | 2 | undefined,      Test.Pass>(),
+    check<U.Nullable<1 | 2>,    1 | 2 | undefined | null,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -3,7 +3,7 @@
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/logo.png" width="300" alt="Logo">
   </a>
   <h1 align="center">ts-toolbelt</h1>
-  <h3 align="center">Get the most out of TypeScript</h3>
+  <h4 align="center">👷 Higher Type Safety for TypeScript. A collection of useful type utilities.</h4>
   <br>
   <p align="center">
     <a href="https://pirix-gh.github.io/ts-toolbelt/">📖 Read Docs</a>
@@ -19,43 +19,52 @@
 </p>
 
 <p align="center">
-  <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link" target="_blank">
-    <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
-  </a>
-  <a href="https://www.npmjs.com/package/ts-toolbelt" target="_blank">
+  <a href="https://www.npmjs.com/package/ts-toolbelt" >
     <img src="https://img.shields.io/npm/v/ts-toolbelt.svg">
   </a>
-  <a href="https://travis-ci.org/pirix-gh/ts-toolbelt" target="_blank">
+  <a href="https://travis-ci.org/pirix-gh/ts-toolbelt" >
     <img src="https://img.shields.io/travis/pirix-gh/ts-toolbelt.svg">
   </a>
   <a href="#">
     <img src="https://img.shields.io/npm/dm/ts-toolbelt.svg">
   </a>
-  <a href="http://makeapullrequest.com" target="_blank">
+  <a href="https://lgtm.com/projects/g/pirix-gh/ts-toolbelt/context:javascript">
+    <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/pirix-gh/ts-toolbelt.svg?logo=lgtm&logoWidth=-2"/>
+  </a>
+  <a href="#">
+    <img src="http://isitmaintained.com/badge/resolution/pirix-gh/ts-toolbelt.svg"/>
+  </a>
+</p>
+<p align="center">
+  <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link" >
+    <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
+  </a>
+  <a href="http://makeapullrequest.com" >
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
+  </a>
+  <a href="https://conventionalcommits.org" >
+    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-green.svg">
+  </a>
+  <a href="https://github.com/pirix-gh/ts-toolbelt/blob/master/CODE_OF_CONDUCT.md" >
+    <img src="https://img.shields.io/badge/CoC-Contributor%20Covenant-green.svg">
   </a>
   <a href="#">
     <img src="https://img.shields.io/npm/l/ts-toolbelt.svg">
   </a>
 </p>
-<p align="center">
-  <a href="https://conventionalcommits.org" target="_blank">
-    <img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg">
-  </a>
-  <a href="https://github.com/pirix-gh/ts-toolbelt/blob/master/CODE_OF_CONDUCT.md" target="_blank">
-    <img src="https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-green.svg">
-  </a>
-</p>
 
 <p align="center">
-  <a href="https://patreon.com/pirix" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.png" height="25px" alt="Support Me">
+  <a href="https://www.buymeacoffee.com/pirix" >
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/donate.svg" height="20px" alt="Donate">
   </a>
-  <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.png" height="25px" alt="Join Tidelift">
+  <a href="https://patreon.com/pirix" >
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/patreon.svg" height="20px" alt="Support Me">
   </a>
-  <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
-    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px" alt="Fund an Issue">
+  <a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" >
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.svg" height="20px" alt="Fund an Issue">
+  </a>
+  <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" >
+    <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/tidelift.svg" height="20px" alt="Join Tidelift">
   </a>
 </p>
 
@@ -77,27 +86,25 @@
 
 ## 📜 About
 
-<h4 align="center"><i>If your goal is to avoid bugs by writing quality types, this library is made for you.</i></h4><br>
+<h4 align="center"><i>"Avoid bugs by writing high quality types"</i></h4><br>
 
-**ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types.
+**ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types. It offers unique dynamic features, allowing you to write type-safe software more **easily** and in **less time** than you do today.
 
-With its programmatic API, you can write type-safe software more **easily** and in **less time** than you do today.
-
-It brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest, and most reliable type collection out there.
+Its programmatic API brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest and the most reliable type collection out there.
 It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
-
-You'll find all the types you can ever need in this single and **well organized** package.
 
 ### Goals
 
-* Answer the question to **"How do I do this in TypeScript?"**
-* Provide a lodash-like **programmatic API** for the type system
-* Promote type **evolution** & **reusability** within your codebase
-* Computed types are always **readable**, like if you typed it
+* Answer the question to **"How can I do this in TypeScript?"**
+* Provide a programmatic **standard API** for the type system
+* Promote type **evolution**/**reusability** within your codebase
 * Software that is more **type-safe**, **flexible**, and **robust**
 * Bring a whole new set of extra **features** to TypeScript
+* Extensively tested type utilities for maximum type safety
 * This package aims to be the home of all **utility types**
-* High [**performance**](https://gist.github.com/pirix-gh/02097996d2a1e4e7aa2d54b330451ea0), so it will not bloat TS (~ +2sec, +50MB)
+* [Answer questions about types and share knowledge](#-good-to-know-)
+
+You'll find all the types you can ever need in this single and **well organized** package.
 
 ## 🍩 Features
 
@@ -109,28 +116,6 @@ Here's some of the most useful features:
 * [Change a type at any depth!](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)
 * [Concat two lists together](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html)
 * [Get the last item of a list](https://pirix-gh.github.io/ts-toolbelt/modules/_list_last_.html)
-<details>
-<summary>
-<b>Expand to See More</b>
-</summary>
-
-| Object                                                                                          | List                                                                                  | Function                                                                                      | Any                                                                                           |
-|-------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| [Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)                 | [Append](https://pirix-gh.github.io/ts-toolbelt/modules/_list_append_.html)           | [NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)             | [Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_any_promisable_.html)            |
-| [Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)                   | [Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_drop_.html)               | [Promisify](https://pirix-gh.github.io/ts-toolbelt/modules/_misc_promisify_.html)             |                                                                                               |
-| [MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)                 | [Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_list_flatten_.html)         |                                                                                               |                                                                                               |
-| [NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html)         | [Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html)           |                                                                                               |                                                                                               |
-| [Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)               | [Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_pop_.html)                 |                                                                                               |                                                                                               |
-| [Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)               | [Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_list_reverse_.html)         |                                                                                               |                                                                                               |
-| [P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p_update_.html)               | [Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_list_tail_.html)               |                                                                                               |                                                                                               |
-| [PathUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pathup_.html)                   |                                                                                       |                                                                                               |                                                                                               |
-| [Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)               |                                                                                       |                                                                                               |                                                                                               |
-| [Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)                   |                                                                                       |                                                                                               |                                                                                               |
-| [Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)                   |                                                                                       |                                                                                               |                                                                                               |
-| [Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)               |                                                                                       |                                                                                               |                                                                                               |
-
-> **`TIP`** [Add something to this list](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
-</details>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/demo.gif" id="demo" width="750px">
@@ -145,7 +130,7 @@ Here's some of the most useful features:
 Lowest TypeScript [support](#-compatibility) starts at v3.5
 
 ```sh
-npm install typescript@^3.6.0 --save-dev
+npm install typescript@^3.8.0 --save-dev
 ```
 
 For best results, add this to your `tsconfig.json`
@@ -158,6 +143,11 @@ For best results, add this to your `tsconfig.json`
 
     // this is optional, but enable whenever possible
     "strict": true,
+
+    // this is the lowest supported standard library
+    "lib": [
+        "es2015",
+    ],
   }
 }
 ```
@@ -183,11 +173,47 @@ type optional = Object.Optional<{id: number, name: string}, 'name'}>
 // {id: number, name?: string}
 ```
 
-> **`TIP`** You can also grab the demo [over here](https://gist.github.com/pirix-gh/f7f7d18773f79bf0618fb5cd55bd48f8)
+> **`TIP`** You can also grab the demo [over here](https://gist.github.com/pirix-gh/f7f7d18773f79bf0618fb5cd55bd48f8).
 
 You can [**level-up, and re-code this library from scratch**](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab).
 
 ## [📖 Documentation ⤢](https://pirix-gh.github.io/ts-toolbelt/)
+
+### Where to start
+
+To get you started, we recommend that you visit the documentation of the following essential tools. 
+
+| Object                                                                                  | List                                                                          | Function                                                                                | Any                                                                                | Union                                                                                  |
+|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| [Either](https://pirix-gh.github.io/ts-toolbelt/modules/_object_either_.html)           | [Append](https://pirix-gh.github.io/ts-toolbelt/modules/_list_append_.html)   | [NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)       | [Compute](https://pirix-gh.github.io/ts-toolbelt/modules/_any_compute_.html)       | [Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_union_filter_.html)           |
+| [Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)         | [Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html)   | [Parameters](https://pirix-gh.github.io/ts-toolbelt/modules/_function_parameters_.html) | [Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_any_promisable_.html) | [IntersectOf](https://pirix-gh.github.io/ts-toolbelt/modules/_union_intersectof_.html) |
+| [Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)           | [Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_drop_.html)       | [Promisify](https://pirix-gh.github.io/ts-toolbelt/modules/_function_promisify_.html)   | [Type](https://pirix-gh.github.io/ts-toolbelt/modules/_any_type_.html)             | [Merge](https://pirix-gh.github.io/ts-toolbelt/modules/_union_merge_.html)             |
+| [Merge](https://pirix-gh.github.io/ts-toolbelt/modules/_object_merge_.html)             | [Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_list_flatten_.html) | [Return](https://pirix-gh.github.io/ts-toolbelt/modules/_function_return_.html)         |                                                                                    | [Select](https://pirix-gh.github.io/ts-toolbelt/modules/_union_select_.html)           |
+| [MergeUp](https://pirix-gh.github.io/ts-toolbelt/modules/_object_mergeup_.html)         | [Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_pop_.html)         |                                                                                         |                                                                                    | [Strict](https://pirix-gh.github.io/ts-toolbelt/modules/_union_strict_.html)           |
+| [NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html) | [Prepend](https://pirix-gh.github.io/ts-toolbelt/modules/_list_prepend_.html) |                                                                                         |                                                                                    |                                                                                        |
+| [Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)       | [Remove](https://pirix-gh.github.io/ts-toolbelt/modules/_list_remove_.html)   |                                                                                         |                                                                                    |                                                                                        |
+| [Omit](https://pirix-gh.github.io/ts-toolbelt/modules/_object_omit_.html)               | [Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_list_reverse_.html) |                                                                                         |                                                                                    |                                                                                        |
+| [Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)       | [Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_list_tail_.html)       |                                                                                         |                                                                                    |                                                                                        |
+| [Overwrite](https://pirix-gh.github.io/ts-toolbelt/modules/_object_overwrite_.html)     |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [P/Merge](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/merge_.html)         |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [P/Omit](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/omit_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [P/Pick](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/pick_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/update_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Path](https://pirix-gh.github.io/ts-toolbelt/modules/_object_path_.html)               |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Pick](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pick_.html)               |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Readonly](https://pirix-gh.github.io/ts-toolbelt/modules/_object_readonly_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Unionize](https://pirix-gh.github.io/ts-toolbelt/modules/_object_unionize_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [UnionOf](https://pirix-gh.github.io/ts-toolbelt/modules/_object_unionof_.html)         |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+
+> **`TIP`** [Add something to this list](https://github.com/pirix-gh/ts-toolbelt/edit/master/README.md)
+
+**The documentation is complete but it needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md).
+
+### Imports
 
 The project is organized around TypeScript's main concepts:
 
@@ -196,33 +222,35 @@ The project is organized around TypeScript's main concepts:
 | **A**ny    | **B**oolean | **C**lass        | **F**unction | **I**teration | **L**ist |
 | **N**umber | **O**bject  | **O**bject.**P** | **S**tring   | **U**nion     | Test     |
 
-> **`TIP`** how to choose categories? match your type with the above categories
-
-**The documentation is complete but needs more examples**. So feel free to [ask for examples](https://github.com/pirix-gh/ts-toolbelt/issues/new?template=---question.md), and I will update the docs.
-
-### Imports
+> **`TIP`** How to choose categories? Match your type with them.
 
 There are many ways to import the types into your project:
 
-* Explicit
+* **Explicit**
   ```ts
   import {Any, Boolean, Class, Function, Iteration, List, Number, Object, String, Union} from 'ts-toolbelt'
   ```
 
-* Compact
+* **Compact**
   ```ts
-  import {A, B, C, F, I, N, O, S, L, U} from 'ts-toolbelt'
+  import {A, B, C, F, I, L, N, O, S, U} from 'ts-toolbelt'
   ```
 
-* Portable
+* **Portable**
   ```ts
   import tb from 'ts-toolbelt'
   ```
 
+You can also import our non-official API from the community:
+  ```ts
+  import {Community} from 'ts-toolbelt'
+  ```
+
+> **`TIP`** The community API is for our community to publish useful types that don't see fit in the standard API.
+
 ### Internal Docs
 
 If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get you on track to start writing your own types.
-
 
 ### [Archives ⤢](https://github.com/pirix-gh/ts-toolbelt/tree/gh-pages)
 
@@ -311,7 +339,7 @@ checks([
 ])
 ```
 
-> **`TIP`** Place it in a file that won't be executed, it's just for TypeScript to test types
+> **`TIP`** Place it in a file that won't be executed, it's just for TypeScript to test types.
 
 ### Continuous Integration
 
@@ -351,7 +379,7 @@ You can either request a new feature or a bug fix, and then fund it.
 
 **The money will be transparently split with an issue's assignees.**
 
-<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" target="_blank">
+<a href="https://issuehunt.io/r/pirix-gh/ts-toolbelt" >
   <img src="https://raw.githubusercontent.com/pirix-gh/ts-toolbelt/master/.github/issuehunt.png" height="25px">
 </a>
 <br>
@@ -363,7 +391,8 @@ You can either request a new feature or a bug fix, and then fund it.
   # performance is checked manually with 
   npx tsc --noEmit --extendedDiagnostics
   ```
-* Need to write the examples
+
+* Need to write more examples
 
 ## 🙏 Acknowledgements
 

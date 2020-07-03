@@ -47,7 +47,7 @@ export type _Drop<L extends List, N extends Number, way extends Way = '->'> =
 Remove **`N`** entries out of **`L`**
 @param L to remove from
 @param N to remove out
-@param way (?=`'->'`) to remove from end
+@param way (?=`'->'`) from front: '->', from end: '<-'
 @returns [[List]]
 @example
 ```ts

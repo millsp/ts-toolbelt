@@ -1,5 +1,3 @@
-import {At} from './At'
-
 /**
 Describes the permissions/modifiers fields can have
 * `R`: readonly
@@ -16,8 +14,8 @@ export type Depth = 'flat' | 'deep'
 
 /**
 Make an object properties (all) `never`. We use this to intersect `object`s and
-preserve the combine modifiers like `readonly` and `?optional`
+preserve the combine modifiers like `+readonly` and `?optional`.
  */
-export type Empty<O extends object> = {
-    [K in keyof O]: undefined
+export type Anyfy<O extends object> = {
+    [K in keyof O]: any
 }

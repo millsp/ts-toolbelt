@@ -1,5 +1,3 @@
-/* tslint:disable */
-
 import {Test, O, A, T} from '../src/index'
 
 const {checks, check} = Test
@@ -66,6 +64,52 @@ checks([
     check<O.At<O, 'c'>,                         {a: 'a'} & {b: 'b'},    Test.Pass>(),
     check<O.At<O, 'g'>,                         O,                      Test.Pass>(),
     check<O.At<{a: 1, b: 2, 0: 3}, string, 0>,  1 | 2,                  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// ATLEAST
+
+type O_ATLEAST = {
+    a?: 1
+    b?: 2
+    c?: 3
+    d: 4
+} | {
+    e: 5
+    f: 6
+} | {
+    g?: 7
+    h?: 8
+}
+
+type ATLEAST_O_ABF = {
+    a: 1
+    b: 2
+    c: 3
+    d: 4
+} | {
+    a: 1
+    b?: 2
+    c?: 3
+    d?: 4
+} | {
+    a?: 1
+    b: 2;
+    c?: 3
+    d?: 4
+} | {
+    e: 5;
+    f: 6;
+} | {
+    e?: 5
+    f: 6;
+} | {
+    g?: 7
+    h?: 8
+};
+
+checks([
+    check<O.AtLeast<O_ATLEAST, 'a' | 'b' | 'f'>,    ATLEAST_O_ABF,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -427,6 +471,23 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// LISTOF
+
+type O_LISTOF = {
+    '0': 1
+    '2': 3
+    '3': never
+    '5': 5
+    '6': 6
+}
+
+type LISTOF_O = [1, 3, never, 5, 6];
+
+checks([
+    check<O.ListOf<O_LISTOF>,   LISTOF_O,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // MERGE
 
 type MERGE_O_O1 = {
@@ -589,10 +650,17 @@ type MERGEUP_O_O1_DEEP = {
     d : 'hello' | undefined
     e : number
     f?: {
-        a : string | object;
-        b?: number | object;
-        c : object
-    }
+        a: string;
+        b?: number | undefined;
+    } | {
+        a: object;
+        b?: object | undefined;
+        c: object;
+    } | {
+        a: string;
+        b?: number | object | undefined;
+        c: object;
+    } | undefined;
     g?: {
         a?: string
         b?: number
@@ -606,12 +674,16 @@ type MERGEUP_O_O1_DEEP = {
     } | undefined
     j: {
         a: {
-            b?: {
+            b?: {} | {
                 c: 1
             }
         }
+    } | {
+        a: {
+            b?: {}
+        }
     },
-    k: {[k: string]: string}
+    k: {} | {[k: string]: string}
 };
 
 checks([
@@ -673,20 +745,20 @@ checks([
 // NULLABLE
 
 type NULLABLE_O_FLAT = {
-         a : string | undefined
-         b : number | undefined
-         c : {a: 'a'} & {b: 'b'} | undefined
-         d?: 'string0'
-readonly e?: 'string1'
-readonly f : 0 | undefined
-         g : O | undefined
-         h?: 1
-         j : 'a' | undefined
-         k : {a: {b: string}} | undefined
+         a : string | undefined | null
+         b : number | undefined | null
+         c : {a: 'a'} & {b: 'b'} | undefined | null
+         d?: 'string0' | null
+readonly e?: 'string1' | null
+readonly f : 0 | undefined | null
+         g : O | undefined | null
+         h?: 1 | null
+         j : 'a' | undefined | null
+         k : {a: {b: string}} | undefined | null
 }
 
 type NULLABLE_O_A_FLAT = {
-         a : string | undefined
+         a : string | undefined | null
          b : number
          c : {a: 'a'} & {b: 'b'}
          d?: 'string0'
@@ -699,9 +771,9 @@ readonly f : 0
 };
 
 checks([
-    check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                            Test.Pass>(),
-    check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,                          Test.Pass>(),
-    check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'> | undefined, Test.Pass>(),
+    check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                                    Test.Pass>(),
+    check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,                                  Test.Pass>(),
+    check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'> | undefined | null,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1045,20 +1117,45 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// LISTOF
+// NULLABLE
 
-type O_LISTOF = {
-    '0': 1
-    '2': 3
-    '3': never
-    '5': 5
-    '6': 6
+type UNDEFINABLE_O_FLAT = {
+    a : string | undefined
+    b : number | undefined
+    c : {a: 'a'} & {b: 'b'} | undefined
+    d?: 'string0'
+readonly e?: 'string1'
+readonly f : 0 | undefined
+    g : O | undefined
+    h?: 1
+    j : 'a' | undefined
+    k : {a: {b: string}} | undefined
 }
 
-type LISTOF_O = [1, 3, never, 5, 6];
+type UNDEFINABLE_O_A_FLAT = {
+    a : string | undefined
+    b : number
+    c : {a: 'a'} & {b: 'b'}
+    d?: 'string0'
+readonly e?: 'string1'
+readonly f : 0
+    g : O
+    h?: 1
+    j : 'a' | undefined
+    k : {a: {b: string}}
+};
 
 checks([
-    check<O.ListOf<O_LISTOF>,    LISTOF_O,    Test.Pass>(),
+    check<O.Undefinable<O, keyof O, 'flat'>,                   UNDEFINABLE_O_FLAT,                              Test.Pass>(),
+    check<O.Undefinable<O, 'a', 'flat'>,                       UNDEFINABLE_O_A_FLAT,                            Test.Pass>(),
+    check<O.Path<O.Undefinable<O, 'g', 'deep'>, ['g', 'g']>,   O.Undefinable<O, keyof O, 'deep'> | undefined,   Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// UNDEFINABLEKEYS
+
+checks([
+    check<O.UndefinableKeys<O>,     'd' | 'e' | 'h' | 'j',  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

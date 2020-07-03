@@ -1,70 +1,38 @@
-import {Prev} from '../Iteration/Prev'
 import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/Iteration'
-import {Next} from '../Iteration/Next'
-import {Numbers} from './_Internal'
+import {KnownIterationMapKeys} from './_Internal'
 import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
-import {Key} from '../Iteration/Key'
-import {_IsNegative} from './IsNegative'
-import {Exclude} from '../Union/Exclude'
-import {Cast} from '../Any/Cast'
 import {Format} from '../Iteration/Format'
-import {Extends} from '../Any/Extends'
-import {Or} from '../Boolean/Or'
+import {NumberMap} from '../Misc/Iteration/Number'
+import {Map} from '../Misc/Iteration/Map'
+import {Equals} from '../Any/Equals'
 
 /**
-@hidden
-*/
-type _MaxPositive<N extends Number, I extends Iteration = IterationOf<'0'>> = {
-    0: _MaxPositive<Exclude<N, Key<I>>, Next<I>> // Find biggest +
-    1: Prev<I>
-    2: string
-}[
-    [N] extends [never] // stops when nothing's left
-    ? 1
-    : string extends N
-      ? 2
-      : 0
-]
+ * @hidden
+ */
+type UnionizeCumulatedNumberUnions<N extends Number, IMap extends Map = NumberMap> = {
+    [K in keyof IMap]: K extends N
+                       ? IMap[K][5] // cumulative union from maps are used as masks
+                       : never      // the higher we go the higher the cumulated is
+}[KnownIterationMapKeys<IMap>]      // see Maps for examples in col `5`
 
 /**
-@hidden
-*/
-type MaxPositive<N extends Number> =
-    _MaxPositive<N> extends infer X
-    ? Cast<X, Iteration>
+ * @hidden
+ */
+type FindMaxNumberInUnion<N extends Number, IMap extends Map = NumberMap> =
+    UnionizeCumulatedNumberUnions<N, IMap> extends infer Match
+    ? { // the biggest number will have the biggest cumulated union
+        [K in keyof IMap]: Equals<IMap[K][5], Match> extends 1
+                           ? K // we return the key of this biggest
+                           : never
+    }[KnownIterationMapKeys<IMap>] // this will return 1 entry only
     : never
-
-/**
-@hidden
-*/
-type _MaxNegative<N extends Number, I extends Iteration = IterationOf<'0'>> = {
-    0: _MaxNegative<Exclude<N, Key<I>>, Prev<I>> // Find biggest -
-    1: I
-}[Or<Extends<Key<I>, N>, Extends<string, Key<I>>>] // stops as soon as it finds
-
-/**
-@hidden
-*/
-type MaxNegative<N extends Number> =
-    _MaxNegative<N> extends infer X
-    ? Cast<X, Iteration>
-    : never
-
-/**
-@hidden
-*/
-export type _Max<N extends Iteration> =
-    _IsNegative<N> extends 1 // breaks distribution
-    ? MaxNegative<Key<N>>
-    : MaxPositive<Exclude<Key<N>, Numbers['string']['-']>>
-    // Exclude (-) numbers, MinPositive only works with (+)
 
 /**
 Get the biggest [[Number]] within an [[Union]]
 @param N [[Union]]
 @param fmt (?=`'s'`) output format
+@param IMap to operate with another set of numbers
 @returns **`string | number | boolean`**
 @example
 ```ts
@@ -76,5 +44,7 @@ type test2 = N.Max<'-2' | '10' | '3', 'n'> //  10
 type test3 = N.Min<'-2' | '10' | 'oops'>   // string
 ```
 */
-export type Max<N extends Number, fmt extends Formats = 's'> =
-    Format<_Max<IterationOf<N>>, fmt>
+export type Max<N extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
+    Format<IterationOf<FindMaxNumberInUnion<N, IMap>, IMap>, fmt, IMap>
+    type t = Max<'ddd'>
+

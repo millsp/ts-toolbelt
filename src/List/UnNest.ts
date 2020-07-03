@@ -10,11 +10,14 @@ import {List} from './List'
 import {UnionOf} from './UnionOf'
 import {Naked} from './_Internal'
 import {Extends} from '../Any/Extends'
+import {Boolean} from '../Boolean/Boolean'
+import {Not} from '../Boolean/Not'
+import {And} from '../Boolean/And'
 
 /**
 @hidden
 */
-type UnNestCheap<L extends List> =
+type UnNestLoose<L extends List> =
     (UnionOf<L> extends infer UL    // make `L` a union
     ? UL extends unknown            // for each in union
       ? UL extends List             // if its an array
@@ -28,43 +31,46 @@ type UnNestCheap<L extends List> =
 @hidden
 */
 type Flatter<L extends List, LN extends List, I extends Iteration> =
-    L[Pos<I>] extends List
-    ? _Concat<LN, L[Pos<I>]> // if it's a  list
-    : _Append<LN, L[Pos<I>]> // if it's an item
+    L[Pos<I>] extends infer LP // handle if undefined
+    ? LP extends List
+      ? _Concat<LN, L[Pos<I>]> // if it's a  list
+      : _Append<LN, L[Pos<I>]> // if it's an item
+    : never
 
 /**
 @hidden
 */
-type UnNestExact<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
-    0: UnNestExact<L, Flatter<L, LN, I>, Next<I>>
+type UnNestStrict<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+    0: UnNestStrict<L, Flatter<L, LN, I>, Next<I>>
     1: LN
 }[Extends<Pos<I>, Length<L>>]
 
 /**
 @hidden
 */
-type __UnNest<L extends List> =
-    number extends Length<L>
-    ? UnNestCheap<L>
-    : UnNestExact<L>
+type __UnNest<L extends List, strict extends Boolean> = {
+    0: UnNestLoose<L>
+    1: UnNestStrict<L>
+}[And<Not<Extends<number, Length<L>>>, strict>]
 
 /**
 @hidden
 */
-export type _UnNest<L extends List> =
-    __UnNest<Naked<L>> extends infer X
+export type _UnNest<L extends List, strict extends Boolean> =
+    __UnNest<Naked<L>, strict> extends infer X
     ? Cast<X, List>
     : never
 
 /**
 Remove a dimension of **`L`**
 @param L to un-nest
+@param strict (?=`1`) `0` to not preserve tuples
 @returns [[List]]
 @example
 ```ts
 ```
 */
-export type UnNest<L extends List> =
+export type UnNest<L extends List, strict extends Boolean = 1> =
     L extends unknown
-    ? _UnNest<L>
+    ? _UnNest<L, strict>
     : never

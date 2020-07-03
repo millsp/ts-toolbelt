@@ -1,10 +1,7 @@
 /** @ignore *//** */
 
 import {Function} from '../../Function'
-import {PromiseOf} from '../../../Class/PromiseOf'
-import {Last} from '../../../List/Last'
-import {Return} from '../../Return'
-import {Head} from '../../../List/Head'
+import {PromiseOf} from '../../../Any/PromiseOf'
 
 /**
 @hidden
@@ -169,13 +166,4 @@ export type ComposeListAsync = {
         Function<[PromiseOf<R0>],       R1>,
         Function<P,                     R0>,
     ]): Function<P,   Promise<PromiseOf<R9>>>
-
-    <
-        Fns extends Function[],
-    >(
-        fns: Fns
-    ): Function<
-        Parameters<Last<Fns>>,
-        Promise<PromiseOf<Return<Head<Fns>>>>
-    >
 }

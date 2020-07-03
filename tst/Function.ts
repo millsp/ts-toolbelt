@@ -1,5 +1,3 @@
-/* tslint:disable */
-
 import {Test, F, A} from '../src/index'
 
 const {checks, check} = Test
@@ -35,7 +33,7 @@ const composedSync = composeSync(
     (message: string)                   => false,                   // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     <T>(generic: T)                     => generic,                 // receive previous return
-    (name: string, age: number)         => ({name, age}),            // receive parameters
+    (name: string, age: number)         => ({name, age}),           // receive parameters
 )
 
 checks([
@@ -74,17 +72,11 @@ declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
 
 const __ = {} as A.x
 
-const toCurry = (name: string, age: number, single: true, ...nicknames: string[]) => true
+const toCurry = (name: string, age: number, single: true, nicknames: string) => true
 const curried = curry(toCurry)
 
-const t = curried()
-
-const test00 = curried(__, 26)(__, true, 'JJ', __)('Jane', 'Jini') // boolean
-const test01 = curried('Jane', 26, true, __)('JJ', __)('Jini')     // boolean
-
-type t = typeof test01
-
-
+const test00: boolean = curried(__, 26)(__, true, 'JJ')('Jane') // boolean
+const test01: boolean = curried('Jane', 26, true, __)('JJ')     // boolean
 
 // ---------------------------------------------------------------------------------------
 // PARAMETERS
@@ -118,7 +110,7 @@ const pypedSync = pypeSync(
 )
 
 const pipedSync = pipeSync(
-    (name: string, age: number)           => ({name, age}),           // receive parameters
+    (name: string, age: number)           => ({name, age}),         // receive parameters
     <T>(generic: T)                     => generic,                 // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     (message: string)                   => false,                   // receive previous return
@@ -158,7 +150,7 @@ checks([
 
 checks([
     check<F.Promisify<(typeof fn)>,                      (a: string, b: number, c: object) => Promise<boolean>,     Test.Pass>(),
-    check<F.Promisify<(a: string) => Promise<boolean>>,  (a: string) => Promise<boolean>,                           Test.Pass>(),
+    check<F.Promisify<(a: string) => A.Promise<boolean>>,  (a: string) => Promise<boolean>,                           Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

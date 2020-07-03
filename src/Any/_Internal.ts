@@ -1,4 +1,5 @@
 import {_NumberOf} from '../Number/NumberOf'
+import {NumberMap} from '../Misc/Iteration/Number'
 
 /**
  * Describes the match strategy when matching types
@@ -21,5 +22,11 @@ export type Match = | 'default'
  */
 export type NumberOf<N extends any> =
     N extends number
-    ? _NumberOf<N>
+    ? _NumberOf<N, NumberMap>
     : N
+
+/**
+ * @hidden
+ */
+export type _Promise<A extends any> =
+    Promise<A>

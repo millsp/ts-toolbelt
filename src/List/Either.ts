@@ -12,7 +12,7 @@ the keys are ever present with one another within the different unions.
 @param L to split
 @param K to split with
 @param strict (?=`1`) to force excess property checks https://github.com/microsoft/TypeScript/issues/20863
-@returns [[Union]]
+@returns [[List]] [[Union]]
 @example
 ```ts
 ```

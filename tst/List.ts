@@ -1,6 +1,4 @@
-/* tslint:disable */
-
-import {Test, T, A, O} from '../src/index'
+import {Test, T, A} from '../src/index'
 
 const {checks, check} = Test
 
@@ -62,6 +60,32 @@ checks([
 checks([
     check<T.At<T, '1'>,             2,              Test.Pass>(),
     check<T.At<T, '3'>,             'xxxx',         Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// ATLEAST
+
+type T_ATLEAST = [
+    0,
+    1,
+    2
+] | [
+    3,
+    4,
+    5,
+    6
+]
+
+type ATLEAST_T_013 =
+    | [0, 1, 2]
+    | [0, 1 | undefined, 2 | undefined]
+    | [0 | undefined, 1, 2 | undefined]
+    | [3, 4 | undefined, 5 | undefined, 6 | undefined]
+    | [3 | undefined, 4, 5 | undefined, 6 | undefined]
+    | [3 | undefined, 4 | undefined, 5 | undefined, 6];
+
+checks([
+    check<T.AtLeast<T_ATLEAST, '0' | '1' | '3'>,    ATLEAST_T_013,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -201,15 +225,16 @@ checks([
 // ---------------------------------------------------------------------------------------
 // FLATTEN
 
-type T_FLATTEN = [1, 12, [2, [3, [4, [5, [6, [7, [8, [9, 92]]]]]]]]]
-type FLATTEN_T = [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, 92];
+type T_FLATTEN = [1, 12, [2, [3, [4, [5, [6, [7, [8, [9, 92?]]]]]]]]]
+type FLATTEN_T = [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, 92] | [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, undefined];
 
 checks([
-    check<T.Flatten<any>,                   any[],         Test.Pass>(),
-    check<T.Flatten<any[]>,                 any[],         Test.Pass>(),
-    check<T.Flatten<T_FLATTEN>,             FLATTEN_T,     Test.Pass>(),
-    check<T.Flatten<[1, 2, 42]>,            [1, 2, 42],    Test.Pass>(),
-    check<T.Flatten<readonly [1, 2, 42]>,   [1, 2, 42],    Test.Pass>(),
+    check<T.Flatten<any>,                   any[],                      Test.Pass>(),
+    check<T.Flatten<any[]>,                 any[],                      Test.Pass>(),
+    check<T.Flatten<T_FLATTEN>,             FLATTEN_T,                  Test.Pass>(),
+    check<T.Flatten<[1, 2, 42]>,            [1, 2, 42],                 Test.Pass>(),
+    check<T.Flatten<[1, 2?]>,               [1, undefined] | [1, 2],    Test.Pass>(),
+    check<T.Flatten<readonly [1, 2, 42]>,   [1, 2, 42],                 Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -386,8 +411,8 @@ checks([
 // NULLABLE
 
 checks([
-    check<T.Nullable<[0, 1, 2]>,        [0 | undefined, 1 | undefined, 2 | undefined],  Test.Pass>(),
-    check<T.Nullable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined],                          Test.Pass>(),
+    check<T.Nullable<[0, 1, 2]>,        [0 | undefined | null, 1 | undefined | null, 2 | undefined | null],     Test.Pass>(),
+    check<T.Nullable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined | null],                                           Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -402,7 +427,7 @@ checks([
     check<T.ObjectOf<readonly [0]>,         {readonly 0: 0},        Test.Pass>(),
     check<T.ObjectOf<[0, 1, 2]>,            {0: 0, 1: 1, 2: 2},     Test.Pass>(),
     check<T.ObjectOf<[0, 1, 2?]>,           {0: 0, 1: 1, 2?: 2},    Test.Pass>(),
-    check<T.ObjectOf<([1] | {a: 1}) & []>,  {0: 1} | {a: 1},        Test.Pass>(),
+    check<T.ObjectOf<([1] | {a: 1})>,       {0: 1} | {a: 1},        Test.Pass>(),
     check<T.ObjectOf<(1[] & {a: 1})>,       {[k: number]: 1, a: 1}, Test.Pass>(),
 ])
 
@@ -583,6 +608,24 @@ checks([
     check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3 | undefined, 4 | undefined],     Test.Pass>(), // nothing happens
     check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],                             Test.Pass>(), // nothing happens
 ])
+
+// ---------------------------------------------------------------------------------------
+// TUPLE
+
+// Cannot be tested
+
+// ---------------------------------------------------------------------------------------
+// UNDEFINABLE
+
+checks([
+    check<T.Undefinable<[0, 1, 2]>,        [0 | undefined, 1 | undefined, 2 | undefined],  Test.Pass>(),
+    check<T.Undefinable<[0, 1, 2], '2'>,   [0, 1, 2 | undefined],                          Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// UNDEFINABLEKEYS
+
+// No test needed (same as O.UndefinableKeys)
 
 // ---------------------------------------------------------------------------------------
 // LIST

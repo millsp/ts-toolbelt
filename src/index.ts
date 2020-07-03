@@ -4,6 +4,7 @@ import * as Test from './Test'
 import * as A from './Any/_api'
 import * as B from './Boolean/_api'
 import * as C from './Class/_api'
+import * as Community from './Community/_api'
 import * as F from './Function/_api'
 import * as I from './Iteration/_api'
 import * as M from './Misc/_api'
@@ -34,6 +35,7 @@ export {
     Boolean,
     C,
     Class,
+    Community,
     F,
     Function,
     I,

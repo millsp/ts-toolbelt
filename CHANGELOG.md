@@ -2,6 +2,381 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.9.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.8...v6.9.9) (2020-06-18)
+
+
+### Others
+
+* **curry:** use undristributed concat ([1c8ff5c](https://github.com/pirix-gh/ts-toolbelt/commit/1c8ff5cf2feb3ce0b7d0fbfc43be8d20f5b73287))
+
+### [6.9.8](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.7...v6.9.8) (2020-06-18)
+
+
+### Others
+
+* **curry:** remove drop ([80d5020](https://github.com/pirix-gh/ts-toolbelt/commit/80d50203eeb3b9531a385cb03e0183d99551e648))
+
+### [6.9.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.4...v6.9.7) (2020-06-18)
+
+
+### Bug Fixes
+
+* version ([3617865](https://github.com/pirix-gh/ts-toolbelt/commit/36178654732305f28ca21dc20b0cf6baaafc5ae1))
+* **misc.builtinobject:** missing readonly types ([f8ae740](https://github.com/pirix-gh/ts-toolbelt/commit/f8ae740e7b04e2010cbf3625c6d43daeb82ca2c3))
+
+
+### Others
+
+* **release:** 6.9.5 ([fe48b70](https://github.com/pirix-gh/ts-toolbelt/commit/fe48b70ce35cbae8745a50639b76bfe5f17b726b))
+
+### [6.9.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.4...v6.9.5) (2020-06-18)
+
+
+### Bug Fixes
+
+* **misc.builtinobject:** missing readonly types ([f8ae740](https://github.com/pirix-gh/ts-toolbelt/commit/f8ae740e7b04e2010cbf3625c6d43daeb82ca2c3))
+
+### [6.9.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.3...v6.9.4) (2020-05-25)
+
+
+### Others
+
+* **linit:** disable debug ([390c1a3](https://github.com/pirix-gh/ts-toolbelt/commit/390c1a3954c8e5b5d9540c0f084c625734ff1f36))
+
+### [6.9.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.2...v6.9.3) (2020-05-25)
+
+
+### Others
+
+* **lint:** debug ([8275a23](https://github.com/pirix-gh/ts-toolbelt/commit/8275a2302b42465109196ed023e835f340ed1a8d))
+
+### [6.9.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.1...v6.9.2) (2020-05-25)
+
+
+### Others
+
+* **lint:** debug ([2fbf51d](https://github.com/pirix-gh/ts-toolbelt/commit/2fbf51d2692efced910b36999c6c46ed961726a6))
+
+### [6.9.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.0...v6.9.1) (2020-05-25)
+
+
+### Others
+
+* **scripts:** cleanup ([712411e](https://github.com/pirix-gh/ts-toolbelt/commit/712411e20141eaa299902f0a112ea51b1fa29c2a))
+* readme ([3f3bd1e](https://github.com/pirix-gh/ts-toolbelt/commit/3f3bd1e5eaa304ef40225411f22d679709ea0922))
+* update deps ([46fc56a](https://github.com/pirix-gh/ts-toolbelt/commit/46fc56a0b0e1a9042931b053808847500e0f5968))
+
+## [6.9.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.9...v6.9.0) (2020-05-21)
+
+
+### Features
+
+* **a.promise:** a promise type that unwraps ([ba505d4](https://github.com/pirix-gh/ts-toolbelt/commit/ba505d41cb0f53cd0dbc6ae29191b981a7afb0b5))
+
+
+### Bug Fixes
+
+* **a.promisable:** integrate with Promise ([b14c2fc](https://github.com/pirix-gh/ts-toolbelt/commit/b14c2fc8a52f2bab5baafbc5c32dc41ea5407850))
+* **a.promise:** imports ([5054a0b](https://github.com/pirix-gh/ts-toolbelt/commit/5054a0b57e2178092d8c29dd52de55d239ad00a9))
+
+
+### Others
+
+* cleanup ([5802d6d](https://github.com/pirix-gh/ts-toolbelt/commit/5802d6d6ec2101867d06e38e8fcba92488bdc928))
+
+### [6.8.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.8...v6.8.9) (2020-05-19)
+
+
+### Others
+
+* readme ([fe3fbdf](https://github.com/pirix-gh/ts-toolbelt/commit/fe3fbdf6477832f7579a953baaaeab6208a1fa1e))
+
+### [6.8.8](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.7...v6.8.8) (2020-05-19)
+
+
+### Others
+
+* readme ([6d0719a](https://github.com/pirix-gh/ts-toolbelt/commit/6d0719a9f36ca5e18f48a4bda2f7673eabf73be8))
+* readme ([ff89867](https://github.com/pirix-gh/ts-toolbelt/commit/ff898676be13a81ba7efaf08cc0952aeaf856553))
+
+### [6.8.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.6...v6.8.7) (2020-05-19)
+
+
+### Others
+
+* readme ([578fc5f](https://github.com/pirix-gh/ts-toolbelt/commit/578fc5fcb879185ebc0cc07aa18e441c59a037ee))
+
+### [6.8.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.5...v6.8.6) (2020-05-19)
+
+
+### Others
+
+* readme ([bc34aa7](https://github.com/pirix-gh/ts-toolbelt/commit/bc34aa7cf003cd8156e654b71f4a54a3552af4ea))
+
+### [6.8.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.4...v6.8.5) (2020-05-19)
+
+
+### Bug Fixes
+
+* **isliteral:** [#115](https://github.com/pirix-gh/ts-toolbelt/issues/115) ([0cc5c6e](https://github.com/pirix-gh/ts-toolbelt/commit/0cc5c6ef736bb8d94a5fcdc94973f0c423d0c271))
+
+
+### Others
+
+* **release:** do not release for bug fixes ([7016004](https://github.com/pirix-gh/ts-toolbelt/commit/7016004431c19bffd2900acb8832b0433e475ca5))
+
+### [6.8.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.3...v6.8.4) (2020-05-18)
+
+
+### Bug Fixes
+
+* **nullables:** [#113](https://github.com/pirix-gh/ts-toolbelt/issues/113) ([e30aa29](https://github.com/pirix-gh/ts-toolbelt/commit/e30aa29164116ef3df3ea1d801b1506152eb7ed1))
+
+### [6.8.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.2...v6.8.3) (2020-05-18)
+
+### [6.8.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.1...v6.8.2) (2020-05-18)
+
+
+### Others
+
+* readme ([41afdb0](https://github.com/pirix-gh/ts-toolbelt/commit/41afdb0330f574e7eaa17ec34b50ddca36c77a33))
+
+### [6.8.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.8.0...v6.8.1) (2020-05-18)
+
+
+### Others
+
+* cleanup ([f4eeb01](https://github.com/pirix-gh/ts-toolbelt/commit/f4eeb0133787b8eb31a50f8e6baf1dc61b357296))
+* readme ([58b311e](https://github.com/pirix-gh/ts-toolbelt/commit/58b311ee0e6e3456a2d97f376c53331e08cfe9c8))
+
+## [6.8.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.7...v6.8.0) (2020-05-18)
+
+
+### Features
+
+* **isliteral:** [#111](https://github.com/pirix-gh/ts-toolbelt/issues/111) ([83a32e6](https://github.com/pirix-gh/ts-toolbelt/commit/83a32e67e751f75b8adb2ff7f195b0f139a01074))
+
+
+### Others
+
+* cleanup ([ce9fb34](https://github.com/pirix-gh/ts-toolbelt/commit/ce9fb344564d716a9eba01c1acce3df33da3fab4))
+* cleanup ([011fb62](https://github.com/pirix-gh/ts-toolbelt/commit/011fb62493054ed3f1e75a74654f6ed13daad10c))
+
+### [6.7.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.6...v6.7.7) (2020-05-14)
+
+
+### Bug Fixes
+
+* **o.mergeup:** regression intersected types eval to never ([2dc31ae](https://github.com/pirix-gh/ts-toolbelt/commit/2dc31aeed03d1289f52ae50411eecbcdde2d4e4c))
+
+### [6.7.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.5...v6.7.6) (2020-05-14)
+
+
+### Bug Fixes
+
+* **o.listof:** handle unlimited objects ([64800df](https://github.com/pirix-gh/ts-toolbelt/commit/64800df2bc572eaf84982bf2c27f808826be8e55))
+* **o.mergeup:** speed improvement, support ramda/lodash, better accuracy ([6499a7d](https://github.com/pirix-gh/ts-toolbelt/commit/6499a7dd147001e7aeaf1ebb9d80755f80892884))
+
+
+### Others
+
+* cleanup ([2808df2](https://github.com/pirix-gh/ts-toolbelt/commit/2808df20d28ebaac1d77429d6fc5980f65aa4d03))
+* **o.mergeup:** cleanup ([78bd623](https://github.com/pirix-gh/ts-toolbelt/commit/78bd6230e2f0252aa4eed2986eaa7be08efd306e))
+* **o.mergeup:** cleanup ([679a8df](https://github.com/pirix-gh/ts-toolbelt/commit/679a8df43f9159ebbb978a64434d9caf81989112))
+
+### [6.7.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.4...v6.7.5) (2020-05-14)
+
+
+### Bug Fixes
+
+* **a.type:** remove optional ([10550a9](https://github.com/pirix-gh/ts-toolbelt/commit/10550a902281ade3026bd4eb0ea7837fa8202095))
+
+### [6.7.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.3...v6.7.4) (2020-05-11)
+
+
+### Bug Fixes
+
+* **pipe, compose:** remove unlimited arguments ([95a66b1](https://github.com/pirix-gh/ts-toolbelt/commit/95a66b147c75c7691f55458c6b3980c38832c973))
+
+### [6.7.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.2...v6.7.3) (2020-05-11)
+
+
+### Others
+
+* readme ([32642cc](https://github.com/pirix-gh/ts-toolbelt/commit/32642cc1d08a41325e0726f93022d97c975e03f5))
+* readme ([cb9b585](https://github.com/pirix-gh/ts-toolbelt/commit/cb9b585156fe13796fcb1adb5ead7075103d41c8))
+
+### [6.7.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.1...v6.7.2) (2020-05-08)
+
+
+### Bug Fixes
+
+* **build:** restore output ([1aa3e32](https://github.com/pirix-gh/ts-toolbelt/commit/1aa3e32513dea134234de562445f8394b8f9a028))
+
+### [6.7.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.7.0...v6.7.1) (2020-05-08)
+
+
+### Bug Fixes
+
+* **build:** added lib to build types ([5797d70](https://github.com/pirix-gh/ts-toolbelt/commit/5797d7018857f88a12cd90cea490389fd7c806f2))
+
+## [6.7.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.2...v6.7.0) (2020-05-08)
+
+
+### Features
+
+* **builtinobject:** types for standard built-in objs ([fc6762c](https://github.com/pirix-gh/ts-toolbelt/commit/fc6762cf47997eb968f49d75d77723d2c6bcdc35))
+
+
+### Bug Fixes
+
+* **compilation:** set esnext ([9deb23b](https://github.com/pirix-gh/ts-toolbelt/commit/9deb23bc2bf8594e006846b4e7bc8947361a8277))
+
+
+### Others
+
+* **cleanup:** remove unused files ([937c269](https://github.com/pirix-gh/ts-toolbelt/commit/937c2690c562df83a469d25241a0185db73d2d43))
+
+### [6.6.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.1...v6.6.2) (2020-05-02)
+
+
+### Bug Fixes
+
+* **a.type:** simplify, remove symbol ([bbc62f3](https://github.com/pirix-gh/ts-toolbelt/commit/bbc62f3ee34b72ec7c6229f8fba07a7d420c6e1c))
+
+
+### Others
+
+* **l.unnest:** useless distribution ([cda0554](https://github.com/pirix-gh/ts-toolbelt/commit/cda05548fb74e481135ee47dc198121ad09d2d68))
+* **release:** fix amd and symbol ([666a508](https://github.com/pirix-gh/ts-toolbelt/commit/666a508733516e6328bdb3675daa62231e6285d7))
+
+### [6.6.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.6.0...v6.6.1) (2020-05-02)
+
+
+### Bug Fixes
+
+* error with target and symbol ([cfd4f22](https://github.com/pirix-gh/ts-toolbelt/commit/cfd4f22a417c92b59ac0a1412db01431f587041e))
+
+## [6.6.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.5.1...v6.6.0) (2020-05-02)
+
+
+### Features
+
+* **l.flatten, l.unnest:** strict and limit options ([bf1b021](https://github.com/pirix-gh/ts-toolbelt/commit/bf1b02181030aa1ab1f3a692605bc046a0b46c83))
+
+### [6.5.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.5.0...v6.5.1) (2020-04-18)
+
+
+### Bug Fixes
+
+* **atleast:** edge case optional union objects ([ae92869](https://github.com/pirix-gh/ts-toolbelt/commit/ae9286971a8cfe32813d2ba37181c3f10f6e756e))
+
+## [6.5.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.4.2...v6.5.0) (2020-04-17)
+
+
+### Features
+
+* **atleast:** mark fields to be atleast required ([33f2adf](https://github.com/pirix-gh/ts-toolbelt/commit/33f2adf717d045d1cf1c457b5f57f9c1adcb7685))
+
+
+### Bug Fixes
+
+* **atleast:** simplify ([2ac92f0](https://github.com/pirix-gh/ts-toolbelt/commit/2ac92f06079ce3ae2742af79e6b81091a28a154b))
+
+
+### Others
+
+* update `any` to `Key` ([654cecb](https://github.com/pirix-gh/ts-toolbelt/commit/654cecb88e981bf63c6669052d8d819dd9458387))
+* **number:** missing map information ([3324276](https://github.com/pirix-gh/ts-toolbelt/commit/33242762febf8f7f7b3e2695d82ec9cdf8649c5b))
+
+### [6.4.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.4.1...v6.4.2) (2020-04-10)
+
+
+### Bug Fixes
+
+* **iteration, maps:** optimized bigger iteration maps ([6ec2bdc](https://github.com/pirix-gh/ts-toolbelt/commit/6ec2bdc062507c2d257d38e1f0826731e6418bf3))
+
+### [6.4.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.4.0...v6.4.1) (2020-04-10)
+
+
+### Bug Fixes
+
+* **ts-3.5:** compilation ([0dd5671](https://github.com/pirix-gh/ts-toolbelt/commit/0dd5671170a4c31d13b8d0606ca2b4fdbea39b1e))
+
+
+### Others
+
+* **todo:** make cleanup to be done ([42f6051](https://github.com/pirix-gh/ts-toolbelt/commit/42f605181272a6f3c3289b5f4d9aa8e19de9ec3c))
+
+## [6.4.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.13...v6.4.0) (2020-04-10)
+
+
+### Features
+
+* **iteration:** allow to take custom maps ([c68c6d8](https://github.com/pirix-gh/ts-toolbelt/commit/c68c6d805c692de124d921df9d3e7f3045edd6cd))
+* **number:** number maps (ie. math for pixels) ([5297410](https://github.com/pirix-gh/ts-toolbelt/commit/5297410af7f52084f56f0da2a1f60d9487c579e5))
+
+### [6.3.13](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.12...v6.3.13) (2020-04-10)
+
+
+### Bug Fixes
+
+* **distribution, number:** distribution on numbers ([41b2a89](https://github.com/pirix-gh/ts-toolbelt/commit/41b2a89b6d06983d0169b6a6f0d6eb310c7707e5))
+
+### [6.3.12](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.11...v6.3.12) (2020-04-04)
+
+
+### Bug Fixes
+
+* **repeat:** possibly non-terminating condition ([3b37596](https://github.com/pirix-gh/ts-toolbelt/commit/3b37596648086de4b43823b38caddee22769fa71))
+
+### [6.3.11](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.10...v6.3.11) (2020-04-02)
+
+
+### Others
+
+* readme ([bd35739](https://github.com/pirix-gh/ts-toolbelt/commit/bd357392e4064377473ed6437a8c39e32a4b629a))
+* readme ([256adef](https://github.com/pirix-gh/ts-toolbelt/commit/256adef135bee64b78c42b900840865b35606eaf))
+
+### [6.3.10](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.9...v6.3.10) (2020-04-02)
+
+
+### Bug Fixes
+
+* **scripts:** mkdir alreay exists ([f46e100](https://github.com/pirix-gh/ts-toolbelt/commit/f46e100444ed4e4948c4bd41858a799fced9d713))
+
+
+### Others
+
+* **community.includesdeep:** first community entry [#99](https://github.com/pirix-gh/ts-toolbelt/issues/99) ([8527025](https://github.com/pirix-gh/ts-toolbelt/commit/8527025782b6206482f17f94a341e050be430b1c))
+
+### [6.3.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.8...v6.3.9) (2020-04-01)
+
+
+### Others
+
+* readme ([b6ed7c0](https://github.com/pirix-gh/ts-toolbelt/commit/b6ed7c0d7f49fd6714a6788161e1890e4864f98a))
+* **curry:** rollback ([7077391](https://github.com/pirix-gh/ts-toolbelt/commit/70773915f7f7446595487695cdcaa11010b6afdc))
+
+### [6.3.8](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.7...v6.3.8) (2020-04-01)
+
+
+### Bug Fixes
+
+* **ts-3.9:** bugs caught by ts 3.9 ([f853aef](https://github.com/pirix-gh/ts-toolbelt/commit/f853aef6315f5e48397b5b895013ec383251847c))
+
+### [6.3.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.6...v6.3.7) (2020-04-01)
+
+
+### Bug Fixes
+
+* **release:** bugfixes also are releases ([9881b4a](https://github.com/pirix-gh/ts-toolbelt/commit/9881b4a7ccf850d3ee19f70c3eefbe8dbb0b058a))
+
+
+### Others
+
+* **curry:** reduce memory footprint ([45b7b81](https://github.com/pirix-gh/ts-toolbelt/commit/45b7b819c731d7f836ba00cf527b062b7bd3b054))
+
 ### [6.3.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.3.5...v6.3.6) (2020-03-10)
 
 

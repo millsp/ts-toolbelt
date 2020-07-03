@@ -14,7 +14,7 @@ export type _ObjectOf<L extends object> =
     : L
 
 /**
-Transform a [[List]] or an `Array` into an [[Object]]
+Transform a [[List]] or an **`Array`** into an [[Object]]
 @param L to transform
 @returns [[Object]]
 @example

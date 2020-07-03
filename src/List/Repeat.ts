@@ -15,7 +15,7 @@ import {Extends} from '../Any/Extends'
 type __Repeat<N extends Number, A, L extends List = [], I extends Iteration = IterationOf<'0'>> = {
     0: __Repeat<N, A, Prepend<L, A>, Next<I>>
     1: L
-}[Extends<N, Key<I>>]
+}[Extends<Key<I>, N>]
 
 /**
 @hidden

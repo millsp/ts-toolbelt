@@ -1,10 +1,7 @@
 /** @ignore *//** */
 
 import {Function} from '../../Function'
-import {PromiseOf} from '../../../Class/PromiseOf'
-import {Head} from '../../../List/Head'
-import {Return} from '../../Return'
-import {Last} from '../../../List/Last'
+import {PromiseOf} from '../../../Any/PromiseOf'
 
 /**
 @hidden
@@ -169,13 +166,4 @@ export type PipeMultiAsync = {
         Function<[PromiseOf<R7>],       R8>,
         Function<[PromiseOf<R8>],       R9>,
     ]): Function<P,   Promise<PromiseOf<R9>>>
-
-    <
-        Fns extends Function[],
-    >(
-        ...fns: Fns
-    ): Function<
-        Parameters<Head<Fns>>,
-        Promise<PromiseOf<Return<Last<Fns>>>>
-    >
 }
