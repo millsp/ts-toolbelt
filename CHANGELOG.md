@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.10.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.0...v6.10.0) (2020-07-03)
+
+
+### Features
+
+* **name:** Added Partial alias for OptionalPart ([b25f478](https://github.com/pirix-gh/ts-toolbelt/commit/b25f47889c75e1db5c2addaea9fc26d5422a5a1a))
+
+
+### Bug Fixes
+
+* version ([3617865](https://github.com/pirix-gh/ts-toolbelt/commit/36178654732305f28ca21dc20b0cf6baaafc5ae1))
+* **misc.builtinobject:** missing readonly types ([f8ae740](https://github.com/pirix-gh/ts-toolbelt/commit/f8ae740e7b04e2010cbf3625c6d43daeb82ca2c3))
+
+
+### Others
+
+* **curry:** remove drop ([80d5020](https://github.com/pirix-gh/ts-toolbelt/commit/80d50203eeb3b9531a385cb03e0183d99551e648))
+* **curry:** use undristributed concat ([1c8ff5c](https://github.com/pirix-gh/ts-toolbelt/commit/1c8ff5cf2feb3ce0b7d0fbfc43be8d20f5b73287))
+* **linit:** disable debug ([390c1a3](https://github.com/pirix-gh/ts-toolbelt/commit/390c1a3954c8e5b5d9540c0f084c625734ff1f36))
+* **lint:** debug ([8275a23](https://github.com/pirix-gh/ts-toolbelt/commit/8275a2302b42465109196ed023e835f340ed1a8d))
+* **lint:** debug ([2fbf51d](https://github.com/pirix-gh/ts-toolbelt/commit/2fbf51d2692efced910b36999c6c46ed961726a6))
+* **release:** 6.9.1 ([748fe7c](https://github.com/pirix-gh/ts-toolbelt/commit/748fe7c080628dc11475adf6319a6840aa483f78))
+* **release:** 6.9.2 ([6772e72](https://github.com/pirix-gh/ts-toolbelt/commit/6772e7214d31f3bd284762bf3dfd1a9d2864bbf5))
+* **release:** 6.9.3 ([804e6bf](https://github.com/pirix-gh/ts-toolbelt/commit/804e6bfdeadeaf9a1dd67fae5e9982875c3fe96c))
+* **release:** 6.9.4 ([0d5f604](https://github.com/pirix-gh/ts-toolbelt/commit/0d5f604d377f5fa5810280f6d719c581609d8897))
+* **release:** 6.9.5 ([fe48b70](https://github.com/pirix-gh/ts-toolbelt/commit/fe48b70ce35cbae8745a50639b76bfe5f17b726b))
+* **release:** 6.9.7 ([4f3a036](https://github.com/pirix-gh/ts-toolbelt/commit/4f3a036f5fbc04037febdbdb64cf095e57f8bd19))
+* **release:** 6.9.8 ([5f8735b](https://github.com/pirix-gh/ts-toolbelt/commit/5f8735ba59935a10e2014b460411019894973d22))
+* **release:** 6.9.9 ([9054f95](https://github.com/pirix-gh/ts-toolbelt/commit/9054f958a39179a2ea7ca6d5c422bc06e2a8e047))
+* **scripts:** cleanup ([712411e](https://github.com/pirix-gh/ts-toolbelt/commit/712411e20141eaa299902f0a112ea51b1fa29c2a))
+* readme ([3f3bd1e](https://github.com/pirix-gh/ts-toolbelt/commit/3f3bd1e5eaa304ef40225411f22d679709ea0922))
+* update deps ([46fc56a](https://github.com/pirix-gh/ts-toolbelt/commit/46fc56a0b0e1a9042931b053808847500e0f5968))
+
 ### [6.9.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.8...v6.9.9) (2020-06-18)
 
 
