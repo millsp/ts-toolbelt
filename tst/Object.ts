@@ -807,7 +807,7 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// OPTIONAL
+// OPTIONAL & PARTIAL
 
 type OPTIONAL_O_FLAT = {
          a?: string,
@@ -839,6 +839,7 @@ checks([
     check<O.Optional<O, keyof O, 'flat'>,                   OPTIONAL_O_FLAT,                            Test.Pass>(),
     check<O.Optional<O, 'a', 'flat'>,                       OPTIONAL_O_A_FLAT,                          Test.Pass>(),
     check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'> | undefined, Test.Pass>(),
+    check<O.Path<O.Partial<O, 'deep'>, ['g', 'g']>,         O.Partial<O, 'deep'> | undefined,           Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
