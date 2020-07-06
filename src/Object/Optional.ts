@@ -20,9 +20,10 @@ export type OptionalDeep<O> = {
 }
 
 /**
+This has an Alias called Partial which is what is exposed
 @hidden
 */
-type OptionalPart<O extends object, depth extends Depth> = {
+export type OptionalPart<O extends object, depth extends Depth> = {
     'flat': OptionalFlat<O>,
     'deep': OptionalDeep<O>,
 }[depth]
@@ -31,7 +32,7 @@ type OptionalPart<O extends object, depth extends Depth> = {
 Make some fields of **`O`** optional (deeply or not)
 @param O to make optional
 @param K (?=`Key`) to choose fields
-@param depth (?=`'default'`) to do it deeply
+@param depth (?=`'flat'`) to do it deeply
 @returns [[Object]]
 @example
 ```ts
