@@ -2,9 +2,9 @@ import {OptionalPart} from './Optional'
 import {Depth} from './_Internal'
 
 /**
-Partial is an alias for Optional with a simpler syntax. Just like the native `Partial` it makes a type's fields optional, but accepts one extra param to choose between 'flat' or 'deep'.
+Make a type's fields optional. Choose to do it deeply or not.
 @param O the type to make its fields optional
-@param depth (?=`'flat'`) to do it deep
+@param depth (?=`'flat'`) to do it deeply
 @returns [[Object]]
 @example Partial<MyType>
 @example Partial<MyType, 'deep'>
