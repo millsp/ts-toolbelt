@@ -20,7 +20,6 @@ export type OptionalDeep<O> = {
 }
 
 /**
-This has an Alias called Partial which is what is exposed
 @hidden
 */
 export type OptionalPart<O extends object, depth extends Depth> = {
