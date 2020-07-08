@@ -4,13 +4,13 @@ import {NumberMap} from '../Misc/Iteration/Number'
 /**
  * Describes the match strategy when matching types
  * * `default`     : `extends->`
- * * `contains->`  : X contains   Y
- * * `extends->`   : X extends    Y
- * * `implements->`: X implements Y
- * * `<-contains`  : Y contains   X
- * * `<-extends`   : Y extends    X
- * * `<-implements`: Y implements X
- * * `equals`      : X equals     Y
+ * * `contains->`  : X contains   Y ([[Contains]]<X, Y>)
+ * * `extends->`   : X extends    Y ([[Extends]]<X, Y>)
+ * * `implements->`: X implements Y ([[Implements]]<X, Y>)
+ * * `<-contains`  : Y contains   X ([[Contains]]<Y, X>)
+ * * `<-extends`   : Y extends    X ([[Extends]]<Y, X>)
+ * * `<-implements`: Y implements X ([[Implements]]<Y, X>)
+ * * `equals`      : X equals     Y (([[Equals]]<X, Y>))
  */
 export type Match = | 'default'
                     | 'contains->'
