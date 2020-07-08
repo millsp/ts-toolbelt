@@ -37,9 +37,11 @@ Get the intersecting keys of **`O`** & **`O1`**
 */
 export type IntersectKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default'     : Intersect<Keys<O>, Keys<O1>>
-    'implements->': IntersectMatch<O,  O1, 'implements->'>
+    'contains->'  : IntersectMatch<O,  O1, 'contains->'>
     'extends->'   : IntersectMatch<O,  O1, 'extends->'>
-    '<-implements': IntersectMatch<O,  O1, '<-implements'>
+    'implements->': IntersectMatch<O,  O1, 'implements->'>
+    '<-contains'  : IntersectMatch<O,  O1, '<-contains'>
     '<-extends'   : IntersectMatch<O,  O1, '<-extends'>
+    '<-implements': IntersectMatch<O,  O1, '<-implements'>
     'equals'      : IntersectMatch<O,  O1, 'equals'>
 }[match]
