@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.10.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.9...v6.10.0) (2020-07-08)
+
+
+### Features
+
+* **contains:** new comparison operator ([6f2c393](https://github.com/pirix-gh/ts-toolbelt/commit/6f2c3933163e2b55e22c7d5fa4ddc43730ee2317))
+* **contains:** new comparison operator ([5ea1ab7](https://github.com/pirix-gh/ts-toolbelt/commit/5ea1ab77e25c2ff1859e3ca7570dbdac43974ba0))
+
+
+### Bug Fixes
+
+* **contains:** missing entry ([18c7ba4](https://github.com/pirix-gh/ts-toolbelt/commit/18c7ba4665b65c282db0ec22e2b8bf42c261786a))
+
+
+### Others
+
+* **docs:** update ([64c1f26](https://github.com/pirix-gh/ts-toolbelt/commit/64c1f263acefb6ea602d58716816c908b8f8ed73))
+
 ### [6.9.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.9.8...v6.9.9) (2020-06-18)
 
 
