@@ -5,8 +5,9 @@ import {Implements} from './Implements'
 import {Contains} from './Contains'
 
 /**
- * Check whether **`A`** is similar to **`A1`** or not. In other words, it is a compact
- * type that bundles [[Equals]], [[Extends]] and [[Implements]] comparison types.
+ * Check whether **`A`** is similar to **`A1`** or not. In other words, it is a
+ * compact type that bundles [[Equals]], [[Extends]], [[Contains]], and
+ * [[Implements]] comparison types.
  * @param A to be compared
  * @param A1 to compare to
  * @param match (?=`'default'`) to change precision
