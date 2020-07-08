@@ -38,9 +38,11 @@ Exclude the keys of **`O1`** out of the keys of **`O`**
 */
 export type ExcludeKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
     'default'     : Exclude<Keys<O>, Keys<O1>>
-    'implements->': ExcludeMatch<O,  O1, 'implements->'>
+    'contains->'  : ExcludeMatch<O,  O1, 'contains->'>
     'extends->'   : ExcludeMatch<O,  O1, 'extends->'>
-    '<-implements': ExcludeMatch<O,  O1, '<-implements'>
+    'implements->': ExcludeMatch<O,  O1, 'implements->'>
+    '<-contains'  : ExcludeMatch<O,  O1, '<-contains'>
     '<-extends'   : ExcludeMatch<O,  O1, '<-extends'>
+    '<-implements': ExcludeMatch<O,  O1, '<-implements'>
     'equals'      : ExcludeMatch<O,  O1, 'equals'>
 }[match]
