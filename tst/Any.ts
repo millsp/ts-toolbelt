@@ -37,26 +37,29 @@ checks([
 // Cannot be tested
 
 // ---------------------------------------------------------------------------------------
-// IMPLEMENTS
+// CONTAINS
 
 checks([
-    check<A.Implements<any, any>,              1,     Test.Pass>(),
-    check<A.Implements<[0, 1], any>,           1,     Test.Pass>(),
-    check<A.Implements<any, [0, 1]>,           0,     Test.Pass>(),
-    check<A.Implements<0, 0>,                  1,     Test.Pass>(),
-    check<A.Implements<0, 1>,                  0,     Test.Pass>(),
-    check<A.Implements<0, number>,             1,     Test.Pass>(),
-    check<A.Implements<any, string>,           0,     Test.Pass>(),
-    check<A.Implements<string, any>,           1,     Test.Pass>(),
-    check<A.Implements<{}, object>,            1,     Test.Pass>(),
-    check<A.Implements<{a: any}, object>,      1,     Test.Pass>(),
-    check<A.Implements<{}, {a: any}>,          0,     Test.Pass>(),
-    check<A.Implements<any[], Array<any>>,     1,     Test.Pass>(),
-    check<A.Implements<'a' | 'b', 'b' | 'a'>,  1,     Test.Pass>(),
-    check<A.Implements<'b', 'b' | 'a'>,        1,     Test.Pass>(),
-    check<A.Implements<'b' | 'a', 'b'>,        0,     Test.Pass>(),
-    check<A.Implements<'a', 'a'>,              1,     Test.Pass>(),
-    check<A.Implements<never, never>,          0,     Test.Pass>(),
+    check<A.Contains<any, any>,                     1,     Test.Pass>(),
+    check<A.Contains<[0, 1], any>,                  0,     Test.Pass>(),
+    check<A.Contains<any, [0, 1]>,                  1,     Test.Pass>(),
+    check<A.Contains<0, 0>,                         1,     Test.Pass>(),
+    check<A.Contains<0, 1>,                         0,     Test.Pass>(),
+    check<A.Contains<0, number>,                    0,     Test.Pass>(),
+    check<A.Contains<any, string>,                  1,     Test.Pass>(),
+    check<A.Contains<string, any>,                  0,     Test.Pass>(),
+    check<A.Contains<{}, object>,                   1,     Test.Pass>(),
+    check<A.Contains<{a: any}, object>,             1,     Test.Pass>(),
+    check<A.Contains<{}, {a: any}>,                 0,     Test.Pass>(),
+    check<A.Contains<any[], Array<any>>,            1,     Test.Pass>(),
+    check<A.Contains<'a' | 'b', 'b' | 'a'>,         1,     Test.Pass>(),
+    check<A.Contains<'b', 'b' | 'a'>,               0,     Test.Pass>(),
+    check<A.Contains<'b' | 'a', 'b'>,               1,     Test.Pass>(),
+    check<A.Contains<'a', 'a'>,                     1,     Test.Pass>(),
+    check<A.Contains<{a: string}, {}>,              1,     Test.Pass>(),
+    check<A.Contains<{a: string}, {a: string}>,     1,     Test.Pass>(),
+    check<A.Contains<{a: string}, {b: number}>,     0,     Test.Pass>(),
+    check<A.Contains<never, never>,                 0,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -161,6 +164,12 @@ checks([
 
     check<A.Is<string, string | number, '<-implements'>,    0,      Test.Pass>(),
     check<A.Is<string | number, string, '<-implements'>,    1,      Test.Pass>(),
+
+    check<A.Is<string, string | number, '<-contains'>,    1,    Test.Pass>(),
+    check<A.Is<string | number, string, '<-contains'>,    0,    Test.Pass>(),
+
+    check<A.Is<string, string | number, 'contains->'>,    0,    Test.Pass>(),
+    check<A.Is<string | number, string, 'contains->'>,    1,    Test.Pass>(),
 
     check<A.Is<'xxxx', string, 'equals'>,           0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', 'equals'>,           0,  Test.Pass>(),

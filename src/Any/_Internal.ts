@@ -3,18 +3,22 @@ import {NumberMap} from '../Misc/Iteration/Number'
 
 /**
  * Describes the match strategy when matching types
- * * `default`   : `extends->`
- * * `contains->`: X contains Y
- * * `extends->` : X extends  Y
- * * `<-contains`: Y contains X
- * * `<-extends` : Y extends  X
- * * `equals`    : X equals   Y
+ * * `default`     : `extends->`
+ * * `contains->`  : X contains   Y
+ * * `extends->`   : X extends    Y
+ * * `implements->`: X implements Y
+ * * `<-contains`  : Y contains   X
+ * * `<-extends`   : Y extends    X
+ * * `<-implements`: Y implements X
+ * * `equals`      : X equals     Y
  */
 export type Match = | 'default'
-                    | 'implements->'
-                    | '<-implements'
+                    | 'contains->'
                     | 'extends->'
+                    | 'implements->'
+                    | '<-contains'
                     | '<-extends'
+                    | '<-implements'
                     | 'equals'
 
 /**

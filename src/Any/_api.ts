@@ -3,6 +3,7 @@
 export {Cast} from './Cast'
 export {Clean} from './Clean'
 export {Compute} from './Compute'
+export {Contains} from './Contains'
 export {Equals} from './Equals'
 export {Extends} from './Extends'
 export {Implements} from './Implements'
