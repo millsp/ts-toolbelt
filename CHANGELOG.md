@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.11](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.10...v6.10.11) (2020-07-09)
+
+
+### Others
+
+* **mergeup:** add flags to be enabled ([99b77b1](https://github.com/pirix-gh/ts-toolbelt/commit/99b77b1c6ec68379cb0c3a03ce7aeb914334aa26))
+
 ### [6.10.10](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.9...v6.10.10) (2020-07-09)
 
 
