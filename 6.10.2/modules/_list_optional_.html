@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Any/Implements&quot; | ts-toolbelt</title>
+	<title>&quot;List/Optional&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_any_implements_.html">&quot;Any/Implements&quot;</a>
+					<a href="_list_optional_.html">&quot;List/Optional&quot;</a>
 				</li>
 			</ul>
 		</div>
@@ -70,7 +70,7 @@
 				<ul>
 					<ul class="before-current">
 						<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-							<a href="_any_implements_.html#implements" class="tsd-kind-icon">Implements</a>
+							<a href="_list_optional_.html#optional" class="tsd-kind-icon">Optional</a>
 						</li>
 					</ul>
 				</ul>
@@ -91,8 +91,6 @@
 						<a href="_any_equals_.html">&quot;<wbr>Any/<wbr>Equals&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_any_extends_.html">&quot;<wbr>Any/<wbr>Extends&quot;</a>
-						</li>                        <li class="current tsd-kind-module">
-						<a href="_any_implements_.html">&quot;<wbr>Any/<wbr>Implements&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_any_is_.html">&quot;<wbr>Any/<wbr>Is&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
@@ -265,7 +263,7 @@
 						<a href="_list_objectof_.html">&quot;<wbr>List/<wbr>Object<wbr>Of&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_list_omit_.html">&quot;<wbr>List/<wbr>Omit&quot;</a>
-						</li>                        <li class=" tsd-kind-module">
+						</li>                        <li class="current tsd-kind-module">
 						<a href="_list_optional_.html">&quot;<wbr>List/<wbr>Optional&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_list_optionalkeys_.html">&quot;<wbr>List/<wbr>Optional<wbr>Keys&quot;</a>
@@ -557,7 +555,7 @@
 							<div class="tsd-navigation secondary">
 								<ul>
 									<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-										<a href="_any_implements_.html#implements" class="tsd-kind-icon">Implements</a>
+										<a href="_list_optional_.html#optional" class="tsd-kind-icon">Optional</a>
 									</li>
 								</ul>
 							</div>
@@ -568,40 +566,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter tsd-descriptions">
-					<a name="implements" class="tsd-anchor"></a>
-					<h3>Implements</h3>
-					<div class="tsd-signature tsd-kind-icon">Implements&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Extends&lt;A1, A2&gt; extends 1 ? 1 : 0</span></div>
+					<a name="optional" class="tsd-anchor"></a>
+					<h3>Optional</h3>
+					<div class="tsd-signature tsd-kind-icon">Optional&lt;L, depth&gt;<span class="tsd-signature-symbol">:</span> <a href="_any_cast_.html#cast" class="tsd-signature-type">Cast</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">OOptional</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">L</span><span class="tsd-signature-symbol">, </span><a href="_any_key_.html#key" class="tsd-signature-type">Key</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">depth</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="_list_list_.html#list" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Check whether <strong><code>A1</code></strong> is part of <strong><code>A2</code></strong> or not. It works like
-							<a href="_any_extends_.html#extends">Extends</a> but <a href="_boolean_boolean_.html#boolean">Boolean</a> results are narrowed to <a href="_boolean_boolean_.html#false">False</a>.</p>
+							<p>Make <strong><code>L</code></strong> optional (deeply or not)</p>
 						</div>
 					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
-						<span class="name">A1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
+							<span class="name">L</span><span class="tsd-signature-symbol">: </span><a href="_list_list_.html#list" class="tsd-signature-type">List</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>to make optional</p>
+								</div>
+							</div>
+						</li>
 						<li>
-						<span class="name">A2</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
+							<span class="name">depth</span><span class="tsd-signature-symbol">: </span><a href="_object__internal_.html#depth" class="tsd-signature-type">Depth</a>                    <div class="tsd-comment">
+								<div class="lead">
+									<p>(?=<code>&#39;flat&#39;</code>) to do it deeply</p>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<div class="tsd-comment">
 						<h4>returns</h4>
-						<p><p><a href="_boolean_boolean_.html#boolean">Boolean</a></p>
+						<p><p><a href="_list_list_.html#list">List</a></p>
 						</p>
 						<h4>example</h4>
-						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = A.Implements&lt;<span class="hljs-string">&#x27;a&#x27;</span> | <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>&gt; <span class="hljs-comment">// False</span>
-<span class="hljs-keyword">type</span> test1 = A.Implements&lt;<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span> | <span class="hljs-string">&#x27;b&#x27;</span>&gt; <span class="hljs-comment">// True</span>
-
-<span class="hljs-keyword">type</span> test2 = A.Implements&lt;{a: <span class="hljs-built_in">string</span>}, {a: <span class="hljs-built_in">any</span>}&gt;      <span class="hljs-comment">// True</span>
-<span class="hljs-keyword">type</span> test3 = A.Implements&lt;{a: <span class="hljs-built_in">any</span>}, {a: <span class="hljs-built_in">any</span>, b: <span class="hljs-built_in">any</span>}&gt; <span class="hljs-comment">// False</span>
-
-<span class="hljs-keyword">type</span> test4 = A.Implements&lt;<span class="hljs-built_in">never</span>, <span class="hljs-built_in">never</span>&gt; <span class="hljs-comment">// False</span>
-<span class="hljs-comment">/// Nothing cannot implement nothing, use `A.Equals`</span></code></pre>
+						<p><pre><code class="language-ts"></code></pre>
 						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/7f0ee86/src/Any/Implements.ts#L21">src/Any/Implements.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/pirix-gh/ts-toolbelt/blob/dba087d/src/List/Optional.ts#L16">src/List/Optional.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
