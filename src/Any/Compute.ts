@@ -5,26 +5,38 @@ import {Cast} from './Cast'
 /**
  * @hidden
  */
-export type ComputeFlat<A extends any> =
-    (A extends BuiltInObject
+type _ComputeFlat<A extends any> =
+    A extends BuiltInObject
     ? A
     : {
         [K in keyof A]: A[K]
-      } & {}) extends infer X
-      ? Cast<X, A>
-      : never
+      } & {}
 
 /**
  * @hidden
  */
-export type ComputeDeep<A extends any, Seen extends any = A> =
-    (A extends BuiltInObject
+export type ComputeFlat<A extends any> =
+    _ComputeFlat<A> extends infer X
+    ? Cast<X, A>
+    : never
+
+/**
+ * @hidden
+ */
+type _ComputeDeep<A extends any, Seen extends any = A> =
+    A extends BuiltInObject
     ? A
     : {
-        [K in keyof A]: A[K] extends Seen                // `Seen` handles circular type refs
-                        ? A[K]                           // we've seen this type, don't compute
-                        : ComputeDeep<A[K], A[K] | Seen> // 1st time seeing this, save & compute
-      } & {}) extends infer X
+        [K in keyof A]: A[K] extends Seen                 // `Seen` handles circular type refs
+                        ? A[K]                            // we've seen this type, don't compute
+                        : _ComputeDeep<A[K], A[K] | Seen> // 1st time seeing this, save & compute
+      } & {}
+
+/**
+ * @hidden
+ */
+export type ComputeDeep<A extends any> =
+      _ComputeDeep<A> extends infer X
       ? Cast<X, A>
       : never
 
