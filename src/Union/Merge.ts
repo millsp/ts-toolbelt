@@ -1,6 +1,6 @@
 import {At} from '../Object/At'
 import {Overwrite} from '../Object/Overwrite'
-import {Compute} from '../Any/Compute'
+import {ComputeFlat} from '../Any/Compute'
 import {IntersectOf} from './IntersectOf'
 import {Strict} from './Strict'
 
@@ -22,4 +22,4 @@ Merge a [[Union]] of [[Object]]s into a single one
 ```
 */
 export type Merge<U extends object> =
-    Compute<_Merge<Strict<U>>>
+    ComputeFlat<_Merge<Strict<U>>>

@@ -1,6 +1,6 @@
 import {_Omit} from './Omit'
 import {At} from './At'
-import {Compute} from '../Any/Compute'
+import {ComputeFlat} from '../Any/Compute'
 import {Depth} from './_Internal'
 import {Kind} from '../Any/Kind'
 
@@ -8,7 +8,7 @@ import {Kind} from '../Any/Kind'
 @hidden
 */
 export type MergeFlat<O extends object, O1 extends object> =
-    Compute<O & _Omit<O1, keyof O>>
+    ComputeFlat<O & _Omit<O1, keyof O>>
 
 /**
 @hidden

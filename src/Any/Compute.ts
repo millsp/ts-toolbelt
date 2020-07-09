@@ -1,13 +1,25 @@
+import {Depth} from '../Object/_Internal'
+
 /**
  * @hidden
  */
-type _Compute<A extends any, Seen extends any = A> =
+export type ComputeFlat<A extends any> =
     A extends Function
     ? A
     : {
-        [K in keyof A]: A[K] extends Seen               // `Seen` handles circular type refs
-                        ? A[K]                          // we've seen this type, don't compute
-                        : _Compute<A[K], A[K] | Seen>   // 1st time seeing this, save & compute
+        [K in keyof A]: A[K]
+      } & {}
+
+/**
+ * @hidden
+ */
+export type ComputeDeep<A extends any, Seen extends any = A> =
+    A extends Function
+    ? A
+    : {
+        [K in keyof A]: A[K] extends Seen                // `Seen` handles circular type refs
+                        ? A[K]                           // we've seen this type, don't compute
+                        : ComputeDeep<A[K], A[K] | Seen> // 1st time seeing this, save & compute
       } & {}
 
 /**
@@ -22,5 +34,7 @@ type _Compute<A extends any, Seen extends any = A> =
  * type test0 = A.Compute<{x: 'x'} & {y: 'y'}> // {x: 'x', y: 'y'}
  * ```
  */
-export type Compute<A extends any> =
-    _Compute<A>
+export type Compute<A extends any, depth extends Depth = 'deep'> = {
+    'flat': ComputeFlat<A>
+    'deep': ComputeDeep<A>
+}[depth]
