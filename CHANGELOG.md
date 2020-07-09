@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.6...v6.10.7) (2020-07-09)
+
+
+### Others
+
+* **assign, compact:** clearer descriptions ([ec36045](https://github.com/pirix-gh/ts-toolbelt/commit/ec360455484a5b3dda41cf30e490fa01d5609493))
+
 ### [6.10.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.5...v6.10.6) (2020-07-09)
 
 
