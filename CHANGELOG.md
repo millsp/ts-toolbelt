@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.2...v6.10.3) (2020-07-09)
+
+
+### Bug Fixes
+
+* **compute:** can compute circular refs ([6416ac3](https://github.com/pirix-gh/ts-toolbelt/commit/6416ac31de6726c92af2e967ebb613cc991ecf4e))
+
+
+### Others
+
+* cleanup ([d147991](https://github.com/pirix-gh/ts-toolbelt/commit/d147991ff7e8fe15c55368601c00b12a931bc6e5))
+* cleanup ([db00785](https://github.com/pirix-gh/ts-toolbelt/commit/db007858434343f2ee7e8516c926ca724754acb4))
+
 ### [6.10.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.1...v6.10.2) (2020-07-09)
 
 
