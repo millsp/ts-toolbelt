@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.10](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.9...v6.10.10) (2020-07-09)
+
+
+### Bug Fixes
+
+* **builtinobject:** array is a lang feature more than a built-in object ([12cacde](https://github.com/pirix-gh/ts-toolbelt/commit/12cacdeba870df53db8c20e187efa4803364c1af))
+
 ### [6.10.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.8...v6.10.9) (2020-07-09)
 
 
