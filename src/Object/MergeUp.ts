@@ -9,6 +9,7 @@ import {ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth, Anyfy} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
+import {Compute} from '../Any/Compute'
 
 /**
 @hidden
@@ -34,9 +35,22 @@ type NoArray<A> =
 /**
 @hidden
 */
-export type MergeUpFlat<O extends object, O1 extends object, libStyle extends Boolean, OOK extends Key = OptionalKeys<O>> = {
+export type _MergeUpFlat<O extends object, O1 extends object, libStyle extends Boolean, OOK extends Key = OptionalKeys<O>> = {
     [K in keyof (Anyfy<O> & O1)]: MergeUpProp<At<O, K>, At<O1, K>, K, OOK, libStyle>
 }
+
+/**
+@hidden
+*/
+export type MergeUpFlat<O extends object, O1 extends object, libStyle extends Boolean> =
+    // when we merge, we systematically remove inconvenient array methods
+    _MergeUpFlat<NoArray<O>, NoArray<O1>, libStyle> extends infer X
+    ? { // so that we can merge `object` and arrays in the very same way
+        1: X                                                // ramda
+        0: Extends<O, List> extends 1 ? ListOf<X & {}> : X  // lodash
+    }[libStyle] // for lodash, we preserve (restore) arrays like it does
+                // arrays are broken with `NoArray`, restored by `ListOf`
+    : never
 
 /**
 @hidden
@@ -73,7 +87,7 @@ type _MergeUpDeep<O, O1, K extends Key, OOK extends Key, libStyle extends Boolea
 @hidden
 */
 export type MergeUpDeep<O extends object, O1 extends object, libStyle extends Boolean> =
-    _MergeUpDeep<O, O1, never, never, libStyle> & {}
+    _MergeUpDeep<O, O1, never, never, libStyle>
 
 /**
 Accurately complete the fields of **`O`** with the ones of **`O1`**.

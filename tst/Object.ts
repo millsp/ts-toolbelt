@@ -687,6 +687,8 @@ type MERGEUP_O_O1_DEEP = {
 };
 
 checks([
+    check<O.MergeUp<[1], [2, 3], 'deep', 0>,            [1, 3],             Test.Pass>(),
+    check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
     check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
     check<O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep'>,     MERGEUP_O_O1_DEEP,  Test.Pass>(),
 ])
