@@ -139,3 +139,36 @@ export {
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
+
+import {A, O} from 'ts-toolbelt'
+
+type Omega = {
+    foo: number
+    bar: string
+    baz: string[]
+} | {
+    foo: 42
+    bar: number
+    baz: string
+    qux: boolean | number
+}
+
+type SomeType = 'update'
+
+type test0 = O.Update<
+    Omega,
+    O.SelectKeys<Omega, number>,
+    A.x | SomeType
+> // this uses 'extends->' by default
+
+type test1 = O.Update<
+    Omega,
+    O.SelectKeys<Omega, number, 'contains->'>, // we select the fields that can contain `number`
+    A.x | SomeType
+>
+
+type test2 = O.Update<
+    Omega,
+    O.SelectKeys<Omega, number, '<-contains'>, // we select `number` that can contain the fields
+    A.x | SomeType							   // ^^^^^ no worries, I'll explain what this means
+>

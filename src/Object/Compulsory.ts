@@ -2,7 +2,7 @@ import {MergeFlat} from './Merge'
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {Implements} from '../Any/Implements'
+import {Contains} from '../Any/Contains'
 import {NonNullable} from '../Union/NonNullable'
 import {Keys} from './Keys'
 
@@ -43,4 +43,4 @@ export type Compulsory<O extends object, K extends Key = Key, depth extends Dept
     1: CompulsoryPart<O, depth>
     0: MergeFlat<CompulsoryPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
-}[Implements<Keys<O>, K>] & {}
+}[Contains<Keys<O>, K>] & {}

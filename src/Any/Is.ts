@@ -1,7 +1,6 @@
 import {Match} from './_Internal'
 import {Extends} from './Extends'
 import {Equals} from './Equals'
-import {Implements} from './Implements'
 import {Contains} from './Contains'
 
 /**
@@ -33,12 +32,12 @@ import {Contains} from './Contains'
  * ```
  */
 export type Is<A extends any, A1 extends any, match extends Match = 'default'> = {
-    'default'     : Extends<A,     A1>
-    'contains->'  : Contains<A,    A1>
-    'extends->'   : Extends<A,     A1>
-    'implements->': Implements<A,  A1>
-    '<-contains'  : Contains<A1,   A>
-    '<-extends'   : Extends<A1,    A>
-    '<-implements': Implements<A1, A>
-    'equals'      : Equals<A1,     A>
+    'default'     : Extends<A,   A1>
+    'contains->'  : Contains<A,  A1>
+    'extends->'   : Extends<A,   A1>
+    'implements->': Contains<A,  A1>
+    '<-contains'  : Contains<A1, A>
+    '<-extends'   : Extends<A1,  A>
+    '<-implements': Contains<A1, A>
+    'equals'      : Equals<A1,   A>
 }[match]
