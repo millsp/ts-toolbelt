@@ -139,11 +139,11 @@ checks([
     check<A.Is<string, string | number, '<-implements'>,    0,      Test.Pass>(),
     check<A.Is<string | number, string, '<-implements'>,    1,      Test.Pass>(),
 
-    check<A.Is<string, string | number, '<-contains'>,    1,    Test.Pass>(),
-    check<A.Is<string | number, string, '<-contains'>,    0,    Test.Pass>(),
+    check<A.Is<string, string | number, '<-contains'>,    0,    Test.Pass>(),
+    check<A.Is<string | number, string, '<-contains'>,    1,    Test.Pass>(),
 
-    check<A.Is<string, string | number, 'contains->'>,    0,    Test.Pass>(),
-    check<A.Is<string | number, string, 'contains->'>,    1,    Test.Pass>(),
+    check<A.Is<string, string | number, 'contains->'>,    1,    Test.Pass>(),
+    check<A.Is<string | number, string, 'contains->'>,    0,    Test.Pass>(),
 
     check<A.Is<'xxxx', string, 'equals'>,           0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', 'equals'>,           0,  Test.Pass>(),
