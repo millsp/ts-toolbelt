@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.9](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.8...v6.10.9) (2020-07-09)
+
+
+### Bug Fixes
+
+* namespace pollution ([f3e18c0](https://github.com/pirix-gh/ts-toolbelt/commit/f3e18c0b22c633829f989bac4cfcfd7d039773bd))
+* typo ([ffb7b0c](https://github.com/pirix-gh/ts-toolbelt/commit/ffb7b0c092613db785a42164e0b490e01b79a733))
+
 ### [6.10.8](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.7...v6.10.8) (2020-07-09)
 
 
