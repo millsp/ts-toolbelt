@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.4...v6.10.5) (2020-07-09)
+
+
+### Others
+
+* **scripts:** temporarily disable dt tests ([ce1336d](https://github.com/pirix-gh/ts-toolbelt/commit/ce1336dbd70303d4af630868358f34dfe4293a97))
+* cleanup ([ba11d1e](https://github.com/pirix-gh/ts-toolbelt/commit/ba11d1e58ac989451f9434206a5f906227047a51))
+
 ### [6.10.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.3...v6.10.4) (2020-07-09)
 
 
