@@ -30,8 +30,8 @@ type Textual =
  * @hidden
  */
 type Arrays =
-    | Array<any>
-    | ReadonlyArray<any>
+    // | Array<any>
+    // | ReadonlyArray<any>
     | Int8Array
     | Uint8Array
     | Uint8ClampedArray
