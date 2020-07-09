@@ -1,5 +1,6 @@
 import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/_api'
+import {Cast} from './Cast'
 
 /**
  * @hidden
@@ -10,7 +11,7 @@ export type ComputeFlat<A extends any> =
     : {
         [K in keyof A]: A[K]
       } & {}) extends infer X
-      ? X
+      ? Cast<X, A>
       : never
 
 /**
@@ -24,7 +25,7 @@ export type ComputeDeep<A extends any, Seen extends any = A> =
                         ? A[K]                           // we've seen this type, don't compute
                         : ComputeDeep<A[K], A[K] | Seen> // 1st time seeing this, save & compute
       } & {}) extends infer X
-      ? X
+      ? Cast<X, A>
       : never
 
 /**
