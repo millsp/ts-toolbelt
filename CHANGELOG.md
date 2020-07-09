@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.13](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.12...v6.10.13) (2020-07-09)
+
+
+### Others
+
+* **compute:** remove recursive infer ([70a0097](https://github.com/pirix-gh/ts-toolbelt/commit/70a00973a07520959210219fcaba2a782d76f491))
+
 ### [6.10.12](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.11...v6.10.12) (2020-07-09)
 
 
