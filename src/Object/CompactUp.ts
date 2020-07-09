@@ -26,7 +26,8 @@ export type _AssignUp<O extends object, Os extends List<object>, depth extends D
     : never
 
 /**
-Merge a list of [[Object]] into **`O`** with [[MergeUp]] (last-in combines or completes)
+Merge a list of [[Object]] into **`O`** with [[MergeUp]]. Merges from left to
+right, first items get completed by the next ones (last-in combines or completes).
 @param O to assign to
 @param Os to assign
 @param depth (?=`'flat'`) to do it deeply

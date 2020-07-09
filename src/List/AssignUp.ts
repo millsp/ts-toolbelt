@@ -5,7 +5,8 @@ import {ListOf} from '../Object/ListOf'
 import {Depth} from '../Object/_Internal'
 
 /**
-Assign a list of [[List]] into **`L`** with [[MergeUp]] (last-in combines or overrides)
+Assign a list of [[List]] into **`L`** with [[MergeUp]]. Merges from left to
+right, first items get overridden by the next ones (last-in combines or overrides).
 @param L to assign to
 @param Ls to assign
 @param depth (?=`'flat'`) to do it deeply
