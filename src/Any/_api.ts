@@ -19,4 +19,6 @@ export {Try} from './Try'
 export {Type} from './Type'
 export {x} from './x'
 
+// LEGACY
+
 export {Contains as Implements} from './Contains'

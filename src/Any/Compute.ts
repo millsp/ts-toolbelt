@@ -1,10 +1,11 @@
 import {Depth} from '../Object/_Internal'
+import {BuiltInObject} from '../Misc/_api'
 
 /**
  * @hidden
  */
 export type ComputeFlat<A extends any> =
-    A extends Function
+    A extends BuiltInObject
     ? A
     : {
         [K in keyof A]: A[K]
@@ -14,7 +15,7 @@ export type ComputeFlat<A extends any> =
  * @hidden
  */
 export type ComputeDeep<A extends any, Seen extends any = A> =
-    A extends Function
+    A extends BuiltInObject
     ? A
     : {
         [K in keyof A]: A[K] extends Seen                // `Seen` handles circular type refs
