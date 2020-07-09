@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.4](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.3...v6.10.4) (2020-07-09)
+
+
+### Bug Fixes
+
+* **compute:** depth option ([557fc61](https://github.com/pirix-gh/ts-toolbelt/commit/557fc61b3558366aae207d7cfaaabeb34fa51fad))
+
 ### [6.10.3](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.2...v6.10.3) (2020-07-09)
 
 
