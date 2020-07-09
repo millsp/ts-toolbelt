@@ -5,23 +5,27 @@ import {BuiltInObject} from '../Misc/_api'
  * @hidden
  */
 export type ComputeFlat<A extends any> =
-    A extends BuiltInObject
+    (A extends BuiltInObject
     ? A
     : {
         [K in keyof A]: A[K]
-      } & {}
+      } & {}) extends infer X
+      ? X
+      : never
 
 /**
  * @hidden
  */
 export type ComputeDeep<A extends any, Seen extends any = A> =
-    A extends BuiltInObject
+    (A extends BuiltInObject
     ? A
     : {
         [K in keyof A]: A[K] extends Seen                // `Seen` handles circular type refs
                         ? A[K]                           // we've seen this type, don't compute
                         : ComputeDeep<A[K], A[K] | Seen> // 1st time seeing this, save & compute
-      } & {}
+      } & {}) extends infer X
+      ? X
+      : never
 
 /**
  * Force TS to load a type that has not been computed (to resolve composed
