@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.6](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.5...v6.10.6) (2020-07-09)
+
+
+### Bug Fixes
+
+* **compute:** export new compute ([c4bab8e](https://github.com/pirix-gh/ts-toolbelt/commit/c4bab8ee72d5be55d09fb064a0ee7832e8cd822e))
+
 ### [6.10.5](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.4...v6.10.5) (2020-07-09)
 
 
