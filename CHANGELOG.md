@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.2](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.1...v6.10.2) (2020-07-09)
+
+
+### Bug Fixes
+
+* **contains:** make implements the new contains utility ([eb27ac7](https://github.com/pirix-gh/ts-toolbelt/commit/eb27ac754b509911c4aa7e77a7842467558c40f2))
+
+
+### Others
+
+* cleanup ([89b90bc](https://github.com/pirix-gh/ts-toolbelt/commit/89b90bc01782c05547e9996fd1cb9b265182475c))
+* cleanup ([d2d0cd0](https://github.com/pirix-gh/ts-toolbelt/commit/d2d0cd05e8b3fccbe4911eb5229cf73699da12ff))
+* cleanup ([6e0e19a](https://github.com/pirix-gh/ts-toolbelt/commit/6e0e19a447f13d8a8b29d2af8b9e09ae6cfb9888))
+
 ### [6.10.1](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.0...v6.10.1) (2020-07-08)
 
 
