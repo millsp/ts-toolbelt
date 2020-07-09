@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.8](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.7...v6.10.8) (2020-07-09)
+
+
+### Bug Fixes
+
+* **pobject.p:** temporary fix revert ([c11874b](https://github.com/pirix-gh/ts-toolbelt/commit/c11874b88fd8d4a63a85228573f326363e49bf55))
+
+
+### Others
+
+* restore dt tests ([2155645](https://github.com/pirix-gh/ts-toolbelt/commit/2155645c6b12409b1d2d574b613cedb6f5883f05))
+
 ### [6.10.7](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.6...v6.10.7) (2020-07-09)
 
 
