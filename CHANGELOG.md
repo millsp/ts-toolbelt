@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.12](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.11...v6.10.12) (2020-07-09)
+
+
+### Bug Fixes
+
+* utilities output not recognized ([767ac7a](https://github.com/pirix-gh/ts-toolbelt/commit/767ac7aab868673760a52845ede0f4ea0bfad485))
+* **compute:** fixes [#127](https://github.com/pirix-gh/ts-toolbelt/issues/127) ([a3376d7](https://github.com/pirix-gh/ts-toolbelt/commit/a3376d7884aab9e7c706762c8a327685667158f9))
+* **mergeup:** flat also handles lists ([c961a57](https://github.com/pirix-gh/ts-toolbelt/commit/c961a572c20d0f9ab0a71f38f3e40dc7c6c68358))
+
 ### [6.10.11](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.10...v6.10.11) (2020-07-09)
 
 
