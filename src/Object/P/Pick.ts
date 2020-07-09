@@ -12,26 +12,23 @@ import {Boolean} from '../../Boolean/Boolean'
 @hidden
 */
 type PickObject<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
-  O extends object                                // If it's an object
-  ? _OPick<O, Path[Pos<I>]> extends infer Picked  // Pick the current index
-    ? Pos<I> extends LastIndex<Path>              // If it's the last index
-      ? Picked                                    // Return the picked object
-      : {                                         // Otherwise, continue diving
+  O extends object                                // if it's an object
+  ? _OPick<O, Path[Pos<I>]> extends infer Picked  // pick the current index
+    ? Pos<I> extends LastIndex<Path>              // if it's the last index
+      ? Picked                                    // return the picked object
+      : {                                         // otherwise, continue diving
           [K in keyof Picked]: PickObject<Picked[K], Path, Next<I>>
         } & {}
     : never
-  : O                                             // Not an object - x
+  : O                                             // not an object - x
 
 /**
 @hidden
 */
 type PickList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
-  O extends object                  // Same as above, but
-  ? O extends (infer A)[]           // If O is an array
-    ? {
-        1: PickList<A, Path, I>[] // Dive into the array (TS <3.7)
-        0: never
-      }[O extends List ? 1 : 0]
+  O extends object           // same as above, but
+  ? O extends (infer A)[]    // if O is an array
+    ? PickList<A, Path, I>[] // dive into the array
     : _OPick<O, Path[Pos<I>]> extends infer Picked
       ? Pos<I> extends LastIndex<Path>
         ? Picked
@@ -55,3 +52,13 @@ export type Pick<O extends object, Path extends List<Key>, list extends Boolean 
   0: PickObject<O, Path>
   1: PickList<O, Path>
 }[list]
+
+type FourDimensions = {
+  freedom: number[][] | {
+    dive: string
+    pp: number
+  }[][][][]
+  blue: 'zenith'
+}
+// {freedom: number[][] | {dive: string}[][][][]}
+type FreedomDive = Pick<FourDimensions, ['freedom', 'dive'], 1>

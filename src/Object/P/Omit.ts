@@ -12,26 +12,23 @@ import {Boolean} from '../../Boolean/Boolean'
 @hidden
 */
 type OmitObject<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
-  O extends object                                        // If it's an object
-  ? Pos<I> extends LastIndex<Path>                        // If it's the last index
-    ? _OOmit<O, Path[Pos<I>]>                              // Use standard Omit
+  O extends object                                        // if it's an object
+  ? Pos<I> extends LastIndex<Path>                        // if it's the last index
+    ? _OOmit<O, Path[Pos<I>]>                             // use standard Omit
     : {
-        [K in keyof O]: K extends Path[Pos<I>]            // If K is part of Path
-                        ? OmitObject<O[K], Path, Next<I>> // Continue diving
-                        : O[K]                            // Not part of path - x
+        [K in keyof O]: K extends Path[Pos<I>]            // if K is part of Path
+                        ? OmitObject<O[K], Path, Next<I>> // continue diving
+                        : O[K]                            // not part of path - x
       } & {}
-  : O                                                     // Not an object - x
+  : O                                                     // not an object - x
 
 /**
 @hidden
 */
 type OmitList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
-  O extends object                  // Same as above, but
-  ? O extends (infer A)[]           // If O is an array
-    ? {
-        1: OmitList<A, Path, I>[] // Dive into the array (TS <3.7)
-        0: never
-      }[O extends List ? 1 : 0]
+  O extends object           // same as above, but
+  ? O extends (infer A)[]    // if O is an array
+    ? OmitList<A, Path, I>[] // dive into the array
     : Pos<I> extends LastIndex<Path>
       ? _OOmit<O, Path[Pos<I>]>
       : {

@@ -13,26 +13,23 @@ import {Boolean} from '../../Boolean/Boolean'
 @hidden
 */
 type MergeObject<O, Path extends List<Key>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
-  O extends object                                                    // If it's an object
-  ? Pos<I> extends Length<Path>                                       // If we've reached the end
-    ? OMerge<O, O1, depth>                                            // Use standard Merge
+  O extends object                                                    // if it's an object
+  ? Pos<I> extends Length<Path>                                       // if we've reached the end
+    ? OMerge<O, O1, depth>                                            // use standard Merge
     : {
-        [K in keyof O]: K extends Path[Pos<I>]                        // If K is part of Path
-                        ? MergeObject<O[K], Path, O1, depth, Next<I>> // Continue diving
-                        : O[K]                                        // Not part of path - x
+        [K in keyof O]: K extends Path[Pos<I>]                        // if K is part of Path
+                        ? MergeObject<O[K], Path, O1, depth, Next<I>> // continue diving
+                        : O[K]                                        // not part of path - x
       } & {}
-  : O                                                                 // Not an object - x
+  : O                                                                 // not an object - x
 
 /**
 @hidden
 */
 type MergeList<O, Path extends List<Key>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
-  O extends object                              // Same as above, but
-  ? O extends (infer A)[]                       // If O is an array
-    ? {
-        1: MergeList<A, Path, O1, depth, I>[] // Dive into the array (TS <3.7)
-        0: never
-      }[O extends List ? 1 : 0]
+  O extends object                       // same as above, but
+  ? O extends (infer A)[]                // if O is an array
+    ? MergeList<A, Path, O1, depth, I>[] // dive into the array
     : Pos<I> extends Length<Path>
       ? OMerge<O, O1, depth>
       : {
