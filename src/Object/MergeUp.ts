@@ -1,4 +1,3 @@
-
 import {At} from './At'
 import {OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
@@ -51,7 +50,7 @@ type ___MergeUpDeep<O extends object, O1 extends object, libStyle extends Boolea
 */
 type __MergeUpDeep<OK, O1K, K extends Key, OOK extends Key, libStyle extends Boolean> =
     Or<Extends<[OK], [never]>, Extends<[O1K], [never]>> extends 1 // filter fallthrough `never`
-    ? MergeUpProp<OK, O1K, K, OOK, libStyle>   // `O | O1`  not object, merge prop
+    ? MergeUpProp<OK, O1K, K, OOK, libStyle>   // `O | O1` not object, merge prop
     : OK extends object ? O1K extends object   // if both are of type `object`
       ? ___MergeUpDeep<OK, O1K, libStyle>      // merge if both are `object`
       : MergeUpProp<OK, O1K, K, OOK, libStyle> // `O`  not object, merge prop
