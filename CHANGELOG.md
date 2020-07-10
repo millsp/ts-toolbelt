@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.14](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.13...v6.10.14) (2020-07-10)
+
+
+### Others
+
+* **compute:** introduce basic compute raw ([9f65db5](https://github.com/pirix-gh/ts-toolbelt/commit/9f65db50c7398c41e0d97508de6a5df1479533b5))
+
 ### [6.10.13](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.12...v6.10.13) (2020-07-09)
 
 
