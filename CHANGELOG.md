@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.10.15](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.14...v6.10.15) (2020-07-10)
+
+
+### Bug Fixes
+
+* **mergeup:** do not merge built-in objects ([8b6e93e](https://github.com/pirix-gh/ts-toolbelt/commit/8b6e93e50d3e9d983c624e6c9e64b0068747ff05))
+
+
+### Others
+
+* cleanup ([a6e69aa](https://github.com/pirix-gh/ts-toolbelt/commit/a6e69aa8101834c37ba073a09a7d6181c40c29fb))
+
 ### [6.10.14](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.13...v6.10.14) (2020-07-10)
 
 
