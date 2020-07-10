@@ -9,6 +9,7 @@ import {ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth, Anyfy} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 @hidden
@@ -71,7 +72,10 @@ type __MergeUpDeep<OK, O1K, K extends Key, OOK extends Key, libStyle extends Boo
     Or<Extends<[OK], [never]>, Extends<[O1K], [never]>> extends 1 // filter fallthrough `never`
     ? MergeUpProp<OK, O1K, K, OOK, libStyle>   // `O | O1` not object, merge prop
     : OK extends object ? O1K extends object   // if both are of type `object`
-      ? ___MergeUpDeep<OK, O1K, libStyle>      // merge if both are `object`
+      ? OK extends BuiltInObject ? O1K extends BuiltInObject // if one of them is `BuiltInObject`
+        ? MergeUpProp<OK, O1K, K, OOK, libStyle> // treat as prop
+        : MergeUpProp<OK, O1K, K, OOK, libStyle> // treat as prop
+        : ___MergeUpDeep<OK, O1K, libStyle>    // not `BuiltInObject`, object, merge
       : MergeUpProp<OK, O1K, K, OOK, libStyle> // `O`  not object, merge prop
       : MergeUpProp<OK, O1K, K, OOK, libStyle> // `O1` not object, merge prop
 
