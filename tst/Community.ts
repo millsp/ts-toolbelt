@@ -30,7 +30,7 @@ readonly f : 0
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string, c: 0}}
-};
+}
 
 // ---------------------------------------------------------------------------------------
 // INCLUDESDEEP
@@ -41,7 +41,7 @@ type O_INCLUDESDEEP = {
             x: number
         }
     }
-};
+}
 
 checks([
     check<Community.IncludesDeep<O_INCLUDESDEEP, number, 'default', '3'>,   1,          Test.Pass>(),

@@ -30,7 +30,7 @@ readonly f : 0
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string, c: 0}}
-};
+}
 
 // ---------------------------------------------------------------------------------------
 // ASSIGN
@@ -38,7 +38,7 @@ readonly f : 0
 type O_ASSIGN  = {readonly a: 1}
 type Os_ASSIGN = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
 
-type ASSIGN_O_Os = {a: 3, readonly b: 1, c?: 1};
+type ASSIGN_O_Os = {a: 3, readonly b: 1, c?: 1}
 
 checks([
     check<O.Assign<O_ASSIGN, Os_ASSIGN>,    ASSIGN_O_Os,   Test.Pass>(),
@@ -50,7 +50,7 @@ checks([
 type O_ASSIGNUP  = {readonly a: 1, c: 2}
 type Os_ASSIGNUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
 
-type ASSIGNUP_O_Os = {readonly a: 3, readonly b: 1, c: 1 | 2};
+type ASSIGNUP_O_Os = {readonly a: 3, readonly b: 1, c: 1 | 2}
 
 checks([
     check<O.AssignUp<O_ASSIGNUP, Os_ASSIGNUP>,    ASSIGNUP_O_Os,   Test.Pass>(),
@@ -94,19 +94,19 @@ type ATLEAST_O_ABF = {
     d?: 4
 } | {
     a?: 1
-    b: 2;
+    b: 2
     c?: 3
     d?: 4
 } | {
-    e: 5;
-    f: 6;
+    e: 5
+    f: 6
 } | {
     e?: 5
-    f: 6;
+    f: 6
 } | {
     g?: 7
     h?: 8
-};
+}
 
 checks([
     check<O.AtLeast<O_ATLEAST, 'a' | 'b' | 'f'>,    ATLEAST_O_ABF,    Test.Pass>(),
@@ -118,7 +118,7 @@ checks([
 type O_COMPACT  = {readonly a: 1}
 type Os_COMPACT = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
 
-type COMPACT_O_Os = {readonly a: 1, readonly b: 1, c?: 1};
+type COMPACT_O_Os = {readonly a: 1, readonly b: 1, c?: 1}
 
 checks([
     check<O.Compact<O_COMPACT, Os_COMPACT>,    COMPACT_O_Os,   Test.Pass>(),
@@ -130,7 +130,7 @@ checks([
 type O_COMPACTUP  = {readonly a: 1, c?: 2}
 type Os_COMPACTUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
 
-type COMPACTUP_O_Os = {readonly a: 1, readonly b: 1, c?: 1 | 2};
+type COMPACTUP_O_Os = {readonly a: 1, readonly b: 1, c?: 1 | 2}
 
 checks([
     check<O.CompactUp<O_COMPACTUP, Os_COMPACTUP>,   COMPACTUP_O_Os,   Test.Pass>(),
@@ -150,7 +150,7 @@ readonly f: 0
          h: 1
          j: 'a'
          k: {a: {b: string}}
-};
+}
 
 checks([
     check<O.Compulsory<O>,  COMPULSORY_O,   Test.Pass>(),
@@ -159,7 +159,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // COMPULSORYKEYS
 
-type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k';
+type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k'
 
 checks([
     check<O.CompulsoryKeys<O>,  COMPULSORYKEYS_O,   Test.Pass>(),
@@ -180,7 +180,7 @@ type DIFF_O_O1_EQUALS = {
     h?: 1
     i : {a: string}
     k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Diff<O, O1, 'default'>, DIFF_O_O1_DEFAULT,  Test.Pass>(),
@@ -201,7 +201,7 @@ type DIFF_O1_O_EQUALS = {
     h : never
     i : {a: string}
     k : {a: {b: string, c: 0}}
-};
+}
 
 checks([
     check<O.Diff<O1, O, 'default'>, DIFF_O1_O_DEFAULT,  Test.Pass>(),
@@ -221,13 +221,13 @@ readonly c?: object
 }
 
 type EITHER_O_AB_TRUE = {
-    a: string;
-    b?: undefined;
-    readonly c?: object;
+    a: string
+    b?: undefined
+    readonly c?: object
 } | {
-    a?: undefined;
-    b?: number;
-    readonly c?: object;
+    a?: undefined
+    b?: number
+    readonly c?: object
 } | {
     a: 'a'
     b?: undefined
@@ -237,16 +237,16 @@ type EITHER_O_AB_TRUE = {
 }
 
 type EITHER_O_AB_FALSE = {
-    a: string;
-    readonly c?: object;
+    a: string
+    readonly c?: object
 } | {
-    b?: number;
-    readonly c?: object;
+    b?: number
+    readonly c?: object
 } | {
     a: 'a'
 } | {
     b: 'b'
-};
+}
 
 checks([
     check<O.Either<O_EITHER, 'a' | 'b'>,        EITHER_O_AB_TRUE,       Test.Pass>(),
@@ -265,7 +265,7 @@ type EXCLUDE_O_O1_EQUALS = {
     g : O
     h?: 1
     k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Exclude<O, O1, 'default'>,  EXCLUDE_O_O1_DEFAULT,   Test.Pass>(),
@@ -286,7 +286,7 @@ type EXCLUDE_O1_O_EQUALS = {
     h : never
     i : {a: string}
     k : {a: {b: string, c: 0}}
-};
+}
 
 checks([
     check<O.Exclude<O1, O, 'default'>,  EXCLUDE_O1_O_DEFAULT,   Test.Pass>(),
@@ -298,7 +298,7 @@ checks([
 
 type EXCLUDEKEYS_O_DEFAULT = never
 
-type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k';
+type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k'
 
 checks([
     check<O.ExcludeKeys<O, O1, 'default'>,  EXCLUDEKEYS_O_DEFAULT,  Test.Pass>(),
@@ -309,7 +309,7 @@ checks([
 
 type EXCLUDEKEYS_O1_DEFAULT = 'i'
 
-type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i' | 'k';
+type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i' | 'k'
 
 checks([
     check<O.ExcludeKeys<O1, O, 'default'>,  EXCLUDEKEYS_O1_DEFAULT, Test.Pass>(),
@@ -341,7 +341,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Filter<O, string, 'extends->'>,     FILTER_O_DEFAULT,   Test.Pass>(),
@@ -353,7 +353,7 @@ checks([
 
 type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
 
-type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k';
+type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
 
 checks([
     check<O.FilterKeys<O, string, 'extends->'>,     FILTERKEYS_O_DEFAULT,   Test.Pass>(),
@@ -418,11 +418,11 @@ checks([
 type INTERSECT_O_O1_DEFAULT = O
 
 type INTERSECT_O_O1_EQUALS = {
-         c : {a: 'a'} & {b: 'b'};
-readonly e?: 'string1';
-readonly f : 0;
+         c : {a: 'a'} & {b: 'b'}
+readonly e?: 'string1'
+readonly f : 0
          j : 'a' | undefined
-};
+}
 
 checks([
     check<O.Intersect<O, O1, 'default'>,    INTERSECT_O_O1_DEFAULT, Test.Pass>(),
@@ -434,7 +434,7 @@ checks([
 
 type INTERSECTKEYS_O_DEFAULT = keyof O
 
-type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j';
+type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j'
 
 checks([
     check<O.IntersectKeys<O, O1, 'default'>,    INTERSECTKEYS_O_DEFAULT,    Test.Pass>(),
@@ -453,10 +453,10 @@ type O_INVERT = {
 }
 
 type INVERT_O = {
-    Av          : 'A';
-    [INVERT_SYM]: 'B';
-    42          : 'C';
-};
+    Av          : 'A'
+    [INVERT_SYM]: 'B'
+    42          : 'C'
+}
 
 checks([
     check<O.Invert<O_INVERT>,   INVERT_O,  Test.Pass>(),
@@ -481,7 +481,7 @@ type O_LISTOF = {
     '6': 6
 }
 
-type LISTOF_O = [1, 3, never, 5, 6];
+type LISTOF_O = [1, 3, never, 5, 6]
 
 checks([
     check<O.ListOf<O_LISTOF>,   LISTOF_O,   Test.Pass>(),
@@ -498,7 +498,7 @@ type MERGE_O_O1 = {
 readonly e?: 'string1'
 readonly f : 0
          g : O
-         h?: 1;
+         h?: 1
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string}}
@@ -516,7 +516,7 @@ readonly f : 0
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string, c: 0}}
-};
+}
 
 type MERGE_O_O1_DEEP = {
          a : string
@@ -530,7 +530,7 @@ readonly f : 0
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string, c: 0}}
-};
+}
 
 checks([
     check<O.Merge<O, O1>,           MERGE_O_O1,         Test.Pass>(),
@@ -546,7 +546,7 @@ type O_MERGEUP = {
     c: {
         a?: string
         b?: number
-    }
+    } | Date
     d: 'hello' | undefined
     e: number
     f?: {
@@ -609,7 +609,7 @@ type MERGEUP_O_O1 = {
     c : {
         a?: string
         b?: number
-    }
+    } | Date
     d : 'hello' | undefined
     e : number
     f?: {
@@ -637,7 +637,7 @@ type MERGEUP_O_O1 = {
         }
     },
     k: {} | {[k: string]: string}
-};
+}
 
 type MERGEUP_O_O1_DEEP = {
     a : string | object | undefined
@@ -646,21 +646,21 @@ type MERGEUP_O_O1_DEEP = {
         a : string | object
         b?: number | object
         c : object
-    }
+    } | Date
     d : 'hello' | undefined
     e : number
     f?: {
-        a: string;
-        b?: number | undefined;
+        a: string
+        b?: number | undefined
     } | {
-        a: object;
-        b?: object | undefined;
-        c: object;
+        a: object
+        b?: object | undefined
+        c: object
     } | {
-        a: string;
-        b?: number | object | undefined;
-        c: object;
-    } | undefined;
+        a: string
+        b?: number | object | undefined
+        c: object
+    } | undefined
     g?: {
         a?: string
         b?: number
@@ -684,7 +684,7 @@ type MERGEUP_O_O1_DEEP = {
         }
     },
     k: {} | {[k: string]: string}
-};
+}
 
 checks([
     check<O.MergeUp<[1], [2, 3], 'deep', 0>,            [1, 3],             Test.Pass>(),
@@ -728,7 +728,7 @@ readonly f : 0
          h?: 1
          j : 'a'
          k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.NonNullable<O, keyof O, 'flat'>,                    NONNULLABLE_O_FLAT,                 Test.Pass>(),
@@ -770,7 +770,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                                    Test.Pass>(),
@@ -801,7 +801,7 @@ type OMIT_O_DEH = {
     g: O
     j: 'a' | undefined
     k: {a: {b: string}}
-};
+}
 
 checks([
     check<O.Omit<O, 'd' | 'e' | 'h'>,   OMIT_O_DEH, Test.Pass>(),
@@ -835,7 +835,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Optional<O, keyof O, 'flat'>,                   OPTIONAL_O_FLAT,                            Test.Pass>(),
@@ -881,7 +881,7 @@ type O_PATH_U = {
             c: 'abc'
         }
     }
-};
+}
 
 checks([
     check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>,      never,                          Test.Pass>(),
@@ -903,9 +903,9 @@ type O_PATHS = {
         }
         b: {}
     }
-};
+}
 
-type Index = (string | number | symbol);
+type Index = (string | number | symbol)
 
 checks([
     check<O.Paths<any>,     Index[],                                                            Test.Pass>(),
@@ -925,7 +925,7 @@ type O_PATHVALID = {
         }
         b: string[]
     }
-};
+}
 
 checks([
     check<O.PathValid<any,          ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
@@ -942,7 +942,7 @@ type PICK_O_DEF = {
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
-};
+}
 
 checks([
     check<O.Pick<O, 'd' | 'e' | 'f'>,   PICK_O_DEF, Test.Pass>(),
@@ -976,7 +976,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Readonly<O, keyof O, 'flat'>,                   READONLY_O_FLAT,                Test.Pass>(),
@@ -1012,7 +1012,7 @@ type RECORD_AB_A_REQR = {
 type RECORD_AB_A_REQW = {
     a: string
     b: string
-};
+}
 
 checks([
     check<O.Record<'a' | 'b', string, ['?', 'R']>,  RECORD_AB_A_OPTR,   Test.Pass>(),
@@ -1037,9 +1037,9 @@ type REPLACE_STRING_NUMBER = {
     k: {
         a: {
             b: string
-        };
+        }
     }
-};
+}
 
 checks([
     check<O.Replace<O, string, number>, REPLACE_STRING_NUMBER,  Test.Pass>(),
@@ -1072,7 +1072,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Required<O, keyof O, 'flat'>,                   REQUIRED_O_FLAT,                Test.Pass>(),
@@ -1099,7 +1099,7 @@ readonly e?: 'string1'
 
 type SELECT_O_EQUALS = {
          a : string,
-};
+}
 
 checks([
     check<O.Select<O, string, 'extends->'>,     SELECT_O_DEFAULT,   Test.Pass>(),
@@ -1111,7 +1111,7 @@ checks([
 
 type SELECTKEYS_O_DEFAULT = 'a' | 'd' | 'e' | 'j'
 
-type SELECTKEYS_O_EQUALS = 'a';
+type SELECTKEYS_O_EQUALS = 'a'
 
 checks([
     check<O.SelectKeys<O, string, 'extends->'>,     SELECTKEYS_O_DEFAULT,  Test.Pass>(),
@@ -1145,7 +1145,7 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Undefinable<O, keyof O, 'flat'>,                   UNDEFINABLE_O_FLAT,                              Test.Pass>(),
@@ -1178,11 +1178,11 @@ type O1_UNIONIZE = {
 }
 
 type UNIONIZE_O_O1 = {
-    a : 'a' | 'b';
-    b : 'b' | 'x' | undefined;
-    c : 42;
-    d?: {} | 1;
-};
+    a : 'a' | 'b'
+    b : 'b' | 'x' | undefined
+    c : 42
+    d?: {} | 1
+}
 
 checks([
     check<O.Unionize<O_UNIONIZE, O1_UNIONIZE>,  UNIONIZE_O_O1,  Test.Pass>(),
@@ -1198,7 +1198,7 @@ type O_UNIONOF = {
     d: 1
 }
 
-type UNIONOF_O = 'a' | 'b' | 1;
+type UNIONOF_O = 'a' | 'b' | 1
 
 checks([
     check<O.UnionOf<O_UNIONOF>, UNIONOF_O,    Test.Pass>(),
@@ -1214,18 +1214,18 @@ type O_UPDATE = {
 type UPDATE_O = {
     a?: 'xxxx'
     b : 'xxxx'
-};
+}
 
 type UPDATE_O_X = {
     a?: 'a'
     b : never
-};
+}
 
 type UPDATE_O_STRING_42 = {
-    [x: string]: 42;
+    [x: string]: 42
     // @ts-ignore
-    a?: 42 | undefined;
-};
+    a?: 42 | undefined
+}
 
 checks([
     check<O.Update<O_UPDATE, 'a' | 'b', 'xxxx'>,    UPDATE_O,               Test.Pass>(),
@@ -1260,7 +1260,7 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
-};
+}
 
 checks([
     check<O.Writable<O, keyof O, 'flat'>,                   WRITABLE_O_FLAT,                Test.Pass>(),
@@ -1297,7 +1297,7 @@ type OP = { // A binary tree
         }
     }
     c?: string
-};
+}
 
 type OP_UNIONS = {
     a: {
@@ -1318,7 +1318,7 @@ type OP_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type OP_ARRAYS = {
     a: {
@@ -1339,7 +1339,7 @@ type OP_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type OP_ARRAYS_UNIONS = {
     a: {
@@ -1360,7 +1360,7 @@ type OP_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 // ---------------------------------------------------------------------------------------
 // P.MERGE
@@ -1386,7 +1386,7 @@ type O_PMERGE = {
         }
     }
     c?: string
-};
+}
 
 type O_PMERGE_UNIONS = {
     a: {
@@ -1409,7 +1409,7 @@ type O_PMERGE_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type O_PMERGE_ARRAYS = {
     a: {
@@ -1432,7 +1432,7 @@ type O_PMERGE_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type O_PMERGE_ARRAYS_UNIONS = {
     a: {
@@ -1455,7 +1455,7 @@ type O_PMERGE_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 checks([
     check<O.P.Merge<OP,                 ['a' | 'b', 'b'], {x: string}>,                 O_PMERGE,                   Test.Pass>(),
@@ -1481,7 +1481,7 @@ type O_POMIT = {
         }
     }
     c?: string
-};
+}
 
 type O_POMIT_UNIONS = {
     a: {
@@ -1497,7 +1497,7 @@ type O_POMIT_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type O_POMIT_ARRAYS = {
     a: {
@@ -1513,7 +1513,7 @@ type O_POMIT_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type O_POMIT_ARRAYS_UNIONS = {
     a: {
@@ -1529,7 +1529,7 @@ type O_POMIT_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 checks([
     check<O.P.Omit<OP,                  ['a' | 'b', 'a']>,      O_POMIT,                Test.Pass>(),
@@ -1551,7 +1551,7 @@ type O_PPICK = {
             b: 'bab'
         }
     }
-};
+}
 
 type O_PPICK_UNIONS = {
     a: {
@@ -1563,7 +1563,7 @@ type O_PPICK_UNIONS = {
             b: 'bab'
         }
     } | 'b'
-};
+}
 
 type O_PPICK_ARRAYS = {
     a: {
@@ -1575,7 +1575,7 @@ type O_PPICK_ARRAYS = {
             b: 'bab'
         }[]
     }[]
-};
+}
 
 type O_PPICK_ARRAYS_UNIONS = {
     a: {
@@ -1587,7 +1587,7 @@ type O_PPICK_ARRAYS_UNIONS = {
             b: 'bab'
         }[]
     }[] | 'b'[][]
-};
+}
 
 checks([
     check<O.P.Pick<OP,                  ['a' | 'b', 'a']>,      O_PPICK,                Test.Pass>(),
@@ -1618,7 +1618,7 @@ type O_PREADONLY = {
         }
     }
     c?: string
-};
+}
 
 type O_PREADONLY_UNIONS = {
     a: {
@@ -1639,7 +1639,7 @@ type O_PREADONLY_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type O_PREADONLY_ARRAYS = {
     a: {
@@ -1660,7 +1660,7 @@ type O_PREADONLY_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type O_PREADONLY_ARRAYS_UNIONS = {
     a: {
@@ -1681,7 +1681,7 @@ type O_PREADONLY_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 checks([
     check<O.P.Readonly<OP,                  ['a' | 'b', 'a']>,              O_PREADONLY,                Test.Pass>(),
@@ -1709,7 +1709,7 @@ type O_PUPDATE = {
         }
     }
     c?: string
-};
+}
 
 type O_PUPDATE_UNIONS = {
     a: 'a' | {
@@ -1727,7 +1727,7 @@ type O_PUPDATE_UNIONS = {
         }
     },
     c?: string
-};
+}
 
 type O_PUPDATE_VPATH = {
     a: 'a' | {
@@ -1735,7 +1735,7 @@ type O_PUPDATE_VPATH = {
         b: {
             a: 'aba'
             b: 'abb'
-        };
+        }
     }
     b?: 'b' | {
         a: {
@@ -1745,10 +1745,10 @@ type O_PUPDATE_VPATH = {
         b: {
             a: 'bba'
             b: 'bbb'
-        };
+        }
     }
     c?: string
-};
+}
 
 checks([
     check<O.P.Update<{},            ['a', 'b'], 'x'>,                           {a: {b: 'x'}},      Test.Pass>(),
@@ -1802,7 +1802,7 @@ type RECORD_ABCD_STRING_REQW = {
             d: string
         }
     }
-};
+}
 
 checks([
     check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'R']>,    RECORD_ABCD_STRING_OPTR,    Test.Pass>(),
