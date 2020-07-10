@@ -1,12 +1,11 @@
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/_api'
-import {Cast} from './Cast'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
  * @hidden
  */
-type _ComputeFlat<A extends any> =
-    A extends BuiltInObject
+export type ComputeRaw<A extends any> =
+    A extends Function
     ? A
     : {
         [K in keyof A]: A[K]
@@ -16,29 +15,23 @@ type _ComputeFlat<A extends any> =
  * @hidden
  */
 export type ComputeFlat<A extends any> =
-    _ComputeFlat<A> extends infer X
-    ? Cast<X, A>
-    : never
-
-/**
- * @hidden
- */
-type _ComputeDeep<A extends any, Seen extends any = A> =
     A extends BuiltInObject
     ? A
     : {
-        [K in keyof A]: A[K] extends Seen                 // `Seen` handles circular type refs
-                        ? A[K]                            // we've seen this type, don't compute
-                        : _ComputeDeep<A[K], A[K] | Seen> // 1st time seeing this, save & compute
+        [K in keyof A]: A[K]
       } & {}
 
 /**
  * @hidden
  */
-export type ComputeDeep<A extends any> =
-      _ComputeDeep<A> extends infer X
-      ? Cast<X, A>
-      : never
+type ComputeDeep<A extends any, Seen extends any = A> =
+    A extends BuiltInObject
+    ? A
+    : {
+        [K in keyof A]: A[K] extends Seen                 // `Seen` handles circular type refs
+                        ? A[K]                            // we've seen this type, don't compute
+                        : ComputeDeep<A[K], A[K] | Seen> // 1st time seeing this, save & compute
+      } & {}
 
 /**
  * Force TS to load a type that has not been computed (to resolve composed

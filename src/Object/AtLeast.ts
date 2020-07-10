@@ -4,7 +4,7 @@ import {Key} from '../Any/Key'
 import {Keys} from './Keys'
 import {RequiredFlat} from './Required'
 import {Extends} from '../Any/Extends'
-import {ComputeFlat} from '../Any/Compute'
+import {ComputeRaw} from '../Any/Compute'
 import {OptionalFlat} from './Optional'
 
 /**
@@ -27,7 +27,7 @@ type __AtLeast<O extends object, K extends Key> =
 @hidden
 */
 type _AtLeast<O extends object, K extends Key> =
-    ComputeFlat<__AtLeast<RequiredIfKeys<O, K>, K>>
+    ComputeRaw<__AtLeast<RequiredIfKeys<O, K>, K>>
 
 /**
 Make that at least one of the keys **`K`** are required in **`O`** at a time.
@@ -42,3 +42,5 @@ export type AtLeast<O extends object, K extends Key = Keys<O>> =
     O extends unknown
     ? _AtLeast<O, K>
     : never
+
+type t = AtLeast<{a: 1, b: 2, c: 3}, 'a' | 'b'>

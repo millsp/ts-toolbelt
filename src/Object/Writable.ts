@@ -10,7 +10,7 @@ import {Keys} from './Keys'
 */
 export type WritableFlat<O> = {
     -readonly [K in keyof O]: O[K]
-}
+} & {}
 
 /**
 @hidden

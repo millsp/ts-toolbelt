@@ -3,12 +3,12 @@
  */
 type Errors =
     | Error
-    | EvalError
-    | RangeError
-    | ReferenceError
-    | SyntaxError
-    | TypeError
-    | URIError
+    // | EvalError
+    // | RangeError
+    // | ReferenceError
+    // | SyntaxError
+    // | TypeError
+    // | URIError
 
 /**
  * @hidden
@@ -16,7 +16,7 @@ type Errors =
 type Numeric =
     | Number
     // | BigInt // not needed
-    | Math
+    // | Math
     | Date
 
 /**
@@ -30,8 +30,8 @@ type Textual =
  * @hidden
  */
 type Arrays =
-    // | Array<any>
-    // | ReadonlyArray<any>
+    // | Array<unknown>
+    // | ReadonlyArray<unknown>
     | Int8Array
     | Uint8Array
     | Uint8ClampedArray
@@ -48,12 +48,12 @@ type Arrays =
  * @hidden
  */
 type Maps =
-    | Map<any, any>
-    | ReadonlyMap<any, any>
-    | Set<any>
-    | ReadonlySet<any>
-    | WeakMap<any, any>
-    | WeakSet<any>
+    | Map<unknown, unknown>
+    | ReadonlyMap<unknown, unknown>
+    | Set<unknown>
+    | ReadonlySet<unknown>
+    | WeakMap<object, unknown>
+    | WeakSet<object>
 
 /**
  * @hidden
@@ -63,14 +63,14 @@ type Structures =
     // | SharedArrayBuffer
     // | Atomics
     | DataView
-    | JSON
+    // | JSON
 
 /**
  * @hidden
  */
 type Abstractions =
     | Function
-    | Promise<any>
+    | Promise<unknown>
     | Generator
     | GeneratorFunction
 

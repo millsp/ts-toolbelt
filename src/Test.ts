@@ -1,6 +1,6 @@
 import {Repeat} from './List/Repeat'
 import {Equals} from './Any/Equals'
-import {ComputeFlat} from './Any/Compute'
+import {ComputeRaw} from './Any/Compute'
 import {True, False, Boolean} from './Boolean/Boolean'
 
 /**
@@ -21,7 +21,7 @@ Check or test the validity of a type
 // see in `tst` folder
 ```
 */
-export declare function check<Type, Expect, Outcome extends Boolean>(debug?: ComputeFlat<Type>): Equals<Equals<Type, Expect>, Outcome>
+export declare function check<Type, Expect, Outcome extends Boolean>(debug?: ComputeRaw<Type>): Equals<Equals<Type, Expect>, Outcome>
 
 /**
 Validates a batch of [[check]]

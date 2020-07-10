@@ -1,4 +1,4 @@
-import {ComputeFlat} from '../Any/Compute'
+import {ComputeRaw} from '../Any/Compute'
 import {Keys} from './Keys'
 import {OptionalFlat} from '../Object/Optional'
 import {Record} from '../Object/Record'
@@ -20,4 +20,4 @@ Make a [[Union]] not allow excess properties (https://github.com/Microsoft/TypeS
 ```
 */
 export type Strict<U extends object> =
-    ComputeFlat<_Strict<U>>
+    ComputeRaw<_Strict<U>>
