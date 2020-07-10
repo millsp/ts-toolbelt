@@ -600,7 +600,7 @@ type O1_MERGEUP = {
             }
         }
     }
-    k: {}
+    k: {} | Date
 }
 
 type MERGEUP_O_O1 = {
@@ -636,7 +636,7 @@ type MERGEUP_O_O1 = {
             b?: {}
         }
     },
-    k: {} | {[k: string]: string}
+    k: {} | {[k: string]: string} | Date
 }
 
 type MERGEUP_O_O1_DEEP = {
@@ -683,7 +683,7 @@ type MERGEUP_O_O1_DEEP = {
             b?: {}
         }
     },
-    k: {} | {[k: string]: string}
+    k: {} | {[k: string]: string} | Date
 }
 
 checks([
