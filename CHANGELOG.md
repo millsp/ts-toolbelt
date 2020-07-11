@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.12.0](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.16...v6.12.0) (2020-07-11)
+
+
+### Features
+
+* **object:** added Partial alias for OptionalPart ([42108ff](https://github.com/pirix-gh/ts-toolbelt/commit/42108ffb52f7561feaced7a7bd0d619a17f6660b))
+
+
+### Bug Fixes
+
+* **object:** export order ([879edb6](https://github.com/pirix-gh/ts-toolbelt/commit/879edb6ed90f88b9ae6a3c2e8878ae1be48e0c88))
+* **partial:** format of JSDoc example ([f1d6fc8](https://github.com/pirix-gh/ts-toolbelt/commit/f1d6fc876a3ca62580eadd27be8d69c533b8794f))
+
+
+### Others
+
+* cleanup ([593bb53](https://github.com/pirix-gh/ts-toolbelt/commit/593bb53b38754dbcdc9bc57f66890b983c4c31bd))
+* **cleanup:** remove comment ([a62cc89](https://github.com/pirix-gh/ts-toolbelt/commit/a62cc89b31ef25a45600a604dd9157db6d36d5df))
+* **object:** add test for new Partial type ([befa7b8](https://github.com/pirix-gh/ts-toolbelt/commit/befa7b873cd2aa0d693f899d47ecb42866993e46))
+* **partial:** separate bundle of tests for Partial ([286c3e5](https://github.com/pirix-gh/ts-toolbelt/commit/286c3e5bd1f902d5027ea4b845a49b28dff3a2dc))
+* **partial:** simplify ([e500c85](https://github.com/pirix-gh/ts-toolbelt/commit/e500c85a02c34548497cd36409a3595338e51345))
+* **release:** 6.10.0 ([73adcd6](https://github.com/pirix-gh/ts-toolbelt/commit/73adcd6deff69a0be64646e73eb963a64338dce4))
+
 ### [6.10.16](https://github.com/pirix-gh/ts-toolbelt/compare/v6.10.15...v6.10.16) (2020-07-10)
 
 
