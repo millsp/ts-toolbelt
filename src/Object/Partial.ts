@@ -10,8 +10,10 @@ Make all fields of **`O`** optional (deeply or not)
 ```ts
 import {O} from 'ts-toolbelt'
 
-O.Partial<MyType>
-O.Partial<MyType, 'deep'>
+type L = {a: {b: {c: 2}}, b: 1}
+
+type test0 = O.Partial<L>
+type test1 = O.Partial<L, 'deep'>
 ```
  */
 export type Partial<O extends object, depth extends Depth = 'flat'> =

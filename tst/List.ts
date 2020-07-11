@@ -459,6 +459,15 @@ checks([
 // No test needed (same as O.Overwrite)
 
 // ---------------------------------------------------------------------------------------
+// OPTIONAL
+
+checks([
+    check<T.Partial<[0, 1, 2]>,    [0?, 1?, 2?],   Test.Pass>(),
+    check<T.Partial<[0, 1, 2?]>,   [0?, 1?, 2?],   Test.Pass>(),
+    check<T.Partial<never>,        never,          Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // PATH
 
 // No test needed (same as O.Path)
