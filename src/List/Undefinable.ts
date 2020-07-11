@@ -4,7 +4,7 @@ import {ListOf} from '../Object/ListOf'
 import {Cast} from '../Any/Cast'
 import {Key} from '../Any/Key'
 import {ObjectOf} from './ObjectOf'
-import {Implements} from '../Any/Implements'
+import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'
 import {List} from './List'
 import {NumberOf} from '../Any/_Internal'
@@ -22,4 +22,4 @@ Make some entries of **`L`** not **`undefined`** (deeply or not)
 export type Undefinable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: Cast<OUndefinable<L, Key, depth>, List>
     0: ListOf<OUndefinable<ObjectOf<L>, NumberOf<K>, depth>>
-}[Implements<Keys<L>, K>] & {}
+}[Contains<Keys<L>, K>] & {}

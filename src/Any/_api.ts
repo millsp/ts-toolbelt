@@ -3,9 +3,9 @@
 export {Cast} from './Cast'
 export {Clean} from './Clean'
 export {Compute} from './Compute'
+export {Contains} from './Contains'
 export {Equals} from './Equals'
 export {Extends} from './Extends'
-export {Implements} from './Implements'
 export {Key} from './Key'
 export {Is} from './Is'
 export {IsLiteral} from './IsLiteral'
@@ -18,3 +18,7 @@ export {PromiseOf} from './PromiseOf'
 export {Try} from './Try'
 export {Type} from './Type'
 export {x} from './x'
+
+// LEGACY
+
+export {Contains as Implements} from './Contains'

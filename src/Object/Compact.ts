@@ -27,7 +27,8 @@ export type _Compact<O extends object, Os extends List<object>, depth extends De
     : never
 
 /**
-Merge a list of [[Object]] into **`O`** with [[Merge]] (last-in completes)
+Merge a list of [[Object]] into **`O`** with [[Merge]]. Merges from left to
+right, first items get completed by the next ones (last-in completes).
 @param O to assign to
 @param Os to assign
 @param depth (?=`'flat'`) to do it deeply

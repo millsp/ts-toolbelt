@@ -3,7 +3,7 @@ import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
 import {Strict} from '../Union/Strict'
 import {Boolean} from '../Boolean/Boolean'
-import {Compute} from '../Any/Compute'
+import {ComputeRaw} from '../Any/Compute'
 
 /**
 @hidden
@@ -23,7 +23,7 @@ type EitherStrict<O extends object, K extends Key> =
 @hidden
 */
 type EitherLoose<O extends object, K extends Key> =
-    Compute<__Either<O, K>>
+    ComputeRaw<__Either<O, K>>
 
 /**
 @hidden
