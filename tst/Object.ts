@@ -860,8 +860,8 @@ readonly f?: 0
 }
 
 checks([
-    check<O.Partial<O, 'flat'>,                             PARTIAL_O_FLAT,                             Test.Pass>(),
-    check<O.Path<O.Partial<O, 'deep'>, ['g', 'g']>,         O.Partial<O, 'deep'> | undefined,           Test.Pass>(),
+    check<O.Partial<O, 'flat'>,                         PARTIAL_O_FLAT,                     Test.Pass>(),
+    check<O.Path<O.Partial<O, 'deep'>, ['g', 'g']>,     O.Partial<O, 'deep'> | undefined,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
