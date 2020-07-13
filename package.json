@@ -9,15 +9,15 @@
     "typesafe",
     "typescript"
   ],
-  "homepage": "https://github.com/pirix-gh/ts-toolbelt",
+  "homepage": "https://github.com/millsp/ts-toolbelt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pirix-gh/ts-toolbelt"
+    "url": "https://github.com/millsp/ts-toolbelt"
   },
   "license": "Apache-2.0",
   "author": {
     "name": "Pierre-Antoine Mills",
-    "url": "https://github.com/pirix-gh"
+    "url": "https://github.com/millsp"
   },
   "main": "out/index.js",
   "types": "out/index.d.ts",

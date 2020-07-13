@@ -33,7 +33,7 @@ type _IncludesDeep<O, M extends any, match extends Match = 'default', limit exte
  * @example
  * ```ts
  * ```
- * @author pirix-gh, ctrlplusb
+ * @author millsp, ctrlplusb
  */
 export type IncludesDeep<O extends object, M extends any, match extends Match = 'default', limit extends Number = '10'> =
     _IncludesDeep<O, M, match, limit>
