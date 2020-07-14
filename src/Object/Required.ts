@@ -4,6 +4,7 @@ import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'
+import {PatchFlat} from './Patch'
 
 /**
 @hidden
@@ -39,6 +40,6 @@ Make some fields of **`O`** required (deeply or not)
 */
 export type Required<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: RequiredPart<O, depth>
-    0: MergeFlat<RequiredPart<Pick<O, K>, depth>, O>
+    0: PatchFlat<RequiredPart<Pick<O, K>, depth>, O, 1>
     // Pick a part of O (with K) -> nullable -> merge it with O
 }[Contains<Keys<O>, K>] & {}

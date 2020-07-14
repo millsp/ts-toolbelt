@@ -27,8 +27,8 @@ export type _Assign<O extends object, Os extends List<object>, depth extends Dep
     : never
 
 /**
-Assign a list of [[Object]] into **`O`** with [[Merge]]. Merges from left to
-right, first items get overridden by the next ones (last-in overrides).
+Assign a list of [[Object]] into **`O`** with [[Merge]]. Merges from right to
+left, first items get overridden by the next ones (last-in overrides).
 @param O to assign to
 @param Os to assign
 @param depth (?=`'flat'`) to do it deeply

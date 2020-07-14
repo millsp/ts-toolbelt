@@ -11,6 +11,7 @@ export type _NullableKeys<O extends object> = {
 
 /**
 Get the keys of **`O`** that are nullable
+
 (⚠️ needs `--strictNullChecks` enabled)
 @param O
 @returns [[Key]]

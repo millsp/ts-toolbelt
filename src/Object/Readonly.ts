@@ -4,6 +4,7 @@ import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {Contains} from '../Any/Contains'
 import {Keys} from '../Union/Keys'
+import {PatchFlat} from './Patch'
 
 /**
 @hidden
@@ -39,6 +40,6 @@ Make some fields of **`O`** readonly (deeply or not)
 */
 export type Readonly<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: ReadonlyPart<O, depth>
-    0: MergeFlat<ReadonlyPart<Pick<O, K>, depth>, O>
+    0: PatchFlat<ReadonlyPart<Pick<O, K>, depth>, O, 1>
     // Pick a part of O (with K) -> nullable -> merge it with O
 }[Contains<Keys<O>, K>] & {}

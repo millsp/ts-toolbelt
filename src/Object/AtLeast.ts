@@ -42,5 +42,3 @@ export type AtLeast<O extends object, K extends Key = Keys<O>> =
     O extends unknown
     ? _AtLeast<O, K>
     : never
-
-type t = AtLeast<{a: 1, b: 2, c: 3}, 'a' | 'b'>

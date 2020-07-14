@@ -11,6 +11,7 @@ export type _NonNullableKeys<O extends object> = {
 
 /**
 Get the keys of **`O`** that are non-nullable
+
 (⚠️ needs `--strictNullChecks` enabled)
 @param O
 @returns [[Key]]

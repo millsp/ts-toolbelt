@@ -4,6 +4,7 @@ import {Replace} from '../Union/Replace'
 import {MergeFlat} from './Merge'
 import {Exclude} from '../Union/Exclude'
 import {Keys} from './Keys'
+import {PatchFlat} from './Patch'
 
 /**
 Update in **`O`** the fields of key **`K`** with **`A`**.
@@ -37,8 +38,8 @@ type test0 = Update<User, 'id' | 'info', A.x | null>
 ```
 */
 export type Update<O extends object, K extends Key, A extends any> =
-    MergeFlat<{
-        [P in keyof O]: P extends K                     // proceed with the known keys
+    PatchFlat<{
+        [P in keyof O]: P extends K                        // proceed with the known keys
                         ? Replace<A, x, O[P]>
                         : O[P]
-    } & {}, Record<Exclude<K, Keys<O>>, Exclude<A, x>>> // add eventual missing keys
+    } & {}, Record<Exclude<K, Keys<O>>, Exclude<A, x>>, 1> // add eventual missing keys

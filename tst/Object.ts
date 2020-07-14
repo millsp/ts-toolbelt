@@ -12,7 +12,7 @@ type O = {
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
-         g : O // recursion
+         g : O
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
@@ -25,27 +25,16 @@ type O1 = {
          d?: never
 readonly e?: 'string1'
 readonly f : 0
-         g : O1 // recursion
+         g : {}
          h : never
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string, c: 0}}
+         l : [1, 2, 3]
 }
 
 // ---------------------------------------------------------------------------------------
 // ASSIGN
-
-type O_ASSIGN  = {readonly a: 1}
-type Os_ASSIGN = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
-
-type ASSIGN_O_Os = {a: 3, readonly b: 1, c?: 1}
-
-checks([
-    check<O.Assign<O_ASSIGN, Os_ASSIGN>,    ASSIGN_O_Os,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// ASSIGNUP
 
 type O_ASSIGNUP  = {readonly a: 1, c: 2}
 type Os_ASSIGNUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
@@ -113,30 +102,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// COMPACT
-
-type O_COMPACT  = {readonly a: 1}
-type Os_COMPACT = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
-
-type COMPACT_O_Os = {readonly a: 1, readonly b: 1, c?: 1}
-
-checks([
-    check<O.Compact<O_COMPACT, Os_COMPACT>,    COMPACT_O_Os,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// COMPACTUP
-
-type O_COMPACTUP  = {readonly a: 1, c?: 2}
-type Os_COMPACTUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
-
-type COMPACTUP_O_Os = {readonly a: 1, readonly b: 1, c?: 1 | 2}
-
-checks([
-    check<O.CompactUp<O_COMPACTUP, Os_COMPACTUP>,   COMPACTUP_O_Os,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // COMPULSORY
 
 type COMPULSORY_O = {
@@ -170,6 +135,7 @@ checks([
 
 type DIFF_O_O1_DEFAULT = {
     i: {a: string}
+    l: [1, 2, 3]
 }
 
 type DIFF_O_O1_EQUALS = {
@@ -180,6 +146,8 @@ type DIFF_O_O1_EQUALS = {
     h?: 1
     i : {a: string}
     k : {a: {b: string}}
+    l : [1, 2, 3]
+
 }
 
 checks([
@@ -191,16 +159,18 @@ checks([
 
 type DIFF_O1_O_DEFAULT = {
     i: {a: string}
+    l: [1, 2, 3]
 }
 
 type DIFF_O1_O_EQUALS = {
     a : string | number
     b : object
     d?: never
-    g : O1
+    g : {}
     h : never
     i : {a: string}
     k : {a: {b: string, c: 0}}
+    l : [1, 2, 3]
 }
 
 checks([
@@ -276,16 +246,18 @@ checks([
 
 type EXCLUDE_O1_O_DEFAULT = {
     i: {a: string}
+    l: [1, 2, 3]
 }
 
 type EXCLUDE_O1_O_EQUALS = {
     a : string | number
     b : object
     d?: never
-    g : O1
+    g : {}
     h : never
     i : {a: string}
     k : {a: {b: string, c: 0}}
+    l: [1, 2, 3]
 }
 
 checks([
@@ -307,9 +279,9 @@ checks([
 
 // ---------------------------------------------------------------------------------------
 
-type EXCLUDEKEYS_O1_DEFAULT = 'i'
+type EXCLUDEKEYS_O1_DEFAULT = 'i' | 'l'
 
-type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i' | 'k'
+type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i' | 'k' | 'l'
 
 checks([
     check<O.ExcludeKeys<O1, O, 'default'>,  EXCLUDEKEYS_O1_DEFAULT, Test.Pass>(),
@@ -490,65 +462,14 @@ checks([
 // ---------------------------------------------------------------------------------------
 // MERGE
 
-type MERGE_O_O1 = {
-         a : string
-         b : number
-         c : {a: 'a'} & {b: 'b'}
-         d?: 'string0'
-readonly e?: 'string1'
-readonly f : 0
-         g : O
-         h?: 1
-         i : {a: string}
-         j : 'a' | undefined
-         k : {a: {b: string}}
-}
-
-type MERGE_O1_O = {
-         a : string | number
-         b : object
-         c : {a: 'a'} & {b: 'b'}
-         d?: never
-readonly e?: 'string1'
-readonly f : 0
-         g : O1
-         h : never
-         i : {a: string}
-         j : 'a' | undefined
-         k : {a: {b: string, c: 0}}
-}
-
-type MERGE_O_O1_DEEP = {
-         a : string
-         b : number
-         c : {a: 'a', b: 'b'}
-         d?: 'string0'
-readonly e?: 'string1'
-readonly f : 0
-         g : O.Merge<O, O1, 'deep'>
-         h?: 1
-         i : {a: string}
-         j : 'a' | undefined
-         k : {a: {b: string, c: 0}}
-}
-
-checks([
-    check<O.Merge<O, O1>,           MERGE_O_O1,         Test.Pass>(),
-    check<O.Merge<O1, O>,           MERGE_O1_O,         Test.Pass>(),
-    check<O.Merge<O, O1, 'deep'>,   MERGE_O_O1_DEEP,    Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// MERGEUP
-
-type O_MERGEUP = {
+type O_MERGE = {
     a?: string
     c: {
         a?: string
         b?: number
     } | Date
     d: 'hello' | undefined
-    e: number
+    e: number | {a: 1}
     f?: {
         a : string
         b?: number
@@ -570,9 +491,10 @@ type O_MERGEUP = {
         }
     },
     k?: {[k: string]: string}
+    l: [{a: 'a'}]
 }
 
-type O1_MERGEUP = {
+type O1_MERGE = {
     a: object | undefined
     b: number
     c: {
@@ -581,7 +503,7 @@ type O1_MERGEUP = {
         c : object
     }
     d: 'goodbye'
-    e: string
+    e: string | {b: 2}
     f?: {
         a : object
         b?: object
@@ -601,9 +523,11 @@ type O1_MERGEUP = {
         }
     }
     k: {} | Date
+    l: [{b: 'b'}, 2, 3]
+    m: []
 }
 
-type MERGEUP_O_O1 = {
+type MERGE_O_O1 = {
     a : string | object | undefined
     b : number
     c : {
@@ -611,7 +535,7 @@ type MERGEUP_O_O1 = {
         b?: number
     } | Date
     d : 'hello' | undefined
-    e : number
+    e : number | {a: 1}
     f?: {
         a : string
         b?: number
@@ -637,9 +561,64 @@ type MERGEUP_O_O1 = {
         }
     },
     k: {} | {[k: string]: string} | Date
+    l: [{a: 'a'}]
+    m: []
 }
 
-type MERGEUP_O_O1_DEEP = {
+type MERGE_O_O1_DEEP_0 = {
+    a : string | object | undefined
+    b : number
+    c : {
+        a : string | object
+        b?: number | object
+        c : object
+    } | Date
+    d : 'hello' | 'goodbye'
+    e : number | {a: 1} | {a: 1, b: 2}
+    f?: {
+        a: string
+        b?: number | undefined
+    } | {
+        a: object
+        b?: object | undefined
+        c: object
+    } | {
+        a: string
+        b?: number | object | undefined
+        c: object
+    } | undefined
+    g?: {
+        a?: string
+        b?: number
+    }
+    h: {
+        a: number
+        b: number
+    } | {
+        a: string
+    }
+    i: {
+        a: string
+    } | {
+        a: number
+    } | undefined
+    j: {
+        a: {
+            b?: {} | {
+                c: 1
+            }
+        }
+    } | {
+        a: {
+            b?: {}
+        }
+    },
+    k: {} | {[k: string]: string} | {[x: string]: string} | Date
+    l: [{a: 'a', b: 'b'}, 2, 3]
+    m: []
+}
+
+type MERGE_O_O1_DEEP_1 = {
     a : string | object | undefined
     b : number
     c : {
@@ -648,7 +627,7 @@ type MERGEUP_O_O1_DEEP = {
         c : object
     } | Date
     d : 'hello' | undefined
-    e : number
+    e : number | {a: 1} | {a: 1, b: 2}
     f?: {
         a: string
         b?: number | undefined
@@ -684,13 +663,25 @@ type MERGEUP_O_O1_DEEP = {
         }
     },
     k: {} | {[k: string]: string} | Date
+    l: {0: {a: 'a', b: 'b'}, 1: 2, 2: 3}
+    m: {}
 }
 
 checks([
-    check<O.MergeUp<[1], [2, 3], 'deep', 0>,            [1, 3],             Test.Pass>(),
-    check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
-    check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
-    check<O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep'>,     MERGEUP_O_O1_DEEP,  Test.Pass>(),
+    check<O.Merge<[1], [2, 3], 'flat', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.Merge<[1], [2, 3], 'deep', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE>,               MERGE_O_O1,             Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 0>,    MERGE_O_O1_DEEP_0,      Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// MERGEALL
+
+checks([
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE]>,              MERGE_O_O1,         Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 0>,   MERGE_O_O1_DEEP_0,  Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 1>,   MERGE_O_O1_DEEP_1,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -876,6 +867,68 @@ checks([
 
 checks([
     check<O.Overwrite<{a: string}, {a: number, b: any}>,    {a: number},    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PATCH
+
+type PATCH_O_O1 = {
+    a : string
+    b : number
+    c : {a: 'a'} & {b: 'b'}
+    d?: 'string0'
+readonly e?: 'string1'
+readonly f : 0
+    g : O
+    h?: 1
+    i : {a: string}
+    j : 'a' | undefined
+    k : {a: {b: string}}
+    l : [1, 2, 3]
+}
+
+type PATCH_O1_O = {
+    a : string | number
+    b : object
+    c : {a: 'a'} & {b: 'b'}
+    d?: never
+readonly e?: 'string1'
+readonly f : 0
+    g : {}
+    h : never
+    i : {a: string}
+    j : 'a' | undefined
+    k : {a: {b: string, c: 0}}
+    l : [1, 2, 3]
+}
+
+type PATCH_O_O1_DEEP = {
+    a : string
+    b : number
+    c : {a: 'a', b: 'b'}
+    d?: 'string0'
+readonly e?: 'string1'
+readonly f : 0
+    g : O
+    h?: 1
+    i : {a: string}
+    j : 'a' | undefined
+    k : {a: {b: string, c: 0}}
+    l : [1, 2, 3]
+}
+
+checks([
+    check<O.Patch<O, O1>,               PATCH_O_O1,         Test.Pass>(),
+    check<O.Patch<O1, O>,               PATCH_O1_O,         Test.Pass>(),
+    check<O.Patch<O, O1, 'deep', 0>,    PATCH_O_O1_DEEP,    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PATCHALL
+
+checks([
+    check<O.PatchAll<{}, [O, O1]>,              PATCH_O_O1,         Test.Pass>(),
+    check<O.PatchAll<{}, [O, O1], 'deep', 0>,   PATCH_O_O1_DEEP,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

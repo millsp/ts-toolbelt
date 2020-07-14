@@ -10,12 +10,13 @@ import {Key} from '../Any/Key'
 import {List} from './List'
 import {Naked} from './_Internal'
 import {Extends} from '../Any/Extends'
+import {PatchFlat} from '../Object/Patch'
 
 /**
 @hidden
 */
 type __ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = {}, I extends Iteration = IterationOf<'0'>> = {
-    0: __ZipObj<LKeys, LFields, MergeFlat<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>>, Next<I>>
+    0: __ZipObj<LKeys, LFields, PatchFlat<O, Record<LKeys[Pos<I>], LFields[Pos<I>]>, 1>, Next<I>>
     1: O
 }[Extends<Pos<I>, Length<LKeys>>]
 

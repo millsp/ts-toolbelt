@@ -5,6 +5,7 @@ import {Pick} from './Pick'
 import {Key} from '../Any/Key'
 import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'
+import {PatchFlat} from './Patch'
 
 /**
 @hidden
@@ -40,6 +41,6 @@ Make some fields of **`O`** nullable (deeply or not)
 */
 export type Nullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: NullablePart<O, depth>
-    0: MergeFlat<NullablePart<Pick<O, K>, depth>, O>
+    0: PatchFlat<NullablePart<Pick<O, K>, depth>, O, 1>
     // Pick a part of O (with K) -> nullable -> merge it with O
 }[Contains<Keys<O>, K>] & {}
