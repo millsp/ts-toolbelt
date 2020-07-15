@@ -28,10 +28,7 @@ type PickObject<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'
 type PickList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
   O extends object                  // Same as above, but
   ? O extends (infer A)[]           // If O is an array
-    ? {
-        1: PickList<A, Path, I>[] // Dive into the array (TS <3.7)
-        0: never
-      }[O extends List ? 1 : 0]
+    ? PickList<A, Path, I>[]        // Dive into the array
     : _OPick<O, Path[Pos<I>]> extends infer Picked
       ? Pos<I> extends LastIndex<Path>
         ? Picked
