@@ -17,7 +17,6 @@ type __Assign<O extends object, Os extends List<object>, depth extends Depth, I 
     1: O
 }[Extends<Pos<I>, Length<Os>>]
 
-
 /**
 @hidden
 */
