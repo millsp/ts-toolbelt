@@ -492,6 +492,7 @@ type O_MERGE = {
     },
     k?: {[k: string]: string}
     l: [{a: 'a'}]
+    n: 42
 }
 
 type O1_MERGE = {
@@ -563,6 +564,7 @@ type MERGE_O_O1 = {
     k: {} | {[k: string]: string} | Date
     l: [{a: 'a'}]
     m: []
+    n: 42
 }
 
 type MERGE_O_O1_DEEP_0 = {
@@ -616,6 +618,7 @@ type MERGE_O_O1_DEEP_0 = {
     k: {} | {[k: string]: string} | {[x: string]: string} | Date
     l: [{a: 'a', b: 'b'}, 2, 3]
     m: []
+    n: 42
 }
 
 type MERGE_O_O1_DEEP_1 = {
@@ -665,6 +668,7 @@ type MERGE_O_O1_DEEP_1 = {
     k: {} | {[k: string]: string} | Date
     l: {0: {a: 'a', b: 'b'}, 1: 2, 2: 3}
     m: {}
+    n: 42
 }
 
 checks([

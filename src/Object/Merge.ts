@@ -20,9 +20,9 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends Boolean> =
     : [OK] extends [never]                   // if it does not exist
       ? O1K                                  // complete with prop of `O1`
       : {
-          1: undefined extends OK ? OK  : OK // ramda : keep  undefined
-          0: undefined extends OK ? O1K : OK // lodash: leave undefined
-      }[style]
+            1: [OK] extends [undefined] ? OK  : OK // ramda : keep undefined
+            0: [OK] extends [undefined] ? O1K : OK // lodash: fill undefined
+        }[style]
 
 /**
 @hidden
