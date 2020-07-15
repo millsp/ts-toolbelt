@@ -3,7 +3,7 @@
     <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="300" alt="Logo">
   </a>
   <h1 align="center">ts-toolbelt</h1>
-  <h4 align="center">👷 Higher Type Safety for TypeScript. A collection of useful type utilities.</h4>
+  <h4 align="center">Higher Type Safety for TypeScript. A collection of useful type utilities.</h4>
   <br>
   <p align="center">
     <a href="https://millsp.github.io/ts-toolbelt/">📖 Read Docs</a>
@@ -88,7 +88,8 @@
 
 <h4 align="center"><i>"Avoid bugs by writing high quality types"</i></h4><br>
 
-**ts-toolbelt** is a **type library** that provides simple ways to **update**, **change**, and **compute** TypeScript types. It offers unique dynamic features, allowing you to write type-safe software more **easily** and in **less time** than you do today.
+**ts-toolbelt** ships **utility types** that provide simple ways to **update**, **change**, and **compute** TypeScript types.
+It offers unique dynamic features, allowing you to write type-safe software more **easily** and in **less time** than you do today.
 
 Its programmatic API brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest and the most reliable type collection out there.
 It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
@@ -108,9 +109,9 @@ You'll find all the types you can ever need in this single and **well organized*
 
 ## 🍩 Features
 
-Here's some of the most useful features:
+Here's some of the most useful utilities:
 
-* [Merge two types together](https://millsp.github.io/ts-toolbelt/modules/_object_mergeup_.html)
+* [Merge two types together](https://millsp.github.io/ts-toolbelt/modules/_object_merge_.html)
 * [Update the field of a type](https://millsp.github.io/ts-toolbelt/modules/_object_update_.html)
 * [Make some fields optional](https://millsp.github.io/ts-toolbelt/modules/_object_optional_.html)
 * [Change a type at any depth!](https://millsp.github.io/ts-toolbelt/modules/_object_p_update_.html)
@@ -161,15 +162,15 @@ npm install ts-toolbelt --save
 ### Hello World
 
 ```ts
-import {Object} from 'ts-toolbelt'
+import {Object} from "ts-toolbelt"
 // Check the docs below for more
 
 // Merge two `object` together
-type merge = Object.MergeUp<{name: string}, {age?: number}>
+type merge = Object.Merge<{name: string}, {age?: number}>
 // {name: string, age?: number}
 
 // Make a field of an `object` optional
-type optional = Object.Optional<{id: number, name: string}, 'name'}>
+type optional = Object.Optional<{id: number, name: string}, "name"}>
 // {id: number, name?: string}
 ```
 
@@ -182,32 +183,30 @@ You can [**level-up, and re-code this library from scratch**](https://medium.com
 ### Where to start
 
 To get you started, we recommend that you visit the documentation of the following essential tools. 
-
 | Object                                                                                  | List                                                                          | Function                                                                                | Any                                                                                | Union                                                                                  |
 |-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| [Either](https://millsp.github.io/ts-toolbelt/modules/_object_either_.html)           | [Append](https://millsp.github.io/ts-toolbelt/modules/_list_append_.html)   | [NoInfer](https://millsp.github.io/ts-toolbelt/modules/_function_noinfer_.html)       | [Compute](https://millsp.github.io/ts-toolbelt/modules/_any_compute_.html)       | [Filter](https://millsp.github.io/ts-toolbelt/modules/_union_filter_.html)           |
-| [Exclude](https://millsp.github.io/ts-toolbelt/modules/_object_exclude_.html)         | [Concat](https://millsp.github.io/ts-toolbelt/modules/_list_concat_.html)   | [Parameters](https://millsp.github.io/ts-toolbelt/modules/_function_parameters_.html) | [Promisable](https://millsp.github.io/ts-toolbelt/modules/_any_promisable_.html) | [IntersectOf](https://millsp.github.io/ts-toolbelt/modules/_union_intersectof_.html) |
-| [Filter](https://millsp.github.io/ts-toolbelt/modules/_object_filter_.html)           | [Drop](https://millsp.github.io/ts-toolbelt/modules/_list_drop_.html)       | [Promisify](https://millsp.github.io/ts-toolbelt/modules/_function_promisify_.html)   | [Type](https://millsp.github.io/ts-toolbelt/modules/_any_type_.html)             | [Merge](https://millsp.github.io/ts-toolbelt/modules/_union_merge_.html)             |
-| [Merge](https://millsp.github.io/ts-toolbelt/modules/_object_merge_.html)             | [Flatten](https://millsp.github.io/ts-toolbelt/modules/_list_flatten_.html) | [Return](https://millsp.github.io/ts-toolbelt/modules/_function_return_.html)         |                                                                                    | [Select](https://millsp.github.io/ts-toolbelt/modules/_union_select_.html)           |
-| [MergeUp](https://millsp.github.io/ts-toolbelt/modules/_object_mergeup_.html)         | [Pop](https://millsp.github.io/ts-toolbelt/modules/_list_pop_.html)         |                                                                                         |                                                                                    | [Strict](https://millsp.github.io/ts-toolbelt/modules/_union_strict_.html)           |
-| [NonNullable](https://millsp.github.io/ts-toolbelt/modules/_object_nonnullable_.html) | [Prepend](https://millsp.github.io/ts-toolbelt/modules/_list_prepend_.html) |                                                                                         |                                                                                    |                                                                                        |
-| [Nullable](https://millsp.github.io/ts-toolbelt/modules/_object_nullable_.html)       | [Remove](https://millsp.github.io/ts-toolbelt/modules/_list_remove_.html)   |                                                                                         |                                                                                    |                                                                                        |
-| [Omit](https://millsp.github.io/ts-toolbelt/modules/_object_omit_.html)               | [Reverse](https://millsp.github.io/ts-toolbelt/modules/_list_reverse_.html) |                                                                                         |                                                                                    |                                                                                        |
-| [Optional](https://millsp.github.io/ts-toolbelt/modules/_object_optional_.html)       | [Tail](https://millsp.github.io/ts-toolbelt/modules/_list_tail_.html)       |                                                                                         |                                                                                    |                                                                                        |
-| [Overwrite](https://millsp.github.io/ts-toolbelt/modules/_object_overwrite_.html)     |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [P/Merge](https://millsp.github.io/ts-toolbelt/modules/_object_p/merge_.html)         |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [P/Omit](https://millsp.github.io/ts-toolbelt/modules/_object_p/omit_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [P/Pick](https://millsp.github.io/ts-toolbelt/modules/_object_p/pick_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [P/Update](https://millsp.github.io/ts-toolbelt/modules/_object_p/update_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Path](https://millsp.github.io/ts-toolbelt/modules/_object_path_.html)               |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Pick](https://millsp.github.io/ts-toolbelt/modules/_object_pick_.html)               |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Readonly](https://millsp.github.io/ts-toolbelt/modules/_object_readonly_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Required](https://millsp.github.io/ts-toolbelt/modules/_object_required_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Select](https://millsp.github.io/ts-toolbelt/modules/_object_select_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Unionize](https://millsp.github.io/ts-toolbelt/modules/_object_unionize_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [UnionOf](https://millsp.github.io/ts-toolbelt/modules/_object_unionof_.html)         |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Update](https://millsp.github.io/ts-toolbelt/modules/_object_update_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
-| [Writable](https://millsp.github.io/ts-toolbelt/modules/_object_writable_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Either](https://pirix-gh.github.io/ts-toolbelt/modules/_object_either_.html)           | [Append](https://pirix-gh.github.io/ts-toolbelt/modules/_list_append_.html)   | [NoInfer](https://pirix-gh.github.io/ts-toolbelt/modules/_function_noinfer_.html)       | [Compute](https://pirix-gh.github.io/ts-toolbelt/modules/_any_compute_.html)       | [Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_union_filter_.html)           |
+| [Exclude](https://pirix-gh.github.io/ts-toolbelt/modules/_object_exclude_.html)         | [Concat](https://pirix-gh.github.io/ts-toolbelt/modules/_list_concat_.html)   | [Parameters](https://pirix-gh.github.io/ts-toolbelt/modules/_function_parameters_.html) | [Promisable](https://pirix-gh.github.io/ts-toolbelt/modules/_any_promisable_.html) | [IntersectOf](https://pirix-gh.github.io/ts-toolbelt/modules/_union_intersectof_.html) |
+| [Filter](https://pirix-gh.github.io/ts-toolbelt/modules/_object_filter_.html)           | [Drop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_drop_.html)       | [Promisify](https://pirix-gh.github.io/ts-toolbelt/modules/_function_promisify_.html)   | [Type](https://pirix-gh.github.io/ts-toolbelt/modules/_any_type_.html)             | [Merge](https://pirix-gh.github.io/ts-toolbelt/modules/_union_merge_.html)             |
+| [Merge](https://pirix-gh.github.io/ts-toolbelt/modules/_object_merge_.html)             | [Flatten](https://pirix-gh.github.io/ts-toolbelt/modules/_list_flatten_.html) | [Return](https://pirix-gh.github.io/ts-toolbelt/modules/_function_return_.html)         |                                                                                    | [Select](https://pirix-gh.github.io/ts-toolbelt/modules/_union_select_.html)           |
+| [NonNullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nonnullable_.html) | [Pop](https://pirix-gh.github.io/ts-toolbelt/modules/_list_pop_.html)         |                                                                                         |                                                                                    | [Strict](https://pirix-gh.github.io/ts-toolbelt/modules/_union_strict_.html)           |
+| [Nullable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_nullable_.html)       | [Prepend](https://pirix-gh.github.io/ts-toolbelt/modules/_list_prepend_.html) |                                                                                         |                                                                                    |                                                                                        |
+| [Omit](https://pirix-gh.github.io/ts-toolbelt/modules/_object_omit_.html)               | [Remove](https://pirix-gh.github.io/ts-toolbelt/modules/_list_remove_.html)   |                                                                                         |                                                                                    |                                                                                        |
+| [Optional](https://pirix-gh.github.io/ts-toolbelt/modules/_object_optional_.html)       | [Reverse](https://pirix-gh.github.io/ts-toolbelt/modules/_list_reverse_.html) |                                                                                         |                                                                                    |                                                                                        |
+| [Overwrite](https://pirix-gh.github.io/ts-toolbelt/modules/_object_overwrite_.html)     | [Tail](https://pirix-gh.github.io/ts-toolbelt/modules/_list_tail_.html)       |                                                                                         |                                                                                    |                                                                                        |
+| [P/Merge](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/merge_.html)         |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [P/Omit](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/omit_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [P/Pick](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/pick_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [P/Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_p/update_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Path](https://pirix-gh.github.io/ts-toolbelt/modules/_object_path_.html)               |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Pick](https://pirix-gh.github.io/ts-toolbelt/modules/_object_pick_.html)               |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Readonly](https://pirix-gh.github.io/ts-toolbelt/modules/_object_readonly_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Required](https://pirix-gh.github.io/ts-toolbelt/modules/_object_required_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Select](https://pirix-gh.github.io/ts-toolbelt/modules/_object_select_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Unionize](https://pirix-gh.github.io/ts-toolbelt/modules/_object_unionize_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [UnionOf](https://pirix-gh.github.io/ts-toolbelt/modules/_object_unionof_.html)         |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Update](https://pirix-gh.github.io/ts-toolbelt/modules/_object_update_.html)           |                                                                               |                                                                                         |                                                                                    |                                                                                        |
+| [Writable](https://pirix-gh.github.io/ts-toolbelt/modules/_object_writable_.html)       |                                                                               |                                                                                         |                                                                                    |                                                                                        |
 
 > **`TIP`** [Add something to this list](https://github.com/millsp/ts-toolbelt/edit/master/README.md)
 
@@ -228,22 +227,22 @@ There are many ways to import the types into your project:
 
 * **Explicit**
   ```ts
-  import {Any, Boolean, Class, Function, Iteration, List, Number, Object, String, Union} from 'ts-toolbelt'
+  import {Any, Boolean, Class, Function, Iteration, List, Number, Object, String, Union} from "ts-toolbelt"
   ```
 
 * **Compact**
   ```ts
-  import {A, B, C, F, I, L, N, O, S, U} from 'ts-toolbelt'
+  import {A, B, C, F, I, L, N, O, S, U} from "ts-toolbelt"
   ```
 
 * **Portable**
   ```ts
-  import tb from 'ts-toolbelt'
+  import tb from "ts-toolbelt"
   ```
 
 You can also import our non-official API from the community:
   ```ts
-  import {Community} from 'ts-toolbelt'
+  import {Community} from "ts-toolbelt"
   ```
 
 > **`TIP`** The community API is for our community to publish useful types that don't see fit in the standard API.
@@ -301,7 +300,7 @@ Contributions are what make the open source community such an amazing place to l
 
    You **must** follow the [conventional commit](https://conventionalcommits.org) to be able to commit
    ```sh
-   git commit -m 'feat(name): Added this CoolFeature'
+   git commit -m "feat(name): Added this CoolFeature"
    ```
 
 6. [Run the tests](#-running-tests)
@@ -329,13 +328,13 @@ npm test
 Want to test your own types? Let's get started:
 
 ```ts
-import {Number, Test} from 'ts-toolbelt'
+import {Number, Test} from "ts-toolbelt"
 
 const {checks, check} = Test
 
 checks([
-    check<Number.Plus<'1', '30'>, '31', Test.Pass>(),
-    check<Number.Plus<'5', '-3'>, '2',  Test.Pass>(),
+    check<Number.Plus<"1", "30">, "31", Test.Pass>(),
+    check<Number.Plus<"5", "-3">, "2",  Test.Pass>(),
 ])
 ```
 
@@ -380,7 +379,7 @@ You can either request a new feature or a bug fix, and then fund it.
 **The money will be transparently split with an issue's assignees.**
 
 <a href="https://issuehunt.io/r/millsp/ts-toolbelt" >
-  <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/issuehunt.png" height="25px">
+  <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/issuehunt.svg" height="25px">
 </a>
 <br>
 
@@ -410,3 +409,7 @@ Many, many thanks to all the [contributors](https://github.com/millsp/ts-toolbel
 
 * [`eledoc`](https://github.com/millsp/eledoc) - 🌒 A material dark theme for TypeDoc 
 * [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt?ref=badge_large)
