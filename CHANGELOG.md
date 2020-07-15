@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.13.2](https://github.com/millsp/ts-toolbelt/compare/v6.13.1...v6.13.2) (2020-07-15)
+
+
+### Bug Fixes
+
+* **merge:** fields that exist in `O` and not `O1` become `never` ([a60ae40](https://github.com/millsp/ts-toolbelt/commit/a60ae400ef89bcce2ae0e5df18450a4dd1be6cb8))
+
 ### [6.13.1](https://github.com/millsp/ts-toolbelt/compare/v6.13.0...v6.13.1) (2020-07-15)
 
 
