@@ -10,8 +10,6 @@ export {Key} from './Key'
 export {Is} from './Is'
 export {IsLiteral} from './IsLiteral'
 export {Kind} from './Kind'
-export {Omit} from './Omit'
-export {Pick} from './Pick'
 export {Promisable} from './Promisable'
 export {Promise} from './Promise'
 export {PromiseOf} from './PromiseOf'
@@ -21,4 +19,6 @@ export {x} from './x'
 
 // LEGACY
 
+export {Omit} from './Omit'
+export {Pick} from './Pick'
 export {Contains as Implements} from './Contains'
