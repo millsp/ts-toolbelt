@@ -27,26 +27,25 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends Boolean> =
 /**
 @hidden
 */
-type NoArray<A> =
-    A extends Array<any>
+type NoList<A> =
+    A extends List
     ? ObjectOf<A>
     : A
 
 /**
 @hidden
 */
-export type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
+type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (Anyfy<O> & O1)]: MergeProp<At<O, K>, At<O1, K>, K, OOK, style>
-    } & {}
-    : never : never
+    } & {} : never : never
 
 /**
 @hidden
 */
-export type _MergeFlat<O extends object, O1 extends object, style extends Boolean> =
+type _MergeFlat<O extends object, O1 extends object, style extends Boolean> =
     // when we merge, we systematically remove inconvenient array methods
-    __MergeFlat<NoArray<O>, NoArray<O1>, style> extends infer X
+    __MergeFlat<NoList<O>, NoList<O1>, style> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
         1: X                                                // ramda
         0: Extends<O, List> extends 1 ? ListOf<X & {}> : X  // lodash
@@ -66,8 +65,7 @@ export type MergeFlat<O extends object, O1 extends object, style extends Boolean
 type ___MergeDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (Anyfy<O> & O1)]: _MergeDeep<At<O, K>, At<O1, K>, K, OOK, style>
-    }
-    : never : never
+    } : never : never
 
 /**
 @hidden
@@ -90,12 +88,12 @@ type __MergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends Boolean>
 */
 type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends Boolean> =
     // when we merge, we systematically remove inconvenient array methods
-    __MergeDeep<NoArray<O>, NoArray<O1>, K, OOK, style> extends infer X
+    __MergeDeep<NoList<O>, NoList<O1>, K, OOK, style> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
-        1: X                                                    // ramda
-        0: Extends<O | O1, List> extends 1 ? ListOf<X & {}> : X // lodash
-    }[style] // for lodash, we preserve (restore) arrays like it does
-                // arrays are broken with `NoArray`, restored by `ListOf`
+          1: X                                                    // ramda
+          0: Extends<O | O1, List> extends 1 ? ListOf<X & {}> : X // lodash
+      }[style] // for lodash, we preserve (restore) arrays like it does
+               // arrays are broken with `NoList`, restored by `ListOf`
     : never
 
 /**
