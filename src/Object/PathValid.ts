@@ -5,7 +5,7 @@ import {Pos} from '../Iteration/Pos'
 import {At} from './At'
 import {Cast} from '../Any/Cast'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
-import {UpdateField} from '../List/Update'
+import {Update} from '../List/Update'
 import {Key} from '../Iteration/Key'
 import {Key as AKey} from '../Any/Key'
 import {List} from '../List/List'
@@ -15,7 +15,7 @@ import {Length} from '../List/Length'
 @hidden
 */
 type ValidatePath<O, Path extends List<AKey>, I extends Iteration> =
-    UpdateField<
+    Update<
         Path,
         Key<I>,
         [At<O & {}, Path[Pos<I>]>] extends [never]

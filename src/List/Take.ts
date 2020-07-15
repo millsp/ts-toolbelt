@@ -7,7 +7,6 @@ import {Way} from '../Iteration/_Internal'
 import {List} from './List'
 import {Prev} from '../Iteration/Prev'
 import {Cast} from '../Any/Cast'
-import {Naked} from './_Internal'
 import {Tail} from './Tail'
 import {Extends} from '../Any/Extends'
 
@@ -41,7 +40,7 @@ type __Take<L extends List, N extends Iteration, way extends Way> = {
 @hidden
 */
 export type _Take<L extends List, N extends Number, way extends Way = '->'> =
-    __Take<Naked<L>, IterationOf<N>, way> extends infer X
+    __Take<L, IterationOf<N>, way> extends infer X
     ? Cast<X, List>
     : never
 

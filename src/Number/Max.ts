@@ -46,5 +46,4 @@ type test3 = N.Min<'-2' | '10' | 'oops'>   // string
 */
 export type Max<N extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
     Format<IterationOf<FindMaxNumberInUnion<N, IMap>, IMap>, fmt, IMap>
-    type t = Max<'ddd'>
 

@@ -3,6 +3,9 @@ import {Exclude} from '../Union/Exclude'
 import {Key} from '../Any/Key'
 import {Keys} from './Keys'
 
+/**
+ * @hidden
+ */
 export type _Omit<O extends object, K extends Key> =
     _Pick<O, Exclude<Keys<O>, K>>
 

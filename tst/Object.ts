@@ -1291,12 +1291,10 @@ type O_UPDATE = {
 
 type UPDATE_O = {
     a?: 'xxxx'
-    b : 'xxxx'
 }
 
 type UPDATE_O_X = {
     a?: 'a'
-    b : never
 }
 
 type UPDATE_O_STRING_42 = {
@@ -1308,7 +1306,6 @@ type UPDATE_O_STRING_42 = {
 checks([
     check<O.Update<O_UPDATE, 'a' | 'b', 'xxxx'>,    UPDATE_O,               Test.Pass>(),
     check<O.Update<O_UPDATE, 'a' | 'b', A.x>,       UPDATE_O_X,             Test.Pass>(),
-    check<O.Update<O_UPDATE, string, 42>,           UPDATE_O_STRING_42,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

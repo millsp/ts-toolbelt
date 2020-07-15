@@ -4,7 +4,6 @@ import {Next} from '../Iteration/Next'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
-import {MergeFlat} from '../Object/Merge'
 import {Record} from '../Object/Record'
 import {Key} from '../Any/Key'
 import {List} from './List'
@@ -24,7 +23,7 @@ type __ZipObj<LKeys extends List<Key>, LFields extends List, O extends object = 
 @hidden
 */
 export type _ZipObj<LKeys extends List<Key>, LFields extends List> =
-    __ZipObj<Naked<LKeys>, Naked<LFields>> extends infer X
+    __ZipObj<Naked<LKeys>, LFields> extends infer X
     ? Cast<X, object>
     : never
 

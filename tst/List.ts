@@ -1,4 +1,5 @@
 import {Test, T, A} from '../src/ts-toolbelt'
+import {Equals} from '../src/Any/Equals'
 
 const {checks, check} = Test
 
@@ -624,9 +625,9 @@ checks([
 // TAKE
 
 checks([
-    check<T.Take<[1, 2, 3?, 4?], '2', '->'>,    [1, 2],                             Test.Pass>(),
-    check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3 | undefined, 4 | undefined],     Test.Pass>(), // nothing happens
-    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],                             Test.Pass>(), // nothing happens
+    check<T.Take<[1, 2, 3?, 4?], '2', '->'>,    [1, 2],     Test.Pass>(),
+    check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3?, 4?],   Test.Pass>(), // nothing happens
+    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],     Test.Pass>(), // nothing happens
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -686,10 +687,8 @@ checks([
 // UPDATE
 
 checks([
-    check<T.Update<string[], '1', 2>,   Array<(string | 2)>,    Test.Pass>(),
-    check<T.Update<[], '1', 2>,         [undefined, 2],         Test.Pass>(),
-    check<T.Update<[1], '2', 2>,        [1, undefined, 2],      Test.Pass>(),
-    check<T.Update<[1?], 0,  2>,        [2],                    Test.Pass>(),
+    check<T.Update<string[], any, A.x | 2>,     Array<(string | 2)>,    Test.Pass>(),
+    check<T.Update<[1], '0', 2>,                [2],                    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -1,4 +1,3 @@
-import {MergeFlat} from './Merge'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'
 import {Key} from '../Any/Key'

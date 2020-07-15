@@ -6,7 +6,6 @@ import {Number} from '../Number/Number'
 import {Cast} from '../Any/Cast'
 import {Key} from '../Iteration/Key'
 import {List} from './List'
-import {Naked} from './_Internal'
 import {Extends} from '../Any/Extends'
 
 /**
@@ -21,7 +20,7 @@ type __Repeat<N extends Number, A, L extends List = [], I extends Iteration = It
 @hidden
 */
 export type _Repeat<A extends any, N extends Number, L extends List = []> =
-    __Repeat<N, A, Naked<L>> extends infer X
+    __Repeat<N, A, L> extends infer X
     ? Cast<X, List>
     : never
 

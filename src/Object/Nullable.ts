@@ -1,4 +1,3 @@
-import {MergeFlat} from './Merge'
 import {Nullable as UNullable} from '../Union/Nullable'
 import {Depth} from './_Internal'
 import {Pick} from './Pick'

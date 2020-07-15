@@ -22,7 +22,7 @@ type __Zip<L extends List, L1 extends List, LN extends List = [], I extends Iter
 @hidden
 */
 export type _Zip<L extends List, L1 extends List> =
-    __Zip<Naked<L>, Naked<L1>> extends infer X
+    __Zip<Naked<L>, L1> extends infer X
     ? Cast<X, List>
     : never
 

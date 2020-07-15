@@ -1,6 +1,5 @@
 import {Pick} from './Pick'
 import {Depth} from './_Internal'
-import {MergeFlat} from './Merge'
 import {Key} from '../Any/Key'
 import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'

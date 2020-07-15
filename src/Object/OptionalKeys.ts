@@ -4,7 +4,9 @@ import {Key} from '../Any/Key'
 @hidden
 */
 export type _OptionalKeys<O extends object> = {
-    [K in keyof O]-?: {} extends Pick<O, K> ? K : never
+    [K in keyof O]-?: {} extends Pick<O, K>
+                      ? K
+                      : never
 }[keyof O]
 
 /**

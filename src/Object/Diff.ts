@@ -1,4 +1,3 @@
-import {MergeFlat} from './Merge'
 import {Exclude} from './Exclude'
 import {Match} from '../Any/_Internal'
 import {PatchFlat} from './Patch'

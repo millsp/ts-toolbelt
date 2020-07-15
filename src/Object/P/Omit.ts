@@ -6,7 +6,7 @@ import {Key} from '../../Any/Key'
 import {_Omit as _OOmit} from '../Omit'
 import {LastIndex} from '../../List/LastIndex'
 import {List} from '../../List/List'
-import {Boolean, False} from '../../Boolean/Boolean'
+import {Boolean} from '../../Boolean/Boolean'
 
 /**
 @hidden
