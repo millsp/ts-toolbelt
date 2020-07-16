@@ -1,4 +1,6 @@
 <div>
+  <img align="left"src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
+  <img align="right"src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
   <a href="https://github.com/millsp/ts-toolbelt">
     <img align="left" alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="100" alt="Logo">
   </a>
