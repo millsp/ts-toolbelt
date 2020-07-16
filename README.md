@@ -1,4 +1,4 @@
-<div style="width:600px; margin: auto">
+<div>
   <a href="https://github.com/millsp/ts-toolbelt">
     <img align="left" alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="100" alt="Logo">
   </a>
