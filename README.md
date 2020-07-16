@@ -8,6 +8,7 @@
   <h4 align="left">Higher Type Safety for TypeScript. A collection of useful types.</h4>
 </div>
 <br>
+<br>
 <p align="center">
   <a href="https://millsp.github.io/ts-toolbelt/">📖 Read Docs</a>
   ·
