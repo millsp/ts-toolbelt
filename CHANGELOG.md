@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.13.8](https://github.com/millsp/ts-toolbelt/compare/v6.13.7...v6.13.8) (2020-07-16)
+
+
+### Others
+
+* readme ([2a15c13](https://github.com/millsp/ts-toolbelt/commit/2a15c13bffb3b8abe004110a013101a16b51502e))
+
 ### [6.13.7](https://github.com/millsp/ts-toolbelt/compare/v6.13.6...v6.13.7) (2020-07-16)
 
 
