@@ -1,21 +1,21 @@
-<p align="center">
+<div style="width:600px; margin: auto">
   <a href="https://github.com/millsp/ts-toolbelt">
-    <img align="left" alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="150" alt="Logo">
+    <img align="left" alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="100" alt="Logo">
   </a>
-  <p><h1 align="left">ts-toolbelt</h1>
+  <h1 align="left">ts-toolbelt</h1>
   <h4 align="left">Higher Type Safety for TypeScript. A collection of useful types.</h4>
-  <br><br>
-  <p align="center">
-    <a href="https://millsp.github.io/ts-toolbelt/">📖 Read Docs</a>
-    ·
-    <a href="#demo">🎮 View Demo</a>
-    ·
-    <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---bug-report.md" alt="Bug Report">🐞 Report Bug</a>
-    ·
-    <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---feature-request.md" alt="Request Feature">🍩 Request Feature</a>
-    ·
-    <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md" alt="Ask Questions">🤔 Ask Questions</a>
-  </p>
+</div>
+<br>
+<p align="center">
+  <a href="https://millsp.github.io/ts-toolbelt/">📖 Read Docs</a>
+  ·
+  <a href="#demo">🎮 View Demo</a>
+  ·
+  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---bug-report.md" alt="Bug Report">🐞 Report Bug</a>
+  ·
+  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---feature-request.md" alt="Request Feature">🍩 Request Feature</a>
+  ·
+  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md" alt="Ask Questions">🤔 Ask Questions</a>
 </p>
 
 <p align="center">
