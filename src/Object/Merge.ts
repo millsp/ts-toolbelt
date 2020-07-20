@@ -61,10 +61,9 @@ export type MergeFlat<O extends object, O1 extends object, style extends MergeSt
 /**
 @hidden
 */
-type ___MergeDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> =
-    O extends unknown ? O1 extends unknown ? {
-        [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
-    } : never : never
+type ___MergeDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> = {
+    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+} // ! do not distribute here as the step earlier is a distribution already
 
 /**
 @hidden
