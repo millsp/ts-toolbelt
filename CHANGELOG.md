@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.13.14](https://github.com/millsp/ts-toolbelt/compare/v6.13.13...v6.13.14) (2020-07-20)
+
+
+### Bug Fixes
+
+* **assign:** add merging style option ([335eb32](https://github.com/millsp/ts-toolbelt/commit/335eb3214b39ace98fb58940f6304dae717f6c76))
+
+
+### Others
+
+* cleanup ([fe867c7](https://github.com/millsp/ts-toolbelt/commit/fe867c75d0aac1ad133e964dfd45ff61b0f46958))
+
 ### [6.13.13](https://github.com/millsp/ts-toolbelt/compare/v6.13.12...v6.13.13) (2020-07-20)
 
 
