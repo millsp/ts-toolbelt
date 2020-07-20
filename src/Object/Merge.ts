@@ -11,8 +11,6 @@ import {Depth, Anyfy} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
-type t = Merge<{}, {[k: string]: any}>
-
 /**
 @hidden
 */
