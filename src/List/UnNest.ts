@@ -1,5 +1,5 @@
-import {_Concat} from './Concat'
-import {_Append} from './Append'
+import {Concat} from './Concat'
+import {Append} from './Append'
 import {Cast} from '../Any/Cast'
 import {Length} from './Length'
 import {Iteration} from '../Iteration/Iteration'
@@ -33,8 +33,8 @@ type UnNestLoose<L extends List> =
 type Flatter<L extends List, LN extends List, I extends Iteration> =
     L[Pos<I>] extends infer LP // handle if undefined
     ? LP extends List
-      ? _Concat<LN, L[Pos<I>]> // if it's a  list
-      : _Append<LN, L[Pos<I>]> // if it's an item
+      ? Concat<LN, L[Pos<I>]> // if it's a  list
+      : Append<LN, L[Pos<I>]> // if it's an item
     : never
 
 /**

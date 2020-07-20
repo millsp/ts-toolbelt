@@ -2,8 +2,7 @@ import {Number} from '../Number/Number'
 import {_Drop} from './Drop'
 import {_Take} from './Take'
 import {Cast} from '../Any/Cast'
-import {Prepend} from './Prepend'
-import {_Reverse} from './Reverse'
+import {Append} from './Append'
 import {List} from './List'
 import {Extends} from '../Any/_api'
 
@@ -11,8 +10,8 @@ import {Extends} from '../Any/_api'
 @hidden
 */
 type __Group<L extends List, N extends Number, LN extends List = []> = {
-    0: __Group<_Drop<L, N>, N, Prepend<LN, _Take<L, N>>>
-    1: _Reverse<LN>
+    0: __Group<_Drop<L, N>, N, Append<LN, _Take<L, N>>>
+    1: LN
 }[Extends<L, List<never>>]
 
 /**
