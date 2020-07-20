@@ -1,4 +1,4 @@
-import {At} from './At'
+import {AtBasic} from './At'
 import {OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
@@ -11,6 +11,8 @@ import {Depth, Anyfy} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
+type t = Merge<{}, {[k: string]: any}>
+
 /**
 @hidden
 */
@@ -20,8 +22,8 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends Boolean> =
     : [OK] extends [never]                   // if it does not exist
       ? O1K                                  // complete with prop of `O1`
       : {
-            1: [OK] extends [undefined] ? OK  : OK // ramda : keep undefined
-            0: [OK] extends [undefined] ? O1K : OK // lodash: fill undefined
+            1: OK extends undefined ? OK  : OK // ramda : keep undefined
+            0: OK extends undefined ? O1K : OK // lodash: fill undefined
         }[style]
 
 /**
@@ -35,10 +37,9 @@ type NoList<A> =
 /**
 @hidden
 */
-type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
-    O extends unknown ? O1 extends unknown ? {
-        [K in keyof (Anyfy<O> & O1)]: MergeProp<At<O, K>, At<O1, K>, K, OOK, style>
-    } & {} : never : never
+type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> = {
+    [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+} & {}
 
 /**
 @hidden
@@ -62,10 +63,9 @@ export type MergeFlat<O extends object, O1 extends object, style extends Boolean
 /**
 @hidden
 */
-type ___MergeDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
-    O extends unknown ? O1 extends unknown ? {
-        [K in keyof (Anyfy<O> & O1)]: _MergeDeep<At<O, K>, At<O1, K>, K, OOK, style>
-    } : never : never
+type ___MergeDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> = {
+    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+}
 
 /**
 @hidden

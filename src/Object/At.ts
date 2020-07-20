@@ -4,6 +4,14 @@ import {Boolean} from '../Boolean/Boolean'
 /**
 @hidden
 */
+export type AtBasic<O extends object, K extends Key> =
+    K extends keyof O
+    ? O[K]
+    : never
+
+/**
+@hidden
+*/
 type AtStrict<O extends object, K extends Key> =
     [K & keyof O] extends [never]
     ? never
