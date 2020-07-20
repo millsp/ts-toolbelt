@@ -7,14 +7,14 @@ import {Or} from '../Boolean/Or'
 import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
 import {List} from '../List/List'
-import {Depth, Anyfy} from './_Internal'
+import {Depth, Anyfy, MergeStyle} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 @hidden
 */
-type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends Boolean> =
+type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
     K extends OOK                            // if prop of `O` is optional
     ? NonNullable<OK> | O1K                  // merge it with prop of `O1`
     : [OK] extends [never]                   // if it does not exist
@@ -35,7 +35,7 @@ type NoList<A> =
 /**
 @hidden
 */
-type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
+type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
     } & {} : never : never
@@ -43,7 +43,7 @@ type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK
 /**
 @hidden
 */
-type _MergeFlat<O extends object, O1 extends object, style extends Boolean> =
+type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
     // when we merge, we systematically remove inconvenient array methods
     __MergeFlat<NoList<O>, NoList<O1>, style> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
@@ -56,13 +56,13 @@ type _MergeFlat<O extends object, O1 extends object, style extends Boolean> =
 /**
 @hidden
 */
-export type MergeFlat<O extends object, O1 extends object, style extends Boolean> =
+export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
     _MergeFlat<O, O1, style> & {}
 
 /**
 @hidden
 */
-type ___MergeDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
+type ___MergeDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
     } : never : never
@@ -70,7 +70,7 @@ type ___MergeDeep<O extends object, O1 extends object, style extends Boolean, OO
 /**
 @hidden
 */
-type __MergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends Boolean> =
+type __MergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
     Or<Extends<[OK], [never]>, Extends<[O1K], [never]>> extends 1 // filter fallthrough `never`
     ? MergeProp<OK, O1K, K, OOK, style>
     : OK extends BuiltInObject
@@ -86,7 +86,7 @@ type __MergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends Boolean>
 /**
 @hidden
 */
-type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends Boolean> =
+type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
     // when we merge, we systematically remove inconvenient array methods
     __MergeDeep<NoList<O>, NoList<O1>, K, OOK, style> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
@@ -99,7 +99,7 @@ type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends Boolean> =
 /**
 @hidden
 */
-export type MergeDeep<O extends object, O1 extends object, style extends Boolean> =
+export type MergeDeep<O extends object, O1 extends object, style extends MergeStyle> =
     _MergeDeep<O, O1, never, never, style> & {}
 
 /**
@@ -149,7 +149,28 @@ type test = O.Merge<O, O1, 'deep'>
 // }
 ```
 */
-export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends Boolean = 1> = {
+export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 1> = {
     'flat': MergeFlat<O, O1, style>
     'deep': MergeDeep<O, O1, style>
 }[depth]
+
+type t0 = Merge<{
+    a: number[]
+    b: {a: 1}[]
+    c: {a: [0]}
+}, {
+    a: string[]
+    b: {b: 2}[]
+    c: {a: [0, 1, 2]}
+}, 'deep', 0>
+
+// {
+//     a: (string | number)[];
+//     b: {
+//         a: 1;
+//         b: 2;
+//     }[];
+//     c: {
+//         a: [0, 1, 2];
+//     };
+// }

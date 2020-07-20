@@ -1,11 +1,10 @@
 import {AtBasic} from './At'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
-import {Boolean} from '../Boolean/Boolean'
 import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
 import {List} from '../List/List'
-import {Depth} from './_Internal'
+import {Depth, MergeStyle} from './_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 import {Omit} from './Omit'
 import {Keys} from './Keys'
@@ -13,7 +12,7 @@ import {Keys} from './Keys'
 /**
 @hidden
 */
-type PatchProp<OK, O1K, K extends Key, OOK extends Key, style extends Boolean> =
+type PatchProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
     K extends OOK                            // if prop of `O` is optional
     ? OK                                     // merge it with prop of `O1`
     : O1K
@@ -29,7 +28,7 @@ type NoList<A> =
 /**
 @hidden
 */
-type __PatchFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = Keys<O>> =
+type __PatchFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (O & Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
     } & {} : never : never
@@ -37,7 +36,7 @@ type __PatchFlat<O extends object, O1 extends object, style extends Boolean, OOK
 /**
 @hidden
 */
-type _PatchFlat<O extends object, O1 extends object, style extends Boolean> =
+type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
     // when we merge, we systematically remove inconvenient array methods
     __PatchFlat<NoList<O>, NoList<O1>, style> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
@@ -50,13 +49,13 @@ type _PatchFlat<O extends object, O1 extends object, style extends Boolean> =
 /**
 @hidden
 */
-export type PatchFlat<O extends object, O1 extends object, style extends Boolean> =
+export type PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
     _PatchFlat<O, O1, style> & {}
 
 /**
 @hidden
 */
-type ___PatchDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = Keys<O>> =
+type ___PatchDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (O & Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
     } : never : never
@@ -64,7 +63,7 @@ type ___PatchDeep<O extends object, O1 extends object, style extends Boolean, OO
 /**
 @hidden
 */
-type __PatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends Boolean> =
+type __PatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
       [OK] extends [BuiltInObject]
       ? PatchProp<OK, O1K, K, OOK, style>
       : [O1K] extends [BuiltInObject]
@@ -78,7 +77,7 @@ type __PatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends Boolean>
 /**
 @hidden
 */
-type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends Boolean> =
+type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
     // when we merge, we systematically remove inconvenient array methods
     __PatchDeep<NoList<O>, NoList<O1>, K, OOK, style> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
@@ -91,7 +90,7 @@ type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends Boolean> =
 /**
 @hidden
 */
-export type PatchDeep<O extends object, O1 extends object, style extends Boolean> =
+export type PatchDeep<O extends object, O1 extends object, style extends MergeStyle> =
     _PatchDeep<O, O1, never, never, style> & {}
 
 /**
@@ -139,7 +138,7 @@ type test = O.Patch<O, O1, 'deep'>
 // }
 ```
 */
-export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', style extends Boolean = 1> = {
+export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 1> = {
     'flat': PatchFlat<O, O1, style>
     'deep': PatchDeep<O, O1, style>
 }[depth]

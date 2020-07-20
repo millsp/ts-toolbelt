@@ -61,5 +61,5 @@ export {WritableKeys} from './WritableKeys'
 
 export {Merge as MergeUp} from './Merge'
 export {Assign as AssignUp} from './Assign'
-export {MergeAll as Compact} from './MergeAll'
+export {PatchAll as Compact} from './PatchAll'
 export {MergeAll as CompactUp} from './MergeAll'

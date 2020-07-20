@@ -6,14 +6,13 @@ import {Length} from '../List/Length'
 import {Cast} from '../Any/Cast'
 import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
-import {Depth} from './_Internal'
+import {Depth, MergeStyle} from './_Internal'
 import {Patch} from './Patch'
-import {Boolean} from '../Boolean/Boolean'
 
 /**
 @hidden
 */
-type __PatchAll<O extends object, Os extends List<object>, depth extends Depth, style extends Boolean, I extends Iteration = IterationOf<'0'>> = {
+type __PatchAll<O extends object, Os extends List<object>, depth extends Depth, style extends MergeStyle, I extends Iteration = IterationOf<'0'>> = {
     0: __PatchAll<Patch<O, Os[Pos<I>], depth, style>, Os, depth, style, Next<I>>
     1: O
 }[Extends<Pos<I>, Length<Os>>]
@@ -21,7 +20,7 @@ type __PatchAll<O extends object, Os extends List<object>, depth extends Depth, 
 /**
 @hidden
 */
-export type _PatchAll<O extends object, Os extends List<object>, depth extends Depth, style extends Boolean> =
+export type _PatchAll<O extends object, Os extends List<object>, depth extends Depth, style extends MergeStyle> =
     __PatchAll<O, Os, depth, style> extends infer X
     ? Cast<X, object>
     : never
@@ -38,7 +37,7 @@ items get completed by the next ones (last-in completes).
 ```ts
 ```
 */
-export type PatchAll<O extends object, Os extends List<object>, depth extends Depth = 'flat', style extends Boolean = 1> =
+export type PatchAll<O extends object, Os extends List<object>, depth extends Depth = 'flat', style extends MergeStyle = 1> =
     O extends unknown
     ? Os extends unknown
       ? _PatchAll<O, Os, depth, style>
