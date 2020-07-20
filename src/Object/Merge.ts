@@ -2,7 +2,6 @@ import {AtBasic} from './At'
 import {OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
-import {Boolean} from '../Boolean/Boolean'
 import {Or} from '../Boolean/Or'
 import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
@@ -153,24 +152,3 @@ export type Merge<O extends object, O1 extends object, depth extends Depth = 'fl
     'flat': MergeFlat<O, O1, style>
     'deep': MergeDeep<O, O1, style>
 }[depth]
-
-type t0 = Merge<{
-    a: number[]
-    b: {a: 1}[]
-    c: {a: [0]}
-}, {
-    a: string[]
-    b: {b: 2}[]
-    c: {a: [0, 1, 2]}
-}, 'deep', 0>
-
-// {
-//     a: (string | number)[];
-//     b: {
-//         a: 1;
-//         b: 2;
-//     }[];
-//     c: {
-//         a: [0, 1, 2];
-//     };
-// }
