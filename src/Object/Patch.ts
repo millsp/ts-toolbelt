@@ -55,10 +55,9 @@ export type PatchFlat<O extends object, O1 extends object, style extends MergeSt
 /**
 @hidden
 */
-type ___PatchDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> =
-    O extends unknown ? O1 extends unknown ? {
-        [K in keyof (O & Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
-    } : never : never
+type ___PatchDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> = {
+    [K in keyof (O & Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+} // ! do not distribute here as the step earlier is a distribution already
 
 /**
 @hidden
