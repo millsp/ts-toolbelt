@@ -29,9 +29,10 @@ type NoList<A> =
 /**
 @hidden
 */
-type __PatchFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = Keys<O>> = {
-    [K in keyof (O & Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
-} & {}
+type __PatchFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = Keys<O>> =
+    O extends unknown ? O1 extends unknown ? {
+        [K in keyof (O & Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    } & {} : never : never
 
 /**
 @hidden
@@ -55,9 +56,10 @@ export type PatchFlat<O extends object, O1 extends object, style extends Boolean
 /**
 @hidden
 */
-type ___PatchDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = Keys<O>> = {
-    [K in keyof (O & Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
-}
+type ___PatchDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = Keys<O>> =
+    O extends unknown ? O1 extends unknown ? {
+        [K in keyof (O & Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    } : never : never
 
 /**
 @hidden

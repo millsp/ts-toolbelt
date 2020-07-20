@@ -35,9 +35,10 @@ type NoList<A> =
 /**
 @hidden
 */
-type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> = {
-    [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
-} & {}
+type __MergeFlat<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
+    O extends unknown ? O1 extends unknown ? {
+        [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    } & {} : never : never
 
 /**
 @hidden
@@ -61,9 +62,10 @@ export type MergeFlat<O extends object, O1 extends object, style extends Boolean
 /**
 @hidden
 */
-type ___MergeDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> = {
-    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
-}
+type ___MergeDeep<O extends object, O1 extends object, style extends Boolean, OOK extends Key = OptionalKeys<O>> =
+    O extends unknown ? O1 extends unknown ? {
+        [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    } : never : never
 
 /**
 @hidden

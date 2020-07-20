@@ -1,5 +1,4 @@
 import {Test, T, A} from '../src/ts-toolbelt'
-import {Equals} from '../src/Any/Equals'
 
 const {checks, check} = Test
 
