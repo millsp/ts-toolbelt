@@ -9,7 +9,7 @@ import {Strict} from './Strict'
 */
 type _Merge<U extends object> = IntersectOf<Overwrite<U, {
     [K in keyof U]-?: At<U, K>
-}>
+}>>
 
 /**
 Merge a [[Union]] of [[Object]]s into a single one
@@ -21,5 +21,3 @@ Merge a [[Union]] of [[Object]]s into a single one
 */
 export type Merge<U extends object> =
     ComputeRaw<_Merge<Strict<U>>>
-
-    type t = Merge<{a?: 1} | {a?: 2}>
