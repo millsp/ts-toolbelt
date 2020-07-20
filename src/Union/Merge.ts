@@ -8,10 +8,8 @@ import {Strict} from './Strict'
 @hidden
 */
 type _Merge<U extends object> = IntersectOf<Overwrite<U, {
-    [K in keyof U]-?: U extends unknown
-                      ? At<U, K>
-                      : never
-}>>
+    [K in keyof U]-?: At<U, K>
+}>
 
 /**
 Merge a [[Union]] of [[Object]]s into a single one
@@ -23,3 +21,5 @@ Merge a [[Union]] of [[Object]]s into a single one
 */
 export type Merge<U extends object> =
     ComputeRaw<_Merge<Strict<U>>>
+
+    type t = Merge<{a?: 1} | {a?: 2}>
