@@ -353,11 +353,11 @@ checks([
 // MERGE
 
 checks([
-    check<T.Merge<[0],  [1, 2, 3?]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
-    check<T.Merge<[0],  [1, 2, 3]>,                     [0, 2, 3],              Test.Pass>(),
-    check<T.Merge<[0?], [1, 2, 3]>,                     [2, 3?],                Test.Fail>(),
-    check<T.Merge<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | 0],          Test.Pass>(),
-    check<T.Merge<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+    check<T.MergeUp<[0],  [1, 2, 3?]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
+    check<T.MergeUp<[0],  [1, 2, 3]>,                     [0, 2, 3],              Test.Pass>(),
+    check<T.MergeUp<[0?], [1, 2, 3]>,                     [2, 3?],                Test.Fail>(),
+    check<T.MergeUp<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | 0],          Test.Pass>(),
+    check<T.MergeUp<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -22,7 +22,7 @@ export {IntersectKeys} from './IntersectKeys'
 export {Invert} from './Invert'
 export {Keys} from './Keys'
 export {ListOf} from './ListOf'
-export {Merge} from './Merge'
+export {Patch as Merge} from './Patch' // LEGACY
 export {MergeAll} from './MergeAll'
 export {Modify} from './Modify'
 export {NonNullable} from './NonNullable'
