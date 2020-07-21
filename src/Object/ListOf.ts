@@ -29,7 +29,7 @@ type ___ListOf<O extends object, K, LN extends List = [], I extends Iteration = 
 */
 export type __ListOf<O extends object> =
     number extends keyof O
-    ? O[number][]
+    ? O[never][]
     : ___ListOf<O, keyof O>
 
 /**
