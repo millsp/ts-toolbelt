@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [7.0.0](https://github.com/millsp/ts-toolbelt/compare/v6.13.17...v7.0.0) (2020-07-21)
+### [7.0.1](https://github.com/millsp/ts-toolbelt/compare/v6.13.17...v7.0.1) (2020-07-21)
 
 
 ### Bug Fixes
@@ -14,6 +14,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Others
 
+* bump version ([9831ec1](https://github.com/millsp/ts-toolbelt/commit/9831ec1e2859058a010c1a7c5568e2bd63679e40))
+* **release:** 7.0.0 ([2ce7a31](https://github.com/millsp/ts-toolbelt/commit/2ce7a317a32640cc5bd888e874b8483792e5202f))
 * **release:** 7.0.0 ([1ce66ca](https://github.com/millsp/ts-toolbelt/commit/1ce66ca990dc9d88a355871390d39fb6d5f17608))
 * upgrade ([59dc150](https://github.com/millsp/ts-toolbelt/commit/59dc1505b048e51db0af9c9524e4f52a71722cba))
 
