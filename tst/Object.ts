@@ -672,11 +672,11 @@ type MERGE_O_O1_DEEP_1 = {
 }
 
 checks([
-    check<O.Merge<[1], [2, 3], 'flat', 0>,          [1, 3],                 Test.Pass>(),
-    check<O.Merge<[1], [2, 3], 'deep', 0>,          [1, 3],                 Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE>,               MERGE_O_O1,             Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 0>,    MERGE_O_O1_DEEP_0,      Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
+    check<O.MergeUp<[1], [2, 3], 'flat', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.MergeUp<[1], [2, 3], 'deep', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.MergeUp<O_MERGE, O1_MERGE>,               MERGE_O_O1,             Test.Pass>(),
+    check<O.MergeUp<O_MERGE, O1_MERGE, 'deep', 0>,    MERGE_O_O1_DEEP_0,      Test.Pass>(),
+    check<O.MergeUp<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
