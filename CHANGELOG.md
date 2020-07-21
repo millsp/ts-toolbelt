@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.13.16](https://github.com/millsp/ts-toolbelt/compare/v6.13.15...v6.13.16) (2020-07-21)
+
+
+### Bug Fixes
+
+* **merge:** undo breaking change, postpone till v7 ([0c52771](https://github.com/millsp/ts-toolbelt/commit/0c52771a5963fefb7192fdb9dca72ce246f78b48))
+* **merge, patch:** prevent mapped type from deep resolving itself ([9d0425e](https://github.com/millsp/ts-toolbelt/commit/9d0425e01d678a0e2008709ecebc87adb9f63988))
+
 ### [6.13.15](https://github.com/millsp/ts-toolbelt/compare/v6.13.14...v6.13.15) (2020-07-20)
 
 
