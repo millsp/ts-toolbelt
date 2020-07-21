@@ -10,6 +10,6 @@ Remove the last element out of **`L`**
 ```
 */
 export type Pop<L extends List> =
-    L extends readonly [...infer LBody, any?]
+    L extends (readonly [...infer LBody, any] | readonly [...infer LBody, any?])
     ? LBody
     : L

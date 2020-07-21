@@ -509,8 +509,8 @@ checks([
 // POP
 
 checks([
-    // check<T.Pop<[1, 2, 3]>,     [1, 2],     Test.Pass>(), // todo track issue
-    // check<T.Pop<[1, 2?, 3?]>,   [1, 2?],    Test.Pass>(),
+    check<T.Pop<[1, 2, 3]>,     [1, 2],     Test.Pass>(),
+    check<T.Pop<[1, 2?, 3?]>,   [1, 2?],    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
