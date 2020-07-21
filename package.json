@@ -48,6 +48,7 @@
     "@commitlint/cli": "^8.3.0",
     "@commitlint/config-conventional": "^8.3.0",
     "@typescript-eslint/parser": "^3.0.0",
+    "conventional-changelog-cli": "^2.0.34",
     "eledoc": "^0.2.0",
     "eslint": "^7.0.0",
     "eslint-plugin-fp": "^2.3.0",
