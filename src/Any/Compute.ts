@@ -24,7 +24,7 @@ export type ComputeFlat<A extends any> =
 /**
  * @hidden
  */
-type ComputeDeep<A extends any, Seen extends any = A> =
+export type ComputeDeep<A extends any, Seen extends any = A> =
     A extends BuiltInObject
     ? A
     : {
