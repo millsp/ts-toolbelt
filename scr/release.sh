@@ -10,7 +10,7 @@ BRANCH=`git rev-parse --symbolic-full-name --abbrev-ref HEAD` &&
 npx sort-package-json &&
 
 # Bump the version & changelogs
-npx standard-version &&
+npx standard-version --skip.changelog &&
 
 # check if we have to do a release
 RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
