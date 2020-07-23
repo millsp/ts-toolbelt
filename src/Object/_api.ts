@@ -1,8 +1,6 @@
 /** @ignore *//** */
 
-import * as P from './P/_api'
-
-export {P}
+export * as P from './P/_api'
 export {Assign} from './Assign'
 export {At} from './At'
 export {AtLeast} from './AtLeast'

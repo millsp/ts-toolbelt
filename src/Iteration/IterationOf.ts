@@ -1,6 +1,6 @@
 import {Number} from '../Number/Number'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 
 /**
 Transform a number into an [[Iteration]]
@@ -22,6 +22,6 @@ type nprev = I.Pos<prev>    // -1
 ```
 */
 export type IterationOf<N extends Number, IMap extends Map = NumberMap> =
-    N extends keyof IMap
-    ? IMap[N]
-    : IMap['__']
+    N extends keyof IMap[1]
+    ? IMap[1][N]
+    : IMap[1]['__']

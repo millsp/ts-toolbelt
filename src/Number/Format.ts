@@ -4,8 +4,8 @@ import {IsZero} from './IsZero'
 import {Not} from '../Boolean/Not'
 import {Pos} from '../Iteration/Pos'
 import {IterationOf} from '../Iteration/IterationOf'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 
 /**
 Change the format of a [[Number]]
