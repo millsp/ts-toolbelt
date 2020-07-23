@@ -5,7 +5,7 @@ import {Cast} from '../Any/Cast'
 import {Prepend} from './Prepend'
 import {_Reverse} from './Reverse'
 import {List} from './List'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 /**
 @hidden
