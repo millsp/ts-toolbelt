@@ -12,9 +12,9 @@ import {Keys} from './Keys'
 /**
 @hidden
 */
-type PatchProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
-    K extends OOK                            // if prop of `O` is optional
-    ? OK                                     // merge it with prop of `O1`
+type PatchProp<OK, O1K, K extends Key, OOK extends Key> =
+    K extends OOK // if prop of `O` is optional
+    ? OK          // merge it with prop of `O1`
     : O1K
 
 /**
@@ -28,9 +28,9 @@ type NoList<A> =
 /**
 @hidden
 */
-type __PatchFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> =
+type __PatchFlat<O extends object, O1 extends object, OOK extends Key = Keys<O>> =
     O extends unknown ? O1 extends unknown ? {
-        [K in keyof (O & Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+        [K in keyof (O & Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK>
     } & {} : never : never
 
 /**
@@ -38,7 +38,7 @@ type __PatchFlat<O extends object, O1 extends object, style extends MergeStyle, 
 */
 type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
     // when we merge, we systematically remove inconvenient array methods
-    __PatchFlat<NoList<O>, NoList<O1>, style> extends infer X
+    __PatchFlat<NoList<O>, NoList<O1>> extends infer X
     ? { // so that we can merge `object` and arrays in the very same way
           1: X                                               // ramda
           0: Extends<O, List> extends 1 ? ListOf<X & {}> : X // lodash
@@ -64,14 +64,14 @@ type ___PatchDeep<O extends object, O1 extends object, style extends MergeStyle,
 */
 type __PatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
       [OK] extends [BuiltInObject]
-      ? PatchProp<OK, O1K, K, OOK, style>
+      ? PatchProp<OK, O1K, K, OOK>
       : [O1K] extends [BuiltInObject]
-        ? PatchProp<OK, O1K, K, OOK, style>
+        ? PatchProp<OK, O1K, K, OOK>
         : [OK] extends [object]
           ? [O1K] extends [object]
             ? ___PatchDeep<OK, O1K, style>
-            : PatchProp<OK, O1K, K, OOK, style>
-          : PatchProp<OK, O1K, K, OOK, style>
+            : PatchProp<OK, O1K, K, OOK>
+          : PatchProp<OK, O1K, K, OOK>
 
 /**
 @hidden

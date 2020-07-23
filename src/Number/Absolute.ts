@@ -14,7 +14,7 @@ import {Map} from '../Misc/Iteration/Map'
 export type _Absolute<N extends Iteration, IMap extends Map> = {
     0: N
     1: _Negate<N, IMap>
-}[_IsNegative<N, IMap>]
+}[_IsNegative<N>]
 
 /**
 Get the absolute value of a [[Number]]
@@ -34,5 +34,5 @@ type test2 = N.Absolute<'-20', 'n'> //  20
 */
 export type Absolute<N extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
     N extends unknown
-    ? Format<_Absolute<IterationOf<N, IMap>, IMap>, fmt, IMap>
+    ? Format<_Absolute<IterationOf<N, IMap>, IMap>, fmt>
     : never

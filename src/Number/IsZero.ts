@@ -7,7 +7,7 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-export type _IsZero<N extends Iteration, IMap extends Map> = {
+export type _IsZero<N extends Iteration> = {
     '-': 0
     '+': 0
     '0': 1
@@ -28,4 +28,4 @@ type test2 = N.IsZero<'7'>  // False
 ```
 */
 export type IsZero<N extends Number, IMap extends Map = NumberMap> =
-    _IsZero<IterationOf<N, IMap>, IMap>
+    _IsZero<IterationOf<N, IMap>>

@@ -8,7 +8,7 @@ import {Map} from '../Misc/Iteration/Map'
 /**
 @hidden
 */
-export type _IsPositive<N extends Iteration, IMap extends Map> = {
+export type _IsPositive<N extends Iteration> = {
     '-': 0
     '+': 1
     '0': 0
@@ -17,7 +17,6 @@ export type _IsPositive<N extends Iteration, IMap extends Map> = {
 /**
 Check whether a [[Number]] is positive or not
 @param N to check
-@param IMap to operate with another set of numbers
 @returns [[Boolean]]
 @example
 ```ts
@@ -29,4 +28,4 @@ type test2 = N.IsPositive<'7'>  // True
 ```
 */
 export type IsPositive<N extends Number, IMap extends Map = NumberMap> =
-    _IsPositive<IterationOf<N, IMap>, IMap>
+    _IsPositive<IterationOf<N, IMap>>

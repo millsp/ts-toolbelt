@@ -52,7 +52,7 @@
       // "noResolve": false, /* Do not add triple-slash references or module import targets to the list of compiled files. */
       // "noStrictGenericChecks": false, /* Disable strict checking of generic signatures in function types. */
       // "noUnusedLocals": true, /* Report errors on unused locals. */
-      // "noUnusedParameters": true, /* Report errors on unused parameters. */
+      "noUnusedParameters": true, /* Report errors on unused parameters. */
       "outDir": "./out", /* Redirect output structure to the directory. */
       // "outFile": "./", /* Concatenate and emit output to single file. */
       // "paths": {}, /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
@@ -89,8 +89,8 @@
     },
     "include": [
       "./src/**/*",
-      "./scr/**/*",
       "./tst/**/*"
+      // "./scr/**/*",
     ],
     "exclude": [
       "./node_modules/**/*",

@@ -8,8 +8,8 @@ import {Map} from '../Misc/Iteration/Map'
 @hidden
 */
 export type _NumberOf<N extends number, IMap extends Map> = {
-    [K in keyof IMap]: Pos<IMap[K], IMap> extends N
-                       ? Key<IMap[K], IMap>
+    [K in keyof IMap]: Pos<IMap[K]> extends N
+                       ? Key<IMap[K]>
                        : never
 }[KnownIterationMapKeys<IMap>]
 

@@ -173,6 +173,8 @@ type DIFF_O1_O_EQUALS = {
     l : [1, 2, 3]
 }
 
+type t = O.Diff<O1, O, 'default'>
+
 checks([
     check<O.Diff<O1, O, 'default'>, DIFF_O1_O_DEFAULT,  Test.Pass>(),
     check<O.Diff<O1, O, 'equals'>,  DIFF_O1_O_EQUALS,   Test.Pass>(),

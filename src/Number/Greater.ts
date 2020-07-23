@@ -10,7 +10,7 @@ import {Map} from '../Misc/Iteration/Map'
 @hidden
 */
 export type _Greater<N1 extends Iteration, N2 extends Iteration, IMap extends Map> =
-    _IsPositive<_Minus<N1, N2, IMap>, IMap>
+    _IsPositive<_Minus<N1, N2, IMap>>
 
 /**
 Check if a [[Number]] is bigger than another one
