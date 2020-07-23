@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;Misc/Iteration/Map&quot; | ts-toolbelt</title>
+	<title>&quot;Any/Contains&quot; | ts-toolbelt</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
@@ -57,7 +57,7 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_misc_iteration_map_.html">&quot;Misc/Iteration/Map&quot;</a>
+					<a href="_any_contains_.html">&quot;Any/Contains&quot;</a>
 				</li>
 			</ul>
 		</div>
@@ -69,8 +69,8 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul>
 					<ul class="before-current">
-						<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-							<a href="_misc_iteration_map_.html#map" class="tsd-kind-icon">Map</a>
+						<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+							<a href="_any_contains_.html#contains" class="tsd-kind-icon">Contains</a>
 						</li>
 					</ul>
 				</ul>
@@ -85,7 +85,7 @@
 						<a href="_any_clean_.html">&quot;<wbr>Any/<wbr>Clean&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_any_compute_.html">&quot;<wbr>Any/<wbr>Compute&quot;</a>
-						</li>                        <li class=" tsd-kind-module">
+						</li>                        <li class="current tsd-kind-module">
 						<a href="_any_contains_.html">&quot;<wbr>Any/<wbr>Contains&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_any_equals_.html">&quot;<wbr>Any/<wbr>Equals&quot;</a>
@@ -173,6 +173,12 @@
 						<a href="_iteration_iterationof_.html">&quot;<wbr>Iteration/<wbr>Iteration<wbr>Of&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_iteration_key_.html">&quot;<wbr>Iteration/<wbr>Key&quot;</a>
+						</li>                        <li class=" tsd-kind-module">
+						<a href="_iteration_map_.html">&quot;<wbr>Iteration/<wbr>Map&quot;</a>
+						</li>                        <li class=" tsd-kind-module">
+						<a href="_iteration_maps_number_.html">&quot;<wbr>Iteration/<wbr>Maps/<wbr>Number&quot;</a>
+						</li>                        <li class=" tsd-kind-module">
+						<a href="_iteration_maps_pixel_.html">&quot;<wbr>Iteration/<wbr>Maps/<wbr>Pixel&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_iteration_next_.html">&quot;<wbr>Iteration/<wbr>Next&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
@@ -331,12 +337,6 @@
 						<a href="_list_zipobj_.html">&quot;<wbr>List/<wbr>Zip<wbr>Obj&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_misc_builtinobject_.html">&quot;<wbr>Misc/<wbr>Built<wbr>InObject&quot;</a>
-						</li>                        <li class="current tsd-kind-module">
-						<a href="_misc_iteration_map_.html">&quot;<wbr>Misc/<wbr>Iteration/<wbr>Map&quot;</a>
-						</li>                        <li class=" tsd-kind-module">
-						<a href="_misc_iteration_number_.html">&quot;<wbr>Misc/<wbr>Iteration/<wbr>Number&quot;</a>
-						</li>                        <li class=" tsd-kind-module">
-						<a href="_misc_iteration_pixel_.html">&quot;<wbr>Misc/<wbr>Iteration/<wbr>Pixel&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
 						<a href="_misc_json_array_.html">&quot;<wbr>Misc/JSON/<wbr>Array&quot;</a>
 						</li>                        <li class=" tsd-kind-module">
@@ -556,8 +556,8 @@
 							<h3>Type aliases</h3>
 							<div class="tsd-navigation secondary">
 								<ul>
-									<li class="tsd-kind-type-alias tsd-parent-kind-module">
-										<a href="_misc_iteration_map_.html#map" class="tsd-kind-icon">Map</a>
+									<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
+										<a href="_any_contains_.html#contains" class="tsd-kind-icon">Contains</a>
 									</li>
 								</ul>
 							</div>
@@ -567,20 +567,41 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-descriptions">
-					<a name="map" class="tsd-anchor"></a>
-					<h3>Map</h3>
-					<div class="tsd-signature tsd-kind-icon">Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter tsd-descriptions">
+					<a name="contains" class="tsd-anchor"></a>
+					<h3>Contains</h3>
+					<div class="tsd-signature tsd-kind-icon">Contains&lt;A1, A2&gt;<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Extends&lt;A1, A2&gt; extends 1 ? 1 : 0</span></div>
 					<div class="tsd-comment">
 						<div class="lead">
-							<p>Describes a map of number relationships</p>
+							<p>Check whether <strong><code>A1</code></strong> is part of <strong><code>A2</code></strong> or not. It works like
+							<a href="_any_extends_.html#extends">Extends</a> but <a href="_boolean_boolean_.html#boolean">Boolean</a> results are narrowed to <a href="_boolean_boolean_.html#false">False</a>.</p>
 						</div>
 					</div>
+					<h4 class="tsd-type-parameters-title">Type parameters</h4>
+					<ul class="tsd-type-parameters">
+						<li>
+						<span class="name">A1</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
+						<li>
+						<span class="name">A2</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>                    </li>
+					</ul>
 					<div class="tsd-comment">
+						<h4>returns</h4>
+						<p><p><a href="_boolean_boolean_.html#boolean">Boolean</a></p>
+						</p>
+						<h4>example</h4>
+						<p><pre><code class="language-ts"><span class="hljs-keyword">type</span> test0 = A.Contains&lt;<span class="hljs-string">&#x27;a&#x27;</span> | <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>&gt; <span class="hljs-comment">// False</span>
+<span class="hljs-keyword">type</span> test1 = A.Contains&lt;<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span> | <span class="hljs-string">&#x27;b&#x27;</span>&gt; <span class="hljs-comment">// True</span>
+
+<span class="hljs-keyword">type</span> test2 = A.Contains&lt;{a: <span class="hljs-built_in">string</span>}, {a: <span class="hljs-built_in">string</span>, b: <span class="hljs-built_in">number</span>}&gt; <span class="hljs-comment">// False</span>
+<span class="hljs-keyword">type</span> test3 = A.Contains&lt;{a: <span class="hljs-built_in">string</span>, b: <span class="hljs-built_in">number</span>}, {a: <span class="hljs-built_in">string</span>}&gt; <span class="hljs-comment">// True</span>
+
+<span class="hljs-keyword">type</span> test4 = A.Contains&lt;<span class="hljs-built_in">never</span>, <span class="hljs-built_in">never</span>&gt; <span class="hljs-comment">// False</span>
+<span class="hljs-comment">/// Nothing cannot contain nothing, use `A.Equals`</span></code></pre>
+						</p>
 					</div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/millsp/ts-toolbelt/blob/39b95df/src/Misc/Iteration/Map.ts#L6">src/Misc/Iteration/Map.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/millsp/ts-toolbelt/blob/efc3325/src/Any/Contains.ts#L21">src/Any/Contains.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
