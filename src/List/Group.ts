@@ -4,7 +4,7 @@ import {_Take} from './Take'
 import {Cast} from '../Any/Cast'
 import {Append} from './Append'
 import {List} from './List'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 /**
 @hidden

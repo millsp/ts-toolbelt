@@ -10,7 +10,7 @@ import {Key} from '../Iteration/Key'
 import {Key as AKey} from '../Any/Key'
 import {List} from '../List/List'
 import {Length} from '../List/Length'
-import {Extends} from '../Any/_api'
+import {Extends} from '../Any/Extends'
 
 /**
 @hidden
