@@ -10,14 +10,14 @@ import {Way} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
 import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 
 /**
 @hidden
 */
 type RangeForth<From extends Iteration, To extends Iteration, IMap extends Map, fmt extends Formats, L extends List = []> = {
-    0: RangeForth<Prev<From, IMap>, To, IMap, fmt, Prepend<L, Format<From, fmt, IMap>>>
+    0: RangeForth<Prev<From, IMap>, To, IMap, fmt, Prepend<L, Format<From, fmt>>>
     1: L
 }[Extends<From, To>]
 
@@ -25,7 +25,7 @@ type RangeForth<From extends Iteration, To extends Iteration, IMap extends Map, 
 @hidden
 */
 type RangeBack<From extends Iteration, To extends Iteration, IMap extends Map, fmt extends Formats, L extends List = []> = {
-    0: RangeBack<Next<From, IMap>, To, IMap, fmt, Prepend<L, Format<From, fmt, IMap>>>
+    0: RangeBack<Next<From, IMap>, To, IMap, fmt, Prepend<L, Format<From, fmt>>>
     1: L
 }[Extends<From, To>]
 

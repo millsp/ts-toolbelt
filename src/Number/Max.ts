@@ -3,29 +3,29 @@ import {KnownIterationMapKeys} from './_Internal'
 import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 import {Equals} from '../Any/Equals'
 
 /**
  * @hidden
  */
 type UnionizeCumulatedNumberUnions<N extends Number, IMap extends Map = NumberMap> = {
-    [K in keyof IMap]: K extends N
-                       ? IMap[K][5] // cumulative union from maps are used as masks
-                       : never      // the higher we go the higher the cumulated is
-}[KnownIterationMapKeys<IMap>]      // see Maps for examples in col `5`
+    [K in keyof IMap[1]]: K extends N
+                          ? IMap[1][K][5] // cumulative union from maps are used as masks
+                          : never         // the higher we go the higher the cumulated is
+}[KnownIterationMapKeys<IMap>]            // see Maps for examples in col `5`
 
 /**
  * @hidden
  */
 type FindMaxNumberInUnion<N extends Number, IMap extends Map = NumberMap> =
     UnionizeCumulatedNumberUnions<N, IMap> extends infer Match
-    ? { // the biggest number will have the biggest cumulated union
-        [K in keyof IMap]: Equals<IMap[K][5], Match> extends 1
-                           ? K // we return the key of this biggest
-                           : never
-    }[KnownIterationMapKeys<IMap>] // this will return 1 entry only
+    ? {   // the biggest number will have the biggest cumulated union
+          [K in keyof IMap[1]]: Equals<IMap[1][K][5], Match> extends 1
+                                ? K // we return the key of this biggest
+                                : never
+      }[KnownIterationMapKeys<IMap>] // this will return 1 entry only
     : never
 
 /**
@@ -45,5 +45,5 @@ type test3 = N.Min<'-2' | '10' | 'oops'>   // string
 ```
 */
 export type Max<N extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
-    Format<IterationOf<FindMaxNumberInUnion<N, IMap>, IMap>, fmt, IMap>
+    Format<IterationOf<FindMaxNumberInUnion<N, IMap>, IMap>, fmt>
 

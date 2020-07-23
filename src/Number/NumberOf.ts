@@ -1,16 +1,16 @@
 import {Key} from '../Iteration/Key'
 import {Pos} from '../Iteration/Pos'
 import {Numbers, KnownIterationMapKeys} from './_Internal'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 
 /**
 @hidden
 */
 export type _NumberOf<N extends number, IMap extends Map> = {
-    [K in keyof IMap]: Pos<IMap[K], IMap> extends N
-                       ? Key<IMap[K], IMap>
-                       : never
+    [K in keyof IMap[1]]: Pos<IMap[1][K]> extends N
+                          ? Key<IMap[1][K]>
+                          : never
 }[KnownIterationMapKeys<IMap>]
 
 /**

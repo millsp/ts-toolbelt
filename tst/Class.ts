@@ -6,6 +6,7 @@ const {checks, check} = Test
 // CLASS /////////////////////////////////////////////////////////////////////////////////
 
 class TestClass {
+    // @ts-ignore
     constructor(a: string, b: number) {}
 }
 

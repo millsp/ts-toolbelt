@@ -1,6 +1,6 @@
-import {Map} from '../Misc/Iteration/Map'
+import {Map} from '../Iteration/Map'
 import {Iteration} from './Iteration'
-import {NumberMap} from '../Misc/Iteration/Number'
+import {NumberMap} from '../Iteration/Maps/Number'
 
 /**
 Move **`I`**'s position forward
@@ -18,4 +18,4 @@ type test1 = I.Pos<I.Next<i>> // 21
 ```
 */
 export type Next<I extends Iteration, IMap extends Map = NumberMap> =
-    IMap[I[1]] // continues iterating
+    IMap[1][I[1]] // continues iterating

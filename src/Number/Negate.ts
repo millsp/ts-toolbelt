@@ -4,8 +4,8 @@ import {Iteration} from '../Iteration/Iteration'
 import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 
 /**
 @hidden
@@ -32,5 +32,5 @@ type test4 = N.Negate<'-100'>    // string
 */
 export type Negate<N extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
     N extends unknown
-    ? Format<_Negate<IterationOf<N, IMap>, IMap>, fmt, IMap>
+    ? Format<_Negate<IterationOf<N, IMap>, IMap>, fmt>
     : never

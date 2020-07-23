@@ -14,8 +14,8 @@ import {Extends} from '../Any/Extends'
 /**
 @hidden
 */
-type __Path<O, Path extends List<Key>, strict extends Boolean, OPrev = O,  I extends Iteration = IterationOf<'0'>> = {
-    0: __Path<At<NonNullable<O> & {}, Path[Pos<I>], strict>, Path, strict, O, Next<I>>
+type __Path<O, Path extends List<Key>, strict extends Boolean, I extends Iteration = IterationOf<'0'>> = {
+    0: __Path<At<NonNullable<O> & {}, Path[Pos<I>], strict>, Path, strict, Next<I>>
     // Use of `NonNullable` otherwise path cannot be followed #`undefined`
     1: O
 }[Extends<Pos<I>, Length<Path>>]

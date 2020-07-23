@@ -1,6 +1,6 @@
 import {Format} from '../Iteration/Format'
-import {Map} from '../Misc/Iteration/Map'
-import {NumberMap} from '../Misc/Iteration/Number'
+import {Map} from '../Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
 
 /**
 Describes compatible type formats
@@ -13,17 +13,26 @@ export type Formats = 'b' | 'n' | 's'
 /**
  * @hidden
  */
-export type KnownIterationMapKeys<IMap extends Map> = IMap['keys'][0] | '0' | IMap['keys'][1]
+export type KnownIterationMapKeys<IMap extends Map> =
+    IMap[0]['-' | '0' | '+']
 
 /**
  * @hidden
  */
-export type NegativeIterationKeys<IMap extends Map> = IMap['keys'][0]
+export type NegativeIterationKeys<IMap extends Map> =
+    IMap[0]['-']
 
 /**
  * @hidden
  */
-export type PositiveIterationKeys<IMap extends Map> = IMap['keys'][1]
+export type PositiveIterationKeys<IMap extends Map> =
+    IMap[0]['+']
+
+/**
+ * @hidden
+ */
+export type NeutralIterationKeys<IMap extends Map> =
+    IMap[0]['0']
 
 /**
 Describes known values of a **number**
@@ -31,15 +40,15 @@ Describes known values of a **number**
 */
 export type Numbers<IMap extends Map = NumberMap> = {
     'string': {
-        'all': Format<IMap[KnownIterationMapKeys<IMap>], 's'> // union of all string
-        '+'  : Format<IMap[PositiveIterationKeys<IMap>], 's'> // union of +   string
-        '-'  : Format<IMap[NegativeIterationKeys<IMap>], 's'> // union of -   string
-        '0'  : Format<IMap['0'], 's'>
+        'all': Format<IMap[1][KnownIterationMapKeys<IMap>], 's'> // union of all string
+        '+'  : Format<IMap[1][PositiveIterationKeys<IMap>], 's'> // union of +   string
+        '-'  : Format<IMap[1][NegativeIterationKeys<IMap>], 's'> // union of -   string
+        '0'  : Format<IMap[1][NeutralIterationKeys<IMap>], 's'>
     }
     'number': {
-        'all': Format<IMap[KnownIterationMapKeys<IMap>], 'n'> // union of all number
-        '+'  : Format<IMap[PositiveIterationKeys<IMap>], 'n'> // union of +   number
-        '-'  : Format<IMap[NegativeIterationKeys<IMap>], 'n'> // union of -   number
-        '0'  : Format<IMap['0'], 'n'>
+        'all': Format<IMap[1][KnownIterationMapKeys<IMap>], 'n'> // union of all number
+        '+'  : Format<IMap[1][PositiveIterationKeys<IMap>], 'n'> // union of +   number
+        '-'  : Format<IMap[1][NegativeIterationKeys<IMap>], 'n'> // union of -   number
+        '0'  : Format<IMap[1][NeutralIterationKeys<IMap>], 'n'>
     }
 }

@@ -1,5 +1,5 @@
 import {_NumberOf} from '../Number/NumberOf'
-import {NumberMap} from '../Misc/Iteration/Number'
+import {NumberMap} from '../Iteration/Maps/Number'
 
 /**
  * Describes the match strategy when matching types

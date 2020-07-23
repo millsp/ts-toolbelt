@@ -5,6 +5,7 @@ const {checks, check} = Test
 //////////////////////////////////////////////////////////////////////////////////////////
 // FUNCTION //////////////////////////////////////////////////////////////////////////////
 
+// @ts-ignore
 const fn = (a: string, b: number, c: object) => true
 
 // ---------------------------------------------------------------------------------------
@@ -23,6 +24,7 @@ declare function compozeSync<Fns extends F.Function[]>(...args: F.Composer<Fns>)
 declare const composeSync: F.Compose<'sync'>
 
 const compozedSync = compozeSync(
+    // @ts-ignore
     (message: string)                   => false,                   // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     <T>(generic: T)                     => generic,                 // receive previous return
@@ -30,6 +32,7 @@ const compozedSync = compozeSync(
 )
 
 const composedSync = composeSync(
+    // @ts-ignore
     (message: string)                   => false,                   // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     <T>(generic: T)                     => generic,                 // receive previous return
@@ -47,6 +50,7 @@ declare function compozeAsync<Fns extends F.Function[]>(...args: F.Composer<Fns,
 declare const composeAsync: F.Compose<'async'>
 
 const compozedAsync = compozeAsync(
+    // @ts-ignore
     (message: string)                         => false,                   // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     async <T>(generic: T)                     => generic,                 // receive previous return
@@ -54,6 +58,7 @@ const compozedAsync = compozeAsync(
 )
 
 const composedAsync = composeAsync(
+    // @ts-ignore
     (message: string)                         => false,                   // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     async <T>(generic: T)                     => generic,                 // receive previous return
@@ -72,6 +77,7 @@ declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
 
 const __ = {} as A.x
 
+// @ts-ignore
 const toCurry = (name: string, age: number, single: true, nicknames: string) => true
 const curried = curry(toCurry)
 
@@ -106,6 +112,7 @@ const pypedSync = pypeSync(
     (name: string, age: number)         => ({name, age}),           // receive parameters
     <T>(generic: T)                     => generic,                 // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    // @ts-ignore
     (message: string)                   => false,                   // receive previous return
 )
 
@@ -113,6 +120,7 @@ const pipedSync = pipeSync(
     (name: string, age: number)           => ({name, age}),         // receive parameters
     <T>(generic: T)                     => generic,                 // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    // @ts-ignore
     (message: string)                   => false,                   // receive previous return
 )
 
@@ -130,6 +138,7 @@ const pypedAsync = pypeAsync(
     (name: string, age: number)               => ({name, age}),           // receive parameters
     async <T>(generic: T)                     => generic,                 // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    // @ts-ignore
     (message: string)                         => false,                   // receive previous return
 )
 
@@ -137,6 +146,7 @@ const pipedAsync = pipeAsync(
     (name: string, age: number)               => ({name, age}),           // receive parameters
     async <T>(generic: T)                     => generic,                 // receive previous return
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    // @ts-ignore
     (message: string)                         => false,                   // receive previous return
 )
 
