@@ -89,8 +89,8 @@
     },
     "include": [
       "./src/**/*",
-      "./tst/**/*"
-      // "./scr/**/*",
+      "./tst/**/*",
+      "./scr/**/*",
     ],
     "exclude": [
       "./node_modules/**/*",
