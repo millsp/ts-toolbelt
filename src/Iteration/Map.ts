@@ -1,5 +1,4 @@
 import {Iteration} from './Iteration'
-import {Patch} from '../Object/Patch'
 
 /**
  * Defines a basic map that will be passed to [[CreateMap]]

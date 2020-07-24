@@ -1,9 +1,9 @@
-import {AtBasic} from './At'
+import {At} from './At'
 import {OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
 import {Or} from '../Boolean/Or'
-import {ListOf} from './ListOf'
+import {_ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth, Anyfy, MergeStyle, NoList} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
@@ -27,7 +27,7 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle
 */
 export type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> =
     O extends unknown ? O1 extends unknown ? {
-        [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+        [K in keyof (Anyfy<O> & O1)]: MergeProp<At<O, K>, At<O1, K>, K, OOK, style>
     } & {} : never : never
 
 /**
@@ -39,7 +39,7 @@ type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle, M
     1: Merged                  // ramda, nothing to do
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
-         ? ListOf<Merged & {}>
+         ? _ListOf<Merged & {}>
          : Merged
        : Merged
        // for lodash, we preserve (restore) arrays like it does
@@ -56,7 +56,7 @@ export type MergeFlat<O extends object, O1 extends object, style extends MergeSt
 @hidden
 */
 type ___MergeDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> = {
-    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<At<O, K>, At<O1, K>, K, OOK, style>
 } // ! do not distribute here as the step earlier is a distribution already
 
 /**
@@ -84,7 +84,7 @@ type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle,
     1: Merged                  // ramda, nothing to do
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
-         ? ListOf<Merged & {}>
+         ? _ListOf<Merged & {}>
          : Merged
        : Merged
        // for lodash, we preserve (restore) arrays like it does

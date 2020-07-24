@@ -1,5 +1,5 @@
 import {List} from '../List/List'
-import {ObjectOf} from '../List/ObjectOf'
+import {_ObjectOf} from '../List/ObjectOf'
 
 /**
 Describes the permissions/modifiers fields can have
@@ -36,5 +36,5 @@ export type Anyfy<O extends object> = {
  */
 export type NoList<A extends any> =
     A extends List
-    ? ObjectOf<A>
+    ? _ObjectOf<A>
     : A

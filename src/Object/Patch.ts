@@ -1,7 +1,7 @@
-import {AtBasic} from './At'
+import {At} from './At'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
-import {ListOf} from './ListOf'
+import {_ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth, MergeStyle, NoList} from './_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
@@ -22,7 +22,7 @@ type PatchProp<OK, O1K, K extends Key, OOK extends Key> =
 */
 export type __PatchFlat<O extends object, O1 extends object, OOK extends Key = Keys<O>> =
     O extends unknown ? O1 extends unknown ? {
-        [K in keyof (O & _Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK>
+        [K in keyof (O & _Omit<O1, keyof O>)]: PatchProp<At<O, K>, At<O1, K>, K, OOK>
     } & {} : never : never
 
 /**
@@ -34,7 +34,7 @@ type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle, P
     1: Patched                  // ramda, nothing to do
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
-         ? ListOf<Patched & {}>
+         ? _ListOf<Patched & {}>
          : Patched
        : Patched
        // for lodash, we preserve (restore) arrays like it does
@@ -51,7 +51,7 @@ export type PatchFlat<O extends object, O1 extends object, style extends MergeSt
 @hidden
 */
 type ___PatchDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> = {
-    [K in keyof (O & _Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    [K in keyof (O & _Omit<O1, keyof O>)]: _PatchDeep<At<O, K>, At<O1, K>, K, OOK, style>
 } // ! do not distribute here as the step earlier is a distribution already
 
 /**
@@ -79,7 +79,7 @@ type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle,
     1: Patched                  // ramda, nothing to do
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
-         ? ListOf<Patched & {}>
+         ? _ListOf<Patched & {}>
          : Patched
        : Patched
        // for lodash, we preserve (restore) arrays like it does
