@@ -3,7 +3,7 @@ import {Pick} from './Pick'
 import {Key} from '../Any/Key'
 import {Contains} from '../Any/Contains'
 import {Keys} from './Keys'
-import {PatchFlat} from './Patch'
+import {__PatchFlat} from './Patch'
 
 /**
 @hidden
@@ -39,6 +39,6 @@ Make some fields of **`O`** **`undefined`** (deeply or not)
 */
 export type Undefinable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: UndefinablePart<O, depth>
-    0: PatchFlat<UndefinablePart<Pick<O, K>, depth>, O, 1>
+    0: __PatchFlat<UndefinablePart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> Undefinable -> merge it with O
 }[Contains<Keys<O>, K>] & {}

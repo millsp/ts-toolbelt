@@ -20,7 +20,7 @@ type PatchProp<OK, O1K, K extends Key, OOK extends Key> =
 /**
 @hidden
 */
-type __PatchFlat<O extends object, O1 extends object, OOK extends Key = Keys<O>> =
+export type __PatchFlat<O extends object, O1 extends object, OOK extends Key = Keys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (O & Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK>
     } & {} : never : never
