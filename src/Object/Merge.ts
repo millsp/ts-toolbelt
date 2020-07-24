@@ -40,7 +40,7 @@ type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle, M
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
          ? _ListOf<Merged & {}>
-         : Merged
+         : O
        : Merged
        // for lodash, we preserve (restore) arrays like it does
        // arrays are broken with `NoArray`, restored by `ListOf`
@@ -85,7 +85,7 @@ type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle,
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
          ? _ListOf<Merged & {}>
-         : Merged
+         : MergeProp<O, O1, K, OOK, style>
        : Merged
        // for lodash, we preserve (restore) arrays like it does
        // arrays are broken with `NoArray`, restored by `ListOf`

@@ -35,7 +35,7 @@ type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle, P
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
          ? _ListOf<Patched & {}>
-         : Patched
+         : O
        : Patched
        // for lodash, we preserve (restore) arrays like it does
        // arrays are broken with `NoArray`, restored by `ListOf`
@@ -80,7 +80,7 @@ type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle,
     0: [O] extends [List]       // lodash
        ? [O1] extends [List]
          ? _ListOf<Patched & {}>
-         : Patched
+         : PatchProp<O, O1, K, OOK>
        : Patched
        // for lodash, we preserve (restore) arrays like it does
        // arrays are broken with `NoArray`, restored by `ListOf`
