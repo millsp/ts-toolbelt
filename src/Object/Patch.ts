@@ -1,13 +1,13 @@
-import {AtBasic} from './At'
+import {At} from './At'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
-import {ObjectOf} from '../List/ObjectOf'
-import {ListOf} from './ListOf'
+import {_ListOf} from './ListOf'
 import {List} from '../List/List'
-import {Depth, MergeStyle} from './_Internal'
+import {Depth, MergeStyle, NoList} from './_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
-import {Omit} from './Omit'
+import {_Omit} from './Omit'
 import {Keys} from './Keys'
+import {Or} from '../Boolean/Or'
 
 /**
 @hidden
@@ -20,55 +20,52 @@ type PatchProp<OK, O1K, K extends Key, OOK extends Key> =
 /**
 @hidden
 */
-type NoList<A> =
-    A extends List
-    ? ObjectOf<A>
-    : A
-
-/**
-@hidden
-*/
-type __PatchFlat<O extends object, O1 extends object, OOK extends Key = Keys<O>> =
+export type __PatchFlat<O extends object, O1 extends object, OOK extends Key = Keys<O>> =
     O extends unknown ? O1 extends unknown ? {
-        [K in keyof (O & Omit<O1, keyof O>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK>
+        [K in keyof (O & _Omit<O1, keyof O>)]: PatchProp<At<O, K>, At<O1, K>, K, OOK>
     } & {} : never : never
 
 /**
 @hidden
 */
-type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
+type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle, Patched = __PatchFlat<NoList<O>, NoList<O1>>> = {
     // when we merge, we systematically remove inconvenient array methods
-    __PatchFlat<NoList<O>, NoList<O1>> extends infer X
-    ? { // so that we can merge `object` and arrays in the very same way
-          1: X                                               // ramda
-          0: Extends<O, List> extends 1 ? ListOf<X & {}> : X // lodash
-      }[style] // for lodash, we preserve (restore) arrays like it does
-            // arrays are broken with `NoArray`, restored by `ListOf`
-    : never
+    // so that we can merge `object` and arrays in the very same way
+    1: Patched                  // ramda, nothing to do
+    0: [O] extends [List]       // lodash
+       ? [O1] extends [List]
+         ? _ListOf<Patched & {}>
+         : Patched
+       : Patched
+       // for lodash, we preserve (restore) arrays like it does
+       // arrays are broken with `NoArray`, restored by `ListOf`
+}[style]
 
 /**
 @hidden
 */
-export type PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
+export type PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 1> =
     _PatchFlat<O, O1, style> & {}
 
 /**
 @hidden
 */
 type ___PatchDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> = {
-    [K in keyof (O & Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    [K in keyof (O & _Omit<O1, keyof O>)]: _PatchDeep<At<O, K>, At<O1, K>, K, OOK, style>
 } // ! do not distribute here as the step earlier is a distribution already
 
 /**
 @hidden
 */
 type __PatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
-      [OK] extends [BuiltInObject]
+    Or<Extends<[OK], [never]>, Extends<[O1K], [never]>> extends 1 // filter fallthrough `never`
+    ? PatchProp<OK, O1K, K, OOK>
+    : OK extends BuiltInObject
       ? PatchProp<OK, O1K, K, OOK>
-      : [O1K] extends [BuiltInObject]
+      : O1K extends BuiltInObject
         ? PatchProp<OK, O1K, K, OOK>
-        : [OK] extends [object]
-          ? [O1K] extends [object]
+        : OK extends object
+          ? O1K extends object
             ? ___PatchDeep<OK, O1K, style>
             : PatchProp<OK, O1K, K, OOK>
           : PatchProp<OK, O1K, K, OOK>
@@ -76,21 +73,28 @@ type __PatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeSty
 /**
 @hidden
 */
-type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
+type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, Patched = __PatchDeep<NoList<O>, NoList<O1>, K, OOK, style>> ={
     // when we merge, we systematically remove inconvenient array methods
-    __PatchDeep<NoList<O>, NoList<O1>, K, OOK, style> extends infer X
-    ? { // so that we can merge `object` and arrays in the very same way
-          1: X                                                    // ramda
-          0: Extends<O | O1, List> extends 1 ? ListOf<X & {}> : X // lodash
-      }[style] // for lodash, we preserve (restore) arrays like it does
-               // arrays are broken with `NoList`, restored by `ListOf`
-    : never
+    // so that we can merge `object` and arrays in the very same way
+    1: Patched                  // ramda, nothing to do
+    0: [O] extends [List]       // lodash
+       ? [O1] extends [List]
+         ? _ListOf<Patched & {}>
+         : Patched
+       : Patched
+       // for lodash, we preserve (restore) arrays like it does
+       // arrays are broken with `NoArray`, restored by `ListOf`
+}[style]
 
 /**
 @hidden
 */
 export type PatchDeep<O extends object, O1 extends object, style extends MergeStyle> =
-    _PatchDeep<O, O1, never, never, style> & {}
+    O extends unknown
+    ? O1 extends unknown
+      ? _PatchDeep<O, O1, never, never, style> & {}
+      : never
+    : never
 
 /**
 Complete the fields of **`O`** with the ones of **`O1`**. This is a version of
@@ -141,4 +145,3 @@ export type Patch<O extends object, O1 extends object, depth extends Depth = 'fl
     'flat': PatchFlat<O, O1, style>
     'deep': PatchDeep<O, O1, style>
 }[depth]
-

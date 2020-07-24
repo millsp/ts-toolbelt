@@ -1,5 +1,4 @@
 import {Iteration} from './Iteration'
-import {Patch} from '../Object/Patch'
 
 /**
  * Defines a basic map that will be passed to [[CreateMap]]
@@ -40,5 +39,5 @@ Creates a [[Map]] of number relationships
 */
 export type CreateMap<K extends Keys<RawMap>, RM extends RawMap> = [
     K,
-    Patch<RM, BoundMap>
+    RM & BoundMap
 ]

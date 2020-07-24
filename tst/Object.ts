@@ -173,8 +173,6 @@ type DIFF_O1_O_EQUALS = {
     l : [1, 2, 3]
 }
 
-type t = O.Diff<O1, O, 'default'>
-
 checks([
     check<O.Diff<O1, O, 'default'>, DIFF_O1_O_DEFAULT,  Test.Pass>(),
     check<O.Diff<O1, O, 'equals'>,  DIFF_O1_O_EQUALS,   Test.Pass>(),
@@ -928,6 +926,11 @@ checks([
     check<O.Patch<O1, O>,               PATCH_O1_O,         Test.Pass>(),
     check<O.Patch<O, O1, 'deep', 0>,    PATCH_O_O1_DEEP,    Test.Pass>(),
 ])
+
+function PATCH_GENERIC<O extends {n: number}>(o: O) {
+    const v = o as O.Patch<O, {a: 2}, 'flat', 0>
+    const p = v.n // this should work
+}
 
 // ---------------------------------------------------------------------------------------
 // PATCHALL

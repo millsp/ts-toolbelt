@@ -102,7 +102,7 @@ export {
 //
 // => If you wonder what the `type _<name>` means, it's a "step" in the implementation (a bare implementation)
 //    (Usually, the first step `_` takes care of parameters. But you can also find 2 steps `__` (eg. recursive))
-// -> Perf tip: When building utilities, always check if a type has an exported `_` version & decide if needed
+// -> Perf tip: When building utilities, always check if a type has an EXPORTED `_` version & decide if needed
 // -> Remember:
 //              - ALL EXPORTED `_` types are/must be NON-distributed types
 //              - ALL `_` types are parameter processors, they handle params
@@ -136,6 +136,13 @@ export {
 // -> We look for ones that have any kind of `Key` parameter `K extends Key`
 // -> We use `NumberOf` on those `K`s to make them `Number`s (ie. `string`s)
 //    (Yes, `NumberOf` yields a `string` bcs numbers are handled as strings)
+
+// ---------------------------------------------------------------------------------------
+// 6. Distribution
+//
+// => An easy way to test if distribution is happening correctly is to test the
+// type with `never`, then it should yield `never`. However, this might differ
+// or not be true for a few utilities.
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////

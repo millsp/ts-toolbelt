@@ -4,7 +4,7 @@ import {Key} from '../Any/Key'
 import {Contains} from '../Any/Contains'
 import {NonNullable} from '../Union/NonNullable'
 import {Keys} from './Keys'
-import {PatchFlat} from './Patch'
+import {__PatchFlat} from './Patch'
 
 /**
 @hidden
@@ -41,6 +41,6 @@ Make that **`L`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like
 */
 export type Compulsory<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: CompulsoryPart<O, depth>
-    0: PatchFlat<CompulsoryPart<Pick<O, K>, depth>, O, 1>
+    0: __PatchFlat<CompulsoryPart<Pick<O, K>, depth>, O>
     // Pick a part of O (with K) -> nullable -> merge it with O
 }[Contains<Keys<O>, K>] & {}

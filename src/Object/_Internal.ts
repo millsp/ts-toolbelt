@@ -1,3 +1,6 @@
+import {List} from '../List/List'
+import {_ObjectOf} from '../List/ObjectOf'
+
 /**
 Describes the permissions/modifiers fields can have
 * `R`: readonly
@@ -26,3 +29,12 @@ preserve the combine modifiers like `+readonly` and `?optional`.
 export type Anyfy<O extends object> = {
     [K in keyof O]: any
 }
+
+/**
+ * To apply [[ObjectOf]] on anything
+ * @hidden
+ */
+export type NoList<A extends any> =
+    A extends List
+    ? _ObjectOf<A>
+    : A
