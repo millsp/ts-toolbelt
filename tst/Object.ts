@@ -929,6 +929,11 @@ checks([
     check<O.Patch<O, O1, 'deep', 0>,    PATCH_O_O1_DEEP,    Test.Pass>(),
 ])
 
+function PATCH_GENERIC<O extends {n: number}>(o: O) {
+    const v = o as O.Patch<O, {a: 2}, 'flat', 0>
+    const p = v.n // this should work
+}
+
 // ---------------------------------------------------------------------------------------
 // PATCHALL
 

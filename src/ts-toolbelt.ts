@@ -137,6 +137,13 @@ export {
 // -> We use `NumberOf` on those `K`s to make them `Number`s (ie. `string`s)
 //    (Yes, `NumberOf` yields a `string` bcs numbers are handled as strings)
 
+// ---------------------------------------------------------------------------------------
+// 6. Distribution
+//
+// => An easy way to test if distribution is happening correctly is to test the
+// type with `never`, then it should yield `never`. However, this might differ
+// or not be true for a few utilities.
+
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
 
@@ -169,12 +176,3 @@ export {
 //     O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]>,
 //     O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]>,
 // ], 'deep', 0>
-
-// interface IM { n: number; }
-
-// function test<M extends IM>(m: M) {
-//     const fn1 = m.n // OK
-//     const wm = m as O.Patch<M, {a: 2}>
-//     const fn2 = wm.n // Property 'n' does not exist on type 'Writable<M, string | number | symbol, "flat">'.ts(2339)
-// }
-

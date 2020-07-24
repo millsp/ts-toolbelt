@@ -25,7 +25,7 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle
 /**
 @hidden
 */
-type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> =
+export type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> =
     O extends unknown ? O1 extends unknown ? {
         [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
     } & {} : never : never
@@ -33,15 +33,18 @@ type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, 
 /**
 @hidden
 */
-type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
+type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle, Merged = __MergeFlat<NoList<O>, NoList<O1>, style>> = {
     // when we merge, we systematically remove inconvenient array methods
-    __MergeFlat<NoList<O>, NoList<O1>, style> extends infer X
-    ? { // so that we can merge `object` and arrays in the very same way
-        1: X                                                // ramda
-        0: Extends<O, List> extends 1 ? ListOf<X & {}> : X  // lodash
-    }[style] // for lodash, we preserve (restore) arrays like it does
-                // arrays are broken with `NoArray`, restored by `ListOf`
-    : never
+    // so that we can merge `object` and arrays in the very same way
+    1: Merged                  // ramda, nothing to do
+    0: [O] extends [List]       // lodash
+       ? [O1] extends [List]
+         ? ListOf<Merged & {}>
+         : Merged
+       : Merged
+       // for lodash, we preserve (restore) arrays like it does
+       // arrays are broken with `NoArray`, restored by `ListOf`
+}[style]
 
 /**
 @hidden
@@ -75,15 +78,18 @@ type __MergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeSty
 /**
 @hidden
 */
-type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
+type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, Merged = __MergeDeep<NoList<O>, NoList<O1>, K, OOK, style>> = {
     // when we merge, we systematically remove inconvenient array methods
-    __MergeDeep<NoList<O>, NoList<O1>, K, OOK, style> extends infer X
-    ? { // so that we can merge `object` and arrays in the very same way
-          1: X                                                    // ramda
-          0: Extends<O | O1, List> extends 1 ? ListOf<X & {}> : X // lodash
-      }[style] // for lodash, we preserve (restore) arrays like it does
-               // arrays are broken with `NoList`, restored by `ListOf`
-    : never
+    // so that we can merge `object` and arrays in the very same way
+    1: Merged                  // ramda, nothing to do
+    0: [O] extends [List]       // lodash
+       ? [O1] extends [List]
+         ? ListOf<Merged & {}>
+         : Merged
+       : Merged
+       // for lodash, we preserve (restore) arrays like it does
+       // arrays are broken with `NoArray`, restored by `ListOf`
+}[style]
 
 /**
 @hidden
