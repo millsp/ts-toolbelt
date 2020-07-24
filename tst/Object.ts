@@ -445,7 +445,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // LISTOF
 
-type O_LISTOF = {
+type O_LISTOF_INDEX = {
     '0': 1
     '2': 3
     '3': never
@@ -453,10 +453,28 @@ type O_LISTOF = {
     '6': 6
 }
 
-type LISTOF_O = [1, 3, never, 5, 6]
+type O_LISTOF_NUMBER = {
+    [K in number]: 42
+}
+
+type O_LISTOF_STRING = {
+    [K in string]: 42
+}
+
+type O_LISTOF_SYMBOL = {
+    [K in symbol]: 42
+}
+
+type LISTOF_INDEX_O = [1, 3, never, 5, 6]
+type LISTOF_NUMBER_O = 42[]
+type LISTOF_STRING_O = 42[]
+type LISTOF_SYMBOL_O = unknown[]
 
 checks([
-    check<O.ListOf<O_LISTOF>,   LISTOF_O,   Test.Pass>(),
+    check<O.ListOf<O_LISTOF_INDEX>,     LISTOF_INDEX_O,     Test.Pass>(),
+    check<O.ListOf<O_LISTOF_NUMBER>,    LISTOF_NUMBER_O,    Test.Pass>(),
+    check<O.ListOf<O_LISTOF_STRING>,    LISTOF_STRING_O,    Test.Pass>(),
+    check<O.ListOf<O_LISTOF_SYMBOL>,    LISTOF_SYMBOL_O,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
