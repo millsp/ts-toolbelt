@@ -1,13 +1,13 @@
 import {AtBasic} from './At'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
-import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
 import {List} from '../List/List'
-import {Depth, MergeStyle} from './_Internal'
+import {Depth, MergeStyle, NoList} from './_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
-import {Omit} from './Omit'
+import {_Omit} from './Omit'
 import {Keys} from './Keys'
+import {Or} from '../Boolean/Or'
 
 /**
 @hidden
@@ -16,14 +16,6 @@ type PatchProp<OK, O1K, K extends Key, OOK extends Key> =
     K extends OOK // if prop of `O` is optional
     ? OK          // merge it with prop of `O1`
     : O1K
-
-/**
-@hidden
-*/
-type NoList<A> =
-    A extends List
-    ? ObjectOf<A>
-    : A
 
 /**
 @hidden
@@ -56,19 +48,21 @@ export type PatchFlat<O extends object, O1 extends object, style extends MergeSt
 @hidden
 */
 type ___PatchDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = Keys<O>> = {
-    [K in keyof (O & Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+    [K in keyof (O & _Omit<O1, keyof O>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
 } // ! do not distribute here as the step earlier is a distribution already
 
 /**
 @hidden
 */
 type __PatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
-      [OK] extends [BuiltInObject]
+    Or<Extends<[OK], [never]>, Extends<[O1K], [never]>> extends 1 // filter fallthrough `never`
+    ? PatchProp<OK, O1K, K, OOK>
+    : OK extends BuiltInObject
       ? PatchProp<OK, O1K, K, OOK>
-      : [O1K] extends [BuiltInObject]
+      : O1K extends BuiltInObject
         ? PatchProp<OK, O1K, K, OOK>
-        : [OK] extends [object]
-          ? [O1K] extends [object]
+        : OK extends object
+          ? O1K extends object
             ? ___PatchDeep<OK, O1K, style>
             : PatchProp<OK, O1K, K, OOK>
           : PatchProp<OK, O1K, K, OOK>

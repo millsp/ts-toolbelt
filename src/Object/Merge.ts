@@ -3,10 +3,9 @@ import {OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
 import {Or} from '../Boolean/Or'
-import {ObjectOf} from '../List/ObjectOf'
 import {ListOf} from './ListOf'
 import {List} from '../List/List'
-import {Depth, Anyfy, MergeStyle} from './_Internal'
+import {Depth, Anyfy, MergeStyle, NoList} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
@@ -22,14 +21,6 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle
             1: OK extends undefined ? OK  : OK // ramda : keep undefined
             0: OK extends undefined ? O1K : OK // lodash: fill undefined
         }[style]
-
-/**
-@hidden
-*/
-type NoList<A> =
-    A extends List
-    ? ObjectOf<A>
-    : A
 
 /**
 @hidden
