@@ -102,7 +102,7 @@ export {
 //
 // => If you wonder what the `type _<name>` means, it's a "step" in the implementation (a bare implementation)
 //    (Usually, the first step `_` takes care of parameters. But you can also find 2 steps `__` (eg. recursive))
-// -> Perf tip: When building utilities, always check if a type has an exported `_` version & decide if needed
+// -> Perf tip: When building utilities, always check if a type has an EXPORTED `_` version & decide if needed
 // -> Remember:
 //              - ALL EXPORTED `_` types are/must be NON-distributed types
 //              - ALL `_` types are parameter processors, they handle params
@@ -169,3 +169,12 @@ export {
 //     O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]>,
 //     O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]>,
 // ], 'deep', 0>
+
+// interface IM { n: number; }
+
+// function test<M extends IM>(m: M) {
+//     const fn1 = m.n // OK
+//     const wm = m as O.Patch<M, {a: 2}>
+//     const fn2 = wm.n // Property 'n' does not exist on type 'Writable<M, string | number | symbol, "flat">'.ts(2339)
+// }
+
