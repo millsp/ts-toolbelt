@@ -31,7 +31,11 @@ type ___ListOf<O extends object, K, LN extends List = [], I extends Iteration = 
 type __ListOf<O extends object> =
     number extends keyof O
     ? At<O, number>[]
-    : ___ListOf<O, keyof O>
+    : string extends keyof O
+      ? At<O, string>[]
+      : symbol extends keyof O
+        ? At<O, symbol>[]
+        : ___ListOf<O, keyof O>
 
 /**
 @hidden
