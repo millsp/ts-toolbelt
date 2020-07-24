@@ -135,4 +135,3 @@ export type Patch<O extends object, O1 extends object, depth extends Depth = 'fl
     'flat': PatchFlat<O, O1, style>
     'deep': PatchDeep<O, O1, style>
 }[depth]
-

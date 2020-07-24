@@ -40,5 +40,5 @@ Creates a [[Map]] of number relationships
 */
 export type CreateMap<K extends Keys<RawMap>, RM extends RawMap> = [
     K,
-    Patch<RM, BoundMap>
+    RM & BoundMap
 ]
