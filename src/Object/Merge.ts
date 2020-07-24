@@ -37,7 +37,7 @@ type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle, M
     // when we merge, we systematically remove inconvenient array methods
     // so that we can merge `object` and arrays in the very same way
     1: Merged                  // ramda, nothing to do
-    0: [O] extends [List]       // lodash
+    0: [O] extends [List]      // lodash
        ? [O1] extends [List]
          ? _ListOf<Merged & {}>
          : O
@@ -82,7 +82,7 @@ type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle,
     // when we merge, we systematically remove inconvenient array methods
     // so that we can merge `object` and arrays in the very same way
     1: Merged                  // ramda, nothing to do
-    0: [O] extends [List]       // lodash
+    0: [O] extends [List]      // lodash
        ? [O1] extends [List]
          ? _ListOf<Merged & {}>
          : MergeProp<O, O1, K, OOK, style>
