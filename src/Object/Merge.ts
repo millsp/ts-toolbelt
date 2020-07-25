@@ -95,7 +95,11 @@ type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle,
 @hidden
 */
 export type MergeDeep<O extends object, O1 extends object, style extends MergeStyle> =
-    _MergeDeep<O, O1, never, never, style> & {}
+    O extends unknown
+    ? O1 extends unknown
+      ? _MergeDeep<O, O1, never, never, style> & {}
+      : never
+    : never
 
 /**
 Accurately merge the fields of **`O`** with the ones of **`O1`**. It is
