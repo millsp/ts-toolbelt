@@ -1,13 +1,12 @@
 import {_Pick} from './Pick'
 import {Exclude} from '../Union/Exclude'
 import {Key} from '../Any/Key'
-import {Keys} from './Keys'
 
 /**
  * @hidden
  */
 export type _Omit<O extends object, K extends Key> =
-    _Pick<O, Exclude<Keys<O>, K>>
+    _Pick<O, Exclude<keyof O, K>>
 
 /**
 Remove out of **`O`** the fields of key **`K`**

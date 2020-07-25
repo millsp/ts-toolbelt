@@ -1,5 +1,4 @@
 import {Equals} from '../Any/Equals'
-import {Key} from '../Any/Key'
 
 // Credit https://stackoverflow.com/a/52473108/3570903
 
@@ -23,8 +22,6 @@ Get the keys of **`O`** that are readonly
 ```
 */
 export type ReadonlyKeys<O extends object> =
-    (
-        O extends unknown
-        ? _ReadonlyKeys<O>
-        : never
-    ) & Key
+    O extends unknown
+    ? _ReadonlyKeys<O>
+    : never

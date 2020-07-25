@@ -28,7 +28,7 @@ preserve the combine modifiers like `+readonly` and `?optional`.
  */
 export type Anyfy<O extends object> = {
     [K in keyof O]: any
-}
+} & {}
 
 /**
  * To apply [[ObjectOf]] on anything

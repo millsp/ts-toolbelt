@@ -9,7 +9,7 @@ import {Key} from '../Any/Key'
 @hidden
 */
 export type _IntersectMatch<O extends object, O1 extends object, match extends Match> = {
-    [K in keyof O]: {
+    [K in keyof O]-?: {
         1: K
         0: never
     }[Is<O[K], At<O1, K>, match>]
@@ -19,11 +19,9 @@ export type _IntersectMatch<O extends object, O1 extends object, match extends M
 @hidden
 */
 type IntersectMatch<O extends object, O1 extends object, match extends Match> =
-    (
-        O extends unknown
-        ? _IntersectMatch<O, O1, match>
-        : never
-    ) & Key
+    O extends unknown
+    ? _IntersectMatch<O, O1, match>
+    : never
 
 /**
 Get the intersecting keys of **`O`** & **`O1`**

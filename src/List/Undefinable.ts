@@ -22,4 +22,4 @@ Make some entries of **`L`** not **`undefined`** (deeply or not)
 export type Undefinable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: Cast<OUndefinable<L, Key, depth>, List>
     0: ListOf<OUndefinable<ObjectOf<L>, NumberOf<K>, depth>>
-}[Contains<Keys<L>, K>] & {}
+}[Contains<Keys<L>, K>]

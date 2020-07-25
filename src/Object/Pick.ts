@@ -24,5 +24,5 @@ Extract out of **`O`** the fields of key **`K`**
 */
 export type Pick<O extends object, K extends Key> =
     O extends unknown
-    ? _Pick<O, K & keyof O>
+    ? _Pick<O, K>
     : never

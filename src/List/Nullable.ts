@@ -22,4 +22,4 @@ Make some entries of **`L`** nullable (deeply or not)
 export type Nullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> = {
     1: Cast<ONullable<L, Key, depth>, List>
     0: ListOf<ONullable<ObjectOf<L>, NumberOf<K>, depth>>
-}[Contains<Keys<L>, K>] & {}
+}[Contains<Keys<L>, K>]
