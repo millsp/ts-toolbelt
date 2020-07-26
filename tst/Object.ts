@@ -685,7 +685,7 @@ type MERGE_O_O1_DEEP_1 = {
     },
     k: {} | {[k: string]: string} | Date
     l: {0: {a: 'a', b: 'b'}, 1: 2, 2: 3}
-    m: {}
+    m: []
     n: 42
 }
 
@@ -704,6 +704,7 @@ checks([
     check<O.MergeAll<{}, [O_MERGE, O1_MERGE]>,              MERGE_O_O1,         Test.Pass>(),
     check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 0>,   MERGE_O_O1_DEEP_0,  Test.Pass>(),
     check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 1>,   MERGE_O_O1_DEEP_1,  Test.Pass>(),
+    check<O.MergeAll<[], [[0], [0, 1]], 'deep', 2>,         Array<(0 | 1)>,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
-import {At} from './At'
-import {OptionalKeys} from './OptionalKeys'
+import {AtBasic} from './At'
+import {_OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
 import {Extends} from '../Any/Extends'
 import {Or} from '../Boolean/Or'
@@ -12,92 +12,101 @@ import {BuiltInObject} from '../Misc/BuiltInObject'
 /**
 @hidden
 */
+type LibStyle<Merged, O, O1, style extends MergeStyle> = {
+    // for lodash, we preserve (restore) arrays like it does
+    // this (heavy) version is able to 100% preserve tuples
+    0: O extends List
+       ? O1 extends List
+         ? _ListOf<Merged & {}>
+         : O
+       : Merged
+
+    // for ramda, there is nothing to do, lists are destroyed
+    // so here `NoList` did that job and we don't restore them
+    1: Merged
+
+    // this default behaves like lodash, it preserves arrays
+    // but its way lighter because it does not restore tuples
+    2: O extends List
+       ? O1 extends List
+         ? Merged[keyof Merged][]
+         : O
+       : Merged
+}[style]
+
+/**
+@hidden
+*/
 type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
     K extends OOK                            // if prop of `O` is optional
     ? NonNullable<OK> | O1K                  // merge it with prop of `O1`
     : [OK] extends [never]                   // if it does not exist
       ? O1K                                  // complete with prop of `O1`
       : {
-            1: OK extends undefined ? OK  : OK // ramda : keep undefined
             0: OK extends undefined ? O1K : OK // lodash: fill undefined
+            1: OK                              // ramda : keep undefined
+            2: OK extends undefined ? O1K : OK // lodash: fill undefined
         }[style]
 
 /**
 @hidden
 */
-export type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> =
-    O extends unknown ? O1 extends unknown ? {
-        [K in keyof (Anyfy<O> & O1)]: MergeProp<At<O, K>, At<O1, K>, K, OOK, style>
-    } & {} : never : never
+type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = _OptionalKeys<O>> = {
+    [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+} & {}
 
 /**
 @hidden
 */
-type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle, Merged = __MergeFlat<NoList<O>, NoList<O1>, style>> = {
-    // when we merge, we systematically remove inconvenient array methods
-    // so that we can merge `object` and arrays in the very same way
-    1: Merged                  // ramda, nothing to do
-    0: [O] extends [List]      // lodash
-       ? [O1] extends [List]
-         ? _ListOf<Merged & {}>
-         : O
-       : Merged
-       // for lodash, we preserve (restore) arrays like it does
-       // arrays are broken with `NoArray`, restored by `ListOf`
-}[style]
+export type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
+    LibStyle<__MergeFlat<NoList<O>, NoList<O1>, style>, O, O1, style>
 
 /**
 @hidden
 */
-export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
-    _MergeFlat<O, O1, style> & {}
-
-/**
-@hidden
-*/
-type ___MergeDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = OptionalKeys<O>> = {
-    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<At<O, K>, At<O1, K>, K, OOK, style>
-} // ! do not distribute here as the step earlier is a distribution already
-
-/**
-@hidden
-*/
-type __MergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
-    Or<Extends<[OK], [never]>, Extends<[O1K], [never]>> extends 1 // filter fallthrough `never`
-    ? MergeProp<OK, O1K, K, OOK, style>
-    : OK extends BuiltInObject
-      ? MergeProp<OK, O1K, K, OOK, style>
-      : O1K extends BuiltInObject
-        ? MergeProp<OK, O1K, K, OOK, style>
-        : OK extends object
-          ? O1K extends object
-            ? ___MergeDeep<OK, O1K, style>
-            : MergeProp<OK, O1K, K, OOK, style>
-          : MergeProp<OK, O1K, K, OOK, style>
-
-/**
-@hidden
-*/
-type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, Merged = __MergeDeep<NoList<O>, NoList<O1>, K, OOK, style>> = {
-    // when we merge, we systematically remove inconvenient array methods
-    // so that we can merge `object` and arrays in the very same way
-    1: Merged                  // ramda, nothing to do
-    0: [O] extends [List]      // lodash
-       ? [O1] extends [List]
-         ? _ListOf<Merged & {}>
-         : MergeProp<O, O1, K, OOK, style>
-       : Merged
-       // for lodash, we preserve (restore) arrays like it does
-       // arrays are broken with `NoArray`, restored by `ListOf`
-}[style]
-
-/**
-@hidden
-*/
-export type MergeDeep<O extends object, O1 extends object, style extends MergeStyle> =
+export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle = 1> =
     O extends unknown
     ? O1 extends unknown
-      ? _MergeDeep<O, O1, never, never, style> & {}
+      ? _MergeFlat<O, O1, style>
+      : never
+    : never
+
+/**
+@hidden
+*/
+type __MergeDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = _OptionalKeys<O>> = {
+    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+}
+
+/**
+@hidden
+*/
+type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
+    OK extends BuiltInObject
+    ? MergeProp<OK, O1K, K, OOK, style>
+    : O1K extends BuiltInObject
+      ? MergeProp<OK, O1K, K, OOK, style>
+      : OK extends object
+        ? O1K extends object
+          ? __MergeDeep<OK, O1K, style>
+          : MergeProp<OK, O1K, K, OOK, style>
+        : MergeProp<OK, O1K, K, OOK, style>
+
+/**
+@hidden
+*/
+export type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
+    Or<Extends<[O], [never]>, Extends<[O1], [never]>> extends 1 // filter never
+    ? MergeProp<O, O1, K, OOK, style>
+    : LibStyle<ChooseMergeDeep<NoList<O>, NoList<O1>, K, OOK, style>, O, O1, style>
+
+/**
+@hidden
+*/
+export type MergeDeep<O, O1, style extends MergeStyle> =
+    O extends unknown
+    ? O1 extends unknown
+      ? _MergeDeep<O, O1, never, never, style>
       : never
     : never
 

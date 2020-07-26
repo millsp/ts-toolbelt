@@ -20,7 +20,7 @@ export type Depth = 'flat' | 'deep'
  * `0`: lodash style. Preserves lists, and completes when undefined types
  * `1`: ramda style. Destroys lists, does not complete if undefined types
  */
-export type MergeStyle = 0 | 1
+export type MergeStyle = 0 | 1 | 2
 
 /**
 Make an object properties (all) `never`. We use this to intersect `object`s and
