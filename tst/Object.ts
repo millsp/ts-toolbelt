@@ -697,6 +697,13 @@ checks([
     check<O.MergeUp<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
 ])
 
+function MERGE_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.MergeUp<O, {n: string}, 'flat', 1>
+    const v1 = o as O.MergeUp<O, {n: string}, 'deep', 0>
+    const p0: string | number = v0.n // this should work
+    const p1: string | number = v1.n // this should work
+}
+
 // ---------------------------------------------------------------------------------------
 // MERGEALL
 
@@ -947,8 +954,12 @@ checks([
 ])
 
 function PATCH_GENERIC<O extends {n: number}>(o: O) {
-    const v = o as O.Patch<O, {a: 2}, 'flat', 0>
-    const p = v.n // this should work
+    const v0 = o as O.Patch<O, {a: string}, 'flat', 1>
+    const v1 = o as O.Patch<O, {a: string}, 'deep', 0>
+    const p0n: number = v0.n // this should work
+    const p1n: number = v1.n // this should work
+    const p0a: string = v0.a // this should work
+    const p1a: string = v1.a // this should work
 }
 
 // ---------------------------------------------------------------------------------------
