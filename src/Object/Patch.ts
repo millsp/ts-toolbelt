@@ -89,9 +89,11 @@ type ChoosePatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends Merg
 @hidden
 */
 export type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
-    Or<Extends<[O], [never]>, Extends<[O1], [never]>> extends 1 // filter never
+    [O] extends [never]
     ? PatchProp<O, O1, K, OOK>
-    : LibStyle<ChoosePatchDeep<NoList<O>, NoList<O1>, K, OOK, style>, O, O1, style>
+    : [O1] extends [never]
+      ? PatchProp<O, O1, K, OOK>
+      : LibStyle<ChoosePatchDeep<NoList<O>, NoList<O1>, K, OOK, style>, O, O1, style>
 
 /**
 @hidden

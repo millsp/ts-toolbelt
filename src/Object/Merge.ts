@@ -96,9 +96,11 @@ type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends Merg
 @hidden
 */
 export type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
-    Or<Extends<[O], [never]>, Extends<[O1], [never]>> extends 1 // filter never
+    [O] extends [never]
     ? MergeProp<O, O1, K, OOK, style>
-    : LibStyle<ChooseMergeDeep<NoList<O>, NoList<O1>, K, OOK, style>, O, O1, style>
+    : [O1] extends [never]
+      ? MergeProp<O, O1, K, OOK, style>
+      : LibStyle<ChooseMergeDeep<NoList<O>, NoList<O1>, K, OOK, style>, O, O1, style>
 
 /**
 @hidden
