@@ -1,6 +1,6 @@
 import {Exclude} from './Exclude'
 import {Match} from '../Any/_Internal'
-import {__PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 
 /**
 Get an [[Object]] that is the difference between **`O`** & **`O1`**
@@ -32,4 +32,4 @@ type test3 = O.Diff<Person0, Person1, 'equals'>    // {nick: string; age: string
 ```
 */
 export type Diff<O extends object, O1 extends object, match extends Match = 'default'> =
-    __PatchFlat<Exclude<O, O1, match>, Exclude<O1, O, match>>
+    PatchFlat<Exclude<O, O1, match>, Exclude<O1, O, match>>

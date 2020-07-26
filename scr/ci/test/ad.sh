@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# rm -fr dt
+rm -fr dt
 
-# git clone --depth=1 https://github.com/DefinitelyTyped/DefinitelyTyped.git dt &&
+git clone --depth=1 https://github.com/DefinitelyTyped/DefinitelyTyped.git dt &&
 
-# npx ts-node scr/tools/dt-update-version.ts &&
+npx ts-node scr/tools/dt-update-version.ts &&
 
-# cd dt &&
+cd dt &&
 
-# git commit -am "dependents testing" &&
+git commit -am "dependents testing" &&
 
-# npm i &&
+npm i &&
 
-# npm test
+npm test

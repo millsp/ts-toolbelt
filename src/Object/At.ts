@@ -4,13 +4,21 @@ import {Boolean} from '../Boolean/Boolean'
 /**
 @hidden
 */
-type AtStrict<O extends object, K extends Key> =
+export type AtBasic<O extends object, K extends Key> =
+    K extends keyof O
+    ? O[K]
+    : never
+
+/**
+@hidden
+*/
+export type AtStrict<O extends object, K extends Key> =
     O[K & keyof O] // this is so that we can query `string | number`
 
 /**
 @hidden
 */
-type AtLoose<O extends object, K extends Key> =
+export type AtLoose<O extends object, K extends Key> =
     O extends unknown
     ? AtStrict<O, K>
     : never

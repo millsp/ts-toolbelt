@@ -14,7 +14,7 @@ import {At} from './At'
 */
 type PickIfEntry<O extends object, LN extends List, I extends Iteration> =
     Key<I> extends keyof O
-    ? Append<LN, O[Cast<Key<I>, keyof O>]>
+    ? Append<LN, O[Key<I> & keyof O]>
     : LN
 
 /**

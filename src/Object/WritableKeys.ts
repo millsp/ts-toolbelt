@@ -1,5 +1,4 @@
 import {Equals} from '../Any/Equals'
-import {Key} from '../Any/Key'
 
 // Credit https://stackoverflow.com/a/52473108/3570903
 
@@ -22,8 +21,6 @@ Get the keys of **`O`** that are writable
 ```
 */
 export type WritableKeys<O extends object> =
-    (
-        O extends unknown
-        ? _WritableKeys<O>
-        : never
-    ) & Key
+    O extends unknown
+    ? _WritableKeys<O>
+    : never

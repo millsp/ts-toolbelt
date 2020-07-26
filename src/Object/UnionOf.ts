@@ -1,5 +1,10 @@
-import {Keys} from './Keys'
 import {At} from './At'
+
+/**
+ * @hidden
+ */
+export type _UnionOf<O extends object> =
+    At<O, keyof O>
 
 /**
 Transform an [[Object]] into an [[Union]]
@@ -10,4 +15,6 @@ Transform an [[Object]] into an [[Union]]
 ```
 */
 export type UnionOf<O extends object> =
-    At<O, Keys<O>>
+    O extends unknown
+    ? _UnionOf<O>
+    : never

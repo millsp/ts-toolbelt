@@ -3,13 +3,12 @@ import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
 import {Keys} from './Keys'
-import {Key} from '../Any/Key'
 
 /**
 @hidden
 */
 export type _ExcludeMatch<O extends object, O1 extends object, match extends Match> = {
-    [K in keyof O]: {
+    [K in keyof O]-?: {
         1: never
         0: K
     }[Is<O[K], At<O1, K>, match>]
@@ -19,11 +18,9 @@ export type _ExcludeMatch<O extends object, O1 extends object, match extends Mat
 @hidden
 */
 type ExcludeMatch<O extends object, O1 extends object, match extends Match> =
-    (
-        O extends unknown
-        ? _ExcludeMatch<O, O1, match>
-        : never
-    ) & Key
+    O extends unknown
+    ? _ExcludeMatch<O, O1, match>
+    : never
 
 /**
 Exclude the keys of **`O1`** out of the keys of **`O`**

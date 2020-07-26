@@ -37,4 +37,4 @@ export type Update<O extends object, K extends Key, A extends any> = {
     [P in keyof O]: P extends K
                     ? Replace<A, x, O[P]>
                     : O[P]
-}
+} & {}
