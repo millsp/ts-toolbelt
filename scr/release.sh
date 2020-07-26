@@ -14,15 +14,15 @@ RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
 
 # Publish the current branch origin
 if [ "$BRANCH" != "master" ]; then
-    npx standard-version --skip.changelog && # skip changelog
-    git push origin $BRANCH                  # not a release
+    npx standard-version --skip.changelog &&  # skip changelog
+    git push origin $BRANCH                   # not a release
 else
-    npx standard-version &&              # gen changelog
+    npx standard-version &&                   # gen changelog
 
     if [ "$RELEASE" = "false" ]; then
-        git push origin $BRANCH --follow-tags # only releases
-    else
         git push origin $BRANCH
+    else
+        git push origin $BRANCH --follow-tags # only releases
     fi;
 fi;
 
