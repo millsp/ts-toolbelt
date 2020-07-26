@@ -13,8 +13,8 @@ import {_ObjectOf} from '../List/ObjectOf'
 type LibStyle<Merged, O, O1, style extends MergeStyle> = {
     // for lodash, we preserve (restore) arrays like it does
     // this (heavy) version is able to 100% preserve tuples
-    0: O extends List
-       ? O1 extends List
+    0: [O] extends [List]
+       ? [O1] extends [List]
          ? _ListOf<Merged & {}>
          : O
        : Merged
@@ -25,8 +25,8 @@ type LibStyle<Merged, O, O1, style extends MergeStyle> = {
 
     // this default behaves like lodash, it preserves arrays
     // but its way lighter because it does not restore tuples
-    2: O extends List
-       ? O1 extends List
+    2: [O] extends [List]
+       ? [O1] extends [List]
          ? Merged[keyof Merged][]
          : O
        : Merged
