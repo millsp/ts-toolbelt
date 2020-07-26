@@ -1,12 +1,11 @@
 import {AtBasic} from './At'
 import {Key} from '../Any/Key'
-import {Extends} from '../Any/Extends'
 import {_ListOf} from './ListOf'
 import {List} from '../List/List'
-import {Depth, MergeStyle, NoList} from './_Internal'
+import {Depth, MergeStyle} from './_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 import {_Omit} from './Omit'
-import {Or} from '../Boolean/Or'
+import {_ObjectOf} from '../List/ObjectOf'
 
 /**
 @hidden
@@ -52,7 +51,7 @@ type __PatchFlat<O extends object, O1 extends object, OOK extends Key = keyof O>
 @hidden
 */
 export type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
-    LibStyle<__PatchFlat<NoList<O>, NoList<O1>>, O, O1, style>
+    LibStyle<__PatchFlat<_ObjectOf<O>, _ObjectOf<O1>>, O, O1, style>
 
 /**
 @hidden
@@ -81,7 +80,7 @@ type ChoosePatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends Merg
       ? PatchProp<OK, O1K, K, OOK>
       : OK extends object
         ? O1K extends object
-          ? __PatchDeep<OK, O1K, style>
+          ? __PatchDeep<_ObjectOf<OK>, _ObjectOf<O1K>, style>
           : PatchProp<OK, O1K, K, OOK>
         : PatchProp<OK, O1K, K, OOK>
 
@@ -93,7 +92,7 @@ export type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends Merg
     ? PatchProp<O, O1, K, OOK>
     : [O1] extends [never]
       ? PatchProp<O, O1, K, OOK>
-      : LibStyle<ChoosePatchDeep<NoList<O>, NoList<O1>, K, OOK, style>, O, O1, style>
+      : LibStyle<ChoosePatchDeep<O, O1, K, OOK, style>, O, O1, style>
 
 /**
 @hidden

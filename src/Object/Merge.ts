@@ -1,13 +1,12 @@
 import {AtBasic} from './At'
 import {_OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
-import {Extends} from '../Any/Extends'
-import {Or} from '../Boolean/Or'
 import {_ListOf} from './ListOf'
 import {List} from '../List/List'
-import {Depth, Anyfy, MergeStyle, NoList} from './_Internal'
+import {Depth, Anyfy, MergeStyle} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
+import {_ObjectOf} from '../List/ObjectOf'
 
 /**
 @hidden
@@ -59,7 +58,7 @@ type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, 
 @hidden
 */
 export type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
-    LibStyle<__MergeFlat<NoList<O>, NoList<O1>, style>, O, O1, style>
+    LibStyle<__MergeFlat<_ObjectOf<O>, _ObjectOf<O1>, style>, O, O1, style>
 
 /**
 @hidden
@@ -88,7 +87,7 @@ type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends Merg
       ? MergeProp<OK, O1K, K, OOK, style>
       : OK extends object
         ? O1K extends object
-          ? __MergeDeep<OK, O1K, style>
+          ? __MergeDeep<_ObjectOf<OK>, _ObjectOf<O1K>, style>
           : MergeProp<OK, O1K, K, OOK, style>
         : MergeProp<OK, O1K, K, OOK, style>
 
@@ -100,7 +99,7 @@ export type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends Merg
     ? MergeProp<O, O1, K, OOK, style>
     : [O1] extends [never]
       ? MergeProp<O, O1, K, OOK, style>
-      : LibStyle<ChooseMergeDeep<NoList<O>, NoList<O1>, K, OOK, style>, O, O1, style>
+      : LibStyle<ChooseMergeDeep<O, O1, K, OOK, style>, O, O1, style>
 
 /**
 @hidden
