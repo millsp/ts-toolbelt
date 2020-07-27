@@ -553,7 +553,7 @@ type MERGE_O_O1 = {
         a?: string
         b?: number
     } | Date
-    d : 'hello' | undefined
+    d : 'hello' | 'goodbye'
     e : number | {a: 1}
     f?: {
         a : string
@@ -570,9 +570,13 @@ type MERGE_O_O1 = {
     h: {
         a: number
         b: number
-    } | undefined
+    } | {
+        a: string
+    }
     i: {
         a: string
+    } | {
+        a: number
     } | undefined
     j: {
         a: {

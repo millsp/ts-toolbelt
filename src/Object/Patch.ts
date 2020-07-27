@@ -56,7 +56,7 @@ export type _PatchFlat<O extends object, O1 extends object, style extends MergeS
 /**
 @hidden
 */
-export type PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 1> =
+export type PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
     O extends unknown
     ? O1 extends unknown
       ? _PatchFlat<O, O1, style>
@@ -149,7 +149,7 @@ type test = O.Patch<O, O1, 'deep'>
 // }
 ```
 */
-export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 1> = {
+export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2> = {
     'flat': PatchFlat<O, O1, style>
     'deep': PatchDeep<O, O1, style>
 }[depth]

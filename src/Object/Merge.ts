@@ -63,7 +63,7 @@ export type _MergeFlat<O extends object, O1 extends object, style extends MergeS
 /**
 @hidden
 */
-export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle = 1> =
+export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
     O extends unknown
     ? O1 extends unknown
       ? _MergeFlat<O, O1, style>
@@ -158,7 +158,7 @@ type test = O.Merge<O, O1, 'deep'>
 // }
 ```
 */
-export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 1> = {
+export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2> = {
     'flat': MergeFlat<O, O1, style>
     'deep': MergeDeep<O, O1, style>
 }[depth]

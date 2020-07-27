@@ -37,7 +37,7 @@ items get completed by the next ones (last-in completes).
 ```ts
 ```
 */
-export type MergeAll<O extends object, Os extends List<object>, depth extends Depth = 'flat', style extends MergeStyle = 1> =
+export type MergeAll<O extends object, Os extends List<object>, depth extends Depth = 'flat', style extends MergeStyle = 2> =
     O extends unknown
     ? Os extends unknown
       ? _MergeAll<O, Os, depth, style>

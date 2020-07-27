@@ -37,7 +37,7 @@ left, first items get overridden by the next ones (last-in overrides).
 ```ts
 ```
 */
-export type Assign<O extends object, Os extends List<object>, depth extends Depth = 'flat', style extends MergeStyle = 1> =
+export type Assign<O extends object, Os extends List<object>, depth extends Depth = 'flat', style extends MergeStyle = 2> =
     O extends unknown
     ? Os extends unknown
       ? _Assign<O, Os, depth, style>
