@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.13.34](https://github.com/millsp/ts-toolbelt/compare/v6.13.31...v6.13.34) (2020-07-27)
+
+
+### Bug Fixes
+
+* **merge, patch:** prefer lodash-style merging ([71dda67](https://github.com/millsp/ts-toolbelt/commit/71dda67baeced11f1b3528a1a7416a83bcf7cadc))
+* **release:** do not tag if not release ([d51fc4c](https://github.com/millsp/ts-toolbelt/commit/d51fc4c21486f379632290a3fd8c0ca267ab8cfa))
+
+
+### Others
+
+* **merge, patch:** simplyfy statement ([f86944f](https://github.com/millsp/ts-toolbelt/commit/f86944ff00b970d7e2da48abbff43e58bdf29b99))
+* **merge, patch, objectof:** improve speed of merge and patch ([94f41ff](https://github.com/millsp/ts-toolbelt/commit/94f41ff83c2b84ca468c44525b3475aef42517eb))
+* **patch, merge:** more tests on generics ([4a33041](https://github.com/millsp/ts-toolbelt/commit/4a33041c433342e103bc6d0192f03f738a0f1ae3))
+* **patch, merge:** prevent unnecessary distribution ([7f5cd5d](https://github.com/millsp/ts-toolbelt/commit/7f5cd5df0594797fee0827df785028b82167e275))
+* **release:** 6.13.32 ([fb05cbe](https://github.com/millsp/ts-toolbelt/commit/fb05cbeca0754131082b56b5a59d753b23a88f4b))
+* **release:** 6.13.33 ([e077940](https://github.com/millsp/ts-toolbelt/commit/e0779409a11fd1cf50d1330a77accadf45a6ad3a))
+
 ### [6.13.33](https://github.com/millsp/ts-toolbelt/compare/v6.13.31...v6.13.33) (2020-07-26)
 
 
