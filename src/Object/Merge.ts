@@ -57,7 +57,7 @@ type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, 
 /**
 @hidden
 */
-export type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
+export type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
     LibStyle<__MergeFlat<_ObjectOf<O>, _ObjectOf<O1>, style>, O, O1, style>
 
 /**

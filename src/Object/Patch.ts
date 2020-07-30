@@ -50,7 +50,7 @@ type __PatchFlat<O extends object, O1 extends object, OOK extends Key = keyof O>
 /**
 @hidden
 */
-export type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
+export type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
     LibStyle<__PatchFlat<_ObjectOf<O>, _ObjectOf<O1>>, O, O1, style>
 
 /**

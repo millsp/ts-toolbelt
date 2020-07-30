@@ -1,10 +1,9 @@
 import {Nullable as UNullable} from '../Union/Nullable'
 import {Depth} from './_Internal'
-import {Pick} from './Pick'
+import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
 import {Contains} from '../Any/Contains'
-import {Keys} from './Keys'
-import {PatchFlat} from './Patch'
+import {_PatchFlat} from './Patch'
 
 /**
 @hidden
@@ -29,6 +28,15 @@ type NullablePart<O extends object, depth extends Depth> = {
 }[depth]
 
 /**
+ * @hidden
+ */
+export type _Nullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
+    1: NullablePart<O, depth>
+    0: _PatchFlat<NullablePart<_Pick<O, K>, depth>, O>
+    // Pick a part of O (with K) -> nullable -> merge it with O
+}[Contains<keyof O, K>]
+
+/**
 Make some fields of **`O`** nullable (deeply or not)
 @param O to make nullable
 @param K (?=`Key`) to choose fields
@@ -38,8 +46,8 @@ Make some fields of **`O`** nullable (deeply or not)
 ```ts
 ```
 */
-export type Nullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: NullablePart<O, depth>
-    0: PatchFlat<NullablePart<Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<Keys<O>, K>]
+export type Nullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
+    O extends unknown
+    ? _Nullable<O, K, depth>
+    : never
+
