@@ -889,11 +889,11 @@ checks([
     check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'> | undefined, Test.Pass>(),
 ])
 
-function OPTIONAL_GENERIC<O extends {n: number}>(o: O) {
+function OPTIONAL_GENERIC<O extends {values: number[]}>(o: O) {
     const v0 = o as O.Optional<O, any, 'flat'>
     const v1 = o as O.Optional<O, any, 'deep'>
-    const p0: number | undefined = v0.n
-    const p1: number | undefined = v1.n
+    const p0: number[] | undefined = v0.values
+    const p1: (number | undefined)[] | undefined = v1.values
 }
 
 // ---------------------------------------------------------------------------------------

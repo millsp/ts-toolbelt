@@ -1,14 +1,6 @@
 import {_Omit} from '../Object/Omit'
 import {_Pick} from '../Object/Pick'
-import {At} from '../Object/At'
-
-/**
-@hidden
-*/
-export type _ObjectOf<L extends object> =
-    number extends At<L, 'length'> // ^^^ handles mixed up objs
-    ? _Pick<L, number>             // preserves arrays
-    : _Omit<L, keyof any[]>        // transforms tuples
+import {List} from './List'
 
 /**
 Transform a [[List]] into an [[Object]] equivalent
@@ -18,7 +10,9 @@ Transform a [[List]] into an [[Object]] equivalent
 ```ts
 ```
 */
-export type ObjectOf<L extends object> =
-    L extends unknown
-    ? _ObjectOf<L>
-    : never
+export type ObjectOf<O extends object> =
+    O extends List
+    ? number extends O['length'] // detect arrays
+      ? _Pick<O, number>         // preserves arrays
+      : _Omit<O, keyof any[]>    // transforms tuples
+    : O

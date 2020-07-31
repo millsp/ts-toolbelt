@@ -5,7 +5,7 @@ import {List} from '../List/List'
 import {Depth, MergeStyle} from './_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 import {_Omit} from './Omit'
-import {_ObjectOf} from '../List/ObjectOf'
+import {ObjectOf} from '../List/ObjectOf'
 
 /**
 @hidden
@@ -51,7 +51,7 @@ type __PatchFlat<O extends object, O1 extends object, OOK extends Key = keyof O>
 @hidden
 */
 export type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
-    LibStyle<__PatchFlat<_ObjectOf<O>, _ObjectOf<O1>>, O, O1, style>
+    LibStyle<__PatchFlat<ObjectOf<O>, ObjectOf<O1>>, O, O1, style>
 
 /**
 @hidden
@@ -80,7 +80,7 @@ type ChoosePatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends Merg
       ? PatchProp<OK, O1K, K, OOK>
       : OK extends object
         ? O1K extends object
-          ? __PatchDeep<_ObjectOf<OK>, _ObjectOf<O1K>, style>
+          ? __PatchDeep<ObjectOf<OK>, ObjectOf<O1K>, style>
           : PatchProp<OK, O1K, K, OOK>
         : PatchProp<OK, O1K, K, OOK>
 

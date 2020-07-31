@@ -6,7 +6,7 @@ import {List} from '../List/List'
 import {Depth, Anyfy, MergeStyle} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
-import {_ObjectOf} from '../List/ObjectOf'
+import {ObjectOf} from '../List/ObjectOf'
 
 /**
 @hidden
@@ -58,7 +58,7 @@ type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, 
 @hidden
 */
 export type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
-    LibStyle<__MergeFlat<_ObjectOf<O>, _ObjectOf<O1>, style>, O, O1, style>
+    LibStyle<__MergeFlat<ObjectOf<O>, ObjectOf<O1>, style>, O, O1, style>
 
 /**
 @hidden
@@ -87,7 +87,7 @@ type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends Merg
       ? MergeProp<OK, O1K, K, OOK, style>
       : OK extends object
         ? O1K extends object
-          ? __MergeDeep<_ObjectOf<OK>, _ObjectOf<O1K>, style>
+          ? __MergeDeep<ObjectOf<OK>, ObjectOf<O1K>, style>
           : MergeProp<OK, O1K, K, OOK, style>
         : MergeProp<OK, O1K, K, OOK, style>
 
