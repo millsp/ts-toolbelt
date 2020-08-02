@@ -68,6 +68,6 @@ export type Curry<F extends Function> =
     >(...args: Cast<L, Gaps<Parameters<F>>>) =>
         Length<G> extends 0 ? R : Length<G> extends 1
         // it means that it can continue being curried & can be called as terminating function
-        ? Curry<(...args: G) => R> & ((...args: G) => R)
         // so it allows to continue currying (useless) & call the function (the last parameter)
+        ? Curry<(...args: G) => R> & ((...args: G) => R)
         : Curry<(...args: G) => R>
