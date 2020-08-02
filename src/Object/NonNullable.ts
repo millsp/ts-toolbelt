@@ -2,7 +2,6 @@ import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from './_Internal'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
 import {_PatchFlat} from './Patch'
 
 /**
@@ -22,7 +21,7 @@ export type NonNullableDeep<O> = {
 /**
 @hidden
 */
-type NonNullablePart<O extends object, depth extends Depth> = {
+export type NonNullablePart<O extends object, depth extends Depth> = {
     'flat': NonNullableFlat<O>,
     'deep': NonNullableDeep<O>,
 }[depth]
@@ -30,11 +29,8 @@ type NonNullablePart<O extends object, depth extends Depth> = {
 /**
  * @hidden
  */
-export type _NonNullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: NonNullablePart<O, depth>
-    0: _PatchFlat<NonNullablePart<_Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> non-nullable -> merge it with O
-}[Contains<keyof O, K>]
+export type _NonNullable<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<NonNullablePart<_Pick<O, K>, depth>, O, 2>
 
 /**
 Make some fields of **`O`** not nullable (deeply or not)

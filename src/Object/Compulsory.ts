@@ -1,7 +1,6 @@
 import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
 import {NonNullable} from '../Union/NonNullable'
 import {_PatchFlat} from './Patch'
 
@@ -22,7 +21,7 @@ export type CompulsoryDeep<O> = {
 /**
 @hidden
 */
-type CompulsoryPart<O extends object, depth extends Depth> = {
+export type CompulsoryPart<O extends object, depth extends Depth> = {
     'flat': CompulsoryFlat<O>,
     'deep': CompulsoryDeep<O>,
 }[depth]
@@ -30,11 +29,8 @@ type CompulsoryPart<O extends object, depth extends Depth> = {
 /**
  * @hidden
  */
-export type _Compulsory<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: CompulsoryPart<O, depth>
-    0: _PatchFlat<CompulsoryPart<_Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<keyof O, K>]
+export type _Compulsory<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<CompulsoryPart<_Pick<O, K>, depth>, O, 2>
 
 /**
 Make that **`O`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like

@@ -31,6 +31,8 @@ type LibStyle<Merged, O, O1, style extends MergeStyle> = {
         ? Merged[keyof Merged][]
         : O
       : Merged
+
+    3: _ListOf<Merged & {}>
 }[style]
 
 /**
@@ -45,6 +47,7 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle
             0: OK extends undefined ? O1K : OK // lodash: fill undefined
             1: OK                              // ramda : keep undefined
             2: OK extends undefined ? O1K : OK // lodash: fill undefined
+            3: OK
         }[style]
 
 /**
@@ -57,7 +60,7 @@ type __MergeFlat<O extends object, O1 extends object, style extends MergeStyle, 
 /**
 @hidden
 */
-export type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
+export type _MergeFlat<O extends object, O1 extends object, style extends MergeStyle> =
     LibStyle<__MergeFlat<ObjectOf<O>, ObjectOf<O1>, style>, O, O1, style>
 
 /**

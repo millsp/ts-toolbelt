@@ -14,7 +14,7 @@ import {Map} from '../Iteration/Map'
 /**
 @hidden
 */
-type _MinusPositive<N1 extends Iteration, N2 extends Iteration, IMap extends Map = NumberMap> = {
+type _MinusPositive<N1 extends Iteration, N2 extends Iteration, IMap extends Map> = {
     0: _MinusPositive<Prev<N1, IMap>, Prev<N2, IMap>, IMap> // N1 = -/+, N2 = +
     1: N1
     2: N2
@@ -60,7 +60,7 @@ type MinusNegative<N1 extends Iteration, N2 extends Iteration, IMap extends Map>
 /**
 @hidden
 */
-export type _Minus<N1 extends Iteration, N2 extends Iteration, IMap extends Map = NumberMap> = {
+export type _Minus<N1 extends Iteration, N2 extends Iteration, IMap extends Map> = {
     0: MinusPositive<N1, N2, IMap>
     1: MinusNegative<N1, N2, IMap>
 }[_IsNegative<N2>]
@@ -68,7 +68,7 @@ export type _Minus<N1 extends Iteration, N2 extends Iteration, IMap extends Map 
 /**
 @hidden
 */
-export type __Minus<N1 extends Number, N2 extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
+export type __Minus<N1 extends Number, N2 extends Number, fmt extends Formats, IMap extends Map> =
     Format<_Minus<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>, fmt>
 
 /**

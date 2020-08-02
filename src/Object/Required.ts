@@ -1,7 +1,6 @@
 import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
 import {_PatchFlat} from './Patch'
 
 /**
@@ -21,7 +20,7 @@ export type RequiredDeep<O> = {
 /**
 @hidden
 */
-type RequiredPart<O extends object, depth extends Depth> = {
+export type RequiredPart<O extends object, depth extends Depth> = {
     'flat': RequiredFlat<O>,
     'deep': RequiredDeep<O>,
 }[depth]
@@ -29,11 +28,8 @@ type RequiredPart<O extends object, depth extends Depth> = {
 /**
  * @hidden
  */
-export type _Required<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: RequiredPart<O, depth>
-    0: _PatchFlat<RequiredPart<_Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<keyof O, K>]
+export type _Required<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<RequiredPart<_Pick<O, K>, depth>, O, 2>
 
 /**
 Make some fields of **`O`** required (deeply or not)

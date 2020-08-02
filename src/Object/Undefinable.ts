@@ -1,7 +1,6 @@
 import {Depth} from './_Internal'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
 import {_PatchFlat} from './Patch'
 
 /**
@@ -29,11 +28,8 @@ type UndefinablePart<O extends object, depth extends Depth> = {
 /**
  * @hidden
  */
-export type _Undefinable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: UndefinablePart<O, depth>
-    0: _PatchFlat<UndefinablePart<_Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> Undefinable -> merge it with O
-}[Contains<keyof O, K>]
+export type _Undefinable<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<UndefinablePart<_Pick<O, K>, depth>, O, 2>
 
 /**
 Make some fields of **`O`** **`undefined`** (deeply or not)

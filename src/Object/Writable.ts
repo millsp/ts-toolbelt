@@ -1,7 +1,6 @@
 import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
 import {_PatchFlat} from './Patch'
 
 /**
@@ -21,7 +20,7 @@ export type WritableDeep<O> = {
 /**
 @hidden
 */
-type WritablePart<O extends object, depth extends Depth> = {
+export type WritablePart<O extends object, depth extends Depth> = {
     'flat': WritableFlat<O>,
     'deep': WritableDeep<O>,
 }[depth]
@@ -29,11 +28,8 @@ type WritablePart<O extends object, depth extends Depth> = {
 /**
 @hidden
 */
-export type _Writable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: WritablePart<O, depth>
-    0: _PatchFlat<WritablePart<_Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<keyof O, K>]
+export type _Writable<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<WritablePart<_Pick<O, K>, depth>, O, 2>
 
 /**
 Make some fields of **`O`** writable (deeply or not)

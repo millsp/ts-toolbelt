@@ -1,8 +1,6 @@
 import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
-import {Keys} from './Keys'
 import {_PatchFlat} from './Patch'
 
 /**
@@ -22,7 +20,7 @@ export type ReadonlyDeep<O> = {
 /**
 @hidden
 */
-type ReadonlyPart<O extends object, depth extends Depth> = {
+export type ReadonlyPart<O extends object, depth extends Depth> = {
     'flat': ReadonlyFlat<O>,
     'deep': ReadonlyDeep<O>,
 }[depth]
@@ -30,11 +28,8 @@ type ReadonlyPart<O extends object, depth extends Depth> = {
 /**
  * @hidden
  */
-export type _Readonly<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: ReadonlyPart<O, depth>
-    0: _PatchFlat<ReadonlyPart<_Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<keyof O, K>]
+export type _Readonly<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<ReadonlyPart<_Pick<O, K>, depth>, O, 2>
 
 /**
 Make some fields of **`O`** readonly (deeply or not)

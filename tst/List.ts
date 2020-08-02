@@ -147,10 +147,10 @@ checks([
 // EXCLUDEKEYS
 
 checks([
-    check<T.ExcludeKeys<[1, 2, 3, 4], [0, 0, 0], 'default'>,        '3',                Test.Pass>(),
-    check<T.ExcludeKeys<[1, 2, 3, 4], [1, 0, 0], 'equals'>,         '1' | '2' | '3',    Test.Pass>(),
-    check<T.ExcludeKeys<[1, 2, 3, 4], [1, string, 3], 'extends->'>,   '1' | '3',          Test.Pass>(),
-    check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'extends->'>,   '1' | '3',          Test.Pass>(),
+    check<T.ExcludeKeys<[1, 2, 3, 4], [0, 0, 0], 'default'>,            '3',                Test.Pass>(),
+    check<T.ExcludeKeys<[1, 2, 3, 4], [1, 0, 0], 'equals'>,             '1' | '2' | '3',    Test.Pass>(),
+    check<T.ExcludeKeys<[1, 2, 3, 4], [1, string, 3], 'extends->'>,     '1' | '3',          Test.Pass>(),
+    check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'extends->'>,     '1' | '3',          Test.Pass>(),
 ])
 
 // -------------------------------------------------------------------------------------

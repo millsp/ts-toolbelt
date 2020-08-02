@@ -30,6 +30,8 @@ type LibStyle<Merged, O, O1, style extends MergeStyle> = {
          ? Merged[keyof Merged][]
          : O
        : Merged
+
+    3: _ListOf<Merged & {}>
 }[style]
 
 /**
@@ -50,7 +52,7 @@ type __PatchFlat<O extends object, O1 extends object, OOK extends Key = keyof O>
 /**
 @hidden
 */
-export type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
+export type _PatchFlat<O extends object, O1 extends object, style extends MergeStyle> =
     LibStyle<__PatchFlat<ObjectOf<O>, ObjectOf<O1>>, O, O1, style>
 
 /**

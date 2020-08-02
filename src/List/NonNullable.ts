@@ -1,13 +1,48 @@
-import {Depth} from '../Object/_Internal'
-import {NonNullable as ONonNullable} from '../Object/NonNullable'
-import {ListOf} from '../Object/ListOf'
-import {Cast} from '../Any/Cast'
+import {_Pick} from '../Object/Pick'
 import {Key} from '../Any/Key'
-import {ObjectOf} from './ObjectOf'
-import {Contains} from '../Any/Contains'
-import {Keys} from './Keys'
-import {List} from './List'
-import {NumberOf} from '../Any/_Internal'
+import {NonNullable as UNonNullable} from '../Union/NonNullable'
+import {Depth} from '../Object/_Internal'
+
+/**
+ * @hidden
+ */
+export type NonNullableFlat<O extends object, K extends Key> = {
+    [P in keyof O]: P extends K
+                    ? UNonNullable<O[P]>
+                    : O[P]
+} & {}
+
+/**
+ * @hidden
+ */
+type __NonNullableDeep<O> = {
+    [P in keyof O]: UNonNullable<O[P]> extends infer X
+                    ? X extends object
+                      ? __NonNullableDeep<X>
+                      : X
+                    : never
+}
+
+/**
+ * @hidden
+ */
+type _NonNullableDeep<O extends object, K extends Key, OU = NonNullable<O, K>> = {
+    [K in keyof OU]: __NonNullableDeep<OU[K]>
+} & {}
+
+/**
+ * @hidden
+ */
+export type NonNullableDeep<O extends object, K extends Key> =
+    _NonNullableDeep<O, K>
+
+/**
+ * @hidden
+ */
+export type NonNullablePart<O extends object, K extends Key, depth extends Depth> = {
+    'flat': NonNullableFlat<O, K>
+    'deep': NonNullableDeep<O, K>
+}[depth]
 
 /**
 Make some entries of **`L`** not nullable (deeply or not)
@@ -19,7 +54,5 @@ Make some entries of **`L`** not nullable (deeply or not)
 ```ts
 ```
 */
-export type NonNullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: Cast<ONonNullable<L, Key, depth>, List>
-    0: ListOf<ONonNullable<ObjectOf<L>, NumberOf<K>, depth>>
-}[Contains<Keys<L>, K>]
+export type NonNullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
+    NonNullablePart<O, K, depth>

@@ -1,4 +1,5 @@
 import {Test, O, A, T} from '../src/ts-toolbelt'
+import {Key} from '../src/Any/Key'
 
 const {checks, check} = Test
 
@@ -122,8 +123,8 @@ checks([
 ])
 
 function COMPULSORY_GENERIC<O extends {n?: number}>(o: O) {
-    const v0 = o as O.Compulsory<O, any, 'flat'>
-    const v1 = o as O.Compulsory<O, any, 'deep'>
+    const v0 = o as O.Compulsory<O, Key, 'flat'>
+    const v1 = o as O.Compulsory<O, Key, 'deep'>
     const p0: number = v0.n
     const p1: number = v1.n
 }
@@ -769,8 +770,8 @@ checks([
 ])
 
 function NONNULLABLE_GENERIC<O extends {n: number | undefined}>(o: O) {
-    const v0 = o as O.NonNullable<O, any, 'flat'>
-    const v1 = o as O.NonNullable<O, any, 'deep'>
+    const v0 = o as O.NonNullable<O, Key, 'flat'>
+    const v1 = o as O.NonNullable<O, Key, 'deep'>
     const p0: number = v0.n
     const p1: number = v1.n
 }
@@ -818,8 +819,8 @@ checks([
 ])
 
 function NULLABLE_GENERIC<O extends {n: number}>(o: O) {
-    const v0 = o as O.Nullable<O, any, 'flat'>
-    const v1 = o as O.Nullable<O, any, 'deep'>
+    const v0 = o as O.Nullable<O, Key, 'flat'>
+    const v1 = o as O.Nullable<O, Key, 'deep'>
     const p0: number | undefined | null = v0.n
     const p1: number | undefined | null = v1.n
 }
@@ -890,8 +891,8 @@ checks([
 ])
 
 function OPTIONAL_GENERIC<O extends {values: number[]}>(o: O) {
-    const v0 = o as O.Optional<O, any, 'flat'>
-    const v1 = o as O.Optional<O, any, 'deep'>
+    const v0 = o as O.Optional<O, Key, 'flat'>
+    const v1 = o as O.Optional<O, Key, 'deep'>
     const p0: number[] | undefined = v0.values
     const p1: (number | undefined)[] | undefined = v1.values
 }
@@ -1130,8 +1131,8 @@ checks([
 ])
 
 function READONLY_GENERIC<O extends {n?: number}>(o: O) {
-    const v0 = o as O.Readonly<O, any, 'flat'>
-    const v1 = o as O.Readonly<O, any, 'deep'>
+    const v0 = o as O.Readonly<O, Key, 'flat'>
+    const v1 = o as O.Readonly<O, Key, 'deep'>
     const p0: number | undefined = v0.n
     const p1: number | undefined = v1.n
 
@@ -1238,8 +1239,8 @@ checks([
 ])
 
 function REQUIRED_GENERIC<O extends {n?: number}>(o: O) {
-    const v0 = o as O.Required<O, any, 'flat'>
-    const v1 = o as O.Required<O, any, 'deep'>
+    const v0 = o as O.Required<O, Key, 'flat'>
+    const v1 = o as O.Required<O, Key, 'deep'>
     const p0: number = v0.n
     const p1: number = v1.n
 }
@@ -1318,8 +1319,8 @@ checks([
 ])
 
 function UNDEFINABLE_GENERIC<O extends {n: number}>(o: O) {
-    const v0 = o as O.Required<O, any, 'flat'>
-    const v1 = o as O.Required<O, any, 'deep'>
+    const v0 = o as O.Required<O, Key, 'flat'>
+    const v1 = o as O.Required<O, Key, 'deep'>
     const p0: number | undefined = v0.n
     const p1: number | undefined = v1.n
 }
@@ -1437,8 +1438,8 @@ checks([
 ])
 
 function WRITABLE_GENERIC<O extends {readonly n: number}>(o: O) {
-    const v0 = o as O.Writable<O, any, 'flat'>
-    const v1 = o as O.Writable<O, any, 'deep'>
+    const v0 = o as O.Writable<O, Key, 'flat'>
+    const v1 = o as O.Writable<O, Key, 'deep'>
     const p0: number = v0.n
     const p1: number = v1.n
 

@@ -40,7 +40,7 @@ type __Range<From extends Iteration, To extends Iteration, way extends Way, fmt 
 /**
 @hidden
 */
-export type _Range<From extends Number, To extends Number, way extends Way = '->', fmt extends Formats = 's', IMap extends Map = NumberMap> =
+export type _Range<From extends Number, To extends Number, way extends Way, fmt extends Formats, IMap extends Map> =
     __Range<IterationOf<From, IMap>, IterationOf<To, IMap>, way, fmt, IMap> extends infer X
     ? Cast<X, (string | number)[]>
     : never

@@ -23,7 +23,7 @@ type __Path<O, Path extends List<Key>, strict extends Boolean, I extends Iterati
 /**
 @hidden
 */
-export type _Path<O extends object, Path extends List<Key>, strict extends Boolean = 1> =
+export type _Path<O extends object, Path extends List<Key>, strict extends Boolean> =
     __Path<O, Path, strict> extends infer X
     ? Cast<X, any>
     : never

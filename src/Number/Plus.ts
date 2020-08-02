@@ -60,7 +60,7 @@ type PlusNegative<N1 extends Iteration, N2 extends Iteration, IMap extends Map> 
 /**
 @hidden
 */
-export type _Plus<N1 extends Iteration, N2 extends Iteration, IMap extends Map = NumberMap> = {
+export type _Plus<N1 extends Iteration, N2 extends Iteration, IMap extends Map> = {
     0: PlusPositive<N1, N2, IMap>
     1: PlusNegative<N1, N2, IMap>
 }[_IsNegative<N2>]
@@ -68,7 +68,7 @@ export type _Plus<N1 extends Iteration, N2 extends Iteration, IMap extends Map =
 /**
 @hidden
 */
-export type __Plus<N1 extends Number, N2 extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
+export type __Plus<N1 extends Number, N2 extends Number, fmt extends Formats, IMap extends Map> =
     Format<_Plus<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>, fmt>
 
 /**

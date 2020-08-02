@@ -1,11 +1,10 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 
-
 /**
 @hidden
 */
-export type _SelectKeys<O extends object, M extends any, match extends Match = 'default'> = {
+export type _SelectKeys<O extends object, M extends any, match extends Match> = {
     [K in keyof O]-?: {
         1: K
         0: never
