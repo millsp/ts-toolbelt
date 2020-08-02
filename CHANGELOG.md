@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.13.38](https://github.com/millsp/ts-toolbelt/compare/v6.13.31...v6.13.38) (2020-08-02)
+
+
+### Bug Fixes
+
+* **merge, patch:** prefer lodash-style merging ([71dda67](https://github.com/millsp/ts-toolbelt/commit/71dda67baeced11f1b3528a1a7416a83bcf7cadc))
+* **modfiers:** modifier utils don't hide properties anymore [#134](https://github.com/millsp/ts-toolbelt/issues/134) ([ca04ca6](https://github.com/millsp/ts-toolbelt/commit/ca04ca6fba7ab40fee25abec2c68e9365064efda))
+* **modifiers, patch, merge:** swallowing list entries when not list ([f5a91b3](https://github.com/millsp/ts-toolbelt/commit/f5a91b3b5893744fe57e448090b955a88d38b43e))
+* **release:** do not tag if not release ([d51fc4c](https://github.com/millsp/ts-toolbelt/commit/d51fc4c21486f379632290a3fd8c0ca267ab8cfa))
+
+
+### Others
+
+* **all:** lib-wide optimizations ([211de26](https://github.com/millsp/ts-toolbelt/commit/211de26da358601056dd922d63f832433d7a693b))
+* **curry:** optimize ([f21312a](https://github.com/millsp/ts-toolbelt/commit/f21312a8cbf1a562887e92263b36e6fc8b1e1d2c))
+* update notes ([8b9d49b](https://github.com/millsp/ts-toolbelt/commit/8b9d49b191ada31dd6d966440443143dbeeeddd7))
+* **merge, patch:** simplyfy statement ([f86944f](https://github.com/millsp/ts-toolbelt/commit/f86944ff00b970d7e2da48abbff43e58bdf29b99))
+* **merge, patch, objectof:** improve speed of merge and patch ([94f41ff](https://github.com/millsp/ts-toolbelt/commit/94f41ff83c2b84ca468c44525b3475aef42517eb))
+* **modifiers:** expanded tests for modifier utils ([5e4de4b](https://github.com/millsp/ts-toolbelt/commit/5e4de4b4cc8ed689e07b83d92f9939eb446eeef9))
+* **patch, merge:** more tests on generics ([4a33041](https://github.com/millsp/ts-toolbelt/commit/4a33041c433342e103bc6d0192f03f738a0f1ae3))
+* **patch, merge:** prevent unnecessary distribution ([7f5cd5d](https://github.com/millsp/ts-toolbelt/commit/7f5cd5df0594797fee0827df785028b82167e275))
+* **release:** 6.13.32 ([fb05cbe](https://github.com/millsp/ts-toolbelt/commit/fb05cbeca0754131082b56b5a59d753b23a88f4b))
+* **release:** 6.13.33 ([e077940](https://github.com/millsp/ts-toolbelt/commit/e0779409a11fd1cf50d1330a77accadf45a6ad3a))
+* **release:** 6.13.34 ([c0d9ceb](https://github.com/millsp/ts-toolbelt/commit/c0d9ceb03a71e4ca9a51f6077662cb754a586aa2))
+* **release:** 6.13.35 ([943408a](https://github.com/millsp/ts-toolbelt/commit/943408a70a27e8874122bb151a18b88311ad4e6f))
+* **release:** 6.13.36 ([6ffddf5](https://github.com/millsp/ts-toolbelt/commit/6ffddf5b4fc467f7eabb0b219f30721bde886f27))
+* **release:** 6.13.37 ([41859fd](https://github.com/millsp/ts-toolbelt/commit/41859fd7385886da9aab0824cb7281d8dd78c100))
+* added funding ([c783b7a](https://github.com/millsp/ts-toolbelt/commit/c783b7a2995528ce62749422c77bf249d1113e1a))
+
 ### [6.13.37](https://github.com/millsp/ts-toolbelt/compare/v6.13.31...v6.13.37) (2020-07-31)
 
 
