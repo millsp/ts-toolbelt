@@ -104,7 +104,7 @@ export {
 //
 // => If you wonder what the `type _<name>` means, it's a "step" in the implementation (a bare implementation)
 //    (Usually, the first step `_` takes care of parameters. But you can also find 2 steps `__` (eg. recursive))
-// -> Perf tip: When building utilities, always check if a type has an EXPORTED `_` version & decide if needed
+// => !\ Perf: Always check if a type has an EXPORTED `_` version, decide if needed
 // -> Remember:
 //              - ALL EXPORTED `_` types are/must be NON-distributed types
 //              - ALL `_` types are parameter processors, they handle params
@@ -148,6 +148,12 @@ export {
 // => An easy way to test if distribution is happening correctly is to test the
 // type with `never`, then it should yield `never`. However, this might differ
 // or not be true for a few utilities.
+//
+// => Perf: Always check if a type has an EXPORTED `_` version, decide if needed
+//
+// => !\ Excessive type distribution is known to cause type metadata loss
+//    TypeScript's inference stops following if too much distribution is done
+//    ALWAYS build a type version with `_` utilities, then distribute the type
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
