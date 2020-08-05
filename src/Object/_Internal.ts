@@ -19,7 +19,7 @@ export type Depth = 'flat' | 'deep'
  * `2`: lodash style. Lists are narrowed down, tuples are not preserved
  * `3`: ramda style. Assumes that we are only working with lists
  */
-export type MergeStyle = 0 | 1 | 2 | 3
+export type MergeStyle = 0 | 1 | 2
 
 /**
 Make an object properties (all) `never`. We use this to intersect `object`s and

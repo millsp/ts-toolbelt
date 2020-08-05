@@ -31,8 +31,6 @@ type LibStyle<Merged, O, O1, style extends MergeStyle> = {
         ? Merged[keyof Merged][]
         : O
       : Merged
-
-    3: _ListOf<Merged & {}>
 }[style]
 
 /**
@@ -47,7 +45,6 @@ type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle
             0: OK extends undefined ? O1K : OK // lodash: fill undefined
             1: OK                              // ramda : keep undefined
             2: OK extends undefined ? O1K : OK // lodash: fill undefined
-            3: OK
         }[style]
 
 /**
@@ -66,51 +63,52 @@ export type _MergeFlat<O extends object, O1 extends object, style extends MergeS
 /**
 @hidden
 */
-export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle = 2> =
-    O extends unknown
-    ? O1 extends unknown
-      ? _MergeFlat<O, O1, style>
-      : never
-    : never
+export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle, noMerge> =
+    O extends noMerge
+    ? O
+    : O1 extends noMerge
+      ? O
+      : _MergeFlat<O, O1, style>
 
 /**
 @hidden
 */
-type __MergeDeep<O extends object, O1 extends object, style extends MergeStyle, OOK extends Key = _OptionalKeys<O>> = {
-    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style>
+type __MergeDeep<O extends object, O1 extends object, style extends MergeStyle, noMerge, OOK extends Key = _OptionalKeys<O>> = {
+    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style, noMerge>
 }
 
 /**
 @hidden
 */
-type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
-    OK extends BuiltInObject
+type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle, noMerge> =
+    OK extends noMerge
     ? MergeProp<OK, O1K, K, OOK, style>
-    : O1K extends BuiltInObject
+    : O1K extends noMerge
       ? MergeProp<OK, O1K, K, OOK, style>
       : OK extends object
         ? O1K extends object
-          ? __MergeDeep<ObjectOf<OK>, ObjectOf<O1K>, style>
+          ? __MergeDeep<ObjectOf<OK>, ObjectOf<O1K>, style, noMerge>
           : MergeProp<OK, O1K, K, OOK, style>
         : MergeProp<OK, O1K, K, OOK, style>
 
 /**
 @hidden
 */
-export type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle> =
+export type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, noMerge> =
     [O] extends [never]
     ? MergeProp<O, O1, K, OOK, style>
     : [O1] extends [never]
       ? MergeProp<O, O1, K, OOK, style>
-      : LibStyle<ChooseMergeDeep<O, O1, K, OOK, style>, O, O1, style>
+      : LibStyle<ChooseMergeDeep<O, O1, K, OOK, style, noMerge>, O, O1, style>
 
 /**
 @hidden
 */
-export type MergeDeep<O, O1, style extends MergeStyle> =
+export type MergeDeep<O, O1, style extends MergeStyle, noMerge> =
     O extends unknown
     ? O1 extends unknown
-      ? _MergeDeep<O, O1, never, never, style>
+      // give `K` and `OOK` dummy types `x` and `y`
+      ? _MergeDeep<O, O1, 'x', 'y', style, noMerge>
       : never
     : never
 
@@ -124,6 +122,7 @@ fields will be handled gracefully.
 @param O1 to copy from
 @param depth (?=`'flat'`) to do it deeply
 @param style (?=`1`) 0 = lodash, 1 = ramda
+@param noMerge (?=`BuiltinObject`) types not to merge
 @returns [[Object]]
 @example
 ```ts
@@ -161,7 +160,7 @@ type test = O.Merge<O, O1, 'deep'>
 // }
 ```
 */
-export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2> = {
-    'flat': MergeFlat<O, O1, style>
-    'deep': MergeDeep<O, O1, style>
+export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2, noMerge = BuiltInObject> = {
+    'flat': MergeFlat<O, O1, style, noMerge>
+    'deep': MergeDeep<O, O1, style, noMerge>
 }[depth]

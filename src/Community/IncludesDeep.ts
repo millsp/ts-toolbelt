@@ -7,11 +7,13 @@ import {Prev} from '../Iteration/Prev'
 import {Iteration} from '../Iteration/Iteration'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Is} from '../Any/Is'
+import {Boolean} from '../Boolean/Boolean'
+import {Cast} from '../Any/Cast'
 
 /**
  * @hidden
  */
-type _IncludesDeep<O, M extends any, match extends Match = 'default', limit extends Number = '10', I extends Iteration = IterationOf<'0'>> = {
+type _IncludesDeep<O, M extends any, match extends Match, limit extends Number, I extends Iteration = IterationOf<'0'>> = {
     0: _IncludesDeep<O extends object ? UnionOf<O> : O, M, match, limit, Next<I>>
     1: 1
     2: 0
@@ -36,4 +38,6 @@ type _IncludesDeep<O, M extends any, match extends Match = 'default', limit exte
  * @author millsp, ctrlplusb
  */
 export type IncludesDeep<O extends object, M extends any, match extends Match = 'default', limit extends Number = '10'> =
-    _IncludesDeep<O, M, match, limit>
+    _IncludesDeep<O, M, match, limit> extends infer X
+    ? Cast<X, Boolean>
+    : never
