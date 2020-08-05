@@ -6,7 +6,7 @@ import {Depth} from '../Object/_Internal'
 /**
  * @hidden
  */
-export type NonNullableFlat<O extends object, K extends Key> = {
+export type NonNullableFlat<O extends object, K extends Key = Key> = {
     [P in keyof O]: P extends K
                     ? UNonNullable<O[P]>
                     : O[P]
@@ -15,26 +15,17 @@ export type NonNullableFlat<O extends object, K extends Key> = {
 /**
  * @hidden
  */
-type __NonNullableDeep<O> = {
-    [P in keyof O]: UNonNullable<O[P]> extends infer X
-                    ? X extends object
-                      ? __NonNullableDeep<X>
-                      : X
-                    : never
+type _NonNullableDeep<O extends object> = {
+    [K in keyof O]: O[K] extends object
+                    ? NonNullableDeep<O[K], Key>
+                    : O[K]
 }
 
 /**
  * @hidden
  */
-type _NonNullableDeep<O extends object, K extends Key, OU = NonNullable<O, K>> = {
-    [K in keyof OU]: __NonNullableDeep<OU[K]>
-} & {}
-
-/**
- * @hidden
- */
-export type NonNullableDeep<O extends object, K extends Key> =
-    _NonNullableDeep<O, K>
+export type NonNullableDeep<O extends object, K extends Key = Key> =
+    _NonNullableDeep<NonNullableFlat<O, K>>
 
 /**
  * @hidden
