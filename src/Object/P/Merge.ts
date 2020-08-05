@@ -55,3 +55,5 @@ export type Merge<O extends object, Path extends List<Key>, O1 extends object, d
   0: MergeObject<O, Path, O1, depth>
   1: MergeList<O, Path, O1, depth>
 }[list]
+
+// TODO: deprecate list option and integrate noMerge
