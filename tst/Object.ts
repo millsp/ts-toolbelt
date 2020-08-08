@@ -1076,7 +1076,7 @@ type O_PATHVALID = {
 checks([
     check<O.PathValid<any,          ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
-    check<O.PathValid<O_PATHVALID,  ['a', 'x']>,        ['a', never],       Test.Pass>(),
+    check<O.PathValid<O_PATHVALID,  ['a', 'x']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['b', 'a', 'a']>,   ['b', 'a', 'a'],    Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['b', 'b', 0]>,     ['b', 'b', 0],      Test.Pass>(),
 ])
