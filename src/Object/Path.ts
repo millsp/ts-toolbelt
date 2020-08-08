@@ -30,7 +30,6 @@ export type _Path<O extends object, Path extends List<Key>, strict extends Boole
 
 /**
 Get in **`O`** the type of nested properties
-For more advanced capabilities, see [[PathUp]]
 @param O to be inspected
 @param Path to be followed
 @param strict (?=`1`) `0` to work with unions
