@@ -26,7 +26,6 @@ import * as String from './String/_api'
 import * as Tuple from './List/_api'
 import * as List from './List/_api'
 import * as Union from './Union/_api'
-import {ComputeDeep, ComputeRaw} from './Any/Compute'
 
 export {
     Test,
