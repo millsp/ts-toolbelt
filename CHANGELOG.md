@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.15.1](https://github.com/millsp/ts-toolbelt/compare/v6.15.0...v6.15.1) (2020-08-08)
+
+
+### Bug Fixes
+
+* docs ([c493887](https://github.com/millsp/ts-toolbelt/commit/c493887ef1dd2e6648a4107932f002ea400010e0))
+* more expressive errors ([93bebed](https://github.com/millsp/ts-toolbelt/commit/93bebed6d44377837a40ef8928b821b3cfa400b8))
+
+
+### Others
+
+* **pathvalid:** fix ([056e42f](https://github.com/millsp/ts-toolbelt/commit/056e42ff0fe95fd378f56598dae4757219c204cc))
+* cleanup ([5f1461b](https://github.com/millsp/ts-toolbelt/commit/5f1461bfffdc4da7d60a2875dea0590acc340801))
+
 ## [6.15.0](https://github.com/millsp/ts-toolbelt/compare/v6.13.31...v6.15.0) (2020-08-05)
 
 
