@@ -4,5 +4,5 @@ replace('./dt/types', '"ts-toolbelt": ".*"', '"ts-toolbelt": "test"',
     [
         '?.*/package.json',
     ],
-    []
+    [],
 )
