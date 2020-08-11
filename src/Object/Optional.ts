@@ -2,6 +2,7 @@ import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {_PatchFlat} from './Patch'
+import {BuiltInObject} from '../Misc/_api'
 
 /**
 @hidden
@@ -14,7 +15,9 @@ export type OptionalFlat<O> = {
 @hidden
 */
 export type OptionalDeep<O> = {
-    [K in keyof O]?: OptionalDeep<O[K]>
+    [K in keyof O]?: O[K] extends BuiltInObject
+                     ? O[K]
+                     : OptionalDeep<O[K]>
 }
 
 /**

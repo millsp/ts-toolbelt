@@ -2,6 +2,7 @@ import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {_PatchFlat} from './Patch'
+import {BuiltInObject} from '../Misc/_api'
 
 /**
 @hidden
@@ -14,7 +15,9 @@ export type WritableFlat<O> = {
 @hidden
 */
 export type WritableDeep<O> = {
-    -readonly [K in keyof O]: WritableDeep<O[K]>
+    -readonly [K in keyof O]: O[K] extends BuiltInObject
+                              ? O[K]
+                              : WritableDeep<O[K]>
 }
 
 /**

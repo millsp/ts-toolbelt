@@ -3,6 +3,7 @@ import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {NonNullable} from '../Union/NonNullable'
 import {_PatchFlat} from './Patch'
+import {BuiltInObject} from '../Misc/_api'
 
 /**
 @hidden
@@ -15,7 +16,9 @@ export type CompulsoryFlat<O> = {
 @hidden
 */
 export type CompulsoryDeep<O> = {
-    [K in keyof O]-?: CompulsoryDeep<NonNullable<O[K]>>
+    [K in keyof O]-?: O[K] extends BuiltInObject
+                      ? O[K]
+                      : CompulsoryDeep<NonNullable<O[K]>>
 }
 
 /**

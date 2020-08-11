@@ -188,3 +188,10 @@ export {
 //     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]>,
 //     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]>,
 // ], 'deep', 2>['l'][0][0][0][0][0][0][0][0]
+
+type T = { x: { y: never; z: () => 1 } }
+
+type t = Any.Compute<Object.Partial<T, 'deep'>>
+
+// No error
+const err: Object.Partial<T, 'deep'> = {x: {z: () => 'test'}}

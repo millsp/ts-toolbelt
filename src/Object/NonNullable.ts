@@ -3,6 +3,7 @@ import {Depth} from './_Internal'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
 import {_PatchFlat} from './Patch'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 @hidden
@@ -15,7 +16,9 @@ export type NonNullableFlat<O> = {
 @hidden
 */
 export type NonNullableDeep<O> = {
-    [K in keyof O]: NonNullableDeep<UNonNullable<O[K]>>
+    [K in keyof O]: O[K] extends BuiltInObject
+                    ? O[K]
+                    : NonNullableDeep<UNonNullable<O[K]>>
 }
 
 /**

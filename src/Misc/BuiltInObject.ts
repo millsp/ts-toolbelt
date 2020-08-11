@@ -14,7 +14,7 @@ type Errors =
  * @hidden
  */
 type Numeric =
-    | Number
+    // | Number
     // | BigInt // not needed
     // | Math
     | Date
@@ -23,7 +23,7 @@ type Numeric =
  * @hidden
  */
 type Textual =
-    | String
+    // | String
     | RegExp
 
 /**
