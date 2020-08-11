@@ -16,7 +16,7 @@ type UpdateFlat<O extends object, K extends Key, A extends any> = {
  * @hidden
  */
 type __UpdateDeep<O, A extends any> = {
-    [P in keyof O]: Replace<A, x, O[P]> extends infer X
+    [K in keyof O]: Replace<A, x, O[K]> extends infer X
                     ? X extends object
                       ? __UpdateDeep<X, A>
                       : X
