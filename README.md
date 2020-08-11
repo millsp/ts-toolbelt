@@ -1,9 +1,10 @@
 <div>
-  <img align="left"src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
-  <img align="right"src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
-  <a href="https://github.com/millsp/ts-toolbelt">
+  <img align="left" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
+  <img align="right" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
+  <a align="left" href="https://github.com/millsp/ts-toolbelt">
     <img align="left" alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="100" alt="Logo">
   </a>
+  <img align="left" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="10", height="100">
   <h1 align="left">ts-toolbelt</h1>
   <h4 align="left">Higher Type Safety for TypeScript. A collection of useful types.</h4>
 </div>
