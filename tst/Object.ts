@@ -1,4 +1,4 @@
-import {Test, O, A, T} from '../src/ts-toolbelt'
+import {Test, O, A, T, U} from '../src/ts-toolbelt'
 import {Key} from '../src/Any/Key'
 
 const {checks, check} = Test
@@ -17,6 +17,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type O1 = {
@@ -116,6 +117,7 @@ readonly f: 0
          h: 1
          j: 'a'
          k: {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -132,7 +134,7 @@ function COMPULSORY_GENERIC<O extends {n?: number}>(o: O) {
 // ---------------------------------------------------------------------------------------
 // COMPULSORYKEYS
 
-type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k'
+type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k' | 'x'
 
 checks([
     check<O.CompulsoryKeys<O>,  COMPULSORYKEYS_O,   Test.Pass>(),
@@ -144,6 +146,7 @@ checks([
 type DIFF_O_O1_DEFAULT = {
     i: {a: string}
     l: [1, 2, 3]
+    x: () => 1
 }
 
 type DIFF_O_O1_EQUALS = {
@@ -155,7 +158,7 @@ type DIFF_O_O1_EQUALS = {
     i : {a: string}
     k : {a: {b: string}}
     l : [1, 2, 3]
-
+    x: () => 1
 }
 
 checks([
@@ -168,6 +171,7 @@ checks([
 type DIFF_O1_O_DEFAULT = {
     i: {a: string}
     l: [1, 2, 3]
+    x: () => 1
 }
 
 type DIFF_O1_O_EQUALS = {
@@ -179,6 +183,7 @@ type DIFF_O1_O_EQUALS = {
     i : {a: string}
     k : {a: {b: string, c: 0}}
     l : [1, 2, 3]
+    x: () => 1
 }
 
 checks([
@@ -234,7 +239,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EXCLUDE
 
-type EXCLUDE_O_O1_DEFAULT = {}
+type EXCLUDE_O_O1_DEFAULT = {
+    x: () => 1
+}
 
 type EXCLUDE_O_O1_EQUALS = {
     a : string
@@ -243,6 +250,7 @@ type EXCLUDE_O_O1_EQUALS = {
     g : O
     h?: 1
     k : {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -276,9 +284,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EXCLUDEKEYS
 
-type EXCLUDEKEYS_O_DEFAULT = never
+type EXCLUDEKEYS_O_DEFAULT = 'x'
 
-type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k'
+type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k' | 'x'
 
 checks([
     check<O.ExcludeKeys<O, O1, 'default'>,  EXCLUDEKEYS_O_DEFAULT,  Test.Pass>(),
@@ -309,6 +317,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type FILTER_O_EQUALS = {
@@ -321,6 +330,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -331,9 +341,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // FILTERKEYS
 
-type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
+type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k' | 'x'
 
-type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
+type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k' | 'x'
 
 checks([
     check<O.FilterKeys<O, string, 'extends->'>,     FILTERKEYS_O_DEFAULT,   Test.Pass>(),
@@ -365,7 +375,7 @@ checks([
     check<O.Has<O, 'a' | 'd', string, 'extends->'>,                 0 | 1,  Test.Pass>(),
 
     check<O.Has<O, 'a' | 'd', string | undefined, 'extends->'>,     1,      Test.Pass>(),
-    check<O.Has<O, 'x' | 'd', string | undefined, 'extends->'>,     1,      Test.Pass>(),
+    check<O.Has<O, 'xx' | 'd', string | undefined, 'extends->'>,    1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -395,7 +405,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // INTERSECT
 
-type INTERSECT_O_O1_DEFAULT = O
+type INTERSECT_O_O1_DEFAULT = O.Omit<O, 'x'>
 
 type INTERSECT_O_O1_EQUALS = {
          c : {a: 'a'} & {b: 'b'}
@@ -412,7 +422,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // INTERSECTKEYS
 
-type INTERSECTKEYS_O_DEFAULT = keyof O
+type INTERSECTKEYS_O_DEFAULT = U.Exclude<keyof O, 'x'>
 
 type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j'
 
@@ -748,6 +758,7 @@ readonly f : 0
          h?: 1
          j : 'a'
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type NONNULLABLE_O_J_FLAT = {
@@ -761,6 +772,7 @@ readonly f : 0
          h?: 1
          j : 'a'
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -780,7 +792,7 @@ function NONNULLABLE_GENERIC<O extends {n: number | undefined}>(o: O) {
 // NONNULLABLEKEYS
 
 checks([
-    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g' | 'k',    Test.Pass>(),
+    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g' | 'k' | 'x',    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -797,6 +809,7 @@ readonly f : 0 | undefined | null
          h?: 1 | null
          j : 'a' | undefined | null
          k : {a: {b: string}} | undefined | null
+         x: (() => 1) | undefined | null
 }
 
 type NULLABLE_O_A_FLAT = {
@@ -810,6 +823,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -848,6 +862,7 @@ type OMIT_O_DEH = {
     g: O
     j: 'a' | undefined
     k: {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -869,6 +884,7 @@ readonly f?: 0
          h?: 1
          j?: 'a'
          k?: {a: {b: string}}
+         x?: () => 1
 }
 
 type OPTIONAL_O_A_FLAT = {
@@ -882,6 +898,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x : () => 1
 }
 
 checks([
@@ -911,6 +928,7 @@ readonly f?: 0
          h?: 1
          j?: 'a'
          k?: {a: {b: string}}
+         x?: () => 1
 }
 
 checks([
@@ -948,6 +966,7 @@ readonly f : 0
     j : 'a' | undefined
     k : {a: {b: string}}
     l : [1, 2, 3]
+    x : () => 1
 }
 
 type PATCH_O1_O = {
@@ -963,6 +982,7 @@ readonly f : 0
     j : 'a' | undefined
     k : {a: {b: string, c: 0}}
     l : [1, 2, 3]
+    x : () => 1
 }
 
 type PATCH_O_O1_DEEP = {
@@ -978,6 +998,7 @@ readonly f : 0
     j : 'a' | undefined
     k : {a: {b: string, c: 0}}
     l : [1, 2, 3]
+    x : () => 1
 }
 
 checks([
@@ -1109,6 +1130,7 @@ readonly g : O
 readonly h?: 1
 readonly j : 'a' | undefined
 readonly k : {a: {b: string}}
+readonly x : () => 1
 }
 
 type READONLY_O_A_FLAT = {
@@ -1122,6 +1144,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -1197,6 +1220,7 @@ type REPLACE_STRING_NUMBER = {
             b: string
         }
     }
+    x: () => 1
 }
 
 checks([
@@ -1217,6 +1241,7 @@ readonly f: 0
          h: 1
          j: 'a' | undefined
          k: {a: {b: string}}
+         x: () => 1
 }
 
 type REQUIRED_O_D_FLAT = {
@@ -1230,6 +1255,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -1249,7 +1275,7 @@ function REQUIRED_GENERIC<O extends {n?: number}>(o: O) {
 // REQUIREDKEYS
 
 checks([
-    check<O.RequiredKeys<O>,    'a' | 'b' | 'c' | 'f' | 'g' | 'j' | 'k',    Test.Pass>(),
+    check<O.RequiredKeys<O>,    'a' | 'b' | 'c' | 'f' | 'g' | 'j' | 'k' | 'x',  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1297,6 +1323,7 @@ readonly f : 0 | undefined
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}} | undefined
+    x: (() => 1) | undefined
 }
 
 type UNDEFINABLE_O_A_FLAT = {
@@ -1310,6 +1337,7 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -1416,6 +1444,7 @@ type WRITABLE_O_FLAT = {
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
+    x: () => 1
 }
 
 type WRITABLE_O_E_FLAT = {
@@ -1429,6 +1458,7 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -1451,7 +1481,7 @@ function WRITABLE_GENERIC<O extends {readonly n: number}>(o: O) {
 // WRITABLEKEYS
 
 checks([
-    check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k',  Test.Pass>(),
+    check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k' | 'x',    Test.Pass>(),
 ])
 
 // ///////////////////////////////////////////////////////////////////////////////////////
