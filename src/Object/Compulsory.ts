@@ -3,7 +3,7 @@ import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {NonNullable} from '../Union/NonNullable'
 import {_PatchFlat} from './Patch'
-import {BuiltInObject} from '../Misc/_api'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 @hidden

@@ -1,7 +1,7 @@
 import {Merge as OMerge} from '../Object/Merge'
 import {List} from './List'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/_api'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 Accurately merge the fields of **`L`** with the ones of **`L1`**. It is

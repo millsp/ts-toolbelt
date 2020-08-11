@@ -2,7 +2,7 @@ import {_Pick} from '../Object/Pick'
 import {Key} from '../Any/Key'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/_api'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
  * @hidden

@@ -8,7 +8,7 @@ import {Cast} from '../Any/Cast'
 import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
 import {Depth, MergeStyle} from './_Internal'
-import {BuiltInObject} from '../Misc/_api'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 @hidden

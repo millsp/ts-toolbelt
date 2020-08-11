@@ -1,7 +1,7 @@
 import {PatchAll as OPatchAll} from '../Object/PatchAll'
 import {List} from '../List/List'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/_api'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 [[Patch]] a list of [[List]]s into **`L`**. Patches from left to right, first

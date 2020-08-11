@@ -1,7 +1,7 @@
 import {Patch as OPatch} from '../Object/Patch'
 import {List} from './List'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/_api'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 Complete the fields of **`L`** with the ones of **`L1`**. This is a version of
