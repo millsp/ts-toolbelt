@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.15.5](https://github.com/millsp/ts-toolbelt/compare/v6.15.1...v6.15.5) (2020-08-13)
+
+
+### Bug Fixes
+
+* **class:** incorrect base class definition ([249fdf6](https://github.com/millsp/ts-toolbelt/commit/249fdf6f2283a7ed496f408fc878ee0fa7a606d2))
+* **modifiers:** do not go over built-in props ([96424cf](https://github.com/millsp/ts-toolbelt/commit/96424cf9f00d46bbf9330fdcefca37b29e9e53d9))
+
+
+### Others
+
+* **release:** 6.15.4 ([fea6147](https://github.com/millsp/ts-toolbelt/commit/fea6147d105db5d898523c21552ba4499ce32523))
+* readme ([0a245a3](https://github.com/millsp/ts-toolbelt/commit/0a245a320def6bc0926fc56501209a0259304f79))
+* **release:** 6.15.3 ([44b2a1a](https://github.com/millsp/ts-toolbelt/commit/44b2a1abda5c00969686ef48bb4243d3f3b63dd8))
+* cleanup ([e95ee11](https://github.com/millsp/ts-toolbelt/commit/e95ee1146854753ea4d9df092b13bcf68e3e2859))
+* **modifiers:** add function to merge ([6729d7f](https://github.com/millsp/ts-toolbelt/commit/6729d7f3e8b5d3562c37ebdbc0792d98a44d626d))
+* cleanup ([8e1fe39](https://github.com/millsp/ts-toolbelt/commit/8e1fe3961bac8504877274308a2380a973dc2460))
+* **release:** 6.15.2 ([d1268a7](https://github.com/millsp/ts-toolbelt/commit/d1268a7d8b08dea718c602b24b16ef0313f1a97a))
+* cleanup ([35c09ff](https://github.com/millsp/ts-toolbelt/commit/35c09ffe098486db7189524d7f8cb65bf9afda54))
+* readme ([ccdf90b](https://github.com/millsp/ts-toolbelt/commit/ccdf90bf558f82716362758ccd57188f089a985a))
+
 ### [6.15.4](https://github.com/millsp/ts-toolbelt/compare/v6.15.1...v6.15.4) (2020-08-11)
 
 
