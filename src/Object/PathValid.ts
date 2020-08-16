@@ -20,7 +20,7 @@ type ValidatePath<O, Path extends List<AKey>, I extends Iteration> =
         Path,
         Key<I>,
         [At<O & {}, Path[Pos<I>]>] extends [never]
-        ? never
+        ? keyof O
         : Path[Pos<I>]
     >
 

@@ -78,7 +78,7 @@ declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
 const __ = {} as A.x
 
 // @ts-ignore
-const toCurry = (name: string, age: number, single: true, nicknames: string) => true
+const toCurry = (name: string, age: number, single: boolean, nicknames: string) => true
 const curried = curry(toCurry)
 
 const test00: boolean = curried(__, 26)(__, true, 'JJ')('Jane') // boolean
@@ -159,8 +159,8 @@ checks([
 // PROMISIFY
 
 checks([
-    check<F.Promisify<(typeof fn)>,                      (a: string, b: number, c: object) => Promise<boolean>,     Test.Pass>(),
-    check<F.Promisify<(a: string) => A.Promise<boolean>>,  (a: string) => Promise<boolean>,                           Test.Pass>(),
+    check<F.Promisify<(typeof fn)>,                         (a: string, b: number, c: object) => Promise<boolean>,     Test.Pass>(),
+    check<F.Promisify<(a: string) => A.Promise<boolean>>,   (a: string) => Promise<boolean>,                           Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -173,6 +173,6 @@ checks([
 // ---------------------------------------------------------------------------------------
 // UNCURRY
 
-// checks([
-//     check<F.UnCurry<typeof curried>,    typeof FN,  Test.Pass>(),
-// ])
+checks([
+    check<F.UnCurry<typeof curried>,    typeof toCurry,     Test.Pass>(),
+])

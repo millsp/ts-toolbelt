@@ -103,7 +103,7 @@ export {
 //
 // => If you wonder what the `type _<name>` means, it's a "step" in the implementation (a bare implementation)
 //    (Usually, the first step `_` takes care of parameters. But you can also find 2 steps `__` (eg. recursive))
-// -> Perf tip: When building utilities, always check if a type has an EXPORTED `_` version & decide if needed
+// => !\ Perf: Always check if a type has an EXPORTED `_` version, decide if needed
 // -> Remember:
 //              - ALL EXPORTED `_` types are/must be NON-distributed types
 //              - ALL `_` types are parameter processors, they handle params
@@ -147,17 +147,19 @@ export {
 // => An easy way to test if distribution is happening correctly is to test the
 // type with `never`, then it should yield `never`. However, this might differ
 // or not be true for a few utilities.
+//
+// => Perf: Always check if a type has an EXPORTED `_` version, decide if needed
+//
+// => !\ Excessive type distribution is known to cause type metadata loss
+//    TypeScript's inference stops following if too much distribution is done
+//    ALWAYS build a type version with `_` utilities, then distribute the type
 
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
 
 // remove legacy tools and rename MergeUp to Merge in the tests
 
-// type O<V> = {
-//     a: number[]
-//     b: {a: V}[]
-//     c: O<V>
-//     d: V
+// type Oo<V> = {
 //     e: [V]
 //     f: [[V]]
 //     g: [[[V]]]
@@ -168,24 +170,21 @@ export {
 //     l: [[[[[[[[V]]]]]]]]
 // }
 
-// type t1 = O.MergeAll<{}, [
-//     O<[0]>,
-//     O<[1, 2]>,
-//     // O<[1, 2, 3]>,
-//     // O<[1, 2, 3, 4]>,
-//     // O<[1, 2, 3, 4, 5]>,
-//     // O<[1, 2, 3, 4, 5, 6]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]>,
-//     // O<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]>,
-// ], 'deep', 1>['l']
+// type t1 = O.PatchAll<{}, [
+//     Oo<[1, 2, 3, 4]>,
+//     Oo<[1, 2, 3, 4, 5]>,
+//     Oo<[1, 2, 3, 4, 5, 6]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]>,
+//     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]>,
+//     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]>,
+//     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]>,
+// ], 'deep', 2>['l'][0][0][0][0][0][0][0][0]

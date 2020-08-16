@@ -41,9 +41,7 @@ type __ListOf<O extends object> =
 @hidden
 */
 export type _ListOf<O extends object> =
-    __ListOf<O> extends infer X
-    ? Cast<X, List>
-    : never
+    __ListOf<O>
 
 /**
 Transform an [[Object]] into a [[List]]

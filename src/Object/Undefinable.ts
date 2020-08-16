@@ -1,9 +1,8 @@
 import {Depth} from './_Internal'
-import {Pick} from './Pick'
+import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
-import {Keys} from './Keys'
-import {PatchFlat} from './Patch'
+import {_PatchFlat} from './Patch'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 @hidden
@@ -16,7 +15,9 @@ export type UndefinableFlat<O> = {
 @hidden
 */
 export type UndefinableDeep<O> = {
-    [K in keyof O]: UndefinableDeep<O[K] | undefined>
+    [K in keyof O]: O[K] extends BuiltInObject
+                    ? O[K]
+                    : UndefinableDeep<O[K] | undefined>
 }
 
 /**
@@ -28,6 +29,12 @@ type UndefinablePart<O extends object, depth extends Depth> = {
 }[depth]
 
 /**
+ * @hidden
+ */
+export type _Undefinable<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<UndefinablePart<_Pick<O, K>, depth>, O, 2>
+
+/**
 Make some fields of **`O`** **`undefined`** (deeply or not)
 @param O to make undefinable
 @param K (?=`Key`) to choose fields
@@ -37,8 +44,7 @@ Make some fields of **`O`** **`undefined`** (deeply or not)
 ```ts
 ```
 */
-export type Undefinable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: UndefinablePart<O, depth>
-    0: PatchFlat<UndefinablePart<Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> Undefinable -> merge it with O
-}[Contains<Keys<O>, K>]
+export type Undefinable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
+    O extends unknown
+    ? _Undefinable<O, K, depth>
+    : never

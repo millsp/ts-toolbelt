@@ -1,9 +1,8 @@
-import {Pick} from './Pick'
+import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {Contains} from '../Any/Contains'
-import {Keys} from './Keys'
-import {PatchFlat} from './Patch'
+import {_PatchFlat} from './Patch'
+import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
 @hidden
@@ -16,7 +15,9 @@ export type OptionalFlat<O> = {
 @hidden
 */
 export type OptionalDeep<O> = {
-    [K in keyof O]?: OptionalDeep<O[K]>
+    [K in keyof O]?: O[K] extends BuiltInObject
+                     ? O[K]
+                     : OptionalDeep<O[K]>
 }
 
 /**
@@ -28,6 +29,12 @@ export type OptionalPart<O extends object, depth extends Depth> = {
 }[depth]
 
 /**
+ * @hidden
+ */
+export type _Optional<O extends object, K extends Key, depth extends Depth> =
+    _PatchFlat<OptionalPart<_Pick<O, K>, depth>, O, 2>
+
+/**
 Make some fields of **`O`** optional (deeply or not)
 @param O to make optional
 @param K (?=`Key`) to choose fields
@@ -37,8 +44,7 @@ Make some fields of **`O`** optional (deeply or not)
 ```ts
 ```
 */
-export type Optional<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
-    1: OptionalPart<O, depth>
-    0: PatchFlat<OptionalPart<Pick<O, K>, depth>, O>
-    // Pick a part of O (with K) -> nullable -> merge it with O
-}[Contains<Keys<O>, K>]
+export type Optional<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
+    O extends unknown
+    ? _Optional<O, K, depth>
+    : never

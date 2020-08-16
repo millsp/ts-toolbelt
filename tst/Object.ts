@@ -1,4 +1,5 @@
-import {Test, O, A, T} from '../src/ts-toolbelt'
+import {Test, O, A, T, U} from '../src/ts-toolbelt'
+import {Key} from '../src/Any/Key'
 
 const {checks, check} = Test
 
@@ -16,6 +17,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type O1 = {
@@ -115,16 +117,24 @@ readonly f: 0
          h: 1
          j: 'a'
          k: {a: {b: string}}
+         x: () => 1
 }
 
 checks([
     check<O.Compulsory<O>,  COMPULSORY_O,   Test.Pass>(),
 ])
 
+function COMPULSORY_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.Compulsory<O, Key, 'flat'>
+    const v1 = o as O.Compulsory<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+}
+
 // ---------------------------------------------------------------------------------------
 // COMPULSORYKEYS
 
-type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k'
+type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k' | 'x'
 
 checks([
     check<O.CompulsoryKeys<O>,  COMPULSORYKEYS_O,   Test.Pass>(),
@@ -136,6 +146,7 @@ checks([
 type DIFF_O_O1_DEFAULT = {
     i: {a: string}
     l: [1, 2, 3]
+    x: () => 1
 }
 
 type DIFF_O_O1_EQUALS = {
@@ -147,7 +158,7 @@ type DIFF_O_O1_EQUALS = {
     i : {a: string}
     k : {a: {b: string}}
     l : [1, 2, 3]
-
+    x: () => 1
 }
 
 checks([
@@ -160,6 +171,7 @@ checks([
 type DIFF_O1_O_DEFAULT = {
     i: {a: string}
     l: [1, 2, 3]
+    x: () => 1
 }
 
 type DIFF_O1_O_EQUALS = {
@@ -171,6 +183,7 @@ type DIFF_O1_O_EQUALS = {
     i : {a: string}
     k : {a: {b: string, c: 0}}
     l : [1, 2, 3]
+    x: () => 1
 }
 
 checks([
@@ -226,7 +239,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EXCLUDE
 
-type EXCLUDE_O_O1_DEFAULT = {}
+type EXCLUDE_O_O1_DEFAULT = {
+    x: () => 1
+}
 
 type EXCLUDE_O_O1_EQUALS = {
     a : string
@@ -235,6 +250,7 @@ type EXCLUDE_O_O1_EQUALS = {
     g : O
     h?: 1
     k : {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -268,9 +284,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EXCLUDEKEYS
 
-type EXCLUDEKEYS_O_DEFAULT = never
+type EXCLUDEKEYS_O_DEFAULT = 'x'
 
-type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k'
+type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k' | 'x'
 
 checks([
     check<O.ExcludeKeys<O, O1, 'default'>,  EXCLUDEKEYS_O_DEFAULT,  Test.Pass>(),
@@ -301,6 +317,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type FILTER_O_EQUALS = {
@@ -313,6 +330,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -323,9 +341,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // FILTERKEYS
 
-type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
+type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k' | 'x'
 
-type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
+type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k' | 'x'
 
 checks([
     check<O.FilterKeys<O, string, 'extends->'>,     FILTERKEYS_O_DEFAULT,   Test.Pass>(),
@@ -357,7 +375,7 @@ checks([
     check<O.Has<O, 'a' | 'd', string, 'extends->'>,                 0 | 1,  Test.Pass>(),
 
     check<O.Has<O, 'a' | 'd', string | undefined, 'extends->'>,     1,      Test.Pass>(),
-    check<O.Has<O, 'x' | 'd', string | undefined, 'extends->'>,     1,      Test.Pass>(),
+    check<O.Has<O, 'xx' | 'd', string | undefined, 'extends->'>,    1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -387,7 +405,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // INTERSECT
 
-type INTERSECT_O_O1_DEFAULT = O
+type INTERSECT_O_O1_DEFAULT = O.Omit<O, 'x'>
 
 type INTERSECT_O_O1_EQUALS = {
          c : {a: 'a'} & {b: 'b'}
@@ -404,7 +422,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // INTERSECTKEYS
 
-type INTERSECTKEYS_O_DEFAULT = keyof O
+type INTERSECTKEYS_O_DEFAULT = U.Exclude<keyof O, 'x'>
 
 type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j'
 
@@ -553,7 +571,7 @@ type MERGE_O_O1 = {
         a?: string
         b?: number
     } | Date
-    d : 'hello' | undefined
+    d : 'hello' | 'goodbye'
     e : number | {a: 1}
     f?: {
         a : string
@@ -570,9 +588,13 @@ type MERGE_O_O1 = {
     h: {
         a: number
         b: number
-    } | undefined
+    } | {
+        a: string
+    }
     i: {
         a: string
+    } | {
+        a: number
     } | undefined
     j: {
         a: {
@@ -700,8 +722,8 @@ checks([
 function MERGE_GENERIC<O extends {n?: number}>(o: O) {
     const v0 = o as O.MergeUp<O, {n: string}, 'flat', 1>
     const v1 = o as O.MergeUp<O, {n: string}, 'deep', 0>
-    const p0: string | number = v0.n // this should work
-    const p1: string | number = v1.n // this should work
+    const p0: string | number = v0.n
+    const p1: string | number = v1.n
 }
 
 // ---------------------------------------------------------------------------------------
@@ -736,6 +758,7 @@ readonly f : 0
          h?: 1
          j : 'a'
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type NONNULLABLE_O_J_FLAT = {
@@ -749,6 +772,7 @@ readonly f : 0
          h?: 1
          j : 'a'
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -757,11 +781,18 @@ checks([
     check<O.Path<O.NonNullable<O, 'g', 'deep'>, ['g', 'g']>,    O.NonNullable<O, keyof O, 'deep'>,  Test.Pass>(),
 ])
 
+function NONNULLABLE_GENERIC<O extends {n: number | undefined}>(o: O) {
+    const v0 = o as O.NonNullable<O, Key, 'flat'>
+    const v1 = o as O.NonNullable<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+}
+
 // ---------------------------------------------------------------------------------------
 // NONNULLABLEKEYS
 
 checks([
-    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g' | 'k',    Test.Pass>(),
+    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g' | 'k' | 'x',    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -778,6 +809,7 @@ readonly f : 0 | undefined | null
          h?: 1 | null
          j : 'a' | undefined | null
          k : {a: {b: string}} | undefined | null
+         x: (() => 1) | undefined | null
 }
 
 type NULLABLE_O_A_FLAT = {
@@ -791,6 +823,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -798,6 +831,13 @@ checks([
     check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,                                  Test.Pass>(),
     check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'> | undefined | null,  Test.Pass>(),
 ])
+
+function NULLABLE_GENERIC<O extends {n: number}>(o: O) {
+    const v0 = o as O.Nullable<O, Key, 'flat'>
+    const v1 = o as O.Nullable<O, Key, 'deep'>
+    const p0: number | undefined | null = v0.n
+    const p1: number | undefined | null = v1.n
+}
 
 // ---------------------------------------------------------------------------------------
 // NULLABLEKEYS
@@ -822,6 +862,7 @@ type OMIT_O_DEH = {
     g: O
     j: 'a' | undefined
     k: {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -843,6 +884,7 @@ readonly f?: 0
          h?: 1
          j?: 'a'
          k?: {a: {b: string}}
+         x?: () => 1
 }
 
 type OPTIONAL_O_A_FLAT = {
@@ -856,6 +898,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x : () => 1
 }
 
 checks([
@@ -863,6 +906,13 @@ checks([
     check<O.Optional<O, 'a', 'flat'>,                       OPTIONAL_O_A_FLAT,                          Test.Pass>(),
     check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'> | undefined, Test.Pass>(),
 ])
+
+function OPTIONAL_GENERIC<O extends {values: number[]}>(o: O) {
+    const v0 = o as O.Optional<O, Key, 'flat'>
+    const v1 = o as O.Optional<O, Key, 'deep'>
+    const p0: number[] | undefined = v0.values
+    const p1: (number | undefined)[] | undefined = v1.values
+}
 
 // ---------------------------------------------------------------------------------------
 // PARTIAL
@@ -878,6 +928,7 @@ readonly f?: 0
          h?: 1
          j?: 'a'
          k?: {a: {b: string}}
+         x?: () => 1
 }
 
 checks([
@@ -915,6 +966,7 @@ readonly f : 0
     j : 'a' | undefined
     k : {a: {b: string}}
     l : [1, 2, 3]
+    x : () => 1
 }
 
 type PATCH_O1_O = {
@@ -930,6 +982,7 @@ readonly f : 0
     j : 'a' | undefined
     k : {a: {b: string, c: 0}}
     l : [1, 2, 3]
+    x : () => 1
 }
 
 type PATCH_O_O1_DEEP = {
@@ -945,6 +998,7 @@ readonly f : 0
     j : 'a' | undefined
     k : {a: {b: string, c: 0}}
     l : [1, 2, 3]
+    x : () => 1
 }
 
 checks([
@@ -956,10 +1010,10 @@ checks([
 function PATCH_GENERIC<O extends {n: number}>(o: O) {
     const v0 = o as O.Patch<O, {a: string}, 'flat', 1>
     const v1 = o as O.Patch<O, {a: string}, 'deep', 0>
-    const p0n: number = v0.n // this should work
-    const p1n: number = v1.n // this should work
-    const p0a: string = v0.a // this should work
-    const p1a: string = v1.a // this should work
+    const p0n: number = v0.n
+    const p1n: number = v1.n
+    const p0a: string = v0.a
+    const p1a: string = v1.a
 }
 
 // ---------------------------------------------------------------------------------------
@@ -1043,7 +1097,7 @@ type O_PATHVALID = {
 checks([
     check<O.PathValid<any,          ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
-    check<O.PathValid<O_PATHVALID,  ['a', 'x']>,        ['a', never],       Test.Pass>(),
+    check<O.PathValid<O_PATHVALID,  ['a', 'x']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['b', 'a', 'a']>,   ['b', 'a', 'a'],    Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['b', 'b', 0]>,     ['b', 'b', 0],      Test.Pass>(),
 ])
@@ -1076,6 +1130,7 @@ readonly g : O
 readonly h?: 1
 readonly j : 'a' | undefined
 readonly k : {a: {b: string}}
+readonly x : () => 1
 }
 
 type READONLY_O_A_FLAT = {
@@ -1089,6 +1144,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -1096,6 +1152,18 @@ checks([
     check<O.Readonly<O, 'a', 'flat'>,                       READONLY_O_A_FLAT,              Test.Pass>(),
     check<O.Path<O.Readonly<O, 'g', 'deep'>, ['g', 'g']>,   O.Readonly<O, keyof O, 'deep'>, Test.Pass>(),
 ])
+
+function READONLY_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.Readonly<O, Key, 'flat'>
+    const v1 = o as O.Readonly<O, Key, 'deep'>
+    const p0: number | undefined = v0.n
+    const p1: number | undefined = v1.n
+
+    // @ts-expect-error
+    v0.n = 1
+    // @ts-expect-error
+    v1.n = 1
+}
 
 // ---------------------------------------------------------------------------------------
 // READONLYKEYS
@@ -1152,6 +1220,7 @@ type REPLACE_STRING_NUMBER = {
             b: string
         }
     }
+    x: () => 1
 }
 
 checks([
@@ -1172,6 +1241,7 @@ readonly f: 0
          h: 1
          j: 'a' | undefined
          k: {a: {b: string}}
+         x: () => 1
 }
 
 type REQUIRED_O_D_FLAT = {
@@ -1185,6 +1255,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 checks([
@@ -1193,11 +1264,18 @@ checks([
     check<O.Path<O.Required<O, 'g', 'deep'>, ['g', 'g']>,   O.Required<O, keyof O, 'deep'>, Test.Pass>(),
 ])
 
+function REQUIRED_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.Required<O, Key, 'flat'>
+    const v1 = o as O.Required<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+}
+
 // ---------------------------------------------------------------------------------------
 // REQUIREDKEYS
 
 checks([
-    check<O.RequiredKeys<O>,    'a' | 'b' | 'c' | 'f' | 'g' | 'j' | 'k',    Test.Pass>(),
+    check<O.RequiredKeys<O>,    'a' | 'b' | 'c' | 'f' | 'g' | 'j' | 'k' | 'x',  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1232,7 +1310,7 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// NULLABLE
+// UNDEFINABLE
 
 type UNDEFINABLE_O_FLAT = {
     a : string | undefined
@@ -1245,6 +1323,7 @@ readonly f : 0 | undefined
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}} | undefined
+    x: (() => 1) | undefined
 }
 
 type UNDEFINABLE_O_A_FLAT = {
@@ -1258,6 +1337,7 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -1265,6 +1345,13 @@ checks([
     check<O.Undefinable<O, 'a', 'flat'>,                       UNDEFINABLE_O_A_FLAT,                            Test.Pass>(),
     check<O.Path<O.Undefinable<O, 'g', 'deep'>, ['g', 'g']>,   O.Undefinable<O, keyof O, 'deep'> | undefined,   Test.Pass>(),
 ])
+
+function UNDEFINABLE_GENERIC<O extends {n: number}>(o: O) {
+    const v0 = o as O.Required<O, Key, 'flat'>
+    const v1 = o as O.Required<O, Key, 'deep'>
+    const p0: number | undefined = v0.n
+    const p1: number | undefined = v1.n
+}
 
 // ---------------------------------------------------------------------------------------
 // UNDEFINABLEKEYS
@@ -1357,6 +1444,7 @@ type WRITABLE_O_FLAT = {
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
+    x: () => 1
 }
 
 type WRITABLE_O_E_FLAT = {
@@ -1370,6 +1458,7 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
+    x: () => 1
 }
 
 checks([
@@ -1378,11 +1467,21 @@ checks([
     check<O.Path<O.Writable<O, 'g', 'deep'>, ['g', 'g']>,   O.Writable<O, keyof O, 'deep'>, Test.Pass>(),
 ])
 
+function WRITABLE_GENERIC<O extends {readonly n: number}>(o: O) {
+    const v0 = o as O.Writable<O, Key, 'flat'>
+    const v1 = o as O.Writable<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+
+    v0.n = 1
+    v1.n = 1
+}
+
 // ---------------------------------------------------------------------------------------
 // WRITABLEKEYS
 
 checks([
-    check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k',  Test.Pass>(),
+    check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k' | 'x',    Test.Pass>(),
 ])
 
 // ///////////////////////////////////////////////////////////////////////////////////////

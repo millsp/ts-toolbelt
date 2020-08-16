@@ -1,24 +1,9 @@
-<div>
-  <img align="left"src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
-  <img align="right"src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/blank.png" width="100">
-  <a href="https://github.com/millsp/ts-toolbelt">
-    <img align="left" alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="100" alt="Logo">
-  </a>
-  <h1 align="left">ts-toolbelt</h1>
-  <h4 align="left">Higher Type Safety for TypeScript. A collection of useful types.</h4>
-</div>
-<br>
-<br>
 <p align="center">
-  <a href="https://millsp.github.io/ts-toolbelt/">📖 Read Docs</a>
-  ·
-  <a href="#demo">🎮 View Demo</a>
-  ·
-  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---bug-report.md" alt="Bug Report">🐞 Report Bug</a>
-  ·
-  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---feature-request.md" alt="Request Feature">🍩 Request Feature</a>
-  ·
-  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md" alt="Ask Questions">🤔 Ask Questions</a>
+  <a href="https://github.com/millsp/ts-toolbelt">
+    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="175" alt="Logo">
+  </a>
+  <h1 align="center">ts-toolbelt</h1>
+  <h4 align="center">Higher Type Safety for TypeScript. A collection of useful types.</h4>
 </p>
 
 <p align="center">
@@ -38,6 +23,7 @@
     <img src="http://isitmaintained.com/badge/resolution/millsp/ts-toolbelt.svg"/>
   </a>
 </p>
+
 <p align="center">
   <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link" >
     <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
@@ -69,6 +55,18 @@
   <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" >
     <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/tidelift.svg" height="20px" alt="Join Tidelift">
   </a>
+</p>
+
+<p align="center">
+  <a href="https://millsp.github.io/ts-toolbelt/">📖 Read Docs</a>
+  ·
+  <a href="#demo">🎮 View Demo</a>
+  ·
+  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---bug-report.md" alt="Bug Report">🐞 Report Bug</a>
+  ·
+  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---feature-request.md" alt="Request Feature">🍩 Request Feature</a>
+  ·
+  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md" alt="Ask Questions">🤔 Ask Questions</a>
 </p>
 
 ## Table of Contents

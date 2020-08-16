@@ -4,7 +4,7 @@ import {Is} from '../Any/Is'
 /**
 @hidden
 */
-export type _Replace<O extends object, M extends any, A extends any, match extends Match = 'default'> = {
+export type _Replace<O extends object, M extends any, A extends any, match extends Match> = {
     [K in keyof O]: {
         1: A
         0: O[K]
