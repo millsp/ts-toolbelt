@@ -27,5 +27,5 @@ else
 fi;
 
 # Delete the tags that `standard-version` created
-# but that we don't want when it's not a reslease
+# but that we don't want when it is not a release
 git fetch --prune origin "+refs/tags/*:refs/tags/*"
