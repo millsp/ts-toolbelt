@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.3](https://github.com/millsp/ts-toolbelt/compare/v8.0.2...v8.0.3) (2020-08-23)
+
+
+### Bug Fixes
+
+* **release:** skip tags ([dbe5447](https://github.com/millsp/ts-toolbelt/commit/dbe5447fb5b77e9a6c03554f3a8d3c0302ba0cc1))
+
 ### [8.0.2](https://github.com/millsp/ts-toolbelt/compare/v8.0.1...v8.0.2) (2020-08-23)
 
 
