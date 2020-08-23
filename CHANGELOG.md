@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.1](https://github.com/millsp/ts-toolbelt/compare/v8.0.0...v8.0.1) (2020-08-23)
+
+
+### Bug Fixes
+
+* **deps:** add ts parser ([e53246d](https://github.com/millsp/ts-toolbelt/commit/e53246dc24aca51f5e71d8f65ce6532f5fe00268))
+
+
+### Others
+
+* fix release ([2f4250b](https://github.com/millsp/ts-toolbelt/commit/2f4250bcaf39e70ffbd52bdac47fcce656d9ba1d))
+
 ### [7.0.7](https://github.com/millsp/ts-toolbelt/compare/v8.0.0...v7.0.7) (2020-08-23)
 
 
