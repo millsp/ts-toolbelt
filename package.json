@@ -47,7 +47,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.0",
     "@commitlint/config-conventional": "^8.3.0",
-    "@typescript-eslint/parser": "^3.0.0",
+    "@typescript-eslint/parser": "^3.9.1",
     "eledoc": "^0.2.0",
     "eslint": "^7.0.0",
     "eslint-plugin-fp": "^2.3.0",
