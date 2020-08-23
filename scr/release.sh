@@ -14,18 +14,14 @@ RELEASE=$(node -p "require('./package.json').version.split('.')[2] === '0'") &&
 
 # Publish the current branch origin
 if [ "$BRANCH" != "master" ]; then
-    npx standard-version --skip.changelog &&  # skip changelog
-    git push origin $BRANCH                   # not a release
+    npx standard-version --skip.changelog --skip.tags &&  # skip changelog
+    git push origin $BRANCH                               # not a release
 else
-    npx standard-version &&                   # gen changelog
-
     if [ "$RELEASE" = "false" ]; then
+        npx standard-version --skip.tags &&               # gen changelog
         git push origin $BRANCH
     else
-        git push origin $BRANCH --follow-tags # only releases
+        npx standard-version &&                           # gen changelog
+        git push origin $BRANCH --follow-tags             # only releases
     fi;
 fi;
-
-# Delete the tags that `standard-version` created
-# but that we don't want when it is not a release
-git fetch --prune origin "+refs/tags/*:refs/tags/*"
