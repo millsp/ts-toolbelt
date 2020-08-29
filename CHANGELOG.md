@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.4](https://github.com/millsp/ts-toolbelt/compare/v8.0.1...v8.0.4) (2020-08-29)
+
+
+### Bug Fixes
+
+* **a.type:** use symbol ([c3a9584](https://github.com/millsp/ts-toolbelt/commit/c3a9584687c9425a33ab5da555e22bf158e4ee29))
+* **release:** skip tags ([dbe5447](https://github.com/millsp/ts-toolbelt/commit/dbe5447fb5b77e9a6c03554f3a8d3c0302ba0cc1))
+
+
+### Others
+
+* cleanup ([50d6927](https://github.com/millsp/ts-toolbelt/commit/50d692791570f1dd2dc069a73b42c6e0d3c690e2))
+* **release:** 8.0.2 ([03aa8c6](https://github.com/millsp/ts-toolbelt/commit/03aa8c6d1805c174305532c8b9c265f6e6bfe97b))
+* **release:** 8.0.3 ([3d4544e](https://github.com/millsp/ts-toolbelt/commit/3d4544e1e66fed530e1443d7b67be616c2f26440))
+* disable dt tests ([fd1fa49](https://github.com/millsp/ts-toolbelt/commit/fd1fa49c76abec9c8a23f37574c8074b30222382))
+
 ### [8.0.3](https://github.com/millsp/ts-toolbelt/compare/v8.0.2...v8.0.3) (2020-08-23)
 
 
