@@ -23,4 +23,3 @@ declare const id: unique symbol
 export type Type<A extends any, Id extends Key> = {
     [id]: Id
 } & A
-
