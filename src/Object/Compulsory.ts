@@ -40,7 +40,7 @@ Make that **`O`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like
 [[Required]] & [[NonNullable]] at once).
 @param O to make compulsory
 @param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[Object]]
 @example
 ```ts

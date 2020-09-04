@@ -11,7 +11,7 @@ fields will be handled gracefully.
 (⚠️ needs `--strictNullChecks` enabled)
 @param L to complete
 @param L1 to copy from
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @param noMerge (?=`BuiltinObject`) types not to merge
 @returns [[Object]]
 @example

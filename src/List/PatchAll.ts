@@ -8,7 +8,7 @@ import {BuiltInObject} from '../Misc/BuiltInObject'
 items get completed by the next ones (last-in completes).
 @param O to start with
 @param Os to patch
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @param noMerge (?=`BuiltinObject`) types not to merge
 @returns [[List]]
 @example

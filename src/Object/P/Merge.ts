@@ -44,7 +44,7 @@ Complete the fields of **`O`** at **`Path`** with the ones of **`O1`**
 @param O to complete
 @param Path to be followed
 @param O1 to copy from
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @param list (?=`0`) `1` to work within object lists
 @returns [[Object]]
 @example

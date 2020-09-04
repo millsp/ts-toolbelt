@@ -40,7 +40,7 @@ Make some fields of **`O`** not nullable (deeply or not)
 (Optional fields will be left untouched & **`undefined`**)
 @param O to make non nullable
 @param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[Object]]
 @example
 ```ts

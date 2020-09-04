@@ -31,7 +31,7 @@ Assign a list of [[Object]] into **`O`** with [[Merge]]. Merges from right to
 left, first items get overridden by the next ones (last-in overrides).
 @param O to assign to
 @param Os to assign
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @param style (?=`1`) 0 = lodash, 1 = ramda
 @param noMerge (?=`BuiltinObject`) types not to merge
 @returns [[Object]]

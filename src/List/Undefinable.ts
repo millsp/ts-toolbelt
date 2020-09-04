@@ -8,7 +8,7 @@ import {x} from '../Any/x'
 Make some entries of **`L`** not **`undefined`** (deeply or not)
 @param L to make non nullable
 @param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[List]]
 @example
 ```ts

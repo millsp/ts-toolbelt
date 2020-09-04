@@ -9,7 +9,7 @@ Assign a list of [[List]] into **`L`** with [[Merge]]. Merges from left to
 right, first items get overridden by the next ones (last-in overrides).
 @param L to assign to
 @param Ls to assign
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[Object]]
 @example
 ```ts

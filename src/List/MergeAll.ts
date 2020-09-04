@@ -7,7 +7,7 @@ import {Depth} from '../Object/_Internal'
 items get completed by the next ones (last-in completes).
 @param O to start with
 @param Os to merge
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[List]]
 @example
 ```ts

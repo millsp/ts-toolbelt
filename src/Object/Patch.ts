@@ -111,7 +111,7 @@ Complete the fields of **`O`** with the ones of **`O1`**. This is a version of
 with the ones of `O1`.
 @param O to complete
 @param O1 to copy from
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @param style (?=`1`) 0 = lodash, 1 = ramda
 @param noMerge (?=`BuiltinObject`) types not to merge
 @returns [[Object]]

@@ -38,7 +38,7 @@ export type _Writable<O extends object, K extends Key, depth extends Depth> =
 Make some fields of **`O`** writable (deeply or not)
 @param O to make writable
 @param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[Object]]
 @example
 ```ts

@@ -38,7 +38,7 @@ export type _Optional<O extends object, K extends Key, depth extends Depth> =
 Make some fields of **`O`** optional (deeply or not)
 @param O to make optional
 @param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[Object]]
 @example
 ```ts

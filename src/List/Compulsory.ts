@@ -7,7 +7,7 @@ import {_Pick} from '../Object/Pick'
 Make that **`L`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like
 [[Required]] & [[NonNullable]] at once).
 @param L to make compulsory
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @returns [[List]]
 @example
 ```ts

@@ -43,7 +43,7 @@ type ReadonlyArrays<O, Path extends List<Key>, depth extends Depth, I extends It
 Make some fields of **`O`** readonly at **`Path`** (deeply or not)
 @param O to make readonly
 @param Path to be followed
-@param depth (?=`'flat'`) to do it deeply
+@param depth (?=`'flat'`) 'deep' to do it deeply
 @param list (?=`0`) `1` to work within object lists
 @returns [[Object]]
 @example
