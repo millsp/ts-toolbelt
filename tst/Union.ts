@@ -1,4 +1,4 @@
-import {Test, U} from '../src/index'
+import {Test, U} from '../src/ts-toolbelt'
 
 const {checks, check} = Test
 
@@ -79,7 +79,7 @@ type MERGE_U = {
     c: 42 | 48
     d: 21
     e: 22 | 23
-};
+}
 
 checks([
     check<U.Merge<U_MERGE>,     MERGE_U,    Test.Pass>(),

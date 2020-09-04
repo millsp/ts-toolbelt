@@ -1,5 +1,4 @@
 import {Union} from './Union'
-import {Key} from '../Any/Key'
 
 /**
 Get the keys of a [[Union]]
@@ -10,8 +9,6 @@ Get the keys of a [[Union]]
 ```
 */
 export type Keys<U extends Union> =
-    (
-        U extends unknown
-        ? keyof U
-        : never
-    ) & Key
+    U extends unknown
+    ? keyof U
+    : never

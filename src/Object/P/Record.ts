@@ -10,42 +10,38 @@ import {List} from '../../List/List'
 /**
 @hidden
 */
-type _Record_RR<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
-  {
+type _Record_RR<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> = {
     readonly [Key in Path[Pos<I>]]: Pos<I> extends LastIndex<Path>
                                     ? A
                                     : _Record_RR<Path, A, Next<I>>
-  } & {}
+} & {}
 
 /**
 @hidden
 */
-export type _Record_RW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
-  {
+export type _Record_RW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> = {
     [Key in Path[Pos<I>]]: Pos<I> extends LastIndex<Path>
                            ? A
                            : _Record_RW<Path, A, Next<I>>
-  } & {}
+} & {}
 
 /**
 @hidden
 */
-type _Record_OR<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
-  {
+type _Record_OR<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> = {
     readonly [Key in Path[Pos<I>]]?: Pos<I> extends LastIndex<Path>
                                      ? A
                                      : _Record_OR<Path, A, Next<I>>
-  } & {}
+} & {}
 
 /**
 @hidden
 */
-type _Record_OW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
-  {
+type _Record_OW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> = {
     [Key in Path[Pos<I>]]?: Pos<I> extends LastIndex<Path>
                             ? A
                             : _Record_OW<Path, A, Next<I>>
-  } & {}
+} & {}
 
 /**
 Create an object filled with **`A`** for the fields at the end of **`Path`**

@@ -4,5 +4,5 @@ replace('.', '"version": "(?<version>.*)"', `"version": "<version>-test.${Date.n
     [
         'package.json',
     ],
-    []
+    [],
 )

@@ -1,7 +1,7 @@
 import {_Pick as _OPick} from '../Object/Pick'
 import {_ListOf} from '../Object/ListOf'
 import {Key} from '../Any/Key'
-import {_ObjectOf} from './ObjectOf'
+import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 import {NumberOf} from '../Any/_Internal'
 
@@ -9,7 +9,7 @@ import {NumberOf} from '../Any/_Internal'
 @hidden
 */
 export type _Pick<L extends List, K extends Key> =
-    _ListOf<_OPick<_ObjectOf<L>, NumberOf<K>>>
+    _ListOf<_OPick<ObjectOf<L>, NumberOf<K>>>
 
 /**
 Extract out of **`L`** the entries of key **`K`**

@@ -1,4 +1,4 @@
-import {Test, C} from '../src/index'
+import {Test, C} from '../src/ts-toolbelt'
 
 const {checks, check} = Test
 
@@ -6,6 +6,7 @@ const {checks, check} = Test
 // CLASS /////////////////////////////////////////////////////////////////////////////////
 
 class TestClass {
+    // @ts-ignore
     constructor(a: string, b: number) {}
 }
 

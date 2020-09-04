@@ -29,10 +29,7 @@ type MergeObject<O, Path extends List<Key>, O1 extends object, depth extends Dep
 type MergeList<O, Path extends List<Key>, O1 extends object, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                              // Same as above, but
   ? O extends (infer A)[]                       // If O is an array
-    ? {
-        1: MergeList<A, Path, O1, depth, I>[] // Dive into the array (TS <3.7)
-        0: never
-      }[O extends List ? 1 : 0]
+    ? MergeList<A, Path, O1, depth, I>[]        // Dive into the array
     : Pos<I> extends Length<Path>
       ? OMerge<O, O1, depth>
       : {
@@ -58,3 +55,5 @@ export type Merge<O extends object, Path extends List<Key>, O1 extends object, d
   0: MergeObject<O, Path, O1, depth>
   1: MergeList<O, Path, O1, depth>
 }[list]
+
+// TODO: deprecate list option and integrate noMerge

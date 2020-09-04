@@ -8,8 +8,8 @@ import {Cast} from '../Any/Cast'
 import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
 import {Format} from '../Iteration/Format'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 
 /**
 @hidden
@@ -19,11 +19,11 @@ type _PlusPositive<N1 extends Iteration, N2 extends Iteration, IMap extends Map>
     1: N1
     2: number
 }[
-    Pos<N2, IMap> extends 0         // If successful
+    Pos<N2> extends 0        // If successful
     ? 1
-    : number extends Pos<N2, IMap>  // If un-success
+    : number extends Pos<N2> // If un-success
       ? 2
-      : 0                           // Or continue
+      : 0                    // Or continue
 ]
 
 /**
@@ -42,11 +42,11 @@ type _PlusNegative<N1 extends Iteration, N2 extends Iteration, IMap extends Map>
     1: N1
     2: number
 }[
-    Pos<N2, IMap> extends 0         // If successful
+    Pos<N2> extends 0        // If successful
     ? 1
-    : number extends Pos<N2, IMap>  // If un-success
+    : number extends Pos<N2> // If un-success
       ? 2
-      : 0                           // Or continue
+      : 0                    // Or continue
 ]
 
 /**
@@ -60,16 +60,16 @@ type PlusNegative<N1 extends Iteration, N2 extends Iteration, IMap extends Map> 
 /**
 @hidden
 */
-export type _Plus<N1 extends Iteration, N2 extends Iteration, IMap extends Map = NumberMap> = {
+export type _Plus<N1 extends Iteration, N2 extends Iteration, IMap extends Map> = {
     0: PlusPositive<N1, N2, IMap>
     1: PlusNegative<N1, N2, IMap>
-}[_IsNegative<N2, IMap>]
+}[_IsNegative<N2>]
 
 /**
 @hidden
 */
-export type __Plus<N1 extends Number, N2 extends Number, fmt extends Formats = 's', IMap extends Map = NumberMap> =
-    Format<_Plus<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>, fmt, IMap>
+export type __Plus<N1 extends Number, N2 extends Number, fmt extends Formats, IMap extends Map> =
+    Format<_Plus<IterationOf<N1, IMap>, IterationOf<N2, IMap>, IMap>, fmt>
 
 /**
 Add a [[Number]] to another one

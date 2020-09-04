@@ -1,8 +1,7 @@
 import {Depth} from '../Object/_Internal'
-import {Compulsory as OCompulsory} from '../Object/Compulsory'
-import {Cast} from '../Any/Cast'
+import {CompulsoryPart} from '../Object/Compulsory'
 import {List} from './List'
-import {Key} from '../Any/Key'
+import {_Pick} from '../Object/Pick'
 
 /**
 Make that **`L`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like
@@ -15,4 +14,4 @@ Make that **`L`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like
 ```
 */
 export type Compulsory<L extends List, depth extends Depth = 'flat'> =
-    Cast<OCompulsory<L, Key, depth>, List>
+    CompulsoryPart<L, depth>

@@ -30,7 +30,7 @@ type DropBack<L extends List, N extends Iteration, I extends Iteration = Prev<N>
 /**
 @hidden
 */
-type __Drop<L extends List, N extends Iteration, way extends Way = '->'> = {
+type __Drop<L extends List, N extends Iteration, way extends Way> = {
     '->': DropForth<L, N>
     '<-': DropBack<L, N>
 }[way]

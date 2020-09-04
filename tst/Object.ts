@@ -1,4 +1,5 @@
-import {Test, O, A, T} from '../src/index'
+import {Test, O, A, T, U} from '../src/ts-toolbelt'
+import {Key} from '../src/Any/Key'
 
 const {checks, check} = Test
 
@@ -12,10 +13,11 @@ type O = {
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
-         g : O // recursion
+         g : O
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type O1 = {
@@ -25,32 +27,21 @@ type O1 = {
          d?: never
 readonly e?: 'string1'
 readonly f : 0
-         g : O1 // recursion
+         g : {}
          h : never
          i : {a: string}
          j : 'a' | undefined
          k : {a: {b: string, c: 0}}
-};
+         l : [1, 2, 3]
+}
 
 // ---------------------------------------------------------------------------------------
 // ASSIGN
 
-type O_ASSIGN  = {readonly a: 1}
-type Os_ASSIGN = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
-
-type ASSIGN_O_Os = {a: 3, readonly b: 1, c?: 1};
-
-checks([
-    check<O.Assign<O_ASSIGN, Os_ASSIGN>,    ASSIGN_O_Os,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// ASSIGNUP
-
 type O_ASSIGNUP  = {readonly a: 1, c: 2}
 type Os_ASSIGNUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
 
-type ASSIGNUP_O_Os = {readonly a: 3, readonly b: 1, c: 1 | 2};
+type ASSIGNUP_O_Os = {readonly a: 3, readonly b: 1, c: 1 | 2}
 
 checks([
     check<O.AssignUp<O_ASSIGNUP, Os_ASSIGNUP>,    ASSIGNUP_O_Os,   Test.Pass>(),
@@ -94,46 +85,22 @@ type ATLEAST_O_ABF = {
     d?: 4
 } | {
     a?: 1
-    b: 2;
+    b: 2
     c?: 3
     d?: 4
 } | {
-    e: 5;
-    f: 6;
+    e: 5
+    f: 6
 } | {
     e?: 5
-    f: 6;
+    f: 6
 } | {
     g?: 7
     h?: 8
-};
+}
 
 checks([
     check<O.AtLeast<O_ATLEAST, 'a' | 'b' | 'f'>,    ATLEAST_O_ABF,    Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// COMPACT
-
-type O_COMPACT  = {readonly a: 1}
-type Os_COMPACT = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
-
-type COMPACT_O_Os = {readonly a: 1, readonly b: 1, c?: 1};
-
-checks([
-    check<O.Compact<O_COMPACT, Os_COMPACT>,    COMPACT_O_Os,   Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// COMPACTUP
-
-type O_COMPACTUP  = {readonly a: 1, c?: 2}
-type Os_COMPACTUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
-
-type COMPACTUP_O_Os = {readonly a: 1, readonly b: 1, c?: 1 | 2};
-
-checks([
-    check<O.CompactUp<O_COMPACTUP, Os_COMPACTUP>,   COMPACTUP_O_Os,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -150,16 +117,24 @@ readonly f: 0
          h: 1
          j: 'a'
          k: {a: {b: string}}
-};
+         x: () => 1
+}
 
 checks([
     check<O.Compulsory<O>,  COMPULSORY_O,   Test.Pass>(),
 ])
 
+function COMPULSORY_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.Compulsory<O, Key, 'flat'>
+    const v1 = o as O.Compulsory<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+}
+
 // ---------------------------------------------------------------------------------------
 // COMPULSORYKEYS
 
-type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k';
+type COMPULSORYKEYS_O = 'a' | 'b' | 'c' | 'f' | 'g' | 'k' | 'x'
 
 checks([
     check<O.CompulsoryKeys<O>,  COMPULSORYKEYS_O,   Test.Pass>(),
@@ -170,6 +145,8 @@ checks([
 
 type DIFF_O_O1_DEFAULT = {
     i: {a: string}
+    l: [1, 2, 3]
+    x: () => 1
 }
 
 type DIFF_O_O1_EQUALS = {
@@ -180,7 +157,9 @@ type DIFF_O_O1_EQUALS = {
     h?: 1
     i : {a: string}
     k : {a: {b: string}}
-};
+    l : [1, 2, 3]
+    x: () => 1
+}
 
 checks([
     check<O.Diff<O, O1, 'default'>, DIFF_O_O1_DEFAULT,  Test.Pass>(),
@@ -191,17 +170,21 @@ checks([
 
 type DIFF_O1_O_DEFAULT = {
     i: {a: string}
+    l: [1, 2, 3]
+    x: () => 1
 }
 
 type DIFF_O1_O_EQUALS = {
     a : string | number
     b : object
     d?: never
-    g : O1
+    g : {}
     h : never
     i : {a: string}
     k : {a: {b: string, c: 0}}
-};
+    l : [1, 2, 3]
+    x: () => 1
+}
 
 checks([
     check<O.Diff<O1, O, 'default'>, DIFF_O1_O_DEFAULT,  Test.Pass>(),
@@ -221,13 +204,13 @@ readonly c?: object
 }
 
 type EITHER_O_AB_TRUE = {
-    a: string;
-    b?: undefined;
-    readonly c?: object;
+    a: string
+    b?: undefined
+    readonly c?: object
 } | {
-    a?: undefined;
-    b?: number;
-    readonly c?: object;
+    a?: undefined
+    b?: number
+    readonly c?: object
 } | {
     a: 'a'
     b?: undefined
@@ -237,16 +220,16 @@ type EITHER_O_AB_TRUE = {
 }
 
 type EITHER_O_AB_FALSE = {
-    a: string;
-    readonly c?: object;
+    a: string
+    readonly c?: object
 } | {
-    b?: number;
-    readonly c?: object;
+    b?: number
+    readonly c?: object
 } | {
     a: 'a'
 } | {
     b: 'b'
-};
+}
 
 checks([
     check<O.Either<O_EITHER, 'a' | 'b'>,        EITHER_O_AB_TRUE,       Test.Pass>(),
@@ -256,7 +239,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EXCLUDE
 
-type EXCLUDE_O_O1_DEFAULT = {}
+type EXCLUDE_O_O1_DEFAULT = {
+    x: () => 1
+}
 
 type EXCLUDE_O_O1_EQUALS = {
     a : string
@@ -265,7 +250,8 @@ type EXCLUDE_O_O1_EQUALS = {
     g : O
     h?: 1
     k : {a: {b: string}}
-};
+    x: () => 1
+}
 
 checks([
     check<O.Exclude<O, O1, 'default'>,  EXCLUDE_O_O1_DEFAULT,   Test.Pass>(),
@@ -276,17 +262,19 @@ checks([
 
 type EXCLUDE_O1_O_DEFAULT = {
     i: {a: string}
+    l: [1, 2, 3]
 }
 
 type EXCLUDE_O1_O_EQUALS = {
     a : string | number
     b : object
     d?: never
-    g : O1
+    g : {}
     h : never
     i : {a: string}
     k : {a: {b: string, c: 0}}
-};
+    l: [1, 2, 3]
+}
 
 checks([
     check<O.Exclude<O1, O, 'default'>,  EXCLUDE_O1_O_DEFAULT,   Test.Pass>(),
@@ -296,9 +284,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // EXCLUDEKEYS
 
-type EXCLUDEKEYS_O_DEFAULT = never
+type EXCLUDEKEYS_O_DEFAULT = 'x'
 
-type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k';
+type EXCLUDEKEYS_O_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'k' | 'x'
 
 checks([
     check<O.ExcludeKeys<O, O1, 'default'>,  EXCLUDEKEYS_O_DEFAULT,  Test.Pass>(),
@@ -307,9 +295,9 @@ checks([
 
 // ---------------------------------------------------------------------------------------
 
-type EXCLUDEKEYS_O1_DEFAULT = 'i'
+type EXCLUDEKEYS_O1_DEFAULT = 'i' | 'l'
 
-type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i' | 'k';
+type EXCLUDEKEYS_O1_EQUALS = 'a' | 'b' | 'd' | 'g' | 'h' | 'i' | 'k' | 'l'
 
 checks([
     check<O.ExcludeKeys<O1, O, 'default'>,  EXCLUDEKEYS_O1_DEFAULT, Test.Pass>(),
@@ -329,6 +317,7 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type FILTER_O_EQUALS = {
@@ -341,7 +330,8 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+         x: () => 1
+}
 
 checks([
     check<O.Filter<O, string, 'extends->'>,     FILTER_O_DEFAULT,   Test.Pass>(),
@@ -351,9 +341,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // FILTERKEYS
 
-type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k'
+type FILTERKEYS_O_DEFAULT = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k' | 'x'
 
-type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k';
+type FILTERKEYS_O_EQUALS = 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'j' | 'k' | 'x'
 
 checks([
     check<O.FilterKeys<O, string, 'extends->'>,     FILTERKEYS_O_DEFAULT,   Test.Pass>(),
@@ -385,7 +375,7 @@ checks([
     check<O.Has<O, 'a' | 'd', string, 'extends->'>,                 0 | 1,  Test.Pass>(),
 
     check<O.Has<O, 'a' | 'd', string | undefined, 'extends->'>,     1,      Test.Pass>(),
-    check<O.Has<O, 'x' | 'd', string | undefined, 'extends->'>,     1,      Test.Pass>(),
+    check<O.Has<O, 'xx' | 'd', string | undefined, 'extends->'>,    1,      Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -415,14 +405,14 @@ checks([
 // ---------------------------------------------------------------------------------------
 // INTERSECT
 
-type INTERSECT_O_O1_DEFAULT = O
+type INTERSECT_O_O1_DEFAULT = O.Omit<O, 'x'>
 
 type INTERSECT_O_O1_EQUALS = {
-         c : {a: 'a'} & {b: 'b'};
-readonly e?: 'string1';
-readonly f : 0;
+         c : {a: 'a'} & {b: 'b'}
+readonly e?: 'string1'
+readonly f : 0
          j : 'a' | undefined
-};
+}
 
 checks([
     check<O.Intersect<O, O1, 'default'>,    INTERSECT_O_O1_DEFAULT, Test.Pass>(),
@@ -432,9 +422,9 @@ checks([
 // ---------------------------------------------------------------------------------------
 // INTERSECTKEYS
 
-type INTERSECTKEYS_O_DEFAULT = keyof O
+type INTERSECTKEYS_O_DEFAULT = U.Exclude<keyof O, 'x'>
 
-type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j';
+type INTERSECTKEYS_O_EQUALS = 'c' | 'e' | 'f' | 'j'
 
 checks([
     check<O.IntersectKeys<O, O1, 'default'>,    INTERSECTKEYS_O_DEFAULT,    Test.Pass>(),
@@ -453,10 +443,10 @@ type O_INVERT = {
 }
 
 type INVERT_O = {
-    Av          : 'A';
-    [INVERT_SYM]: 'B';
-    42          : 'C';
-};
+    Av          : 'A'
+    [INVERT_SYM]: 'B'
+    42          : 'C'
+}
 
 checks([
     check<O.Invert<O_INVERT>,   INVERT_O,  Test.Pass>(),
@@ -473,7 +463,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // LISTOF
 
-type O_LISTOF = {
+type O_LISTOF_INDEX = {
     '0': 1
     '2': 3
     '3': never
@@ -481,74 +471,41 @@ type O_LISTOF = {
     '6': 6
 }
 
-type LISTOF_O = [1, 3, never, 5, 6];
+type O_LISTOF_NUMBER = {
+    [K in number]: 42
+}
+
+type O_LISTOF_STRING = {
+    [K in string]: 42
+}
+
+type O_LISTOF_SYMBOL = {
+    [K in symbol]: 42
+}
+
+type LISTOF_INDEX_O = [1, 3, never, 5, 6]
+type LISTOF_NUMBER_O = 42[]
+type LISTOF_STRING_O = 42[]
+type LISTOF_SYMBOL_O = unknown[]
 
 checks([
-    check<O.ListOf<O_LISTOF>,   LISTOF_O,   Test.Pass>(),
+    check<O.ListOf<O_LISTOF_INDEX>,     LISTOF_INDEX_O,     Test.Pass>(),
+    check<O.ListOf<O_LISTOF_NUMBER>,    LISTOF_NUMBER_O,    Test.Pass>(),
+    check<O.ListOf<O_LISTOF_STRING>,    LISTOF_STRING_O,    Test.Pass>(),
+    check<O.ListOf<O_LISTOF_SYMBOL>,    LISTOF_SYMBOL_O,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // MERGE
 
-type MERGE_O_O1 = {
-         a : string
-         b : number
-         c : {a: 'a'} & {b: 'b'}
-         d?: 'string0'
-readonly e?: 'string1'
-readonly f : 0
-         g : O
-         h?: 1;
-         i : {a: string}
-         j : 'a' | undefined
-         k : {a: {b: string}}
-}
-
-type MERGE_O1_O = {
-         a : string | number
-         b : object
-         c : {a: 'a'} & {b: 'b'}
-         d?: never
-readonly e?: 'string1'
-readonly f : 0
-         g : O1
-         h : never
-         i : {a: string}
-         j : 'a' | undefined
-         k : {a: {b: string, c: 0}}
-};
-
-type MERGE_O_O1_DEEP = {
-         a : string
-         b : number
-         c : {a: 'a', b: 'b'}
-         d?: 'string0'
-readonly e?: 'string1'
-readonly f : 0
-         g : O.Merge<O, O1, 'deep'>
-         h?: 1
-         i : {a: string}
-         j : 'a' | undefined
-         k : {a: {b: string, c: 0}}
-};
-
-checks([
-    check<O.Merge<O, O1>,           MERGE_O_O1,         Test.Pass>(),
-    check<O.Merge<O1, O>,           MERGE_O1_O,         Test.Pass>(),
-    check<O.Merge<O, O1, 'deep'>,   MERGE_O_O1_DEEP,    Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// MERGEUP
-
-type O_MERGEUP = {
+type O_MERGE = {
     a?: string
     c: {
         a?: string
         b?: number
-    }
+    } | Date
     d: 'hello' | undefined
-    e: number
+    e: number | {a: 1}
     f?: {
         a : string
         b?: number
@@ -570,9 +527,11 @@ type O_MERGEUP = {
         }
     },
     k?: {[k: string]: string}
+    l: [{a: 'a'}]
+    n: 42
 }
 
-type O1_MERGEUP = {
+type O1_MERGE = {
     a: object | undefined
     b: number
     c: {
@@ -581,7 +540,7 @@ type O1_MERGEUP = {
         c : object
     }
     d: 'goodbye'
-    e: string
+    e: string | {b: 2}
     f?: {
         a : object
         b?: object
@@ -600,18 +559,20 @@ type O1_MERGEUP = {
             }
         }
     }
-    k: {}
+    k: {} | Date
+    l: [{b: 'b'}, 2, 3]
+    m: []
 }
 
-type MERGEUP_O_O1 = {
+type MERGE_O_O1 = {
     a : string | object | undefined
     b : number
     c : {
         a?: string
         b?: number
-    }
-    d : 'hello' | undefined
-    e : number
+    } | Date
+    d : 'hello' | 'goodbye'
+    e : number | {a: 1}
     f?: {
         a : string
         b?: number
@@ -627,40 +588,101 @@ type MERGEUP_O_O1 = {
     h: {
         a: number
         b: number
-    } | undefined
+    } | {
+        a: string
+    }
     i: {
         a: string
+    } | {
+        a: number
     } | undefined
     j: {
         a: {
             b?: {}
         }
     },
-    k: {} | {[k: string]: string}
-};
+    k: {} | {[k: string]: string} | Date
+    l: [{a: 'a'}]
+    m: []
+    n: 42
+}
 
-type MERGEUP_O_O1_DEEP = {
+type MERGE_O_O1_DEEP_0 = {
     a : string | object | undefined
     b : number
     c : {
         a : string | object
         b?: number | object
         c : object
-    }
-    d : 'hello' | undefined
-    e : number
+    } | Date
+    d : 'hello' | 'goodbye'
+    e : number | {a: 1} | {a: 1, b: 2}
     f?: {
-        a: string;
-        b?: number | undefined;
+        a: string
+        b?: number | undefined
     } | {
-        a: object;
-        b?: object | undefined;
-        c: object;
+        a: object
+        b?: object | undefined
+        c: object
     } | {
-        a: string;
-        b?: number | object | undefined;
-        c: object;
-    } | undefined;
+        a: string
+        b?: number | object | undefined
+        c: object
+    } | undefined
+    g?: {
+        a?: string
+        b?: number
+    }
+    h: {
+        a: number
+        b: number
+    } | {
+        a: string
+    }
+    i: {
+        a: string
+    } | {
+        a: number
+    } | undefined
+    j: {
+        a: {
+            b?: {} | {
+                c: 1
+            }
+        }
+    } | {
+        a: {
+            b?: {}
+        }
+    },
+    k: {} | {[k: string]: string} | {[x: string]: string} | Date
+    l: [{a: 'a', b: 'b'}, 2, 3]
+    m: []
+    n: 42
+}
+
+type MERGE_O_O1_DEEP_1 = {
+    a : string | object | undefined
+    b : number
+    c : {
+        a : string | object
+        b?: number | object
+        c : object
+    } | Date
+    d : 'hello' | undefined
+    e : number | {a: 1} | {a: 1, b: 2}
+    f?: {
+        a: string
+        b?: number | undefined
+    } | {
+        a: object
+        b?: object | undefined
+        c: object
+    } | {
+        a: string
+        b?: number | object | undefined
+        c: object
+    } | undefined
     g?: {
         a?: string
         b?: number
@@ -683,12 +705,35 @@ type MERGEUP_O_O1_DEEP = {
             b?: {}
         }
     },
-    k: {} | {[k: string]: string}
-};
+    k: {} | {[k: string]: string} | Date
+    l: {0: {a: 'a', b: 'b'}, 1: 2, 2: 3}
+    m: []
+    n: 42
+}
 
 checks([
-    check<O.MergeUp<O_MERGEUP, O1_MERGEUP>,             MERGEUP_O_O1,       Test.Pass>(),
-    check<O.MergeUp<O_MERGEUP, O1_MERGEUP, 'deep'>,     MERGEUP_O_O1_DEEP,  Test.Pass>(),
+    check<O.MergeUp<[1], [2, 3], 'flat', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.MergeUp<[1], [2, 3], 'deep', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.MergeUp<O_MERGE, O1_MERGE>,               MERGE_O_O1,             Test.Pass>(),
+    check<O.MergeUp<O_MERGE, O1_MERGE, 'deep', 0>,    MERGE_O_O1_DEEP_0,      Test.Pass>(),
+    check<O.MergeUp<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
+])
+
+function MERGE_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.MergeUp<O, {n: string}, 'flat', 1>
+    const v1 = o as O.MergeUp<O, {n: string}, 'deep', 0>
+    const p0: string | number = v0.n
+    const p1: string | number = v1.n
+}
+
+// ---------------------------------------------------------------------------------------
+// MERGEALL
+
+checks([
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE]>,              MERGE_O_O1,         Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 0>,   MERGE_O_O1_DEEP_0,  Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 1>,   MERGE_O_O1_DEEP_1,  Test.Pass>(),
+    check<O.MergeAll<[], [[0], [0, 1]], 'deep', 2>,         Array<(0 | 1)>,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -713,6 +758,7 @@ readonly f : 0
          h?: 1
          j : 'a'
          k : {a: {b: string}}
+         x: () => 1
 }
 
 type NONNULLABLE_O_J_FLAT = {
@@ -726,7 +772,8 @@ readonly f : 0
          h?: 1
          j : 'a'
          k : {a: {b: string}}
-};
+         x: () => 1
+}
 
 checks([
     check<O.NonNullable<O, keyof O, 'flat'>,                    NONNULLABLE_O_FLAT,                 Test.Pass>(),
@@ -734,11 +781,18 @@ checks([
     check<O.Path<O.NonNullable<O, 'g', 'deep'>, ['g', 'g']>,    O.NonNullable<O, keyof O, 'deep'>,  Test.Pass>(),
 ])
 
+function NONNULLABLE_GENERIC<O extends {n: number | undefined}>(o: O) {
+    const v0 = o as O.NonNullable<O, Key, 'flat'>
+    const v1 = o as O.NonNullable<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+}
+
 // ---------------------------------------------------------------------------------------
 // NONNULLABLEKEYS
 
 checks([
-    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g' | 'k',    Test.Pass>(),
+    check<O.NonNullableKeys<O>, 'a' | 'b' | 'c' | 'f' | 'g' | 'k' | 'x',    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -755,6 +809,7 @@ readonly f : 0 | undefined | null
          h?: 1 | null
          j : 'a' | undefined | null
          k : {a: {b: string}} | undefined | null
+         x: (() => 1) | undefined | null
 }
 
 type NULLABLE_O_A_FLAT = {
@@ -768,13 +823,21 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+         x: () => 1
+}
 
 checks([
     check<O.Nullable<O, keyof O, 'flat'>,                   NULLABLE_O_FLAT,                                    Test.Pass>(),
     check<O.Nullable<O, 'a', 'flat'>,                       NULLABLE_O_A_FLAT,                                  Test.Pass>(),
     check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'> | undefined | null,  Test.Pass>(),
 ])
+
+function NULLABLE_GENERIC<O extends {n: number}>(o: O) {
+    const v0 = o as O.Nullable<O, Key, 'flat'>
+    const v1 = o as O.Nullable<O, Key, 'deep'>
+    const p0: number | undefined | null = v0.n
+    const p1: number | undefined | null = v1.n
+}
 
 // ---------------------------------------------------------------------------------------
 // NULLABLEKEYS
@@ -799,7 +862,8 @@ type OMIT_O_DEH = {
     g: O
     j: 'a' | undefined
     k: {a: {b: string}}
-};
+    x: () => 1
+}
 
 checks([
     check<O.Omit<O, 'd' | 'e' | 'h'>,   OMIT_O_DEH, Test.Pass>(),
@@ -820,6 +884,7 @@ readonly f?: 0
          h?: 1
          j?: 'a'
          k?: {a: {b: string}}
+         x?: () => 1
 }
 
 type OPTIONAL_O_A_FLAT = {
@@ -833,12 +898,42 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+         x : () => 1
+}
 
 checks([
     check<O.Optional<O, keyof O, 'flat'>,                   OPTIONAL_O_FLAT,                            Test.Pass>(),
     check<O.Optional<O, 'a', 'flat'>,                       OPTIONAL_O_A_FLAT,                          Test.Pass>(),
     check<O.Path<O.Optional<O, 'g', 'deep'>, ['g', 'g']>,   O.Optional<O, keyof O, 'deep'> | undefined, Test.Pass>(),
+])
+
+function OPTIONAL_GENERIC<O extends {values: number[]}>(o: O) {
+    const v0 = o as O.Optional<O, Key, 'flat'>
+    const v1 = o as O.Optional<O, Key, 'deep'>
+    const p0: number[] | undefined = v0.values
+    const p1: (number | undefined)[] | undefined = v1.values
+}
+
+// ---------------------------------------------------------------------------------------
+// PARTIAL
+
+type PARTIAL_O_FLAT = {
+         a?: string,
+         b?: number
+         c?: {a: 'a'} & {b: 'b'}
+         d?: 'string0'
+readonly e?: 'string1'
+readonly f?: 0
+         g?: O
+         h?: 1
+         j?: 'a'
+         k?: {a: {b: string}}
+         x?: () => 1
+}
+
+checks([
+    check<O.Partial<O, 'flat'>,                         PARTIAL_O_FLAT,                     Test.Pass>(),
+    check<O.Path<O.Partial<O, 'deep'>, ['g', 'g']>,     O.Partial<O, 'deep'> | undefined,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -853,6 +948,80 @@ checks([
 
 checks([
     check<O.Overwrite<{a: string}, {a: number, b: any}>,    {a: number},    Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PATCH
+
+type PATCH_O_O1 = {
+    a : string
+    b : number
+    c : {a: 'a'} & {b: 'b'}
+    d?: 'string0'
+readonly e?: 'string1'
+readonly f : 0
+    g : O
+    h?: 1
+    i : {a: string}
+    j : 'a' | undefined
+    k : {a: {b: string}}
+    l : [1, 2, 3]
+    x : () => 1
+}
+
+type PATCH_O1_O = {
+    a : string | number
+    b : object
+    c : {a: 'a'} & {b: 'b'}
+    d?: never
+readonly e?: 'string1'
+readonly f : 0
+    g : {}
+    h : never
+    i : {a: string}
+    j : 'a' | undefined
+    k : {a: {b: string, c: 0}}
+    l : [1, 2, 3]
+    x : () => 1
+}
+
+type PATCH_O_O1_DEEP = {
+    a : string
+    b : number
+    c : {a: 'a', b: 'b'}
+    d?: 'string0'
+readonly e?: 'string1'
+readonly f : 0
+    g : O
+    h?: 1
+    i : {a: string}
+    j : 'a' | undefined
+    k : {a: {b: string, c: 0}}
+    l : [1, 2, 3]
+    x : () => 1
+}
+
+checks([
+    check<O.Patch<O, O1>,               PATCH_O_O1,         Test.Pass>(),
+    check<O.Patch<O1, O>,               PATCH_O1_O,         Test.Pass>(),
+    check<O.Patch<O, O1, 'deep', 0>,    PATCH_O_O1_DEEP,    Test.Pass>(),
+])
+
+function PATCH_GENERIC<O extends {n: number}>(o: O) {
+    const v0 = o as O.Patch<O, {a: string}, 'flat', 1>
+    const v1 = o as O.Patch<O, {a: string}, 'deep', 0>
+    const p0n: number = v0.n
+    const p1n: number = v1.n
+    const p0a: string = v0.a
+    const p1a: string = v1.a
+}
+
+// ---------------------------------------------------------------------------------------
+// PATCHALL
+
+checks([
+    check<O.PatchAll<{}, [O, O1]>,              PATCH_O_O1,         Test.Pass>(),
+    check<O.PatchAll<{}, [O, O1], 'deep', 0>,   PATCH_O_O1_DEEP,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -879,7 +1048,7 @@ type O_PATH_U = {
             c: 'abc'
         }
     }
-};
+}
 
 checks([
     check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>,      never,                          Test.Pass>(),
@@ -901,9 +1070,9 @@ type O_PATHS = {
         }
         b: {}
     }
-};
+}
 
-type Index = (string | number | symbol);
+type Index = (string | number | symbol)
 
 checks([
     check<O.Paths<any>,     Index[],                                                            Test.Pass>(),
@@ -923,12 +1092,12 @@ type O_PATHVALID = {
         }
         b: string[]
     }
-};
+}
 
 checks([
     check<O.PathValid<any,          ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['a', 'a']>,        ['a', 'a'],         Test.Pass>(),
-    check<O.PathValid<O_PATHVALID,  ['a', 'x']>,        ['a', never],       Test.Pass>(),
+    check<O.PathValid<O_PATHVALID,  ['a', 'x']>,        ['a', 'a'],         Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['b', 'a', 'a']>,   ['b', 'a', 'a'],    Test.Pass>(),
     check<O.PathValid<O_PATHVALID,  ['b', 'b', 0]>,     ['b', 'b', 0],      Test.Pass>(),
 ])
@@ -940,7 +1109,7 @@ type PICK_O_DEF = {
          d?: 'string0'
 readonly e?: 'string1'
 readonly f : 0
-};
+}
 
 checks([
     check<O.Pick<O, 'd' | 'e' | 'f'>,   PICK_O_DEF, Test.Pass>(),
@@ -961,6 +1130,7 @@ readonly g : O
 readonly h?: 1
 readonly j : 'a' | undefined
 readonly k : {a: {b: string}}
+readonly x : () => 1
 }
 
 type READONLY_O_A_FLAT = {
@@ -974,13 +1144,26 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+         x: () => 1
+}
 
 checks([
     check<O.Readonly<O, keyof O, 'flat'>,                   READONLY_O_FLAT,                Test.Pass>(),
     check<O.Readonly<O, 'a', 'flat'>,                       READONLY_O_A_FLAT,              Test.Pass>(),
     check<O.Path<O.Readonly<O, 'g', 'deep'>, ['g', 'g']>,   O.Readonly<O, keyof O, 'deep'>, Test.Pass>(),
 ])
+
+function READONLY_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.Readonly<O, Key, 'flat'>
+    const v1 = o as O.Readonly<O, Key, 'deep'>
+    const p0: number | undefined = v0.n
+    const p1: number | undefined = v1.n
+
+    // @ts-expect-error
+    v0.n = 1
+    // @ts-expect-error
+    v1.n = 1
+}
 
 // ---------------------------------------------------------------------------------------
 // READONLYKEYS
@@ -1010,7 +1193,7 @@ type RECORD_AB_A_REQR = {
 type RECORD_AB_A_REQW = {
     a: string
     b: string
-};
+}
 
 checks([
     check<O.Record<'a' | 'b', string, ['?', 'R']>,  RECORD_AB_A_OPTR,   Test.Pass>(),
@@ -1035,9 +1218,10 @@ type REPLACE_STRING_NUMBER = {
     k: {
         a: {
             b: string
-        };
+        }
     }
-};
+    x: () => 1
+}
 
 checks([
     check<O.Replace<O, string, number>, REPLACE_STRING_NUMBER,  Test.Pass>(),
@@ -1057,6 +1241,7 @@ readonly f: 0
          h: 1
          j: 'a' | undefined
          k: {a: {b: string}}
+         x: () => 1
 }
 
 type REQUIRED_O_D_FLAT = {
@@ -1070,7 +1255,8 @@ readonly f : 0
          h?: 1
          j : 'a' | undefined
          k : {a: {b: string}}
-};
+         x: () => 1
+}
 
 checks([
     check<O.Required<O, keyof O, 'flat'>,                   REQUIRED_O_FLAT,                Test.Pass>(),
@@ -1078,11 +1264,18 @@ checks([
     check<O.Path<O.Required<O, 'g', 'deep'>, ['g', 'g']>,   O.Required<O, keyof O, 'deep'>, Test.Pass>(),
 ])
 
+function REQUIRED_GENERIC<O extends {n?: number}>(o: O) {
+    const v0 = o as O.Required<O, Key, 'flat'>
+    const v1 = o as O.Required<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+}
+
 // ---------------------------------------------------------------------------------------
 // REQUIREDKEYS
 
 checks([
-    check<O.RequiredKeys<O>,    'a' | 'b' | 'c' | 'f' | 'g' | 'j' | 'k',    Test.Pass>(),
+    check<O.RequiredKeys<O>,    'a' | 'b' | 'c' | 'f' | 'g' | 'j' | 'k' | 'x',  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1097,7 +1290,7 @@ readonly e?: 'string1'
 
 type SELECT_O_EQUALS = {
          a : string,
-};
+}
 
 checks([
     check<O.Select<O, string, 'extends->'>,     SELECT_O_DEFAULT,   Test.Pass>(),
@@ -1109,7 +1302,7 @@ checks([
 
 type SELECTKEYS_O_DEFAULT = 'a' | 'd' | 'e' | 'j'
 
-type SELECTKEYS_O_EQUALS = 'a';
+type SELECTKEYS_O_EQUALS = 'a'
 
 checks([
     check<O.SelectKeys<O, string, 'extends->'>,     SELECTKEYS_O_DEFAULT,  Test.Pass>(),
@@ -1117,7 +1310,7 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// NULLABLE
+// UNDEFINABLE
 
 type UNDEFINABLE_O_FLAT = {
     a : string | undefined
@@ -1130,6 +1323,7 @@ readonly f : 0 | undefined
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}} | undefined
+    x: (() => 1) | undefined
 }
 
 type UNDEFINABLE_O_A_FLAT = {
@@ -1143,13 +1337,21 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
-};
+    x: () => 1
+}
 
 checks([
     check<O.Undefinable<O, keyof O, 'flat'>,                   UNDEFINABLE_O_FLAT,                              Test.Pass>(),
     check<O.Undefinable<O, 'a', 'flat'>,                       UNDEFINABLE_O_A_FLAT,                            Test.Pass>(),
     check<O.Path<O.Undefinable<O, 'g', 'deep'>, ['g', 'g']>,   O.Undefinable<O, keyof O, 'deep'> | undefined,   Test.Pass>(),
 ])
+
+function UNDEFINABLE_GENERIC<O extends {n: number}>(o: O) {
+    const v0 = o as O.Required<O, Key, 'flat'>
+    const v1 = o as O.Required<O, Key, 'deep'>
+    const p0: number | undefined = v0.n
+    const p1: number | undefined = v1.n
+}
 
 // ---------------------------------------------------------------------------------------
 // UNDEFINABLEKEYS
@@ -1176,11 +1378,11 @@ type O1_UNIONIZE = {
 }
 
 type UNIONIZE_O_O1 = {
-    a : 'a' | 'b';
-    b : 'b' | 'x' | undefined;
-    c : 42;
-    d?: {} | 1;
-};
+    a : 'a' | 'b'
+    b : 'b' | 'x' | undefined
+    c : 42
+    d?: {} | 1
+}
 
 checks([
     check<O.Unionize<O_UNIONIZE, O1_UNIONIZE>,  UNIONIZE_O_O1,  Test.Pass>(),
@@ -1196,7 +1398,7 @@ type O_UNIONOF = {
     d: 1
 }
 
-type UNIONOF_O = 'a' | 'b' | 1;
+type UNIONOF_O = 'a' | 'b' | 1
 
 checks([
     check<O.UnionOf<O_UNIONOF>, UNIONOF_O,    Test.Pass>(),
@@ -1211,24 +1413,21 @@ type O_UPDATE = {
 
 type UPDATE_O = {
     a?: 'xxxx'
-    b : 'xxxx'
-};
+}
 
 type UPDATE_O_X = {
     a?: 'a'
-    b : never
-};
+}
 
 type UPDATE_O_STRING_42 = {
-    [x: string]: 42;
+    [x: string]: 42
     // @ts-ignore
-    a?: 42 | undefined;
-};
+    a?: 42 | undefined
+}
 
 checks([
     check<O.Update<O_UPDATE, 'a' | 'b', 'xxxx'>,    UPDATE_O,               Test.Pass>(),
     check<O.Update<O_UPDATE, 'a' | 'b', A.x>,       UPDATE_O_X,             Test.Pass>(),
-    check<O.Update<O_UPDATE, string, 42>,           UPDATE_O_STRING_42,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1245,6 +1444,7 @@ type WRITABLE_O_FLAT = {
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
+    x: () => 1
 }
 
 type WRITABLE_O_E_FLAT = {
@@ -1258,7 +1458,8 @@ readonly f : 0
     h?: 1
     j : 'a' | undefined
     k : {a: {b: string}}
-};
+    x: () => 1
+}
 
 checks([
     check<O.Writable<O, keyof O, 'flat'>,                   WRITABLE_O_FLAT,                Test.Pass>(),
@@ -1266,11 +1467,21 @@ checks([
     check<O.Path<O.Writable<O, 'g', 'deep'>, ['g', 'g']>,   O.Writable<O, keyof O, 'deep'>, Test.Pass>(),
 ])
 
+function WRITABLE_GENERIC<O extends {readonly n: number}>(o: O) {
+    const v0 = o as O.Writable<O, Key, 'flat'>
+    const v1 = o as O.Writable<O, Key, 'deep'>
+    const p0: number = v0.n
+    const p1: number = v1.n
+
+    v0.n = 1
+    v1.n = 1
+}
+
 // ---------------------------------------------------------------------------------------
 // WRITABLEKEYS
 
 checks([
-    check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k',  Test.Pass>(),
+    check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k' | 'x',    Test.Pass>(),
 ])
 
 // ///////////////////////////////////////////////////////////////////////////////////////
@@ -1295,7 +1506,7 @@ type OP = { // A binary tree
         }
     }
     c?: string
-};
+}
 
 type OP_UNIONS = {
     a: {
@@ -1316,7 +1527,7 @@ type OP_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type OP_ARRAYS = {
     a: {
@@ -1337,7 +1548,7 @@ type OP_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type OP_ARRAYS_UNIONS = {
     a: {
@@ -1358,7 +1569,7 @@ type OP_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 // ---------------------------------------------------------------------------------------
 // P.MERGE
@@ -1384,7 +1595,7 @@ type O_PMERGE = {
         }
     }
     c?: string
-};
+}
 
 type O_PMERGE_UNIONS = {
     a: {
@@ -1407,7 +1618,7 @@ type O_PMERGE_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type O_PMERGE_ARRAYS = {
     a: {
@@ -1430,7 +1641,7 @@ type O_PMERGE_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type O_PMERGE_ARRAYS_UNIONS = {
     a: {
@@ -1453,7 +1664,7 @@ type O_PMERGE_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 checks([
     check<O.P.Merge<OP,                 ['a' | 'b', 'b'], {x: string}>,                 O_PMERGE,                   Test.Pass>(),
@@ -1479,7 +1690,7 @@ type O_POMIT = {
         }
     }
     c?: string
-};
+}
 
 type O_POMIT_UNIONS = {
     a: {
@@ -1495,7 +1706,7 @@ type O_POMIT_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type O_POMIT_ARRAYS = {
     a: {
@@ -1511,7 +1722,7 @@ type O_POMIT_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type O_POMIT_ARRAYS_UNIONS = {
     a: {
@@ -1527,7 +1738,7 @@ type O_POMIT_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 checks([
     check<O.P.Omit<OP,                  ['a' | 'b', 'a']>,      O_POMIT,                Test.Pass>(),
@@ -1549,7 +1760,7 @@ type O_PPICK = {
             b: 'bab'
         }
     }
-};
+}
 
 type O_PPICK_UNIONS = {
     a: {
@@ -1561,7 +1772,7 @@ type O_PPICK_UNIONS = {
             b: 'bab'
         }
     } | 'b'
-};
+}
 
 type O_PPICK_ARRAYS = {
     a: {
@@ -1573,7 +1784,7 @@ type O_PPICK_ARRAYS = {
             b: 'bab'
         }[]
     }[]
-};
+}
 
 type O_PPICK_ARRAYS_UNIONS = {
     a: {
@@ -1585,7 +1796,7 @@ type O_PPICK_ARRAYS_UNIONS = {
             b: 'bab'
         }[]
     }[] | 'b'[][]
-};
+}
 
 checks([
     check<O.P.Pick<OP,                  ['a' | 'b', 'a']>,      O_PPICK,                Test.Pass>(),
@@ -1616,7 +1827,7 @@ type O_PREADONLY = {
         }
     }
     c?: string
-};
+}
 
 type O_PREADONLY_UNIONS = {
     a: {
@@ -1637,7 +1848,7 @@ type O_PREADONLY_UNIONS = {
         }
     } | 'b'
     c?: string
-};
+}
 
 type O_PREADONLY_ARRAYS = {
     a: {
@@ -1658,7 +1869,7 @@ type O_PREADONLY_ARRAYS = {
         }[]
     }[]
     c?: string
-};
+}
 
 type O_PREADONLY_ARRAYS_UNIONS = {
     a: {
@@ -1679,7 +1890,7 @@ type O_PREADONLY_ARRAYS_UNIONS = {
         }[]
     }[] | 'b'[][]
     c?: string
-};
+}
 
 checks([
     check<O.P.Readonly<OP,                  ['a' | 'b', 'a']>,              O_PREADONLY,                Test.Pass>(),
@@ -1707,7 +1918,7 @@ type O_PUPDATE = {
         }
     }
     c?: string
-};
+}
 
 type O_PUPDATE_UNIONS = {
     a: 'a' | {
@@ -1725,7 +1936,7 @@ type O_PUPDATE_UNIONS = {
         }
     },
     c?: string
-};
+}
 
 type O_PUPDATE_VPATH = {
     a: 'a' | {
@@ -1733,7 +1944,7 @@ type O_PUPDATE_VPATH = {
         b: {
             a: 'aba'
             b: 'abb'
-        };
+        }
     }
     b?: 'b' | {
         a: {
@@ -1743,10 +1954,10 @@ type O_PUPDATE_VPATH = {
         b: {
             a: 'bba'
             b: 'bbb'
-        };
+        }
     }
     c?: string
-};
+}
 
 checks([
     check<O.P.Update<{},            ['a', 'b'], 'x'>,                           {a: {b: 'x'}},      Test.Pass>(),
@@ -1800,7 +2011,7 @@ type RECORD_ABCD_STRING_REQW = {
             d: string
         }
     }
-};
+}
 
 checks([
     check<O.P.Record<['a', 'b' | 'c', 'd'], string, ['?', 'R']>,    RECORD_ABCD_STRING_OPTR,    Test.Pass>(),

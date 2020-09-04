@@ -1,6 +1,9 @@
 import {Extends} from './Extends'
 import {List} from '../List/List'
 
+/**
+ * @hidden
+ */
 type _Kind<A extends any> =
     Extends<A, Function> extends 1 ? 'function' : // the order  // to
     Extends<A, List>     extends 1 ? 'array'    : // of this is // untangle

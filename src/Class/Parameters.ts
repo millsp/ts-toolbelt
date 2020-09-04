@@ -8,7 +8,7 @@ Get the parameters of a class constructor
 ```ts
 ```
 */
-export type Parameters<C extends Class> =
+export type Parameters<C> =
     C extends Class<infer P, any>
     ? P
     : never

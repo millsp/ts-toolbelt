@@ -29,10 +29,7 @@ type ReadonlyObject<O, Path extends List<Key>, depth extends Depth, I extends It
 type ReadonlyArrays<O, Path extends List<Key>, depth extends Depth, I extends Iteration = IterationOf<'0'>> =
   O extends object                             // Same as above, but
   ? O extends (infer A)[]                      // If O is an array
-    ? {
-        1: ReadonlyArrays<A, Path, depth, I>[] // Dive into the array (TS <3.7)
-        0: never
-      }[O extends List ? 1 : 0]
+    ? ReadonlyArrays<A, Path, depth, I>[]      // Dive into the array
     : Pos<I> extends LastIndex<Path>
       ? OReadonly<O, Path[Pos<I>], depth>
       : {

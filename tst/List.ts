@@ -1,4 +1,4 @@
-import {Test, T, A} from '../src/index'
+import {Test, T, A} from '../src/ts-toolbelt'
 
 const {checks, check} = Test
 
@@ -16,7 +16,7 @@ type T = [
     object,
     readonly [0, 1, 2?],
     'xxxx'?
-];
+]
 
 type T1 = [
     1,
@@ -30,7 +30,7 @@ type T1 = [
     readonly [0, 1, 2?, 3?],
     {a: never},
     'xxxx'?
-];
+]
 
 // ---------------------------------------------------------------------------------------
 // APPEND
@@ -44,14 +44,7 @@ checks([
 // ASSIGN
 
 checks([
-    check<T.Assign<[1], [[2, 1], [3, 2?]]>,     [3, 2 | undefined],     Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// ASSIGNUP
-
-checks([
-    check<T.AssignUp<[1], [[2, 1], [3, 2?]]>,   [3, 2 | 1],     Test.Pass>(),
+    check<T.Assign<[1], [[2, 1], [3, 2?]]>,     [3, 2 | 1],     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -82,24 +75,10 @@ type ATLEAST_T_013 =
     | [0 | undefined, 1, 2 | undefined]
     | [3, 4 | undefined, 5 | undefined, 6 | undefined]
     | [3 | undefined, 4, 5 | undefined, 6 | undefined]
-    | [3 | undefined, 4 | undefined, 5 | undefined, 6];
+    | [3 | undefined, 4 | undefined, 5 | undefined, 6]
 
 checks([
     check<T.AtLeast<T_ATLEAST, '0' | '1' | '3'>,    ATLEAST_T_013,    Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// COMPACT
-
-checks([
-    check<T.Compact<[1], [[2, 1], [3, 2?]]>,        [1, 1],     Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// COMPACTUP
-
-checks([
-    check<T.CompactUp<[1], [[2, 1?], [3, 2?]]>,     [1, 1 | 2 | undefined],     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -148,7 +127,7 @@ type T_EITHER = [
     2
 ]
 
-type EITHER_T_01 = [0, undefined, 2] | [undefined, 1, 2];
+type EITHER_T_01 = [0, undefined, 2] | [undefined, 1, 2]
 
 checks([
     check<T.Either<T_EITHER, '0' | '1'>,    EITHER_T_01,    Test.Pass>(),
@@ -168,10 +147,10 @@ checks([
 // EXCLUDEKEYS
 
 checks([
-    check<T.ExcludeKeys<[1, 2, 3, 4], [0, 0, 0], 'default'>,        '3',                Test.Pass>(),
-    check<T.ExcludeKeys<[1, 2, 3, 4], [1, 0, 0], 'equals'>,         '1' | '2' | '3',    Test.Pass>(),
-    check<T.ExcludeKeys<[1, 2, 3, 4], [1, string, 3], 'extends->'>,   '1' | '3',          Test.Pass>(),
-    check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'extends->'>,   '1' | '3',          Test.Pass>(),
+    check<T.ExcludeKeys<[1, 2, 3, 4], [0, 0, 0], 'default'>,            '3',                Test.Pass>(),
+    check<T.ExcludeKeys<[1, 2, 3, 4], [1, 0, 0], 'equals'>,             '1' | '2' | '3',    Test.Pass>(),
+    check<T.ExcludeKeys<[1, 2, 3, 4], [1, string, 3], 'extends->'>,     '1' | '3',          Test.Pass>(),
+    check<T.ExcludeKeys<[1, number, 3, 4], [1, 2, 3], 'extends->'>,     '1' | '3',          Test.Pass>(),
 ])
 
 // -------------------------------------------------------------------------------------
@@ -197,7 +176,7 @@ type FILTER_T_NUMBER_EXTENDS = [
         2?,
     ],
     'xxxx' | undefined
-];
+]
 
 type FILTER_T_NUMBER_EQUALS = [
     1,
@@ -209,7 +188,7 @@ type FILTER_T_NUMBER_EQUALS = [
     object,
     readonly [0, 1, 2?],
     'xxxx' | undefined
-];
+]
 
 checks([
     check<T.Filter<T, number, 'default'>,   FILTER_T_NUMBER_EXTENDS,     Test.Pass>(),
@@ -226,7 +205,7 @@ checks([
 // FLATTEN
 
 type T_FLATTEN = [1, 12, [2, [3, [4, [5, [6, [7, [8, [9, 92?]]]]]]]]]
-type FLATTEN_T = [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, 92] | [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, undefined];
+type FLATTEN_T = [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, 92] | [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, undefined]
 
 checks([
     check<T.Flatten<any>,                   any[],                      Test.Pass>(),
@@ -244,7 +223,7 @@ type T_GROUP = [1, 2, 3, 4, 5, 6, 7, 8]
 
 type GROUP_T_1 = [[1], [2], [3], [4], [5], [6], [7], [8]]
 type GROUP_T_2 = [[1, 2], [3, 4], [5, 6], [7, 8]]
-type GROUP_T_3 = [[1, 2, 3], [4, 5, 6], [7, 8, undefined]];
+type GROUP_T_3 = [[1, 2, 3], [4, 5, 6], [7, 8, undefined]]
 
 checks([
     check<T.Group<T_GROUP, '1'>,    GROUP_T_1,  Test.Pass>(),
@@ -309,7 +288,7 @@ type INTERSECT_T_T1_NUMBER_EQUALS = [
     2,
     'xxxx',
     object,
-];
+]
 
 checks([
     check<T.Intersect<T, T1, 'default'>,    INTERSECT_T_T1_NUMBER_DEFAULT,  Test.Pass>(),
@@ -325,7 +304,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // KEYS
 
-type KEYS_T = number | '3' | '0' | '1' | '2' | '4' | '5' | '6' | '7' | '8' | '9';
+type KEYS_T = number | '3' | '0' | '1' | '2' | '4' | '5' | '6' | '7' | '8' | '9'
 
 checks([
     check<T.Keys<T>,    KEYS_T,     Test.Pass>(),
@@ -374,13 +353,23 @@ checks([
 // MERGE
 
 checks([
-    check<T.Merge<[0],  [1, 2, 3?]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
-    check<T.Merge<[0],  [1, 2, 3]>,                     [0, 2, 3],              Test.Pass>(),
-    check<T.Merge<[0?], [1, 2, 3]>,                     [2, 3?],                Test.Fail>(),
-    check<T.Merge<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | undefined],  Test.Pass>(),
-    check<T.Merge<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+    check<T.MergeUp<[0],  [1, 2, 3?]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
+    check<T.MergeUp<[0],  [1, 2, 3]>,                     [0, 2, 3],              Test.Pass>(),
+    check<T.MergeUp<[0?], [1, 2, 3]>,                     [2, 3?],                Test.Fail>(),
+    check<T.MergeUp<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | 0],          Test.Pass>(),
+    check<T.MergeUp<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
 ])
 
+// ---------------------------------------------------------------------------------------
+// MERGEALL
+
+checks([
+    check<T.MergeAll<[0],  [[1, 2, 3?]]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
+    check<T.MergeAll<[0],  [[1, 2, 3]]>,                     [0, 2, 3],              Test.Pass>(),
+    check<T.MergeAll<[0?], [[1, 2, 3]]>,                     [2, 3?],                Test.Fail>(),
+    check<T.MergeAll<[1, 2, 3?], [[0, 0, 0]]>,               [1, 2, 3 | 0],          Test.Pass>(),
+    check<T.MergeAll<[0, [1]],  [[1, [2, 3], 4]], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+])
 // ---------------------------------------------------------------------------------------
 // MERGEKEYS
 
@@ -424,11 +413,9 @@ checks([
 // OBJECTOF
 
 checks([
-    check<T.ObjectOf<readonly [0]>,         {readonly 0: 0},        Test.Pass>(),
-    check<T.ObjectOf<[0, 1, 2]>,            {0: 0, 1: 1, 2: 2},     Test.Pass>(),
-    check<T.ObjectOf<[0, 1, 2?]>,           {0: 0, 1: 1, 2?: 2},    Test.Pass>(),
-    check<T.ObjectOf<([1] | {a: 1})>,       {0: 1} | {a: 1},        Test.Pass>(),
-    check<T.ObjectOf<(1[] & {a: 1})>,       {[k: number]: 1, a: 1}, Test.Pass>(),
+    check<T.ObjectOf<readonly [0]>,     {readonly 0: 0},            Test.Pass>(),
+    check<T.ObjectOf<[0, 1, 2]>,        {0: 0, 1: 1, 2: 2},         Test.Pass>(),
+    check<T.ObjectOf<[0, 1, 2?]>,       {0: 0, 1: 1, 2?: 2},        Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -457,6 +444,37 @@ checks([
 // OVERWRITE
 
 // No test needed (same as O.Overwrite)
+
+// ---------------------------------------------------------------------------------------
+// OPTIONAL
+
+checks([
+    check<T.Partial<[0, 1, 2]>,    [0?, 1?, 2?],   Test.Pass>(),
+    check<T.Partial<[0, 1, 2?]>,   [0?, 1?, 2?],   Test.Pass>(),
+    check<T.Partial<never>,        never,          Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PATCH
+
+checks([
+    check<T.Patch<[0],  [1, 2, 3?]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
+    check<T.Patch<[0],  [1, 2, 3]>,                     [0, 2, 3],              Test.Pass>(),
+    check<T.Patch<[0?], [1, 2, 3]>,                     [2, 3?],                Test.Fail>(),
+    check<T.Patch<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | undefined],  Test.Pass>(),
+    check<T.Patch<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PATCHALL
+
+checks([
+    check<T.PatchAll<[0],  [[1, 2, 3?]]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
+    check<T.PatchAll<[0],  [[1, 2, 3]]>,                     [0, 2, 3],              Test.Pass>(),
+    check<T.PatchAll<[0?], [[1, 2, 3]]>,                     [2, 3?],                Test.Fail>(),
+    check<T.PatchAll<[1, 2, 3?], [[0, 0, 0]]>,               [1, 2, 3 | undefined],  Test.Pass>(),
+    check<T.PatchAll<[0, [1]],  [[1, [2, 3], 4]], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+])
 
 // ---------------------------------------------------------------------------------------
 // PATH
@@ -490,8 +508,8 @@ checks([
 // POP
 
 checks([
-    check<T.Pop<[1, 2, 3]>,     [1, 2],                 Test.Pass>(),
-    check<T.Pop<[1, 2?, 3?]>,   [1, 2 | undefined],     Test.Pass>(),
+    check<T.Pop<[1, 2, 3]>,     [1, 2],     Test.Pass>(),
+    check<T.Pop<[1, 2?, 3?]>,   [1, 2?],    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -500,7 +518,7 @@ checks([
 checks([
     check<T.Prepend<[0, 1, 2, 3?], 4>,      [4, 0, 1, 2, 3?],       Test.Pass>(),
     check<T.Prepend<[0, 1, 2, 3], [4, 5?]>, [[4, 5?], 0, 1, 2, 3],  Test.Pass>(),
-    // check<T.Prepend<never, [4, 5]>,         never,                  Test.Pass>(),
+    check<T.Prepend<never, [4, 5]>,         never,                  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -569,7 +587,7 @@ type SELECT_T_NUMBER_EXTENDS = [
 
 type SELECT_T_NUMBER_EQUALS = [
     number
-];
+]
 
 checks([
     check<T.Select<T, number, 'default'>,    SELECT_T_NUMBER_EXTENDS,     Test.Pass>(),
@@ -604,9 +622,9 @@ checks([
 // TAKE
 
 checks([
-    check<T.Take<[1, 2, 3?, 4?], '2', '->'>,    [1, 2],                             Test.Pass>(),
-    check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3 | undefined, 4 | undefined],     Test.Pass>(), // nothing happens
-    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],                             Test.Pass>(), // nothing happens
+    check<T.Take<[1, 2, 3?, 4?], '2', '->'>,    [1, 2],     Test.Pass>(),
+    check<T.Take<[1, 2, 3?, 4?], '2', '<-'>,    [3?, 4?],   Test.Pass>(), // nothing happens
+    check<T.Take<[1, 2, 3, 4], '2', '<-'>,      [3, 4],     Test.Pass>(), // nothing happens
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -666,10 +684,8 @@ checks([
 // UPDATE
 
 checks([
-    check<T.Update<string[], '1', 2>,   Array<(string | 2)>,    Test.Pass>(),
-    check<T.Update<[], '1', 2>,         [undefined, 2],         Test.Pass>(),
-    check<T.Update<[1], '2', 2>,        [1, undefined, 2],      Test.Pass>(),
-    check<T.Update<[1?], 0,  2>,        [2],                    Test.Pass>(),
+    check<T.Update<string[], any, A.x | 2>,     Array<(string | 2)>,    Test.Pass>(),
+    check<T.Update<[1], '0', 2>,                [2],                    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

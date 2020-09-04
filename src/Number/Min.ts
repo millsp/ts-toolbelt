@@ -1,7 +1,7 @@
 import {Number} from './Number'
 import {Formats} from '../Iteration/_Internal'
-import {NumberMap} from '../Misc/Iteration/Number'
-import {Map} from '../Misc/Iteration/Map'
+import {NumberMap} from '../Iteration/Maps/Number'
+import {Map} from '../Iteration/Map'
 import {Negate} from './Negate'
 import {Max} from './Max'
 

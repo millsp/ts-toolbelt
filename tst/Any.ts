@@ -1,4 +1,4 @@
-import {Test, A, O} from '../src/index'
+import {Test, A} from '../src/ts-toolbelt'
 
 const {checks, check} = Test
 
@@ -24,9 +24,6 @@ checks([
     check<A.Clean<A.Compute<{a: string} & number[]>>,   {a: string} & number[],     Test.Pass>(),
     check<A.Clean<[1, 2, 3]>,                           [1, 2, 3],                  Test.Pass>(),
     check<A.Clean<A.Compute<[1, 2, 3] & {a: 3}>>,       [1, 2, 3] & {a: 3},         Test.Pass>(),
-    check<A.Clean<O.MergeUp<[1, 2], {a: 3}>>,           [1, 2] & {a: 3},            Test.Pass>(),
-    check<A.Clean<O.MergeUp<number[], []>>,             number[],                   Test.Pass>(),
-    check<A.Clean<O.MergeUp<string[], [1]>>,            Array<1 | string>,          Test.Pass>(),
     check<A.Clean<{length: 0}>,                         {length: 0},                Test.Pass>(),
     check<A.Clean<{[k: string]: string}>,               {[k: string]: string},      Test.Pass>(),
 ])
@@ -37,26 +34,27 @@ checks([
 // Cannot be tested
 
 // ---------------------------------------------------------------------------------------
-// IMPLEMENTS
+// CONTAINS
 
 checks([
-    check<A.Implements<any, any>,              1,     Test.Pass>(),
-    check<A.Implements<[0, 1], any>,           1,     Test.Pass>(),
-    check<A.Implements<any, [0, 1]>,           0,     Test.Pass>(),
-    check<A.Implements<0, 0>,                  1,     Test.Pass>(),
-    check<A.Implements<0, 1>,                  0,     Test.Pass>(),
-    check<A.Implements<0, number>,             1,     Test.Pass>(),
-    check<A.Implements<any, string>,           0,     Test.Pass>(),
-    check<A.Implements<string, any>,           1,     Test.Pass>(),
-    check<A.Implements<{}, object>,            1,     Test.Pass>(),
-    check<A.Implements<{a: any}, object>,      1,     Test.Pass>(),
-    check<A.Implements<{}, {a: any}>,          0,     Test.Pass>(),
-    check<A.Implements<any[], Array<any>>,     1,     Test.Pass>(),
-    check<A.Implements<'a' | 'b', 'b' | 'a'>,  1,     Test.Pass>(),
-    check<A.Implements<'b', 'b' | 'a'>,        1,     Test.Pass>(),
-    check<A.Implements<'b' | 'a', 'b'>,        0,     Test.Pass>(),
-    check<A.Implements<'a', 'a'>,              1,     Test.Pass>(),
-    check<A.Implements<never, never>,          0,     Test.Pass>(),
+    check<A.Contains<any, any>,              1,           Test.Pass>(),
+    check<A.Contains<[0, 1], any>,           1,           Test.Pass>(),
+    check<A.Contains<any, [0, 1]>,           0,           Test.Pass>(),
+    check<A.Contains<any, [0, 1]>,           0,           Test.Pass>(),
+    check<A.Contains<0, 0>,                  1,           Test.Pass>(),
+    check<A.Contains<0, 1>,                  0,           Test.Pass>(),
+    check<A.Contains<0, number>,             1,           Test.Pass>(),
+    check<A.Contains<any, string>,           0,           Test.Pass>(),
+    check<A.Contains<string, any>,           1,           Test.Pass>(),
+    check<A.Contains<{}, object>,            1,           Test.Pass>(),
+    check<A.Contains<{a: any}, object>,      1,           Test.Pass>(),
+    check<A.Contains<object, {a: any}>,      0,           Test.Pass>(),
+    check<A.Contains<any[], Array<any>>,     1,           Test.Pass>(),
+    check<A.Contains<'a' | 'b', 'b' | 'a'>,  1,           Test.Pass>(),
+    check<A.Contains<'b', 'b' | 'a'>,        1,           Test.Pass>(),
+    check<A.Contains<'b' | 'a', 'b'>,        0,           Test.Pass>(),
+    check<A.Contains<'a', 'a'>,              1,           Test.Pass>(),
+    check<A.Contains<never, never>,          0,           Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -106,30 +104,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// IMPLEMENTS
-
-checks([
-    check<A.Implements<any, any>,              1,           Test.Pass>(),
-    check<A.Implements<[0, 1], any>,           1,           Test.Pass>(),
-    check<A.Implements<any, [0, 1]>,           0,           Test.Pass>(),
-    check<A.Implements<any, [0, 1]>,           0,           Test.Pass>(),
-    check<A.Implements<0, 0>,                  1,           Test.Pass>(),
-    check<A.Implements<0, 1>,                  0,           Test.Pass>(),
-    check<A.Implements<0, number>,             1,           Test.Pass>(),
-    check<A.Implements<any, string>,           0,           Test.Pass>(),
-    check<A.Implements<string, any>,           1,           Test.Pass>(),
-    check<A.Implements<{}, object>,            1,           Test.Pass>(),
-    check<A.Implements<{a: any}, object>,      1,           Test.Pass>(),
-    check<A.Implements<object, {a: any}>,      0,           Test.Pass>(),
-    check<A.Implements<any[], Array<any>>,     1,           Test.Pass>(),
-    check<A.Implements<'a' | 'b', 'b' | 'a'>,  1,           Test.Pass>(),
-    check<A.Implements<'b', 'b' | 'a'>,        1,           Test.Pass>(),
-    check<A.Implements<'b' | 'a', 'b'>,        0,           Test.Pass>(),
-    check<A.Implements<'a', 'a'>,              1,           Test.Pass>(),
-    check<A.Implements<never, never>,          0,           Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // KEY
 
 // Cannot be tested
@@ -161,6 +135,12 @@ checks([
 
     check<A.Is<string, string | number, '<-implements'>,    0,      Test.Pass>(),
     check<A.Is<string | number, string, '<-implements'>,    1,      Test.Pass>(),
+
+    check<A.Is<string, string | number, '<-contains'>,    0,    Test.Pass>(),
+    check<A.Is<string | number, string, '<-contains'>,    1,    Test.Pass>(),
+
+    check<A.Is<string, string | number, 'contains->'>,    1,    Test.Pass>(),
+    check<A.Is<string | number, string, 'contains->'>,    0,    Test.Pass>(),
 
     check<A.Is<'xxxx', string, 'equals'>,           0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', 'equals'>,           0,  Test.Pass>(),
@@ -196,8 +176,8 @@ checks([
 // ---------------------------------------------------------------------------------------
 // OMIT
 
-type U_OMIT    = {t: 'a'; o: string} | {t: 'b'; o: number} | [1, 2] | 42
-type OMIT_U_O0 = {t: 'a'} | {t: 'b'} | [2] | 42;
+type U_OMIT    = {t: 'a', o: string} | {t: 'b', o: number} | [1, 2] | 42
+type OMIT_U_O0 = {t: 'a'} | {t: 'b'} | [2] | 42
 
 checks([
     check<A.Omit<U_OMIT, 'o' | '0'>,    OMIT_U_O0,  Test.Pass>(),
@@ -206,8 +186,8 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PICK
 
-type U_PICK    = {t: 'a'; o: string} | {t: 'b'; o: number} | [1, 2] | 42
-type PICK_U_t1 = {t: 'a'} | {t: 'b'} | [2] | 42;
+type U_PICK    = {t: 'a', o: string} | {t: 'b', o: number} | [1, 2] | 42
+type PICK_U_t1 = {t: 'a'} | {t: 'b'} | [2] | 42
 
 checks([
     check<A.Pick<U_PICK, 't' | '1'>,    PICK_U_t1,  Test.Pass>(),
@@ -226,7 +206,6 @@ checks([
 checks([
     check<A.Promise<Promise<1>>,  A.Promise<1>,  Test.Pass>(),
 ])
-
 
 // ---------------------------------------------------------------------------------------
 // TRY

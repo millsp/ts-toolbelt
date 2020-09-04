@@ -60,7 +60,7 @@ const replaceInFile = (
 const isPathIncluded = (
     path: string,
     include: string[],
-    exclude: string[]
+    exclude: string[],
 ) => {
     // reduces down to `true` if a regex is a match
     const isExcluded = exclude.reduce((acc, val) => {
@@ -127,6 +127,7 @@ const paths = (paths: string[]) => {
         possibilities = [
             ...possibilities,                         // merge previous
             ...path.split('/').                       // split the path
+            // @ts-ignore
             map((path, index, array) => {             // get combination
                 return array.slice(0, index + 1)
             }).                                       // got combinations
@@ -146,7 +147,7 @@ const replace = (
     match: string,
     replc: string,
     include: string[],
-    exclude: string[]
+    exclude: string[],
 ) => {
     // change/map paths to string regexps
     include = include.map(pathToRegExp(path))

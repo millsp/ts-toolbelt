@@ -71,6 +71,7 @@ export {
 // ! we can only do this if the mapped type is not intended to go deep (recurse)
 // ! because `& {}` forces computation, if we do it deeply => resolves to `any`
 // ! this happens only when a type is nested within itself => infinite recursion
+// This technique also lowers the memory consumption and the RAM that is needed
 
 // ---------------------------------------------------------------------------------------
 // 2. Avoid fall-through `never`
@@ -102,7 +103,7 @@ export {
 //
 // => If you wonder what the `type _<name>` means, it's a "step" in the implementation (a bare implementation)
 //    (Usually, the first step `_` takes care of parameters. But you can also find 2 steps `__` (eg. recursive))
-// -> Perf tip: When building utilities, always check if a type has an exported `_` version & decide if needed
+// => !\ Perf: Always check if a type has an EXPORTED `_` version, decide if needed
 // -> Remember:
 //              - ALL EXPORTED `_` types are/must be NON-distributed types
 //              - ALL `_` types are parameter processors, they handle params
@@ -118,6 +119,9 @@ export {
 //
 // => Distributed types MUST USE NON-distributed types as much as possible
 // -> This will avoid `<type> extends unknown`-hell loops (and re-looping)
+//
+// => Avoiding unnecessary intersections on large unions will compute time
+// => This is also valid for `extends`, for distributing over large unions
 
 // ---------------------------------------------------------------------------------------
 // 5. Keys & Tuples
@@ -137,5 +141,50 @@ export {
 // -> We use `NumberOf` on those `K`s to make them `Number`s (ie. `string`s)
 //    (Yes, `NumberOf` yields a `string` bcs numbers are handled as strings)
 
+// ---------------------------------------------------------------------------------------
+// 6. Distribution
+//
+// => An easy way to test if distribution is happening correctly is to test the
+// type with `never`, then it should yield `never`. However, this might differ
+// or not be true for a few utilities.
+//
+// => Perf: Always check if a type has an EXPORTED `_` version, decide if needed
+//
+// => !\ Excessive type distribution is known to cause type metadata loss
+//    TypeScript's inference stops following if too much distribution is done
+//    ALWAYS build a type version with `_` utilities, then distribute the type
+
 // ///////////////////////////////////////////////////////////////////////////////////////
 // TODO //////////////////////////////////////////////////////////////////////////////////
+
+// remove legacy tools and rename MergeUp to Merge in the tests
+
+// type Oo<V> = {
+//     e: [V]
+//     f: [[V]]
+//     g: [[[V]]]
+//     h: [[[[V]]]]
+//     i: [[[[[V]]]]]
+//     j: [[[[[[V]]]]]]
+//     k: [[[[[[[V]]]]]]]
+//     l: [[[[[[[[V]]]]]]]]
+// }
+
+// type t1 = O.PatchAll<{}, [
+//     Oo<[1, 2, 3, 4]>,
+//     Oo<[1, 2, 3, 4, 5]>,
+//     Oo<[1, 2, 3, 4, 5, 6]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]>,
+//     Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]>,
+//     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]>,
+//     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]>,
+//     // Oo<[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20]>,
+// ], 'deep', 2>['l'][0][0][0][0][0][0][0][0]
