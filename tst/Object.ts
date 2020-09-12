@@ -38,13 +38,13 @@ readonly f : 0
 // ---------------------------------------------------------------------------------------
 // ASSIGN
 
-type O_ASSIGNUP  = {readonly a: 1, c: 2}
-type Os_ASSIGNUP = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
+type O_ASSIGN  = {readonly a: 1, c: 2}
+type Os_ASSIGN = [{a: 2, readonly b: 1}, {a: 3, c?: 1}]
 
-type ASSIGNUP_O_Os = {readonly a: 3, readonly b: 1, c: 1 | 2}
+type ASSIGN_O_Os = {readonly a: 3, readonly b: 1, c: 1 | 2}
 
 checks([
-    check<O.AssignUp<O_ASSIGNUP, Os_ASSIGNUP>,    ASSIGNUP_O_Os,   Test.Pass>(),
+    check<O.Assign<O_ASSIGN, Os_ASSIGN>,    ASSIGN_O_Os,   Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -712,16 +712,16 @@ type MERGE_O_O1_DEEP_1 = {
 }
 
 checks([
-    check<O.MergeUp<[1], [2, 3], 'flat', 0>,          [1, 3],                 Test.Pass>(),
-    check<O.MergeUp<[1], [2, 3], 'deep', 0>,          [1, 3],                 Test.Pass>(),
-    check<O.MergeUp<O_MERGE, O1_MERGE>,               MERGE_O_O1,             Test.Pass>(),
-    check<O.MergeUp<O_MERGE, O1_MERGE, 'deep', 0>,    MERGE_O_O1_DEEP_0,      Test.Pass>(),
-    check<O.MergeUp<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
+    check<O.Merge<[1], [2, 3], 'flat', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.Merge<[1], [2, 3], 'deep', 0>,          [1, 3],                 Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE>,               MERGE_O_O1,             Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 0>,    MERGE_O_O1_DEEP_0,      Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
 ])
 
 function MERGE_GENERIC<O extends {n?: number}>(o: O) {
-    const v0 = o as O.MergeUp<O, {n: string}, 'flat', 1>
-    const v1 = o as O.MergeUp<O, {n: string}, 'deep', 0>
+    const v0 = o as O.Merge<O, {n: string}, 'flat', 1>
+    const v1 = o as O.Merge<O, {n: string}, 'deep', 0>
     const p0: string | number = v0.n
     const p1: string | number = v1.n
 }

@@ -12,7 +12,7 @@ type test0 = C.PromiseOf<typeof promise>  // string
 type test1 = C.PromiseOf<Promise<number>> // number
 ```
 */
-export type PromiseOf<P extends any> =
+export type PromiseType<P extends any> =
     P extends Promise<infer A>
     ? A
     : P

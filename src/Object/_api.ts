@@ -22,7 +22,7 @@ export {IntersectKeys} from './IntersectKeys'
 export {Invert} from './Invert'
 export {Keys} from './Keys'
 export {ListOf} from './ListOf'
-export {Patch as Merge} from './Patch' // LEGACY
+export {Merge} from './Merge'
 export {MergeAll} from './MergeAll'
 export {Modify} from './Modify'
 export {NonNullable} from './NonNullable'
@@ -56,10 +56,3 @@ export {UnionOf} from './UnionOf'
 export {Update} from './Update'
 export {Writable} from './Writable'
 export {WritableKeys} from './WritableKeys'
-
-// LEGACY
-
-export {Merge as MergeUp} from './Merge'
-export {Assign as AssignUp} from './Assign'
-export {PatchAll as Compact} from './PatchAll'
-export {MergeAll as CompactUp} from './MergeAll'

@@ -14,7 +14,7 @@ import {Next} from '../Iteration/Next'
 import {Head} from '../List/Head'
 import {Return} from './Return'
 import {Parameters} from './Parameters'
-import {PromiseOf} from '../Any/PromiseOf'
+import {PromiseType} from '../Any/PromiseType'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 import {List} from '../List/List'
@@ -38,9 +38,9 @@ type ComposeFnSync<Fns extends List<Function>, K extends keyof Fns> =
 */
 type ComposeFnAsync<Fns extends List<Function>, K extends keyof Fns> =
     Length<Tail<Fns>> extends Format<K & string, 'n'>
-    ? PromiseOf<Fns[K]> // If mapped type reached the end
+    ? PromiseType<Fns[K]> // If mapped type reached the end
     : Function<[ // handling unknown generics, waiting for proposal
-        PromiseOf<Return<Fns[Pos<Next<IterationOf<K & string>>>]>> extends infer X
+        PromiseType<Return<Fns[Pos<Next<IterationOf<K & string>>>]>> extends infer X
         ? {1: any, 0: X}[Or<Extends<unknown, X>, Extends<unknown[], X>>]
         : never
     ], Return<Fns[Pos<IterationOf<K & string>>]>
@@ -88,7 +88,7 @@ await compose(c, b, a)(42)
 */
 export type Composed<Fns extends List<Function>, mode extends Mode = 'sync'> = {
     'sync' : (...args: Parameters<Last<Fns>>) => Return<Head<Fns>>
-    'async': (...args: Parameters<Last<Fns>>) => Promise<PromiseOf<Return<Head<Fns>>>>
+    'async': (...args: Parameters<Last<Fns>>) => Promise<PromiseType<Return<Head<Fns>>>>
 }[mode]
 
 /**

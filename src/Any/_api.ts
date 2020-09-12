@@ -12,13 +12,7 @@ export {IsLiteral} from './IsLiteral'
 export {Kind} from './Kind'
 export {Promisable} from './Promisable'
 export {Promise} from './Promise'
-export {PromiseOf} from './PromiseOf'
+export {PromiseType} from './PromiseType'
 export {Try} from './Try'
 export {Type} from './Type'
 export {x} from './x'
-
-// LEGACY
-
-export {Omit} from './Omit'
-export {Pick} from './Pick'
-export {Contains as Implements} from './Contains'

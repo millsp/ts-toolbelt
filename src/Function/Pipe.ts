@@ -11,7 +11,7 @@ import {Prev} from '../Iteration/Prev'
 import {Head} from '../List/Head'
 import {Return} from './Return'
 import {Parameters} from './Parameters'
-import {PromiseOf} from '../Any/PromiseOf'
+import {PromiseType} from '../Any/PromiseType'
 import {Or} from '../Boolean/Or'
 import {Extends} from '../Any/Extends'
 import {List} from '../List/List'
@@ -35,9 +35,9 @@ type PipeFnSync<Fns extends List<Function>, K extends keyof Fns> =
 */
 type PipeFnAsync<Fns extends List<Function>, K extends keyof Fns> =
     K extends '0'
-    ? PromiseOf<Fns[K]> // If first item, do nothing to it. Otherwise, pipe them:
+    ? PromiseType<Fns[K]> // If first item, do nothing to it. Otherwise, pipe them:
     : Function<[ // handling unknown generics, waiting for proposal
-        PromiseOf<Return<Fns[Pos<Prev<IterationOf<K & string>>>]>> extends infer X
+        PromiseType<Return<Fns[Pos<Prev<IterationOf<K & string>>>]>> extends infer X
         ? {1: any, 0: X}[Or<Extends<unknown, X>, Extends<unknown[], X>>]
         : never
     ], Return<Fns[Pos<IterationOf<K & string>>]>
@@ -87,7 +87,7 @@ await pipe(a, b, c)(42)
 */
 export type Piped<Fns extends List<Function>, mode extends Mode = 'sync'> = {
     'sync' : (...args: Parameters<Head<Fns>>) => Return<Last<Fns>>
-    'async': (...args: Parameters<Head<Fns>>) => Promise<PromiseOf<Return<Last<Fns>>>>
+    'async': (...args: Parameters<Head<Fns>>) => Promise<PromiseType<Return<Last<Fns>>>>
 }[mode]
 
 /**

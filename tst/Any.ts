@@ -118,23 +118,11 @@ checks([
     check<A.Is<'xxxx', string, '<-extends'>,    0,  Test.Pass>(),
     check<A.Is<string, 'xxxx', '<-extends'>,    1,  Test.Pass>(),
 
-    check<A.Is<'xxxx', string, 'implements->'>,   1,  Test.Pass>(),
-    check<A.Is<string, 'xxxx', 'implements->'>,   0,  Test.Pass>(),
-
-    check<A.Is<'xxxx', string, '<-implements'>,   0,  Test.Pass>(),
-    check<A.Is<string, 'xxxx', '<-implements'>,   1,  Test.Pass>(),
-
     check<A.Is<string, string | number, 'extends->'>,   1,      Test.Pass>(),
     check<A.Is<string | number, string, 'extends->'>,   0 | 1,  Test.Pass>(),
 
     check<A.Is<string, string | number, '<-extends'>,   0 | 1,  Test.Pass>(),
     check<A.Is<string | number, string, '<-extends'>,   1,      Test.Pass>(),
-
-    check<A.Is<string, string | number, 'implements->'>,    1,      Test.Pass>(),
-    check<A.Is<string | number, string, 'implements->'>,    0,      Test.Pass>(),
-
-    check<A.Is<string, string | number, '<-implements'>,    0,      Test.Pass>(),
-    check<A.Is<string | number, string, '<-implements'>,    1,      Test.Pass>(),
 
     check<A.Is<string, string | number, '<-contains'>,    0,    Test.Pass>(),
     check<A.Is<string | number, string, '<-contains'>,    1,    Test.Pass>(),
@@ -174,26 +162,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// OMIT
-
-type U_OMIT    = {t: 'a', o: string} | {t: 'b', o: number} | [1, 2] | 42
-type OMIT_U_O0 = {t: 'a'} | {t: 'b'} | [2] | 42
-
-checks([
-    check<A.Omit<U_OMIT, 'o' | '0'>,    OMIT_U_O0,  Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
-// PICK
-
-type U_PICK    = {t: 'a', o: string} | {t: 'b', o: number} | [1, 2] | 42
-type PICK_U_t1 = {t: 'a'} | {t: 'b'} | [2] | 42
-
-checks([
-    check<A.Pick<U_PICK, 't' | '1'>,    PICK_U_t1,  Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // PROMISABLE
 
 checks([
@@ -205,6 +173,13 @@ checks([
 
 checks([
     check<A.Promise<Promise<1>>,  A.Promise<1>,  Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// PROMISETYPE
+
+checks([
+    check<A.PromiseType<Promise<1>>,  1,  Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
