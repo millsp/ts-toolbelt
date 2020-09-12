@@ -5,7 +5,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Check whether **`L`** has a entry of key **`K`** that matches **`M`**
+Check whether `L` has a entry of key `K` that matches `M`
 @param L to be inspected
 @param K to choose entry
 @param M (?=`any`) to check entry type

@@ -1,7 +1,7 @@
 import {Union} from './Union'
 
 /**
-Replace **`M`** with **`A`** in **`U`**
+Replace `M` with `A` in `U`
 @param U to update
 @param M to select
 @param A to update with

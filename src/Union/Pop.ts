@@ -3,7 +3,7 @@ import {Last} from './Last'
 import {Union} from './Union'
 
 /**
-Remove an item out of **`U`**
+Remove an item out of `U`
 (⚠️ it might not preserve order)
 @param U to remove from
 @returns [[Union]]

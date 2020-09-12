@@ -3,7 +3,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get the keys of **`L`** that are **`undefined`**
+Get the keys of `L` that are `undefined`
 @param L
 @returns [[Key]]
 @example

@@ -36,8 +36,8 @@ export type _NonNullable<O extends object, K extends Key, depth extends Depth> =
     _PatchFlat<NonNullablePart<_Pick<O, K>, depth>, O, 2>
 
 /**
-Make some fields of **`O`** not nullable (deeply or not)
-(Optional fields will be left untouched & **`undefined`**)
+Make some fields of `O` not nullable (deeply or not)
+(Optional fields will be left untouched & `undefined`)
 @param O to make non nullable
 @param K (?=`Key`) to choose fields
 @param depth (?=`'flat'`) to do it deeply

@@ -35,7 +35,7 @@ export type _Optional<O extends object, K extends Key, depth extends Depth> =
     _PatchFlat<OptionalPart<_Pick<O, K>, depth>, O, 2>
 
 /**
-Make some fields of **`O`** optional (deeply or not)
+Make some fields of `O` optional (deeply or not)
 @param O to make optional
 @param K (?=`Key`) to choose fields
 @param depth (?=`'flat'`) to do it deeply

@@ -1,7 +1,7 @@
 /**
 Describes compatible type formats
-* `s`: **`string`**
-* `n`: **`number`**
+* `s`: `string`
+* `n`: `number`
 */
 export type Formats = 'n' | 's'
 

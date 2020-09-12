@@ -1,7 +1,7 @@
 import {Union} from './Union'
 
 /**
-Remove **`M`** out of **`U`**
+Remove `M` out of `U`
 @param U to remove from
 @param M to remove out
 @returns [[Union]]

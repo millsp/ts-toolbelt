@@ -3,7 +3,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get the keys of **`L`** that are [[Compulsory]]
+Get the keys of `L` that are [[Compulsory]]
 
 (⚠️ needs `--strictNullChecks` enabled)
 @param L

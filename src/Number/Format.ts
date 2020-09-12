@@ -12,7 +12,7 @@ Change the format of a [[Number]]
 @param B to transform
 @param fmt (?=`'s'`) output format
 @param IMap to operate with another set of numbers
-@returns **`string | number | boolean`**
+@returns `string | number | boolean`
 @example
 ```ts
 import {N} from 'ts-toolbelt'

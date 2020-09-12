@@ -17,7 +17,7 @@ type ArrayEntry = Numbers['string']['0' | '+'] // tuple entries become literal i
 type ArrayProps = keyof any[] | ArrayEntry     // so this matches any entry, whether is mixed or not
 
 /**
- * Sometimes, we can end up with mixed up **`objects`** that do not make sense
+ * Sometimes, we can end up with mixed up `objects` that do not make sense
  * visually (or that could at least be simplified for the end user). This will
  * turn anything that is passed to it into a cleaned up [[Object]].
  *

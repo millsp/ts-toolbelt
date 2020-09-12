@@ -4,7 +4,7 @@ import {Update as OUpdate} from '../Object/Update'
 import {Depth} from '../Object/_Internal'
 
 /**
-Update in **`L`** the entries of key **`K`** with **`A`**.
+Update in `L` the entries of key `K` with `A`.
 Use the [[x]] placeholder to get the current field type.
 @param L to update
 @param K to chose fields

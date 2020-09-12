@@ -2,10 +2,10 @@ import {Iteration} from './Iteration'
 import {Format} from './Format'
 
 /**
-Get the position of **`I`** (**number**)
+Get the position of `I` (**number**)
 @param I to query
 @param IMap to operate with another set of numbers
-@returns **`number`**
+@returns `number`
 @example
 ```ts
 import {I} from 'ts-toolbelt'

@@ -4,7 +4,7 @@ import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
-Accurately merge the fields of **`L`** with the ones of **`L1`**. It is
+Accurately merge the fields of `L` with the ones of `L1`. It is
 equivalent to the spread operator in JavaScript. [[Union]]s and [[Optional]]
 fields will be handled gracefully.
 

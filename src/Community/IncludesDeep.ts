@@ -24,8 +24,8 @@ type _IncludesDeep<O, M extends any, match extends Match, limit extends Number, 
 ]
 
 /**
- * Check whether **`O`**, or its sub-objects have fields that match **`M`**
- * where the maximum allowed depth is set with **`limit`**.
+ * Check whether `O`, or its sub-objects have fields that match `M`
+ * where the maximum allowed depth is set with `limit`.
  *
  * @param O to be inspected
  * @param M to check field type

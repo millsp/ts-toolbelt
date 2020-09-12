@@ -1,5 +1,5 @@
 /**
-Update the fields of **`O`** with the ones of **`O1`**
+Update the fields of `O` with the ones of `O1`
 (only the existing fields will be updated)
 @param O to update
 @param O1 to update with

@@ -29,11 +29,11 @@ export type _Path<O extends object, Path extends List<Key>, strict extends Boole
     : never
 
 /**
-Get in **`O`** the type of nested properties
+Get in `O` the type of nested properties
 @param O to be inspected
 @param Path to be followed
 @param strict (?=`1`) `0` to work with unions
-@returns **`any`**
+@returns [[Any]]
 @example
 ```ts
 ```

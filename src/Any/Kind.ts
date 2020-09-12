@@ -16,7 +16,7 @@ type _Kind<A extends any> =
 /**
  * Get the literal kind of a type
  * @param A
- * @returns **`'string' | 'number' | 'function' | 'array' | 'object' | 'boolean' | 'unknown'`**
+ * @returns `'string' | 'number' | 'function' | 'array' | 'object' | 'boolean' | 'unknown'`
  * @example
  * ```ts
  * ```

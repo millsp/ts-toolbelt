@@ -4,7 +4,7 @@ import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
-[[Patch]] a list of [[List]]s into **`L`**. Patches from left to right, first
+[[Patch]] a list of [[List]]s into `L`. Patches from left to right, first
 items get completed by the next ones (last-in completes).
 @param O to start with
 @param Os to patch

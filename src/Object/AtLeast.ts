@@ -30,7 +30,7 @@ type _AtLeast<O extends object, K extends Key> =
     ComputeRaw<__AtLeast<RequiredIfKeys<O, K>, K>>
 
 /**
-Make that at least one of the keys **`K`** are required in **`O`** at a time.
+Make that at least one of the keys `K` are required in `O` at a time.
 @param O to make required
 @param K (?=`keyof O`) to choose fields
 @returns [[Object]] [[Union]]

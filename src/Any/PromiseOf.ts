@@ -1,7 +1,7 @@
 /**
-Get the instance type wrapped within a **`Promise`**
-@param P **`Promise`**
-@returns **`any`**
+Get the instance type wrapped within a `Promise`
+@param P A promise
+@returns [[Any]]
 @example
 ```ts
 import {C} from 'ts-toolbelt'

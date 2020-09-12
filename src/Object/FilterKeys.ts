@@ -12,7 +12,7 @@ export type _FilterKeys<O extends object, M extends any, match extends Match> = 
 }[keyof O]
 
 /**
-Filter out the keys of **`O`** which fields match **`M`**
+Filter out the keys of `O` which fields match `M`
 @param O to remove from
 @param M to select fields
 @param match (?=`'default'`) to change precision

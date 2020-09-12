@@ -36,7 +36,7 @@ export type _Compulsory<O extends object, K extends Key, depth extends Depth> =
     _PatchFlat<CompulsoryPart<_Pick<O, K>, depth>, O, 2>
 
 /**
-Make that **`O`**'s fields cannot be [[Nullable]] or [[Optional]] (it's like
+Make that `O`'s fields cannot be [[Nullable]] or [[Optional]] (it's like
 [[Required]] & [[NonNullable]] at once).
 @param O to make compulsory
 @param K (?=`Key`) to choose fields

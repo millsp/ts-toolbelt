@@ -4,7 +4,7 @@ import {Equals} from './Equals'
 import {Contains} from './Contains'
 
 /**
- * Check whether **`A`** is similar to **`A1`** or not. In other words, it is a
+ * Check whether `A` is similar to `A1` or not. In other words, it is a
  * compact type that bundles [[Equals]], [[Extends]], [[Contains]], and
  * [[Implements]] comparison types.
  * @param A to be compared

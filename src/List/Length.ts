@@ -3,10 +3,10 @@ import {Formats} from '../Iteration/_Internal'
 import {List} from './List'
 
 /**
-Get the length of **`L`**
+Get the length of `L`
 @param L to get length
 @param fmt (?=`'n'`) output format
-@returns [[String]] or **`number`**
+@returns [[String]] or `number`
 @example
 ```ts
 ```

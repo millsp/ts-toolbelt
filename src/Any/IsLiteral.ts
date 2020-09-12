@@ -28,7 +28,7 @@ export type IsNumberLiteral<A extends any> =
 export type Kind = string | number
 
 /**
- * Determine whether **`A`** is literal or not
+ * Determine whether `A` is literal or not
  * @param A to be checked
  * @param kind (?=`'string' | 'number'`) to restrict
  * @example

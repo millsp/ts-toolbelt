@@ -7,7 +7,7 @@ export type _RequiredKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of **`O`** that are required
+Get the keys of `O` that are required
 @param O
 @returns [[Key]]
 @example

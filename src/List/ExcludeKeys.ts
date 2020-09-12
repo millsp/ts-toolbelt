@@ -4,7 +4,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Exclude the keys of **`L1`** out of the keys of **`L`**
+Exclude the keys of `L1` out of the keys of `L`
 (If `match = 'default'`, no type checks are done)
 @param L to remove the keys from
 @param L1 to remove the keys out

@@ -4,7 +4,7 @@ import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
-Complete the fields of **`L`** with the ones of **`L1`**. This is a version of
+Complete the fields of `L` with the ones of `L1`. This is a version of
 [[Merge]] that does NOT handle optional fields, it only completes fields of `O`
 with the ones of `O1` if they don't exist.
 

@@ -5,8 +5,8 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get a [[List]] that is the difference between **`L`** & **`L1`**
-(**`L`**'s differences have priority over **`L1`**'s if entries overlap)
+Get a [[List]] that is the difference between `L` & `L1`
+(`L`'s differences have priority over `L1`'s if entries overlap)
 (If `match = 'default'`, no type checks are done)
 @param L to check differences with
 @param L1 to check differences against

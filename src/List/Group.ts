@@ -23,7 +23,7 @@ export type _Group<L extends List, N extends Number> =
     : never
 
 /**
-Split **`L`** into sub-[[List]]s every **`N`**
+Split `L` into sub-[[List]]s every `N`
 @param L to group
 @param N to split at
 @returns [[List]]

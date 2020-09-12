@@ -34,7 +34,7 @@ export type _Either<O extends object, K extends Key, strict extends Boolean> = {
 }[strict]
 
 /**
-Split **`O`** into a [[Union]] with **`K`** keys in such a way that none of
+Split `O` into a [[Union]] with `K` keys in such a way that none of
 the keys are ever present with one another within the different unions.
 @param O to split
 @param K to split with

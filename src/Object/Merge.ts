@@ -113,7 +113,7 @@ export type MergeDeep<O, O1, style extends MergeStyle, noMerge> =
     : never
 
 /**
-Accurately merge the fields of **`O`** with the ones of **`O1`**. It is
+Accurately merge the fields of `O` with the ones of `O1`. It is
 equivalent to the spread operator in JavaScript. [[Union]]s and [[Optional]]
 fields will be handled gracefully.
 

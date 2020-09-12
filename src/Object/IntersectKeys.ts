@@ -23,7 +23,7 @@ type IntersectMatch<O extends object, O1 extends object, match extends Match> =
     : never
 
 /**
-Get the intersecting keys of **`O`** & **`O1`**
+Get the intersecting keys of `O` & `O1`
 (If `match = 'default'`, no type checks are done)
 @param O to check similarities with
 @param O1 to check similarities against

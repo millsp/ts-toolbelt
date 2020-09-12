@@ -4,7 +4,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Filter out the keys of **`L`** which entries match **`M`**
+Filter out the keys of `L` which entries match `M`
 @param L to remove from
 @param M to select entries
 @param match (?=`'default'`) to change precision

@@ -5,7 +5,7 @@ import {ListOf} from '../Object/ListOf'
 import {Depth} from '../Object/_Internal'
 
 /**
-Assign a list of [[List]] into **`L`** with [[Merge]]. Merges from left to
+Assign a list of [[List]] into `L` with [[Merge]]. Merges from left to
 right, first items get overridden by the next ones (last-in overrides).
 @param L to assign to
 @param Ls to assign

@@ -35,7 +35,7 @@ export type _Readonly<O extends object, K extends Key, depth extends Depth> =
     _PatchFlat<ReadonlyPart<_Pick<O, K>, depth>, O, 2>
 
 /**
-Make some fields of **`O`** readonly (deeply or not)
+Make some fields of `O` readonly (deeply or not)
 @param O to make readonly
 @param K (?=`Key`) to choose fields
 @param depth (?=`'default'`) to do it deeply

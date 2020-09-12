@@ -7,7 +7,7 @@ import {NumberOf} from '../Any/_Internal'
 import {Keys} from './Keys'
 
 /**
-Make that at least one of the keys **`K`** are required in **`L`** at a time.
+Make that at least one of the keys `K` are required in `L` at a time.
 @param L to make required
 @param K (?=`keyof L`) to choose fields
 @returns [[List]] [[Union]]

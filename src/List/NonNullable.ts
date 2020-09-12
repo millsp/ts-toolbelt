@@ -37,7 +37,7 @@ export type NonNullablePart<O extends object, K extends Key, depth extends Depth
 }[depth]
 
 /**
-Make some entries of **`L`** not nullable (deeply or not)
+Make some entries of `L` not nullable (deeply or not)
 @param L to make non nullable
 @param K (?=`Key`) to choose fields
 @param depth (?=`'flat'`) to do it deeply

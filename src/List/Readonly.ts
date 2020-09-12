@@ -3,7 +3,7 @@ import {ReadonlyPart} from '../Object/Readonly'
 import {List} from './List'
 
 /**
-Make **`L`** readonly (deeply or not)
+Make `L` readonly (deeply or not)
 @param L to make readonly
 @param depth (?=`'flat'`) to do it deeply
 @returns [[List]]

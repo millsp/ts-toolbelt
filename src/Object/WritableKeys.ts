@@ -13,7 +13,7 @@ export type _WritableKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of **`O`** that are writable
+Get the keys of `O` that are writable
 @param O
 @returns [[Key]]
 @example

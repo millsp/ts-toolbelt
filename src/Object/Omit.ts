@@ -9,7 +9,7 @@ export type _Omit<O extends object, K extends Key> =
     _Pick<O, Exclude<keyof O, K>>
 
 /**
-Remove out of **`O`** the fields of key **`K`**
+Remove out of `O` the fields of key `K`
 @param O to remove from
 @param K to chose fields
 @returns [[Object]]

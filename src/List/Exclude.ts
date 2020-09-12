@@ -5,7 +5,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Exclude the entries of **`L1`** out of **`L`**
+Exclude the entries of `L1` out of `L`
 (If `match = 'default'`, no type checks are done)
 @param L to remove from
 @param L1 to remove out

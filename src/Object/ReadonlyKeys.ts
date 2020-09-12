@@ -14,7 +14,7 @@ export type _ReadonlyKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of **`O`** that are readonly
+Get the keys of `O` that are readonly
 @param O
 @returns [[Key]]
 @example

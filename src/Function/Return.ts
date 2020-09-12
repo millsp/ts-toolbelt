@@ -4,7 +4,7 @@ import {List} from '../List/List'
 /**
 Extract the return type of a [[Function]]
 @param F to extract from
-@returns **`any`**
+@returns [[Any]]
 @example
 ```ts
 import {F} from 'ts-toolbelt'

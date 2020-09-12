@@ -5,7 +5,7 @@ import {Key} from '../Any/Key'
 import {List} from '../List/List'
 
 /**
-Check whether **`O`** has nested properties that match **`M`**
+Check whether `O` has nested properties that match `M`
 @param O to be inspected
 @param Path to be followed
 @param M (?=`any`) to check field type

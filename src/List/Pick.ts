@@ -12,7 +12,7 @@ export type _Pick<L extends List, K extends Key> =
     _ListOf<_OPick<ObjectOf<L>, NumberOf<K>>>
 
 /**
-Extract out of **`L`** the entries of key **`K`**
+Extract out of `L` the entries of key `K`
 @param L to extract from
 @param K to chose entries
 @returns [[List]]

@@ -2,7 +2,7 @@ import {Modx} from './_Internal'
 import {Key} from '../Any/Key'
 
 /**
-Create an object filled with **`A`** for the fields **`K`**
+Create an object filled with `A` for the fields `K`
 @param K to choose fields
 @param A to fill fields with
 @param modx (?=`['!', 'W']`) to set modifiers

@@ -34,10 +34,10 @@ export type _Paths<O extends object> =
     : never
 
 /**
-Get all the possible paths of **`O`**
+Get all the possible paths of `O`
 (⚠️ this won't work with circular-refs)
 @param O to be inspected
-@returns **`string[]`**
+@returns [[String]][]
 @example
 ```ts
 ```

@@ -27,7 +27,7 @@ export type _PatchAll<O extends object, Os extends List<object>, depth extends D
     : never
 
 /**
-[[Patch]] a list of [[Object]]s into **`O`**. Patches from left to right, first
+[[Patch]] a list of [[Object]]s into `O`. Patches from left to right, first
 items get completed by the next ones (last-in completes).
 @param O to start with
 @param Os to patch

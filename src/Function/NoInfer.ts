@@ -1,7 +1,7 @@
 /**
 Explain to TS which function parameter has priority for generic inference
 @param A to de-prioritize
-@returns **`A`**
+@returns `A`
 @example
 ```ts
 import {F} from 'ts-toolbelt'

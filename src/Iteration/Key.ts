@@ -2,7 +2,7 @@ import {Iteration} from './Iteration'
 import {Format} from './Format'
 
 /**
-Get the position of **`I`** (**string**)
+Get the position of `I` (**string**)
 @param I to query
 @returns [[String]]
 @example

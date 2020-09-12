@@ -37,7 +37,7 @@ export type UpdateDeep<O extends object, K extends Key, A extends any> =
     _UpdateDeep<O, K, A>
 
 /**
-Update in **`O`** the fields of key **`K`** with **`A`**.
+Update in `O` the fields of key `K` with `A`.
 Use the [[x]] placeholder to get the current field type.
 @param O to update
 @param K to chose fields

@@ -23,7 +23,7 @@ type ExcludeMatch<O extends object, O1 extends object, match extends Match> =
     : never
 
 /**
-Exclude the keys of **`O1`** out of the keys of **`O`**
+Exclude the keys of `O1` out of the keys of `O`
 (If `match = 'default'`, no type checks are done)
 @param O to remove the keys from
 @param O1 to remove the keys out

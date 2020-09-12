@@ -3,7 +3,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get the keys of **`L`** that are readonly
+Get the keys of `L` that are readonly
 @param L
 @returns [[Key]]
 @example

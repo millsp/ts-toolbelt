@@ -1,5 +1,5 @@
 /**
- * Check whether **`A1`** is part of **`A2`** or not. The difference with
+ * Check whether `A1` is part of `A2` or not. The difference with
  * `extends` is that it forces a [[Boolean]] return.
  * @param A1
  * @param A2

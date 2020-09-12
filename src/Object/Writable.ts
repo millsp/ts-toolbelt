@@ -35,7 +35,7 @@ export type _Writable<O extends object, K extends Key, depth extends Depth> =
     _PatchFlat<WritablePart<_Pick<O, K>, depth>, O, 2>
 
 /**
-Make some fields of **`O`** writable (deeply or not)
+Make some fields of `O` writable (deeply or not)
 @param O to make writable
 @param K (?=`Key`) to choose fields
 @param depth (?=`'flat'`) to do it deeply

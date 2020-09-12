@@ -3,10 +3,10 @@ import {Key} from './Key'
 declare const id: unique symbol
 
 /**
- * Create your own opaque sub-type from a type **`A`**
+ * Create your own opaque sub-type from a type `A`
  * @param A to be personalized
  * @param Id to name the sub-type
- * @returns A new type **`Type<A, Id>`**
+ * @returns A new type `Type<A, Id>`
  * @example
  * ```ts
  * import {A} from 'ts-toolbelt'

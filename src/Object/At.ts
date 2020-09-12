@@ -24,11 +24,11 @@ export type AtLoose<O extends object, K extends Key> =
     : never
 
 /**
-Get in **`O`** the type of a field of key **`K`**
+Get in `O` the type of a field of key `K`
 @param O to extract from
 @param K to extract at
 @param strict (?=`1`) `0` to work with unions
-@returns **`any`**
+@returns [[Any]]
 @example
 ```ts
 import {O} from 'ts-toolbelt'

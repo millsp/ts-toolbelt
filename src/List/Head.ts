@@ -2,9 +2,9 @@ import {Length} from './Length'
 import {List} from './List'
 
 /**
-Get the first entry of **`L`**
+Get the first entry of `L`
 @param L to extract from
-@returns **`any`**
+@returns [[Any]]
 @example
 ```ts
 ```

@@ -8,7 +8,7 @@ export type _UndefinableKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of **`O`** that are **`undefined`**
+Get the keys of `O` that are `undefined`
 (⚠️ needs `--strictNullChecks` enabled)
 @param O
 @returns [[Key]]

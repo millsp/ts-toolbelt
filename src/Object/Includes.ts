@@ -2,7 +2,7 @@ import {SelectKeys} from './SelectKeys'
 import {Match} from '../Any/_Internal'
 
 /**
-Check whether **`O`** has fields that match **`M`**
+Check whether `O` has fields that match `M`
 @param O to be inspected
 @param M to check field type
 @param match (?=`'default'`) to change precision

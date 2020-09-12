@@ -106,7 +106,7 @@ export type PatchDeep<O, O1, style extends MergeStyle, noMerge> =
     : never
 
 /**
-Complete the fields of **`O`** with the ones of **`O1`**. This is a version of
+Complete the fields of `O` with the ones of `O1`. This is a version of
 [[Merge]] that does NOT handle optional fields, it only completes fields of `O`
 with the ones of `O1`.
 @param O to complete

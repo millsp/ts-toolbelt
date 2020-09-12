@@ -4,9 +4,9 @@ import {IterationOf} from '../Iteration/IterationOf'
 import {Extends} from '../Any/Extends'
 
 /**
-Change the format of a **`string`**
+Change the format of a `string`
 @param S to transform
-@returns **`string | number | boolean`**
+@returns `string | number | boolean`
 @example
 ```ts
 import {S} from 'ts-toolbelt'

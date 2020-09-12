@@ -5,7 +5,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Extract the entries of **`L`** that match **`M`**
+Extract the entries of `L` that match `M`
 @param L to extract from
 @param M to select entries
 @param match (?=`'default'`) to change precision

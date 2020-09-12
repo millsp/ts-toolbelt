@@ -3,7 +3,7 @@ import {List} from '../List/List'
 import {Depth} from '../Object/_Internal'
 
 /**
-[[Merge]] a list of [[List]]s into **`L`**. Merges from left to right, first
+[[Merge]] a list of [[List]]s into `L`. Merges from left to right, first
 items get completed by the next ones (last-in completes).
 @param O to start with
 @param Os to merge

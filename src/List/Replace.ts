@@ -4,7 +4,7 @@ import {Cast} from '../Any/Cast'
 import {List} from './List'
 
 /**
-Update with **`A`** the entries of **`L`** that match **`M`**
+Update with `A` the entries of `L` that match `M`
 @param O to update
 @param M to select fields
 @param A to update with

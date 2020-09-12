@@ -8,7 +8,7 @@ export type _NonNullableKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of **`O`** that are non-nullable
+Get the keys of `O` that are non-nullable
 
 (⚠️ needs `--strictNullChecks` enabled)
 @param O

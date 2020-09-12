@@ -4,7 +4,7 @@ import {Return} from './Return'
 import {Promise} from '../Any/Promise'
 
 /**
-Creates a promisified version of a **`Function`** **`F`**
+Creates a promisified version of a `Function` `F`
 @param F to promisify
 @returns async F
 @example

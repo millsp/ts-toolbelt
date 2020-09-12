@@ -1,7 +1,7 @@
 import {Boolean} from './Boolean'
 
 /**
-Logical **`^`** operator (behaves like the JS one)
+Logical `^` operator (behaves like the JS one)
 @param B1 Left-hand side
 @param B2 Right-hand side
 @returns [[Boolean]]

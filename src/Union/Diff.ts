@@ -2,7 +2,7 @@ import {Exclude} from './Exclude'
 import {Union} from './Union'
 
 /**
-Get an [[Union]] that is the difference between **`U1`** & **`U2`**
+Get an [[Union]] that is the difference between `U1` & `U2`
 @param U1 to check differences with
 @param U2 to check differences against
 @returns [[Union]]

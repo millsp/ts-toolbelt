@@ -3,7 +3,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get the keys of **`L`** that are writable
+Get the keys of `L` that are writable
 @param L
 @returns [[Key]]
 @example

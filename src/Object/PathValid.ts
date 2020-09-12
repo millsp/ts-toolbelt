@@ -44,7 +44,7 @@ export type _PathValid<O extends object, Path extends List<AKey>> =
  * Replaces invalid parts of a path with `never`
  * @param O to be inspected
  * @param Path to be validated
- * @returns **`Index[]`**
+ * @returns [[Index]][]
  * @example
  * ```ts
  * import {A, L, O} from 'ts-toolbelt'

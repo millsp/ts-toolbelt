@@ -5,7 +5,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Filter out of **`L`** the entries that match **`M`**
+Filter out of `L` the entries that match `M`
 @param L to remove from
 @param M to select entries
 @param match (?=`'default'`) to change precision

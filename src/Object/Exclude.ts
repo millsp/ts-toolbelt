@@ -3,7 +3,7 @@ import {Match} from '../Any/_Internal'
 import {Pick} from './Pick'
 
 /**
-Exclude the fields of **`O1`** out of **`O`**
+Exclude the fields of `O1` out of `O`
 (If `match = 'default'`, no type checks are done)
 @param O to remove from
 @param O1 to remove out

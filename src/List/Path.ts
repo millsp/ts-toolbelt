@@ -3,10 +3,10 @@ import {Key} from '../Any/Key'
 import {List} from './List'
 
 /**
-Get in **`L`** the type of nested properties
+Get in `L` the type of nested properties
 @param L to be inspected
 @param Path to be followed
-@returns **`any`**
+@returns [[Any]]
 @example
 ```ts
 ```

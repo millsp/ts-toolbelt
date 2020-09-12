@@ -5,7 +5,7 @@ import {Union} from './Union'
 /**
 Transform a [[Union]] to an **intersection**
 @param U to transform
-@returns **intersection**
+@returns `&`
 @example
 ```ts
 ```

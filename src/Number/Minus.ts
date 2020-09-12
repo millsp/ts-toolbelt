@@ -77,7 +77,7 @@ Subtract a [[Number]] from another one
 @param N2 Right-hand side
 @param fmt (?=`'s'`) output format
 @param IMap to operate with another set of numbers
-@returns **`string | number | boolean`**
+@returns `string | number | boolean`
 @example
 ```ts
 import {N} from 'ts-toolbelt'

@@ -6,7 +6,7 @@ import {List} from './List'
 Replaces invalid parts of a path with `never`
 @param L to be inspected
 @param Path to be validated
-@returns **`Index[]`**
+@returns [[Index]][]
 @example
 ```ts
 import {A, L, O} from 'ts-toolbelt'

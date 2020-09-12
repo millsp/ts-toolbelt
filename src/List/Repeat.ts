@@ -25,7 +25,7 @@ export type _Repeat<A extends any, N extends Number, L extends List = []> =
     : never
 
 /**
-Fill a [[List]] with **`N`** times **`A`**
+Fill a [[List]] with `N` times `A`
 @param A to fill with
 @param N to repeat it
 @param L (?=`[]`) to be filled

@@ -45,7 +45,7 @@ export type _Take<L extends List, N extends Number, way extends Way = '->'> =
     : never
 
 /**
-Extract **`N`** entries out of **`L`**
+Extract `N` entries out of `L`
 @param L to extract from
 @param N to extract out
 @param way (?=`'->'`) to extract from end

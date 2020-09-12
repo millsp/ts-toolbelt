@@ -3,9 +3,9 @@ import {Length} from './Length'
 import {List} from './List'
 
 /**
-Get the last entry of **`L`**
+Get the last entry of `L`
 @param L to extract from
-@returns **`any`**
+@returns [[Any]]
 @example
 ```ts
 ```

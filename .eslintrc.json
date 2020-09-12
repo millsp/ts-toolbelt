@@ -19,24 +19,6 @@
         "sourceType": "module"
     },
     "rules": {
-        // functional programming
-        "fp/no-arguments"        : ["off"],
-        "fp/no-class"            : ["off"],
-        "fp/no-delete"           : ["error"],
-        "fp/no-events"           : ["off"],
-        "fp/no-get-set"          : ["error"],
-        "fp/no-let"              : ["off"],
-        "fp/no-loops"            : ["off"],
-        "fp/no-mutating-assign"  : ["error"],
-        "fp/no-mutating-methods" : ["warn"],
-        "fp/no-mutation"         : ["off"],
-        "fp/no-nil"              : ["off"],
-        "fp/no-proxy"            : ["off"],
-        "fp/no-rest-parameters"  : ["off"],
-        "fp/no-this"             : ["off"],
-        "fp/no-throw"            : ["error"],
-        "fp/no-unused-expression": ["off"],
-        "fp/no-valueof-field"    : ["off"],
         // code features
         "array-callback-return"       : ["error"],
         "arrow-parens"                : ["error"],

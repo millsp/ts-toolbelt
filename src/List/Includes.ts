@@ -4,7 +4,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Check whether **`L`** has entries that match **`M`**
+Check whether `L` has entries that match `M`
 @param L to be inspected
 @param M to check entry type
 @param match (?=`'default'`) to change precision

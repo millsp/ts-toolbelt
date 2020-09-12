@@ -12,7 +12,7 @@ export type _SelectKeys<O extends object, M extends any, match extends Match> = 
 }[keyof O]
 
 /**
-Get the keys of **`O`** which fields match **`M`**
+Get the keys of `O` which fields match `M`
 @param O to extract from
 @param M to select fields
 @param match (?=`'default'`) to change precision

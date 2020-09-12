@@ -12,7 +12,7 @@ export type _Replace<O extends object, M extends any, A extends any, match exten
 } & {}
 
 /**
-Update with **`A`** the fields of **`O`** that match **`M`**
+Update with `A` the fields of `O` that match `M`
 @param O to update
 @param M to select fields
 @param A to update with

@@ -44,7 +44,7 @@ type _Record_OW<Path extends List<Key>, A, I extends Iteration = IterationOf<'0'
 } & {}
 
 /**
-Create an object filled with **`A`** for the fields at the end of **`Path`**
+Create an object filled with `A` for the fields at the end of `Path`
 @param Path to choose fields
 @param A to fill fields with
 @param modx (?=`['!', 'W']`) to set modifiers

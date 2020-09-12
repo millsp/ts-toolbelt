@@ -39,7 +39,7 @@ type OmitList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>>
   : O
 
 /**
-Remove out of **`O`** the fields at **`Path`**
+Remove out of `O` the fields at `Path`
 @param O to remove from
 @param Path to be followed
 @param list (?=`0`) `1` to work within object lists

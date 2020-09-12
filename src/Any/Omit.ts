@@ -5,7 +5,7 @@ import {List} from '../List/List'
 import {Union} from '../Union/Union'
 
 /**
- * Remove out from each member of union **`U`** the fields of key **`K`**
+ * Remove out from each member of union `U` the fields of key `K`
  * @param U to remove from
  * @param K to chose fields
  * @returns [[Union]]

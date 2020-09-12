@@ -3,7 +3,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get the keys of **`L`** that are optional
+Get the keys of `L` that are optional
 @param L
 @returns [[Key]]
 @example

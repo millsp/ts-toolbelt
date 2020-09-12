@@ -9,7 +9,7 @@ export type _UnionOf<O extends object> =
 /**
 Transform an [[Object]] into an [[Union]]
 @param O to transform
-@returns **`any`**
+@returns [[Any]]
 @example
 ```ts
 ```

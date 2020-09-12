@@ -5,7 +5,7 @@ import {Union} from './Union'
 Get the last item within an [[Union]]
 (⚠️ it might not preserve order)
 @param U
-@returns **any**
+@returns [[Any]]
 @example
 ```ts
 ```

@@ -3,7 +3,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get the keys of **`L`** that are non-nullable
+Get the keys of `L` that are non-nullable
 @param L
 @returns [[Key]]
 @example

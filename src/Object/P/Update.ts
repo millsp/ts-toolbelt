@@ -25,7 +25,7 @@ type _Update<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'
   : O
 
 /**
-Update in **`O`** the fields at **`Path`** with **`A`**
+Update in `O` the fields at `Path` with `A`
 @param O to update
 @param Path to be followed
 @param A to update with

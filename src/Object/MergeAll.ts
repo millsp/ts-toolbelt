@@ -27,7 +27,7 @@ export type _MergeAll<O extends object, Os extends List<object>, depth extends D
     : never
 
 /**
-[[Merge]] a list of [[Object]]s into **`O`**. Merges from left to right, first
+[[Merge]] a list of [[Object]]s into `O`. Merges from left to right, first
 items get completed by the next ones (last-in completes).
 @param O to start with
 @param Os to merge

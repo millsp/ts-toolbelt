@@ -4,7 +4,7 @@ import {x} from '../Any/x'
 import {List} from './List'
 
 /**
-Modify **`L`** with **`LMod`** & the [[x]] placeholder
+Modify `L` with `LMod` & the [[x]] placeholder
 @param L to copy from
 @param LMod to copy to
 @returns [[List]]

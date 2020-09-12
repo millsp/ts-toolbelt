@@ -8,7 +8,7 @@ export type _OptionalKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of **`O`** that are optional
+Get the keys of `O` that are optional
 @param O
 @returns [[Key]]
 @example

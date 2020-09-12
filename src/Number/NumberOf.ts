@@ -14,7 +14,7 @@ export type _NumberOf<N extends number, IMap extends Map> = {
 }[KnownIterationMapKeys<IMap>]
 
 /**
-Transform a **`number`** into a [[Number]]
+Transform a `number` into a [[Number]]
 @param N to stringify
 @param IMap to operate with another set of numbers
 @returns [[String]]

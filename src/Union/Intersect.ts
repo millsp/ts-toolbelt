@@ -1,7 +1,7 @@
 import {Union} from './Union'
 
 /**
-Get the intersection of **`U1`** & **`U2`**
+Get the intersection of `U1` & `U2`
 @param U1 to check similarities with
 @param U2 to check similarities against
 @returns [[Union]]

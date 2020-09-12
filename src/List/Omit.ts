@@ -12,7 +12,7 @@ export type _Omit<L extends List, K extends Key> =
     _ListOf<_OOmit<ObjectOf<L>, NumberOf<K>>>
 
 /**
-Remove out of **`L`** the entries of key **`K`**
+Remove out of `L` the entries of key `K`
 @param L to remove from
 @param K to chose entries
 @returns [[List]]

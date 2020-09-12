@@ -4,7 +4,7 @@ import {At} from '../Object/At'
 import {Format} from '../String/Format'
 
 /**
-Make the fields of **`L`** union the ones of **`L1`**
+Make the fields of `L` union the ones of `L1`
 @param L to union from
 @param L1 to union with
 @param K (?=`Key`) to do choose fields

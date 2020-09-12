@@ -4,7 +4,7 @@ import {At} from './At'
 import {Key} from '../Any/Key'
 
 /**
-Check whether **`O`** has a field of key **`K`** that matches **`M`**
+Check whether `O` has a field of key `K` that matches `M`
 @param O to be inspected
 @param K to choose field
 @param M (?=`any`) to check field type

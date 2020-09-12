@@ -4,7 +4,7 @@ import {Cast} from '../Any/Cast'
 import {List} from './List'
 
 /**
-Make all fields of **`O`** optional (deeply or not)
+Make all fields of `O` optional (deeply or not)
 @param L to make optional
 @param depth (?=`'flat'`) to do it deeply
 @returns [[List]]

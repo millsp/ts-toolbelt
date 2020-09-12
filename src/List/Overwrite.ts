@@ -3,7 +3,7 @@ import {Cast} from '../Any/Cast'
 import {List} from './List'
 
 /**
-Update the entries of **`L`** with the ones of **`L1`**
+Update the entries of `L` with the ones of `L1`
 @param L to update
 @param L1 to update with
 @returns [[Object]]

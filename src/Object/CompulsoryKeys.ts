@@ -8,7 +8,7 @@ export type _CompulsoryKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of **`O`** that are [[Compulsory]]
+Get the keys of `O` that are [[Compulsory]]
 
 (⚠️ needs `--strictNullChecks` enabled)
 @param O

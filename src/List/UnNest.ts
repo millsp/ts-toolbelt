@@ -62,7 +62,7 @@ export type _UnNest<L extends List, strict extends Boolean> =
     : never
 
 /**
-Remove a dimension of **`L`**
+Remove a dimension of `L`
 @param L to un-nest
 @param strict (?=`1`) `0` to not preserve tuples
 @returns [[List]]

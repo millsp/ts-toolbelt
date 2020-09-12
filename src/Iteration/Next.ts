@@ -3,7 +3,7 @@ import {Iteration} from './Iteration'
 import {NumberMap} from '../Iteration/Maps/Number'
 
 /**
-Move **`I`**'s position forward
+Move `I`'s position forward
 @param I to move
 @param IMap to operate with another set of numbers
 @returns [[Iteration]]

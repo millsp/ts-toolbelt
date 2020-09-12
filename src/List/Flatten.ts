@@ -27,7 +27,7 @@ export type _Flatten<L extends List, strict extends Boolean, limit extends Numbe
     : never
 
 /**
-Remove all dimensions of **`L`** (10 max)
+Remove all dimensions of `L` (10 max)
 @param L to un-nest
 @param strict (?=`1`) `0` to not preserve tuples
 @param limit (?=`string`) to stop un-nesting at

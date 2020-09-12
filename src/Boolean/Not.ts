@@ -1,7 +1,7 @@
 import {Boolean} from './Boolean'
 
 /**
-Logical **`!`** operator (behaves like the JS one)
+Logical `!` operator (behaves like the JS one)
 @param B to negate
 @returns [[Boolean]]
 @example

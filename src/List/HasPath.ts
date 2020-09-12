@@ -5,7 +5,7 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Check whether **`L`** has nested entries that match **`M`**
+Check whether `L` has nested entries that match `M`
 @param L to be inspected
 @param Path to be followed
 @param M (?=`any`) to check entry type
