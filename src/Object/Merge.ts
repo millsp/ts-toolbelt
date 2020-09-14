@@ -115,36 +115,6 @@ export type MergeDeep<O, O1, style extends MergeStyle, ignore> =
       : never
     : never
 
-type O1 = {
-  o: O
-  a: 1
-}
-
-type O = {
-  o: O1
-  b: 2
-}
-
-type t = Compute<O1 & O>
-
-const origin = {
-    someArray: ['a'],
-    a        : {b: {c: {d: ['x']}}},
-}
-const target = {
-    someArray: ['b'],
-    a        : {b: {c: {d: ['y']}}},
-}
-
-const res = mergeAndConcat(origin, target)
-
-export function mergeAndConcat<T extends Record<string, any>, Tn extends Record<string, any>[]>(
-    object: T,
-    ...otherObjects: Tn
-):  Compute<PatchAll<T, Tn, 'deep'>> & {} {
-    return 1 as any
-}
-
 /**
 Accurately merge the fields of `O` with the ones of `O1`. It is
 equivalent to the spread operator in JavaScript. [[Union]]s and [[Optional]]
