@@ -9,11 +9,11 @@ items get completed by the next ones (last-in completes).
 @param O to start with
 @param Os to patch
 @param depth (?=`'flat'`) to do it deeply
-@param noMerge (?=`BuiltinObject`) types not to merge
+@param ignore (?=`BuiltinObject`) types not to merge
 @returns [[List]]
 @example
 ```ts
 ```
 */
-export type PatchAll<O extends List, Ls extends List<List>, depth extends Depth = 'flat', noMerge extends any = BuiltInObject> =
-    OPatchAll<O, Ls, depth, 0, noMerge>
+export type PatchAll<O extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends any = BuiltInObject> =
+    OPatchAll<O, Ls, depth, 0, ignore>

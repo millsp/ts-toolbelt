@@ -12,11 +12,11 @@ fields will be handled gracefully.
 @param L to complete
 @param L1 to copy from
 @param depth (?=`'flat'`) to do it deeply
-@param noMerge (?=`BuiltinObject`) types not to merge
+@param ignore (?=`BuiltinObject`) types not to merge
 @returns [[Object]]
 @example
 ```ts
 ```
 */
-export type Merge<L extends List, L1 extends List, depth extends Depth = 'flat', noMerge extends any = BuiltInObject> =
-    OMerge<L, L1, depth, 0, noMerge>
+export type Merge<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends any = BuiltInObject> =
+    OMerge<L, L1, depth, 0, ignore>

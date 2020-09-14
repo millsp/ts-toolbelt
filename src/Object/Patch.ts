@@ -56,52 +56,52 @@ export type _PatchFlat<O extends object, O1 extends object, style extends MergeS
 /**
 @hidden
 */
-export type PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 2, noMerge = BuiltInObject> =
-  O extends noMerge
+export type PatchFlat<O extends object, O1 extends object, style extends MergeStyle = 2, ignore = BuiltInObject> =
+  O extends ignore
   ? O
-  : O1 extends noMerge
+  : O1 extends ignore
     ? O
     : _PatchFlat<O, O1, style>
 
 /**
 @hidden
 */
-type __PatchDeep<O extends object, O1 extends object, style extends MergeStyle, noMerge, OOK extends Key = keyof O> = {
-    [K in keyof (O & _Omit<O1, OOK>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style, noMerge>
+type __PatchDeep<O extends object, O1 extends object, style extends MergeStyle, ignore, OOK extends Key = keyof O> = {
+    [K in keyof (O & _Omit<O1, OOK>)]: _PatchDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style, ignore>
 }
 
 /**
 @hidden
 */
-type ChoosePatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle, noMerge> =
-    OK extends BuiltInObject
+type ChoosePatchDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle, ignore> =
+    OK extends ignore
     ? PatchProp<OK, O1K, K, OOK>
-    : O1K extends BuiltInObject
+    : O1K extends ignore
       ? PatchProp<OK, O1K, K, OOK>
       : OK extends object
         ? O1K extends object
-          ? __PatchDeep<ObjectOf<OK>, ObjectOf<O1K>, style, noMerge>
+          ? __PatchDeep<ObjectOf<OK>, ObjectOf<O1K>, style, ignore>
           : PatchProp<OK, O1K, K, OOK>
         : PatchProp<OK, O1K, K, OOK>
 
 /**
 @hidden
 */
-export type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, noMerge> =
+export type _PatchDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, ignore> =
     [O] extends [never]
     ? PatchProp<O, O1, K, OOK>
     : [O1] extends [never]
       ? PatchProp<O, O1, K, OOK>
-      : LibStyle<ChoosePatchDeep<O, O1, K, OOK, style, noMerge>, O, O1, style>
+      : LibStyle<ChoosePatchDeep<O, O1, K, OOK, style, ignore>, O, O1, style>
 
 /**
 @hidden
 */
-export type PatchDeep<O, O1, style extends MergeStyle, noMerge> =
+export type PatchDeep<O, O1, style extends MergeStyle, ignore> =
     O extends unknown
     ? O1 extends unknown
       // give `K` and `OOK` dummy types `x` and `y`
-      ? _PatchDeep<O, O1, 'x', 'y', style, noMerge>
+      ? _PatchDeep<O, O1, 'x', 'y', style, ignore>
       : never
     : never
 
@@ -113,7 +113,7 @@ with the ones of `O1`.
 @param O1 to copy from
 @param depth (?=`'flat'`) to do it deeply
 @param style (?=`1`) 0 = lodash, 1 = ramda
-@param noMerge (?=`BuiltinObject`) types not to merge
+@param ignore (?=`BuiltinObject`) types not to merge
 @returns [[Object]]
 @example
 ```ts
@@ -151,7 +151,7 @@ type test = O.Patch<O, O1, 'deep'>
 // }
 ```
 */
-export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2, noMerge = BuiltInObject> = {
-    'flat': PatchFlat<O, O1, style, noMerge>
-    'deep': PatchDeep<O, O1, style, noMerge>
+export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2, ignore = BuiltInObject> = {
+    'flat': PatchFlat<O, O1, style, ignore>
+    'deep': PatchDeep<O, O1, style, ignore>
 }[depth]

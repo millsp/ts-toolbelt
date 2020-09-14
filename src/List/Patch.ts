@@ -13,11 +13,11 @@ with the ones of `O1` if they don't exist.
 @param L1 to copy from
 @param depth (?=`'flat'`) to do it deeply
 @param style (?=`1`) 0 = lodash, 1 = ramda
-@param noMerge (?=`BuiltinObject`) types not to merge
+@param ignore (?=`BuiltinObject`) types not to merge
 @returns [[List]]
 @example
 ```ts
 ```
 */
-export type Patch<L extends List, L1 extends List, depth extends Depth = 'flat', noMerge extends any = BuiltInObject> =
-    OPatch<L, L1, depth, 0, noMerge>
+export type Patch<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends any = BuiltInObject> =
+    OPatch<L, L1, depth, 0, ignore>

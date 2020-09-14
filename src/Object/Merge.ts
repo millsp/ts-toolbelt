@@ -7,6 +7,9 @@ import {Depth, Anyfy, MergeStyle} from './_Internal'
 import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 import {ObjectOf} from '../List/ObjectOf'
+import {Compute} from '../Any/Compute'
+import {Assign} from './Assign'
+import {PatchAll} from './PatchAll'
 
 /**
 @hidden
@@ -63,54 +66,84 @@ export type _MergeFlat<O extends object, O1 extends object, style extends MergeS
 /**
 @hidden
 */
-export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle, noMerge> =
-    O extends noMerge
+export type MergeFlat<O extends object, O1 extends object, style extends MergeStyle, ignore> =
+    O extends ignore
     ? O
-    : O1 extends noMerge
+    : O1 extends ignore
       ? O
       : _MergeFlat<O, O1, style>
 
 /**
 @hidden
 */
-type __MergeDeep<O extends object, O1 extends object, style extends MergeStyle, noMerge, OOK extends Key = _OptionalKeys<O>> = {
-    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style, noMerge>
+type __MergeDeep<O extends object, O1 extends object, style extends MergeStyle, ignore, OOK extends Key = _OptionalKeys<O>> = {
+    [K in keyof (Anyfy<O> & O1)]: _MergeDeep<AtBasic<O, K>, AtBasic<O1, K>, K, OOK, style, ignore>
 }
 
 /**
 @hidden
 */
-type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle, noMerge> =
-    OK extends noMerge
+type ChooseMergeDeep<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle, ignore> =
+    OK extends ignore
     ? MergeProp<OK, O1K, K, OOK, style>
-    : O1K extends noMerge
+    : O1K extends ignore
       ? MergeProp<OK, O1K, K, OOK, style>
       : OK extends object
         ? O1K extends object
-          ? __MergeDeep<ObjectOf<OK>, ObjectOf<O1K>, style, noMerge>
+          ? __MergeDeep<ObjectOf<OK>, ObjectOf<O1K>, style, ignore>
           : MergeProp<OK, O1K, K, OOK, style>
         : MergeProp<OK, O1K, K, OOK, style>
 
 /**
 @hidden
 */
-export type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, noMerge> =
+export type _MergeDeep<O, O1, K extends Key, OOK extends Key, style extends MergeStyle, ignore> =
     [O] extends [never]
     ? MergeProp<O, O1, K, OOK, style>
     : [O1] extends [never]
       ? MergeProp<O, O1, K, OOK, style>
-      : LibStyle<ChooseMergeDeep<O, O1, K, OOK, style, noMerge>, O, O1, style>
+      : LibStyle<ChooseMergeDeep<O, O1, K, OOK, style, ignore>, O, O1, style>
 
 /**
 @hidden
 */
-export type MergeDeep<O, O1, style extends MergeStyle, noMerge> =
+export type MergeDeep<O, O1, style extends MergeStyle, ignore> =
     O extends unknown
     ? O1 extends unknown
       // give `K` and `OOK` dummy types `x` and `y`
-      ? _MergeDeep<O, O1, 'x', 'y', style, noMerge>
+      ? _MergeDeep<O, O1, 'x', 'y', style, ignore>
       : never
     : never
+
+type O1 = {
+  o: O
+  a: 1
+}
+
+type O = {
+  o: O1
+  b: 2
+}
+
+type t = Compute<O1 & O>
+
+const origin = {
+    someArray: ['a'],
+    a        : {b: {c: {d: ['x']}}},
+}
+const target = {
+    someArray: ['b'],
+    a        : {b: {c: {d: ['y']}}},
+}
+
+const res = mergeAndConcat(origin, target)
+
+export function mergeAndConcat<T extends Record<string, any>, Tn extends Record<string, any>[]>(
+    object: T,
+    ...otherObjects: Tn
+):  Compute<PatchAll<T, Tn, 'deep'>> & {} {
+    return 1 as any
+}
 
 /**
 Accurately merge the fields of `O` with the ones of `O1`. It is
@@ -122,7 +155,7 @@ fields will be handled gracefully.
 @param O1 to copy from
 @param depth (?=`'flat'`) to do it deeply
 @param style (?=`1`) 0 = lodash, 1 = ramda
-@param noMerge (?=`BuiltinObject`) types not to merge
+@param ignore (?=`BuiltinObject`) types not to merge
 @returns [[Object]]
 @example
 ```ts
@@ -160,7 +193,7 @@ type test = O.Merge<O, O1, 'deep'>
 // }
 ```
 */
-export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2, noMerge = BuiltInObject> = {
-    'flat': MergeFlat<O, O1, style, noMerge>
-    'deep': MergeDeep<O, O1, style, noMerge>
+export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2, ignore = BuiltInObject> = {
+    'flat': MergeFlat<O, O1, style, ignore>
+    'deep': MergeDeep<O, O1, style, ignore>
 }[depth]
