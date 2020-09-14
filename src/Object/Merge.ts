@@ -165,5 +165,5 @@ type test = O.Merge<O, O1, 'deep'>
 */
 export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2, ignore = BuiltInObject> = {
     'flat': MergeFlat<O, O1, style, ignore>
-    'deep': MergeDeep<O, O1, style, ignore>
+    'deep': Compute<MergeDeep<O, O1, style, ignore>>
 }[depth]

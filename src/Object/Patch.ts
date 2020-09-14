@@ -6,6 +6,7 @@ import {Depth, MergeStyle} from './_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 import {_Omit} from './Omit'
 import {ObjectOf} from '../List/ObjectOf'
+import {Compute} from '../Any/Compute'
 
 /**
 @hidden
@@ -153,5 +154,5 @@ type test = O.Patch<O, O1, 'deep'>
 */
 export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', style extends MergeStyle = 2, ignore = BuiltInObject> = {
     'flat': PatchFlat<O, O1, style, ignore>
-    'deep': PatchDeep<O, O1, style, ignore>
+    'deep': Compute<PatchDeep<O, O1, style, ignore>>
 }[depth]
