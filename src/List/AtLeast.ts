@@ -15,8 +15,8 @@ Make that at least one of the keys `K` are required in `L` at a time.
 ```ts
 ```
 */
-export type AtLeast<L extends List, K extends Key = Keys<L>> =
-    OAtLeast<ObjectOf<L>, NumberOf<K>> extends infer U
+export type AtLeast<L extends List, K extends string> =
+    OAtLeast<ObjectOf<L>, K> extends infer U
     ? U extends unknown // we distribute over the union
       ? _ListOf<U & {}> // each union member to a list
       : never

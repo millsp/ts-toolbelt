@@ -15,5 +15,5 @@ Check whether `L` has a entry of key `K` that matches `M`
 ```ts
 ```
 */
-export type Has<L extends List, K extends Key, M extends any = any, match extends Match = 'default'> =
-    OHas<ObjectOf<L>, NumberOf<K>, M, match>
+export type Has<L extends List, K extends string, M extends any = any, match extends Match = 'default'> =
+    OHas<ObjectOf<L>, K, M, match>

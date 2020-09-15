@@ -17,8 +17,8 @@ the keys are ever present with one another within the different unions.
 ```ts
 ```
 */
-export type Either<L extends List, K extends Key, strict extends Boolean = 1> =
-    OEither<ObjectOf<L>, NumberOf<K>, strict> extends infer OE
+export type Either<L extends List, K extends string, strict extends Boolean = 1> =
+    OEither<ObjectOf<L>, K, strict> extends infer OE
     ? OE extends unknown
       ? _ListOf<OE & {}>
       : never

@@ -3,6 +3,7 @@ import {Depth} from '../Object/_Internal'
 import {List} from './List'
 import {Update} from '../Object/Update'
 import {x} from '../Any/x'
+import {NumberOf} from '../Any/_Internal'
 
 /**
 Make some entries of `L` nullable (deeply or not)
@@ -15,4 +16,4 @@ Make some entries of `L` nullable (deeply or not)
 ```
 */
 export type Nullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> =
-    Update<L, K, x | null | undefined, depth>
+    Update<L, NumberOf<K>, x | null | undefined, depth>

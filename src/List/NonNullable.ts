@@ -3,6 +3,7 @@ import {Key} from '../Any/Key'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
+import {NumberOf} from '../Any/_Internal'
 
 /**
  * @hidden
@@ -46,5 +47,5 @@ Make some entries of `L` not nullable (deeply or not)
 ```ts
 ```
 */
-export type NonNullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
-    NonNullablePart<O, K, depth>
+export type NonNullable<L extends object, K extends Key = Key, depth extends Depth = 'flat'> =
+    NonNullablePart<L, NumberOf<K>, depth>

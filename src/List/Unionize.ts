@@ -2,6 +2,7 @@ import {Key} from '../Any/Key'
 import {List} from './List'
 import {At} from '../Object/At'
 import {Format} from '../String/Format'
+import {NumberOf} from '../Any/_Internal'
 
 /**
 Make the fields of `L` union the ones of `L1`
@@ -15,6 +16,6 @@ Make the fields of `L` union the ones of `L1`
 */
 export type Unionize<L extends List, L1 extends List, K extends Key = Key> = {
     [P in keyof L]: P extends K
-                    ? L[P] | At<L1, P extends string ? Format<P, 'n'> : P>
+                    ? L[P] | At<L1, NumberOf<P>>
                     : L[P]
 } & {}
