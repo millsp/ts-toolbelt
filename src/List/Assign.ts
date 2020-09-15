@@ -1,7 +1,5 @@
 import {Assign as OAssign} from '../Object/Assign'
 import {List} from './List'
-import {ObjectOf} from './ObjectOf'
-import {ListOf} from '../Object/ListOf'
 import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
