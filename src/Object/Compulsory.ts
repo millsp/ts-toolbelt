@@ -2,7 +2,7 @@ import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {NonNullable} from '../Union/NonNullable'
-import {_PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
@@ -33,7 +33,7 @@ export type CompulsoryPart<O extends object, depth extends Depth> = {
  * @hidden
  */
 export type _Compulsory<O extends object, K extends Key, depth extends Depth> =
-    _PatchFlat<CompulsoryPart<_Pick<O, K>, depth>, O, 2>
+    PatchFlat<CompulsoryPart<_Pick<O, K>, depth>, O>
 
 /**
 Make that `O`'s fields cannot be [[Nullable]] or [[Optional]] (it's like

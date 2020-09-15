@@ -1,7 +1,7 @@
 import {Depth} from './_Internal'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
-import {_PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
@@ -32,7 +32,7 @@ type UndefinablePart<O extends object, depth extends Depth> = {
  * @hidden
  */
 export type _Undefinable<O extends object, K extends Key, depth extends Depth> =
-    _PatchFlat<UndefinablePart<_Pick<O, K>, depth>, O, 2>
+    PatchFlat<UndefinablePart<_Pick<O, K>, depth>, O>
 
 /**
 Make some fields of `O` `undefined` (deeply or not)

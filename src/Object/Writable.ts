@@ -1,7 +1,7 @@
 import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {_PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
@@ -32,7 +32,7 @@ export type WritablePart<O extends object, depth extends Depth> = {
 @hidden
 */
 export type _Writable<O extends object, K extends Key, depth extends Depth> =
-    _PatchFlat<WritablePart<_Pick<O, K>, depth>, O, 2>
+    PatchFlat<WritablePart<_Pick<O, K>, depth>, O>
 
 /**
 Make some fields of `O` writable (deeply or not)

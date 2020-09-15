@@ -353,22 +353,24 @@ checks([
 // MERGE
 
 checks([
-    check<T.Merge<[0],  [1, 2, 3?]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
-    check<T.Merge<[0],  [1, 2, 3]>,                     [0, 2, 3],              Test.Pass>(),
-    check<T.Merge<[0?], [1, 2, 3]>,                     [2, 3?],                Test.Fail>(),
-    check<T.Merge<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | 0],          Test.Pass>(),
-    check<T.Merge<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+    // eslint-disable-next-line func-call-spacing
+    check<T.Merge<[0, 0, 0?],  [1, 2, 3?]>,             [0, 0, (0 | 3)?],   Test.Pass>(),
+    check<T.Merge<[0, 0, 0?],  [1, 2, 3]>,              [0, 0, 0 | 3],      Test.Pass>(),
+    check<T.Merge<[0?], [1, 2, 3]>,                     [0 | 1, 2, 3],      Test.Pass>(),
+    check<T.Merge<[0?], [1, 2, 3]>,                     [2, 3?],            Test.Fail>(),
+    check<T.Merge<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | 0],      Test.Pass>(),
+    check<T.Merge<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // MERGEALL
 
 checks([
-    check<T.MergeAll<[0],  [[1, 2, 3?]]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
-    check<T.MergeAll<[0],  [[1, 2, 3]]>,                     [0, 2, 3],              Test.Pass>(),
-    check<T.MergeAll<[0?], [[1, 2, 3]]>,                     [2, 3?],                Test.Fail>(),
-    check<T.MergeAll<[1, 2, 3?], [[0, 0, 0]]>,               [1, 2, 3 | 0],          Test.Pass>(),
-    check<T.MergeAll<[0, [1]],  [[1, [2, 3], 4]], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+    check<T.MergeAll<[0],  [[1, 2, 3?]]>,                    [0, 2, 3?],        Test.Pass>(),
+    check<T.MergeAll<[0],  [[1, 2, 3]]>,                     [0, 2, 3],         Test.Pass>(),
+    check<T.MergeAll<[0?], [[1, 2, 3]]>,                     [2, 3?],           Test.Fail>(),
+    check<T.MergeAll<[1, 2, 3?], [[0, 0, 0]]>,               [1, 2, 3 | 0],     Test.Pass>(),
+    check<T.MergeAll<[0, [1]],  [[1, [2, 3], 4]], 'deep'>,   [0, [1, 3], 4],    Test.Pass>(),
 ])
 // ---------------------------------------------------------------------------------------
 // MERGEKEYS
@@ -458,22 +460,22 @@ checks([
 // PATCH
 
 checks([
-    check<T.Patch<[0],  [1, 2, 3?]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
-    check<T.Patch<[0],  [1, 2, 3]>,                     [0, 2, 3],              Test.Pass>(),
-    check<T.Patch<[0?], [1, 2, 3]>,                     [2, 3?],                Test.Fail>(),
-    check<T.Patch<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3 | undefined],  Test.Pass>(),
-    check<T.Patch<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+    check<T.Patch<[0],  [1, 2, 3?]>,                    [0, 2, 3?],         Test.Pass>(),
+    check<T.Patch<[0],  [1, 2, 3]>,                     [0, 2, 3],          Test.Pass>(),
+    check<T.Patch<[0?], [1, 2, 3]>,                     [2, 3?],            Test.Fail>(),
+    check<T.Patch<[1, 2, 3?], [0, 0, 0]>,               [1, 2, 3?],         Test.Pass>(),
+    check<T.Patch<[0, [1]],  [1, [2, 3], 4], 'deep'>,   [0, [1, 3], 4],     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // PATCHALL
 
 checks([
-    check<T.PatchAll<[0],  [[1, 2, 3?]]>,                    [0, 2, 3 | undefined],  Test.Pass>(),
-    check<T.PatchAll<[0],  [[1, 2, 3]]>,                     [0, 2, 3],              Test.Pass>(),
-    check<T.PatchAll<[0?], [[1, 2, 3]]>,                     [2, 3?],                Test.Fail>(),
-    check<T.PatchAll<[1, 2, 3?], [[0, 0, 0]]>,               [1, 2, 3 | undefined],  Test.Pass>(),
-    check<T.PatchAll<[0, [1]],  [[1, [2, 3], 4]], 'deep'>,   [0, [1, 3], 4],         Test.Pass>(),
+    check<T.PatchAll<[0],  [[1, 2, 3?]]>,                    [0, 2, 3?],        Test.Pass>(),
+    check<T.PatchAll<[0],  [[1, 2, 3]]>,                     [0, 2, 3],         Test.Pass>(),
+    check<T.PatchAll<[0?], [[1, 2, 3]]>,                     [2, 3?],           Test.Fail>(),
+    check<T.PatchAll<[1, 2, 3?], [[0, 0, 0]]>,               [1, 2, 3?],        Test.Pass>(),
+    check<T.PatchAll<[0, [1]],  [[1, [2, 3], 4]], 'deep'>,   [0, [1, 3], 4],    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

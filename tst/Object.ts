@@ -1,6 +1,5 @@
-import {Test, O, A, T, U} from '../src/ts-toolbelt'
+import {Test, O, A, T, U, M} from '../src/ts-toolbelt'
 import {Key} from '../src/Any/Key'
-import {PatchDeep} from '../src/Object/Patch'
 
 const {checks, check} = Test
 
@@ -565,7 +564,7 @@ type O1_MERGE = {
     m: []
 }
 
-type MERGE_O_O1 = {
+type MERGE_O_O1_LODASH = {
     a : string | object | undefined
     b : number
     c : {
@@ -608,7 +607,7 @@ type MERGE_O_O1 = {
     n: 42
 }
 
-type MERGE_O_O1_DEEP_0 = {
+type MERGE_O_O1_DEEP_LODASH = {
     a : string | object | undefined
     b : number
     c : {
@@ -662,67 +661,16 @@ type MERGE_O_O1_DEEP_0 = {
     n: 42
 }
 
-type MERGE_O_O1_DEEP_1 = {
-    a : string | object | undefined
-    b : number
-    c : {
-        a : string | object
-        b?: number | object
-        c : object
-    } | Date
-    d : 'hello' | undefined
-    e : number | {a: 1} | {a: 1, b: 2}
-    f?: {
-        a: string
-        b?: number | undefined
-    } | {
-        a: object
-        b?: object | undefined
-        c: object
-    } | {
-        a: string
-        b?: number | object | undefined
-        c: object
-    } | undefined
-    g?: {
-        a?: string
-        b?: number
-    }
-    h: {
-        a: number
-        b: number
-    } | undefined
-    i: {
-        a: string
-    } | undefined
-    j: {
-        a: {
-            b?: {} | {
-                c: 1
-            }
-        }
-    } | {
-        a: {
-            b?: {}
-        }
-    },
-    k: {} | {[k: string]: string} | Date
-    l: {0: {a: 'a', b: 'b'}, 1: 2, 2: 3}
-    m: []
-    n: 42
-}
-
 checks([
-    check<O.Merge<[1], [2, 3], 'flat', 0>,          [1, 3],                 Test.Pass>(),
-    check<O.Merge<[1], [2, 3], 'deep', 0>,          [1, 3],                 Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE>,               MERGE_O_O1,             Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 0>,    MERGE_O_O1_DEEP_0,      Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE, 'deep', 1>,    MERGE_O_O1_DEEP_1,      Test.Pass>(),
+    check<O.Merge<[1], [2, 3], 'flat'>,                                     [1, 3],                     Test.Pass>(),
+    check<O.Merge<[1], [2, 3], 'deep'>,                                     [1, 3],                     Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'flat', M.BuiltInObject, undefined>,   MERGE_O_O1_LODASH,          Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'deep', M.BuiltInObject, undefined>,   MERGE_O_O1_DEEP_LODASH,     Test.Pass>(),
 ])
 
 function MERGE_GENERIC<O extends {n?: number}>(o: O) {
-    const v0 = o as O.Merge<O, {n: string}, 'flat', 1>
-    const v1 = o as O.Merge<O, {n: string}, 'deep', 0>
+    const v0 = o as O.Merge<O, {n: string}, 'flat'>
+    const v1 = o as O.Merge<O, {n: string}, 'deep'>
     const p0: string | number = v0.n
     const p1: string | number = v1.n
 }
@@ -731,10 +679,8 @@ function MERGE_GENERIC<O extends {n?: number}>(o: O) {
 // MERGEALL
 
 checks([
-    check<O.MergeAll<{}, [O_MERGE, O1_MERGE]>,              MERGE_O_O1,         Test.Pass>(),
-    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 0>,   MERGE_O_O1_DEEP_0,  Test.Pass>(),
-    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', 1>,   MERGE_O_O1_DEEP_1,  Test.Pass>(),
-    check<O.MergeAll<[], [[0], [0, 1]], 'deep', 2>,         Array<(0 | 1)>,     Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'flat', M.BuiltInObject, undefined>,   MERGE_O_O1_LODASH,          Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', M.BuiltInObject, undefined>,   MERGE_O_O1_DEEP_LODASH,     Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1003,14 +949,14 @@ readonly f : 0
 }
 
 checks([
-    check<O.Patch<O, O1>,               PATCH_O_O1,         Test.Pass>(),
-    check<O.Patch<O1, O>,               PATCH_O1_O,         Test.Pass>(),
-    check<PatchDeep<O, O1, 0, never>,   PATCH_O_O1_DEEP,    Test.Pass>(), // bcs of Compute
+    check<O.Patch<O, O1>,           PATCH_O_O1,         Test.Pass>(),
+    check<O.Patch<O1, O>,           PATCH_O1_O,         Test.Pass>(),
+    check<O.Patch<O, O1, 'deep'>,   PATCH_O_O1_DEEP,    Test.Pass>(),
 ])
 
 function PATCH_GENERIC<O extends {n: number}>(o: O) {
-    const v0 = o as O.Patch<O, {a: string}, 'flat', 1>
-    const v1 = o as O.Patch<O, {a: string}, 'deep', 0>
+    const v0 = o as O.Patch<O, {a: string}, 'flat'>
+    const v1 = o as O.Patch<O, {a: string}, 'deep'>
     const p0n: number = v0.n
     const p1n: number = v1.n
     const p0a: string = v0.a
@@ -1022,7 +968,7 @@ function PATCH_GENERIC<O extends {n: number}>(o: O) {
 
 checks([
     check<O.PatchAll<{}, [O, O1]>,              PATCH_O_O1,         Test.Pass>(),
-    // check<O.PatchAll<{}, [O, O1], 'deep', 0>,   PATCH_O_O1_DEEP,    Test.Pass>(), // bcs of Compute
+    check<O.PatchAll<{}, [O, O1], 'deep'>,      PATCH_O_O1_DEEP,    Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

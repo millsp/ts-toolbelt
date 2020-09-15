@@ -2,7 +2,7 @@ import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from './_Internal'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
-import {_PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
@@ -33,7 +33,7 @@ export type NonNullablePart<O extends object, depth extends Depth> = {
  * @hidden
  */
 export type _NonNullable<O extends object, K extends Key, depth extends Depth> =
-    _PatchFlat<NonNullablePart<_Pick<O, K>, depth>, O, 2>
+    PatchFlat<NonNullablePart<_Pick<O, K>, depth>, O>
 
 /**
 Make some fields of `O` not nullable (deeply or not)

@@ -1,7 +1,7 @@
 import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {_PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
@@ -32,7 +32,7 @@ export type RequiredPart<O extends object, depth extends Depth> = {
  * @hidden
  */
 export type _Required<O extends object, K extends Key, depth extends Depth> =
-    _PatchFlat<RequiredPart<_Pick<O, K>, depth>, O, 2>
+    PatchFlat<RequiredPart<_Pick<O, K>, depth>, O>
 
 /**
 Make some fields of `O` required (deeply or not)

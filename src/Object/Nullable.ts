@@ -2,7 +2,7 @@ import {Nullable as UNullable} from '../Union/Nullable'
 import {Depth} from './_Internal'
 import {_Pick} from './Pick'
 import {Key} from '../Any/Key'
-import {_PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 
 /**
 @hidden
@@ -30,7 +30,7 @@ type NullablePart<O extends object, depth extends Depth> = {
  * @hidden
  */
 export type _Nullable<O extends object, K extends Key, depth extends Depth> =
-    _PatchFlat<NullablePart<_Pick<O, K>, depth>, O, 2>
+    PatchFlat<NullablePart<_Pick<O, K>, depth>, O>
 
 /**
 Make some fields of `O` nullable (deeply or not)

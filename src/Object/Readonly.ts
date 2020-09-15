@@ -1,7 +1,7 @@
 import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
-import {_PatchFlat} from './Patch'
+import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
@@ -32,7 +32,7 @@ export type ReadonlyPart<O extends object, depth extends Depth> = {
  * @hidden
  */
 export type _Readonly<O extends object, K extends Key, depth extends Depth> =
-    _PatchFlat<ReadonlyPart<_Pick<O, K>, depth>, O, 2>
+    PatchFlat<ReadonlyPart<_Pick<O, K>, depth>, O>
 
 /**
 Make some fields of `O` readonly (deeply or not)
