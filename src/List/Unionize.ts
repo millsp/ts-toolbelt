@@ -16,6 +16,6 @@ Make the fields of `L` union the ones of `L1`
 */
 export type Unionize<L extends List, L1 extends List, K extends Key = Key> = {
     [P in keyof L]: P extends K
-                    ? L[P] | At<L1, NumberOf<P>>
+                    ? L[P] | At<L1, P>
                     : L[P]
 } & {}

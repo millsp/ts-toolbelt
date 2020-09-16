@@ -1,5 +1,4 @@
-import {_NumberOf} from '../Number/NumberOf'
-import {NumberMap} from '../Iteration/Maps/Number'
+import {NumberOf as NNumberOf} from '../Number/NumberOf'
 
 /**
  * Describes the match strategy when matching types
@@ -22,7 +21,7 @@ export type Match = | 'default'
  */
 export type NumberOf<N extends any> =
     N extends number
-    ? _NumberOf<N, NumberMap>
+    ? NNumberOf<N>
     : N
 
 /**
