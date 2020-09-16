@@ -617,7 +617,7 @@ checks([
 checks([
     check<T.Tail<[1, 2, 3?, 4?]>,   [2, 3?, 4?],    Test.Pass>(),
     check<T.Tail<[]>,               [],             Test.Pass>(),
-    // check<T.Tail<never>,            never,          Test.Pass>(),
+    check<T.Tail<never>,            never,          Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -45,7 +45,7 @@ Complete the fields of `O` at `Path` with the ones of `O1`
 @param Path to be followed
 @param O1 to copy from
 @param depth (?=`'flat'`) to do it deeply
-@param list (?=`0`) `1` to work within object lists
+@param list (?=`0`) `1` to work within object lists of arbitrary depth
 @returns [[Object]]
 @example
 ```ts
@@ -55,5 +55,3 @@ export type Merge<O extends object, Path extends List<Key>, O1 extends object, d
   0: MergeObject<O, Path, O1, depth>
   1: MergeList<O, Path, O1, depth>
 }[list]
-
-// TODO: deprecate list option and integrate noMerge

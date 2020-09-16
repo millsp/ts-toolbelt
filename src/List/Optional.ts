@@ -1,3 +1,4 @@
+import {Cast} from '../Any/Cast'
 import {OptionalPart} from '../Object/Optional'
 import {Depth} from '../Object/_Internal'
 import {List} from './List'
@@ -12,4 +13,4 @@ Make `L` optional (deeply or not)
 ```
 */
 export type Optional<L extends List, depth extends Depth = 'flat'> =
-    OptionalPart<L, depth>
+    Cast<OptionalPart<L, depth>, List>

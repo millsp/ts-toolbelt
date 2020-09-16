@@ -1,6 +1,7 @@
 import {Depth} from '../Object/_Internal'
 import {RequiredPart} from '../Object/Required'
 import {List} from './List'
+import {Cast} from '../Any/Cast'
 
 /**
 Make `L` required (deeply or not)
@@ -12,4 +13,4 @@ Make `L` required (deeply or not)
 ```
 */
 export type Required<L extends List, depth extends Depth = 'flat'> =
-    RequiredPart<L, depth>
+    Cast<RequiredPart<L, depth>, List>

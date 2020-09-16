@@ -44,7 +44,7 @@ Make some fields of `O` readonly at `Path` (deeply or not)
 @param O to make readonly
 @param Path to be followed
 @param depth (?=`'flat'`) to do it deeply
-@param list (?=`0`) `1` to work within object lists
+@param list (?=`0`) `1` to work within object lists of arbitrary depth
 @returns [[Object]]
 @example
 ```ts
@@ -54,4 +54,3 @@ export type Readonly<O extends object, Path extends List<Key>, depth extends Dep
   0: ReadonlyObject<O, Path, depth>
   1: ReadonlyArrays<O, Path, depth>
 }[list]
-

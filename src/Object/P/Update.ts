@@ -11,14 +11,14 @@ import {Patch} from '../Patch'
 /**
 @hidden
 */
-type _Update<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
+type UpdateObject<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
   O extends object                                                     // if it's an object
   ? Pos<I> extends LastIndex<Path>                                     // if it's the last index
     ? Patch<Record<Path[Pos<I>], A>, O>                                // use standard Update
     : (O & Record<Exclude<Path[Pos<I>], keyof O>, {}>) extends infer O // fill in missing keys with non-object
       ? {                                                              // to effectively build the object up
           [K in keyof O]: K extends Path[Pos<I>]                       // if K is part of path
-                          ? _Update<O[K], Path, A, Next<I>>            // keep diving
+                          ? UpdateObject<O[K], Path, A, Next<I>>            // keep diving
                           : O[K]                                       // not part of path - x
         } & {}
       : never
@@ -35,4 +35,4 @@ Update in `O` the fields at `Path` with `A`
 ```
 */
 export type Update<O extends object, Path extends List<Key>, A extends any> =
-    _Update<O, Path, A>
+  UpdateObject<O, Path, A>

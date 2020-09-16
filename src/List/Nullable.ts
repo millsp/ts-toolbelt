@@ -4,6 +4,7 @@ import {List} from './List'
 import {Update} from '../Object/Update'
 import {x} from '../Any/x'
 import {NumberOf} from '../Any/_Internal'
+import {Cast} from '../Any/Cast'
 
 /**
 Make some entries of `L` nullable (deeply or not)
@@ -16,4 +17,4 @@ Make some entries of `L` nullable (deeply or not)
 ```
 */
 export type Nullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> =
-    Update<L, NumberOf<K>, x | null | undefined, depth>
+    Cast<Update<L, NumberOf<K>, x | null | undefined, depth>, List>

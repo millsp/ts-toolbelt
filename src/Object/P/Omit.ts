@@ -14,7 +14,7 @@ import {Boolean} from '../../Boolean/Boolean'
 type OmitObject<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>> =
   O extends object                                        // If it's an object
   ? Pos<I> extends LastIndex<Path>                        // If it's the last index
-    ? _OOmit<O, Path[Pos<I>]>                              // Use standard Omit
+    ? _OOmit<O, Path[Pos<I>]>                             // Use standard Omit
     : {
         [K in keyof O]: K extends Path[Pos<I>]            // If K is part of Path
                         ? OmitObject<O[K], Path, Next<I>> // Continue diving
@@ -42,7 +42,7 @@ type OmitList<O, Path extends List<Key>, I extends Iteration = IterationOf<'0'>>
 Remove out of `O` the fields at `Path`
 @param O to remove from
 @param Path to be followed
-@param list (?=`0`) `1` to work within object lists
+@param list (?=`0`) `1` to work within object lists of arbitrary depth
 @returns [[Object]]
 @example
 ```ts

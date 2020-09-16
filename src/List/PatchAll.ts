@@ -2,6 +2,7 @@ import {PatchAll as OPatchAll} from '../Object/PatchAll'
 import {List} from '../List/List'
 import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
+import {Cast} from '../Any/Cast'
 
 /**
 [[Patch]] a list of [[List]]s into `L`. Patches from left to right, first
@@ -17,4 +18,4 @@ items get completed by the next ones (last-in completes).
 ```
 */
 export type PatchAll<O extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
-    OPatchAll<O, Ls, depth, ignore, fill>
+    Cast<OPatchAll<O, Ls, depth, ignore, fill>, List>

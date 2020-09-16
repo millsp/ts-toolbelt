@@ -2,6 +2,7 @@ import {Patch as OPatch} from '../Object/Patch'
 import {List} from './List'
 import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
+import {Cast} from '../Any/Cast'
 
 /**
 Complete the fields of `L` with the ones of `L1`. This is a version of
@@ -21,4 +22,4 @@ with the ones of `O1` if they don't exist.
 ```
 */
 export type Patch<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
-    OPatch<L, L1, depth, ignore, fill>
+    Cast<OPatch<L, L1, depth, ignore, fill>, List>

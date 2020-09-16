@@ -9,6 +9,8 @@ Remove the first item out of a [[List]]
 ```
 */
 export type Tail<L extends List> =
-    L extends readonly [any, ...infer LTail]
-    ? LTail
-    : L
+    L extends readonly []
+    ? L
+    : L extends readonly [any?, ...infer LTail]
+      ? LTail
+      : L

@@ -3,6 +3,7 @@ import {List} from './List'
 import {Update as OUpdate} from '../Object/Update'
 import {Depth} from '../Object/_Internal'
 import {NumberOf} from '../Any/_Internal'
+import {Cast} from '../Any/Cast'
 
 /**
 Update in `L` the entries of key `K` with `A`.
@@ -16,4 +17,4 @@ Use the [[x]] placeholder to get the current field type.
 ```
 */
 export type Update<L extends List, K extends Key, A extends any, depth extends Depth = 'flat'> =
-    OUpdate<L, NumberOf<K>, A, depth>
+    Cast<OUpdate<L, NumberOf<K>, A, depth>, List>

@@ -1,6 +1,7 @@
 import {Depth} from '../Object/_Internal'
 import {ReadonlyPart} from '../Object/Readonly'
 import {List} from './List'
+import {Cast} from '../Any/Cast'
 
 /**
 Make `L` readonly (deeply or not)
@@ -12,4 +13,4 @@ Make `L` readonly (deeply or not)
 ```
 */
 export type Readonly<L extends List, depth extends Depth = 'flat'> =
-    ReadonlyPart<L, depth>
+    Cast<ReadonlyPart<L, depth>, List>
