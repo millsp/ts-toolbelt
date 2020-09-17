@@ -110,12 +110,12 @@ import {F} from 'ts-toolbelt'
 declare function curry<Fn extends F.Function>(fn: Fn): F.Curry<Fn>
 ```
 */
-export type Curry<F extends Function, GP extends List = Gaps<Parameters<F>>> =
+export type Curry<F extends Function> =
     <
-        P extends GP,
+        P extends Gaps<Parameters<F>>,
         G extends List = GapsOf<P, Parameters<F>>,
         R extends any = Return<F>
-    >(...p: GP | Cast<P, GP>) =>
+    >(...p: Gaps<Parameters<F>> | P) =>
         // allows for handling of optional parameters
         RequiredKeys<G> extends never ? R : G['length'] extends 1
         // it means that it can continue being curried & can be called as terminating function
