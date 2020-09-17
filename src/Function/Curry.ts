@@ -116,9 +116,7 @@ export type Curry<F extends Function> =
         G extends List = GapsOf<P, Parameters<F>>,
         R extends any = Return<F>
     >(...p: Gaps<Parameters<F>> | P) =>
-        // allows for handling of optional parameters
-        RequiredKeys<G> extends never ? R : G['length'] extends 1
-        // it means that it can continue being curried & can be called as terminating function
-        // so it allows to continue currying (useless) & call the function (the last parameter)
-        ? Curry<(...p: G) => R> & ((...p: G) => R)
+        // handles optional parameters
+        RequiredKeys<G> extends never
+        ? R
         : Curry<(...p: G) => R>
