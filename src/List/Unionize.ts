@@ -1,8 +1,6 @@
 import {Key} from '../Any/Key'
 import {List} from './List'
 import {At} from '../Object/At'
-import {Format} from '../String/Format'
-import {NumberOf} from '../Any/_Internal'
 import {Cast} from '../Any/Cast'
 
 /**

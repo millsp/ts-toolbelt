@@ -16,7 +16,6 @@ import {Tail} from '../List/Tail'
 import {RequiredKeys} from '../List/RequiredKeys'
 
 /**
- *
  * @hidden
  */
 type _SplitParams<P extends List, PSplit extends List[] = [], PRest extends List = Tail<P>> = {
