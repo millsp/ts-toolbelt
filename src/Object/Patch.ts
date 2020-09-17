@@ -87,7 +87,7 @@ type PatchDeepList<L extends List, L1 extends List, ignore extends object, fill>
 */
 type PatchDeepObject<O extends object, O1 extends object, ignore extends object, fill, OKeys extends Key = keyof O> = {
     [K in keyof (O & _Omit<O1, OKeys>)]: PatchDeepChoice<AtBasic<O, K>, AtBasic<O1, K>, ignore, fill, OKeys, K>
-  } & {}
+} & {}
 
 /**
 @hidden
