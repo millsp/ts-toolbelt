@@ -1,8 +1,8 @@
-import {_Pick} from './Pick'
+import {Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {PatchFlat} from './Patch'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {Equals} from '../Any/Equals'
 
 /**
 @hidden
@@ -15,9 +15,7 @@ export type OptionalFlat<O> = {
 @hidden
 */
 export type OptionalDeep<O> = {
-    [K in keyof O]?: O[K] extends BuiltInObject
-                     ? O[K]
-                     : OptionalDeep<O[K]>
+    [K in keyof O]?: OptionalDeep<O[K]>
 }
 
 /**
@@ -29,12 +27,6 @@ export type OptionalPart<O extends object, depth extends Depth> = {
 }[depth]
 
 /**
- * @hidden
- */
-export type _Optional<O extends object, K extends Key, depth extends Depth> =
-    PatchFlat<OptionalPart<_Pick<O, K>, depth>, O>
-
-/**
 Make some fields of `O` optional (deeply or not)
 @param O to make optional
 @param K (?=`Key`) to choose fields
@@ -44,7 +36,7 @@ Make some fields of `O` optional (deeply or not)
 ```ts
 ```
 */
-export type Optional<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
-    O extends unknown
-    ? _Optional<O, K, depth>
-    : never
+export type Optional<O extends object, K extends Key = Key, depth extends Depth = 'flat'> = {
+    1: OptionalPart<O, depth>
+    0: PatchFlat<OptionalPart<Pick<O, K>, depth>, O>
+}[Equals<Key, K>]

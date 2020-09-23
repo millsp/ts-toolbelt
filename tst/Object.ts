@@ -1,5 +1,6 @@
 import {Test, O, A, T, U, M} from '../src/ts-toolbelt'
 import {Key} from '../src/Any/Key'
+import {OptionalDeep} from '../src/Object/Optional'
 
 const {checks, check} = Test
 
@@ -728,11 +729,11 @@ checks([
     check<O.Path<O.NonNullable<O, 'g', 'deep'>, ['g', 'g']>,    O.NonNullable<O, keyof O, 'deep'>,  Test.Pass>(),
 ])
 
-function NONNULLABLE_GENERIC<O extends {n: number | undefined}>(o: O) {
+function NONNULLABLE_GENERIC<O extends {n: number[] | undefined}>(o: O) {
     const v0 = o as O.NonNullable<O, Key, 'flat'>
     const v1 = o as O.NonNullable<O, Key, 'deep'>
-    const p0: number = v0.n
-    const p1: number = v1.n
+    const p0: number[] = v0.n
+    const p1: number[] = v1.n
 }
 
 // ---------------------------------------------------------------------------------------
@@ -779,11 +780,11 @@ checks([
     check<O.Path<O.Nullable<O, 'g', 'deep'>, ['g', 'g']>,   O.Nullable<O, keyof O, 'deep'> | undefined | null,  Test.Pass>(),
 ])
 
-function NULLABLE_GENERIC<O extends {n: number}>(o: O) {
+function NULLABLE_GENERIC<O extends {n: number[]}>(o: O) {
     const v0 = o as O.Nullable<O, Key, 'flat'>
     const v1 = o as O.Nullable<O, Key, 'deep'>
-    const p0: number | undefined | null = v0.n
-    const p1: number | undefined | null = v1.n
+    const p0: number[] | undefined | null = v0.n
+    const p1: (number | undefined | null)[] | null | undefined = v1.n
 }
 
 // ---------------------------------------------------------------------------------------
@@ -855,10 +856,14 @@ checks([
 ])
 
 function OPTIONAL_GENERIC<O extends {values: number[]}>(o: O) {
-    const v0 = o as O.Optional<O, Key, 'flat'>
-    const v1 = o as O.Optional<O, Key, 'deep'>
+    let v0 = o as O.Optional<O, Key, 'flat'>
+    let v1 = o as O.Optional<O, Key, 'deep'>
+
     const p0: number[] | undefined = v0.values
-    const p1: (number | undefined)[] | undefined = v1.values
+    const p1: OptionalDeep<O['values']> | undefined = v1.values
+
+    v0 = {}
+    v1 = {}
 }
 
 // ---------------------------------------------------------------------------------------
@@ -1100,11 +1105,11 @@ checks([
     check<O.Path<O.Readonly<O, 'g', 'deep'>, ['g', 'g']>,   O.Readonly<O, keyof O, 'deep'>, Test.Pass>(),
 ])
 
-function READONLY_GENERIC<O extends {n?: number}>(o: O) {
+function READONLY_GENERIC<O extends {n?: number[]}>(o: O) {
     const v0 = o as O.Readonly<O, Key, 'flat'>
     const v1 = o as O.Readonly<O, Key, 'deep'>
-    const p0: number | undefined = v0.n
-    const p1: number | undefined = v1.n
+    const p0: number[] | undefined = v0.n
+    const p1: readonly number[] | undefined = v1.n
 
     // @ts-expect-error
     v0.n = 1
@@ -1211,11 +1216,11 @@ checks([
     check<O.Path<O.Required<O, 'g', 'deep'>, ['g', 'g']>,   O.Required<O, keyof O, 'deep'>, Test.Pass>(),
 ])
 
-function REQUIRED_GENERIC<O extends {n?: number}>(o: O) {
+function REQUIRED_GENERIC<O extends {n?: number[]}>(o: O) {
     const v0 = o as O.Required<O, Key, 'flat'>
     const v1 = o as O.Required<O, Key, 'deep'>
-    const p0: number = v0.n
-    const p1: number = v1.n
+    const p0: number[] = v0.n
+    const p1: number[] = v1.n
 }
 
 // ---------------------------------------------------------------------------------------
