@@ -7,14 +7,23 @@ import {NumberOf} from '../Any/_Internal'
 import {Keys} from './Keys'
 
 /**
-Make that at least one of the keys `K` are required in `L` at a time.
-@param L to make required
-@param K (?=`keyof L`) to choose fields
-@returns [[List]] [[Union]]
-@example
-```ts
-```
-*/
+ * Make that at least one of the keys `K` are required in `L` at a time.
+ * @param L to make required
+ * @param K (?=`keyof L`) to choose fields
+ * @returns [[List]] [[Union]]
+ * @example
+ * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.AtLeast<[1, 2, 3], 0> // [1, 2 | undefined, 3 | undefined]
+ * type test1 = L.AtLeast<[1, 2, 3], 0 | 1> // [1, 2 | undefined, 3 | undefined] | [1 | undefined, 2, 3 | undefined]
+ * type test2 = L.AtLeast<[1, 2, 3]>
+ * // | [1, 2, 3]
+ * // | [1, 2 | undefined, 3 | undefined]
+ * // | [1 | undefined, 2, 3 | undefined]
+ * // | [1 | undefined, 2 | undefined, 3]
+ * ```
+ */
 export type AtLeast<L extends List, K extends Key = Keys<L>> =
     OAtLeast<ObjectOf<L>, NumberOf<K>> extends infer U
     ? U extends unknown // we distribute over the union
