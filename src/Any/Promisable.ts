@@ -6,6 +6,16 @@ import {Promise} from '../Any/Promise'
  * @param A Any type
  * @returns `A | Promise<A>`
  * @example
+ * ```ts
+ * import {A} from 'ts-toolbelt'
+ *
+ * declare function generateRandomNumber(): A.Promisable<number>
+ *
+ * const res0 = await generateRandomNumber()
+ * const res1 = await generateRandomNumber()
+ *
+ * console.log(res0 < res1)
+ * ```
  */
 export type Promisable<A extends any> =
     A | Promise<A>

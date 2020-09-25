@@ -19,6 +19,13 @@ type _Kind<A extends any> =
  * @returns `'string' | 'number' | 'function' | 'array' | 'object' | 'boolean' | 'unknown'`
  * @example
  * ```ts
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Kind<'hello'> // 'string'
+ * type test1 = A.Kind<42> // 'number'
+ * type test2 = A.Kind<[1, 2, 3]> // 'array'
+ * type test3 = A.Kind<{a: string}> // 'object'
+ * type test4 = A.Kind<() => {}> // 'function'
  * ```
  */
 export type Kind<A extends any> =

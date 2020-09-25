@@ -25,6 +25,12 @@ type ArrayProps = keyof any[] | ArrayEntry     // so this matches any entry, whe
  * @returns [[Object]]
  * @example
  * ```ts
+ * import {A} from 'ts-toolbelt'
+ *
+ * type test0 = A.Compute<{a: string} & number[]> // {[x: number]: number, a: string, length: number, toString...}
+ * type test1 = A.Compute<{a: string} & [1, 2]> // {[x: number]: 2 | 1, a: string, 0: 1, 1: 2, length: 2, toString...}
+ * type test2 = A.Clean<test0> // {a: string} & number[]
+ * type test3 = A.Clean<test1> // {a: string} & [1, 2]
  * ```
  */
 export type Clean<A extends any> =
