@@ -41,7 +41,7 @@ type LibStyle<Merged, O, O1, style extends MergeStyle> = {
 */
 type MergeProp<OK, O1K, K extends Key, OOK extends Key, style extends MergeStyle> =
     K extends OOK                            // if prop of `O` is optional
-    ? NonNullable<OK> | O1K                  // merge it with prop of `O1`
+    ? Exclude<OK, undefined> | O1K           // merge it with prop of `O1`
     : [OK] extends [never]                   // if it does not exist
       ? O1K                                  // complete with prop of `O1`
       : {
