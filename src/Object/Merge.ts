@@ -1,13 +1,12 @@
 import {AtBasic} from './At'
 import {_OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
-import {_ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth, Anyfy} from './_Internal'
-import {NonNullable} from '../Union/NonNullable'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 import {Length} from '../List/Length'
 import {RequiredKeys} from '../List/RequiredKeys'
+import {Exclude} from '../Union/Exclude'
 
 /**
  * @hidden
@@ -22,7 +21,7 @@ type Longer<L extends List, L1 extends List> =
 */
 type MergeProp<OK, O1K, fill, OOKeys extends Key, K extends Key> =
   K extends OOKeys                // if prop of `O` is optional
-  ? NonNullable<OK> | O1K         // merge it with prop of `O1`
+  ? Exclude<OK, undefined> | O1K  // merge it with prop of `O1`
   : [OK] extends [never]          // if it does not exist
     ? O1K                         // complete with prop of `O1`
     : OK extends fill ? O1K : OK  // fill/replace if required
@@ -131,7 +130,7 @@ equivalent to the spread operator in JavaScript. [[Union]]s and [[Optional]]
 fields will be handled gracefully.
 
 (⚠️ needs `--strictNullChecks` enabled)
-@param O to compfille
+@param O to complete
 @param O1 to copy from
 @param depth (?=`'flat'`) to do it deeply
 @param style (?=`1`) 0 = lodash, 1 = ramda
@@ -178,3 +177,10 @@ export type Merge<O extends object, O1 extends object, depth extends Depth = 'fl
   'flat': MergeFlat<O, O1, ignore, fill>
   'deep': MergeDeep<O, O1, ignore, fill>
 }[depth]
+
+
+type Merged = Merge<{
+  optionalNull: undefined | null;
+}, {
+  optionalNull: string;
+}, 'deep', null &{}, undefined>;
