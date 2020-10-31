@@ -177,10 +177,3 @@ export type Merge<O extends object, O1 extends object, depth extends Depth = 'fl
   'flat': MergeFlat<O, O1, ignore, fill>
   'deep': MergeDeep<O, O1, ignore, fill>
 }[depth]
-
-
-type Merged = Merge<{
-  optionalNull: undefined | null;
-}, {
-  optionalNull: string;
-}, 'deep', null &{}, undefined>;

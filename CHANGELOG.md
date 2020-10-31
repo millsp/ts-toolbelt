@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.7](https://github.com/millsp/ts-toolbelt/compare/v8.0.1...v8.0.7) (2020-10-06)
+
+
+### Bug Fixes
+
+* **a.type:** use symbol ([c3a9584](https://github.com/millsp/ts-toolbelt/commit/c3a9584687c9425a33ab5da555e22bf158e4ee29))
+* **display:** compute, merge, patch ([cdac364](https://github.com/millsp/ts-toolbelt/commit/cdac364b8493f93be44e48f0d7b8017e662b8c68))
+* **legacy:** remove all legacy ([be38142](https://github.com/millsp/ts-toolbelt/commit/be381423a520c890edcd78b894184d8f7dc52eab))
+* **merge:** no swallow null ([86b82c4](https://github.com/millsp/ts-toolbelt/commit/86b82c475e75eabf21ca668125d34bac75d7c60e))
+* **merge, patch:** rename param ([d62494d](https://github.com/millsp/ts-toolbelt/commit/d62494dc9eeb2cc0a036666deae544a039afafa9))
+* **release:** skip tags ([dbe5447](https://github.com/millsp/ts-toolbelt/commit/dbe5447fb5b77e9a6c03554f3a8d3c0302ba0cc1))
+
+
+### Others
+
+* **patch:** make tests comply ([1f663cb](https://github.com/millsp/ts-toolbelt/commit/1f663cbe4b4a9e7a0ae89c05f824335f2a0857fd))
+* **release:** 8.0.2 ([03aa8c6](https://github.com/millsp/ts-toolbelt/commit/03aa8c6d1805c174305532c8b9c265f6e6bfe97b))
+* **release:** 8.0.3 ([3d4544e](https://github.com/millsp/ts-toolbelt/commit/3d4544e1e66fed530e1443d7b67be616c2f26440))
+* **release:** 8.0.4 ([18fc031](https://github.com/millsp/ts-toolbelt/commit/18fc0312a6fc5cd7efd1d7d86712c75d48490e2f))
+* **release:** 8.0.5 ([3859d18](https://github.com/millsp/ts-toolbelt/commit/3859d1819021800b96ed815abf5c300eb7b8f926))
+* **release:** 8.0.6 ([94ae2f1](https://github.com/millsp/ts-toolbelt/commit/94ae2f12be155e8d9efc7328116016384910b271))
+* cleanup ([c7b2d98](https://github.com/millsp/ts-toolbelt/commit/c7b2d98bf823526eaeedd6aa60411a85ab2a2a4b))
+* cleanup ([8915a03](https://github.com/millsp/ts-toolbelt/commit/8915a03251e275d06117eb93833dd86adeec50ba))
+* cleanup ([50d6927](https://github.com/millsp/ts-toolbelt/commit/50d692791570f1dd2dc069a73b42c6e0d3c690e2))
+* disable dt tests ([fd1fa49](https://github.com/millsp/ts-toolbelt/commit/fd1fa49c76abec9c8a23f37574c8074b30222382))
+
 ### [8.0.6](https://github.com/millsp/ts-toolbelt/compare/v8.0.1...v8.0.6) (2020-09-14)
 
 
