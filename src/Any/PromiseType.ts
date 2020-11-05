@@ -8,8 +8,8 @@ import {C} from 'ts-toolbelt'
 
 const promise = new Promise<string>((res, rej) => res('x'))
 
-type test0 = C.PromiseOf<typeof promise>  // string
-type test1 = C.PromiseOf<Promise<number>> // number
+type test0 = C.PromiseType<typeof promise>  // string
+type test1 = C.PromiseType<Promise<number>> // number
 ```
 */
 export type PromiseType<P extends any> =
