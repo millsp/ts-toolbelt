@@ -1490,12 +1490,12 @@ checks([
 
 type Simple = {name: string, age: number}
 type NotSoSimple = {name: string, age: number, money: number, catName: string}
-type Complexe = {name: string, age: number, money: number, cat: { name: string, age: number}}
+type Complex = {name: string, age: number, money: number, cat: { name: string, age: number}}
 
 checks([
     check<O.Members<Simple>,      [string, number],                                      Test.Pass>(),
     check<O.Members<NotSoSimple>, [string, number, number, string],                      Test.Pass>(),
-    check<O.Members<Complexe>,    [string, number, number, {name: string, age: number}], Test.Pass>(),
+    check<O.Members<Complex>,    [string, number, number, {name: string, age: number}], Test.Pass>(),
 ])
 
 
