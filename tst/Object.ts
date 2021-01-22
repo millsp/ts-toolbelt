@@ -1485,6 +1485,20 @@ checks([
     check<O.WritableKeys<O>,    'a' | 'b' | 'c' | 'd' | 'g' | 'h' | 'j' | 'k' | 'x',    Test.Pass>(),
 ])
 
+// ---------------------------------------------------------------------------------------
+// MEMBERS
+
+type Simple = {name: string, age: number}
+type NotSoSimple = {name: string, age: number, money: number, catName: string}
+type Complexe = {name: string, age: number, money: number, cat: { name: string, age: number}}
+
+checks([
+    check<O.Members<Simple>,      [string, number],                                      Test.Pass>(),
+    check<O.Members<NotSoSimple>, [string, number, number, string],                      Test.Pass>(),
+    check<O.Members<Complexe>,    [string, number, number, {name: string, age: number}], Test.Pass>(),
+])
+
+
 // ///////////////////////////////////////////////////////////////////////////////////////
 // OBJECT.P //////////////////////////////////////////////////////////////////////////////
 

@@ -5,7 +5,7 @@ import {Readonly} from '../List/Readonly'
 /**
 @hidden
 */
-type _Members<T, K extends Readonly<Array<unknown>>> = 
+type _Members<T, K extends Readonly<Array<unknown>>> =
   ((...args: K) => unknown) extends ((head: infer Head, ...tail: infer Tail) => unknown)
   ? Head extends keyof T
     ? [T[Head], _Members<T, Tail>]
@@ -34,7 +34,6 @@ interface OtherPerson {
 }
 
 type OtherPersonMembers = Members<OtherPerson> // [string, number, number, string]
-
 
 interface CatPerson {
   name: string
