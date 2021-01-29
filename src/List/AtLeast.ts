@@ -12,6 +12,15 @@ import {Keys} from './Keys'
  * @returns [[List]] [[Union]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.AtLeast<[1, 2, 3], 0> // [1, 2 | undefined, 3 | undefined]
+ * type test1 = L.AtLeast<[1, 2, 3], 0 | 1> // [1, 2 | undefined, 3 | undefined] | [1 | undefined, 2, 3 | undefined]
+ * type test2 = L.AtLeast<[1, 2, 3]>
+ * // | [1, 2, 3]
+ * // | [1, 2 | undefined, 3 | undefined]
+ * // | [1 | undefined, 2, 3 | undefined]
+ * // | [1 | undefined, 2 | undefined, 3]
  * ```
  */
 export type AtLeast<L extends List, K extends Key = Keys<L>> =

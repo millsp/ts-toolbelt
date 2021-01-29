@@ -10,6 +10,9 @@ import {List} from './List'
  * @returns [[Key]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.CompulsoryKeys<[1, 2, 3]> // {0: 1, 1: 2, 2: 3}
  * ```
  */
 export type CompulsoryKeys<L extends List> =

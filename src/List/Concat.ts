@@ -7,6 +7,12 @@ import {List} from './List'
  * @returns [[List]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.Concat<[1, 2], [3, 4]> // [1, 2, 3, 4]
+ * type test1 = L.Concat<[1, 2], [[3], 4]> // [1, 2, [3], 4]
+ * type test2 = L.Concat<[1, 2], number[]> // [1, 2, ...number[]]
+ * type test3 = L.Concat<readonly [1, 2], readonly [3]> // [1, 2, 3]
  * ```
  */
 export type Concat<L extends List, L1 extends List> =

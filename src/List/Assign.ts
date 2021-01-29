@@ -15,6 +15,11 @@ import {Cast} from '../Any/Cast'
  * @returns [[Object]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = Assign<[1, 2, 3], [[2, 1]]> // [2, 1, 3]
+ * type test1 = Assign<[], [[1, 2, 3, 4], [2, 4, 6]]> // [2, 4, 6, 4]
+ * type test2 = Assign<[0, 0, 0, 0, 0], [[0, 1], [0, 2, 0, 4?]]> // [0, 2, 0, 0 | 4, 0]
  * ```
  */
 export type Assign<L extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
