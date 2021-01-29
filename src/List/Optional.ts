@@ -6,7 +6,7 @@ import {List} from './List'
 /**
  * Make `L` optional (deeply or not)
  * @param L to make optional
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @returns [[List]]
  * @example
  * ```ts

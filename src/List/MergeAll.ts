@@ -9,7 +9,7 @@ import {Cast} from '../Any/Cast'
  * items get completed by the next ones (last-in completes).
  * @param L to start with
  * @param Ls to merge
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @param ignore (?=`BuiltinObject`) types not to merge
  * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
  * @returns [[List]]

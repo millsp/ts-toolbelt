@@ -31,7 +31,7 @@ export type _Assign<O extends object, Os extends List<object>, depth extends Dep
  * left, first items get overridden by the next ones (last-in overrides).
  * @param O to assign to
  * @param Os to assign
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @param style (?=`1`) 0 = lodash, 1 = ramda
  * @param ignore (?=`BuiltinObject`) types not to merge
  * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`

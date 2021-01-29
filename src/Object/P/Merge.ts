@@ -44,7 +44,7 @@ type MergeList<O, Path extends List<Key>, O1 extends object, depth extends Depth
  * @param O to complete
  * @param Path to be followed
  * @param O1 to copy from
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @param list (?=`0`) `1` to work within object lists of arbitrary depth
  * @returns [[Object]]
  * @example

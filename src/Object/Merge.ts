@@ -132,7 +132,7 @@ export type MergeDeep<O extends object, O1 extends object, ignore extends object
  * (⚠️ needs `--strictNullChecks` enabled)
  * @param O to complete
  * @param O1 to copy from
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @param style (?=`1`) 0 = lodash, 1 = ramda
  * @param ignore (?=`BuiltinObject`) types not to merge
  * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`

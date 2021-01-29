@@ -9,7 +9,7 @@ import {Cast} from '../Any/Cast'
  * right, first items get overridden by the next ones (last-in overrides).
  * @param L to assign to
  * @param Ls to assign
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @param ignore (?=`BuiltinObject`) types not to merge
  * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
  * @returns [[Object]]

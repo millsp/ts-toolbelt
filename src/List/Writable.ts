@@ -6,7 +6,7 @@ import {Cast} from '../Any/Cast'
 /**
  * Make `L` writable (deeply or not)
  * @param L to make writable
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @returns [[List]]
  * @example
  * ```ts

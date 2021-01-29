@@ -40,7 +40,7 @@ export type _NonNullable<O extends object, K extends Key, depth extends Depth> =
  * (Optional fields will be left untouched & `undefined`)
  * @param O to make non nullable
  * @param K (?=`Key`) to choose fields
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @returns [[Object]]
  * @example
  * ```ts

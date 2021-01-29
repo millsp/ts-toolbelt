@@ -12,7 +12,7 @@ import {Cast} from '../Any/Cast'
  * (⚠️ needs `--strictNullChecks` enabled)
  * @param L to complete
  * @param L1 to copy from
- * @param depth (?=`'flat'`) to do it deeply
+ * @param depth (?=`'flat'`) 'deep' to do it deeply
  * @param ignore (?=`BuiltinObject`) types not to merge
  * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
  * @returns [[List]]
