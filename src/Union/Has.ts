@@ -1,6 +1,4 @@
 import {Union} from './Union'
-import {Not} from '../Boolean/Not'
-import {Extends} from '../Any/Extends'
 
 /**
  * Check whether `U` contains `U1`
@@ -12,4 +10,6 @@ import {Extends} from '../Any/Extends'
  * ```
  */
 export type Has<U extends Union, U1 extends Union> =
-    Not<Extends<Exclude<U1, U>, U1>>
+    [U1] extends [U]
+    ? 1
+    : 0
