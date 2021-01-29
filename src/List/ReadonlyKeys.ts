@@ -3,12 +3,12 @@ import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
 /**
-Get the keys of `L` that are readonly
-@param L
-@returns [[Key]]
-@example
-```ts
-```
-*/
+ * Get the keys of `L` that are readonly
+ * @param L
+ * @returns [[Key]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type ReadonlyKeys<L extends List> =
     OReadonlyKeys<ObjectOf<L>>

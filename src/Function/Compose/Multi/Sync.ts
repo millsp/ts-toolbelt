@@ -4,7 +4,7 @@
 import {Function} from '../../Function'
 
 /**
-@hidden
+ *@hidden
  */
 export type ComposeMultiSync = {
     <

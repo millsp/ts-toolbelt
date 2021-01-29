@@ -20,10 +20,12 @@
  */
 export type Extends<A1 extends any, A2 extends any> =
     [A1] extends [never]
-    ? 0 // anything `never` is false
+    ? 0
     : A1 extends A2
       ? 1
       : 0
 
-// Comes from the fact that `never` is a fall-through type that we want to
-// narrow down to `0`. So it means that `Extends<never, any>` is false
+/*
+ * Comes from the fact that `never` is a fall-through type that we want to
+ * narrow down to `0`. So it means that `Extends<never, never>` is false
+ */

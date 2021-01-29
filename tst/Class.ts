@@ -19,12 +19,12 @@ class TestClass {
 // INSTANCEOF
 
 checks([
-    check<C.InstanceOf<typeof TestClass>,   TestClass,          Test.Pass>(TestClass),
+    check<C.Instance<typeof TestClass>, TestClass, Test.Pass>(TestClass),
 ])
 
 // ---------------------------------------------------------------------------------------
 // PARAMETERS
 
 checks([
-    check<C.Parameters<typeof TestClass>,   [string, number],   Test.Pass>(),
+    check<C.Parameters<typeof TestClass>, [string, number], Test.Pass>(),
 ])

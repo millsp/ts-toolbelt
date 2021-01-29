@@ -10,24 +10,24 @@ import {Extends} from '../Any/Extends'
 import {At} from './At'
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type PickIfEntry<O extends object, LN extends List, I extends Iteration> =
     Key<I> extends keyof O
     ? Append<LN, O[Key<I> & keyof O]>
     : LN
 
 /**
-@hidden
-*/
-type ___ListOf<O extends object, K, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+ * @hidden
+ */
+type ___ListOf<O extends object, K, LN extends List = [], I extends Iteration = IterationOf<0>> = {
     0: ___ListOf<O, Exclude<K, Key<I>>, PickIfEntry<O, LN, I>, Next<I>>
     1: LN
 }[Extends<[K], [never]>]
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type __ListOf<O extends object> =
     number extends keyof O
     ? At<O, number>[]
@@ -38,22 +38,22 @@ type __ListOf<O extends object> =
         : ___ListOf<O, keyof O>
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type _ListOf<O extends object> =
     __ListOf<O> extends infer X
     ? Cast<X, List>
     : never
 
 /**
-Transform an [[Object]] into a [[List]]
-(It will only pick numeric literal indexes)
-@param O to transform
-@returns [[List]]
-@example
-```ts
-```
-*/
+ * Transform an [[Object]] into a [[List]]
+ * (It will only pick numeric literal indexes)
+ * @param O to transform
+ * @returns [[List]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type ListOf<O extends object> =
     O extends unknown
     ? _ListOf<O>

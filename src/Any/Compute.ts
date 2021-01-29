@@ -24,12 +24,14 @@ export type ComputeFlat<A extends any> =
 /**
  * @hidden
  */
-export type ComputeDeep<A extends any> =
-    A extends BuiltInObject
-    ? A
-    : {
-        [K in keyof A]: ComputeDeep<A[K]>
-      } & {}
+export type ComputeDeep<A extends any, Seen = never> =
+    A extends object
+    ? A extends BuiltInObject | Seen
+      ? A
+      : {
+            [K in keyof A]: ComputeDeep<A[K], A | Seen>
+        } & {}
+    : A
 
 /**
  * Force TS to load a type that has not been computed (to resolve composed

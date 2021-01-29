@@ -6,15 +6,15 @@ import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type NonNullableFlat<O> = {
     [K in keyof O]: UNonNullable<O[K]>
 } & {}
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type NonNullableDeep<O> = {
     [K in keyof O]: O[K] extends BuiltInObject
                     ? O[K]
@@ -22,8 +22,8 @@ export type NonNullableDeep<O> = {
 }
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type NonNullablePart<O extends object, depth extends Depth> = {
     'flat': NonNullableFlat<O>,
     'deep': NonNullableDeep<O>,
@@ -36,16 +36,16 @@ export type _NonNullable<O extends object, K extends Key, depth extends Depth> =
     PatchFlat<NonNullablePart<_Pick<O, K>, depth>, O>
 
 /**
-Make some fields of `O` not nullable (deeply or not)
-(Optional fields will be left untouched & `undefined`)
-@param O to make non nullable
-@param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
-@returns [[Object]]
-@example
-```ts
-```
-*/
+ * Make some fields of `O` not nullable (deeply or not)
+ * (Optional fields will be left untouched & `undefined`)
+ * @param O to make non nullable
+ * @param K (?=`Key`) to choose fields
+ * @param depth (?=`'flat'`) to do it deeply
+ * @returns [[Object]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type NonNullable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
     O extends unknown
     ? _NonNullable<O, K, depth>

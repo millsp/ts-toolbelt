@@ -91,5 +91,6 @@
         "quotes"                       : ["error", "single"],
         "semi"                         : ["error", "never"],
         "no-trailing-spaces"           : ["error"]
+        // "multiline-comment-style"      : ["error", "starred-block"]
     }
 }

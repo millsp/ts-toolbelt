@@ -9,14 +9,14 @@ const {checks, check} = Test
 // DIFF
 
 checks([
-    check<U.Diff<1 | 2, 1 | 3>,     2 | 3,    Test.Pass>(),
+    check<U.Diff<1 | 2, 1 | 3>, 2 | 3, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // EXCLUDE
 
 checks([
-    check<U.Exclude<1 | 2 | 3, 3>, 1| 2,    Test.Pass>(),
+    check<U.Exclude<1 | 2 | 3, 3>, 1| 2, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -28,45 +28,45 @@ checks([
 // HAS
 
 checks([
-    check<U.Has<1 | 2 | 3, string>,     0,      Test.Pass>(),
-    check<U.Has<1 | 2 | 3, 1>,          1,      Test.Pass>(),
+    check<U.Has<1 | 2 | 3, string>, 0, Test.Pass>(),
+    check<U.Has<1 | 2 | 3, 1>, 1, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // INTERSECT
 
 checks([
-    check<U.Intersect<1 | 2, 3 | 2 | 1>,    2 | 1,  Test.Pass>(),
+    check<U.Intersect<1 | 2, 3 | 2 | 1>, 2 | 1, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // INTERSECTOF
 
 checks([
-    check<U.IntersectOf<1 | 2 | 3>,     1 & 2 & 3,  Test.Pass>(),
+    check<U.IntersectOf<1 | 2 | 3>, 1 & 2 & 3, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // KEYS
 
 checks([
-    check<U.Keys<{a: 0} | {b: 0}>,      'a' | 'b',  Test.Pass>(),
-    check<(keyof ({a: 0} | {b: 0})),    'a' & 'b',  Test.Pass>(),
+    check<U.Keys<{a: 0} | {b: 0}>, 'a' | 'b', Test.Pass>(),
+    check<(keyof ({a: 0} | {b: 0})), 'a' & 'b', Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // LAST
 
 checks([
-    // check<U.Last<1 | 2 | 3>,    3,  Test.Pass>(), // order not guaranteed
-    // check<U.Last<3 | 2 | 0>,    0,  Test.Pass>(), // order not guaranteed
+    // check<U.Last<1 | 2 | 3>, 3, Test.Pass>(), // order not guaranteed
+    // check<U.Last<3 | 2 | 0>, 0, Test.Pass>(), // order not guaranteed
 ])
 
 // ---------------------------------------------------------------------------------------
 // LISTOF
 
 checks([
-    // check<U.ListOf<1 | 2 | 3>,     [1, 2, 3],    Test.Pass>(), // order not guaranteed
+    // check<U.ListOf<1 | 2 | 3>, [1, 2, 3], Test.Pass>(), // order not guaranteed
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -74,58 +74,58 @@ checks([
 
 type U_MERGE = {a: string, e: 22} | {b?: number, c: 42} | {b?: string, c?: 48, d: 21, e: 23}
 type MERGE_U = {
-    a: string
-    b?: string | number
-    c: 42 | 48
-    d: 21
-    e: 22 | 23
+ a: string
+ b?: string | number
+ c: 42 | 48
+ d: 21
+ e: 22 | 23
 }
 
 checks([
-    check<U.Merge<U_MERGE>,     MERGE_U,    Test.Pass>(),
+    check<U.Merge<U_MERGE>, MERGE_U, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // NONNULLABLE
 
 checks([
-    check<U.NonNullable<1 | 2 | undefined>,     1 | 2,      Test.Pass>(),
+    check<U.NonNullable<1 | 2 | undefined>, 1 | 2, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // NULLABLE
 
 checks([
-    check<U.Nullable<1 | 2>,    1 | 2 | undefined | null,   Test.Pass>(),
+    check<U.Nullable<1 | 2>, 1 | 2 | undefined | null, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // POP
 
 checks([
-    // check<U.Pop<1 | 2 | 3>,     1 | 2,      Test.Pass>(), // order not guaranteed
-    check<U.Pop<1>,             never,      Test.Pass>(),
+    // check<U.Pop<1 | 2 | 3>, 1 | 2, Test.Pass>(), // order not guaranteed
+    check<U.Pop<1>, never, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // REPLACE
 
 checks([
-    check<U.Replace<1 | 2 | 3, 1 | 2, 'a'>,     'a' | 3,    Test.Pass>(),
+    check<U.Replace<1 | 2 | 3, 1 | 2, 'a'>, 'a' | 3, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // SELECT
 
 checks([
-    check<U.Select<1 | 2 | 'a', number>,    1 | 2,  Test.Pass>(),
+    check<U.Select<1 | 2 | 'a', number>, 1 | 2, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
 // STRICT
 
 checks([
-    check<U.Strict<{a: 0} | {b: 0}>,    {a: 0, b?: never} | {a?: never, b: 0},  Test.Pass>(),
+    check<U.Strict<{a: 0} | {b: 0}>, {a: 0, b?: never} | {a?: never, b: 0}, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

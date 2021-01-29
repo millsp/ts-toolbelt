@@ -1,26 +1,26 @@
 /** @ignore *//** */
 import {Function} from '../../Function'
-import {PromiseType} from '../../../Any/PromiseType'
+import {Await} from '../../../Any/Await'
 
 /**
-@hidden
+ *@hidden
  */
 export type PipeListAsync = {
     <
         R0,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-    ]): Function<P,   Promise<PromiseType<R0>>>
+        Function<P,                 R0>,
+    ]): Function<P,   Promise<Await<R0>>>
 
     <
         R0,
         R1,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-    ]): Function<P,   Promise<PromiseType<R1>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+    ]): Function<P,   Promise<Await<R1>>>
 
     <
         R0,
@@ -28,10 +28,10 @@ export type PipeListAsync = {
         R2,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-    ]): Function<P,   Promise<PromiseType<R2>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+    ]): Function<P,   Promise<Await<R2>>>
 
     <
         R0,
@@ -40,11 +40,11 @@ export type PipeListAsync = {
         R3,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-        Function<[PromiseType<R2>],       R3>,
-    ]): Function<P,   Promise<PromiseType<R3>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+        Function<[Await<R2>],       R3>,
+    ]): Function<P,   Promise<Await<R3>>>
 
     <
         R0,
@@ -54,12 +54,12 @@ export type PipeListAsync = {
         R4,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-        Function<[PromiseType<R2>],       R3>,
-        Function<[PromiseType<R3>],       R4>,
-    ]): Function<P,   Promise<PromiseType<R4>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+        Function<[Await<R2>],       R3>,
+        Function<[Await<R3>],       R4>,
+    ]): Function<P,   Promise<Await<R4>>>
 
     <
         R0,
@@ -70,13 +70,13 @@ export type PipeListAsync = {
         R5,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-        Function<[PromiseType<R2>],       R3>,
-        Function<[PromiseType<R3>],       R4>,
-        Function<[PromiseType<R4>],       R5>,
-    ]): Function<P,   Promise<PromiseType<R5>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+        Function<[Await<R2>],       R3>,
+        Function<[Await<R3>],       R4>,
+        Function<[Await<R4>],       R5>,
+    ]): Function<P,   Promise<Await<R5>>>
 
     <
         R0,
@@ -88,14 +88,14 @@ export type PipeListAsync = {
         R6,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-        Function<[PromiseType<R2>],       R3>,
-        Function<[PromiseType<R3>],       R4>,
-        Function<[PromiseType<R4>],       R5>,
-        Function<[PromiseType<R5>],       R6>,
-    ]): Function<P,   Promise<PromiseType<R6>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+        Function<[Await<R2>],       R3>,
+        Function<[Await<R3>],       R4>,
+        Function<[Await<R4>],       R5>,
+        Function<[Await<R5>],       R6>,
+    ]): Function<P,   Promise<Await<R6>>>
 
     <
         R0,
@@ -108,15 +108,15 @@ export type PipeListAsync = {
         R7,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-        Function<[PromiseType<R2>],       R3>,
-        Function<[PromiseType<R3>],       R4>,
-        Function<[PromiseType<R4>],       R5>,
-        Function<[PromiseType<R5>],       R6>,
-        Function<[PromiseType<R6>],       R7>,
-    ]): Function<P,   Promise<PromiseType<R7>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+        Function<[Await<R2>],       R3>,
+        Function<[Await<R3>],       R4>,
+        Function<[Await<R4>],       R5>,
+        Function<[Await<R5>],       R6>,
+        Function<[Await<R6>],       R7>,
+    ]): Function<P,   Promise<Await<R7>>>
 
     <
         R0,
@@ -130,16 +130,16 @@ export type PipeListAsync = {
         R8,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-        Function<[PromiseType<R2>],       R3>,
-        Function<[PromiseType<R3>],       R4>,
-        Function<[PromiseType<R4>],       R5>,
-        Function<[PromiseType<R5>],       R6>,
-        Function<[PromiseType<R6>],       R7>,
-        Function<[PromiseType<R7>],       R8>,
-    ]): Function<P,   Promise<PromiseType<R8>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+        Function<[Await<R2>],       R3>,
+        Function<[Await<R3>],       R4>,
+        Function<[Await<R4>],       R5>,
+        Function<[Await<R5>],       R6>,
+        Function<[Await<R6>],       R7>,
+        Function<[Await<R7>],       R8>,
+    ]): Function<P,   Promise<Await<R8>>>
 
     <
         R0,
@@ -154,15 +154,15 @@ export type PipeListAsync = {
         R9,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
-        Function<[PromiseType<R0>],       R1>,
-        Function<[PromiseType<R1>],       R2>,
-        Function<[PromiseType<R2>],       R3>,
-        Function<[PromiseType<R3>],       R4>,
-        Function<[PromiseType<R4>],       R5>,
-        Function<[PromiseType<R5>],       R6>,
-        Function<[PromiseType<R6>],       R7>,
-        Function<[PromiseType<R7>],       R8>,
-        Function<[PromiseType<R8>],       R9>,
-    ]): Function<P,   Promise<PromiseType<R9>>>
+        Function<P,                 R0>,
+        Function<[Await<R0>],       R1>,
+        Function<[Await<R1>],       R2>,
+        Function<[Await<R2>],       R3>,
+        Function<[Await<R3>],       R4>,
+        Function<[Await<R4>],       R5>,
+        Function<[Await<R5>],       R6>,
+        Function<[Await<R6>],       R7>,
+        Function<[Await<R7>],       R8>,
+        Function<[Await<R8>],       R9>,
+    ]): Function<P,   Promise<Await<R9>>>
 }

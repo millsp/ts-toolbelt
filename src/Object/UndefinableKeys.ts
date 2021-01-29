@@ -1,6 +1,6 @@
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type _UndefinableKeys<O extends object> = {
     [K in keyof O]-?: [O[K] & (undefined)] extends [never]
                       ? never
@@ -8,14 +8,14 @@ export type _UndefinableKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of `O` that are `undefined`
-(⚠️ needs `--strictNullChecks` enabled)
-@param O
-@returns [[Key]]
-@example
-```ts
-```
-*/
+ * Get the keys of `O` that are `undefined`
+ * (⚠️ needs `--strictNullChecks` enabled)
+ * @param O
+ * @returns [[Key]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type UndefinableKeys<O extends object> =
     O extends unknown
     ? _UndefinableKeys<O>

@@ -16,23 +16,23 @@ type Longer<L extends List, L1 extends List> =
     : 0
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type PatchProp<OK, O1K, fill, OKeys extends Key, K extends Key> =
   K extends OKeys
   ? OK extends fill ? O1K : OK
   : O1K
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type PatchFlatObject<O extends object, O1 extends object, fill, OKeys extends Key = keyof O> = {
   [K in keyof (O & _Omit<O1, OKeys>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, fill, OKeys, K>
 } & {}
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type PatchFlatList<L extends List, L1 extends List, ignore extends object, fill> =
   number extends Length<L | L1>
   ? PatchFlatChoice<L[number], L1[number], ignore, fill>[]
@@ -45,8 +45,8 @@ type PatchFlatList<L extends List, L1 extends List, ignore extends object, fill>
       }
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type PatchFlatChoice<O extends object, O1 extends object, ignore extends object, fill> =
   O extends ignore
   ? O
@@ -59,8 +59,8 @@ export type PatchFlatChoice<O extends object, O1 extends object, ignore extends 
       : PatchFlatObject<O, O1, fill>
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type PatchFlat<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
   O extends unknown
   ? O1 extends unknown
@@ -69,8 +69,8 @@ export type PatchFlat<O extends object, O1 extends object, ignore extends object
   : never
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type PatchDeepList<L extends List, L1 extends List, ignore extends object, fill> =
   number extends Length<L | L1>
   ? PatchDeepChoice<L[number], L1[number], ignore, fill, never, any>[]
@@ -83,15 +83,15 @@ type PatchDeepList<L extends List, L1 extends List, ignore extends object, fill>
     }
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type PatchDeepObject<O extends object, O1 extends object, ignore extends object, fill, OKeys extends Key = keyof O> = {
     [K in keyof (O & _Omit<O1, OKeys>)]: PatchDeepChoice<AtBasic<O, K>, AtBasic<O1, K>, ignore, fill, OKeys, K>
 } & {}
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type PatchDeepChoice<OK, O1K, ignore extends object, fill, OKeys extends Key, K extends Key> =
   [OK] extends [never]
   ? PatchProp<OK, O1K, fill, OKeys, K>
@@ -112,8 +112,8 @@ type PatchDeepChoice<OK, O1K, ignore extends object, fill, OKeys extends Key, K 
             : PatchProp<OK, O1K, fill, OKeys, K>
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type PatchDeep<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
   O extends unknown
   ? O1 extends unknown
@@ -122,52 +122,52 @@ export type PatchDeep<O extends object, O1 extends object, ignore extends object
   : never
 
 /**
-Complete the fields of `O` with the ones of `O1`. This is a version of
-[[Merge]] that does NOT handle optional fields, it only completes fields of `O`
-with the ones of `O1`.
-@param O to complete
-@param O1 to copy from
-@param depth (?=`'flat'`) to do it deeply
-@param style (?=`1`) 0 = lodash, 1 = ramda
-@param ignore (?=`BuiltinObject`) types not to merge
-@param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
-@returns [[Object]]
-@example
-```ts
-import {O} from 'ts-toolbelt'
-
-type O = {
-    name?: string
-    age? : number
-    zip? : string
-    pay  : {
-        cvv?: number
-    }
-}
-
-type O1 = {
-    age : number
-    zip?: number
-    city: string
-    pay : {
-        cvv : number
-        ccn?: string
-    }
-}
-
-type test = O.Patch<O, O1, 'deep'>
-// {
-//     name?: string;
-//     age?: number;
-//     zip?: string | number;
-//     pay: {
-//         cvv?: number;
-//         ccn?: string;
-//     };
-//     city: string;
-// }
-```
-*/
+ * Complete the fields of `O` with the ones of `O1`. This is a version of
+ * [[Merge]] that does NOT handle optional fields, it only completes fields of `O`
+ * with the ones of `O1`.
+ * @param O to complete
+ * @param O1 to copy from
+ * @param depth (?=`'flat'`) to do it deeply
+ * @param style (?=`1`) 0 = lodash, 1 = ramda
+ * @param ignore (?=`BuiltinObject`) types not to merge
+ * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
+ * @returns [[Object]]
+ * @example
+ * ```ts
+ * import {O} from 'ts-toolbelt'
+ *
+ * type O = {
+ *  name?: string
+ *  age? : number
+ *  zip? : string
+ *  pay  : {
+ *      cvv?: number
+ *  }
+ * }
+ *
+ * type O1 = {
+ *  age : number
+ *  zip?: number
+ *  city: string
+ *  pay : {
+ *      cvv : number
+ *      ccn?: string
+ *  }
+ * }
+ *
+ * type test = O.Patch<O, O1, 'deep'>
+ * // {
+ * //     name?: string;
+ * //     age?: number;
+ * //     zip?: string | number;
+ * //     pay: {
+ * //         cvv?: number;
+ * //         ccn?: string;
+ * //     };
+ * //     city: string;
+ * // }
+ * ```
+ */
 export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill = never> = {
   'flat': PatchFlat<O, O1, ignore, fill>
   'deep': PatchDeep<O, O1, ignore, fill>

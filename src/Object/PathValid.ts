@@ -13,8 +13,8 @@ import {Length} from '../List/Length'
 import {Extends} from '../Any/Extends'
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type ValidatePath<O, Path extends List<AKey>, I extends Iteration> =
     Update<
         Path,
@@ -25,16 +25,16 @@ type ValidatePath<O, Path extends List<AKey>, I extends Iteration> =
     >
 
 /**
-@hidden
-*/
-type __PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<'0'>> = {
+ * @hidden
+ */
+type __PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<0>> = {
     0: __PathValid<NonNullable<At<O & {}, Path[Pos<I>]>>, ValidatePath<O, Path, I>, Next<I>>
     1: Path
 }[Extends<Pos<I>, Length<Path>>]
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type _PathValid<O extends object, Path extends List<AKey>> =
     __PathValid<O, Path> extends infer X
     ? Cast<X, List<AKey>>

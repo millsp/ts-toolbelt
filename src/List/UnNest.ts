@@ -10,13 +10,13 @@ import {List} from './List'
 import {UnionOf} from './UnionOf'
 import {Naked} from './_Internal'
 import {Extends} from '../Any/Extends'
-import {Boolean} from '../Boolean/Boolean'
+import {Boolean} from '../Boolean/_Internal'
 import {Not} from '../Boolean/Not'
 import {And} from '../Boolean/And'
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type UnNestLoose<L extends List> =
     (UnionOf<L> extends infer UL    // make `L` a union
     ? UL extends unknown            // for each in union
@@ -28,8 +28,8 @@ type UnNestLoose<L extends List> =
     )[] & {}                        // make result array
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type Flatter<L extends List, LN extends List, I extends Iteration> =
     L[Pos<I>] extends infer LP // handle if undefined
     ? LP extends List
@@ -38,38 +38,38 @@ type Flatter<L extends List, LN extends List, I extends Iteration> =
     : never
 
 /**
-@hidden
-*/
-type UnNestStrict<L extends List, LN extends List = [], I extends Iteration = IterationOf<'0'>> = {
+ * @hidden
+ */
+type UnNestStrict<L extends List, LN extends List = [], I extends Iteration = IterationOf<0>> = {
     0: UnNestStrict<L, Flatter<L, LN, I>, Next<I>>
     1: LN
 }[Extends<Pos<I>, Length<L>>]
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type __UnNest<L extends List, strict extends Boolean> = {
     0: UnNestLoose<L>
     1: UnNestStrict<L>
 }[And<Not<Extends<number, Length<L>>>, strict>]
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type _UnNest<L extends List, strict extends Boolean> =
     __UnNest<Naked<L>, strict> extends infer X
     ? Cast<X, List>
     : never
 
 /**
-Remove a dimension of `L`
-@param L to un-nest
-@param strict (?=`1`) `0` to not preserve tuples
-@returns [[List]]
-@example
-```ts
-```
-*/
+ * Remove a dimension of `L`
+ * @param L to un-nest
+ * @param strict (?=`1`) `0` to not preserve tuples
+ * @returns [[List]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type UnNest<L extends List, strict extends Boolean = 1> =
     L extends unknown
     ? _UnNest<L, strict>

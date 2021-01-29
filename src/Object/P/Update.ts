@@ -9,9 +9,9 @@ import {Record} from '../Record'
 import {Patch} from '../Patch'
 
 /**
-@hidden
-*/
-type UpdateObject<O, Path extends List<Key>, A, I extends Iteration = IterationOf<'0'>> =
+ * @hidden
+ */
+type UpdateObject<O, Path extends List<Key>, A, I extends Iteration = IterationOf<0>> =
   O extends object                                                     // if it's an object
   ? Pos<I> extends LastIndex<Path>                                     // if it's the last index
     ? Patch<Record<Path[Pos<I>], A>, O>                                // use standard Update
@@ -25,14 +25,14 @@ type UpdateObject<O, Path extends List<Key>, A, I extends Iteration = IterationO
   : O
 
 /**
-Update in `O` the fields at `Path` with `A`
-@param O to update
-@param Path to be followed
-@param A to update with
-@returns [[Object]]
-@example
-```ts
-```
-*/
+ * Update in `O` the fields at `Path` with `A`
+ * @param O to update
+ * @param Path to be followed
+ * @param A to update with
+ * @returns [[Object]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type Update<O extends object, Path extends List<Key>, A extends any> =
   UpdateObject<O, Path, A>

@@ -10,30 +10,30 @@ import {Naked} from './_Internal'
 import {Extends} from '../Any/Extends'
 
 /**
-@hidden
-*/
-type __Reverse<L extends List, LO extends List, I extends Iteration = IterationOf<'0'>> = {
+ * @hidden
+ */
+type __Reverse<L extends List, LO extends List, I extends Iteration = IterationOf<0>> = {
     0: __Reverse<L, Prepend<LO, L[Pos<I>]>, Next<I>>
     1: LO
 }[Extends<Pos<I>, Length<L>>]
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type _Reverse<L extends List, LO extends List = []> =
     __Reverse<Naked<L>, LO> extends infer X
     ? Cast<X, List>
     : never
 
 /**
-Turn a [[List]] the other way around
-@param L to reverse
-@param LO (?=`[]`) to prepend to
-@returns [[List]]
-@example
-```ts
-```
-*/
+ * Turn a [[List]] the other way around
+ * @param L to reverse
+ * @param LO (?=`[]`) to prepend to
+ * @returns [[List]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type Reverse<L extends List> =
     L extends unknown
     ? _Reverse<L>

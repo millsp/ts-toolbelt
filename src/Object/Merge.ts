@@ -17,8 +17,8 @@ type Longer<L extends List, L1 extends List> =
     : 0
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type MergeProp<OK, O1K, fill, OOKeys extends Key, K extends Key> =
   K extends OOKeys                // if prop of `O` is optional
   ? Exclude<OK, undefined> | O1K  // merge it with prop of `O1`
@@ -27,15 +27,15 @@ type MergeProp<OK, O1K, fill, OOKeys extends Key, K extends Key> =
     : OK extends fill ? O1K : OK  // fill/replace if required
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type MergeFlatObject<O extends object, O1 extends object, fill, OOKeys extends Key = _OptionalKeys<O>> = {
   [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, fill, OOKeys, K>
 } & {}
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type MergeFlatList<L extends List, L1 extends List, ignore extends object, fill, LOK extends Key = _OptionalKeys<L>> =
   number extends Length<L | L1>
   ? MergeFlatChoice<L[number], L1[number], ignore, fill>[]
@@ -48,8 +48,8 @@ type MergeFlatList<L extends List, L1 extends List, ignore extends object, fill,
       }
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type MergeFlatChoice<O extends object, O1 extends object, ignore extends object, fill> =
   O extends ignore
   ? O
@@ -62,8 +62,8 @@ export type MergeFlatChoice<O extends object, O1 extends object, ignore extends 
       : MergeFlatObject<O, O1, fill>
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type MergeFlat<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
   O extends unknown
   ? O1 extends unknown
@@ -72,8 +72,8 @@ export type MergeFlat<O extends object, O1 extends object, ignore extends object
   : never
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type MergeDeepList<L extends List, L1 extends List, ignore extends object, fill> =
   number extends Length<L | L1>
   ? MergeDeepChoice<L[number], L1[number], ignore, fill, never, any>[]
@@ -86,15 +86,15 @@ type MergeDeepList<L extends List, L1 extends List, ignore extends object, fill>
     }
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type MergeDeepObject<O extends object, O1 extends object, ignore extends object, fill, OOKeys extends Key = _OptionalKeys<O>> = {
   [K in keyof (Anyfy<O> & O1)]: MergeDeepChoice<AtBasic<O, K>, AtBasic<O1, K>, ignore, fill, OOKeys, K>
 } & {}
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type MergeDeepChoice<OK, O1K, ignore extends object, fill, OOKeys extends Key, K extends Key> =
   [OK] extends [never]
   ? MergeProp<OK, O1K, fill, OOKeys, K>
@@ -115,8 +115,8 @@ type MergeDeepChoice<OK, O1K, ignore extends object, fill, OOKeys extends Key, K
             : MergeProp<OK, O1K, fill, OOKeys, K>
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type MergeDeep<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
   O extends unknown
   ? O1 extends unknown
@@ -125,54 +125,54 @@ export type MergeDeep<O extends object, O1 extends object, ignore extends object
   : never
 
 /**
-Accurately merge the fields of `O` with the ones of `O1`. It is
-equivalent to the spread operator in JavaScript. [[Union]]s and [[Optional]]
-fields will be handled gracefully.
-
-(⚠️ needs `--strictNullChecks` enabled)
-@param O to complete
-@param O1 to copy from
-@param depth (?=`'flat'`) to do it deeply
-@param style (?=`1`) 0 = lodash, 1 = ramda
-@param ignore (?=`BuiltinObject`) types not to merge
-@param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
-@returns [[Object]]
-@example
-```ts
-import {O} from 'ts-toolbelt'
-
-type O = {
-    name?: string
-    age? : number
-    zip? : string
-    pay  : {
-        cvv?: number
-    }
-}
-
-type O1 = {
-    age : number
-    zip?: number
-    city: string
-    pay : {
-        cvv : number
-        ccn?: string
-    }
-}
-
-type test = O.Merge<O, O1, 'deep'>
-// {
-//     name?: string;
-//     age: number;
-//     zip?: string | number;
-//     pay: {
-//         cvv: number;
-//         ccn?: string;
-//     };
-//     city: string;
-// }
-```
-*/
+ * Accurately merge the fields of `O` with the ones of `O1`. It is
+ * equivalent to the spread operator in JavaScript. [[Union]]s and [[Optional]]
+ * fields will be handled gracefully.
+ *
+ * (⚠️ needs `--strictNullChecks` enabled)
+ * @param O to complete
+ * @param O1 to copy from
+ * @param depth (?=`'flat'`) to do it deeply
+ * @param style (?=`1`) 0 = lodash, 1 = ramda
+ * @param ignore (?=`BuiltinObject`) types not to merge
+ * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
+ * @returns [[Object]]
+ * @example
+ * ```ts
+ * import {O} from 'ts-toolbelt'
+ *
+ * type O = {
+ *  name?: string
+ *  age? : number
+ *  zip? : string
+ *  pay  : {
+ *      cvv?: number
+ *  }
+ * }
+ *
+ * type O1 = {
+ *  age : number
+ *  zip?: number
+ *  city: string
+ *  pay : {
+ *      cvv : number
+ *      ccn?: string
+ *  }
+ * }
+ *
+ * type test = O.Merge<O, O1, 'deep'>
+ * // {
+ * //     name?: string;
+ * //     age: number;
+ * //     zip?: string | number;
+ * //     pay: {
+ * //         cvv: number;
+ * //         ccn?: string;
+ * //     };
+ * //     city: string;
+ * // }
+ * ```
+ */
 export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill = never> = {
   'flat': MergeFlat<O, O1, ignore, fill>
   'deep': MergeDeep<O, O1, ignore, fill>

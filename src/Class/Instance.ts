@@ -2,7 +2,7 @@ import {Class} from './Class'
 
 /**
  * Get the instance type of a `class` from a class object
- * @param C **typeof** class
+ * @param C * *typeof** class
  * @returns [[Object]]
  * @example
  * ```ts
@@ -18,7 +18,7 @@ import {Class} from './Class'
  * let b = create(B) // B
  * ```
  */
-export type InstanceOf<C extends Class> =
+export type Instance<C extends Class> =
     C extends Class<any[], infer R>
     ? R
     : any

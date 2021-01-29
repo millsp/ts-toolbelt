@@ -8,8 +8,8 @@ import {List} from '../List/List'
 import {Append} from '../List/Append'
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type __Paths<O, Paths extends List<Key> = []> = {
     0: {[K in keyof O]: __Paths<O[K], Append<Paths, K>>}[keyof O]
     // It dives deep, and as it dives, it adds the paths to `Paths`
@@ -26,22 +26,22 @@ type __Paths<O, Paths extends List<Key> = []> = {
 ]
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type _Paths<O extends object> =
     __Paths<O> extends infer X
     ? Cast<X, List<Key>>
     : never
 
 /**
-Get all the possible paths of `O`
-(⚠️ this won't work with circular-refs)
-@param O to be inspected
-@returns [[String]][]
-@example
-```ts
-```
-*/
+ * Get all the possible paths of `O`
+ * (⚠️ this won't work with circular-refs)
+ * @param O to be inspected
+ * @returns [[String]][]
+ * @example
+ * ```ts
+ * ```
+ */
 export type Paths<O extends object> =
     O extends unknown
     ? _Paths<O>

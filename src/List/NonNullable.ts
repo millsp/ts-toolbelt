@@ -1,9 +1,8 @@
 import {_Pick} from '../Object/Pick'
-import {Key} from '../Any/Key'
+import {Key} from './_Internal'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from '../Object/_Internal'
 import {BuiltInObject} from '../Misc/BuiltInObject'
-import {NumberOf} from '../Any/_Internal'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
 
@@ -40,14 +39,14 @@ export type NonNullablePart<O extends object, K extends Key, depth extends Depth
 }[depth]
 
 /**
-Make some entries of `L` not nullable (deeply or not)
-@param L to make non nullable
-@param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
-@returns [[List]]
-@example
-```ts
-```
-*/
+ * Make some entries of `L` not nullable (deeply or not)
+ * @param L to make non nullable
+ * @param K (?=`Key`) to choose fields
+ * @param depth (?=`'flat'`) to do it deeply
+ * @returns [[List]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type NonNullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> =
-    Cast<NonNullablePart<L, NumberOf<K>, depth>, List>
+    Cast<NonNullablePart<L, `${K}` | K, depth>, List>

@@ -1,37 +1,36 @@
 /**
-Describes compatible type formats
-* `s`: `string`
-* `n`: `number`
-*/
+ * Describes compatible type formats
+ * `s`: `string`
+ * `n`: `number`
+ */
 export type Formats = 'n' | 's'
 
 /**
-Describes how to perform iterations
-*/
+ * Describes how to perform iterations
+ */
 export type Way = '->' | '<-'
 
 // ---------------------------------------------------------------------------------------
 
 /**
-Generate the [[IterationOf]] type
-@param min -40
-@param max +40
-*/
-const IterationOfGenerator = (name: string, min: number, max: number) => {
-    let unionWithPrevious = `"${min}"`
+ * Generate the [[IterationOf]] type
+ * @param min -40
+ * @param max +40
+ */
+const IterationOfGenerator = (min: number, max: number) => {
+    // eslint-disable-next-line no-nested-ternary
+    const sign = (i: number) => `"${i > 0 ? '+' : i < 0 ? '-' : '0'}"`
+    const prev = (i: number) => `"${i === min ? '__' : i - 1}"`
+    const next = (i: number) => `"${i === max ? '__' : i + 1}"`
+    const oppo = (i: number) => `"${i * -1}"`
+    const entry = (i: number) => `"${i}": [${i}, ${sign(i)}, ${prev(i)}, ${next(i)}, ${oppo(i)}],`
 
-    console.log(`{"${min}": ["__", "${min + 1}", "${min}", ${min}, "${min * -1}", ${unionWithPrevious}, "-"],`)
+    console.log(`{${entry(min)}`)
 
-    for (let i = min + 1, k = 1; i <= max - 1; i++, k++) {
-        unionWithPrevious = `${name}["${i - 1}"][5] | "${i}"`
+    for (let i = min + 1, k = 1; i <= max - 1; i++, k++)
+        console.log(entry(i))
 
-        // eslint-disable-next-line no-nested-ternary
-        console.log(`"${i}": ["${i - 1}", "${i + 1}", "${i}", ${i}, "${i * -1}", ${unionWithPrevious}, "${i > 0 ? '+' : i < 0 ? '-' : '0'}"],`)
-    }
-
-    unionWithPrevious = `${name}["${max - 1}"][5] | "${max}"`
-
-    console.log(`"${max}": ["${max - 1}", "__", "${max}", ${max}, "${max * -1}", ${unionWithPrevious}, "+"]}`)
+    console.log(`${entry(max)}}`)
 }
 
-IterationOfGenerator('NumberMap', -100, +100)
+IterationOfGenerator(-100, +100)

@@ -1,6 +1,6 @@
 import {And} from '../Boolean/And'
 import {Or} from '../Boolean/Or'
-import {Extends} from './Extends'
+import {Extends} from '../Any/Extends'
 
 /**
  * @hidden

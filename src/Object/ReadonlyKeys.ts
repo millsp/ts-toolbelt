@@ -3,8 +3,8 @@ import {Equals} from '../Any/Equals'
 // Credit https://stackoverflow.com/a/52473108/3570903
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type _ReadonlyKeys<O extends object> = {
     [K in keyof O]-?: {
         1: never
@@ -14,13 +14,13 @@ export type _ReadonlyKeys<O extends object> = {
 }[keyof O]
 
 /**
-Get the keys of `O` that are readonly
-@param O
-@returns [[Key]]
-@example
-```ts
-```
-*/
+ * Get the keys of `O` that are readonly
+ * @param O
+ * @returns [[Key]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type ReadonlyKeys<O extends object> =
     O extends unknown
     ? _ReadonlyKeys<O>

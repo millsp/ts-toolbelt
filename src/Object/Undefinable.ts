@@ -5,15 +5,15 @@ import {PatchFlat} from './Patch'
 import {BuiltInObject} from '../Misc/BuiltInObject'
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type UndefinableFlat<O> = {
     [K in keyof O]: O[K] | undefined
 } & {}
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 export type UndefinableDeep<O> = {
     [K in keyof O]: O[K] extends BuiltInObject
                     ? O[K]
@@ -21,8 +21,8 @@ export type UndefinableDeep<O> = {
 }
 
 /**
-@hidden
-*/
+ * @hidden
+ */
 type UndefinablePart<O extends object, depth extends Depth> = {
     'flat': UndefinableFlat<O>,
     'deep': UndefinableDeep<O>,
@@ -35,15 +35,15 @@ export type _Undefinable<O extends object, K extends Key, depth extends Depth> =
     PatchFlat<UndefinablePart<_Pick<O, K>, depth>, O>
 
 /**
-Make some fields of `O` `undefined` (deeply or not)
-@param O to make undefinable
-@param K (?=`Key`) to choose fields
-@param depth (?=`'flat'`) to do it deeply
-@returns [[Object]]
-@example
-```ts
-```
-*/
+ * Make some fields of `O` `undefined` (deeply or not)
+ * @param O to make undefinable
+ * @param K (?=`Key`) to choose fields
+ * @param depth (?=`'flat'`) to do it deeply
+ * @returns [[Object]]
+ * @example
+ * ```ts
+ * ```
+ */
 export type Undefinable<O extends object, K extends Key = Key, depth extends Depth = 'flat'> =
     O extends unknown
     ? _Undefinable<O, K, depth>
