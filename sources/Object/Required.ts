@@ -2,7 +2,7 @@ import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {PatchFlat} from './Patch'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 
 /**
  * @hidden
@@ -15,7 +15,7 @@ export type RequiredFlat<O> = {
  * @hidden
  */
 export type RequiredDeep<O> = {
-    [K in keyof O]-?: O[K] extends BuiltInObject
+    [K in keyof O]-?: O[K] extends BuiltIn
                       ? O[K]
                       : RequiredDeep<O[K]>
 }

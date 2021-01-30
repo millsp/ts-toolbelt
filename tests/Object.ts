@@ -675,8 +675,8 @@ type MERGE_O_O1_DEEP_LODASH = {
 checks([
     check<O.Merge<[1], [2, 3], 'flat'>, [1, 3], Test.Pass>(),
     check<O.Merge<[1], [2, 3], 'deep'>, [1, 3], Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE, 'flat', M.BuiltInObject, undefined>, MERGE_O_O1_LODASH, Test.Pass>(),
-    check<O.Merge<O_MERGE, O1_MERGE, 'deep', M.BuiltInObject, undefined>, MERGE_O_O1_DEEP_LODASH, Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'flat', M.BuiltIn, undefined>, MERGE_O_O1_LODASH, Test.Pass>(),
+    check<O.Merge<O_MERGE, O1_MERGE, 'deep', M.BuiltIn, undefined>, MERGE_O_O1_DEEP_LODASH, Test.Pass>(),
 ])
 
 function MERGE_GENERIC<O extends {n?: number}>(o: O) {
@@ -690,8 +690,8 @@ function MERGE_GENERIC<O extends {n?: number}>(o: O) {
 // MERGEALL
 
 checks([
-    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'flat', M.BuiltInObject, undefined>, MERGE_O_O1_LODASH, Test.Pass>(),
-    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', M.BuiltInObject, undefined>, MERGE_O_O1_DEEP_LODASH, Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'flat', M.BuiltIn, undefined>, MERGE_O_O1_LODASH, Test.Pass>(),
+    check<O.MergeAll<{}, [O_MERGE, O1_MERGE], 'deep', M.BuiltIn, undefined>, MERGE_O_O1_DEEP_LODASH, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@ import {_Pick} from '../Object/Pick'
 import {Key} from './_Internal'
 import {NonNullable as UNonNullable} from '../Union/NonNullable'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 import {Cast} from '../Any/Cast'
 import {List} from './List'
 
@@ -19,7 +19,7 @@ export type NonNullableFlat<O, K extends Key = Key> = {
  * @hidden
  */
 type _NonNullableDeep<O> = {
-    [K in keyof O]: O[K] extends BuiltInObject
+    [K in keyof O]: O[K] extends BuiltIn
                     ? O[K]
                     : NonNullableDeep<O[K], Key>
 }

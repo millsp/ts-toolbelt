@@ -1,7 +1,7 @@
 import {Assign as OAssign} from '../Object/Assign'
 import {List} from './List'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 import {Cast} from '../Any/Cast'
 
 /**
@@ -22,5 +22,5 @@ import {Cast} from '../Any/Cast'
  * type test2 = Assign<[0, 0, 0, 0, 0], [[0, 1], [0, 2, 0, 4?]]> // [0, 2, 0, 0 | 4, 0]
  * ```
  */
-export type Assign<L extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
+export type Assign<L extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
     Cast<OAssign<L, Ls, depth, ignore, fill>, List>

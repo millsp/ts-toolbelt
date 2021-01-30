@@ -8,7 +8,7 @@ import {Cast} from '../Any/Cast'
 import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
 import {Depth} from './_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 
 /**
  * @hidden
@@ -40,7 +40,7 @@ export type _Assign<O extends object, Os extends List<object>, depth extends Dep
  * ```ts
  * ```
  */
-export type Assign<O extends object, Os extends List<object>, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
+export type Assign<O extends object, Os extends List<object>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
     O extends unknown
     ? Os extends unknown
       ? _Assign<O, Os, depth, ignore, fill>

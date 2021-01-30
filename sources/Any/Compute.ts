@@ -1,5 +1,5 @@
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 
 /**
  * @hidden
@@ -7,31 +7,39 @@ import {BuiltInObject} from '../Misc/BuiltInObject'
 export type ComputeRaw<A extends any> =
     A extends Function
     ? A
-    : {
-        [K in keyof A]: A[K]
-      } & {}
+    : {[K in keyof A]: A[K]} & {}
 
 /**
  * @hidden
  */
-export type ComputeFlat<A extends any> =
-    A extends BuiltInObject
+type ComputeFlat<A extends any> =
+    A extends BuiltIn
     ? A
-    : {
-        [K in keyof A]: A[K]
-      } & {}
+    : A extends Array<any>
+      ? A extends Array<Record<string | number | symbol, any>>
+        ? Array<{[K in keyof A[number]]: A[number][K]} & {}>
+        : A
+      : A extends ReadonlyArray<any>
+        ? A extends ReadonlyArray<Record<string | number | symbol, any>>
+          ? ReadonlyArray<{[K in keyof A[number]]: A[number][K]} & {}>
+          : A
+        : {[K in keyof A]: A[K]} & {};
 
 /**
  * @hidden
  */
-export type ComputeDeep<A extends any, Seen = never> =
-    A extends object
-    ? A extends BuiltInObject | Seen
-      ? A
-      : {
-            [K in keyof A]: ComputeDeep<A[K], A | Seen>
-        } & {}
-    : A
+type ComputeDeep<A extends any> =
+    A extends BuiltIn
+    ? A
+    : A extends Array<any>
+      ? A extends Array<Record<string | number | symbol, any>>
+        ? Array<{[K in keyof A[number]]: ComputeDeep<A[number][K]>} & {}>
+        : A
+    : A extends ReadonlyArray<any>
+      ? A extends ReadonlyArray<Record<string | number | symbol, any>>
+        ? ReadonlyArray<{[K in keyof A[number]]: ComputeDeep<A[number][K]>} & {}>
+        : A
+      : {[K in keyof A]: ComputeDeep<A[K]>} & {};
 
 /**
  * Force TS to load a type that has not been computed (to resolve composed

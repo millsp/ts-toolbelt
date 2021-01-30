@@ -2,7 +2,7 @@ import {_Pick} from './Pick'
 import {Depth} from './_Internal'
 import {Key} from '../Any/Key'
 import {PatchFlat} from './Patch'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 
 /**
  * @hidden
@@ -15,7 +15,7 @@ export type ReadonlyFlat<O> = {
  * @hidden
  */
 export type ReadonlyDeep<O> = {
-    +readonly [K in keyof O]: O[K] extends BuiltInObject
+    +readonly [K in keyof O]: O[K] extends BuiltIn
                               ? O[K]
                               : ReadonlyDeep<O[K]>
 }

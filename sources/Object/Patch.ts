@@ -3,7 +3,7 @@ import {Key} from '../Any/Key'
 import {_ListOf} from './ListOf'
 import {List} from '../List/List'
 import {Depth} from './_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 import {_Omit} from './Omit'
 import {Length} from '../List/Length'
 
@@ -61,7 +61,7 @@ export type PatchFlatChoice<O extends object, O1 extends object, ignore extends 
 /**
  * @hidden
  */
-export type PatchFlat<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
+export type PatchFlat<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
   O extends unknown
   ? O1 extends unknown
     ? PatchFlatChoice<O, O1, ignore, fill>
@@ -114,7 +114,7 @@ type PatchDeepChoice<OK, O1K, ignore extends object, fill, OKeys extends Key, K 
 /**
  * @hidden
  */
-export type PatchDeep<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
+export type PatchDeep<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
   O extends unknown
   ? O1 extends unknown
     ? PatchDeepChoice<O, O1, ignore, fill, 'x', 'y'> // dummy x, y
@@ -168,7 +168,7 @@ export type PatchDeep<O extends object, O1 extends object, ignore extends object
  * // }
  * ```
  */
-export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill = never> = {
+export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill = never> = {
   'flat': PatchFlat<O, O1, ignore, fill>
   'deep': PatchDeep<O, O1, ignore, fill>
 }[depth]

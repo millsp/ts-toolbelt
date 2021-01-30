@@ -3,5 +3,5 @@
 import * as JSON from './JSON/_api'
 
 export {JSON}
-export {BuiltInObject} from './BuiltInObject'
+export {BuiltIn} from './BuiltIn'
 export {Primitive} from './Primitive'

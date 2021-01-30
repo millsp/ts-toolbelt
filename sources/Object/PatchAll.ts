@@ -8,7 +8,7 @@ import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
 import {Depth} from './_Internal'
 import {Patch} from './Patch'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 
 /**
  * @hidden
@@ -40,7 +40,7 @@ export type _PatchAll<O extends object, Os extends List<object>, depth extends D
  * ```ts
  * ```
  */
-export type PatchAll<O extends object, Os extends List<object>, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
+export type PatchAll<O extends object, Os extends List<object>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
     O extends unknown
     ? Os extends unknown
       ? _PatchAll<O, Os, depth, ignore, fill>

@@ -73,10 +73,10 @@
  */
 // type WebAssembly = never
 
-export type BuiltInObject =
+export type BuiltIn =
+    | Function
     | Error
     | Date
     | RegExp
-    | Function
     | {readonly [Symbol.toStringTag]: string}
     | Generator

@@ -1,7 +1,7 @@
 import {Patch as OPatch} from '../Object/Patch'
 import {List} from './List'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 import {Cast} from '../Any/Cast'
 
 /**
@@ -21,5 +21,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Patch<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
+export type Patch<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
     Cast<OPatch<L, L1, depth, ignore, fill>, List>

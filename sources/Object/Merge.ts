@@ -3,7 +3,7 @@ import {_OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
 import {List} from '../List/List'
 import {Depth, Anyfy} from './_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 import {Length} from '../List/Length'
 import {RequiredKeys} from '../List/RequiredKeys'
 import {Exclude} from '../Union/Exclude'
@@ -64,7 +64,7 @@ export type MergeFlatChoice<O extends object, O1 extends object, ignore extends 
 /**
  * @hidden
  */
-export type MergeFlat<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
+export type MergeFlat<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
   O extends unknown
   ? O1 extends unknown
     ? MergeFlatChoice<O, O1, ignore, fill>
@@ -117,7 +117,7 @@ type MergeDeepChoice<OK, O1K, ignore extends object, fill, OOKeys extends Key, K
 /**
  * @hidden
  */
-export type MergeDeep<O extends object, O1 extends object, ignore extends object = BuiltInObject, fill = never> =
+export type MergeDeep<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
   O extends unknown
   ? O1 extends unknown
     ? MergeDeepChoice<O, O1, ignore, fill, 'x', 'y'> // dummy x, y
@@ -173,7 +173,7 @@ export type MergeDeep<O extends object, O1 extends object, ignore extends object
  * // }
  * ```
  */
-export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill = never> = {
+export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill = never> = {
   'flat': MergeFlat<O, O1, ignore, fill>
   'deep': MergeDeep<O, O1, ignore, fill>
 }[depth]

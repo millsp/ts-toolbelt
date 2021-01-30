@@ -1,7 +1,7 @@
 import {MergeAll as OMergeAll} from '../Object/MergeAll'
 import {List} from '../List/List'
 import {Depth} from '../Object/_Internal'
-import {BuiltInObject} from '../Misc/BuiltInObject'
+import {BuiltIn} from '../Misc/BuiltIn'
 import {Cast} from '../Any/Cast'
 
 /**
@@ -17,5 +17,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type MergeAll<L extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltInObject, fill extends any = never> =
+export type MergeAll<L extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
     Cast<OMergeAll<L, Ls, depth, ignore, fill>, List>
