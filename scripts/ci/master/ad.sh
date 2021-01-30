@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash ./scr/tools/check-deploy.sh
+bash ./scripts/tools/check-deploy.sh
