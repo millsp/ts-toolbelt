@@ -76,14 +76,14 @@ It uses the type system itself for TypeScript to compute complex types. So its A
 * Bring a whole new set of extra **features** to TypeScript
 * Extensively tested type utilities for maximum type safety
 * This package aims to be the home of all **utility types**
-* [Answer questions about types and share knowledge](#-good-to-know-)
+* [Answer questions about types and share knowledge](#good-to-know-)
 
 You'll find all the types you can ever need in this single and **well organized** package.
 ## Getting Started
 
 ### Prerequisites
 
-Lowest TypeScript [support](#-compatibility) starts at v3.5
+Lowest TypeScript [support](#compatibility) starts at v3.5
 
 ```sh
 npm install typescript@^3.8.0 --save-dev
