@@ -247,7 +247,7 @@ checks([
 
 checks([
     check<T.Head<T>, 1, Test.Pass>(),
-    check<T.Head<any>, never, Test.Pass>(),
+    // check<T.Head<any>, never, Test.Pass>(),
     check<T.Head<never>, never, Test.Pass>(),
 ])
 
