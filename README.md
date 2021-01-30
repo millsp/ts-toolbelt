@@ -61,12 +61,6 @@ It offers unique dynamic features, allowing you to write type-safe software more
 Its programmatic API brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest and the most reliable type collection out there.
 It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
 
-<p align="center">
-  <a href="https://codesandbox.io/s/ts-toolbelt-x4jly?file=/src/index.ts">
-    <img alt="demo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/demo.svg">
-  </a>
-</p>
-
 ### Goals
 
 * Answer the question to **"How can I do this in TypeScript?"**
@@ -79,6 +73,13 @@ It uses the type system itself for TypeScript to compute complex types. So its A
 * [Answer questions about types and share knowledge](#good-to-know-)
 
 You'll find all the types you can ever need in this single and **well organized** package.
+
+<p align="center">
+  <a href="https://codesandbox.io/s/ts-toolbelt-x4jly?file=/src/index.ts">
+    <img alt="demo" width="800" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/demo.svg">
+  </a>
+</p>
+
 ## Getting Started
 
 ### Prerequisites
@@ -122,8 +123,6 @@ type optional = Object.Optional<{id: number, name: string}, "name"}>
 // {id: number, name?: string}
 ```
 
-> **`TIP`** You can also grab the demo [over here](https://gist.github.com/millsp/f7f7d18773f79bf0618fb5cd55bd48f8).
-
 You can [**level-up, and re-code this library from scratch**](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab).
 
 ## [Documentation ⤢](https://millsp.github.io/ts-toolbelt/)
@@ -132,10 +131,9 @@ You can [**level-up, and re-code this library from scratch**](https://medium.com
 
 The project is organized around TypeScript's main concepts:
 
-|            |             |                  |              |               |          |
-|------------|-------------|------------------|--------------|---------------|----------|
-| **A**ny    | **B**oolean | **C**lass        | **F**unction | **I**teration | **L**ist |
-| **N**umber | **O**bject  | **O**bject.**P** | **S**tring   | **U**nion     | Test     |
+| **Any**    | **Boolean** | **Class**    | **Function** | **Iteration** | **List** |
+|------------|-------------|--------------|--------------|---------------|----------|
+| **Number** | **Object**  | **Object.P** | **String**   | **Union**     | **Test** |
 
 > **`TIP`** How to choose categories? Match your type with them.
 
@@ -162,10 +160,6 @@ You can also import our non-official API from the community:
   ```
 
 > **`TIP`** The community API is for our community to publish useful types that don't see fit in the standard API.
-
-### Internal Docs
-
-If you're interested to **learn** how the internals work, [this tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab) will get you on track to start writing your own types.
 
 ### [Archives ⤢](https://github.com/millsp/ts-toolbelt/tree/gh-pages)
 
@@ -214,8 +208,6 @@ The releases are done with Travis CI in stages & whenever a branch or PR is push
 - Tests against [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/)
 - Releases to npm@[branch-name]
 
-If you wrote tests & would like your project to be tested too, please open an issue.
-
 ## Compatibility
 
 The project is maintained to adapt to the constant [changes of TypeScript](https://github.com/Microsoft/TypeScript/wiki/Roadmap):
@@ -225,6 +217,7 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 | 9.x.x       | ^4.1.x     |
 
 Major version numbers will upgrade whenever TypeScript had breaking changes. 
+
 Otherwise, the release versions will naturally follow the semantic versioning.
 
 ## What's next
@@ -239,8 +232,10 @@ Otherwise, the release versions will naturally follow the semantic versioning.
 
 ## Related Projects
 
-* [`eledoc`](https://github.com/millsp/eledoc) - 🌒 A material dark theme for TypeDoc 
-* [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases
+| **Name**                                                       | **Intro**                                                                                |
+|----------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc                                                     |
+| [`utility-types`](https://github.com/piotrwitek/utility-types) | Collection of utility types, complementing TypeScript built-in mapped types and aliases  |
 
 ## License
 
