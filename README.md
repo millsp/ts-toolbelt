@@ -1,9 +1,8 @@
 <p align="center">
   <a href="https://github.com/millsp/ts-toolbelt">
-    <img alt="logo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/logo.png" width="175" alt="Logo">
+    <img alt="banner" title="ts-toolbelt" src=".github/banner.svg">
   </a>
-  <h1 align="center">ts-toolbelt</h1>
-  <h4 align="center">Higher Type Safety for TypeScript. A collection of useful types.</h4>
+  <h4 align="center">TypeScript's largest utility library</h4>
 </p>
 
 <p align="center">
@@ -43,24 +42,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.buymeacoffee.com/millsp" >
-    <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/donate.svg" height="20px" alt="Donate">
-  </a>
-  <a href="https://patreon.com/pirix" >
-    <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/patreon.svg" height="20px" alt="Support Me">
-  </a>
-  <a href="https://issuehunt.io/r/millsp/ts-toolbelt" >
-    <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/issuehunt.svg" height="20px" alt="Fund an Issue">
-  </a>
-  <a href="https://tidelift.com/subscription/pkg/npm-ts-toolbelt?utm_source=npm-ts-toolbelt&utm_medium=referral&utm_campaign=readme" >
-    <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/tidelift.svg" height="20px" alt="Join Tidelift">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://millsp.github.io/ts-toolbelt/">📖 Read Docs</a>
+  <a href="https://millsp.github.io/ts-toolbelt/">📖 Documentation</a>
   ·
-  <a href="#demo">🎮 View Demo</a>
+  <a href="https://github.com/millsp/ts-toolbelt/issues?utf8=✓&q=is%3Aissue+label%3Aannouncement+sort%3Acreated-desc+">📣 Announcements</a>
   ·
   <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---bug-report.md" alt="Bug Report">🐞 Report Bug</a>
   ·
@@ -69,30 +53,19 @@
   <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md" alt="Ask Questions">🤔 Ask Questions</a>
 </p>
 
-## Table of Contents
-
-* [📜 About](#-about)
-* [🍩 Features](#-features)
-* [🏁 Getting started](#-getting-started)
-* [📖 Documentation](#-documentation-)
-* [🧠 Good to know](#-good-to-know-)
-* [📣 Announcements](#-announcements-)
-* [🎁 Contributing](#-contributing)
-* [💉 Running tests](#-running-tests)
-* [🔧 Compatibility](#-compatibility)
-* [👏 Sponsoring issues](#-sponsoring-issues)
-* [🔮 What's next](#-whats-next)
-* [🙏 Acknowledgements](#-acknowledgements)
-
-## 📜 About
-
-<h4 align="center"><i>"Avoid bugs by writing high quality types"</i></h4><br>
+## About
 
 **ts-toolbelt** ships **utility types** that provide simple ways to **update**, **change**, and **compute** TypeScript types.
 It offers unique dynamic features, allowing you to write type-safe software more **easily** and in **less time** than you do today.
 
 Its programmatic API brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest and the most reliable type collection out there.
 It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
+
+<p align="center">
+  <a href="https://codesandbox.io/s/ts-toolbelt-x4jly?file=/src/index.ts">
+    <img alt="banner" title="ts-toolbelt" src=".github/demo.svg">
+  </a>
+</p>
 
 ### Goals
 
@@ -106,25 +79,7 @@ It uses the type system itself for TypeScript to compute complex types. So its A
 * [Answer questions about types and share knowledge](#-good-to-know-)
 
 You'll find all the types you can ever need in this single and **well organized** package.
-
-## 🍩 Features
-
-Here's some of the most useful utilities:
-
-* [Merge two types together](https://millsp.github.io/ts-toolbelt/modules/_object_merge_.html)
-* [Update the field of a type](https://millsp.github.io/ts-toolbelt/modules/_object_update_.html)
-* [Make some fields optional](https://millsp.github.io/ts-toolbelt/modules/_object_optional_.html)
-* [Change a type at any depth!](https://millsp.github.io/ts-toolbelt/modules/_object_p_update_.html)
-* [Concat two lists together](https://millsp.github.io/ts-toolbelt/modules/_list_concat_.html)
-* [Get the last item of a list](https://millsp.github.io/ts-toolbelt/modules/_list_last_.html)
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/demo.gif" id="demo" width="750px">
-<p align="center">
-
-> **`TIP`** If you don't find the type you are looking for, you are welcome to open a [feature request](https://github.com/millsp/ts-toolbelt/issues/new?template=---feature-request.md)!
-
-## 🏁 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -144,11 +99,6 @@ For best results, add this to your `tsconfig.json`
 
     // this is optional, but enable whenever possible
     "strict": true,
-
-    // this is the lowest supported standard library
-    "lib": [
-        "es2015",
-    ],
   }
 }
 ```
@@ -178,39 +128,7 @@ type optional = Object.Optional<{id: number, name: string}, "name"}>
 
 You can [**level-up, and re-code this library from scratch**](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab).
 
-## [📖 Documentation ⤢](https://millsp.github.io/ts-toolbelt/)
-
-### Where to start
-
-To get you started, we recommend that you visit the documentation of the following essential tools. 
-| Object                                                                                | List                                                                        | Function                                                                              | Any                                                                              | Union                                                                                |
-|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
-| [Either](https://millsp.github.io/ts-toolbelt/modules/_object_either_.html)           | [Append](https://millsp.github.io/ts-toolbelt/modules/_list_append_.html)   | [NoInfer](https://millsp.github.io/ts-toolbelt/modules/_function_noinfer_.html)       | [Compute](https://millsp.github.io/ts-toolbelt/modules/_any_compute_.html)       | [Filter](https://millsp.github.io/ts-toolbelt/modules/_union_filter_.html)           |
-| [Exclude](https://millsp.github.io/ts-toolbelt/modules/_object_exclude_.html)         | [Concat](https://millsp.github.io/ts-toolbelt/modules/_list_concat_.html)   | [Parameters](https://millsp.github.io/ts-toolbelt/modules/_function_parameters_.html) | [Promisable](https://millsp.github.io/ts-toolbelt/modules/_any_promisable_.html) | [IntersectOf](https://millsp.github.io/ts-toolbelt/modules/_union_intersectof_.html) |
-| [Filter](https://millsp.github.io/ts-toolbelt/modules/_object_filter_.html)           | [Drop](https://millsp.github.io/ts-toolbelt/modules/_list_drop_.html)       | [Promisify](https://millsp.github.io/ts-toolbelt/modules/_function_promisify_.html)   | [Type](https://millsp.github.io/ts-toolbelt/modules/_any_type_.html)             | [Merge](https://millsp.github.io/ts-toolbelt/modules/_union_merge_.html)             |
-| [Merge](https://millsp.github.io/ts-toolbelt/modules/_object_merge_.html)             | [Flatten](https://millsp.github.io/ts-toolbelt/modules/_list_flatten_.html) | [Return](https://millsp.github.io/ts-toolbelt/modules/_function_return_.html)         |                                                                                  | [Select](https://millsp.github.io/ts-toolbelt/modules/_union_select_.html)           |
-| [NonNullable](https://millsp.github.io/ts-toolbelt/modules/_object_nonnullable_.html) | [Pop](https://millsp.github.io/ts-toolbelt/modules/_list_pop_.html)         |                                                                                       |                                                                                  | [Strict](https://millsp.github.io/ts-toolbelt/modules/_union_strict_.html)           |
-| [Nullable](https://millsp.github.io/ts-toolbelt/modules/_object_nullable_.html)       | [Prepend](https://millsp.github.io/ts-toolbelt/modules/_list_prepend_.html) |                                                                                       |                                                                                  |                                                                                      |
-| [Omit](https://millsp.github.io/ts-toolbelt/modules/_object_omit_.html)               | [Remove](https://millsp.github.io/ts-toolbelt/modules/_list_remove_.html)   |                                                                                       |                                                                                  |                                                                                      |
-| [Optional](https://millsp.github.io/ts-toolbelt/modules/_object_optional_.html)       | [Reverse](https://millsp.github.io/ts-toolbelt/modules/_list_reverse_.html) |                                                                                       |                                                                                  |                                                                                      |
-| [Overwrite](https://millsp.github.io/ts-toolbelt/modules/_object_overwrite_.html)     | [Tail](https://millsp.github.io/ts-toolbelt/modules/_list_tail_.html)       |                                                                                       |                                                                                  |                                                                                      |
-| [P/Merge](https://millsp.github.io/ts-toolbelt/modules/_object_p/merge_.html)         |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [P/Omit](https://millsp.github.io/ts-toolbelt/modules/_object_p/omit_.html)           |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [P/Pick](https://millsp.github.io/ts-toolbelt/modules/_object_p/pick_.html)           |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [P/Update](https://millsp.github.io/ts-toolbelt/modules/_object_p/update_.html)       |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Path](https://millsp.github.io/ts-toolbelt/modules/_object_path_.html)               |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Pick](https://millsp.github.io/ts-toolbelt/modules/_object_pick_.html)               |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Readonly](https://millsp.github.io/ts-toolbelt/modules/_object_readonly_.html)       |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Required](https://millsp.github.io/ts-toolbelt/modules/_object_required_.html)       |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Select](https://millsp.github.io/ts-toolbelt/modules/_object_select_.html)           |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Unionize](https://millsp.github.io/ts-toolbelt/modules/_object_unionize_.html)       |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [UnionOf](https://millsp.github.io/ts-toolbelt/modules/_object_unionof_.html)         |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Update](https://millsp.github.io/ts-toolbelt/modules/_object_update_.html)           |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-| [Writable](https://millsp.github.io/ts-toolbelt/modules/_object_writable_.html)       |                                                                             |                                                                                       |                                                                                  |                                                                                      |
-
-> **`TIP`** [Add something to this list](https://github.com/millsp/ts-toolbelt/edit/master/README.md)
-
-**The documentation is complete but it needs more examples**. So feel free to [ask for examples](https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md).
+## [Documentation ⤢](https://millsp.github.io/ts-toolbelt/)
 
 ### Imports
 
@@ -257,63 +175,13 @@ Access older docs at https://millsp.github.io/ts-toolbelt/version/
 
 > **`EXAMPLE`** https://millsp.github.io/ts-toolbelt/4.2.1/
 
-## [🧠 Good to Know ⤢](https://github.com/millsp/ts-toolbelt/issues?q=label%3Aquestion+sort%3Areactions-%2B1-desc+label%3Awiki)
+## [Good to Know ⤢](https://github.com/millsp/ts-toolbelt/discussions/q-a)
 
 In this wiki, you will find some extra resources for your learning, and understanding.
 
-**Are you missing something?** Participate to the open-wiki by [posting your questions](https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md).
+**Are you missing something?** Participate to the open-wiki by [posting your questions](https://github.com/millsp/ts-toolbelt/discussions/new).
 
-## [📣 Announcements ⤢](https://github.com/millsp/ts-toolbelt/issues?utf8=✓&q=is%3Aissue+label%3Aannouncement+sort%3Acreated-desc+)
-
-Stay up to date with the latest announcements with this regular digest of important changes.
-
-## 🎁 Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. There are many ways to contribute to the project:
-
-### Community
-
-* [Help the community with answers on Gitter](https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-* [Reporting bugs or requesting new features](https://github.com/millsp/ts-toolbelt/issues/new/choose)
-
-### Codebase
-
-* Improving existing documentation 
-* Adding new types to the collection
-* [Getting involved with things to do](#-whats-next)
-
-### Pull Requests
-
-1. [Read the tutorial](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab)
-
-2. Fork the project
-
-3. Clone your fork
-
-4. Create a pr/**feature** branch
-
-   ```sh
-   git checkout -b pr/CoolFeature
-   ```
-   
-5. Commit your changes
-
-   You **must** follow the [conventional commit](https://conventionalcommits.org) to be able to commit
-   ```sh
-   git commit -m "feat(name): Added this CoolFeature"
-   ```
-
-6. [Run the tests](#-running-tests)
-
-7. Push your changes
-
-   ```sh
-   npm run release -- --no-tags
-   ```
-
-8. Open a pull request
-
-## 💉 Running tests
+## Running tests
 
 ### For this project
 
@@ -350,7 +218,7 @@ The releases are done with Travis CI in stages & whenever a branch or PR is push
 
 If you wrote tests & would like your project to be tested too, please open an issue.
 
-## 🔧 Compatibility
+## Compatibility
 
 The project is maintained to adapt to the constant [changes of TypeScript](https://github.com/Microsoft/TypeScript/wiki/Roadmap):
 
@@ -363,22 +231,10 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 | 3.x.x       | ^3.5.x     |
 | 1.x.x       | ~3.5.x     |
 
-Major version numbers will upgrade whenever TypeScript had breaking changes (it happened that TS had breaking changes on minor versions). Otherwise, the release versions will naturally follow the semantic versioning.
+Major version numbers will upgrade whenever TypeScript had breaking changes. 
+Otherwise, the release versions will naturally follow the semantic versioning.
 
-## 👏 Sponsoring issues
-
-**Sponsored issues have higher priority over non-critical issues**.
-
-You can either request a new feature or a bug fix, and then fund it.
-
-**The money will be transparently split with an issue's assignees.**
-
-<a href="https://issuehunt.io/r/millsp/ts-toolbelt" >
-  <img src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/issuehunt.svg" height="25px">
-</a>
-<br>
-
-## 🔮 What's next
+## What's next
 
 * Automated performance tests
   ```sh
@@ -388,19 +244,7 @@ You can either request a new feature or a bug fix, and then fund it.
 
 * Need to write more examples
 
-## 🙏 Acknowledgements
-
-Many, many thanks to all the [contributors](https://github.com/millsp/ts-toolbelt/graphs/contributors) and:
-
-* [André Staltz](https://github.com/staltz)
-* [Joe Calzaretta](https://github.com/jcalz)
-* [Matt McCutchen](https://github.com/mattmccutchen)
-* [Monroe Ekilah](https://github.com/ekilah)
-* [Nathan S.-Sanders](https://github.com/sandersn)
-* [Regev Brody](https://github.com/regevbr)
-* [Titian C.-Dragomir](https://github.com/dragomirtitian)
-
-## 💟 Friendly Projects
+## Related Projects
 
 * [`eledoc`](https://github.com/millsp/eledoc) - 🌒 A material dark theme for TypeDoc 
 * [`utility-types`](https://github.com/piotrwitek/utility-types) - Collection of utility types, complementing TypeScript built-in mapped types and aliases

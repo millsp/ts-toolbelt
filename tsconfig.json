@@ -88,9 +88,9 @@
       // "out": "" DEPRECATED. Use outFile
     },
     "include": [
-      "./src/**/*",
-      "./scr/**/*",
-      "./tst/**/*",
+      "./sources/**/*",
+      "./scripts/**/*",
+      "./tests/**/*"
     ],
     "exclude": [
       "./node_modules/**/*",

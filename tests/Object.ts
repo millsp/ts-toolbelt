@@ -1,6 +1,6 @@
-import {Test, O, A, T, U, M} from '../src/ts-toolbelt'
-import {Key} from '../src/Any/Key'
-import {OptionalDeep} from '../src/Object/Optional'
+import {Test, O, A, T, U, M} from '../sources/ts-toolbelt'
+import {Key} from '../sources/Any/Key'
+import {OptionalDeep} from '../sources/Object/Optional'
 
 const {checks, check} = Test
 

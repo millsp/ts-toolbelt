@@ -2,7 +2,7 @@
 
 mkdir -p out
 
-npx tsc src/ts-toolbelt.ts -d --emitDeclarationOnly --module amd --outFile out/index.d.ts
+npx tsc sources/ts-toolbelt.ts -d --emitDeclarationOnly --module amd --outFile out/index.d.ts
 
 # echo "
 # declare module 'ts-toolbelt' {

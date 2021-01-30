@@ -25,3 +25,5 @@ else
         git push origin $BRANCH --follow-tags           # only releases
     fi;
 fi;
+
+# https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli

@@ -1,4 +1,4 @@
-import {Test, Community} from '../src/ts-toolbelt'
+import {Test, Community} from '../sources/ts-toolbelt'
 
 const {checks, check} = Test
 

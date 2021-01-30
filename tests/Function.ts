@@ -1,4 +1,4 @@
-import {Test, F, A} from '../src/ts-toolbelt'
+import {Test, F, A} from '../sources/ts-toolbelt'
 
 const {checks, check} = Test
 

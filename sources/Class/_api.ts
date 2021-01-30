@@ -1,5 +1,5 @@
 /** @ignore *//** */
 
 export {Class} from './Class'
-export {Instance as Instance} from './Instance'
+export {Instance} from './Instance'
 export {Parameters} from './Parameters'

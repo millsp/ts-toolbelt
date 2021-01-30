@@ -1,13 +1,13 @@
 {
   "name": "ts-toolbelt",
   "version": "8.4.0",
-  "description": "Get the most out of TypeScript",
+  "descriptsiption": "Get the most out of TypeScriptsipt",
   "keywords": [
     "safe",
     "tools",
     "types",
     "typesafe",
-    "typescript"
+    "typescriptsipt"
   ],
   "homepage": "https://github.com/millsp/ts-toolbelt",
   "repository": {
@@ -25,29 +25,29 @@
     "out"
   ],
   "scripts": {
-    "build:clean": "bash scr/build/clean.sh",
-    "build:code": "bash scr/build/code.sh",
-    "build:docs": "bash scr/build/docs.sh",
-    "build:types": "bash scr/build/types.sh",
-    "ci:branch:ad": "bash scr/ci/branch/ad.sh",
-    "ci:branch:bd": "bash scr/ci/branch/bd.sh",
-    "ci:docs:ad": "bash scr/ci/docs/ad.sh",
-    "ci:docs:bd": "bash scr/ci/docs/bd.sh",
-    "ci:master:ad": "bash scr/ci/master/ad.sh",
-    "ci:master:bd": "bash scr/ci/master/bd.sh",
-    "ci:test:ad": "bash scr/ci/test/ad.sh",
-    "ci:test:bd": "bash scr/ci/test/bd.sh",
-    "release": "bash scr/release.sh",
-    "test": "bash scr/test/all.sh",
-    "test:code": "bash scr/test/code.sh",
-    "test:lint": "bash scr/test/lint.sh",
-    "test:types": "bash scr/test/types.sh"
+    "build:clean": "bash scripts/build/clean.sh",
+    "build:code": "bash scripts/build/code.sh",
+    "build:docs": "bash scripts/build/docs.sh",
+    "build:types": "bash scripts/build/types.sh",
+    "ci:branch:ad": "bash scripts/ci/branch/ad.sh",
+    "ci:branch:bd": "bash scripts/ci/branch/bd.sh",
+    "ci:docs:ad": "bash scripts/ci/docs/ad.sh",
+    "ci:docs:bd": "bash scripts/ci/docs/bd.sh",
+    "ci:master:ad": "bash scripts/ci/master/ad.sh",
+    "ci:master:bd": "bash scripts/ci/master/bd.sh",
+    "ci:test:ad": "bash scripts/ci/test/ad.sh",
+    "ci:test:bd": "bash scripts/ci/test/bd.sh",
+    "release": "bash scripts/release.sh",
+    "test": "bash scripts/test/all.sh",
+    "test:code": "bash scripts/test/code.sh",
+    "test:lint": "bash scripts/test/lint.sh",
+    "test:types": "bash scripts/test/types.sh"
   },
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^8.3.0",
     "@commitlint/config-conventional": "^8.3.0",
-    "@typescript-eslint/parser": "^3.9.1",
+    "@typescriptsipt-eslint/parser": "^3.9.1",
     "eledoc": "^0.2.0",
     "eslint": "^7.0.0",
     "eslint-plugin-fp": "^2.3.0",
@@ -59,6 +59,6 @@
     "ts-node": "^8.10.0",
     "tslib": "^2.0.0",
     "typedoc": "^0.17.0",
-    "typescript": "next"
+    "typescriptsipt": "next"
   }
 }

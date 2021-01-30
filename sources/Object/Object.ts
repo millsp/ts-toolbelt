@@ -1,3 +1,6 @@
+import {Key} from '../Any/Key'
+import {Record} from './Record'
+
 /**
  * An [[Object]]
  * @example
@@ -6,4 +9,4 @@
  * type string1 = {b: "world"}
  * ```
  */
-export type Object = object
+export type Object = Record<Key, unknown>
