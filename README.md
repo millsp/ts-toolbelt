@@ -224,12 +224,7 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 
 | ts-toolbelt | typescript |
 |-------------|------------|
-| 8.x.x       | ^4.0.x     |
-| 6.x.x       | ^3.7.x     |
-| 4.x.x       | ^3.5.x     |
-| 2.x.x       | ^3.5.x     |
-| 3.x.x       | ^3.5.x     |
-| 1.x.x       | ~3.5.x     |
+| 9.x.x       | ^4.2.x     |
 
 Major version numbers will upgrade whenever TypeScript had breaking changes. 
 Otherwise, the release versions will naturally follow the semantic versioning.
