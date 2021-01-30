@@ -4,7 +4,7 @@
 
 # git clone --depth=1 https://github.com/DefinitelyTyped/DefinitelyTyped.git dt &&
 
-# npx ts-node scr/tools/dt-update-version.ts &&
+# npx ts-node scripts/tools/dt-update-version.ts &&
 
 # cd dt &&
 
