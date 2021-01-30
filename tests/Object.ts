@@ -1034,10 +1034,8 @@ type O_PATHS = {
  }
 }
 
-type Index = (string | number | symbol)
-
 checks([
-    check<O.Paths<any>, Index[], Test.Pass>(),
+    check<O.Paths<{'prop': {a: 1}[]}>, T.NonNullable<['prop'?, number?, 'a'?]>, Test.Pass>(),
     check<O.Paths<O_PATHS>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>, Test.Pass>(),
 ])
 

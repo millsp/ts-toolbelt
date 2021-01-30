@@ -6,23 +6,21 @@ import {Cast} from '../Any/Cast'
 import {Equals} from '../Any/Equals'
 import {List} from '../List/List'
 import {Append} from '../List/Append'
+import {BuiltIn, Primitive} from '../Misc/_api'
 
 /**
  * @hidden
  */
-type __Paths<O, Paths extends List<Key> = []> = {
-    0: {[K in keyof O]: __Paths<O[K], Append<Paths, K>>}[keyof O]
-    // It dives deep, and as it dives, it adds the paths to `Paths`
-    1: NonNullableFlat<OptionalFlat<Paths>>
-    2: NonNullableFlat<OptionalFlat<Concat<Paths, Key[]>>>
+type __Paths<O, Paths extends List<Key> = []> =
+Paths['length'] extends 10 ? Paths : {
+  0: {[K in keyof O]: __Paths<O[K], Append<Paths, K>>}[keyof O]
+  1: {[K in keyof O]: __Paths<O[K], Append<Paths, K>>}[keyof O & number]
+  // It dives deep, and as it dives, it adds the paths to `Paths`
+  2: NonNullableFlat<OptionalFlat<Paths>>
 }[
-    Equals<O, any> extends 1      // Handle infinite recursion
-    ? 2                           // 1: Exit adding infinite Path
-    : O extends object            // 0: > If object
-      ? [keyof O] extends [never] // & If recursion has finished
-        ? 1                       // 1: Exit
-        : 0                       // 0: Continue
-      : 1                         // 1: Exit
+    [keyof O] extends [never] ? 2 :
+    O extends BuiltIn | Primitive ? 2 :
+    O extends ReadonlyArray<any> ? 1 : 0
 ]
 
 /**
