@@ -1,4 +1,4 @@
-import {Test, O, A, T, U, M} from '../sources/ts-toolbelt'
+import {Test, O, A, T, U, M} from '../sources'
 import {Key} from '../sources/Any/Key'
 import {OptionalDeep} from '../sources/Object/Optional'
 

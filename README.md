@@ -98,6 +98,9 @@ For best results, add this to your `tsconfig.json`
 
     // this is optional, but enable whenever possible
     "strict": true,
+
+    // this is the lowest supported standard library
+    "lib": ["es2015"],
   }
 }
 ```
