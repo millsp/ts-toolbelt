@@ -84,7 +84,7 @@ You'll find all the types you can ever need in this single and **well organized*
 ### Prerequisites
 
 ```sh
-npm install typescript@^4.2.0 --save-dev
+npm install typescript@^4.1.0 --save-dev
 ```
 
 For best results, add this to your `tsconfig.json`
@@ -222,7 +222,7 @@ The project is maintained to adapt to the constant [changes of TypeScript](https
 
 | ts-toolbelt | typescript |
 |-------------|------------|
-| 9.x.x       | ^4.2.x     |
+| 9.x.x       | ^4.1.x     |
 
 Major version numbers will upgrade whenever TypeScript had breaking changes. 
 Otherwise, the release versions will naturally follow the semantic versioning.
