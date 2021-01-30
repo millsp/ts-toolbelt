@@ -83,10 +83,8 @@ You'll find all the types you can ever need in this single and **well organized*
 
 ### Prerequisites
 
-Lowest TypeScript [support](#compatibility) starts at v3.5
-
 ```sh
-npm install typescript@^3.8.0 --save-dev
+npm install typescript@^4.2.0 --save-dev
 ```
 
 For best results, add this to your `tsconfig.json`
