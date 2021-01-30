@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "9.1.2",
+  "version": "9.1.3",
   "description": "TypeScript's largest utility library",
   "keywords": [
     "safe",
@@ -43,8 +43,7 @@
     "test:lint": "bash scripts/test/lint.sh",
     "test:types": "bash scripts/test/types.sh"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^8.3.0",
     "@commitlint/config-conventional": "^8.3.0",
