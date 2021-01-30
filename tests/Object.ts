@@ -462,6 +462,16 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// KNOWNKEYS
+
+checks([
+    check<O.KnownKeys<O>, keyof O, Test.Pass>(),
+    check<O.KnownKeys<O1>, keyof O1, Test.Pass>(),
+    check<O.KnownKeys<string[]>, never, Test.Pass>(),
+    check<O.KnownKeys<{[k: string]: any} & {a: any}>, 'a', Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // LISTOF
 
 type O_LISTOF_INDEX = {

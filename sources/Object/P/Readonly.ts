@@ -4,7 +4,7 @@ import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Key} from '../../Any/Key'
 import {Readonly as OReadonly} from '../Readonly'
-import {LastIndex} from '../../List/LastIndex'
+import {LastKey} from '../../List/LastKey'
 import {List} from '../../List/List'
 import {Depth} from '../_Internal'
 import {Boolean} from '../../Boolean/_Internal'
@@ -14,7 +14,7 @@ import {Boolean} from '../../Boolean/_Internal'
  */
 type ReadonlyObject<O, Path extends List<Key>, depth extends Depth, I extends Iteration = IterationOf<0>> =
   O extends object                                                   // If it's an object
-  ? Pos<I> extends LastIndex<Path>                                   // If it's the last index
+  ? Pos<I> extends LastKey<Path>                                   // If it's the last index
     ? OReadonly<O, Path[Pos<I>], depth>                              // Use standard ReadOnly
     : {
         [K in keyof O]: K extends Path[Pos<I>]                       // If K is part of Path
@@ -30,7 +30,7 @@ type ReadonlyArrays<O, Path extends List<Key>, depth extends Depth, I extends It
   O extends object                             // Same as above, but
   ? O extends (infer A)[]                      // If O is an array
     ? ReadonlyArrays<A, Path, depth, I>[]      // Dive into the array
-    : Pos<I> extends LastIndex<Path>
+    : Pos<I> extends LastKey<Path>
       ? OReadonly<O, Path[Pos<I>], depth>
       : {
           [K in keyof O]: K extends Path[Pos<I>]

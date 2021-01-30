@@ -5,7 +5,7 @@ import {Next} from '../../Iteration/Next'
 import {Key} from '../../Any/Key'
 import {_Pick as _OPick} from '../Pick'
 import {_Pick as _LPick} from '../../List/Pick'
-import {LastIndex} from '../../List/LastIndex'
+import {LastKey} from '../../List/LastKey'
 import {List} from '../../List/List'
 import {Boolean} from '../../Boolean/_Internal'
 
@@ -25,7 +25,7 @@ type Action<O extends object, K extends Key> =
 type PickObject<O, Path extends List<Key>, I extends Iteration = IterationOf<0>> =
   O extends object                                // If it's an object
   ? Action<O, Path[Pos<I>]> extends infer Picked  // Pick the current index
-    ? Pos<I> extends LastIndex<Path>              // If it's the last index
+    ? Pos<I> extends LastKey<Path>              // If it's the last index
       ? Picked                                    // Return the picked object
       : {                                         // Otherwise, continue diving
           [K in keyof Picked]: PickObject<Picked[K], Path, Next<I>>
@@ -41,7 +41,7 @@ type PickList<O, Path extends List<Key>, I extends Iteration = IterationOf<0>> =
   ? O extends (infer A)[]           // If O is an array
     ? PickList<A, Path, I>[]        // Dive into the array
     : _OPick<O, Path[Pos<I>]> extends infer Picked
-      ? Pos<I> extends LastIndex<Path>
+      ? Pos<I> extends LastKey<Path>
         ? Picked
         : {
             [K in keyof Picked]: PickList<Picked[K], Path, Next<I>>

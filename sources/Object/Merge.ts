@@ -177,5 +177,3 @@ export type Merge<O extends object, O1 extends object, depth extends Depth = 'fl
   'flat': MergeFlat<O, O1, ignore, fill>
   'deep': MergeDeep<O, O1, ignore, fill>
 }[depth]
-
-type mergeList = Merge<{a: [1]}, {a: [2, 3]}, 'deep'>

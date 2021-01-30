@@ -4,7 +4,7 @@ import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Key} from '../../Any/Key'
 import {_Omit as _OOmit} from '../Omit'
-import {LastIndex} from '../../List/LastIndex'
+import {LastKey} from '../../List/LastKey'
 import {List} from '../../List/List'
 import {Boolean} from '../../Boolean/_Internal'
 
@@ -13,7 +13,7 @@ import {Boolean} from '../../Boolean/_Internal'
  */
 type OmitObject<O, Path extends List<Key>, I extends Iteration = IterationOf<0>> =
   O extends object                                        // If it's an object
-  ? Pos<I> extends LastIndex<Path>                        // If it's the last index
+  ? Pos<I> extends LastKey<Path>                        // If it's the last index
     ? _OOmit<O, Path[Pos<I>]>                             // Use standard Omit
     : {
         [K in keyof O]: K extends Path[Pos<I>]            // If K is part of Path
@@ -29,7 +29,7 @@ type OmitList<O, Path extends List<Key>, I extends Iteration = IterationOf<0>> =
   O extends object                  // Same as above, but
   ? O extends (infer A)[]           // If O is an array
     ? OmitList<A, Path, I>[]        // Dive into the array
-    : Pos<I> extends LastIndex<Path>
+    : Pos<I> extends LastKey<Path>
       ? _OOmit<O, Path[Pos<I>]>
       : {
           [K in keyof O]: K extends Path[Pos<I>]

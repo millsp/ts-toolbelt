@@ -1,4 +1,4 @@
-import {Test, T, A} from '../sources'
+import {Test, T, A, L} from '../sources'
 
 const {checks, check} = Test
 
@@ -319,6 +319,15 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// KNOWNKEYS
+
+checks([
+    check<L.KnownKeys<T>, Exclude<L.Keys<T>, number>, Test.Pass>(),
+    check<L.KnownKeys<string[]>, never, Test.Pass>(),
+])
+
+
+// ---------------------------------------------------------------------------------------
 // LAST
 
 checks([
@@ -329,7 +338,7 @@ checks([
 // LASTINDEX
 
 checks([
-    check<T.LastIndex<[0, 1, 2?]>, 1 | 2, Test.Pass>(),
+    check<T.LastKey<[0, 1, 2?]>, 1 | 2, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

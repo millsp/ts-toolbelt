@@ -3,7 +3,7 @@ import {Iteration} from '../../Iteration/Iteration'
 import {Pos} from '../../Iteration/Pos'
 import {Next} from '../../Iteration/Next'
 import {Key} from '../../Any/Key'
-import {LastIndex} from '../../List/LastIndex'
+import {LastKey} from '../../List/LastKey'
 import {List} from '../../List/List'
 import {Record} from '../Record'
 import {Patch} from '../Patch'
@@ -13,7 +13,7 @@ import {Patch} from '../Patch'
  */
 type UpdateObject<O, Path extends List<Key>, A, I extends Iteration = IterationOf<0>> =
   O extends object                                                     // if it's an object
-  ? Pos<I> extends LastIndex<Path>                                     // if it's the last index
+  ? Pos<I> extends LastKey<Path>                                     // if it's the last index
     ? Patch<Record<Path[Pos<I>], A>, O>                                // use standard Update
     : (O & Record<Exclude<Path[Pos<I>], keyof O>, {}>) extends infer O // fill in missing keys with non-object
       ? {                                                              // to effectively build the object up
