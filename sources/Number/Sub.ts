@@ -70,8 +70,6 @@ export type __Sub<N1 extends number, N2 extends number> =
  * Subtract a [[Number]] from another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
- * @param fmt (?=`'s'`) output format
- * @param IMap to operate with another set of numbers
  * @returns `string | number | boolean`
  * @example
  * ```ts

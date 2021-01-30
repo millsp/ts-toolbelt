@@ -11,8 +11,6 @@ export type _Negate<N extends Iteration> =
 /**
  * Negate a [[Number]]
  * @param N to negate
- * @param fmt (?=`'s'`) output format
- * @param IMap to operate with another set of numbers
  * @returns `string | number | boolean`
  * @example
  * ```ts

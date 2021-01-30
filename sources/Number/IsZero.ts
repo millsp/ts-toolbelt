@@ -13,7 +13,6 @@ export type _IsZero<N extends Iteration> = {
 /**
  * Check whether a [[Number]] is null or not
  * @param N to check
- * @param IMap to operate with another set of numbers
  * @returns [[Boolean]]
  * @example
  * ```ts

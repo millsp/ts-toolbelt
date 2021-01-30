@@ -12,7 +12,6 @@ export type _Lower<N1 extends Iteration, N2 extends Iteration> =
  * Check if a [[Number]] is lower than another one
  * @param N1 to compare
  * @param N2 to compare to
- * @param IMap to operate with another set of numbers
  * @returns [[Boolean]]
  * @example
  * ```ts

@@ -70,8 +70,6 @@ export type __Add<N1 extends number, N2 extends number> =
  * Add a [[Number]] to another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
- * @param fmt (?=`'s'`) output format
- * @param IMap to operate with another set of numbers
  * @returns `string | number | boolean`
  * @example
  * ```ts

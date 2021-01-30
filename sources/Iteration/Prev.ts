@@ -3,7 +3,6 @@ import {Iteration, IterationMap} from './Iteration'
 /**
  * Move `I`'s position backwards
  * @param I to move
- * @param IMap to operate with another set of numbers
  * @returns [[Iteration]]
  * @example
  * ```ts

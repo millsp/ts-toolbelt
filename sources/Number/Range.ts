@@ -46,8 +46,6 @@ export type _Range<From extends number, To extends number, way extends Way> =
  * @param From to start with
  * @param To to end with
  * @param way (?=`'->'`) to reverse it
- * @param fmt (?=`'s'`) output format
- * @param IMap to operate with another set of numbers
  * @returns `string[] | number[] | boolean[]`
  * @example
  * ```ts

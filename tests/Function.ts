@@ -80,7 +80,6 @@ checks([
 checks([
     check<F.Length<typeof fn>, 3, Test.Pass>(),
     check<F.Length<(a1: any, a2?: any) => any>, 1 | 2, Test.Pass>(),
-    check<F.Length<(a1: any, a2?: any) => any, 's'>, '1' | '2', Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

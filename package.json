@@ -1,13 +1,13 @@
 {
   "name": "ts-toolbelt",
-  "version": "8.5.2",
-  "descriptsiption": "Get the most out of TypeScriptsipt",
+  "version": "9.0.0",
+  "description": "TypeScript's largest utility library",
   "keywords": [
     "safe",
     "tools",
     "types",
     "typesafe",
-    "typescriptsipt"
+    "typescript"
   ],
   "homepage": "https://github.com/millsp/ts-toolbelt",
   "repository": {

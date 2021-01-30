@@ -3,7 +3,6 @@ import {Iteration} from './Iteration'
 /**
  * Get the position of `I` (**number**)
  * @param I to query
- * @param IMap to operate with another set of numbers
  * @returns `number`
  * @example
  * ```ts

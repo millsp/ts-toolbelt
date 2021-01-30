@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/millsp/ts-toolbelt">
-    <img alt="banner" title="ts-toolbelt" src=".github/banner.svg">
+    <img alt="banner" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/banner.svg">
   </a>
   <h4 align="center">TypeScript's largest utility library</h4>
 </p>
@@ -63,7 +63,7 @@ It uses the type system itself for TypeScript to compute complex types. So its A
 
 <p align="center">
   <a href="https://codesandbox.io/s/ts-toolbelt-x4jly?file=/src/index.ts">
-    <img alt="banner" title="ts-toolbelt" src=".github/demo.svg">
+    <img alt="demo" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/demo.svg">
   </a>
 </p>
 
