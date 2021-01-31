@@ -1,12 +1,11 @@
 import {OptionalFlat} from '../Object/Optional'
 import {Key} from '../Any/Key'
 import {NonNullableFlat} from '../Object/NonNullable'
-import {Concat} from '../List/Concat'
 import {Cast} from '../Any/Cast'
-import {Equals} from '../Any/Equals'
 import {List} from '../List/List'
 import {Append} from '../List/Append'
-import {BuiltIn, Primitive} from '../Misc/_api'
+import {BuiltIn} from '../Misc/BuiltIn'
+import {Primitive} from '../Misc/Primitive'
 
 /**
  * @hidden
