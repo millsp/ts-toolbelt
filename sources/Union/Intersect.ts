@@ -1,5 +1,3 @@
-import {Union} from './Union'
-
 /**
  * Get the intersection of `U1` & `U2`
  * @param U1 to check similarities with
@@ -9,5 +7,5 @@ import {Union} from './Union'
  * ```ts
  * ```
  */
-export type Intersect<U1 extends Union, U2 extends Union> =
+export type Intersect<U1 extends any, U2 extends any> =
     U1 & U2

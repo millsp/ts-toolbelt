@@ -11,7 +11,7 @@ export type ComposeListAsync = {
         R0,
         P extends any[],
     >(fns: [
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R0>>>
 
     <
@@ -20,7 +20,7 @@ export type ComposeListAsync = {
         P extends any[],
     >(fns: [
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R1>>>
 
     <
@@ -31,7 +31,7 @@ export type ComposeListAsync = {
     >(fns: [
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R2>>>
 
     <
@@ -44,7 +44,7 @@ export type ComposeListAsync = {
         Function<[Await<R2>],     R3>,
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R3>>>
 
     <
@@ -59,7 +59,7 @@ export type ComposeListAsync = {
         Function<[Await<R2>],     R3>,
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R4>>>
 
     <
@@ -76,7 +76,7 @@ export type ComposeListAsync = {
         Function<[Await<R2>],     R3>,
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R5>>>
 
     <
@@ -95,7 +95,7 @@ export type ComposeListAsync = {
         Function<[Await<R2>],     R3>,
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R6>>>
 
     <
@@ -116,7 +116,7 @@ export type ComposeListAsync = {
         Function<[Await<R2>],     R3>,
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R7>>>
 
     <
@@ -139,7 +139,7 @@ export type ComposeListAsync = {
         Function<[Await<R2>],     R3>,
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R8>>>
 
     <
@@ -164,6 +164,6 @@ export type ComposeListAsync = {
         Function<[Await<R2>],     R3>,
         Function<[Await<R1>],     R2>,
         Function<[Await<R0>],     R1>,
-        Function<P,                     R0>,
+        Function<P,               R0>,
     ]): Function<P, Promise<Await<R9>>>
 }

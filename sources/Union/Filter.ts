@@ -1,4 +1,3 @@
-import {Union} from './Union'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 
@@ -11,7 +10,7 @@ import {Is} from '../Any/Is'
  * ```ts
  * ```
  */
-export type Filter<U extends Union, M extends Union, match extends Match = 'default'> =
+export type Filter<U extends any, M extends any, match extends Match = 'default'> =
     U extends unknown
     ? Is<U, M, match> extends 1
       ? never

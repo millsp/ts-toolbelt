@@ -1,4 +1,3 @@
-import {Union} from './Union'
 import {Is} from '../Any/Is'
 import {Match} from '../Any/_Internal'
 
@@ -11,7 +10,7 @@ import {Match} from '../Any/_Internal'
  * ```ts
  * ```
  */
-export type Select<U extends Union, M extends any, match extends Match = 'default'> =
+export type Select<U extends any, M extends any, match extends Match = 'default'> =
     U extends unknown
     ? Is<U, M, match> extends 1
       ? U

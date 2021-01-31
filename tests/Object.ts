@@ -1013,10 +1013,10 @@ type O_PATH_U = {
 }
 
 checks([
-    check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>, never, Test.Pass>(),
-    check<O.Path<O_PATH_U, ['b', 'c', 'd'], 0>, 'bcd', Test.Pass>(),
-    check<O.Path<O_PATH_U, ['a', 'b', 'c'], 0>, 'abc', Test.Pass>(),
-    check<O.Path<O_PATH_U, ['a' | 'b', 'b'], 0>, boolean | 'bb' | {c: 'abc'}, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>, undefined, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['b', 'c', 'd'], 0>, 'bcd' | undefined, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a', 'b', 'c'], 0>, 'abc' | undefined, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a' | 'b', 'b'], 0>, boolean | 'bb' | {c: 'abc'} | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

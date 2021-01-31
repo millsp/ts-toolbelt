@@ -1,5 +1,4 @@
 import {Exclude} from './Exclude'
-import {Union} from './Union'
 
 /**
  * Get an [[Union]] that is the difference between `U1` & `U2`
@@ -10,5 +9,5 @@ import {Union} from './Union'
  * ```ts
  * ```
  */
-export type Diff<U1 extends Union, U2 extends Union> =
+export type Diff<U1 extends any, U2 extends any> =
     Exclude<U1, U2> | Exclude<U2, U1>

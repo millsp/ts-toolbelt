@@ -1,5 +1,3 @@
-import {Union} from './Union'
-
 /**
  * Check whether `U` contains `U1`
  * @param U to be inspected
@@ -9,7 +7,7 @@ import {Union} from './Union'
  * ```ts
  * ```
  */
-export type Has<U extends Union, U1 extends Union> =
+export type Has<U extends any, U1 extends any> =
     [U1] extends [U]
     ? 1
     : 0

@@ -1,5 +1,3 @@
-import {Union} from './Union'
-
 // Credit https://stackoverflow.com/a/50375286/3570903
 
 /**
@@ -10,7 +8,7 @@ import {Union} from './Union'
  * ```ts
  * ```
  */
-export type IntersectOf<U extends Union> =
+export type IntersectOf<U extends any> =
     (U extends unknown ? (k: U) => void : never) extends ((k: infer I) => void)
     ? I
     : never

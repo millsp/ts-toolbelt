@@ -1,5 +1,3 @@
-import {Union} from './Union'
-
 /**
  * Remove `M` out of `U`
  * @param U to remove from
@@ -9,7 +7,7 @@ import {Union} from './Union'
  * ```ts
  * ```
  */
-export type Exclude<U extends Union, M extends Union> =
+export type Exclude<U extends any, M extends any> =
     U extends M
     ? never
     : U

@@ -1,5 +1,3 @@
-import {Union} from './Union'
-
 /**
  * Add `undefined | null` to `U`
  * @param U to make nullable
@@ -8,5 +6,5 @@ import {Union} from './Union'
  * ```ts
  * ```
  */
-export type Nullable<U extends Union> =
+export type Nullable<U extends any> =
     U | undefined | null
