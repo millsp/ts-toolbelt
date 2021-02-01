@@ -1,3 +1,5 @@
+import {Key} from '../Any/Key'
+import {Try} from '../Any/Try'
 import {List} from '../List/List'
 import {Pop} from '../List/Pop'
 import {Keys} from '../Object/Keys'
@@ -6,14 +8,16 @@ import {UnionOf} from '../Object/UnionOf'
 import {Join} from './Join'
 import {Split} from './Split'
 
-type Index = string | number
+type Index = (number | string)
 
-type MetaPath<O, SP extends List<Index> = []> =
-O extends unknown ? {
-    [K in keyof O & (string | number)]:
-    | Join<[...SP, K], '.'>
-    | MetaPath<O[K], [...SP, K]>
-} : never
+type KeyToIndex<K extends Key> =
+    number extends K ? '_' : K & Index
+
+type MetaPath<O, SP extends List<Index> = []> = {
+    [K in keyof O]:
+    | (Join<[...SP, KeyToIndex<K>], '.'>)
+    | (MetaPath<O[K], [...SP, KeyToIndex<K>]>)
+}
 
 type NextPath<OP extends unknown> =
     // the next paths after property `K` are on sub objects
@@ -21,14 +25,16 @@ type NextPath<OP extends unknown> =
     // So we access O[K] then we only keep the next paths
     // To do this, we can just exclude `string` out of it:
     // O[K] === {x: '${K}.x' | {y: '${K}.x.y' ...}}
-    // Now  we can get the next path by excluding `object`
-    // We will then obtain the very next/direct next path
-    Exclude<UnionOf<Exclude<OP, string> & {}>, object> & string
+    // To do this, we create a union of what we just got
+    // This will yield a union of paths and meta paths
+    // We exclude the next paths (meta) paths by excluding
+    // `object`. Then we are left with the direct next path
+    Try<UnionOf<Exclude<OP, string> & {}>, string>
 
 type ExecPath<O extends object, SP extends List<Index>> =
     // We go in the `MetaPath` of `O` to get the prop at `SP`
     // So we query what is going the `NextPath` at `O[...SP]`
-    NextPath<Path<MetaPath<O>, SP, 0>>
+    NextPath<Path<MetaPath<O, SP>, SP, 0>>
 
 type HintPath< O extends object, P extends string, Exec extends string, SP extends List<Index>> =
     [Exec] extends [never] // if has not found paths
@@ -38,20 +44,21 @@ type HintPath< O extends object, P extends string, Exec extends string, SP exten
 export type AutoPath<O extends object, P extends string, SP extends List<Index> = Split<P, '.'>> =
     P extends '' ? Keys<O> : HintPath<O, P, ExecPath<O, SP>, SP>
 
-declare const object: O
-
 declare function get<O extends object, P extends string>(
     obj: O, path: AutoPath<O, P>
 ): Path<O, Split<P, '.'>, 0>;
 
+declare const object: O
+
 type O = {
     a: O
-    b: {
-        c: 1
-    } | {
-        d: 2
-    }
+    x: O
+    y: O
+    z: O
+    f: O
+    g: O
+    d: O[]
 }
 
-const test0 = get(object, 'b.c')
-const test1 = get(object, 'focus.currentTarget.addEventListener')
+const test0 = get(object, 'd.100.a.d')
+const test1 = get(object, 'a.a.a.a')

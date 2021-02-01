@@ -11,9 +11,6 @@ export type Iteration = [
 
 export type IterationMap = {
     '__': [number, '-' | '0' | '+', '__', '__', '__'],
-} & NegativeIterationMap & PositiveIterationMap
-
-export type NegativeIterationMap = {
     '-100': [-100, '-', '__', '-99', '100'],
     '-99': [-99, '-', '-100', '-98', '99'],
     '-98': [-98, '-', '-99', '-97', '98'],
@@ -114,10 +111,6 @@ export type NegativeIterationMap = {
     '-3': [-3, '-', '-4', '-2', '3'],
     '-2': [-2, '-', '-3', '-1', '2'],
     '-1': [-1, '-', '-2', '0', '1'],
-    '0': [0, '0', '-1', '1', '0'],
-}
-
-export type PositiveIterationMap = {
     '0': [0, '0', '-1', '1', '0'],
     '1': [1, '+', '0', '2', '-1'],
     '2': [2, '+', '1', '3', '-2'],
