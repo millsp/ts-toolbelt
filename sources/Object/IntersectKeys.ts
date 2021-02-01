@@ -1,4 +1,3 @@
-import {Intersect} from '../Union/Intersect'
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from './At'
@@ -33,7 +32,7 @@ type IntersectMatch<O extends object, O1 extends object, match extends Match> =
  * ```
  */
 export type IntersectKeys<O extends object, O1 extends object, match extends Match = 'default'> = {
-    'default'     : Intersect<Keys<O>, Keys<O1>>
+    'default'     : Keys<O> & Keys<O1>
     'contains->'  : IntersectMatch<O,  O1, 'contains->'>
     'extends->'   : IntersectMatch<O,  O1, 'extends->'>
     '<-contains'  : IntersectMatch<O,  O1, '<-contains'>
