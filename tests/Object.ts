@@ -55,7 +55,6 @@ checks([
     check<O.At<O, 'a'>, string, Test.Pass>(),
     check<O.At<O, 'c'>, {a: 'a'} & {b: 'b'}, Test.Pass>(),
     check<O.At<O, 'g'>, O, Test.Pass>(),
-    check<O.At<{a: 1, b: 2, 0: 3}, string, 0>, 1 | 2, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1013,10 +1012,10 @@ type O_PATH_U = {
 }
 
 checks([
-    check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>, undefined, Test.Pass>(),
-    check<O.Path<O_PATH_U, ['b', 'c', 'd'], 0>, 'bcd' | undefined, Test.Pass>(),
-    check<O.Path<O_PATH_U, ['a', 'b', 'c'], 0>, 'abc' | undefined, Test.Pass>(),
-    check<O.Path<O_PATH_U, ['a' | 'b', 'b'], 0>, boolean | 'bb' | {c: 'abc'} | undefined, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>, never, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['b', 'c', 'd'], 0>, 'bcd' | never, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a', 'b', 'c'], 0>, 'abc' | never, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a' | 'b', 'b'], 0>, boolean | 'bb' | {c: 'abc'} | never, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

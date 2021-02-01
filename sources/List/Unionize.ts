@@ -1,7 +1,6 @@
 import {Key} from '../Any/Key'
 import {List} from './List'
 import {At} from '../Object/At'
-import {Cast} from '../Any/Cast'
 
 /**
  * Make the fields of `L` union the ones of `L1`
@@ -13,8 +12,8 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Unionize<L extends List, L1 extends List, K extends Key = Key> = Cast<{
+export type Unionize<L extends List, L1 extends List, K extends Key = Key> = {
     [P in keyof L]: P extends K
                     ? L[P] | At<L1, P>
                     : L[P]
-}, List>
+}

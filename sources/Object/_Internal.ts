@@ -27,4 +27,4 @@ export type MergeStyle = 0 | 1 | 2
  */
 export type Anyfy<O extends object> = {
     [K in keyof O]: any
-} & {}
+}
