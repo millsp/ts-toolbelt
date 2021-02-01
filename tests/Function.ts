@@ -75,26 +75,49 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// PATHAUTO
+
+type O_PATHAUTO = {
+    a: {
+        a: 1;
+    };
+    b: {
+        a: {
+            a: 2;
+        };
+        b: O_PATHAUTO[];
+    };
+};
+
+checks([
+    check<F.PathAuto<O_PATHAUTO, 'a'>, 'a' | 'a.a', Test.Pass>(),
+    check<F.PathAuto<O_PATHAUTO, 'a.'>, 'a.a', Test.Pass>(),
+    check<F.PathAuto<O_PATHAUTO, 'b.'>, 'b.b' | 'b.a', Test.Pass>(),
+    check<F.PathAuto<O_PATHAUTO, 'b.b.0'>, 'b.b.0' | 'b.b.0.b' | 'b.b.0.a', Test.Pass>(),
+    check<F.PathAuto<O_PATHAUTO, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.0.a.a', Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // PATHVALID
 
-type F_PATHVALID = {
+type O_PATHVALID = {
     a: {
         a: {};
-   };
+    };
     b: {
         a: {
             a: {};
-       };
+        };
         b: string[];
-   };
+    };
 };
 
 checks([
     check<F.PathValid<any, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
-    check<F.PathValid<F_PATHVALID, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
-    check<F.PathValid<F_PATHVALID, ['a', 'x']>, ['a', 'a'], Test.Pass>(),
-    check<F.PathValid<F_PATHVALID, ['b', 'a', 'a']>, ['b', 'a', 'a'], Test.Pass>(),
-    check<F.PathValid<F_PATHVALID, ['b', 'b', 0]>, ['b', 'b', 0], Test.Pass>(),
+    check<F.PathValid<O_PATHVALID, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
+    check<F.PathValid<O_PATHVALID, ['a', 'x']>, ['a', 'a'], Test.Pass>(),
+    check<F.PathValid<O_PATHVALID, ['b', 'a', 'a']>, ['b', 'a', 'a'], Test.Pass>(),
+    check<F.PathValid<O_PATHVALID, ['b', 'b', 0]>, ['b', 'b', 0], Test.Pass>(),
 ])
 
 
