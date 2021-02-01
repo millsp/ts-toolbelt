@@ -77,6 +77,6 @@ export type BuiltIn =
     | Function
     | Error
     | Date
-    | RegExp
     | {readonly [Symbol.toStringTag]: string}
+    | RegExp
     | Generator
