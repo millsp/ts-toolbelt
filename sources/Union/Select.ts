@@ -13,6 +13,6 @@ import {Match} from '../Any/_Internal'
 export type Select<U extends any, M extends any, match extends Match = 'default'> =
     U extends unknown
     ? Is<U, M, match> extends 1
-      ? U
+      ? U & M
       : never
     : never

@@ -14,5 +14,5 @@ export type Filter<U extends any, M extends any, match extends Match = 'default'
     U extends unknown
     ? Is<U, M, match> extends 1
       ? never
-      : U
+      : U & M
     : never
