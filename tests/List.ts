@@ -6,31 +6,31 @@ const {checks, check} = Test
 // LIST /////////////////////////////////////////////////////////////////////////////////
 
 type T = [
- 1,
- 2,
- '3' | undefined,
- 'xxxx',
- {a: 'a'} & {b: 'b'},
- string | number,
- number,
- object,
- readonly [0, 1, 2?],
- 'xxxx'?
-]
+    1,
+    2,
+    '3' | undefined,
+    'xxxx',
+    {a: 'a'} & {b: 'b'},
+    string | number,
+    number,
+    object,
+    readonly [0, 1, 2?],
+    'xxxx'?
+];
 
 type T1 = [
- 1,
- 2,
- '3',
- 'xxxx',
- string,
- number,
- number & {},
- object,
- readonly [0, 1, 2?, 3?],
- {a: never},
- 'xxxx'?
-]
+    1,
+    2,
+    '3',
+    'xxxx',
+    string,
+    number,
+    number & {},
+    object,
+    readonly [0, 1, 2?, 3?],
+    {a: never},
+    'xxxx'?
+];
 
 // ---------------------------------------------------------------------------------------
 // APPEND
@@ -59,23 +59,23 @@ checks([
 // ATLEAST
 
 type T_ATLEAST = [
- 0,
- 1,
- 2
+    0,
+    1,
+    2
 ] | [
- 3,
- 4,
- 5,
- 6
-]
+    3,
+    4,
+    5,
+    6
+];
 
 type ATLEAST_T_013 =
- | [0, 1, 2]
- | [0, 1 | undefined, 2 | undefined]
- | [0 | undefined, 1, 2 | undefined]
- | [3, 4 | undefined, 5 | undefined, 6 | undefined]
- | [3 | undefined, 4, 5 | undefined, 6 | undefined]
- | [3 | undefined, 4 | undefined, 5 | undefined, 6]
+    | [0, 1, 2]
+    | [0, 1 | undefined, 2 | undefined]
+    | [0 | undefined, 1, 2 | undefined]
+    | [3, 4 | undefined, 5 | undefined, 6 | undefined]
+    | [3 | undefined, 4, 5 | undefined, 6 | undefined]
+    | [3 | undefined, 4 | undefined, 5 | undefined, 6];
 
 checks([
     check<T.AtLeast<T_ATLEAST, '0' | '1' | '3'>, ATLEAST_T_013, Test.Pass>(),
@@ -122,12 +122,12 @@ checks([
 // EITHER
 
 type T_EITHER = [
- 0,
- 1,
- 2
-]
+    0,
+    1,
+    2
+];
 
-type EITHER_T_01 = [0, undefined, 2] | [undefined, 1, 2]
+type EITHER_T_01 = [0, undefined, 2] | [undefined, 1, 2];
 
 checks([
     check<T.Either<T_EITHER, '0' | '1'>, EITHER_T_01, Test.Pass>(),
@@ -165,30 +165,30 @@ checks([
 // FILTER
 
 type FILTER_T_NUMBER_EXTENDS = [
- '3' | undefined,
- 'xxxx',
- {a: 'a'} & {b: 'b'},
- string | number,
- object,
- readonly [
- 0,
- 1,
- 2?,
- ],
- 'xxxx' | undefined
-]
+    '3' | undefined,
+    'xxxx',
+    {a: 'a'} & {b: 'b'},
+    string | number,
+    object,
+    readonly [
+        0,
+        1,
+        2?,
+    ],
+    'xxxx' | undefined
+];
 
 type FILTER_T_NUMBER_EQUALS = [
- 1,
- 2,
- '3' | undefined,
- 'xxxx',
- {a: 'a'} & {b: 'b'},
- string | number,
- object,
- readonly [0, 1, 2?],
- 'xxxx' | undefined
-]
+    1,
+    2,
+    '3' | undefined,
+    'xxxx',
+    {a: 'a'} & {b: 'b'},
+    string | number,
+    object,
+    readonly [0, 1, 2?],
+    'xxxx' | undefined
+];
 
 checks([
     check<T.Filter<T, number, 'default'>, FILTER_T_NUMBER_EXTENDS, Test.Pass>(),
@@ -204,8 +204,8 @@ checks([
 // ---------------------------------------------------------------------------------------
 // FLATTEN
 
-type T_FLATTEN = [1, 12, [2, [3, [4, [5, [6, [7, [8, [9, 92?]]]]]]]]]
-type FLATTEN_T = [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, 92] | [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, undefined]
+type T_FLATTEN = [1, 12, [2, [3, [4, [5, [6, [7, [8, [9, 92?]]]]]]]]];
+type FLATTEN_T = [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, 92] | [1, 12, 2, 3, 4, 5, 6, 7, 8, 9, undefined];
 
 checks([
     check<T.Flatten<any>, any[], Test.Pass>(),
@@ -219,11 +219,11 @@ checks([
 // ---------------------------------------------------------------------------------------
 // GROUP
 
-type T_GROUP = [1, 2, 3, 4, 5, 6, 7, 8]
+type T_GROUP = [1, 2, 3, 4, 5, 6, 7, 8];
 
-type GROUP_T_1 = [[1], [2], [3], [4], [5], [6], [7], [8]]
-type GROUP_T_2 = [[1, 2], [3, 4], [5, 6], [7, 8]]
-type GROUP_T_3 = [[1, 2, 3], [4, 5, 6], [7, 8, undefined]]
+type GROUP_T_1 = [[1], [2], [3], [4], [5], [6], [7], [8]];
+type GROUP_T_2 = [[1, 2], [3, 4], [5, 6], [7, 8]];
+type GROUP_T_3 = [[1, 2, 3], [4, 5, 6], [7, 8, undefined]];
 
 checks([
     check<T.Group<T_GROUP, 1>, GROUP_T_1, Test.Pass>(),
@@ -260,35 +260,35 @@ checks([
 // INTERSECT
 
 type INTERSECT_T_T1_NUMBER_DEFAULT = [
- 1,
- 2,
- '3' | undefined,
- 'xxxx',
- {a: 'a'} & {b: 'b'},
- string | number,
- number,
- object,
- readonly [0, 1, 2?],
- 'xxxx' | undefined
-]
+    1,
+    2,
+    '3' | undefined,
+    'xxxx',
+    {a: 'a'} & {b: 'b'},
+    string | number,
+    number,
+    object,
+    readonly [0, 1, 2?],
+    'xxxx' | undefined
+];
 
 type INTERSECT_T_T1_NUMBER_EXTENDS = [
- 1,
- 2,
- '3' | undefined,
- 'xxxx',
- number | string,
- number,
- object,
- readonly [0, 1, 2?]
-]
+    1,
+    2,
+    '3' | undefined,
+    'xxxx',
+    number | string,
+    number,
+    object,
+    readonly [0, 1, 2?]
+];
 
 type INTERSECT_T_T1_NUMBER_EQUALS = [
- 1,
- 2,
- 'xxxx',
- object,
-]
+    1,
+    2,
+    'xxxx',
+    object,
+];
 
 checks([
     check<T.Intersect<T, T1, 'default'>, INTERSECT_T_T1_NUMBER_DEFAULT, Test.Pass>(),
@@ -304,7 +304,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // KEYS
 
-type KEYS_T = number | '3' | '0' | '1' | '2' | '4' | '5' | '6' | '7' | '8' | '9'
+type KEYS_T = number | '3' | '0' | '1' | '2' | '4' | '5' | '6' | '7' | '8' | '9';
 
 checks([
     check<T.Keys<T>, KEYS_T, Test.Pass>(),
@@ -502,11 +502,6 @@ checks([
 // No test needed (same as O.PathUp)
 
 // ---------------------------------------------------------------------------------------
-// PATHVALID
-
-// No test needed (same as O.PathValid)
-
-// ---------------------------------------------------------------------------------------
 // PICK
 
 checks([
@@ -589,15 +584,15 @@ checks([
 // SELECT
 
 type SELECT_T_NUMBER_EXTENDS = [
- 1,
- 2,
- string | number,
- number
-]
+    1,
+    2,
+    string | number,
+    number
+];
 
 type SELECT_T_NUMBER_EQUALS = [
- number
-]
+    number
+];
 
 checks([
     check<T.Select<T, number, 'default'>, SELECT_T_NUMBER_EXTENDS, Test.Pass>(),
@@ -701,8 +696,8 @@ checks([
 // ---------------------------------------------------------------------------------------
 // WRITABLE
 
-type WRITABLE_W_T_ARR = ['a', 'b']
-type WRITABLE_R_T_ARR = readonly ['a', 'b']
+type WRITABLE_W_T_ARR = ['a', 'b'];
+type WRITABLE_R_T_ARR = readonly ['a', 'b'];
 
 checks([
     check<T.Writable<WRITABLE_W_T_ARR>, WRITABLE_W_T_ARR, Test.Pass>(),

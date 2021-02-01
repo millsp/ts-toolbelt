@@ -26,8 +26,8 @@ const composedSync = composeSync(
     // @ts-ignore
     (message: string) => false, // receive previous return
     (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
- <T>(generic: T) => generic, // receive previous return
- (name: string, age: number) => ({name, age}), // receive parameters
+    <T>(generic: T) => generic, // receive previous return
+    (name: string, age: number) => ({name, age}), // receive parameters
 )
 
 checks([
@@ -53,7 +53,7 @@ checks([
 // ---------------------------------------------------------------------------------------
 // CURRY
 
-declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>
+declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>;
 
 const __ = {} as A.x
 
@@ -75,6 +75,30 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
+// PATHVALID
+
+type F_PATHVALID = {
+    a: {
+        a: {};
+   };
+    b: {
+        a: {
+            a: {};
+       };
+        b: string[];
+   };
+};
+
+checks([
+    check<F.PathValid<any, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
+    check<F.PathValid<F_PATHVALID, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
+    check<F.PathValid<F_PATHVALID, ['a', 'x']>, ['a', 'a'], Test.Pass>(),
+    check<F.PathValid<F_PATHVALID, ['b', 'a', 'a']>, ['b', 'a', 'a'], Test.Pass>(),
+    check<F.PathValid<F_PATHVALID, ['b', 'b', 0]>, ['b', 'b', 0], Test.Pass>(),
+])
+
+
+// ---------------------------------------------------------------------------------------
 // LENGTH
 
 checks([
@@ -91,10 +115,10 @@ declare const pipeSync: F.Pipe<'sync'>
 
 const pipedSync = pipeSync(
     (name: string, age: number) => ({name, age}), // receive parameters
- <T>(generic: T) => generic, // receive previous return
- (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
- // @ts-ignore
- (message: string) => false, // receive previous return
+    <T>(generic: T) => generic, // receive previous return
+    (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
+    // @ts-ignore
+    (message: string) => false, // receive previous return
 )
 
 checks([

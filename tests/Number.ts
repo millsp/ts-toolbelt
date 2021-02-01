@@ -8,7 +8,6 @@ const {checks, check} = Test
 // ---------------------------------------------------------------------------------------
 // ABSOLUTE
 
-
 checks([
     check<N.Absolute<0 | -1>, 0 | 1, Test.Pass>(),
     check<N.Absolute<0>, 0, Test.Pass>(),
