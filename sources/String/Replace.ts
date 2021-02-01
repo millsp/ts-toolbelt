@@ -1,4 +1,6 @@
-export type Replace<S extends string, R extends string, W extends string, RS extends string = ''> =
+import {Literal} from './_Internal'
+
+export type Replace<S extends string, R extends Literal, W extends Literal> =
     S extends `${infer BS}${R}${infer AS}`
-    ? Replace<AS, R, W, `${RS}${BS}${W}`>
-    : `${RS}${S}`
+    ? Replace<`${BS}${W}${AS}`, R, W>
+    : S
