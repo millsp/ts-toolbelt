@@ -13,8 +13,8 @@ import {Cast} from '../Any/Cast'
  * @param L to complete
  * @param L1 to copy from
  * @param depth (?=`'flat'`) 'deep' to do it deeply
- * @param ignore (?=`BuiltinObject`) types not to merge
- * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
+ * @param ignore (?=`BuiltIn`) types not to merge
+ * @param fill (?=`undefined`) types of `O` to be replaced with ones of `O1`
  * @returns [[List]]
  * @example
  * ```ts

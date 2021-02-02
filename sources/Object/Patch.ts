@@ -6,14 +6,15 @@ import {Depth} from './_Internal'
 import {BuiltIn} from '../Misc/BuiltIn'
 import {_Omit} from './Omit'
 import {Length} from '../List/Length'
+import {Has} from '../Union/Has'
 
 /**
  * @hidden
  */
 type Longer<L extends List, L1 extends List> =
-    [Exclude<keyof L1, keyof L>] extends [never]
-    ? 1
-    : 0
+  L extends unknown ? L1 extends unknown ?
+  {0: 0, 1: 1}[Has<keyof L, keyof L1>]
+  : never : never
 
 /**
  * @hidden
@@ -105,14 +106,13 @@ export type PatchDeep<O extends object, O1 extends object, ignore extends object
 
 /**
  * Complete the fields of `O` with the ones of `O1`. This is a version of
- * [[Merge]] that does NOT handle optional fields, it only completes fields of `O`
- * with the ones of `O1`.
+ * [[Merge]] that does NOT handle optional fields, it only completes fields of
+ * `O` with the ones of `O1`.
  * @param O to complete
  * @param O1 to copy from
  * @param depth (?=`'flat'`) 'deep' to do it deeply
- * @param style (?=`1`) 0 = lodash, 1 = ramda
- * @param ignore (?=`BuiltinObject`) types not to merge
- * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
+ * @param ignore (?=`BuiltIn`) types not to merge
+ * @param fill (?=`never`) types of `O` to be replaced with ones of `O1`
  * @returns [[Object]]
  * @example
  * ```ts
@@ -150,7 +150,7 @@ export type PatchDeep<O extends object, O1 extends object, ignore extends object
  * // }
  * ```
  */
-export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = undefined> = {
+export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> = {
   'flat': PatchFlat<O, O1, ignore, fill>
   'deep': PatchDeep<O, O1, ignore, fill>
 }[depth]

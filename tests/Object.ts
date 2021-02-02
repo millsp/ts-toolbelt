@@ -907,7 +907,7 @@ type PATCH_O1_O = {
     a: string | number;
     b: object;
     c: {a: 'a'} & {b: 'b'};
-    d?: 'string0';
+    d?: never;
     readonly e?: 'string1';
     readonly f: 0;
     g: {};

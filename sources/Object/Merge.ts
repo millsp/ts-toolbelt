@@ -7,14 +7,15 @@ import {BuiltIn} from '../Misc/BuiltIn'
 import {Length} from '../List/Length'
 import {RequiredKeys} from '../List/RequiredKeys'
 import {Exclude} from '../Union/Exclude'
+import {Has} from '../Union/Has'
 
 /**
  * @hidden
  */
 type Longer<L extends List, L1 extends List> =
-    [Exclude<RequiredKeys<L1>, RequiredKeys<L>>] extends [never]
-    ? 1
-    : 0
+  L extends unknown ? L1 extends unknown ?
+  {0: 0, 1: 1}[Has<RequiredKeys<L>, RequiredKeys<L1>>]
+  : never : never
 
 /**
  * @hidden
@@ -22,9 +23,8 @@ type Longer<L extends List, L1 extends List> =
 type MergeProp<OK, O1K, fill, OOKeys extends Key, K extends Key> =
   K extends OOKeys                // if prop of `O` is optional
   ? Exclude<OK, undefined> | O1K  // merge it with prop of `O1`
-  : [OK] extends [never]          // if it does not exist
-    ? O1K                         // complete with prop of `O1`
-    : OK extends fill ? O1K : OK  // fill/replace if required
+  : [OK] extends [never] ? O1K :  // complete with prop of `O1`
+    OK extends fill ? O1K : OK    // fill/replace if required
 
 /**
  * @hidden
@@ -58,7 +58,7 @@ export type MergeFlatChoice<O extends object, O1 extends object, ignore extends 
 /**
  * @hidden
  */
-export type MergeFlat<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
+export type MergeFlat<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = undefined> =
   O extends unknown ? O1 extends unknown ?
   MergeFlatChoice<O, O1, ignore, fill>
   : never : never
@@ -115,9 +115,8 @@ export type MergeDeep<O extends object, O1 extends object, ignore extends object
  * @param O to complete
  * @param O1 to copy from
  * @param depth (?=`'flat'`) 'deep' to do it deeply
- * @param style (?=`1`) 0 = lodash, 1 = ramda
- * @param ignore (?=`BuiltinObject`) types not to merge
- * @param fill (?=`fill`) types of `O` to be replaced with ones of `O1`
+ * @param ignore (?=`BuiltIn`) types not to merge
+ * @param fill (?=`undefined`) types of `O` to be replaced with ones of `O1`
  * @returns [[Object]]
  * @example
  * ```ts
