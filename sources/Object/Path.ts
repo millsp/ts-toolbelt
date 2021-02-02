@@ -1,11 +1,12 @@
 import {Key} from '../Any/Key'
-import {Cast, Extends} from '../Any/_api'
+import {Cast} from '../Any/Cast'
+import {Extends} from '../Any/Extends'
 import {Iteration} from '../Iteration/Iteration'
 import {IterationOf} from '../Iteration/IterationOf'
 import {Next} from '../Iteration/Next'
 import {Pos} from '../Iteration/Pos'
 import {List} from '../List/List'
-import {Length} from '../List/_api'
+import {Length} from '../List/Length'
 import {At} from '../Any/At'
 
 /**

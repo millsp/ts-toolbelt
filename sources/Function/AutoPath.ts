@@ -5,7 +5,7 @@ import {Pop} from '../List/Pop'
 import {Tail} from '../List/Tail'
 import {Path} from '../Object/Path'
 import {UnionOf} from '../Object/UnionOf'
-import {Select} from '../Union/_api'
+import {Select} from '../Union/Select'
 import {Join} from '../String/Join'
 import {Split} from '../String/Split'
 

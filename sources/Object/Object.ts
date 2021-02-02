@@ -10,4 +10,4 @@ import {Record} from './Record'
  * ```
  */
 export type Object =
-    Record<Key, unknown>
+    Record<Key, any>
