@@ -41,6 +41,7 @@ checks([
     check<A.At<O, 'g'>, O, Test.Pass>(),
     check<A.At<T, '1'>, 2, Test.Pass>(),
     check<A.At<T, '3'>, 'xxxx', Test.Pass>(),
+    check<A.At<{a: 1} | {b: 2}, 'a'>, 1 | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

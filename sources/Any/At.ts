@@ -26,6 +26,8 @@ import {Length} from '../List/Length'
 export type At<A extends any, K extends Key> =
     A extends List
     ? number extends Length<A>
-      ? A[K & keyof A] | undefined
+      ? K extends number | `${number}`
+        ? A[never] | undefined
+        : undefined
       : K extends keyof A ? A[K] : undefined
     : K extends keyof A ? A[K] : undefined
