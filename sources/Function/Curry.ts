@@ -25,7 +25,7 @@ type _SplitParams<P extends List, PSplit extends List[] = [], PRest extends List
     1: PSplit
     2: P[number][][]
 }[
-    number extends P['length']
+    number extends Length<P>
     ? 2
     : P extends []
       ? 1
@@ -49,7 +49,7 @@ type _JoinParams<PSplit extends List[], L extends List = []> = {
     1: L
     2: PSplit[number][]
 }[
-    number extends PSplit['length']
+    number extends Length<PSplit>
     ? 2
     : PSplit extends []
       ? 1

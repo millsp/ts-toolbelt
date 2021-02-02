@@ -8,4 +8,5 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type Length<L extends List> = L['length']
+export type Length<L extends List> =
+    L['length']

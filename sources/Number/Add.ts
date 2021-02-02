@@ -61,12 +61,6 @@ export type _Add<N1 extends Iteration, N2 extends Iteration> = {
 }[_IsNegative<N2>]
 
 /**
- * @hidden
- */
-export type __Add<N1 extends number, N2 extends number> =
-    _Add<IterationOf<N1>, IterationOf<N2>>
-
-/**
  * Add a [[Number]] to another one
  * @param N1 Left-hand side
  * @param N2 Right-hand side
@@ -86,6 +80,6 @@ export type __Add<N1 extends number, N2 extends number> =
 export type Add<N1 extends number, N2 extends number> =
     N1 extends unknown
     ? N2 extends unknown
-    ? __Add<N1, N2>[0]
-    : never
+      ? _Add<IterationOf<N1>, IterationOf<N2>>[0]
+      : never
     : never

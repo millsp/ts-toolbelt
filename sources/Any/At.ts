@@ -1,5 +1,6 @@
 import {Key} from './Key'
 import {List} from '../List/List'
+import {Length} from '../List/Length'
 
 /**
  * Get in `O` the type of a field of key `K`
@@ -24,7 +25,7 @@ import {List} from '../List/List'
  */
 export type At<A extends any, K extends Key> =
     A extends List
-    ? number extends A['length']
+    ? number extends Length<A>
       ? A[K & keyof A] | undefined
       : K extends keyof A ? A[K] : undefined
     : K extends keyof A ? A[K] : undefined

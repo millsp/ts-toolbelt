@@ -8,13 +8,14 @@ import {_Pick as _LPick} from '../../List/Pick'
 import {LastKey} from '../../List/LastKey'
 import {List} from '../../List/List'
 import {Boolean} from '../../Boolean/_Internal'
+import {Length} from '../../List/Length'
 
 /**
  * @hidden
  */
 type Action<O extends object, K extends Key> =
   O extends List
-  ? number extends O['length']
+  ? number extends Length<O>
     ? Action<O[number], Key>[]
     : _LPick<O, (string | number)>
   : _OPick<O, K>

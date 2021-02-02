@@ -1,5 +1,6 @@
 import {_Omit} from '../Object/Omit'
 import {_Pick} from '../Object/Pick'
+import {Length} from './Length'
 import {List} from './List'
 
 /**
@@ -12,7 +13,7 @@ import {List} from './List'
  */
 export type ObjectOf<O extends List> =
     O extends List
-    ? number extends O['length'] // detect arrays
-      ? _Pick<O, number>         // preserves arrays
-      : _Omit<O, keyof any[]>    // transforms tuples
+    ? number extends Length<O> // detect arrays
+      ? _Pick<O, number>       // preserves arrays
+      : _Omit<O, keyof any[]>  // transforms tuples
     : O
