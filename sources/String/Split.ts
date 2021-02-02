@@ -10,4 +10,4 @@ type _Split<S extends string, D extends string, T extends string[] = []> =
  * @param D to split at
  */
 export type Split<S extends string, D extends string = ''> =
-     _Split<S, D>
+    _Split<S, D>
