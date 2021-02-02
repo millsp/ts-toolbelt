@@ -17,5 +17,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type MergeAll<L extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
+export type MergeAll<L extends List, Ls extends List<List>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = undefined> =
     Cast<OMergeAll<L, Ls, depth, ignore, fill>, List>

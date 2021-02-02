@@ -665,7 +665,7 @@ type MERGE_O_O1_DEEP_LODASH = {
             b?: {};
        };
    },
-    k: {} | {[k: string]: string} | {[x: string]: string} | Date;
+    k: {} | {[k: string]: string} | {[x: string]: string | undefined} | Date;
     l: [{a: 'a', b: 'b'}, 2, 3];
     m: [];
     n: 42;
@@ -991,8 +991,8 @@ checks([
 checks([
     check<O.Path<O, ['g', 'g', 'g']>, O['g'], Test.Pass>(),
     check<O.Path<O, ['g', 'g', 'g', 'a']>, string, Test.Pass>(),
-    check<O.Path<O, ['g', 'x', 'g']>, never, Test.Pass>(),
-    check<O.Path<O, []>, O, Test.Pass>(),
+    check<O.Path<O, ['g', 'x', 'g']>, undefined, Test.Pass>(),
+    check<O.Path<O, []>, undefined, Test.Pass>(),
     check<O.Path<O, ['d']>, 'string0' | undefined, Test.Pass>(),
 ])
 
@@ -1000,22 +1000,25 @@ type O_PATH_U = {
     b: {
         c: {
             d: 'bcd';
-       };
+        };
         b: 'bb';
-   };
+    };
+    c: 1;
 } | {
     a: {
         b: boolean | {
             c: 'abc';
-       };
-   };
+        };
+    };
+    c: 2;
 };
 
 checks([
-    check<O.Path<O_PATH_U, ['b', 'c', 'x'], 0>, never, Test.Pass>(),
-    check<O.Path<O_PATH_U, ['b', 'c', 'd'], 0>, 'bcd' | never, Test.Pass>(),
-    check<O.Path<O_PATH_U, ['a', 'b', 'c'], 0>, 'abc' | never, Test.Pass>(),
-    check<O.Path<O_PATH_U, ['a' | 'b', 'b'], 0>, boolean | 'bb' | {c: 'abc'} | never, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['c']>, 1 | 2, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['b', 'c', 'x']>, undefined, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['b', 'c', 'd']>, 'bcd' | undefined, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a', 'b', 'c']>, 'abc' | undefined, Test.Pass>(),
+    check<O.Path<O_PATH_U, ['a' | 'b', 'b']>, boolean | 'bb' | {c: 'abc'} | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1024,13 +1027,13 @@ checks([
 type O_PATHS = {
     a: {
         a: boolean;
-   };
+    };
     b: {
         a: {
             a: {};
-       };
+        };
         b: {};
-   };
+    };
 };
 
 checks([

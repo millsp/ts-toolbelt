@@ -1,4 +1,4 @@
-import {AtBasic} from './At'
+import {At} from './At'
 import {Key} from '../Any/Key'
 import {_ListOf} from './ListOf'
 import {List} from '../List/List'
@@ -27,7 +27,7 @@ type PatchProp<OK, O1K, fill, OKeys extends Key, K extends Key> =
  * @hidden
  */
 type PatchFlatObject<O extends object, O1 extends object, fill, OKeys extends Key = keyof O> = {
-  [K in keyof (O & _Omit<O1, OKeys>)]: PatchProp<AtBasic<O, K>, AtBasic<O1, K>, fill, OKeys, K>
+  [K in keyof (O & _Omit<O1, OKeys>)]: PatchProp<At<O, K>, At<O1, K>, fill, OKeys, K>
 } & {}
 
 /**
@@ -37,8 +37,8 @@ type PatchFlatList<L extends List, L1 extends List, ignore extends object, fill>
   number extends Length<L | L1>
   ? PatchFlatChoice<L[number], L1[number], ignore, fill>[]
   : Longer<L, L1> extends 1
-    ? {[K in keyof L]: PatchProp<L[K], AtBasic<L1, K>, fill, keyof L, K>}
-    : {[K in keyof L1]: PatchProp<AtBasic<L, K>, L1[K], fill, keyof L, K>}
+    ? {[K in keyof L]: PatchProp<L[K], At<L1, K>, fill, keyof L, K>}
+    : {[K in keyof L1]: PatchProp<At<L, K>, L1[K], fill, keyof L, K>}
 
 /**
  * @hidden
@@ -67,14 +67,14 @@ type PatchDeepList<L extends List, L1 extends List, ignore extends object, fill>
   number extends Length<L | L1>
   ? PatchDeepChoice<L[number], L1[number], ignore, fill, never, any>[]
   : Longer<L, L1> extends 1
-    ? {[K in keyof L]: PatchDeepChoice<L[K], AtBasic<L1, K>, ignore, fill, keyof L, K>}
-    : {[K in keyof L1]: PatchDeepChoice<AtBasic<L, K>, L1[K], ignore, fill, keyof L, K>}
+    ? {[K in keyof L]: PatchDeepChoice<L[K], At<L1, K>, ignore, fill, keyof L, K>}
+    : {[K in keyof L1]: PatchDeepChoice<At<L, K>, L1[K], ignore, fill, keyof L, K>}
 
 /**
  * @hidden
  */
 type PatchDeepObject<O extends object, O1 extends object, ignore extends object, fill, OKeys extends Key = keyof O> = {
-    [K in keyof (O & _Omit<O1, OKeys>)]: PatchDeepChoice<AtBasic<O, K>, AtBasic<O1, K>, ignore, fill, OKeys, K>
+    [K in keyof (O & _Omit<O1, OKeys>)]: PatchDeepChoice<At<O, K>, At<O1, K>, ignore, fill, OKeys, K>
 }
 
 /**
@@ -98,7 +98,7 @@ type PatchDeepChoice<OK, O1K, ignore extends object, fill, OKeys extends Key, K 
 /**
  * @hidden
  */
-export type PatchDeep<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
+export type PatchDeep<O extends object, O1 extends object, ignore extends object, fill> =
   O extends unknown ? O1 extends unknown ?
     PatchDeepChoice<O, O1, ignore, fill, 'x', 'y'> // dummy x, y
   : never : never
@@ -150,7 +150,7 @@ export type PatchDeep<O extends object, O1 extends object, ignore extends object
  * // }
  * ```
  */
-export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill = never> = {
+export type Patch<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = undefined> = {
   'flat': PatchFlat<O, O1, ignore, fill>
   'deep': PatchDeep<O, O1, ignore, fill>
 }[depth]

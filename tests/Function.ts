@@ -1,4 +1,5 @@
 import {Test, F, A} from '../sources'
+import {Key} from '../sources/Any/Key'
 
 const {checks, check} = Test
 
@@ -113,13 +114,12 @@ type O_PATHVALID = {
 };
 
 checks([
-    check<F.PathValid<any, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
+    check<F.PathValid<any, ['a', 'a']>, [Key, Key], Test.Pass>(),
     check<F.PathValid<O_PATHVALID, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
     check<F.PathValid<O_PATHVALID, ['a', 'x']>, ['a', 'a'], Test.Pass>(),
     check<F.PathValid<O_PATHVALID, ['b', 'a', 'a']>, ['b', 'a', 'a'], Test.Pass>(),
     check<F.PathValid<O_PATHVALID, ['b', 'b', 0]>, ['b', 'b', 0], Test.Pass>(),
 ])
-
 
 // ---------------------------------------------------------------------------------------
 // LENGTH

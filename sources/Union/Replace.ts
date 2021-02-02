@@ -1,3 +1,6 @@
+import {Is} from '../Any/Is'
+import {Match} from '../Any/_Internal'
+
 /**
  * Replace `M` with `A` in `U`
  * @param U to update
@@ -8,7 +11,9 @@
  * ```ts
  * ```
  */
-export type Replace<U extends any, M extends any, A extends any> =
-    U extends M
-    ? A
-    : U
+export type Replace<U extends any, M extends any, A extends any, match extends Match = 'default'> =
+    U extends unknown
+    ? Is<U, M, match> extends 1
+      ? A
+      : U
+    : never

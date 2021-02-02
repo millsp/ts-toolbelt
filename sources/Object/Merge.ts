@@ -1,4 +1,4 @@
-import {AtBasic} from './At'
+import {At} from './At'
 import {_OptionalKeys} from './OptionalKeys'
 import {Key} from '../Any/Key'
 import {List} from '../List/List'
@@ -30,7 +30,7 @@ type MergeProp<OK, O1K, fill, OOKeys extends Key, K extends Key> =
  * @hidden
  */
 type MergeFlatObject<O extends object, O1 extends object, fill, OOKeys extends Key = _OptionalKeys<O>> = {
-  [K in keyof (Anyfy<O> & O1)]: MergeProp<AtBasic<O, K>, AtBasic<O1, K>, fill, OOKeys, K>
+  [K in keyof (Anyfy<O> & O1)]: MergeProp<At<O, K>, At<O1, K>, fill, OOKeys, K>
 } & {}
 
 /**
@@ -40,8 +40,8 @@ type MergeFlatList<L extends List, L1 extends List, ignore extends object, fill,
   number extends Length<L | L1>
   ? MergeFlatChoice<L[number], L1[number], ignore, fill>[]
   : Longer<L, L1> extends 1
-    ? {[K in keyof L]: MergeProp<L[K], AtBasic<L1, K>, fill, LOK, K>}
-    : {[K in keyof L1]: MergeProp<AtBasic<L, K>, L1[K], fill, LOK, K>}
+    ? {[K in keyof L]: MergeProp<L[K], At<L1, K>, fill, LOK, K>}
+    : {[K in keyof L1]: MergeProp<At<L, K>, L1[K], fill, LOK, K>}
 
 
 type t = MergeFlat<[1], [2, 3]>
@@ -73,14 +73,14 @@ type MergeDeepList<L extends List, L1 extends List, ignore extends object, fill>
   number extends Length<L | L1>
   ? MergeDeepChoice<L[number], L1[number], ignore, fill, never, any>[]
   : Longer<L, L1> extends 1
-    ? {[K in keyof L]: MergeDeepChoice<L[K], AtBasic<L1, K>, ignore, fill, _OptionalKeys<L>, K>}
-    : {[K in keyof L1]: MergeDeepChoice<AtBasic<L, K>, L1[K], ignore, fill, _OptionalKeys<L>, K>}
+    ? {[K in keyof L]: MergeDeepChoice<L[K], At<L1, K>, ignore, fill, _OptionalKeys<L>, K>}
+    : {[K in keyof L1]: MergeDeepChoice<At<L, K>, L1[K], ignore, fill, _OptionalKeys<L>, K>}
 
 /**
  * @hidden
  */
 type MergeDeepObject<O extends object, O1 extends object, ignore extends object, fill, OOKeys extends Key = _OptionalKeys<O>> = {
-  [K in keyof (Anyfy<O> & O1)]: MergeDeepChoice<AtBasic<O, K>, AtBasic<O1, K>, ignore, fill, OOKeys, K>
+  [K in keyof (Anyfy<O> & O1)]: MergeDeepChoice<At<O, K>, At<O1, K>, ignore, fill, OOKeys, K>
 }
 
 /**
@@ -104,7 +104,7 @@ type MergeDeepChoice<OK, O1K, ignore extends object, fill, OOKeys extends Key, K
 /**
  * @hidden
  */
-export type MergeDeep<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
+export type MergeDeep<O extends object, O1 extends object, ignore extends object, fill> =
   O extends unknown ? O1 extends unknown ?
     MergeDeepChoice<O, O1, ignore, fill, 'x', 'y'>
   : never : never
@@ -158,7 +158,7 @@ export type MergeDeep<O extends object, O1 extends object, ignore extends object
  * // }
  * ```
  */
-export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill = never> = {
+export type Merge<O extends object, O1 extends object, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = undefined> = {
   'flat': MergeFlat<O, O1, ignore, fill>
   'deep': MergeDeep<O, O1, ignore, fill>
 }[depth]

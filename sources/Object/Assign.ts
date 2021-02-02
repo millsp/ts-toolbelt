@@ -40,7 +40,7 @@ export type _Assign<O extends object, Os extends List<object>, depth extends Dep
  * ```ts
  * ```
  */
-export type Assign<O extends object, Os extends List<object>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
+export type Assign<O extends object, Os extends List<object>, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = undefined> =
     O extends unknown
     ? Os extends unknown
       ? _Assign<O, Os, depth, ignore, fill>

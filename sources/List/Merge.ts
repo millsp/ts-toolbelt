@@ -20,5 +20,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Merge<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = never> =
+export type Merge<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = undefined> =
     Cast<OMerge<L, L1, depth, ignore, fill>, List>
