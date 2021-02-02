@@ -60,7 +60,7 @@ export type MergeFlatChoice<O extends object, O1 extends object, ignore extends 
  */
 export type MergeFlat<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
   O extends unknown ? O1 extends unknown ?
-    MergeFlatChoice<O, O1, ignore, fill>
+  MergeFlatChoice<O, O1, ignore, fill>
   : never : never
 
 /**
@@ -103,7 +103,7 @@ type MergeDeepChoice<OK, O1K, ignore extends object, fill, OOKeys extends Key, K
  */
 export type MergeDeep<O extends object, O1 extends object, ignore extends object, fill> =
   O extends unknown ? O1 extends unknown ?
-    MergeDeepChoice<O, O1, ignore, fill, 'x', 'y'>
+  MergeDeepChoice<O, O1, ignore, fill, 'x', 'y'>
   : never : never
 
 /**

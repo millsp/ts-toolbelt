@@ -1,5 +1,4 @@
-import {Keys} from '../Any/Keys'
-import {Exclude} from '../Union/Exclude'
+import {Has} from '../Union/Has'
 import {List} from './List'
 
 /**
@@ -13,6 +12,6 @@ import {List} from './List'
  * ```
  */
 export type Shortest<L extends List, L1 extends List> =
-    [Exclude<Keys<L>, Keys<L1>>] extends [never]
-    ? L
-    : L1
+    L extends unknown ? L1 extends unknown ?
+    {0: L1, 1: L}[Has<keyof L1, keyof L>]
+    : never : never

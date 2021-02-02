@@ -57,7 +57,7 @@ export type PatchFlatChoice<O extends object, O1 extends object, ignore extends 
  */
 export type PatchFlat<O extends object, O1 extends object, ignore extends object = BuiltIn, fill = never> =
   O extends unknown ? O1 extends unknown ?
-    PatchFlatChoice<O, O1, ignore, fill>
+  PatchFlatChoice<O, O1, ignore, fill>
   : never : never
 
 /**
@@ -100,7 +100,7 @@ type PatchDeepChoice<OK, O1K, ignore extends object, fill, OKeys extends Key, K 
  */
 export type PatchDeep<O extends object, O1 extends object, ignore extends object, fill> =
   O extends unknown ? O1 extends unknown ?
-    PatchDeepChoice<O, O1, ignore, fill, 'x', 'y'> // dummy x, y
+  PatchDeepChoice<O, O1, ignore, fill, 'x', 'y'> // dummy x, y
   : never : never
 
 /**

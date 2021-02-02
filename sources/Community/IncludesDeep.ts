@@ -1,7 +1,6 @@
 import {Match} from '../Any/_Internal'
 import {UnionOf} from '../Object/UnionOf'
 import {Next} from '../Iteration/Next'
-import {Key} from '../Iteration/Key'
 import {Prev} from '../Iteration/Prev'
 import {Iteration} from '../Iteration/Iteration'
 import {IterationOf} from '../Iteration/IterationOf'
