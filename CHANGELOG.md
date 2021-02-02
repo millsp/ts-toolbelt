@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.3.3](https://github.com/millsp/ts-toolbelt/compare/v9.3.1...v9.3.3) (2021-02-02)
+
+
+### Bug Fixes
+
+* **s.split:** behave like in js ([4561619](https://github.com/millsp/ts-toolbelt/commit/45616199d43590e1723a22cc294eafddecb27842))
+
+
+### Others
+
+* **release:** 9.3.2 ([af49384](https://github.com/millsp/ts-toolbelt/commit/af493840c65e04fda111acc4b76dbdd5bdd7f0b7))
+* cleanup ([420920a](https://github.com/millsp/ts-toolbelt/commit/420920a653cf0363ef0b25098861ecbb258ffc55))
+* cleanup ([132963a](https://github.com/millsp/ts-toolbelt/commit/132963ab80f938a5dd6ed1fdc6a2d6f718f54aa0))
+
 ### [9.3.2](https://github.com/millsp/ts-toolbelt/compare/v9.3.1...v9.3.2) (2021-02-02)
 
 
