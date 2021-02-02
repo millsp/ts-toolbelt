@@ -1,4 +1,4 @@
-import {At} from '../Object/At'
+import {At} from '../Any/At'
 import {Overwrite} from '../Object/Overwrite'
 import {ComputeRaw} from '../Any/Compute'
 import {IntersectOf} from './IntersectOf'

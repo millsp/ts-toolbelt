@@ -5,6 +5,44 @@ const {checks, check} = Test
 // ///////////////////////////////////////////////////////////////////////////////////////
 // ANY ///////////////////////////////////////////////////////////////////////////////////
 
+type O = {
+    a: string,
+    b: number;
+    c: {a: 'a'} & {b: 'b'};
+    d?: 'string0';
+    readonly e?: 'string1';
+    readonly f: 0;
+    g: O;
+    h?: 1;
+    j: 'a' | undefined;
+    k: {a: {b: string}};
+    x: () => 1;
+};
+
+type T = [
+    1,
+    2,
+    '3' | undefined,
+    'xxxx',
+    {a: 'a'} & {b: 'b'},
+    string | number,
+    number,
+    object,
+    readonly [0, 1, 2?],
+    'xxxx'?
+];
+
+// ---------------------------------------------------------------------------------------
+// AT
+
+checks([
+    check<A.At<O, 'a'>, string, Test.Pass>(),
+    check<A.At<O, 'c'>, {a: 'a'} & {b: 'b'}, Test.Pass>(),
+    check<A.At<O, 'g'>, O, Test.Pass>(),
+    check<A.At<T, '1'>, 2, Test.Pass>(),
+    check<A.At<T, '3'>, 'xxxx', Test.Pass>(),
+])
+
 // ---------------------------------------------------------------------------------------
 // CAST
 

@@ -1,4 +1,4 @@
-import {Key} from '../Any/Key'
+import {Key} from './Key'
 import {List} from '../List/List'
 
 /**

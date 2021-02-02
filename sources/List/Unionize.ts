@@ -1,6 +1,6 @@
 import {Key} from '../Any/Key'
 import {List} from './List'
-import {At} from '../Object/At'
+import {At} from '../Any/At'
 
 /**
  * Make the fields of `L` union the ones of `L1`

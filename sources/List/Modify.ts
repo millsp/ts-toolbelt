@@ -1,8 +1,8 @@
-import {At} from './At'
 import {Replace} from '../Union/Replace'
 import {x} from '../Any/x'
 import {List} from './List'
 import {Cast} from '../Any/Cast'
+import {At} from '../Any/At'
 
 /**
  * Modify `L` with `LMod` & the [[x]] placeholder

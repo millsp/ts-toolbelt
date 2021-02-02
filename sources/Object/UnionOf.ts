@@ -1,10 +1,8 @@
-import {At} from './At'
-
 /**
  * @hidden
  */
 export type _UnionOf<O extends object> =
-    At<O, keyof O>
+    O[keyof O]
 
 /**
  * Transform an [[Object]] into an [[Union]]

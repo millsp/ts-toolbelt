@@ -7,7 +7,7 @@ import {Append} from '../List/Append'
 import {Exclude} from '../Union/Exclude'
 import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
-import {At} from './At'
+import {At} from '../Any/At'
 
 /**
  * @hidden
@@ -30,11 +30,11 @@ type ___ListOf<O extends object, K, LN extends List = [], I extends Iteration = 
  */
 type __ListOf<O extends object> =
     number extends keyof O
-    ? At<O, number>[]
+    ? O[number][]
     : string extends keyof O
-      ? At<O, string>[]
+      ? O[string][]
       : symbol extends keyof O
-        ? At<O, symbol>[]
+        ? O[symbol][]
         : ___ListOf<O, keyof O>
 
 /**

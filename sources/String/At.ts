@@ -1,6 +1,6 @@
 import {Split} from './Split'
 
-import {At as LAt} from '../List/At'
+import {At as AAt} from '../Any/At'
 
 export type At<S extends string, K extends number> =
-    LAt<Split<S, ''>, K>
+    AAt<Split<S, ''>, K>

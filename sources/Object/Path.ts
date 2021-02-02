@@ -1,15 +1,20 @@
 import {Key} from '../Any/Key'
+import {Cast, Extends} from '../Any/_api'
+import {Iteration} from '../Iteration/Iteration'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Next} from '../Iteration/Next'
+import {Pos} from '../Iteration/Pos'
 import {List} from '../List/List'
-import {Tail} from '../List/Tail'
-import {At} from './At'
+import {Length} from '../List/_api'
+import {At} from '../Any/At'
 
 /**
  * @ignore
  */
-type _Path<O, P extends List<Key>> = At<{
-    [K in keyof O]: P['length'] extends 1
-    ? O[K] : Path<O[K] & {}, Tail<P>>
-}, P[0]>
+type _Path<O, P extends List<Key>,  I extends Iteration = IterationOf<0>> = {
+    0: _Path<At<O, P[Pos<I>]>, P, Next<I>>
+    1: O
+}[Extends<Pos<I>, Length<P>>]
 
 /**
  * Get in `O` the type of nested properties
@@ -21,4 +26,6 @@ type _Path<O, P extends List<Key>> = At<{
  * ```
  */
 export type Path<O, P extends List<Key>> =
-    number extends P['length'] ? unknown : _Path<O, P>
+    _Path<O, P> extends infer X
+    ? Cast<X, any>
+    : never

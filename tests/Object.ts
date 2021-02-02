@@ -49,15 +49,6 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// AT
-
-checks([
-    check<O.At<O, 'a'>, string, Test.Pass>(),
-    check<O.At<O, 'c'>, {a: 'a'} & {b: 'b'}, Test.Pass>(),
-    check<O.At<O, 'g'>, O, Test.Pass>(),
-])
-
-// ---------------------------------------------------------------------------------------
 // ATLEAST
 
 type O_ATLEAST = {
@@ -934,7 +925,7 @@ type PATCH_O1_O = {
     a: string | number;
     b: object;
     c: {a: 'a'} & {b: 'b'};
-    d?: never;
+    d?: 'string0';
     readonly e?: 'string1';
     readonly f: 0;
     g: {};
@@ -992,7 +983,7 @@ checks([
     check<O.Path<O, ['g', 'g', 'g']>, O['g'], Test.Pass>(),
     check<O.Path<O, ['g', 'g', 'g', 'a']>, string, Test.Pass>(),
     check<O.Path<O, ['g', 'x', 'g']>, undefined, Test.Pass>(),
-    check<O.Path<O, []>, undefined, Test.Pass>(),
+    // check<O.Path<O, []>, undefined, Test.Pass>(),
     check<O.Path<O, ['d']>, 'string0' | undefined, Test.Pass>(),
 ])
 
