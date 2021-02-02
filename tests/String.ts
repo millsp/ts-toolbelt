@@ -44,4 +44,5 @@ checks([
 checks([
     check<S.Split<S>, ['h', 'o', 'l', 'a'] | ['c', 'i', 'a', 'o', '!'], Test.Pass>(),
     check<S.Split<'a.b.c', '.'>, ['a', 'b', 'c'], Test.Pass>(),
+    check<S.Split<'a.b.c.', '.'>, ['a', 'b', 'c', ''], Test.Pass>(),
 ])
