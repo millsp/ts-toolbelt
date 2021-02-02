@@ -22,9 +22,9 @@ import {List} from '../List/List'
  * type test0 = O.At<User, 'id'> // number
  * ```
  */
-export type At<O extends object, K extends Key> =
-    O extends List
-    ? number extends O['length']
-      ? O[K & keyof O] | undefined
-      : K extends keyof O ? O[K] : undefined
-    : K extends keyof O ? O[K] : undefined
+export type At<A extends any, K extends Key> =
+    A extends List
+    ? number extends A['length']
+      ? A[K & keyof A] | undefined
+      : K extends keyof A ? A[K] : undefined
+    : K extends keyof A ? A[K] : undefined

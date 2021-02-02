@@ -43,9 +43,6 @@ type MergeFlatList<L extends List, L1 extends List, ignore extends object, fill,
     ? {[K in keyof L]: MergeProp<L[K], At<L1, K>, fill, LOK, K>}
     : {[K in keyof L1]: MergeProp<At<L, K>, L1[K], fill, LOK, K>}
 
-
-type t = MergeFlat<[1], [2, 3]>
-
 /**
  * @hidden
  */

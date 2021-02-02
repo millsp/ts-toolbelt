@@ -1,4 +1,4 @@
-import {Compulsory as OCompulsory} from '../Object/Compulsory'
+import {CompulsoryKeys as OCompulsoryKeys} from '../Object/CompulsoryKeys'
 import {ObjectOf} from './ObjectOf'
 import {List} from './List'
 
@@ -16,4 +16,4 @@ import {List} from './List'
  * ```
  */
 export type CompulsoryKeys<L extends List> =
-    OCompulsory<ObjectOf<L>>
+    OCompulsoryKeys<ObjectOf<L>>
