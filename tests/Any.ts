@@ -135,6 +135,26 @@ checks([
 // Cannot be tested
 
 // ---------------------------------------------------------------------------------------
+// KEYS
+
+checks([
+    check<A.Keys<O>, keyof O, Test.Pass>(),
+    check<A.Keys<{a: 0} | {b: 0}>, 'a' | 'b', Test.Pass>(),
+    check<(keyof ({a: 0} | {b: 0})), 'a' & 'b', Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// KNOWNKEYS
+
+checks([
+    check<A.KnownKeys<T>, Exclude<A.Keys<T>, number>, Test.Pass>(),
+    check<A.KnownKeys<string[]>, never, Test.Pass>(),
+    check<A.KnownKeys<O>, keyof O, Test.Pass>(),
+    check<A.KnownKeys<string[]>, never, Test.Pass>(),
+    check<A.KnownKeys<{[k: string]: any} & {a: any}>, 'a', Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
 // IS
 
 checks([

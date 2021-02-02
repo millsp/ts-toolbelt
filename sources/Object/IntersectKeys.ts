@@ -1,7 +1,7 @@
 import {Match} from '../Any/_Internal'
 import {Is} from '../Any/Is'
 import {At} from '../Any/At'
-import {Keys} from './Keys'
+import {Keys} from '../Any/Keys'
 
 /**
  * @hidden

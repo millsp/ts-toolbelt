@@ -1,5 +1,5 @@
 import {ComputeRaw} from '../Any/Compute'
-import {Keys} from './Keys'
+import {Keys} from '../Any/Keys'
 import {OptionalFlat} from '../Object/Optional'
 import {Record} from '../Object/Record'
 

@@ -1,3 +1,5 @@
+import {Keys} from './Keys'
+
 /**
  * Get the known keys of an [[Object]]
  * @param O
@@ -13,4 +15,4 @@ export type KnownKeys<O extends object> = {
     K
 } extends {
     [K in keyof O]: infer U
-} ? U & keyof O : never;
+} ? U & Keys<O> : never;
