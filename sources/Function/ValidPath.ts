@@ -27,16 +27,16 @@ type ValidatePath<O, Path extends List<AKey>, I extends Iteration> =
 /**
  * @hidden
  */
-type __PathValid<O, Path extends List<AKey>, I extends Iteration = IterationOf<0>> = {
-    0: __PathValid<NonNullable<At<O & {}, Path[Pos<I>]>>, ValidatePath<O, Path, I>, Next<I>>
+type __ValidPath<O, Path extends List<AKey>, I extends Iteration = IterationOf<0>> = {
+    0: __ValidPath<NonNullable<At<O & {}, Path[Pos<I>]>>, ValidatePath<O, Path, I>, Next<I>>
     1: Path
 }[Extends<Pos<I>, Length<Path>>]
 
 /**
  * @hidden
  */
-export type _PathValid<O extends object, Path extends List<AKey>> =
-    __PathValid<O, Path> extends infer X
+export type _ValidPath<O extends object, Path extends List<AKey>> =
+    __ValidPath<O, Path> extends infer X
     ? Cast<X, List<AKey>>
     : never
 
@@ -50,11 +50,11 @@ export type _PathValid<O extends object, Path extends List<AKey>> =
  * import {A, L, O} from 'ts-toolbelt'
  *
  * // Get a property in an object `o` at any depth with `path`
- * // `A.Cast<P, O.PathValid<O, P>>` makes sure `path` is valid
+ * // `A.Cast<P, O.ValidPath<O, P>>` makes sure `path` is valid
  * const getAt = <
  * O extends object,
  * P extends L.List<A.Index>
- * >(o: O, path: A.Cast<P, O.PathValid<O, P>>): O.Path<O, P> => {
+ * >(o: O, path: A.Cast<P, O.ValidPath<O, P>>): O.Path<O, P> => {
  *     let valueAt = o
  *
  *     for (const p of path)
@@ -68,9 +68,9 @@ export type _PathValid<O extends object, Path extends List<AKey>> =
  * const test2 = getAt({a: {b: {c: 1}}},          ['x'] as const)      // error
  * ```
  */
-export type PathValid<O extends object, Path extends List<AKey>> =
+export type ValidPath<O extends object, Path extends List<AKey>> =
     O extends unknown
     ? Path extends unknown
-      ? _PathValid<O, Path>
+      ? _ValidPath<O, Path>
       : never
     : never

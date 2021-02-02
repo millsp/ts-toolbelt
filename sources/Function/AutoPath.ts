@@ -63,14 +63,14 @@ type HintPath<O extends object, P extends string, SP extends List<Index>, Exec e
 /**
  * @ignore
  */
-type _PathAuto<O extends object, P extends string, SP extends List<Index> = Split<P, '.'>> =
+type _AutoPath<O extends object, P extends string, SP extends List<Index> = Split<P, '.'>> =
     HintPath<O, P, SP, ExecPath<O, SP>>
 
-export type PathAuto<O extends object, P extends string> =
-    _PathAuto<O, P>
+export type AutoPath<O extends object, P extends string> =
+    _AutoPath<O, P>
 
 // declare function get<O extends object, P extends string>(
-//     object: O, path: Cast<P, PathAuto<O, P>>
+//     object: O, path: Cast<P, AutoPath<O, P>>
 // ): Path<O, Split<P, '.'>>
 
 // declare const object: O

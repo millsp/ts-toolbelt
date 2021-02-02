@@ -10,7 +10,7 @@ import {List} from './List'
  * ```ts
  * ```
  */
-export type ObjectOf<O extends object> =
+export type ObjectOf<O extends List> =
     O extends List
     ? number extends O['length'] // detect arrays
       ? _Pick<O, number>         // preserves arrays

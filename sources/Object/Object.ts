@@ -9,4 +9,5 @@ import {Record} from './Record'
  * type string1 = {b: "world"}
  * ```
  */
-export type Object = Record<Key, unknown>
+export type Object =
+    Record<Key, unknown>
