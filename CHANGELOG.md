@@ -2,6 +2,62 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.2.0](https://github.com/millsp/ts-toolbelt/compare/v9.1.1...v9.2.0) (2021-02-02)
+
+
+### Features
+
+* **f.pathauto:** performant auto complete for dotted paths ([2aa802a](https://github.com/millsp/ts-toolbelt/commit/2aa802a4b271fe1b4f8fa78179633e577ea4f918))
+* **if:** conditional returns based on booleans ([fa79fdf](https://github.com/millsp/ts-toolbelt/commit/fa79fdfe758e5e2c910ccc1594a64b9fbf963158))
+* **knownkeys:** utility to get non-index props ([b49489d](https://github.com/millsp/ts-toolbelt/commit/b49489d6aaa5f0095977f74e75eba1568c2adbf1))
+* **string:** new string utilities ([6830e2c](https://github.com/millsp/ts-toolbelt/commit/6830e2c01e51b341f6956c37e3d03d56fdc75cf2))
+
+
+### Bug Fixes
+
+* **at:** improve overall type soundness ([49fbe28](https://github.com/millsp/ts-toolbelt/commit/49fbe2830e10be5b9fd33946e8f0cec537a5232f))
+* **builtin:** improve perf based on probability ([0c1ef3f](https://github.com/millsp/ts-toolbelt/commit/0c1ef3f15fd3f5f8a1af9b1c2661066d131acca9))
+* **compute:** integrate fix [#170](https://github.com/millsp/ts-toolbelt/issues/170) ([e39ad90](https://github.com/millsp/ts-toolbelt/commit/e39ad90e3bf3fe875ba445adc68f7a5265419d76))
+* **compute:** intersect with union ([678d118](https://github.com/millsp/ts-toolbelt/commit/678d118c3fcc9be537a6b0c8cf8c02fa8ed3a7b6))
+* **iteration:** revert iteration map ([9f33d56](https://github.com/millsp/ts-toolbelt/commit/9f33d5631657a83dfd02824fbec6b67ecbc17de2))
+* **modules:** module leak (fix [#167](https://github.com/millsp/ts-toolbelt/issues/167)) ([f21604d](https://github.com/millsp/ts-toolbelt/commit/f21604d8ce394042abe7b4747029776ae4d74b70))
+* **paths:** broken paths on arrays (fixes [#166](https://github.com/millsp/ts-toolbelt/issues/166)) ([3b62add](https://github.com/millsp/ts-toolbelt/commit/3b62addbe39b801877caee6ab9b2f173ed552b8f))
+* **s.replace:** incorrect recursion ([eb27798](https://github.com/millsp/ts-toolbelt/commit/eb27798b1c85bf3f1912832d2146b7a00ba82c1e))
+* **scripts:** bad path ([fdeab89](https://github.com/millsp/ts-toolbelt/commit/fdeab89193b0a2952fec97705f8bfb779f0aacec))
+* **scripts:** docs ([fda935d](https://github.com/millsp/ts-toolbelt/commit/fda935d344bcee55374c9fc273b5301f79d0baad))
+* **u.filter, u.select:** better inference ([0b6efd4](https://github.com/millsp/ts-toolbelt/commit/0b6efd4fca73a458a4f234f053b02da53ac19726))
+* scripts ([cc553c5](https://github.com/millsp/ts-toolbelt/commit/cc553c596d8e96735b7df0372849dc9692c32b2b))
+
+
+### Others
+
+* **path:** document autopath ([3349baf](https://github.com/millsp/ts-toolbelt/commit/3349bafcae28d8ce8b7a3245a77ff3aab9f12d1d))
+* cleanup ([0a5d9e5](https://github.com/millsp/ts-toolbelt/commit/0a5d9e58a8ff29e8ce8074bbd20ffb771eb705e2))
+* cleanup ([e0711a0](https://github.com/millsp/ts-toolbelt/commit/e0711a06a261a9c4ba46187726403929fbfc6be9))
+* rename autopath and path valid ([de83954](https://github.com/millsp/ts-toolbelt/commit/de83954c2b4e5de67a0a8e6118b271e72069edb8))
+* **keys:** centralize keys utils ([782915b](https://github.com/millsp/ts-toolbelt/commit/782915b1b85bb8be5318a5f0fc473fe90fbf5236))
+* cleanup ([6c4ec3c](https://github.com/millsp/ts-toolbelt/commit/6c4ec3cfb573ed455986ab30cc58e02b9d67dc15))
+* **at:** centralize At ([fed1ca6](https://github.com/millsp/ts-toolbelt/commit/fed1ca676a40a5f9cde8c65fe01521e87e36d496))
+* cleanup ([5c3a729](https://github.com/millsp/ts-toolbelt/commit/5c3a729a92ddc82a0fbd2710c7ffdf84020c2042))
+* **a.compute:** prevent infinite recursion ([309c3b0](https://github.com/millsp/ts-toolbelt/commit/309c3b005712a3f1552ea21e59be335dbc4125b1))
+* cleanup ([258b79e](https://github.com/millsp/ts-toolbelt/commit/258b79eacb04c47eb2182c563db403e0e011879f))
+* **iteration:** split number maps ([72ace57](https://github.com/millsp/ts-toolbelt/commit/72ace57dcf3c7ec0ecad689f934d7aa385d089ec))
+* cleanup ([0f87d89](https://github.com/millsp/ts-toolbelt/commit/0f87d89c0e18da742863f144a5ab3ae9a804238c))
+* **paths:** renovate ([6fb01dc](https://github.com/millsp/ts-toolbelt/commit/6fb01dc2ffd3972501184d0aa4ff6083fc1bcf83))
+* cleanup ([6c80819](https://github.com/millsp/ts-toolbelt/commit/6c8081978326eacbc4798b9b7838a3d718fa3dda))
+* readme ([fca726c](https://github.com/millsp/ts-toolbelt/commit/fca726cfe05c306fc6925f935aa02c44dcdeda0c))
+* readme ([6a103ab](https://github.com/millsp/ts-toolbelt/commit/6a103ab78ed44aac9af275c543722efa0dabfa46))
+* update deps ([0a7c836](https://github.com/millsp/ts-toolbelt/commit/0a7c836f1532b7f32b377bfa02333a6a28dfb128))
+* **head:** disable test ([02e8b00](https://github.com/millsp/ts-toolbelt/commit/02e8b0073202365fb432ad85d4fd458c4ae2f883))
+* **release:** 9.1.2 ([ba3121d](https://github.com/millsp/ts-toolbelt/commit/ba3121deb242557255860d6fa935e438808abd05))
+* **release:** 9.1.3 ([4ff7806](https://github.com/millsp/ts-toolbelt/commit/4ff7806b53941a694228f21d989e7426226d66c2))
+* **release:** 9.1.4 ([0ca99b3](https://github.com/millsp/ts-toolbelt/commit/0ca99b398e01ccb8fd5b36c614f5e97fa52ab760))
+* **release:** 9.1.5 ([b30f832](https://github.com/millsp/ts-toolbelt/commit/b30f83204ff2c9e29b0641b9113c6cab8ebdbd60))
+* **release:** 9.1.6 ([dc22e36](https://github.com/millsp/ts-toolbelt/commit/dc22e36dee1e2a71551f782c143279e45bdee610))
+* **release:** 9.1.7 ([3564cb9](https://github.com/millsp/ts-toolbelt/commit/3564cb964c59613bf9e3ba33891a39d9055263cd))
+* cleanup ([674ba6e](https://github.com/millsp/ts-toolbelt/commit/674ba6e0a9942655bb3857567eb913d21a3f2a72))
+* readme ([7a099e9](https://github.com/millsp/ts-toolbelt/commit/7a099e97ec5e8fb0e5dc1bfd31b5d4991bef26f6))
+
 ### [9.1.7](https://github.com/millsp/ts-toolbelt/compare/v9.1.1...v9.1.7) (2021-01-30)
 
 
