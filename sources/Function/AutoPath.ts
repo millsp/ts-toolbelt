@@ -25,14 +25,14 @@ type KeyToIndex<K extends Key, SP extends List<Index>> =
  */
 type MetaPath<O, SP extends List<Index> = [], P extends List<Index> = []> = {
     [K in keyof O]:
-    | MetaPath<O[K], Tail<SP>, [...P, KeyToIndex<K, SP>]>
+    | MetaPath<O[K] & {}, Tail<SP>, [...P, KeyToIndex<K, SP>]>
     | Join<[...P, KeyToIndex<K, SP>], '.'>
 }
 
 /**
  * @ignore
  */
-type NextPath<OP extends unknown> =
+type NextPath<OP> =
     // the next paths after property `K` are on sub objects
     // O[K] === K | {x: '${K}.x' | {y: '${K}.x.y' ...}}
     // So we access O[K] then we only keep the next paths
@@ -47,39 +47,50 @@ type NextPath<OP extends unknown> =
 /**
  * @ignore
  */
-type ExecPath<O extends object, SP extends List<Index>> =
+type ExecPath<A, SP extends List<Index>> =
     // We go in the `MetaPath` of `O` to get the prop at `SP`
     // So we query what is going the `NextPath` at `O[...SP]`
-    NextPath<Path<MetaPath<O, SP>, SP>>
+    NextPath<Path<MetaPath<A, SP>, SP>>
 
 /**
  * @ignore
  */
-type HintPath<O extends object, P extends string, SP extends List<Index>, Exec extends string> =
+type HintPath<A, P extends string, SP extends List<Index>, Exec extends string> =
     [Exec] extends [never] // if has not found paths
-    ? ExecPath<O, Pop<SP>> // display previous paths
+    ? ExecPath<A, Pop<SP>> // display previous paths
     : Exec | P             // display current + next
 
 /**
  * @ignore
  */
-type _AutoPath<O extends object, P extends string, SP extends List<Index> = Split<P, '.'>> =
-    HintPath<O, P, SP, ExecPath<O, SP>>
+type _AutoPath<A, P extends string, SP extends List<Index> = Split<P, '.'>> =
+    HintPath<A, P, SP, ExecPath<A, SP>>
 
-export type AutoPath<O extends object, P extends string> =
-    _AutoPath<O, P>
-
-// declare function get<O extends object, P extends string>(
-//     object: O, path: Cast<P, AutoPath<O, P>>
-// ): Path<O, Split<P, '.'>>
-
-// declare const object: O
-
-// type O = {
-//     a: O
-// }
-
-// type t0 = ExecPath<O, ['a', 'a']>
-// type t1 = Path<O, ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']>
-
-// const a = get(object, 'a.a.a.a.a.a.a.a.a.a.a.a.a.a.a')
+/**
+ * Auto-complete, validate, and query the string path of an object `O`
+ * @param O to work on
+ * @param P path of `O`
+ *
+ * ```ts
+ * declare function get<O extends object, P extends string>(
+ *     object: O, path: AutoPath<O, P>
+ * ): Path<O, Split<P, '.'>>
+ *
+ * declare const user: User
+ *
+ * type User = {
+ *     name: string
+ *     friends: User[]
+ * }
+ *
+ * // works
+ * const friendName = get(user, 'friends.40.name')
+ * const friendFriendName = get(user, 'friends.40.friends.12.name')
+ *
+ * // errors
+ * const friendNames = get(user, 'friends.40.names')
+ * const friendFriendNames = get(user, 'friends.40.friends.12.names')
+ * ```
+ */
+export type AutoPath<O extends any, P extends string> =
+    _AutoPath<O & {}, P>
