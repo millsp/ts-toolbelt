@@ -23,7 +23,7 @@
   </a>
 </p>
 
-<p align="center">*
+<p align="center">
   <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link" >
     <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
   </a>
@@ -79,9 +79,9 @@ type-safe software.
   </a>
 </p>
 
-We answer the question to **"How can I do this in TypeScript?"**. And we are a community. Everyone
-is welcome to come ask questions about types. We welcome beginners and advanced
-developers to come take part. **Welcome!**
+We are a community that answers the question to **"How can I do this in
+TypeScript?"**. Everyone is welcome to come ask questions about types. We welcome
+beginners and advanced developers to come take part. **Welcome!**
 
 ## Getting Started
 
@@ -246,8 +246,9 @@ Otherwise, the release versions will naturally follow the semantic versioning.
 
 | **Name**                                                       | **Intro**                                                                                |
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc                                                     |
-| [`utility-types`](https://github.com/piotrwitek)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases  |
+| [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc.                                                    |
+| [`utility-types`](https://github.com/piotrwitek)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases. |
+| [`material-candy`](https://github.com/millsp/material-candy)   | 🍬 A vscode theme to uplift your mood, stay happy and focused.                           |
 
 ## License
 
