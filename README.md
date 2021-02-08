@@ -247,8 +247,8 @@ Otherwise, the release versions will naturally follow the semantic versioning.
 | **Name**                                                       | **Intro**                                                                                |
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc.                                                    |
-| [`utility-types`](https://github.com/piotrwitek)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases. |
 | [`material-candy`](https://github.com/millsp/material-candy)   | 🍬 A vscode theme to uplift your mood, stay happy and focused.                           |
+| [`utility-types`](https://github.com/piotrwitek)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases. |
 
 ## License
 
