@@ -23,7 +23,7 @@
   </a>
 </p>
 
-<p align="center">
+<p align="center">*
   <a href="https://gitter.im/ts-toolbelt/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link" >
     <img src="https://img.shields.io/gitter/room/ts-toolbelt/community.svg">
   </a>
@@ -55,24 +55,26 @@
 
 ## About
 
-**ts-toolbelt** ships **utility types** that provide simple ways to **update**, **change**, and **compute** TypeScript types.
-It offers unique dynamic features, allowing you to write type-safe software more **easily** and in **less time** than you do today.
+**ts-toolbelt** is the largest, and most tested type library available right
+now, featuring **+200 utilities**. Our type collection packages some of the most
+advanced generic mapped types, conditional types, and recursive types on the
+market.
 
-Its programmatic API brings **new capabilities** to TypeScript with **+200** tested type utilities. This makes it the largest and the most reliable type collection out there.
-It uses the type system itself for TypeScript to compute complex types. So its API exposes types that trade **CPU & RAM** for higher type safety.
+**Spend less time, build stronger**. Benefit from a wide range of generic type
+functions to achieve better type safety - easily. 
 
-### Goals
+We are just like lodash, or ramda, but applied to the type system. Our mission
+is to provide you with simple ways to generate, transform, and create types. We
+abstract all those complex type checks away for you. We provide a standard,
+reusable, and simple API to achieve greater things with TypeScript.
 
-* Answer the question to **"How can I do this in TypeScript?"**
-* Provide a programmatic **standard API** for the type system
-* Promote type **evolution**/**reusability** within your codebase
-* Software that is more **type-safe**, **flexible**, and **robust**
-* Bring a whole new set of extra **features** to TypeScript
-* Extensively tested type utilities for maximum type safety
-* This package aims to be the home of all **utility types**
-* [Answer questions about types and share knowledge](#good-to-know-)
+**ts-toolbelt** is a well organized package that can help you perform advanced
+operations on union types, object types, function types, and literal types. It
+is coherently designed for building robust, flexible, and type safe software.
 
-You'll find all the types you can ever need in this single and **well organized** package.
+We answer the question to **"How can I do this in TypeScript?"**. We are a community. Everyone
+is welcome to come ask questions about types. We welcome beginners and advanced
+developers to come take part. **Welcome!**
 
 <p align="center">
   <a href="https://codesandbox.io/s/ts-toolbelt-x4jly?file=/src/index.ts">
@@ -126,7 +128,8 @@ type optional = Object.Optional<{id: number, name: string}, "name"}>
 // {id: number, name?: string}
 ```
 
-You can [**level-up, and re-code this library from scratch**](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab).
+You can [**level-up, and re-code this library from
+scratch**](https://medium.com/free-code-camp/typescript-curry-ramda-types-f747e99744ab).
 
 ## [Documentation ⤢](https://millsp.github.io/ts-toolbelt/)
 
@@ -162,7 +165,8 @@ You can also import our non-official API from the community:
   import {Community} from "ts-toolbelt"
   ```
 
-> **`TIP`** The community API is for our community to publish useful types that don't see fit in the standard API.
+> **`TIP`** The community API is for our community to publish useful types that
+> don't see fit in the standard API.
 
 ### [Archives ⤢](https://github.com/millsp/ts-toolbelt/tree/gh-pages)
 
@@ -172,9 +176,11 @@ Access older docs at https://millsp.github.io/ts-toolbelt/version/
 
 ## [Good to Know ⤢](https://github.com/millsp/ts-toolbelt/discussions/q-a)
 
-In this wiki, you will find some extra resources for your learning, and understanding.
+In this wiki, you will find some extra resources for your learning, and
+understanding.
 
-**Are you missing something?** Participate to the open-wiki by [posting your questions](https://github.com/millsp/ts-toolbelt/discussions/new).
+**Are you missing something?** Participate to the open-wiki by [posting your
+questions](https://github.com/millsp/ts-toolbelt/discussions/new).
 
 ## Running tests
 
@@ -201,19 +207,23 @@ checks([
 ])
 ```
 
-> **`TIP`** Place it in a file that won't be executed, it's just for TypeScript to test types.
+> **`TIP`** Place it in a file that won't be executed, it's just for TypeScript
+> to test types.
 
 ### Continuous Integration
 
-The releases are done with Travis CI in stages & whenever a branch or PR is pushed:
+The releases are done with Travis CI in stages & whenever a branch or PR is
+pushed:
 
 - Tests are run with `npm test`
-- Tests against [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/)
+- Tests against
+  [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/)
 - Releases to npm@[branch-name]
 
 ## Compatibility
 
-The project is maintained to adapt to the constant [changes of TypeScript](https://github.com/Microsoft/TypeScript/wiki/Roadmap):
+The project is maintained to adapt to the constant [changes of
+TypeScript](https://github.com/Microsoft/TypeScript/wiki/Roadmap):
 
 | ts-toolbelt | typescript |
 |-------------|------------|
@@ -238,8 +248,9 @@ Otherwise, the release versions will naturally follow the semantic versioning.
 | **Name**                                                       | **Intro**                                                                                |
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc                                                     |
-| [`utility-types`](https://github.com/piotrwitek/utility-types) | Collection of utility types, complementing TypeScript built-in mapped types and aliases  |
+| [`utility-types`](https://githubcom/piotrwitek/utility-types)  | Collection of utility types, complementing TypeScript built-in mapped types and aliases  |
 
 ## License
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt?ref=badge_large)
+[![FOSSA
+Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fpirix-gh%2Fts-toolbelt?ref=badge_large)
