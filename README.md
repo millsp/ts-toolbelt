@@ -50,7 +50,7 @@
   ·
   <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---feature-request.md" alt="Request Feature">🍩 Request Feature</a>
   ·
-  <a href="https://github.com/millsp/ts-toolbelt/issues/new?template=---question.md" alt="Ask Questions">🤔 Ask Questions</a>
+  <a href="https://github.com/millsp/ts-toolbelt/discussions/new" alt="Ask Questions">🤔 Ask Questions</a>
 </p>
 
 ## About
