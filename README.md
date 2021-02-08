@@ -57,30 +57,31 @@
 
 **ts-toolbelt** is the largest, and most tested type library available right
 now, featuring **+200 utilities**. Our type collection packages some of the most
-advanced generic mapped types, conditional types, and recursive types on the
+advanced mapped types, conditional types, and recursive types on the
 market.
 
 **Spend less time, build stronger**. Benefit from a wide range of generic type
-functions to achieve better type safety - easily. 
+functions to achieve better type safety. 
 
-We are just like lodash, or ramda, but applied to the type system. Our mission
+We work just like lodash, or ramda, but applied to the type system. Our mission
 is to provide you with simple ways to generate, transform, and create types. We
 abstract all those complex type checks away for you. We provide a standard,
 reusable, and simple API to achieve greater things with TypeScript.
 
 **ts-toolbelt** is a well organized package that can help you perform advanced
 operations on union types, object types, function types, and literal types. It
-is coherently designed for building robust, flexible, and type safe software.
-
-We answer the question to **"How can I do this in TypeScript?"**. We are a community. Everyone
-is welcome to come ask questions about types. We welcome beginners and advanced
-developers to come take part. **Welcome!**
+is carefully and coherently designed for building robust, flexible, and
+type-safe software.
 
 <p align="center">
   <a href="https://codesandbox.io/s/ts-toolbelt-x4jly?file=/src/index.ts">
     <img alt="demo" width="800" title="ts-toolbelt" src="https://raw.githubusercontent.com/millsp/ts-toolbelt/master/.github/demo.svg">
   </a>
 </p>
+
+We answer the question to **"How can I do this in TypeScript?"**. And we are a community. Everyone
+is welcome to come ask questions about types. We welcome beginners and advanced
+developers to come take part. **Welcome!**
 
 ## Getting Started
 
