@@ -170,11 +170,9 @@ You can also import our non-official API from the community:
 
 ### [Archives ⤢](https://github.com/millsp/ts-toolbelt/tree/gh-pages)
 
-Access older docs at https://millsp.github.io/ts-toolbelt/version/
-
 > **`EXAMPLE`** https://millsp.github.io/ts-toolbelt/4.2.1/
 
-## [Good to Know ⤢](https://github.com/millsp/ts-toolbelt/discussions/q-a)
+## [Good to Know ⤢](https://github.com/millsp/ts-toolbelt/discussions/categories/q-a)
 
 In this wiki, you will find some extra resources for your learning, and
 understanding.
@@ -248,7 +246,7 @@ Otherwise, the release versions will naturally follow the semantic versioning.
 | **Name**                                                       | **Intro**                                                                                |
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc                                                     |
-| [`utility-types`](https://githubcom/piotrwitek/utility-types)  | Collection of utility types, complementing TypeScript built-in mapped types and aliases  |
+| [`utility-types`](https://github.com/piotrwitek)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases  |
 
 ## License
 
