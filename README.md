@@ -57,20 +57,19 @@
 
 **ts-toolbelt** is the largest, and most tested type library available right
 now, featuring **+200 utilities**. Our type collection packages some of the most
-advanced mapped types, conditional types, and recursive types on the
-market.
+advanced mapped types, conditional types, and recursive types on the market.
 
 **Spend less time, build stronger**. Benefit from a wide range of generic type
 functions to achieve better type safety. 
 
 We work just like lodash, or ramda, but applied to the type system. Our mission
-is to provide you with simple ways to generate, transform, and create types. We
-abstract all those complex type checks away for you. We provide a standard,
-reusable, and simple API to achieve greater things with TypeScript.
+is to provide you with simple ways to compute, change, and create types. We
+abstract all those complex type checks away for you. We provide a simple,
+reusable, and standard API to help you get more done with TypeScript.
 
 **ts-toolbelt** is a well organized package that can help you perform advanced
-operations on union types, object types, function types, and literal types. It
-is carefully and coherently designed for building robust, flexible, and
+operations on object types, union types, as well as function, and literal types.
+It is carefully and coherently designed for building robust, flexible, and
 type-safe software.
 
 <p align="center">
@@ -79,9 +78,10 @@ type-safe software.
   </a>
 </p>
 
-We are a community that answers the question to **"How can I do this in
-TypeScript?"**. Everyone is welcome to come ask questions about types. We welcome
-beginners and advanced developers to come take part. **Welcome!**
+We are a community and a knowledge base. Everyone is welcome to ask questions
+about types. If you are stuck or you misunderstand something, you came to the
+right place!. We welcome beginners and advanced developers to come take part.
+**Welcome!**
 
 ## Getting Started
 
@@ -201,8 +201,8 @@ import {Number, Test} from "ts-toolbelt"
 const {checks, check} = Test
 
 checks([
-    check<Number.Plus<"1", "30">, "31", Test.Pass>(),
-    check<Number.Plus<"5", "-3">, "2",  Test.Pass>(),
+    check<Number.Add<1, 30>, 31, Test.Pass>(),
+    check<Number.Add<5, -3>, 2,  Test.Pass>(),
 ])
 ```
 
