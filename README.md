@@ -169,6 +169,82 @@ You can also import our non-official API from the community:
 > **`TIP`** The community API is for our community to publish useful types that
 > don't see fit in the standard API.
 
+### Utility Index
+
+|ANY|OBJECT|LIST|FUNCTION|STRING|UNION|CLASS|BOOLEAN|NUMBER|OBJECT.P|ITERATION|
+|---|---|---|---|---|---|---|---|---|---|---|
+|[Await](https://millsp.github.io/ts-toolbelt/modules/any_await.html)|[Assign](https://millsp.github.io/ts-toolbelt/modules/object_assign.html)|[Append](https://millsp.github.io/ts-toolbelt/modules/list_append.html)|[AutoPath](https://millsp.github.io/ts-toolbelt/modules/function_autopath.html)|[At](https://millsp.github.io/ts-toolbelt/modules/string_at.html)|[Diff](https://millsp.github.io/ts-toolbelt/modules/union_diff.html)|[Class](https://millsp.github.io/ts-toolbelt/modules/class_class.html)|[And](https://millsp.github.io/ts-toolbelt/modules/boolean_and.html)|[Absolute](https://millsp.github.io/ts-toolbelt/modules/number_absolute.html)|[Merge](https://millsp.github.io/ts-toolbelt/modules/object_p_merge.html)|[Iteration](https://millsp.github.io/ts-toolbelt/modules/iteration_iteration.html)|
+|[At](https://millsp.github.io/ts-toolbelt/modules/any_at.html)|[AtLeast](https://millsp.github.io/ts-toolbelt/modules/object_atleast.html)|[Assign](https://millsp.github.io/ts-toolbelt/modules/list_assign.html)|[Compose](https://millsp.github.io/ts-toolbelt/modules/function_compose.html)|[Join](https://millsp.github.io/ts-toolbelt/modules/string_join.html)|[Exclude](https://millsp.github.io/ts-toolbelt/modules/union_exclude.html)|[Instance](https://millsp.github.io/ts-toolbelt/modules/class_instance.html)|[Not](https://millsp.github.io/ts-toolbelt/modules/boolean_not.html)|[Add](https://millsp.github.io/ts-toolbelt/modules/number_add.html)|[Omit](https://millsp.github.io/ts-toolbelt/modules/object_p_omit.html)|[IterationOf](https://millsp.github.io/ts-toolbelt/modules/iteration_iterationof.html)|
+|[Cast](https://millsp.github.io/ts-toolbelt/modules/any_cast.html)|[Compulsory](https://millsp.github.io/ts-toolbelt/modules/object_compulsory.html)|[AtLeast](https://millsp.github.io/ts-toolbelt/modules/list_atleast.html)|[Curry](https://millsp.github.io/ts-toolbelt/modules/function_curry.html)|[Length](https://millsp.github.io/ts-toolbelt/modules/string_length.html)|[Filter](https://millsp.github.io/ts-toolbelt/modules/union_filter.html)|[Parameters](https://millsp.github.io/ts-toolbelt/modules/class_parameters.html)|[Or](https://millsp.github.io/ts-toolbelt/modules/boolean_or.html)|[Greater](https://millsp.github.io/ts-toolbelt/modules/number_greater.html)|[Pick](https://millsp.github.io/ts-toolbelt/modules/object_p_pick.html)|[Key](https://millsp.github.io/ts-toolbelt/modules/iteration_key.html)|
+|[Compute](https://millsp.github.io/ts-toolbelt/modules/any_compute.html)|[CompulsoryKeys](https://millsp.github.io/ts-toolbelt/modules/object_compulsorykeys.html)|[Compulsory](https://millsp.github.io/ts-toolbelt/modules/list_compulsory.html)|[Function](https://millsp.github.io/ts-toolbelt/modules/function_function.html)|[Replace](https://millsp.github.io/ts-toolbelt/modules/string_replace.html)|[Has](https://millsp.github.io/ts-toolbelt/modules/union_has.html)||[Xor](https://millsp.github.io/ts-toolbelt/modules/boolean_xor.html)|[GreaterEq](https://millsp.github.io/ts-toolbelt/modules/number_greatereq.html)|[Readonly](https://millsp.github.io/ts-toolbelt/modules/object_p_readonly.html)|[Next](https://millsp.github.io/ts-toolbelt/modules/iteration_next.html)|
+|[Contains](https://millsp.github.io/ts-toolbelt/modules/any_contains.html)|[Diff](https://millsp.github.io/ts-toolbelt/modules/object_diff.html)|[CompulsoryKeys](https://millsp.github.io/ts-toolbelt/modules/list_compulsorykeys.html)|[Length](https://millsp.github.io/ts-toolbelt/modules/function_length.html)|[Split](https://millsp.github.io/ts-toolbelt/modules/string_split.html)|[IntersectOf](https://millsp.github.io/ts-toolbelt/modules/union_intersectof.html)|||[IsNegative](https://millsp.github.io/ts-toolbelt/modules/number_isnegative.html)|[Update](https://millsp.github.io/ts-toolbelt/modules/object_p_update.html)|[Pos](https://millsp.github.io/ts-toolbelt/modules/iteration_pos.html)|
+|[Equals](https://millsp.github.io/ts-toolbelt/modules/any_equals.html)|[Either](https://millsp.github.io/ts-toolbelt/modules/object_either.html)|[Concat](https://millsp.github.io/ts-toolbelt/modules/list_concat.html)|[NoInfer](https://millsp.github.io/ts-toolbelt/modules/function_noinfer.html)||[Last](https://millsp.github.io/ts-toolbelt/modules/union_last.html)|||[IsPositive](https://millsp.github.io/ts-toolbelt/modules/number_ispositive.html)|[Record](https://millsp.github.io/ts-toolbelt/modules/object_p_record.html)|[Prev](https://millsp.github.io/ts-toolbelt/modules/iteration_prev.html)|
+|[Extends](https://millsp.github.io/ts-toolbelt/modules/any_extends.html)|[Exclude](https://millsp.github.io/ts-toolbelt/modules/object_exclude.html)|[Diff](https://millsp.github.io/ts-toolbelt/modules/list_diff.html)|[Parameters](https://millsp.github.io/ts-toolbelt/modules/function_parameters.html)||[Merge](https://millsp.github.io/ts-toolbelt/modules/union_merge.html)|||[IsZero](https://millsp.github.io/ts-toolbelt/modules/number_iszero.html)|||
+|[Key](https://millsp.github.io/ts-toolbelt/modules/any_key.html)|[ExcludeKeys](https://millsp.github.io/ts-toolbelt/modules/object_excludekeys.html)|[Drop](https://millsp.github.io/ts-toolbelt/modules/list_drop.html)|[Pipe](https://millsp.github.io/ts-toolbelt/modules/function_pipe.html)||[NonNullable](https://millsp.github.io/ts-toolbelt/modules/union_nonnullable.html)|||[Lower](https://millsp.github.io/ts-toolbelt/modules/number_lower.html)|||
+|[Keys](https://millsp.github.io/ts-toolbelt/modules/any_keys.html)|[Filter](https://millsp.github.io/ts-toolbelt/modules/object_filter.html)|[Either](https://millsp.github.io/ts-toolbelt/modules/list_either.html)|[Promisify](https://millsp.github.io/ts-toolbelt/modules/function_promisify.html)||[Nullable](https://millsp.github.io/ts-toolbelt/modules/union_nullable.html)|||[LowerEq](https://millsp.github.io/ts-toolbelt/modules/number_lowereq.html)|||
+|[KnownKeys](https://millsp.github.io/ts-toolbelt/modules/any_knownkeys.html)|[FilterKeys](https://millsp.github.io/ts-toolbelt/modules/object_filterkeys.html)|[Exclude](https://millsp.github.io/ts-toolbelt/modules/list_exclude.html)|[Return](https://millsp.github.io/ts-toolbelt/modules/function_return.html)||[Pop](https://millsp.github.io/ts-toolbelt/modules/union_pop.html)|||[Negate](https://millsp.github.io/ts-toolbelt/modules/number_negate.html)|||
+|[Is](https://millsp.github.io/ts-toolbelt/modules/any_is.html)|[Has](https://millsp.github.io/ts-toolbelt/modules/object_has.html)|[ExcludeKeys](https://millsp.github.io/ts-toolbelt/modules/list_excludekeys.html)|[UnCurry](https://millsp.github.io/ts-toolbelt/modules/function_uncurry.html)||[Replace](https://millsp.github.io/ts-toolbelt/modules/union_replace.html)|||[Range](https://millsp.github.io/ts-toolbelt/modules/number_range.html)|||
+|[Promise](https://millsp.github.io/ts-toolbelt/modules/any_promise.html)|[HasPath](https://millsp.github.io/ts-toolbelt/modules/object_haspath.html)|[Extract](https://millsp.github.io/ts-toolbelt/modules/list_extract.html)|[ValidPath](https://millsp.github.io/ts-toolbelt/modules/function_validpath.html)||[Select](https://millsp.github.io/ts-toolbelt/modules/union_select.html)|||[Sub](https://millsp.github.io/ts-toolbelt/modules/number_sub.html)|||
+|[Try](https://millsp.github.io/ts-toolbelt/modules/any_try.html)|[Includes](https://millsp.github.io/ts-toolbelt/modules/object_includes.html)|[Filter](https://millsp.github.io/ts-toolbelt/modules/list_filter.html)|||[Strict](https://millsp.github.io/ts-toolbelt/modules/union_strict.html)||||||
+|[Type](https://millsp.github.io/ts-toolbelt/modules/any_type.html)|[Intersect](https://millsp.github.io/ts-toolbelt/modules/object_intersect.html)|[FilterKeys](https://millsp.github.io/ts-toolbelt/modules/list_filterkeys.html)|||[ListOf](https://millsp.github.io/ts-toolbelt/modules/union_listof.html)||||||
+|[x](https://millsp.github.io/ts-toolbelt/modules/any_x.html)|[IntersectKeys](https://millsp.github.io/ts-toolbelt/modules/object_intersectkeys.html)|[Flatten](https://millsp.github.io/ts-toolbelt/modules/list_flatten.html)|||||||||
+||[Invert](https://millsp.github.io/ts-toolbelt/modules/object_invert.html)|[Group](https://millsp.github.io/ts-toolbelt/modules/list_group.html)|||||||||
+||[KnownKeys](https://millsp.github.io/ts-toolbelt/modules/object_knownkeys.html)|[Has](https://millsp.github.io/ts-toolbelt/modules/list_has.html)|||||||||
+||[ListOf](https://millsp.github.io/ts-toolbelt/modules/object_listof.html)|[HasPath](https://millsp.github.io/ts-toolbelt/modules/list_haspath.html)|||||||||
+||[Merge](https://millsp.github.io/ts-toolbelt/modules/object_merge.html)|[Head](https://millsp.github.io/ts-toolbelt/modules/list_head.html)|||||||||
+||[MergeAll](https://millsp.github.io/ts-toolbelt/modules/object_mergeall.html)|[Includes](https://millsp.github.io/ts-toolbelt/modules/list_includes.html)|||||||||
+||[Modify](https://millsp.github.io/ts-toolbelt/modules/object_modify.html)|[Intersect](https://millsp.github.io/ts-toolbelt/modules/list_intersect.html)|||||||||
+||[NonNullable](https://millsp.github.io/ts-toolbelt/modules/object_nonnullable.html)|[IntersectKeys](https://millsp.github.io/ts-toolbelt/modules/list_intersectkeys.html)|||||||||
+||[NonNullableKeys](https://millsp.github.io/ts-toolbelt/modules/object_nonnullablekeys.html)|[KeySet](https://millsp.github.io/ts-toolbelt/modules/list_keyset.html)|||||||||
+||[Nullable](https://millsp.github.io/ts-toolbelt/modules/object_nullable.html)|[Last](https://millsp.github.io/ts-toolbelt/modules/list_last.html)|||||||||
+||[NullableKeys](https://millsp.github.io/ts-toolbelt/modules/object_nullablekeys.html)|[LastKey](https://millsp.github.io/ts-toolbelt/modules/list_lastkey.html)|||||||||
+||[Object](https://millsp.github.io/ts-toolbelt/modules/object_object.html)|[Length](https://millsp.github.io/ts-toolbelt/modules/list_length.html)|||||||||
+||[Omit](https://millsp.github.io/ts-toolbelt/modules/object_omit.html)|[List](https://millsp.github.io/ts-toolbelt/modules/list_list.html)|||||||||
+||[Optional](https://millsp.github.io/ts-toolbelt/modules/object_optional.html)|[Longest](https://millsp.github.io/ts-toolbelt/modules/list_longest.html)|||||||||
+||[OptionalKeys](https://millsp.github.io/ts-toolbelt/modules/object_optionalkeys.html)|[Merge](https://millsp.github.io/ts-toolbelt/modules/list_merge.html)|||||||||
+||[Overwrite](https://millsp.github.io/ts-toolbelt/modules/object_overwrite.html)|[MergeAll](https://millsp.github.io/ts-toolbelt/modules/list_mergeall.html)|||||||||
+||[Partial](https://millsp.github.io/ts-toolbelt/modules/object_partial.html)|[Modify](https://millsp.github.io/ts-toolbelt/modules/list_modify.html)|||||||||
+||[Patch](https://millsp.github.io/ts-toolbelt/modules/object_patch.html)|[NonNullable](https://millsp.github.io/ts-toolbelt/modules/list_nonnullable.html)|||||||||
+||[PatchAll](https://millsp.github.io/ts-toolbelt/modules/object_patchall.html)|[NonNullableKeys](https://millsp.github.io/ts-toolbelt/modules/list_nonnullablekeys.html)|||||||||
+||[Path](https://millsp.github.io/ts-toolbelt/modules/object_path.html)|[Nullable](https://millsp.github.io/ts-toolbelt/modules/list_nullable.html)|||||||||
+||[Paths](https://millsp.github.io/ts-toolbelt/modules/object_paths.html)|[NullableKeys](https://millsp.github.io/ts-toolbelt/modules/list_nullablekeys.html)|||||||||
+||[Pick](https://millsp.github.io/ts-toolbelt/modules/object_pick.html)|[ObjectOf](https://millsp.github.io/ts-toolbelt/modules/list_objectof.html)|||||||||
+||[Readonly](https://millsp.github.io/ts-toolbelt/modules/object_readonly.html)|[Omit](https://millsp.github.io/ts-toolbelt/modules/list_omit.html)|||||||||
+||[ReadonlyKeys](https://millsp.github.io/ts-toolbelt/modules/object_readonlykeys.html)|[Optional](https://millsp.github.io/ts-toolbelt/modules/list_optional.html)|||||||||
+||[Record](https://millsp.github.io/ts-toolbelt/modules/object_record.html)|[OptionalKeys](https://millsp.github.io/ts-toolbelt/modules/list_optionalkeys.html)|||||||||
+||[Replace](https://millsp.github.io/ts-toolbelt/modules/object_replace.html)|[Overwrite](https://millsp.github.io/ts-toolbelt/modules/list_overwrite.html)|||||||||
+||[Required](https://millsp.github.io/ts-toolbelt/modules/object_required.html)|[Partial](https://millsp.github.io/ts-toolbelt/modules/list_partial.html)|||||||||
+||[RequiredKeys](https://millsp.github.io/ts-toolbelt/modules/object_requiredkeys.html)|[Patch](https://millsp.github.io/ts-toolbelt/modules/list_patch.html)|||||||||
+||[Select](https://millsp.github.io/ts-toolbelt/modules/object_select.html)|[PatchAll](https://millsp.github.io/ts-toolbelt/modules/list_patchall.html)|||||||||
+||[SelectKeys](https://millsp.github.io/ts-toolbelt/modules/object_selectkeys.html)|[Path](https://millsp.github.io/ts-toolbelt/modules/list_path.html)|||||||||
+||[Undefinable](https://millsp.github.io/ts-toolbelt/modules/object_undefinable.html)|[Paths](https://millsp.github.io/ts-toolbelt/modules/list_paths.html)|||||||||
+||[UndefinableKeys](https://millsp.github.io/ts-toolbelt/modules/object_undefinablekeys.html)|[Pick](https://millsp.github.io/ts-toolbelt/modules/list_pick.html)|||||||||
+||[Unionize](https://millsp.github.io/ts-toolbelt/modules/object_unionize.html)|[Pop](https://millsp.github.io/ts-toolbelt/modules/list_pop.html)|||||||||
+||[UnionOf](https://millsp.github.io/ts-toolbelt/modules/object_unionof.html)|[Prepend](https://millsp.github.io/ts-toolbelt/modules/list_prepend.html)|||||||||
+||[Update](https://millsp.github.io/ts-toolbelt/modules/object_update.html)|[Readonly](https://millsp.github.io/ts-toolbelt/modules/list_readonly.html)|||||||||
+||[Writable](https://millsp.github.io/ts-toolbelt/modules/object_writable.html)|[ReadonlyKeys](https://millsp.github.io/ts-toolbelt/modules/list_readonlykeys.html)|||||||||
+||[WritableKeys](https://millsp.github.io/ts-toolbelt/modules/object_writablekeys.html)|[Remove](https://millsp.github.io/ts-toolbelt/modules/list_remove.html)|||||||||
+|||[Repeat](https://millsp.github.io/ts-toolbelt/modules/list_repeat.html)|||||||||
+|||[Replace](https://millsp.github.io/ts-toolbelt/modules/list_replace.html)|||||||||
+|||[Required](https://millsp.github.io/ts-toolbelt/modules/list_required.html)|||||||||
+|||[RequiredKeys](https://millsp.github.io/ts-toolbelt/modules/list_requiredkeys.html)|||||||||
+|||[Reverse](https://millsp.github.io/ts-toolbelt/modules/list_reverse.html)|||||||||
+|||[Select](https://millsp.github.io/ts-toolbelt/modules/list_select.html)|||||||||
+|||[SelectKeys](https://millsp.github.io/ts-toolbelt/modules/list_selectkeys.html)|||||||||
+|||[Shortest](https://millsp.github.io/ts-toolbelt/modules/list_shortest.html)|||||||||
+|||[Tail](https://millsp.github.io/ts-toolbelt/modules/list_tail.html)|||||||||
+|||[Take](https://millsp.github.io/ts-toolbelt/modules/list_take.html)|||||||||
+|||[Undefinable](https://millsp.github.io/ts-toolbelt/modules/list_undefinable.html)|||||||||
+|||[UndefinableKeys](https://millsp.github.io/ts-toolbelt/modules/list_undefinablekeys.html)|||||||||
+|||[Unionize](https://millsp.github.io/ts-toolbelt/modules/list_unionize.html)|||||||||
+|||[UnionOf](https://millsp.github.io/ts-toolbelt/modules/list_unionof.html)|||||||||
+|||[UnNest](https://millsp.github.io/ts-toolbelt/modules/list_unnest.html)|||||||||
+|||[Update](https://millsp.github.io/ts-toolbelt/modules/list_update.html)|||||||||
+|||[Writable](https://millsp.github.io/ts-toolbelt/modules/list_writable.html)|||||||||
+|||[WritableKeys](https://millsp.github.io/ts-toolbelt/modules/list_writablekeys.html)|||||||||
+|||[Zip](https://millsp.github.io/ts-toolbelt/modules/list_zip.html)|||||||||
+|||[ZipObj](https://millsp.github.io/ts-toolbelt/modules/list_zipobj.html)|||||||||
+
 ### [Archives ⤢](https://github.com/millsp/ts-toolbelt/tree/gh-pages)
 
 > **`EXAMPLE`** https://millsp.github.io/ts-toolbelt/4.2.1/
