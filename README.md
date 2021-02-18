@@ -125,7 +125,7 @@ type merge = Object.Merge<{name: string}, {age?: number}>
 // {name: string, age?: number}
 
 // Make a field of an `object` optional
-type optional = Object.Optional<{id: number, name: string}, "name"}>
+type optional = Object.Optional<{id: number, name: string}, "name">
 // {id: number, name?: string}
 ```
 
