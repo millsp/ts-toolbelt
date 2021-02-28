@@ -20,5 +20,5 @@ export type Last<U extends any> =
 
 /*
  * The above does this (i.e.)
- * ParamsOf<((a: 1) => void) & ((a: 2) => void)> // => [2]
+ * Parameters<((a: 1) => void) & ((a: 2) => void)> // => [2]
  */

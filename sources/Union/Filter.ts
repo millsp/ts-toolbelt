@@ -12,7 +12,5 @@ import {Is} from '../Any/Is'
  */
 export type Filter<U extends any, M extends any, match extends Match = 'default'> =
     U extends unknown
-    ? Is<U, M, match> extends 1
-      ? never
-      : U & M
+    ? {1: never, 0: U}[Is<U, M, match>]
     : never
