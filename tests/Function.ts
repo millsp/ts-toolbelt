@@ -58,7 +58,6 @@ declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>;
 
 const __ = {} as A.x
 
-// @ts-ignore
 const toCurry = (name: string, age: number, single: boolean, nicknames?: string) => true
 const curried = curry(toCurry)
 
@@ -67,6 +66,19 @@ const test01: boolean = curried(__, 26)(__, true)('Jane') // boolean
 const test02: boolean = curried(__, 26)(__, true, __)('Jane', 'JJ') // boolean
 const test03: boolean = curried('Jane', 26, true) // boolean
 const test04: boolean = curried('Jane', 26, true, 'JJ') // boolean
+
+// ---------------------------------------------------------------------------------------
+// EXACT
+
+declare function exactObject<A>(x: F.Exact<A, {a: number, b: 2}>): A;
+
+const test07 = exactObject({} as {a: 1, b: 2})
+// @ts-expect-error
+const test08 = exactObject({} as {a: 1})
+
+checks([
+    check<typeof test07, {a: 1, b: 2}, Test.Pass>(),
+])
 
 // ---------------------------------------------------------------------------------------
 // PARAMETERS
@@ -102,9 +114,9 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// PATHVALID
+// VALIDPATH
 
-type O_PATHVALID = {
+type O_VALIDPATH = {
     a: {
         a: {};
     };
@@ -118,10 +130,10 @@ type O_PATHVALID = {
 
 checks([
     check<F.ValidPath<any, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
-    check<F.ValidPath<O_PATHVALID, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
-    check<F.ValidPath<O_PATHVALID, ['a', 'x']>, ['a', 'x'], Test.Pass>(),
-    check<F.ValidPath<O_PATHVALID, ['b', 'a', 'a']>, ['b', 'a', 'a'], Test.Pass>(),
-    check<F.ValidPath<O_PATHVALID, ['b', 'b', 0]>, ['b', 'b', 0], Test.Pass>(),
+    check<F.ValidPath<O_VALIDPATH, ['a', 'a']>, ['a', 'a'], Test.Pass>(),
+    check<F.ValidPath<O_VALIDPATH, ['a', 'x']>, ['a', 'x'], Test.Pass>(),
+    check<F.ValidPath<O_VALIDPATH, ['b', 'a', 'a']>, ['b', 'a', 'a'], Test.Pass>(),
+    check<F.ValidPath<O_VALIDPATH, ['b', 'b', 0]>, ['b', 'b', 0], Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -130,6 +142,20 @@ checks([
 checks([
     check<F.Length<typeof fn>, 3, Test.Pass>(),
     check<F.Length<(a1: any, a2?: any) => any>, 1 | 2, Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// NARROW
+
+declare function narrowList<A extends any[]>(x: F.Narrow<A>): A;
+declare function narrowObject<A extends object>(x: F.Narrow<A>): A;
+
+const test05 = narrowList(['e', 2, true, {f: ['g', ['h']]}])
+const test06 = narrowObject({a: 1, b: 'c', d: ['e', 2, true, {f: ['g']}]})
+
+checks([
+    check<typeof test05, ['e', 2, true, {f: ['g', ['h']]}], Test.Pass>(),
+    check<typeof test06, {a: 1, b: 'c', d: ['e', 2, true, {f: ['g']}]}, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -146,6 +172,12 @@ const pipedSync = pipeSync(
     // @ts-ignore
     (message: string) => false, // receive previous return
 )
+
+pipeSync(
+    curry((a1: number, d2:  number) => `${a1 + d2}`),
+    (b1: string) => [b1],
+    (c1: string[]) => [c1],
+)(23, 42)
 
 checks([
     check<(typeof pipedSync), (name: string, age: number) => boolean, Test.Pass>(),
