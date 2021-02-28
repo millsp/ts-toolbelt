@@ -12,5 +12,5 @@ import {Match} from '../Any/_Internal'
  */
 export type Select<U extends any, M extends any, match extends Match = 'default'> =
     U extends unknown
-    ? {1: U, 0: never}[Is<U, M, match>]
+    ? {1: U & M, 0: never}[Is<U, M, match>]
     : never

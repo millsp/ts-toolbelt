@@ -58,6 +58,7 @@ declare function curry<Fn extends F.Function>(f: Fn): F.Curry<Fn>;
 
 const __ = {} as A.x
 
+// @ts-ignore
 const toCurry = (name: string, age: number, single: boolean, nicknames?: string) => true
 const curried = curry(toCurry)
 

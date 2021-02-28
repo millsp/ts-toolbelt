@@ -13,7 +13,5 @@ import {Match} from '../Any/_Internal'
  */
 export type Replace<U extends any, M extends any, A extends any, match extends Match = 'default'> =
     U extends unknown
-    ? Is<U, M, match> extends 1
-      ? A
-      : U
+    ? {1: A, 0: U}[Is<U, M, match>]
     : never
