@@ -1,3 +1,4 @@
+import {Equals} from '../Any/_api'
 import type {Select} from './Select'
 
 /**
@@ -10,6 +11,8 @@ import type {Select} from './Select'
  * ```
  */
 export type Intersect<U1 extends any, U2 extends any> =
-    U2 extends unknown
-    ? Select<U1, U2, 'equals'>
+    U1 extends unknown
+    ? U2 extends unknown
+      ? {1: U1, 0: never}[Equals<U1, U2>]
+      : never
     : never
