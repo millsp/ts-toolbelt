@@ -12,3 +12,11 @@ export type Mode = 'sync' | 'async'
  */
 export type Input = 'multi' | 'list'
 
+/**
+ * Describes types that can be narrowed
+ */
+export type Narrowable =
+| string
+| number
+| bigint
+| boolean
