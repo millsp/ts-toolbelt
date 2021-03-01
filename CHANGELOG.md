@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.5.2](https://github.com/millsp/ts-toolbelt/compare/v9.5.1...v9.5.2) (2021-03-01)
+
+
+### Bug Fixes
+
+* **fn:** allow for curried in compose ([2bc5604](https://github.com/millsp/ts-toolbelt/commit/2bc560446916b423977c25e396b4f1f310b6c03f))
+
 ### [9.5.1](https://github.com/millsp/ts-toolbelt/compare/v9.5.0...v9.5.1) (2021-02-28)
 
 
