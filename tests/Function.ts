@@ -1,5 +1,4 @@
 import {Test, F, A} from '../sources'
-import {Key} from '../sources/Any/Key'
 
 const {checks, check} = Test
 
@@ -31,6 +30,12 @@ const composedSync = composeSync(
     (name: string, age: number) => ({name, age}), // receive parameters
 )
 
+composeSync(
+    (c1: string[]) => [c1],
+    (b1: string) => [b1],
+    curry((a1: number, d2:  number) => `${a1 + d2}`),
+)(23, 42)
+
 checks([
     check<(typeof composedSync), (name: string, age: number) => boolean, Test.Pass>(),
 ])
@@ -46,6 +51,12 @@ const composedAsync = composeAsync(
     async <T>(generic: T) => generic, // receive previous return
     async (name: string, age: number) => ({name, age}), // receive parameters
 )
+
+composeAsync(
+    (c1: string[]) => [c1],
+    (b1: string) => [b1],
+    curry((a1: number, d2:  number) => `${a1 + d2}`),
+)(23, 42)
 
 checks([
     check<(typeof composedAsync), (name: string, age: number) => Promise<boolean>, Test.Pass>(),
@@ -195,6 +206,12 @@ const pipedAsync = pipeAsync(
     // @ts-ignore
     (message: string) => false, // receive previous return
 )
+
+pipeAsync(
+    curry((a1: number, d2:  number) => `${a1 + d2}`),
+    (b1: string) => [b1],
+    (c1: string[]) => [c1],
+)(23, 42)
 
 checks([
     check<(typeof pipedAsync), (name: string, age: number) => Promise<boolean>, Test.Pass>(),
