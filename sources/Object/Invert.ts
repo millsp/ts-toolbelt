@@ -41,7 +41,7 @@ export type _Invert<O extends Record<Key, Key>> =
  * type test1 = O.Invert<O>
  * ```
  */
-export type Invert<O extends Record<Key, Key>> =
+export type Invert<O extends Record<keyof O, Key>> =
     O extends unknown
     ? _Invert<O>
     : never

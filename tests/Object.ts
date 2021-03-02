@@ -428,8 +428,8 @@ checks([
 const INVERT_SYM = Symbol('')
 
 type O_INVERT = {
-    A: 'Av',
-    B: typeof INVERT_SYM,
+    A: 'Av';
+    B: typeof INVERT_SYM;
     C: 42;
 };
 
@@ -439,8 +439,21 @@ type INVERT_O = {
     42: 'C';
 };
 
+interface O_INVERT1 {
+    A: 'Av';
+    B: typeof INVERT_SYM;
+    C: 42;
+}
+
+interface INVERT1_O {
+    Av: 'A';
+    [INVERT_SYM]: 'B';
+    42: 'C';
+}
+
 checks([
     check<O.Invert<O_INVERT>, INVERT_O, Test.Pass>(),
+    check<O.Invert<O_INVERT1>, INVERT1_O, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
