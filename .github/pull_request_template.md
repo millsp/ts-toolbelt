@@ -21,8 +21,8 @@
 * ...
 
 #### What tests have you updated?
-* tested this in `tst/...`
-* tested that in `tst/...`
+* tested this in `tests/...`
+* tested that in `tests/...`
 * ...
 
 #### Is there any breaking changes?
