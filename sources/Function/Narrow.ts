@@ -2,12 +2,20 @@ import {Cast} from '../Any/Cast'
 import {Narrowable} from './_Internal'
 
 /**
+ * Basic type helper
  * @hidden
  */
-type _Narrow<A> =
+type NarrowRaw<A> =
 | []
 | (A extends Narrowable ? A : never)
-| ({[K in keyof A]: _Narrow<A[K]>})
+| ({[K in keyof A]: NarrowRaw<A[K]>})
+
+/**
+ * Enforce proper variance
+ * @hidden
+ */
+type NarrowVar<A, N = NarrowRaw<A>> =
+    N | Cast<A, N>
 
 /**
  * Prevent type widening on generic function parameters
@@ -28,6 +36,6 @@ type _Narrow<A> =
  * ```
  */
 type Narrow<A extends any> =
-    Cast<A, _Narrow<A>>
+    NarrowVar<A>
 
 export {Narrow}
