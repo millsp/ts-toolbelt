@@ -1,6 +1,5 @@
 import {Key} from './Key'
 import {List} from '../List/List'
-import {Length} from '../List/Length'
 
 /**
  * Get in `O` the type of a field of key `K`
