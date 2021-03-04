@@ -6,9 +6,10 @@ import {Narrowable} from './_Internal'
  * @hidden
  */
 type NarrowRaw<A> =
-| A
-| (A extends Narrowable ? A : never)
-| ({[K in keyof A]: NarrowRaw<A[K]>})
+    | (A extends Narrowable ? A : never)
+    | {[K in keyof A]: A[K] extends Function
+                       ? A[K]
+                       : NarrowRaw<A[K]>}
 
 /**
  * Prevent type widening on generic function parameters
