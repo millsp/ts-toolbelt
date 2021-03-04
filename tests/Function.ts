@@ -1,4 +1,5 @@
 import {Test, F, A} from '../sources'
+import {Narrow} from '../sources/Function/Narrow'
 
 const {checks, check} = Test
 
@@ -47,6 +48,7 @@ declare const composeAsync: F.Compose<'async'>
 const composedAsync = composeAsync(
     // @ts-ignore
     (message: string) => false, // receive previous return
+    // @ts-ignore
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     async <T>(generic: T) => generic, // receive previous return
     async (name: string, age: number) => ({name, age}), // receive parameters
@@ -170,6 +172,60 @@ checks([
     check<typeof test06, {a: 1, b: 'c', d: ['e', 2, true, {f: ['g']}]}, Test.Pass>(),
 ])
 
+const narrow = <T>(thing: Narrow<T>) => thing
+
+interface Foo {
+    bar: {hi: 'there'}
+}
+
+class Bar implements Foo {
+    bar = narrow({hi: 'there'})
+}
+
+type Co<V> = () => Narrow<V>;
+function covariance<U, T extends U>(t: T, u: U, coT: Co<T>, coU: Co<U>) {
+    u = t
+    // @ts-expect-error
+    t = u
+
+    coU = coT
+    // @ts-expect-error
+    coT = coU
+}
+
+type Contra<V> = (v: Narrow<V>) => void;
+function contravariance<U, T extends U>(t: T, u: U, contraT: Contra<T>, contraU: Contra<U>) {
+    u = t
+    // @ts-expect-error
+    t = u
+
+    // @ts-expect-error
+    contraU = contraT
+    contraT = contraU
+}
+
+type In<V> = (v: Narrow<V>) => Narrow<V>;
+function invariance<U, T extends U>(t: T, u: U, inT: In<T>, inU: In<U>) {
+    u = t
+    // @ts-expect-error
+    t = u
+
+    // @ts-expect-error
+    inU = inT
+    // @ts-expect-error
+    inT = inU
+}
+
+type Bi<V> = { foo(v: Narrow<V>): void };
+function bivariance<U, T extends U>(t: T, u: U, biT: Bi<T>, biU: Bi<U>) {
+    u = t
+    // @ts-expect-error
+    t = u
+
+    biU = biT
+    biT = biU
+}
+
 // ---------------------------------------------------------------------------------------
 // PIPE
 
@@ -202,6 +258,7 @@ declare const pipeAsync: F.Pipe<'async'>
 const pipedAsync = pipeAsync(
     (name: string, age: number) => ({name, age}), // receive parameters
     async <T>(generic: T) => generic, // receive previous return
+    // @ts-ignore
     async (info: {name: string, age: number}) => `Welcome, ${info.name}`, // receive previous return
     // @ts-ignore
     (message: string) => false, // receive previous return
