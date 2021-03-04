@@ -6,6 +6,7 @@ import {Narrowable} from './_Internal'
  * @hidden
  */
 type NarrowRaw<A> =
+| A
 | (A extends Narrowable ? A : never)
 | ({[K in keyof A]: NarrowRaw<A[K]>})
 
