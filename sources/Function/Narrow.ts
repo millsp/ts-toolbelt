@@ -1,18 +1,15 @@
-import {Cast} from '../Any/Cast'
+import {Try} from '../Any/Try'
 import {Narrowable} from './_Internal'
-
-type EvalList<A> =
-    A extends []
-    ? []
-    : never
 
 /**
  * @hidden
  */
 type NarrowRaw<A> =
-    | EvalList<A>
-    | (A extends Narrowable ? A : never)
-    | {[K in keyof A]: NarrowRaw<A[K]>}
+| (A extends [] ? [] : never)
+| (A extends Narrowable ? A : never)
+| ({[K in keyof A]: A[K] extends Function
+                    ? A[K]
+                    : NarrowRaw<A[K]>});
 
 /**
  * Prevent type widening on generic function parameters
@@ -22,7 +19,7 @@ type NarrowRaw<A> =
  * ```ts
  * import {F} from 'ts-toolbelt'
  *
- * declare function foo<A extends any[]>(x: F.Narrow<A | []>): A;
+ * declare function foo<A extends any[]>(x: F.Narrow<A>): A;
  * declare function bar<A extends object>(x: F.Narrow<A>): A;
  *
  * const test0 = foo(['e', 2, true, {f: ['g', ['h']]}])
@@ -33,6 +30,6 @@ type NarrowRaw<A> =
  * ```
  */
 type Narrow<A extends any> =
-    Cast<A, NarrowRaw<A>>
+    Try<A, [], NarrowRaw<A>>
 
 export {Narrow}
