@@ -16,6 +16,7 @@ export type Input = 'multi' | 'list'
  * Describes types that can be narrowed
  */
 export type Narrowable =
+| (() => any)
 | string
 | number
 | bigint

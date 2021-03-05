@@ -182,50 +182,6 @@ class Bar implements Foo {
     bar = narrow({hi: 'there'})
 }
 
-type Co<V> = () => Narrow<V>;
-function covariance<U, T extends U>(t: T, u: U, coT: Co<T>, coU: Co<U>) {
-    u = t
-    // @ts-expect-error
-    t = u
-
-    coU = coT
-    // @ts-expect-error
-    coT = coU
-}
-
-type Contra<V> = (v: Narrow<V>) => void;
-function contravariance<U, T extends U>(t: T, u: U, contraT: Contra<T>, contraU: Contra<U>) {
-    u = t
-    // @ts-expect-error
-    t = u
-
-    // @ts-expect-error
-    contraU = contraT
-    contraT = contraU
-}
-
-type In<V> = (v: Narrow<V>) => Narrow<V>;
-function invariance<U, T extends U>(t: T, u: U, inT: In<T>, inU: In<U>) {
-    u = t
-    // @ts-expect-error
-    t = u
-
-    // @ts-expect-error
-    inU = inT
-    // @ts-expect-error
-    inT = inU
-}
-
-type Bi<V> = { foo(v: Narrow<V>): void };
-function bivariance<U, T extends U>(t: T, u: U, biT: Bi<T>, biU: Bi<U>) {
-    u = t
-    // @ts-expect-error
-    t = u
-
-    biU = biT
-    biT = biU
-}
-
 // ---------------------------------------------------------------------------------------
 // PIPE
 

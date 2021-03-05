@@ -1,15 +1,18 @@
-import {Extends} from '../Any/Extends'
-import {If} from '../Any/If'
+import {Cast} from '../Any/Cast'
 import {Narrowable} from './_Internal'
+
+type EvalList<A> =
+    A extends []
+    ? []
+    : never
 
 /**
  * @hidden
  */
 type NarrowRaw<A> =
+    | EvalList<A>
     | (A extends Narrowable ? A : never)
-    | {[K in keyof A]: A[K] extends Function
-                       ? A[K]
-                       : NarrowRaw<A[K]>}
+    | {[K in keyof A]: NarrowRaw<A[K]>}
 
 /**
  * Prevent type widening on generic function parameters
@@ -30,6 +33,6 @@ type NarrowRaw<A> =
  * ```
  */
 type Narrow<A extends any> =
-    NarrowRaw<If<Extends<A, any[]>, A | [], A>>
+    Cast<A, NarrowRaw<A>>
 
 export {Narrow}
