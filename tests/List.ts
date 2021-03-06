@@ -1,4 +1,4 @@
-import {Test, T, A, L} from '../sources'
+import {Test, T, A} from '../sources'
 
 const {checks, check} = Test
 
@@ -250,6 +250,8 @@ checks([
 
 // ---------------------------------------------------------------------------------------
 // INTERSECT
+
+type t = T.Intersect<T, T1, 'default'>
 
 type INTERSECT_T_T1_NUMBER_DEFAULT = [
     1,

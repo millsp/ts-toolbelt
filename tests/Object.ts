@@ -1,4 +1,4 @@
-import {Test, O, A, T, U, M} from '../sources'
+import {Test, O, A, T, U, M, F, S} from '../sources'
 import {Key} from '../sources/Any/Key'
 import {OptionalDeep} from '../sources/Object/Optional'
 
@@ -1532,57 +1532,9 @@ type O_PMERGE_UNIONS = {
     c?: string;
 };
 
-type O_PMERGE_ARRAYS = {
-    a: {
-        a: string;
-        b: {
-            a: 'aba';
-            b: 'abb';
-            x: string;
-       }[];
-   }[][];
-    b?: {
-        a: {
-            a: 'baa';
-            b: 'bab';
-       }[];
-        b: {
-            a: 'bba';
-            b: 'bbb';
-            x: string;
-       }[];
-   }[];
-    c?: string;
-};
-
-type O_PMERGE_ARRAYS_UNIONS = {
-    a: {
-        a: string;
-        b: {
-            a: 'aba';
-            b: 'abb';
-            x: string;
-       }[];
-   }[][] | 'a'[];
-    b?: {
-        a: {
-            a: 'baa';
-            b: 'bab';
-       }[];
-        b: {
-            a: 'bba';
-            b: 'bbb';
-            x: string;
-       }[];
-   }[] | 'b'[][];
-    c?: string;
-};
-
 checks([
     check<O.P.Merge<OP, ['a' | 'b', 'b'], {x: string}>, O_PMERGE, Test.Pass>(),
     check<O.P.Merge<OP_UNIONS, ['a' | 'b', 'b'], {x: string}>, O_PMERGE_UNIONS, Test.Pass>(),
-    check<O.P.Merge<OP_ARRAYS, ['a' | 'b', 'b'], {x: string}, 'flat', 1>, O_PMERGE_ARRAYS, Test.Pass>(),
-    check<O.P.Merge<OP_ARRAYS_UNIONS, ['a' | 'b', 'b'], {x: string}, 'flat', 1>, O_PMERGE_ARRAYS_UNIONS, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1620,43 +1572,9 @@ type O_POMIT_UNIONS = {
     c?: string;
 };
 
-type O_POMIT_ARRAYS = {
-    a: {
-        b: {
-            a: 'aba';
-            b: 'abb';
-       }[];
-   }[][];
-    b?: {
-        b: {
-            a: 'bba';
-            b: 'bbb';
-       }[];
-   }[];
-    c?: string;
-};
-
-type O_POMIT_ARRAYS_UNIONS = {
-    a: {
-        b: {
-            a: 'aba';
-            b: 'abb';
-       }[];
-   }[][] | 'a'[];
-    b?: {
-        b: {
-            a: 'bba';
-            b: 'bbb';
-       }[];
-   }[] | 'b'[][];
-    c?: string;
-};
-
 checks([
     check<O.P.Omit<OP, ['a' | 'b', 'a']>, O_POMIT, Test.Pass>(),
     check<O.P.Omit<OP_UNIONS, ['a' | 'b', 'a']>, O_POMIT_UNIONS, Test.Pass>(),
-    check<O.P.Omit<OP_ARRAYS, ['a' | 'b', 'a'], 1>, O_POMIT_ARRAYS, Test.Pass>(),
-    check<O.P.Omit<OP_ARRAYS_UNIONS, ['a' | 'b', 'a'], 1>, O_POMIT_ARRAYS_UNIONS, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1665,56 +1583,58 @@ checks([
 type O_PPICK = {
     a: {
         a: string;
-   };
+    };
     b?: {
         a: {
             a: 'baa';
             b: 'bab';
-       };
-   };
+        };
+    };
 };
 
 type O_PPICK_UNIONS = {
     a: {
         a: string;
-   } | 'a';
+    } | 'a';
     b?: {
         a: {
             a: 'baa';
             b: 'bab';
-       };
-   } | 'b';
+        };
+    } | 'b';
 };
 
-type O_PPICK_ARRAYS = {
+type O_PPICK_AUTOPATH = {
     a: {
         a: string;
-   }[][];
+        b: {
+            a: 'aba';
+            b: 'abb';
+        };
+    };
+} | {
+    a: {
+        a: string;
+    };
+} | {
     b?: {
         a: {
-            a: 'baa';
             b: 'bab';
-       }[];
-   }[];
-};
+        };
+    } | undefined;
+}
 
-type O_PPICK_ARRAYS_UNIONS = {
-    a: {
-        a: string;
-   }[][] | 'a'[];
-    b?: {
-        a: {
-            a: 'baa';
-            b: 'bab';
-       }[];
-   }[] | 'b'[][];
-};
+const o_ppick_autopath = pick({} as OP, ['a', 'a.a', 'b.a.b'])
+
+declare function pick<T extends Record<string, any>, K extends string>(
+    obj: T,
+    keys: F.AutoPath<T, K>[]
+): A.Compute<O.P.Pick<T, S.Split<K, '.'>>>
 
 checks([
     check<O.P.Pick<OP, ['a' | 'b', 'a']>, O_PPICK, Test.Pass>(),
     check<O.P.Pick<OP_UNIONS, ['a' | 'b', 'a']>, O_PPICK_UNIONS, Test.Pass>(),
-    check<O.P.Pick<OP_ARRAYS, ['a' | 'b', 'a'], 1>, O_PPICK_ARRAYS, Test.Pass>(),
-    check<O.P.Pick<OP_ARRAYS_UNIONS, ['a' | 'b', 'a'], 1>, O_PPICK_ARRAYS_UNIONS, Test.Pass>(),
+    check<typeof o_ppick_autopath, O_PPICK_AUTOPATH, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1762,53 +1682,9 @@ type O_PREADONLY_UNIONS = {
     c?: string;
 };
 
-type O_PREADONLY_ARRAYS = {
-    a: {
-        readonly a: string;
-        b: {
-            a: 'aba';
-            b: 'abb';
-       }[];
-   }[][];
-    b?: {
-        readonly a: {
-            a: 'baa';
-            b: 'bab';
-       }[];
-        b: {
-            a: 'bba';
-            b: 'bbb';
-       }[];
-   }[];
-    c?: string;
-};
-
-type O_PREADONLY_ARRAYS_UNIONS = {
-    a: {
-        readonly a: string;
-        b: {
-            a: 'aba';
-            b: 'abb';
-       }[];
-   }[][] | 'a'[];
-    b?: {
-        readonly a: {
-            a: 'baa';
-            b: 'bab';
-       }[];
-        b: {
-            a: 'bba';
-            b: 'bbb';
-       }[];
-   }[] | 'b'[][];
-    c?: string;
-};
-
 checks([
     check<O.P.Readonly<OP, ['a' | 'b', 'a']>, O_PREADONLY, Test.Pass>(),
     check<O.P.Readonly<OP_UNIONS, ['a' | 'b', 'a']>, O_PREADONLY_UNIONS, Test.Pass>(),
-    check<O.P.Readonly<OP_ARRAYS, ['a' | 'b', 'a'], 'flat', 1>, O_PREADONLY_ARRAYS, Test.Pass>(),
-    check<O.P.Readonly<OP_ARRAYS_UNIONS, ['a' | 'b', 'a'], 'flat', 1>, O_PREADONLY_ARRAYS_UNIONS, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -1872,7 +1748,6 @@ type O_PUPDATE_VPATH = {
 };
 
 checks([
-    check<O.P.Update<{}, ['a', 'b'], 'x'>, {a: {b: 'x'}}, Test.Pass>(),
     check<O.P.Update<OP, ['a' | 'b', 'a'], 'x'>, O_PUPDATE, Test.Pass>(),
     check<O.P.Update<OP_UNIONS, ['a' | 'b', 'a'], 'x'>, O_PUPDATE_UNIONS, Test.Pass>(),
     check<O.P.Update<OP_UNIONS, ['a' | 'b' | 'c', 'a', 'a', 'a'], 'x'>, O_PUPDATE_VPATH, Test.Pass>(),

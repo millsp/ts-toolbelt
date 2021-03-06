@@ -1,28 +1,26 @@
-import {IterationOf} from '../../Iteration/IterationOf'
-import {Iteration} from '../../Iteration/Iteration'
-import {Pos} from '../../Iteration/Pos'
-import {Next} from '../../Iteration/Next'
 import {Key} from '../../Any/Key'
-import {LastKey} from '../../List/LastKey'
+import {Update as OUpdate} from '../Update'
+import {Update as LUpdate} from '../../List/Update'
 import {List} from '../../List/List'
+import {BuiltIn} from '../../Misc/BuiltIn'
+import {_ListOf} from '../ListOf'
+import {Tail} from '../../List/Tail'
 import {Record} from '../Record'
-import {Patch} from '../Patch'
 
 /**
  * @hidden
  */
-type UpdateObject<O, Path extends List<Key>, A, I extends Iteration = IterationOf<0>> =
-  O extends object                                                     // if it's an object
-  ? Pos<I> extends LastKey<Path>                                     // if it's the last index
-    ? Patch<Record<Path[Pos<I>], A>, O>                                // use standard Update
-    : (O & Record<Exclude<Path[Pos<I>], keyof O>, {}>) extends infer O // fill in missing keys with non-object
-      ? {                                                              // to effectively build the object up
-          [K in keyof O]: K extends Path[Pos<I>]                       // if K is part of path
-                          ? UpdateObject<O[K], Path, A, Next<I>>            // keep diving
-                          : O[K]                                       // not part of path - x
-        } & {}
-      : never
-  : O
+type UpdateAt<O, Path extends List<Key>, A> =
+  O extends BuiltIn ? O :
+  Path extends [Key]
+  ? O extends List   ? LUpdate<O, Path[0], A> :
+    O extends object ? OUpdate<O, Path[0], A> :
+    O
+  : {
+      [K in keyof O]: K extends Path[0]
+      ? UpdateAt<O[K], Tail<Path>, A>
+      : O[K]
+    }
 
 /**
  * Update in `O` the fields at `Path` with `A`
@@ -35,4 +33,6 @@ type UpdateObject<O, Path extends List<Key>, A, I extends Iteration = IterationO
  * ```
  */
 export type Update<O extends object, Path extends List<Key>, A extends any> =
-  UpdateObject<O, Path, A>
+    Path extends unknown
+    ? UpdateAt<O, Path, A>
+    : never

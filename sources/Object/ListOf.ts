@@ -1,26 +1,28 @@
-import {IterationOf} from '../Iteration/IterationOf'
-import {Iteration} from '../Iteration/Iteration'
 import {Cast} from '../Any/Cast'
-import {Key} from '../Iteration/Key'
-import {Next} from '../Iteration/Next'
-import {Append} from '../List/Append'
-import {Exclude} from '../Union/Exclude'
 import {List} from '../List/List'
 import {Extends} from '../Any/Extends'
+import {Select} from '../Union/Select'
+import {Exclude} from '../Union/Exclude'
+import {Iteration} from '../Iteration/Iteration'
+import {IterationOf} from '../Iteration/IterationOf'
+import {Pos} from '../Iteration/Pos'
+import {Key} from '../Iteration/Key'
+import {Append} from '../List/Append'
+import {Next} from '../Iteration/Next'
 
 /**
  * @hidden
  */
-type PickIfEntry<O extends object, LN extends List, I extends Iteration> =
-    Key<I> extends keyof O
-    ? Append<LN, O[Key<I> & keyof O]>
-    : LN
+type AppendExists<O extends object, LN extends List, I extends Iteration> =
+    Key<I> extends keyof O ? Append<LN, O[Key<I>]> :
+    Pos<I> extends keyof O ? Append<LN, O[Pos<I>]> :
+    LN
 
 /**
  * @hidden
  */
 type ___ListOf<O extends object, K, LN extends List = [], I extends Iteration = IterationOf<0>> = {
-    0: ___ListOf<O, Exclude<K, Key<I>>, PickIfEntry<O, LN, I>, Next<I>>
+    0: ___ListOf<O, Exclude<K, Key<I>>, AppendExists<O, LN, I>, Next<I>>
     1: LN
 }[Extends<[K], [never]>]
 
@@ -28,13 +30,10 @@ type ___ListOf<O extends object, K, LN extends List = [], I extends Iteration = 
  * @hidden
  */
 type __ListOf<O extends object> =
-    number extends keyof O
-    ? O[number][]
-    : string extends keyof O
-      ? O[string][]
-      : symbol extends keyof O
-        ? O[symbol][]
-        : ___ListOf<O, keyof O>
+    number extends keyof O ? O[number][] :
+    string extends keyof O ? O[string][] :
+    symbol extends keyof O ? O[symbol][] :
+    ___ListOf<O, Select<keyof O, number | `${number}`>>
 
 /**
  * @hidden
