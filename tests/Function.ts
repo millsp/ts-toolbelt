@@ -102,9 +102,9 @@ checks([
 ])
 
 // ---------------------------------------------------------------------------------------
-// PATHAUTO
+// AUTOPATH
 
-type O_PATHAUTO = {
+type O_AUTOPATH = {
     a: {
         a: 1;
     };
@@ -112,19 +112,19 @@ type O_PATHAUTO = {
         a: {
             a: 2;
         };
-        b: O_PATHAUTO[];
+        b: O_AUTOPATH[];
     };
 };
 
 checks([
-    check<F.AutoPath<O_PATHAUTO, 'a'>, 'a' | 'a.a', Test.Pass>(),
-    check<F.AutoPath<O_PATHAUTO, 'a.'>, 'a.a', Test.Pass>(),
-    check<F.AutoPath<O_PATHAUTO, 'b.'>, 'b.b' | 'b.a', Test.Pass>(),
-    check<F.AutoPath<O_PATHAUTO, 'b.b.0'>, 'b.b.0' | 'b.b.0.b' | 'b.b.0.a', Test.Pass>(),
-    check<F.AutoPath<O_PATHAUTO, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.0.a.a', Test.Pass>(),
-    check<F.AutoPath<O_PATHAUTO, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.x.a.a', Test.Fail>(),
-    check<F.AutoPath<O_PATHAUTO, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.a.a', Test.Fail>(),
-    check<F.AutoPath<GlobalEventHandlersEventMap, 'cancel.isTrusted.'>, 'cancel.isTrusted.valueOf', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'a'>, 'a' | 'a.a', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'a.'>, 'a.a', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'b.'>, 'b.b' | 'b.a', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'b.b.0'>, 'b.b.0' | 'b.b.0.b' | 'b.b.0.a', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.0.a.a', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.x.a.a', Test.Fail>(),
+    check<F.AutoPath<O_AUTOPATH, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.a.a', Test.Fail>(),
+    check<F.AutoPath<GlobalEventHandlersEventMap, 'cancel.isTrusted.'>, never, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

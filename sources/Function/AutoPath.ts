@@ -23,11 +23,12 @@ type KeyToIndex<K extends Key, SP extends List<Index>> =
 /**
  * @ignore
  */
-type MetaPath<O, SP extends List<Index> = [], P extends List<Index> = []> = {
-    [K in keyof O]:
-    | MetaPath<O[K], Tail<SP>, [...P, KeyToIndex<K, SP>]>
-    | Join<[...P, KeyToIndex<K, SP>], '.'>
-}
+type MetaPath<O, SP extends List<Index> = [], P extends List<Index> = []> =
+    O extends object ? {
+        [K in keyof O]:
+        | Join<[...P, KeyToIndex<K, SP>], '.'>
+        | MetaPath<O[K], Tail<SP>, [...P, KeyToIndex<K, SP>]>
+    } : never
 
 /**
  * @ignore
