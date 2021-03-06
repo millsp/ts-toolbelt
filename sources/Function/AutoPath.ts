@@ -93,4 +93,6 @@ type _AutoPath<A, P extends string, SP extends List<Index> = Split<P, '.'>> =
  * ```
  */
 export type AutoPath<O extends any, P extends string> =
-    _AutoPath<O & {}, P>
+    P extends unknown
+    ? _AutoPath<O, P>
+    : never
