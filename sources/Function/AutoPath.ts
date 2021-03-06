@@ -25,7 +25,7 @@ type KeyToIndex<K extends Key, SP extends List<Index>> =
  */
 type MetaPath<O, SP extends List<Index> = [], P extends List<Index> = []> = {
     [K in keyof O]:
-    | MetaPath<O[K] & {}, Tail<SP>, [...P, KeyToIndex<K, SP>]>
+    | MetaPath<O[K], Tail<SP>, [...P, KeyToIndex<K, SP>]>
     | Join<[...P, KeyToIndex<K, SP>], '.'>
 }
 
