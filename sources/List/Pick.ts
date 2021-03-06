@@ -8,7 +8,7 @@ import {List} from './List'
  * @hidden
  */
 export type _Pick<L extends List, K extends Key> =
-    _ListOf<_OPick<ObjectOf<L>, `${K}` | K>>
+    _ListOf<_OPick<ObjectOf<L>, `${K & number}` | K>>
 
 /**
  * Extract out of `L` the entries of key `K`

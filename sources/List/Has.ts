@@ -16,4 +16,4 @@ import {List} from './List'
  * ```
  */
 export type Has<L extends List, K extends Key, M extends any = any, match extends Match = 'default'> =
-    OHas<ObjectOf<L>, `${K}` | K, M, match>
+    OHas<ObjectOf<L>, `${K & number}` | K, M, match>

@@ -24,7 +24,7 @@ import {Keys} from '../Any/Keys'
  * ```
  */
 export type AtLeast<L extends List, K extends Key = Keys<L>> =
-    OAtLeast<ObjectOf<L>, `${K}` | K> extends infer U
+    OAtLeast<ObjectOf<L>, `${K & number}` | K> extends infer U
     ? U extends unknown // we distribute over the union
       ? _ListOf<U & {}> // each union member to a list
       : never

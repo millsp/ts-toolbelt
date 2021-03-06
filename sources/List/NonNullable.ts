@@ -49,4 +49,4 @@ export type NonNullablePart<O extends object, K extends Key, depth extends Depth
  * ```
  */
 export type NonNullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> =
-    Cast<NonNullablePart<L, `${K}` | K, depth>, List>
+    Cast<NonNullablePart<L, `${K & number}` | K, depth>, List>

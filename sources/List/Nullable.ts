@@ -1,5 +1,4 @@
 import {Key} from './_Internal'
-import {Depth} from '../Object/_Internal'
 import {List} from './List'
 import {Update} from '../Object/Update'
 import {x} from '../Any/x'
@@ -15,5 +14,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Nullable<L extends List, K extends Key = Key, depth extends Depth = 'flat'> =
-    Cast<Update<L, `${K}` | K, x | null | undefined, depth>, List>
+export type Nullable<L extends List, K extends Key = Key> =
+    Cast<Update<L, `${K & number}` | K, x | null | undefined>, List>

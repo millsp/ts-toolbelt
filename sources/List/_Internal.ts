@@ -9,4 +9,4 @@ import {List} from './List'
 export type Naked<L extends List> =
     Overwrite<Required<L>, L>
 
-export type Key = string | number
+export type Key = string | number | symbol

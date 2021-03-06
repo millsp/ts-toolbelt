@@ -1,7 +1,6 @@
 import {Key} from './_Internal'
 import {List} from './List'
 import {Update as OUpdate} from '../Object/Update'
-import {Depth} from '../Object/_Internal'
 import {Cast} from '../Any/Cast'
 
 /**
@@ -15,5 +14,5 @@ import {Cast} from '../Any/Cast'
  * ```ts
  * ```
  */
-export type Update<L extends List, K extends Key, A extends any, depth extends Depth = 'flat'> =
-    Cast<OUpdate<L, `${K}` | K | K, A, depth>, List>
+export type Update<L extends List, K extends Key, A extends any> =
+    Cast<OUpdate<L, `${K & number}` | K, A>, List>

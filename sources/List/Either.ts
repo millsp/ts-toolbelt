@@ -17,7 +17,7 @@ import {Boolean} from '../Boolean/_Internal'
  * ```
  */
 export type Either<L extends List, K extends Key, strict extends Boolean = 1> =
-    OEither<ObjectOf<L>, `${K}` | K, strict> extends infer OE
+    OEither<ObjectOf<L>, `${K & number}` | K, strict> extends infer OE
     ? OE extends unknown
       ? _ListOf<OE & {}>
       : never

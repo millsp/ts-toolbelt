@@ -8,7 +8,7 @@ import {ObjectOf} from './ObjectOf'
  * @hidden
  */
 export type _Omit<L extends List, K extends Key> =
-    _ListOf<_OOmit<ObjectOf<L>, `${K}` | K>>
+    _ListOf<_OOmit<ObjectOf<L>, `${K & number}` | K>>
 
 /**
  * Remove out of `L` the entries of key `K`
