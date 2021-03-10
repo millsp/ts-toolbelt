@@ -426,21 +426,67 @@ checks([
 // INVERT
 
 const INVERT_SYM = Symbol('')
+const INVERT_SYM2 = Symbol('')
 
-type O_INVERT = {
-    A: 'Av',
-    B: typeof INVERT_SYM,
+type O_INVERT_T1 = {
+    A: 'Av';
+    B: typeof INVERT_SYM;
     C: 42;
 };
 
-type INVERT_O = {
+type O_INVERT_T2 = O_INVERT_T1 | {
+    Af: 'Avf';
+    Bf: typeof INVERT_SYM2;
+    Cf: 43;
+};
+
+type T1_INVERT_O = {
     Av: 'A';
     [INVERT_SYM]: 'B';
     42: 'C';
 };
 
+type T2_INVERT_O = {
+    Av: 'A';
+    [INVERT_SYM]: 'B';
+    42: 'C';
+} | {
+    Avf: 'Af';
+    [INVERT_SYM2]: 'Bf';
+    43: 'Cf';
+};
+
+interface O_INVERT_I1 {
+    A: 'Av';
+    B: typeof INVERT_SYM;
+    C: 42;
+}
+
+interface O_INVERT_I2 {
+    Af: 'Avf';
+    Bf: typeof INVERT_SYM2;
+    Cf: 43;
+}
+
+interface I1_INVERT_O {
+    Av: 'A';
+    [INVERT_SYM]: 'B';
+    42: 'C';
+}
+
+interface I2_INVERT_O {
+    Avf: 'Af';
+    [INVERT_SYM2]: 'Bf';
+    43: 'Cf';
+}
+
 checks([
-    check<O.Invert<O_INVERT>, INVERT_O, Test.Pass>(),
+    check<O.Invert<O_INVERT_T1>, T1_INVERT_O, Test.Pass>(),
+    check<O.Invert<O_INVERT_T2>, T2_INVERT_O, Test.Pass>(),
+    check<O.Invert<O_INVERT_I1>, T1_INVERT_O, Test.Pass>(),
+    check<O.Invert<O_INVERT_I1>, I1_INVERT_O, Test.Pass>(),
+    check<O.Invert<O_INVERT_I1 | O_INVERT_I2>, T2_INVERT_O, Test.Pass>(),
+    check<O.Invert<O_INVERT_I1 | O_INVERT_I2>, I1_INVERT_O | I2_INVERT_O, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

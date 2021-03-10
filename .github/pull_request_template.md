@@ -3,7 +3,7 @@
 <!-- Fill the following checklist. -->
 * [ ] Used a clear / meaningful title for this pull request
 * [ ] Tested the changes in your own code (on your projects)
-* [ ] Added / Edited tests to reflect changes (`tst` folder)
+* [ ] Added / Edited tests to reflect changes (`tests` folder)
 * [ ] Have read the **Contributing** part of the **Readme**
 * [ ] Passed `npm test`
 
@@ -21,8 +21,8 @@
 * ...
 
 #### What tests have you updated?
-* tested this in `tst/...`
-* tested that in `tst/...`
+* tested this in `tests/...`
+* tested that in `tests/...`
 * ...
 
 #### Is there any breaking changes?
