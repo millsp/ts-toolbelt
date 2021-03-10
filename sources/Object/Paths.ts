@@ -6,7 +6,7 @@ import {BuiltIn} from '../Misc/BuiltIn'
 import {Primitive} from '../Misc/Primitive'
 import {Length} from '../List/Length'
 import {Keys} from '../Any/Keys'
-import {Boolean} from '../Boolean/_Internal';
+import {Boolean} from '../Boolean/_Internal'
 
 /**
  * @hidden
