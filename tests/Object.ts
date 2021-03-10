@@ -1057,10 +1057,30 @@ type O_PATHS = {
     c: boolean
 };
 
+type O_PATHS_DEEP = {
+    a: {
+        b: {
+            c: Date;
+            d: {
+                e: number;
+            };
+            g: {
+                f: number;
+            };
+        };
+    };
+};
+
+
 checks([
     check<O.Paths<{'prop': {a: 1}[]}>, T.NonNullable<['prop'?, number?, 'a'?]>, Test.Pass>(),
     check<O.Paths<O_PATHS>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?] | ['c'?]>, Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP>, T.NonNullable<['a'?, 'b'?, 'c'?] | ['a'?, 'b'?, 'd'?, 'e'?] | ['a'?, 'b'?, 'g'?, 'f'?]>, Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP, [], 0, { e: number; } | { f: number; }>, T.NonNullable<['a'?, 'b'?, 'c'?] | ['a'?, 'b'?, 'd'?] | ['a'?, 'b'?, 'g'?]>, Test.Pass>(),
     check<O.Paths<O[]>, O.Paths<O[]>, Test.Pass>(),
+    check<O.Paths<{'prop': {a: 1}[]}, [], 1>, ['prop'] | ['prop', number] | ['prop', number, 'a'], Test.Pass>(),
+    check<O.Paths<O_PATHS, [], 1>, ['a'] | ['a', 'a'] | ['b'] | ['b', 'a'] | ['b', 'a', 'a'] | ['b', 'b'] | ['c'], Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP, [], 1, { e: number; } | { f: number; }>, ['a'] | ['a', 'b'] | ['a', 'b', 'c'] | ['a', 'b', 'd'] | ['a', 'b', 'g'], Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
