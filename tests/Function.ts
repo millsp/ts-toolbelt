@@ -117,6 +117,7 @@ type O_AUTOPATH = {
 };
 
 checks([
+    check<F.AutoPath<O_AUTOPATH, 'b/b/0/a', '/'>, 'b/b/0/a' | 'b/b/0/a/a', Test.Pass>(),
     check<F.AutoPath<O_AUTOPATH, 'a'>, 'a' | 'a.a', Test.Pass>(),
     check<F.AutoPath<O_AUTOPATH, 'a.'>, 'a.a', Test.Pass>(),
     check<F.AutoPath<O_AUTOPATH, 'b.'>, 'b.b' | 'b.a', Test.Pass>(),
