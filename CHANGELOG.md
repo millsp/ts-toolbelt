@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [9.5.11](https://github.com/millsp/ts-toolbelt/compare/v9.5.1...v9.5.11) (2021-03-10)
+### [9.5.12](https://github.com/millsp/ts-toolbelt/compare/v9.5.1...v9.5.12) (2021-03-10)
 
 
 ### Bug Fixes
@@ -24,6 +24,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **list:** more flexible keys ([d9415b2](https://github.com/millsp/ts-toolbelt/commit/d9415b2f85633c7c74a815c9909899114faf530c))
 * **o.p:** re-implement ([0f44362](https://github.com/millsp/ts-toolbelt/commit/0f443626dc3b114b6784d2053510a1e0c2f7f839))
 * **release:** 9.5.10 ([1f3928a](https://github.com/millsp/ts-toolbelt/commit/1f3928a70ff2a7e903a5398b53295c9c9997b42c))
+* **release:** 9.5.11 ([bde9210](https://github.com/millsp/ts-toolbelt/commit/bde9210d0a361ddb1e03920a0c2bd42dad17ee30))
 * **release:** 9.5.2 ([ec4a953](https://github.com/millsp/ts-toolbelt/commit/ec4a953cabe6c4d704c0dca5f37d1dc630de047b))
 * **release:** 9.5.3 ([0836f6e](https://github.com/millsp/ts-toolbelt/commit/0836f6e8187287a0c86f249e4e552d68a44e4f60))
 * **release:** 9.5.4 ([855855e](https://github.com/millsp/ts-toolbelt/commit/855855e520ed4a04059f9d61884d2045dd0d751b))
