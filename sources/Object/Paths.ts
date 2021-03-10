@@ -50,6 +50,8 @@ type _Paths<O, P extends List, Required extends Boolean, Ignore> = {
  * Get all the possible paths of `O`
  * (⚠️ this won't work with circular-refs)
  * @param O to be inspected
+ * @param Required indicate if you want all possible individual paths
+ * @param Ignore types to avoid inspecting their paths
  * @returns [[String]][]
  * @example
  * ```ts
