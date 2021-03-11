@@ -6,7 +6,11 @@ import {BuiltIn} from '../Misc/BuiltIn'
 import {Primitive} from '../Misc/Primitive'
 import {Length} from '../List/Length'
 import {Keys} from '../Any/Keys'
-import {Boolean} from '../Boolean/_Internal'
+
+/**
+ * @hidden
+ */
+type PathMode = 'compact' | 'all' | 'required'
 
 /**
  * @hidden
@@ -19,45 +23,61 @@ type UnionOf<A> =
 /**
  * @hidden
  */
-type _PathsOptional<O, P extends List, Ignore> = UnionOf<{
-    [K in keyof O]:
-    O[K] extends BuiltIn | Primitive | Ignore ? NonNullableFlat<[...P, K?]> :
-    [Keys<O[K]>] extends [never] ? NonNullableFlat<[...P, K?]> :
-    12 extends Length<P> ? NonNullableFlat<[...P, K?]> :
-    _PathsOptional<O[K], [...P, K?], Ignore>
+type _PathsCompact<O, P extends List, Ignore, K extends Key> = UnionOf<{
+    [k in keyof O]: k extends K ?
+    O[k] extends BuiltIn | Primitive | Ignore ? NonNullableFlat<[...P, k?]> :
+    [Keys<O[k]>] extends [never] ? NonNullableFlat<[...P, k?]> :
+    12 extends Length<P> ? NonNullableFlat<[...P, k?]> :
+    _PathsCompact<O[k], [...P, k?], Ignore, K> :
+    never
 }>
 
 /**
  * @hidden
  */
-type _PathsRequired<O, P extends List, Ignore> = UnionOf<{
-    [K in keyof O]:
-    O[K] extends BuiltIn | Primitive | Ignore ? NonNullableFlat<[...P, K]> :
-    [Keys<O[K]>] extends [never] ? NonNullableFlat<[...P, K]> :
-    12 extends Length<P> ? NonNullableFlat<[...P, K]> :
-    NonNullableFlat<[...P, K]> | _PathsRequired<O[K], [...P, K], Ignore>
+type _PathsRequired<O, P extends List, Ignore, K extends Key> = UnionOf<{
+    [k in keyof O]: k extends K ?
+    O[k] extends BuiltIn | Primitive | Ignore ? NonNullableFlat<[...P, k]> :
+    [Keys<O[k]>] extends [never] ? NonNullableFlat<[...P, k]> :
+    12 extends Length<P> ? NonNullableFlat<[...P, k]> :
+    _PathsRequired<O[k], [...P, k], Ignore, K> :
+    never
 }>
 
 /**
  * @hidden
  */
-type _Paths<O, P extends List, Required extends Boolean, Ignore> = {
-    0: _PathsOptional<O, P, Ignore>;
-    1: _PathsRequired<O, P, Ignore>;
-}[Required]
+type _PathsAll<O, P extends List, Ignore, K extends Key> = UnionOf<{
+    [k in keyof O]: k extends K ?
+    O[k] extends BuiltIn | Primitive | Ignore ? NonNullableFlat<[...P, k]> :
+    [Keys<O[k]>] extends [never] ? NonNullableFlat<[...P, k]> :
+    12 extends Length<P> ? NonNullableFlat<[...P, k]> :
+    NonNullableFlat<[...P, k]> | _PathsAll<O[k], [...P, k], Ignore, K> :
+    never
+}>
+
+/**
+ * @hidden
+ */
+type _Paths<O, P extends List, M extends PathMode, Ignore, K extends Key> = {
+    compact: _PathsCompact<O, P, Ignore, K>;
+    required: _PathsRequired<O, P, Ignore, K>;
+    all: _PathsAll<O, P, Ignore, K>;
+}[M]
 
 /**
  * Get all the possible paths of `O`
  * (⚠️ this won't work with circular-refs)
  * @param O to be inspected
- * @param Required indicate if you want all possible individual paths
+ * @param Mode indicate if you want all possible individual paths, or the compact version or the non optional compact version (required)
  * @param Ignore types to avoid inspecting their paths
+ * @param K choose key types to include in the paths
  * @returns [[String]][]
  * @example
  * ```ts
  * ```
  */
-export type Paths<O, P extends List = [], Required extends Boolean = 0, Ignore = never> =
-    _Paths<O, P, Required, Ignore> extends infer X
-    ? Cast<X, List<Key>>
+export type Paths<O, P extends List = [], Mode extends PathMode = 'compact', Ignore = never, K extends Key = Key> =
+    _Paths<O, P, Mode, Ignore, K> extends infer X
+    ? Cast<X, List<K>>
     : never

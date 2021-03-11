@@ -1067,20 +1067,26 @@ type O_PATHS_DEEP = {
             g: {
                 f: number;
             };
+            h: {r: number}[],
         };
     };
 };
 
-
 checks([
+    // Default compact mode
     check<O.Paths<{'prop': {a: 1}[]}>, T.NonNullable<['prop'?, number?, 'a'?]>, Test.Pass>(),
     check<O.Paths<O_PATHS>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?] | ['c'?]>, Test.Pass>(),
-    check<O.Paths<O_PATHS_DEEP>, T.NonNullable<['a'?, 'b'?, 'c'?] | ['a'?, 'b'?, 'd'?, 'e'?] | ['a'?, 'b'?, 'g'?, 'f'?]>, Test.Pass>(),
-    check<O.Paths<O_PATHS_DEEP, [], 0, { e: number; } | { f: number; }>, T.NonNullable<['a'?, 'b'?, 'c'?] | ['a'?, 'b'?, 'd'?] | ['a'?, 'b'?, 'g'?]>, Test.Pass>(),
-    check<O.Paths<O[]>, O.Paths<O[]>, Test.Pass>(),
-    check<O.Paths<{'prop': {a: 1}[]}, [], 1>, ['prop'] | ['prop', number] | ['prop', number, 'a'], Test.Pass>(),
-    check<O.Paths<O_PATHS, [], 1>, ['a'] | ['a', 'a'] | ['b'] | ['b', 'a'] | ['b', 'a', 'a'] | ['b', 'b'] | ['c'], Test.Pass>(),
-    check<O.Paths<O_PATHS_DEEP, [], 1, { e: number; } | { f: number; }>, ['a'] | ['a', 'b'] | ['a', 'b', 'c'] | ['a', 'b', 'd'] | ['a', 'b', 'g'], Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP>, T.NonNullable<['a'?, 'b'?, 'c'?] | ['a'?, 'b'?, 'd'?, 'e'?] | ['a'?, 'b'?, 'g'?, 'f'?] | ['a'?, 'b'?, 'h'?, number?, 'r'?]>, Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP, [], 'compact', { e: number; } | { f: number; }>, T.NonNullable<['a'?, 'b'?, 'c'?] | ['a'?, 'b'?, 'd'?] | ['a'?, 'b'?, 'g'?] | ['a'?, 'b'?, 'h'?, number?, 'r'?]>, Test.Pass>(),
+    // All mode
+    check<O.Paths<{'prop': {a: 1}[]}, [], 'all'>, ['prop'] | ['prop', number] | ['prop', number, 'a'], Test.Pass>(),
+    check<O.Paths<O_PATHS, [], 'all'>, ['a'] | ['a', 'a'] | ['b'] | ['b', 'a'] | ['b', 'a', 'a'] | ['b', 'b'] | ['c'], Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP, [], 'all', { e: number; } | { f: number; }>, ['a'] | ['a', 'b'] | ['a', 'b', 'c'] | ['a', 'b', 'd'] | ['a', 'b', 'g'] | ['a', 'b', 'h'] | ['a', 'b', 'h', number] | ['a', 'b', 'h', number, 'r'], Test.Pass>(),
+    // Required mode
+    check<O.Paths<{'prop': {a: 1}[]}, [], 'required'>, ['prop', number, 'a'], Test.Pass>(),
+    check<O.Paths<O_PATHS, [], 'required'>, ['a', 'a'] | ['b', 'a', 'a'] | ['b', 'b'] | ['c'], Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP, [], 'required', { e: number; } | { f: number; }>, ['a', 'b', 'c'] | ['a', 'b', 'd'] | ['a', 'b', 'g'] | ['a', 'b', 'h', number, 'r'], Test.Pass>(),
+    check<O.Paths<O_PATHS_DEEP, [], 'required', { e: number; } | { f: number; }, string>, ['a', 'b', 'c'] | ['a', 'b', 'd'] | ['a', 'b', 'g'], Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
