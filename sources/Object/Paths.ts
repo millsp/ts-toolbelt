@@ -18,7 +18,7 @@ type PathMode = 'compact' | 'all' | 'required'
 type UnionOf<A> =
     A extends List
     ? A[number]
-    : A[keyof A]
+    : Exclude<A[keyof A], undefined>
 
 /**
  * @hidden
