@@ -81,6 +81,17 @@ const test02: boolean = curried(__, 26)(__, true, __)('Jane', 'JJ') // boolean
 const test03: boolean = curried('Jane', 26, true) // boolean
 const test04: boolean = curried('Jane', 26, true, 'JJ') // boolean
 
+// @ts-ignore
+const sorter = (a: string, b: string) => 1;
+const curriedSorter = curry(sorter)
+
+const sort = <T>(fn: (a: T, b: T) => number, list: T[]): T[] => {
+    list.sort(fn)
+    return list
+}
+const curriedSort = curry(sort)
+const test041: string[] = curriedSort(curriedSorter)(['a', 'b'])
+
 // ---------------------------------------------------------------------------------------
 // EXACT
 
