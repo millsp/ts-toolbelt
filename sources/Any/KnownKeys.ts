@@ -13,6 +13,7 @@ export type KnownKeys<O extends object> = {
     string extends K ? never :
     number extends K ? never :
     K
-} extends {
-    [K in keyof O]: infer U
-} ? U & Keys<O> : never;
+} extends infer R ?
+    R extends {
+        [K in keyof O]: infer U
+    } ? U & Keys<O> : never : never;
