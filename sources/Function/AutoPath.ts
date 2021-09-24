@@ -25,7 +25,7 @@ type KeyToIndex<K extends Key, SP extends List<Index>> =
  */
 type MetaPath<O, D extends string, SP extends List<Index> = [], P extends List<Index> = []> = {
   [K in keyof O]:
-    | MetaPath<O[K], D, Tail<SP>, [...P, KeyToIndex<K, SP>]>
+    | Exclude<MetaPath<O[K], D, Tail<SP>, [...P, KeyToIndex<K, SP>]>, string>
     | Join<[...P, KeyToIndex<K, SP>], D>;
 };
 
@@ -45,6 +45,14 @@ type NextPath<OP> =
   Select<UnionOf<Exclude<OP, string> & {}>, string>;
 
 /**
+ *  @ignore
+ */
+type CurrentPath<OP> =
+  // Uses the reversed logic of NextPath to extract the
+  // current path from the meta paths
+  Select<Exclude<OP, object>, string>;
+
+/**
  * @ignore
  */
 type ExecPath<A, SP extends List<Index>, Delimiter extends string> =
@@ -56,7 +64,9 @@ type ExecPath<A, SP extends List<Index>, Delimiter extends string> =
  * @ignore
  */
 type HintPath<A, P extends string, SP extends List<Index>, Exec extends string, D extends string> = [Exec] extends [never] // if has not found paths
+? CurrentPath<Path<MetaPath<A, D, SP>, SP>> extends never // no current path
   ? ExecPath<A, Pop<SP>, D> // display previous paths
+  : CurrentPath<Path<MetaPath<A, D, SP>, SP>> // display current path
   : Exec | P; // display current + next
 
 /**

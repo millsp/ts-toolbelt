@@ -1013,6 +1013,13 @@ checks([
     check<O.Path<O, ['g', 'x', 'g']>, undefined, Test.Pass>(),
     // check<O.Path<O, []>, undefined, Test.Pass>(),
     check<O.Path<O, ['d']>, 'string0' | undefined, Test.Pass>(),
+    check<O.Path<O, ['']>, undefined, Test.Pass>(),
+    check<O.Path<O, ['a', 'toUpperCase']>, undefined, Test.Pass>(),
+    check<O.Path<O, ['b', 'toFixed']>, undefined, Test.Pass>(),
+    check<O.Path<O, ['h']>, 1 | undefined, Test.Pass>(),
+    // eslint-disable-next-line func-call-spacing
+    check<O.Path<O, ['x']>, () => 1, Test.Pass>(),
+    check<O.Path<O, ['x', 'call']>, undefined, Test.Pass>(),
 ])
 
 type O_PATH_U = {
