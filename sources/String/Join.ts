@@ -5,10 +5,10 @@ import {Cast} from '../Any/Cast'
 /**
  * @hidden
  */
-type _Join<T extends List, D extends string> =
-    T extends [] ? '' :
-    T extends [Literal] ? `${T[0]}` :
-    T extends [Literal, ...infer R] ? `${T[0]}${D}${_Join<R, D>}` :
+type _Join<T extends List, D extends string, Result extends string> =
+    T extends [] ? Result :
+    T extends [Literal] ? `${Result}${T[0]}` :
+    T extends [Literal, ...infer R] ? _Join<R, D, `${Result}${T[0]}${D}`>:
     string
 
 /**
@@ -17,6 +17,6 @@ type _Join<T extends List, D extends string> =
  * @param D to delimit
  */
 export type Join<T extends List<Literal>, D extends string = ''> =
-    _Join<T, D> extends infer X
+    _Join<T, D, ''> extends infer X
     ? Cast<X, string>
     : never
