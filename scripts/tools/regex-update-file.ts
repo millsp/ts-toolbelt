@@ -1,27 +1,7 @@
 import * as fs from 'fs'
-// @ts-ignore
-import * as rl from 'readline'
 
 // regex-update-file
 // regex-find-file
-
-const updateMatchTo = (line: string, match: RegExp, to: string) => {
-    const result = match.exec(line) || {groups: {}}
-    const groups = result.groups
-
-    // if user is not using groups just do
-    if (!groups) return line.replace(match, to)
-
-    Object.keys(groups).forEach((key) => {
-        const groupMatch = new RegExp(`<${key}>`, 'gu')
-
-        to   = to.replace(groupMatch, groups[key])
-        line = line.replace(match, to)
-    })
-
-    return line
-}
-
 
 const replaceInFile = (
     file : string,
@@ -29,31 +9,8 @@ const replaceInFile = (
     match: RegExp,
     to   : string,
 ) => {
-    let content  = ''
-    let didMatch = false
-
     const filePath = `${path}/${file}`
-    const streamFD = fs.createReadStream(filePath)
-
-    rl.createInterface(streamFD).
-    on('line', (line: string) => {
-        if (line.match(match)) {
-            line = updateMatchTo(line, match, to)
-
-            didMatch = true
-        }
-
-        content += `${line}\n`
-    }).
-    on('close', () => {
-        if (didMatch) {
-            fs.writeFileSync(filePath, content)
-
-            console.info(`wrote: ${filePath}`)
-        }
-
-        streamFD.close()
-    })
+    fs.writeFileSync(filePath, fs.readFileSync(filePath, 'utf8').replace(match, to))
 }
 
 const isPathIncluded = (
