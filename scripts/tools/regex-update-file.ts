@@ -144,7 +144,7 @@ const paths = (paths: string[]) => {
 
 const replace = (
     path: string,
-    match: string,
+    match: string | RegExp,
     replc: string,
     include: string[],
     exclude: string[],
@@ -164,7 +164,7 @@ const replace = (
 
     // console.log(include)
 
-    return replaceInDir(path, new RegExp(match, 'u'), replc, include, exclude)
+    return replaceInDir(path, typeof match === 'string'? new RegExp(match, 'ug'): match, replc, include, exclude)
 }
 
 export default replace
