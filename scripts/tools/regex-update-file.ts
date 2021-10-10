@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as fs from 'fs'
 // @ts-ignore
 import * as rl from 'readline'
@@ -84,7 +83,7 @@ const replaceInDir = (
     replc  : string,
     include: string[],
     exclude: string[],
-) => fs.readdir(path, 'utf8', (error: Error, docs: string[]) => {
+) => fs.readdir(path, 'utf8', (error, docs) => {
     if (error)
         console.error(error)
     else {
@@ -127,8 +126,7 @@ const paths = (paths: string[]) => {
         possibilities = [
             ...possibilities,                         // merge previous
             ...path.split('/').                       // split the path
-            // @ts-ignore
-            map((path, index, array) => {             // get combination
+            map((_, index, array) => {             // get combination
                 return array.slice(0, index + 1)
             }).                                       // got combinations
             map((splitPath, index, splitPaths) => {   // put it back as path
