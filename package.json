@@ -43,10 +43,10 @@
     "test:lint": "bash scripts/test/lint.sh",
     "test:types": "bash scripts/test/types.sh"
   },
-  "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@types/node": "^16.10.3",
     "@typescript-eslint/parser": "^4.14.0",
     "eledoc": "^0.2.0",
     "eslint": "^7.18.0",
@@ -59,6 +59,6 @@
     "ts-node": "^9.1.0",
     "tslib": "^2.1.0",
     "typedoc": "^0.20.0",
-    "typescript": "latest"
+    "typescript": "^4.5.0-beta"
   }
 }
