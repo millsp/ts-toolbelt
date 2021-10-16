@@ -22,6 +22,7 @@ checks([
 
 checks([
     check<S.Join<S.Split<S, ''>>, S, Test.Pass>(),
+    check<S.Join<Readonly<S.Split<S, ''>>>, S, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
