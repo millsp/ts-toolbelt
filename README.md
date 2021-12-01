@@ -324,7 +324,7 @@ Otherwise, the release versions will naturally follow the semantic versioning.
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc.                                                    |
 | [`material-candy`](https://github.com/millsp/material-candy)   | 🍬 A vscode theme to uplift your mood, stay happy and focused.                           |
-| [`utility-types`](https://github.com/piotrwitek)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases. |
+| [`utility-types`](https://github.com/piotrwitek/utility-types)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases. |
 
 ## License
 
