@@ -19,8 +19,14 @@
     "name": "Pierre-Antoine Mills",
     "url": "https://github.com/millsp"
   },
-  "main": "out/index.js",
-  "types": "out/index.d.ts",
+  "main": "./out/index.js",
+  "types": "./out/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./out/index.js",
+      "types": "./out/index.d.ts",
+    }
+  },
   "files": [
     "out"
   ],
