@@ -19,10 +19,12 @@
     "name": "Pierre-Antoine Mills",
     "url": "https://github.com/millsp"
   },
+  "module": "index.mjs",
   "main": "out/index.js",
   "types": "out/index.d.ts",
   "files": [
-    "out"
+    "out",
+    "esm.mjs"
   ],
   "scripts": {
     "build:clean": "bash scripts/build/clean.sh",
