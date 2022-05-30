@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "9.6.0",
+  "version": "9.7.0",
   "description": "TypeScript's largest utility library",
   "keywords": [
     "safe",
@@ -19,8 +19,8 @@
     "name": "Pierre-Antoine Mills",
     "url": "https://github.com/millsp"
   },
-  "module": "index.mjs",
   "main": "out/index.js",
+  "module": "index.mjs",
   "types": "out/index.d.ts",
   "files": [
     "out",
