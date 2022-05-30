@@ -12,8 +12,8 @@ import {List} from './List'
  * ```
  */
 export type ObjectOf<O extends List> =
-    O extends List
+    O extends unknown
     ? number extends Length<O> // detect arrays
       ? _Pick<O, number>       // preserves arrays
       : _Omit<O, keyof any[]>  // transforms tuples
-    : O
+    : never

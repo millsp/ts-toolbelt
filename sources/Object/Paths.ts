@@ -1,35 +1,30 @@
-import {OptionalFlat} from '../Object/Optional'
 import {Key} from '../Any/Key'
 import {NonNullableFlat} from '../Object/NonNullable'
 import {Cast} from '../Any/Cast'
 import {List} from '../List/List'
-import {Append} from '../List/Append'
 import {BuiltIn} from '../Misc/BuiltIn'
 import {Primitive} from '../Misc/Primitive'
 import {Length} from '../List/Length'
+import {Keys} from '../Any/Keys'
 
 /**
  * @hidden
  */
-type __Paths<O, Paths extends List<Key> = []> =
-Length<Paths> extends 10 ? Paths : {
-  0: {[K in keyof O]: __Paths<O[K], Append<Paths, K>>}[keyof O]
-  1: {[K in keyof O]: __Paths<O[K], Append<Paths, K>>}[keyof O & number]
-  // It dives deep, and as it dives, it adds the paths to `Paths`
-  2: NonNullableFlat<OptionalFlat<Paths>>
-}[
-    [keyof O] extends [never] ? 2 :
-    O extends BuiltIn | Primitive ? 2 :
-    O extends ReadonlyArray<any> ? 1 : 0
-]
+type UnionOf<A> =
+    A extends List
+    ? A[number]
+    : A[keyof A]
 
 /**
  * @hidden
  */
-export type _Paths<O extends object> =
-    __Paths<O> extends infer X
-    ? Cast<X, List<Key>>
-    : never
+type _Paths<O, P extends List = []> = UnionOf<{
+    [K in keyof O]:
+    O[K] extends BuiltIn | Primitive ? NonNullableFlat<[...P, K?]> :
+    [Keys<O[K]>] extends [never] ? NonNullableFlat<[...P, K?]> :
+    12 extends Length<P> ? NonNullableFlat<[...P, K?]> :
+    _Paths<O[K], [...P, K?]>
+}>
 
 /**
  * Get all the possible paths of `O`
@@ -40,7 +35,7 @@ export type _Paths<O extends object> =
  * ```ts
  * ```
  */
-export type Paths<O extends object> =
-    O extends unknown
-    ? _Paths<O>
+export type Paths<O, P extends List = []> =
+    _Paths<O, P> extends infer X
+    ? Cast<X, List<Key>>
     : never

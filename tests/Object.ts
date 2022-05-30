@@ -1053,11 +1053,14 @@ type O_PATHS = {
         };
         b: {};
     };
+} | {
+    c: boolean
 };
 
 checks([
     check<O.Paths<{'prop': {a: 1}[]}>, T.NonNullable<['prop'?, number?, 'a'?]>, Test.Pass>(),
-    check<O.Paths<O_PATHS>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?]>, Test.Pass>(),
+    check<O.Paths<O_PATHS>, T.NonNullable<['a'?, 'a'?] | ['b'?, 'a'?, 'a'?] | ['b'?, 'b'?] | ['c'?]>, Test.Pass>(),
+    check<O.Paths<O[]>, O.Paths<O[]>, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
