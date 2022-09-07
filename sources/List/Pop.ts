@@ -1,4 +1,3 @@
-import {_Omit} from './Omit'
 import {List} from './List'
 
 /**
