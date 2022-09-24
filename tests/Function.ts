@@ -89,6 +89,8 @@ declare function exactObject<A>(x: F.Exact<A, {a: number, b: 2}>): A;
 const test07 = exactObject({} as {a: 1, b: 2})
 // @ts-expect-error
 const test08 = exactObject({} as {a: 1})
+// @ts-expect-error
+const test09 = exactObject({} as {a: 1, b: 2, c: 3})
 
 checks([
     check<typeof test07, {a: 1, b: 2}, Test.Pass>(),
