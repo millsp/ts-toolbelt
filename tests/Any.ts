@@ -1,4 +1,4 @@
-import {Test, A} from '../sources'
+import {Test, A, B} from '../sources'
 
 const {checks, check} = Test
 
@@ -6,30 +6,30 @@ const {checks, check} = Test
 // ANY ///////////////////////////////////////////////////////////////////////////////////
 
 type O = {
-    a: string,
-    b: number;
-    c: {a: 'a'} & {b: 'b'};
-    d?: 'string0';
-    readonly e?: 'string1';
-    readonly f: 0;
-    g: O;
-    h?: 1;
-    j: 'a' | undefined;
-    k: {a: {b: string}};
-    x: () => 1;
+  a: string;
+  b: number;
+  c: { a: 'a' } & { b: 'b' };
+  d?: 'string0';
+  readonly e?: 'string1';
+  readonly f: 0;
+  g: O;
+  h?: 1;
+  j: 'a' | undefined;
+  k: { a: { b: string } };
+  x: () => 1;
 };
 
 type T = [
-    1,
-    2,
-    '3' | undefined,
-    'xxxx',
-    {a: 'a'} & {b: 'b'},
-    string | number,
-    number,
-    object,
-    readonly [0, 1, 2?],
-    'xxxx'?
+  1,
+  2,
+  '3' | undefined,
+  'xxxx',
+  { a: 'a' } & { b: 'b' },
+  string | number,
+  number,
+  object,
+  readonly [0, 1, 2?],
+  'xxxx'?
 ];
 
 // ---------------------------------------------------------------------------------------
@@ -37,11 +37,11 @@ type T = [
 
 checks([
     check<A.At<O, 'a'>, string, Test.Pass>(),
-    check<A.At<O, 'c'>, {a: 'a'} & {b: 'b'}, Test.Pass>(),
+    check<A.At<O, 'c'>, { a: 'a' } & { b: 'b' }, Test.Pass>(),
     check<A.At<O, 'g'>, O, Test.Pass>(),
     check<A.At<T, '1'>, 2, Test.Pass>(),
     check<A.At<T, '3'>, 'xxxx', Test.Pass>(),
-    check<A.At<{a: 1} | {b: 2}, 'a'>, 1 | undefined, Test.Pass>(),
+    check<A.At<{ a: 1 } | { b: 2 }, 'a'>, 1 | undefined, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ checks([
 
 checks([
     check<A.Cast<[0, 1, 2], any>, [0, 1, 2], Test.Pass>(),
-    check<A.Cast<{a: string}, {}>, {a: string}, Test.Pass>(),
+    check<A.Cast<{ a: string }, {}>, { a: string }, Test.Pass>(),
     check<A.Cast<string, object>, object, Test.Pass>(),
     check<A.Cast<any, string>, any, Test.Pass>(),
     check<A.Cast<0, 42>, 42, Test.Pass>(),
@@ -74,8 +74,8 @@ checks([
     check<A.Contains<any, string>, 0, Test.Pass>(),
     check<A.Contains<string, any>, 1, Test.Pass>(),
     check<A.Contains<{}, object>, 1, Test.Pass>(),
-    check<A.Contains<{a: any}, object>, 1, Test.Pass>(),
-    check<A.Contains<object, {a: any}>, 0, Test.Pass>(),
+    check<A.Contains<{ a: any }, object>, 1, Test.Pass>(),
+    check<A.Contains<object, { a: any }>, 0, Test.Pass>(),
     check<A.Contains<any[], Array<any>>, 1, Test.Pass>(),
     check<A.Contains<'a' | 'b', 'b' | 'a'>, 1, Test.Pass>(),
     check<A.Contains<'b', 'b' | 'a'>, 1, Test.Pass>(),
@@ -98,8 +98,8 @@ checks([
     check<A.Equals<any, string>, 0, Test.Pass>(),
     check<A.Equals<string, any>, 0, Test.Pass>(),
     check<A.Equals<{}, object>, 0, Test.Pass>(),
-    check<A.Equals<{a: any}, object>, 0, Test.Pass>(),
-    check<A.Equals<object, {a: any}>, 0, Test.Pass>(),
+    check<A.Equals<{ a: any }, object>, 0, Test.Pass>(),
+    check<A.Equals<object, { a: any }>, 0, Test.Pass>(),
     check<A.Equals<any[], Array<any>>, 1, Test.Pass>(),
     check<A.Equals<'a' | 'b', 'b' | 'a'>, 1, Test.Pass>(),
     check<A.Equals<'a', 'a'>, 1, Test.Pass>(),
@@ -120,8 +120,8 @@ checks([
     check<A.Extends<any, string>, 0 | 1, Test.Pass>(),
     check<A.Extends<string, any>, 1, Test.Pass>(),
     check<A.Extends<{}, object>, 1, Test.Pass>(),
-    check<A.Extends<{a: any}, object>, 1, Test.Pass>(),
-    check<A.Extends<object, {a: any}>, 0, Test.Pass>(),
+    check<A.Extends<{ a: any }, object>, 1, Test.Pass>(),
+    check<A.Extends<object, { a: any }>, 0, Test.Pass>(),
     check<A.Extends<any[], Array<any>>, 1, Test.Pass>(),
     check<A.Extends<'a' | 'b', 'b' | 'a'>, 1, Test.Pass>(),
     check<A.Extends<'b', 'b' | 'a'>, 1, Test.Pass>(),
@@ -140,8 +140,8 @@ checks([
 
 checks([
     check<A.Keys<O>, keyof O, Test.Pass>(),
-    check<A.Keys<{a: 0} | {b: 0}>, 'a' | 'b', Test.Pass>(),
-    check<(keyof ({a: 0} | {b: 0})), 'a' & 'b', Test.Pass>(),
+    check<A.Keys<{ a: 0 } | { b: 0 }>, 'a' | 'b', Test.Pass>(),
+    check<keyof({ a: 0 } | { b: 0 }), 'a' & 'b', Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -152,7 +152,7 @@ checks([
     check<A.KnownKeys<string[]>, never, Test.Pass>(),
     check<A.KnownKeys<O>, keyof O, Test.Pass>(),
     check<A.KnownKeys<string[]>, never, Test.Pass>(),
-    check<A.KnownKeys<{[k: string]: any} & {a: any}>, 'a', Test.Pass>(),
+    check<A.KnownKeys<{ [k: string]: any } & { a: any }>, 'a', Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
@@ -187,23 +187,19 @@ checks([
 // ---------------------------------------------------------------------------------------
 // PROMISE
 
-checks([
-    check<A.Promise<Promise<1>>, A.Promise<1>, Test.Pass>(),
-])
+checks([check<A.Promise<Promise<1>>, A.Promise<1>, Test.Pass>()])
 
 // ---------------------------------------------------------------------------------------
 // AWAIT
 
-checks([
-    check<A.Await<Promise<1>>, 1, Test.Pass>(),
-])
+checks([check<A.Await<Promise<1>>, 1, Test.Pass>()])
 
 // ---------------------------------------------------------------------------------------
 // TRY
 
 checks([
     check<A.Try<[0, 1, 2], any>, [0, 1, 2], Test.Pass>(),
-    check<A.Try<{a: string}, {}>, {a: string}, Test.Pass>(),
+    check<A.Try<{ a: string }, {}>, { a: string }, Test.Pass>(),
     check<A.Try<string, object>, never, Test.Pass>(),
     check<A.Try<any, string>, any, Test.Pass>(),
     check<A.Try<0, 42, 'xxxx'>, 'xxxx', Test.Pass>(),
@@ -216,6 +212,23 @@ checks([
     check<A.Type<string, 'name'>, any, Test.Fail>(),
     check<A.Type<string, 'name'>, A.Type<string, 'other'>, Test.Fail>(),
     check<A.Type<string, 'name'>, A.Type<string, 'name'>, Test.Pass>(),
+])
+
+// ---------------------------------------------------------------------------------------
+// IF
+
+checks([
+    check<A.If<1, string, 'name'>, string, Test.Pass>(),
+    check<A.If<0, string, 'name'>, string, Test.Fail>(),
+
+    check<A.If<1, string, 'name'>, 'name', Test.Fail>(),
+    check<A.If<0, string, 'name'>, 'name', Test.Pass>(),
+
+    check<A.If<1, string>, string, Test.Pass>(),
+    check<A.If<0, string>, string, Test.Fail>(),
+
+    check<A.If<1, string>, never, Test.Fail>(),
+    check<A.If<0, string>, never, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------
