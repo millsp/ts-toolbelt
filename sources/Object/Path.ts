@@ -8,12 +8,15 @@ import {Pos} from '../Iteration/Pos'
 import {List} from '../List/List'
 import {Length} from '../List/Length'
 import {At} from '../Any/At'
+import {Primitive} from '../Misc/Primitive'
+
+type _ExcludePrimitiveKeys<O> = O extends Primitive ? Omit<O, keyof O> : O;
 
 /**
  * @ignore
  */
 type _Path<O, P extends List<Key>,  I extends Iteration = IterationOf<0>> = {
-    0: _Path<At<O, P[Pos<I>]>, P, Next<I>>
+    0: _Path<At<_ExcludePrimitiveKeys<O>, P[Pos<I>]>, P, Next<I>>
     1: O
 }[Extends<Pos<I>, Length<P>>]
 
@@ -27,6 +30,6 @@ type _Path<O, P extends List<Key>,  I extends Iteration = IterationOf<0>> = {
  * ```
  */
 export type Path<O extends any, P extends List<Key>> =
-    _Path<O & {}, P> extends infer X
+    _Path<O, P> extends infer X
     ? Cast<X, any>
     : never

@@ -114,6 +114,11 @@ type O_AUTOPATH = {
         };
         b: O_AUTOPATH[];
     };
+    c: boolean[]
+    d: string;
+    e: number;
+    f: () => {};
+    g?: 1;
 };
 
 checks([
@@ -121,10 +126,24 @@ checks([
     check<F.AutoPath<O_AUTOPATH, 'a'>, 'a' | 'a.a', Test.Pass>(),
     check<F.AutoPath<O_AUTOPATH, 'a.'>, 'a.a', Test.Pass>(),
     check<F.AutoPath<O_AUTOPATH, 'b.'>, 'b.b' | 'b.a', Test.Pass>(),
-    check<F.AutoPath<O_AUTOPATH, 'b.b.0'>, 'b.b.0' | 'b.b.0.b' | 'b.b.0.a', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'b.b.0'>, 'b.b.0' | 'b.b.0.a' | 'b.b.0.b' | 'b.b.0.c' | 'b.b.0.d' | 'b.b.0.e' | 'b.b.0.f' | 'b.b.0.g', Test.Pass>(),
     check<F.AutoPath<O_AUTOPATH, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.0.a.a', Test.Pass>(),
     check<F.AutoPath<O_AUTOPATH, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.x.a.a', Test.Fail>(),
     check<F.AutoPath<O_AUTOPATH, 'b.b.0.a'>, 'b.b.0.a' | 'b.b.a.a', Test.Fail>(),
+    check<F.AutoPath<O_AUTOPATH, 'c'>, 'c', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'c.0'>, 'c.0', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'c.0.'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'c.0.valueOf'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'd'>, 'd', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'd.'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'd.toUpperCase'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'd.toUpperCase.call'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'e'>, 'e', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'e.toFixed'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'f'>, 'f', Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'f.'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'f.call'>, never, Test.Pass>(),
+    check<F.AutoPath<O_AUTOPATH, 'g'>, 'g', Test.Pass>(),
     check<F.AutoPath<GlobalEventHandlersEventMap, 'cancel.isTrusted.'>, never, Test.Pass>(),
 ])
 
