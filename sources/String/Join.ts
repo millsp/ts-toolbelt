@@ -6,9 +6,9 @@ import {Cast} from '../Any/Cast'
  * @hidden
  */
 type _Join<T extends List, D extends string> =
-    T extends [] ? '' :
-    T extends [Literal] ? `${T[0]}` :
-    T extends [Literal, ...infer R] ? `${T[0]}${D}${_Join<R, D>}` :
+    T extends readonly [] ? '' :
+    T extends readonly [Literal] ? `${T[0]}` :
+    T extends readonly [Literal, ...infer R] ? `${T[0]}${D}${_Join<R, D>}` :
     string
 
 /**
