@@ -312,14 +312,6 @@ Otherwise, the release versions will naturally follow the semantic versioning.
 
 * Need to write more examples
 
-## Related Projects
-
-| **Name**                                                       | **Intro**                                                                                |
-|----------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| [`eledoc`](https://github.com/millsp/eledoc)                   | 🌒 A material dark theme for TypeDoc.                                                    |
-| [`material-candy`](https://github.com/millsp/material-candy)   | 🍬 A vscode theme to uplift your mood, stay happy and focused.                           |
-| [`utility-types`](https://github.com/piotrwitek)               | Collection of utility types, complementing TypeScript built-in mapped types and aliases. |
-
 ## License
 
 [![FOSSA
