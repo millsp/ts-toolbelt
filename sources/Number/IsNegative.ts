@@ -18,9 +18,9 @@ export type _IsNegative<N extends Iteration> = {
  * ```ts
  * import {N} from 'ts-toolbelt'
  *
- * type test0 = N.IsNegative<'0'>  // False
- * type test1 = N.IsNegative<'-7'> // True
- * type test2 = N.IsNegative<'7'>  // False
+ * type test0 = N.IsNegative<0>  // False
+ * type test1 = N.IsNegative<-7> // True
+ * type test2 = N.IsNegative<7>  // False
  * ```
  */
 export type IsNegative<N extends number> =
