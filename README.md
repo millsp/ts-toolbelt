@@ -9,14 +9,8 @@
   <a href="https://www.npmjs.com/package/ts-toolbelt" >
     <img src="https://img.shields.io/npm/v/ts-toolbelt.svg">
   </a>
-  <a href="https://travis-ci.org/millsp/ts-toolbelt" >
-    <img src="https://img.shields.io/travis/millsp/ts-toolbelt.svg">
-  </a>
   <a href="#">
     <img src="https://img.shields.io/npm/dm/ts-toolbelt.svg">
-  </a>
-  <a href="https://lgtm.com/projects/g/millsp/ts-toolbelt/context:javascript">
-    <img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/millsp/ts-toolbelt.svg?logo=lgtm&logoWidth=-2"/>
   </a>
   <a href="#">
     <img src="http://isitmaintained.com/badge/resolution/millsp/ts-toolbelt.svg"/>
