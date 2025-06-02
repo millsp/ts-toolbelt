@@ -1,6 +1,6 @@
 {
   "name": "ts-toolbelt",
-  "version": "9.6.0",
+  "version": "9.7.0",
   "description": "TypeScript's largest utility library",
   "keywords": [
     "safe",
@@ -20,9 +20,11 @@
     "url": "https://github.com/millsp"
   },
   "main": "out/index.js",
+  "module": "index.mjs",
   "types": "out/index.d.ts",
   "files": [
-    "out"
+    "out",
+    "esm.mjs"
   ],
   "scripts": {
     "build:clean": "bash scripts/build/clean.sh",
