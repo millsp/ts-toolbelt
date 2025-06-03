@@ -12,10 +12,10 @@ import {Boolean} from '../Boolean/_Internal'
 /**
  * @hidden
  */
-type __Flatten<L extends List, LO extends List, strict extends Boolean, limit extends Iteration, I extends Iteration = IterationOf<0>> = {
-    0: __Flatten<_UnNest<L, strict>, L, strict, limit, Next<I>>
-    1: L
-}[Or<Equals<L, LO>, Extends<limit, I>>]
+type __Flatten<L extends List, LO extends List, strict extends Boolean, limit extends Iteration, I extends Iteration =
+    IterationOf<0>> = Or<Equals<L, LO>, Extends<limit, I>> extends 0
+        ? __Flatten<_UnNest<L, strict>, L, strict, limit, Next<I>>
+        : L
 
 /**
  * @hidden

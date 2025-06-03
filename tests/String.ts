@@ -9,6 +9,8 @@ type S =
     | 'hola'
     | 'ciao!'
 
+type LongString = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'
+
 // ---------------------------------------------------------------------------------------
 // AT
 
@@ -22,6 +24,11 @@ checks([
 
 checks([
     check<S.Join<S.Split<S, ''>>, S, Test.Pass>(),
+])
+
+//high stack depth
+checks([
+    check<S.Join<S.Split<LongString, ''>>, LongString, Test.Pass>(),
 ])
 
 // ---------------------------------------------------------------------------------------

@@ -88,7 +88,7 @@
         "object-curly-newline"         : ["error"],
         "object-curly-spacing"         : ["error"],
         "prefer-object-spread"         : ["error"],
-        "quotes"                       : ["error", "single"],
+        "quotes"                       : ["error", "single", { "avoidEscape": true }],
         "semi"                         : ["error", "never"],
         "no-trailing-spaces"           : ["error"]
         // "multiline-comment-style"      : ["error", "starred-block"]

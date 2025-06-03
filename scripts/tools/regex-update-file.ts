@@ -1,28 +1,7 @@
-// @ts-ignore
 import * as fs from 'fs'
-// @ts-ignore
-import * as rl from 'readline'
 
 // regex-update-file
 // regex-find-file
-
-const updateMatchTo = (line: string, match: RegExp, to: string) => {
-    const result = match.exec(line) || {groups: {}}
-    const groups = result.groups
-
-    // if user is not using groups just do
-    if (!groups) return line.replace(match, to)
-
-    Object.keys(groups).forEach((key) => {
-        const groupMatch = new RegExp(`<${key}>`, 'gu')
-
-        to   = to.replace(groupMatch, groups[key])
-        line = line.replace(match, to)
-    })
-
-    return line
-}
-
 
 const replaceInFile = (
     file : string,
@@ -30,31 +9,8 @@ const replaceInFile = (
     match: RegExp,
     to   : string,
 ) => {
-    let content  = ''
-    let didMatch = false
-
     const filePath = `${path}/${file}`
-    const streamFD = fs.createReadStream(filePath)
-
-    rl.createInterface(streamFD).
-    on('line', (line: string) => {
-        if (line.match(match)) {
-            line = updateMatchTo(line, match, to)
-
-            didMatch = true
-        }
-
-        content += `${line}\n`
-    }).
-    on('close', () => {
-        if (didMatch) {
-            fs.writeFileSync(filePath, content)
-
-            console.info(`wrote: ${filePath}`)
-        }
-
-        streamFD.close()
-    })
+    fs.writeFileSync(filePath, fs.readFileSync(filePath, 'utf8').replace(match, to))
 }
 
 const isPathIncluded = (
@@ -84,7 +40,7 @@ const replaceInDir = (
     replc  : string,
     include: string[],
     exclude: string[],
-) => fs.readdir(path, 'utf8', (error: Error, docs: string[]) => {
+) => fs.readdir(path, 'utf8', (error, docs) => {
     if (error)
         console.error(error)
     else {
@@ -127,8 +83,7 @@ const paths = (paths: string[]) => {
         possibilities = [
             ...possibilities,                         // merge previous
             ...path.split('/').                       // split the path
-            // @ts-ignore
-            map((path, index, array) => {             // get combination
+            map((_, index, array) => {             // get combination
                 return array.slice(0, index + 1)
             }).                                       // got combinations
             map((splitPath, index, splitPaths) => {   // put it back as path
@@ -144,7 +99,7 @@ const paths = (paths: string[]) => {
 
 const replace = (
     path: string,
-    match: string,
+    match: string | RegExp,
     replc: string,
     include: string[],
     exclude: string[],
@@ -164,7 +119,7 @@ const replace = (
 
     // console.log(include)
 
-    return replaceInDir(path, new RegExp(match, 'u'), replc, include, exclude)
+    return replaceInDir(path, typeof match === 'string'? new RegExp(match, 'ug'): match, replc, include, exclude)
 }
 
 export default replace

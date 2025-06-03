@@ -13,19 +13,18 @@ import {Extends} from '../Any/Extends'
  * starts in reverse from `N` till `N` = 0
  * @hidden
  */
-type TakeForth<L extends List, N extends Iteration, I extends Iteration = Prev<N>, LN extends List = []> = {
-    0: TakeForth<L, N, Prev<I>, Prepend<LN, L[Pos<I>]>>
-    1: LN
-}[Extends<-1, Pos<I>>]
+type TakeForth<L extends List, N extends Iteration, I extends Iteration = Prev<N>, LN extends List = []> =
+    Extends<-1, Pos<I>> extends 0
+        ? TakeForth<L, N, Prev<I>, Prepend<LN, L[Pos<I>]>>
+        : LN
 
 /**
  * starts in reverse from the end till `N` = 0
  * @hidden
  */
-type TakeBack<L extends List, N extends Iteration> = {
-    0: TakeBack<Tail<L>, Prev<N>>
-    1: L
-}[Extends<0, Pos<N>>]
+type TakeBack<L extends List, N extends Iteration> = Extends<0, Pos<N>> extends 0
+    ? TakeBack<Tail<L>, Prev<N>>
+    : L
 
 /**
  * @hidden
