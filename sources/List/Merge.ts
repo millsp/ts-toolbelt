@@ -18,6 +18,16 @@ import {Cast} from '../Any/Cast'
  * @returns [[List]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.Merge<[1, 2, 3], [2, 1]> // [2, 1, 3]
+ *
+ * type test1 = L.Merge<
+ *   [{name?: string}],
+ *   [{age: number}],
+ *   'deep'
+ * >
+ * // [{name?: string, age: number}]
  * ```
  */
 export type Merge<L extends List, L1 extends List, depth extends Depth = 'flat', ignore extends object = BuiltIn, fill extends any = undefined> =
