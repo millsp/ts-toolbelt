@@ -11,6 +11,14 @@ import {At} from '../Any/At'
  * @returns [[List]]
  * @example
  * ```ts
+ * import {A, L} from 'ts-toolbelt'
+ *
+ * type test0 = L.Modify<[string, number, boolean], [
+ *  A.x | null,
+ *  A.x | undefined,
+ *  'enabled' | 'disabled'
+ * ]>
+ * // [string | null, number | undefined, 'enabled' | 'disabled']
  * ```
  */
 export type Modify<L extends List, LMod extends List> = Cast<{
