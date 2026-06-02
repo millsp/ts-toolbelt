@@ -9,6 +9,11 @@ import {List} from './List'
  * @returns `L | L1`
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.Longest<[1, 2], [3, 4, 5]> // [3, 4, 5]
+ * type test1 = L.Longest<[1, 2, 3], [4]> // [1, 2, 3]
+ * type test2 = L.Longest<[1], [2]> // [1]
  * ```
  */
 export type Longest<L extends List, L1 extends List> =
