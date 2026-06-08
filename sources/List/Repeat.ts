@@ -31,6 +31,11 @@ export type _Repeat<A extends any, N extends number, L extends List = []> =
  * @returns [[List]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.Repeat<1, 3> // [1, 1, 1]
+ * type test1 = L.Repeat<'a', 0> // []
+ * type test2 = L.Repeat<'a', 2, ['b']> // ['a', 'a', 'b']
  * ```
  */
 export type Repeat<A extends any, N extends number, L extends List = []> =
