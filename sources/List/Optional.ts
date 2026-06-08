@@ -10,6 +10,10 @@ import {List} from './List'
  * @returns [[List]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.Optional<[1, 2, 3]> // [1?, 2?, 3?]
+ * type test1 = L.Optional<[1, 2, [3, [4]]], 'deep'> // [1?, 2?, [3?, [4?]?]?]
  * ```
  */
 export type Optional<L extends List, depth extends Depth = 'flat'> =
