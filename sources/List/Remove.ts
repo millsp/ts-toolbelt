@@ -10,6 +10,10 @@ import {List} from './List'
  * @returns [[List]]
  * @example
  * ```ts
+ * import {L} from 'ts-toolbelt'
+ *
+ * type test0 = L.Remove<[1, 2, 3, 4], 1, 2> // [1, 4]
+ * type test1 = L.Remove<['a', 'b', 'c', 'd'], 0, 1> // ['c', 'd']
  * ```
  */
 export type Remove<L extends List, From extends number, To extends number> =
