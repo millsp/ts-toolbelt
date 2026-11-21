@@ -1063,6 +1063,22 @@ checks([
     check<O.Paths<O[]>, O.Paths<O[]>, Test.Pass>(),
 ])
 
+type O_PATHS_OPTIONAL = {
+    modifications: Record<string, {rate?: number; amount?: number}>;
+};
+
+checks([
+    check<O.Paths<O_PATHS_OPTIONAL>, T.NonNullable<['modifications'?, string?, 'rate'?] | ['modifications'?, string?, 'amount'?]>, Test.Pass>(),
+    check<O.Paths<{a?: 1}>, T.NonNullable<['a'?]>, Test.Pass>(),
+    check<O.Paths<{a?: {b?: 1}}>, T.NonNullable<['a'?, 'b'?]>, Test.Pass>(),
+    check<O.Paths<{readonly a?: {readonly b?: 1}}>, T.NonNullable<['a'?, 'b'?]>, Test.Pass>(),
+    check<O.Paths<{a: {b: 1}}>, T.NonNullable<['a'?, 'b'?]>, Test.Pass>(),
+    check<['XXXXXXX'] extends O.Paths<O_PATHS_OPTIONAL> ? 1 : 0, 0, Test.Pass>(),
+    check<['modifications', 'item', 'invalid'] extends O.Paths<O_PATHS_OPTIONAL> ? 1 : 0, 0, Test.Pass>(),
+    check<['modifications', 'item', 'rate'] extends O.Paths<O_PATHS_OPTIONAL> ? 1 : 0, 1, Test.Pass>(),
+    check<['modifications', 'item'] extends O.Paths<O_PATHS_OPTIONAL> ? 1 : 0, 1, Test.Pass>(),
+])
+
 // ---------------------------------------------------------------------------------------
 // PICK
 

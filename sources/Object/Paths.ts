@@ -19,7 +19,7 @@ type UnionOf<A> =
  * @hidden
  */
 type _Paths<O, P extends List = []> = UnionOf<{
-    [K in keyof O]:
+    [K in keyof O]-?:
     O[K] extends BuiltIn | Primitive ? NonNullableFlat<[...P, K?]> :
     [Keys<O[K]>] extends [never] ? NonNullableFlat<[...P, K?]> :
     12 extends Length<P> ? NonNullableFlat<[...P, K?]> :
